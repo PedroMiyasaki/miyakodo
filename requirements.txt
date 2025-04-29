@@ -1,0 +1,37 @@
+# Core data processing
+pandas
+numpy
+polars
+pyarrow
+
+# Database and ETL
+sqlalchemy>=2.0.0
+psycopg2-binary>=2.9.0
+pyyaml
+
+# Development and testing
+pytest
+black
+isort
+pylint
+mypy
+
+# Notifications and API
+python-telegram-bot>=20.0.0
+requests
+
+# Data visualization
+matplotlib
+seaborn
+plotly
+
+# Additional utilities
+python-dotenv
+tqdm
+
+# MetaTrader5
+MetaTrader5
+
+# Web scraping
+beautifulsoup4
+requests

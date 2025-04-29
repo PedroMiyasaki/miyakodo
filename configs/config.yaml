@@ -5,6 +5,7 @@ data:
   landing: "data/landing"
   curated: "data/curated"
   specialized: "data/specialized"
+  intraday: "data/intraday" 
 
 # Telegram configuration
 telegram:
@@ -21,4 +22,17 @@ pipelines:
   daily:
     schedule: "0 0 * * *"  # Run at midnight every day
   weekly:
-    schedule: "0 0 * * 0"  # Run at midnight every Sunday 
+    schedule: "0 0 * * 0"  # Run at midnight every Sunday
+  intraday:
+    schedule: "*/10 * * * *"  # Run every 10 seconds
+    collection_interval_seconds: 10  # Time between data collections
+    trading_hours:
+      start: "08:00"  # BRT
+      end: "17:00"    # BRT
+    save_interval: 30  # minutes
+    symbols:
+      - "PETR4"
+      - "VALE3"
+      - "ITUB4"
+      - "BBDC4"
+      - "BBAS3" 
