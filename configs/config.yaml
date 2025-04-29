@@ -1,0 +1,24 @@
+# Miyakodo Configuration
+
+# Data paths
+data:
+  landing: "data/landing"
+  curated: "data/curated"
+  specialized: "data/specialized"
+
+# Telegram configuration
+telegram:
+  bot_token: "your_bot_token_here"
+  chat_id: "your_chat_id_here"
+
+# Logging configuration
+logging:
+  level: "INFO"
+  directory: "logs"
+
+# Pipeline settings
+pipelines:
+  daily:
+    schedule: "0 0 * * *"  # Run at midnight every day
+  weekly:
+    schedule: "0 0 * * 0"  # Run at midnight every Sunday 
