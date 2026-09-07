@@ -1,0 +1,331 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;800&family=Inter:wght@400;500;700&display=swap');
+
+:root{
+  --paper:#FFFFFF;
+  --ink:#0A0A0A;
+  --display:"Bricolage Grotesque",system-ui,sans-serif;
+  --body:"Inter",system-ui,sans-serif;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#555;display:flex;flex-direction:column;align-items:center;gap:48px;padding:48px}
+
+.board{
+  position:relative;
+  width:1600px;height:1100px;
+  overflow:hidden;
+  background:var(--paper);
+  color:var(--ink);
+  display:flex;flex-direction:column;
+}
+/* paper grain — currentColor so it survives inversion */
+.board::after{
+  content:"";position:absolute;inset:0;pointer-events:none;z-index:9;
+  background-image:radial-gradient(currentColor .5px,transparent .6px);
+  background-size:4px 4px;opacity:.05;
+}
+
+.eyebrow{
+  font:500 15px/1 var(--body);
+  letter-spacing:.18em;text-transform:uppercase;
+  opacity:.55;
+}
+
+/* ---- board header ---- */
+.head{
+  padding:56px 90px 0;
+  display:flex;justify-content:space-between;align-items:baseline;gap:40px;
+}
+.head .logic{
+  font:400 19px/1.35 var(--body);
+  max-width:46ch;text-align:right;opacity:.8;
+}
+
+/* ---- the stage: mark on paper ---- */
+.stage{
+  flex:1;
+  display:flex;align-items:center;justify-content:center;
+  padding:0 90px;
+}
+
+/* ---- bottom test band ---- */
+.tests{
+  background:var(--ink);color:var(--paper);
+  padding:44px 90px 48px;
+  display:flex;align-items:center;gap:70px;
+  min-height:330px;
+}
+.tests .col{display:flex;flex-direction:column;gap:18px}
+.tests .lab{
+  font:500 12px/1 var(--body);
+  letter-spacing:.18em;text-transform:uppercase;opacity:.45;
+}
+.tests .slot{display:flex;align-items:center;gap:26px;min-height:44px}
+.divider{width:1px;align-self:stretch;background:rgba(255,255,255,.18)}
+
+/* =========================================================
+   WORDMARK BASE
+   ========================================================= */
+.wm{
+  font-family:var(--display);font-weight:800;
+  letter-spacing:-.03em;line-height:.9;
+  text-transform:uppercase;white-space:nowrap;
+}
+
+/* =========================================================
+   ROUTE A — MASTHEAD
+   name + rules + descriptor slot. Set, not drawn.
+   ========================================================= */
+.mast{display:inline-block;text-align:center}
+.mast .rule-top{height:7px;background:currentColor}
+.mast .rule-bot{height:2px;background:currentColor}
+.mast .name{
+  font-size:152px;
+  padding:.11em 0 .13em;
+}
+.mast .desc{
+  font:500 17px/1 var(--body);
+  letter-spacing:.34em;text-transform:uppercase;
+  padding:16px 0 0;opacity:.75;
+}
+/* small variants: rules thin out, descriptor drops */
+.mast.s .name{font-size:44px}
+.mast.s .rule-top{height:3px}
+.mast.s .rule-bot{height:1px}
+.mast.s .desc{font-size:8px;letter-spacing:.28em;padding-top:6px}
+.mast.xs .name{font-size:19px}
+.mast.xs .rule-top{height:2px}
+.mast.xs .rule-bot{height:1px}
+.mast.xs .desc{display:none}
+
+/* =========================================================
+   ROUTE B — MISREGISTER
+   two print passes: halftone screen + key plate, out of register.
+   ========================================================= */
+.misreg{position:relative;display:inline-block}
+.misreg .pass{display:block;font-size:150px}
+.misreg .screen{
+  position:absolute;left:0;top:0;
+  transform:translate(-15px,12px);
+  background-image:radial-gradient(var(--ink) 2.1px,transparent 2.25px);
+  background-size:11px 11px;
+  -webkit-background-clip:text;background-clip:text;
+  color:transparent;
+  filter:url(#rough2);
+}
+.misreg .key{
+  position:relative;
+  -webkit-text-stroke:6px var(--ink);
+  color:transparent;
+  filter:url(#rough);
+}
+.inv-ctx .misreg .key{-webkit-text-stroke-color:var(--paper)}
+/* inverted: screen dots go white */
+.inv-ctx .misreg .screen{background-image:radial-gradient(var(--paper) 2.1px,transparent 2.25px)}
+/* small: offset scales down with the type */
+.misreg.s .pass{font-size:44px}
+.misreg.s .key{-webkit-text-stroke-width:2px}
+.misreg.s .screen{transform:translate(-4px,3px);background-size:4px 4px;background-image:radial-gradient(var(--paper) .8px,transparent .9px)}
+.misreg.xs .pass{font-size:19px}
+.misreg.xs .key{-webkit-text-stroke:0;color:currentColor;filter:none}
+.misreg.xs .screen{display:none}   /* fallback lockup: single solid pass */
+/* the clean fallback, shown on paper */
+.misreg.flat .screen{display:none}
+.misreg.flat .key{filter:none}
+
+/* =========================================================
+   ROUTE C — STAMP
+   name knocked out of an inked block. The block is the avatar.
+   ========================================================= */
+.stamp{
+  display:inline-block;
+  background:var(--ink);color:var(--paper);
+  padding:.30em .38em .34em;
+  filter:url(#rough);
+}
+.stamp .name{font-size:132px;display:block}
+.inv-ctx .stamp{background:var(--paper);color:var(--ink)}
+.stamp.s{padding:.28em .34em .32em}
+.stamp.s .name{font-size:38px}
+.stamp.xs{padding:.26em .3em .3em}
+.stamp.xs .name{font-size:16px}
+/* the monogram cut of the same block — the avatar asset */
+.badge{
+  display:grid;place-items:center;
+  background:var(--paper);color:var(--ink);
+  filter:url(#rough);
+  font-family:var(--display);font-weight:800;letter-spacing:-.04em;
+}
+.badge.lg{width:128px;height:128px;font-size:62px}
+.badge.md{width:72px;height:72px;font-size:35px}
+.badge.sm{width:40px;height:40px;font-size:20px}
+/* Route A's avatar is the masthead cropped, not a box with initials in it */
+.mast-badge{filter:none;position:relative;background:var(--paper);color:var(--ink)}
+.mast-badge .r{position:absolute;left:12%;right:12%;background:currentColor}
+.mast-badge .r.t{top:22%;height:8%}
+.mast-badge .r.b{bottom:22%;height:3%}
+.badge.md .r.t{height:9%}
+.badge.sm .r.t{height:10%}
+</style>
+
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <filter id="rough" x="-25%" y="-25%" width="150%" height="150%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="3" seed="11" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="7" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="rough2" x="-25%" y="-25%" width="150%" height="150%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.022" numOctaves="3" seed="4" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="6" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+</svg>
+
+
+<!-- ============================ ROUTE A ============================ -->
+<div class="board">
+  <div class="head">
+    <div>
+      <div class="eyebrow">Route A</div>
+      <div class="wm" style="font-size:52px;margin-top:14px">Masthead</div>
+    </div>
+    <div class="logic">A newspaper doesn't have a logo, it has a masthead. The mark is
+      name + rule + descriptor slot — a structure you set, not a picture you paste.</div>
+  </div>
+
+  <div class="stage">
+    <div class="mast">
+      <div class="rule-top"></div>
+      <div class="wm name">Pedro Miyasaki</div>
+      <div class="rule-bot"></div>
+      <div class="desc">Applied AI — notes from production</div>
+    </div>
+  </div>
+
+  <div class="tests inv-ctx">
+    <div class="col">
+      <div class="lab">Inverted</div>
+      <div class="slot">
+        <div class="mast s">
+          <div class="rule-top"></div>
+          <div class="wm name">Pedro Miyasaki</div>
+          <div class="rule-bot"></div>
+          <div class="desc">Applied AI — notes from production</div>
+        </div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="col">
+      <div class="lab">Small — descriptor drops</div>
+      <div class="slot">
+        <div class="mast xs">
+          <div class="rule-top"></div>
+          <div class="wm name">Pedro Miyasaki</div>
+          <div class="rule-bot"></div>
+        </div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="col">
+      <div class="lab">Avatar 128 / 72 / 40</div>
+      <div class="slot">
+        <div class="badge lg mast-badge"><span class="r t"></span>PM<span class="r b"></span></div>
+        <div class="badge md mast-badge"><span class="r t"></span>PM<span class="r b"></span></div>
+        <div class="badge sm mast-badge"><span class="r t"></span>PM<span class="r b"></span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ============================ ROUTE B ============================ -->
+<div class="board">
+  <div class="head">
+    <div>
+      <div class="eyebrow">Route B</div>
+      <div class="wm" style="font-size:52px;margin-top:14px">Misregister</div>
+    </div>
+    <div class="logic">The identity's own trick turned on the name: a halftone screen and a
+      key plate printed out of register. The logotype is the printing accident.</div>
+  </div>
+
+  <div class="stage">
+    <div class="misreg">
+      <span class="wm pass screen">Pedro Miyasaki</span>
+      <span class="wm pass key">Pedro Miyasaki</span>
+    </div>
+  </div>
+
+  <div class="tests inv-ctx">
+    <div class="col">
+      <div class="lab">Inverted</div>
+      <div class="slot">
+        <div class="misreg s">
+          <span class="wm pass screen">Pedro Miyasaki</span>
+          <span class="wm pass key">Pedro Miyasaki</span>
+        </div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="col">
+      <div class="lab">Small — single pass fallback</div>
+      <div class="slot">
+        <div class="misreg xs">
+          <span class="wm pass key">Pedro Miyasaki</span>
+        </div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="col">
+      <div class="lab">Avatar 128 / 72 / 40</div>
+      <div class="slot">
+        <div class="badge lg">PM</div>
+        <div class="badge md">PM</div>
+        <div class="badge sm">PM</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ============================ ROUTE C ============================ -->
+<div class="board">
+  <div class="head">
+    <div>
+      <div class="eyebrow">Route C</div>
+      <div class="wm" style="font-size:52px;margin-top:14px">Stamp</div>
+    </div>
+    <div class="logic">The name knocked out of an inked block. Inversion stops being a rule
+      applied to the mark and becomes the mark. The block is the avatar, free.</div>
+  </div>
+
+  <div class="stage">
+    <div class="stamp"><span class="wm name">Pedro Miyasaki</span></div>
+  </div>
+
+  <div class="tests inv-ctx">
+    <div class="col">
+      <div class="lab">Inverted</div>
+      <div class="slot">
+        <div class="stamp s"><span class="wm name">Pedro Miyasaki</span></div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="col">
+      <div class="lab">Small</div>
+      <div class="slot">
+        <div class="stamp xs"><span class="wm name">Pedro Miyasaki</span></div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="col">
+      <div class="lab">Avatar 128 / 72 / 40</div>
+      <div class="slot">
+        <div class="badge lg">PM</div>
+        <div class="badge md">PM</div>
+        <div class="badge sm">PM</div>
+      </div>
+    </div>
+  </div>
+</div>

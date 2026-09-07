@@ -1,0 +1,170 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;800&family=Inter:wght@400;500;700&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&display=swap');
+
+:root{
+  --paper:#FFFFFF; --ink:#0A0A0A;
+  --display:"Bricolage Grotesque",system-ui,sans-serif;
+  --body:"Inter",system-ui,sans-serif;
+  --read:"Newsreader",Georgia,serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#555;display:flex;flex-wrap:wrap;gap:40px;padding:40px;align-items:flex-start;justify-content:center}
+
+.grain::after{
+  content:"";position:absolute;inset:0;pointer-events:none;z-index:9;
+  background-image:radial-gradient(currentColor .5px,transparent .6px);
+  background-size:4px 4px;opacity:.05;
+}
+.wm{font-family:var(--display);font-weight:800;letter-spacing:-.03em;line-height:.9;text-transform:uppercase;white-space:nowrap}
+.stamp{display:inline-block;background:var(--ink);color:var(--paper);padding:.30em .38em .34em}
+.inv .stamp{background:var(--paper);color:var(--ink)}
+
+/* =========================================================
+   BUSINESS CARD — 1050 × 600 (3.5 × 2 in @ 300dpi)
+   Digital only: no bleed, no trim marks, no crop allowance.
+   ========================================================= */
+.card{
+  position:relative;width:1050px;height:600px;overflow:hidden;
+  background:var(--paper);color:var(--ink);
+  display:flex;flex-direction:column;padding:66px 70px 60px;
+}
+.card.inv{background:var(--ink);color:var(--paper)}
+.card .stamp{filter:url(#rough-md)}
+
+/* front */
+.card-front{justify-content:center;align-items:center}
+.card-front .under{
+  font:500 17px/1 var(--body);letter-spacing:.30em;text-transform:uppercase;
+  opacity:.55;margin-top:38px;
+}
+
+/* back */
+.cb-top{display:flex;justify-content:space-between;align-items:flex-start}
+.cb-name{font-family:var(--display);font-weight:800;font-size:78px;letter-spacing:-.03em;line-height:.94}
+.cb-role{font:500 16px/1 var(--body);letter-spacing:.22em;text-transform:uppercase;opacity:.55;margin-top:24px}
+.cb-rules{margin-top:auto}
+.cb-rules .rt{height:5px;background:currentColor}
+.cb-rules .rb{height:2px;background:currentColor;margin-top:7px}
+.cb-details{display:flex;justify-content:space-between;align-items:flex-end;margin-top:26px;gap:30px}
+.cb-details .col{display:flex;flex-direction:column;gap:9px}
+.cb-k{font:500 12px/1 var(--body);letter-spacing:.2em;text-transform:uppercase;opacity:.42}
+.cb-v{font:400 21px/1 var(--body)}
+.badge{
+  display:grid;place-items:center;background:var(--ink);color:var(--paper);
+  font-family:var(--display);font-weight:800;letter-spacing:-.045em;
+  width:104px;height:104px;font-size:50px;filter:url(#rough-md);
+}
+
+/* =========================================================
+   LETTERHEAD — 1240 × 1754 (A4 @ 150dpi)
+   ========================================================= */
+.letter{
+  position:relative;width:1240px;height:1754px;overflow:hidden;
+  background:var(--paper);color:var(--ink);
+  display:flex;flex-direction:column;padding:96px 110px 84px;
+}
+.lh-mast{text-align:center}
+.lh-mast .rt{height:6px;background:currentColor}
+.lh-mast .rb{height:2px;background:currentColor}
+.lh-mast .nm{font-family:var(--display);font-weight:800;font-size:78px;letter-spacing:-.03em;line-height:.9;text-transform:uppercase;padding:.11em 0 .13em}
+.lh-mast .ds{font:500 12px/1 var(--body);letter-spacing:.34em;text-transform:uppercase;padding:20px 0 0;opacity:.72}
+
+.lh-meta{display:flex;justify-content:space-between;margin-top:78px;font:500 12px/1 var(--body);letter-spacing:.18em;text-transform:uppercase;opacity:.45}
+
+.lh-body{flex:1;margin-top:52px;font:400 19px/1.62 var(--read);max-width:60ch}
+.lh-body p+p{margin-top:19px}
+.lh-body em{font-style:italic}
+.lh-sal{font:400 19px/1.62 var(--read);margin-bottom:19px}
+.lh-sign{margin-top:44px;display:flex;flex-direction:column;gap:16px}
+.lh-sign .stamp{filter:url(#rough-sm);align-self:flex-start}
+
+.lh-foot{border-top:2px solid currentColor;padding-top:20px;display:flex;justify-content:space-between;align-items:baseline;gap:24px}
+.lh-foot .fk{font:500 11px/1.7 var(--body);letter-spacing:.16em;text-transform:uppercase;opacity:.42}
+.lh-foot .fv{font:400 15px/1.7 var(--body);opacity:.8}
+.lh-foot .col{display:flex;flex-direction:column}
+</style>
+
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <filter id="rough-md" x="-25%" y="-25%" width="150%" height="150%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.026" numOctaves="3" seed="11" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="4" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="rough-sm" x="-25%" y="-25%" width="150%" height="150%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.042" numOctaves="2" seed="11" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="2" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+</svg>
+
+
+<!-- ===== CARD — FRONT ===== -->
+<div class="card inv grain card-front">
+  <div class="stamp"><span class="wm" style="font-size:44px">Pedro Miyasaki</span></div>
+  <div class="under">Applied AI — notes from production</div>
+</div>
+
+
+<!-- ===== CARD — BACK ===== -->
+<div class="card grain">
+  <div class="cb-top">
+    <div>
+      <div class="cb-name">Pedro<br>Miyasaki</div>
+      <div class="cb-role">AI systems · evals · data</div>
+    </div>
+    <div class="badge">PM</div>
+  </div>
+  <div class="cb-rules">
+    <div class="rt"></div>
+    <div class="rb"></div>
+    <div class="cb-details">
+      <div class="col">
+        <span class="cb-k">Instagram · Threads</span>
+        <span class="cb-v">@pedro.miyasaki.ia</span>
+      </div>
+      <div class="col" style="text-align:right">
+        <span class="cb-k">Email</span>
+        <span class="cb-v">[ contact slot ]</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ===== LETTERHEAD ===== -->
+<div class="letter grain">
+  <div class="lh-mast">
+    <div class="rt"></div>
+    <div class="nm">Pedro Miyasaki</div>
+    <div class="rb"></div>
+    <div class="ds">Applied AI — notes from production</div>
+  </div>
+
+  <div class="lh-meta">
+    <span>[ Recipient ]</span>
+    <span>[ Date ]</span>
+  </div>
+
+  <div class="lh-body">
+    <div class="lh-sal">Dear —</div>
+    <p>Body copy sets in Newsreader at 19/1.62 across a 60-character measure. This is the reading
+      voice: it never sets a headline, and it never appears on an ink ground. On a letter that rule
+      costs nothing, because a letter is white by definition.</p>
+    <p>The masthead above is the same construction as every other header in the system — rules and
+      descriptor sized in em off the wordmark, never filtered. The stamp is reserved for the
+      signature block, where it does the job a wet signature would, which is why it appears once
+      and at the end.</p>
+    <p>Everything in square brackets is a slot. Fill it, do not restyle it — <em>the slots are the
+      template</em>, and a letter that has been reformatted stops matching the one sent last month.</p>
+  </div>
+
+  <div class="lh-sign">
+    <div class="stamp"><span class="wm" style="font-size:26px">Pedro Miyasaki</span></div>
+  </div>
+
+  <div class="lh-foot" style="margin-top:52px">
+    <div class="col"><span class="fk">Social</span><span class="fv">@pedro.miyasaki.ia</span></div>
+    <div class="col"><span class="fk">Email</span><span class="fv">[ contact slot ]</span></div>
+    <div class="col" style="text-align:right"><span class="fk">Page</span><span class="fv">1 / 1</span></div>
+  </div>
+</div>

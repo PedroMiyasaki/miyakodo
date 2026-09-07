@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thread Cards</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <style>
+    :root {
+      /* UI chrome tokens, previously coming from the design system. Inlined
+         here so the template is self-contained. Only what this file uses. */
+      --paper:      #ffffff;
+      --paper-deep: #f6f5f2;
+      --ink:        #000000;
+      --ink-soft:   #3d3d3d;
+      --mute:       #6b6b6b;
+      --seal:       #c0392b;
+      --hairline:   1px solid rgba(0, 0, 0, 0.12);
+      --radius-md:  8px;
+      --dur-2:      160ms;
+      --ease-out:   ease-out;
+      --font-sans:  system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      --font-mono:  ui-monospace, "Cascadia Mono", Consolas, monospace;
+
+      --card-size: 1080px;
+      --card-pad-x: 64px;
+      --card-pad-y: 56px;
+      --tweet-text-size: 58px;
+
+      /* Twitter-native palette. Do NOT use brand tokens inside the card,
+         because the card has to read as a real tweet. */
+      --tw-ink:  #0f1419;
+      --tw-mute: #536471;
+      --tw-blue: #1d9bf0;
+      --tw-rule: #eff3f4;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      background:
+        linear-gradient(90deg, oklch(0 0 0 / 0.03) 1px, transparent 1px),
+        linear-gradient(180deg, oklch(0 0 0 / 0.03) 1px, transparent 1px),
+        var(--paper-deep);
+      background-size: 24px 24px;
+      color: var(--ink);
+      font-family: var(--font-sans);
+    }
+
+    /* ============================================================
+       UI chrome (toolbar, hint, markdown field).
+       Not exported. Free to use brand tokens.
+       ============================================================ */
+
+    .toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 16px;
+      border-bottom: var(--hairline);
+      background: oklch(0.975 0.006 85 / 0.94);
+      backdrop-filter: blur(16px);
+    }
+
+    .toolbar input[type="text"] {
+      width: 220px;
+      height: 42px;
+      border: var(--hairline);
+      border-radius: var(--radius-md);
+      background: var(--paper);
+      color: var(--ink);
+      font: 500 14px var(--font-mono);
+      padding: 0 12px;
+      outline: none;
+    }
+
+    .toolbar input[type="file"] { display: none; }
+
+    .button {
+      height: 42px;
+      border: var(--hairline);
+      border-radius: var(--radius-md);
+      background: var(--paper);
+      color: var(--ink);
+      cursor: pointer;
+      font: 500 14px var(--font-mono);
+      padding: 0 14px;
+      transition: border-color var(--dur-2) var(--ease-out), color var(--dur-2) var(--ease-out);
+    }
+
+    .button:hover { border-color: var(--ink); }
+
+    .button.primary {
+      border-color: var(--ink);
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    .button:disabled { cursor: wait; opacity: 0.55; }
+
+    #status {
+      min-width: 250px;
+      color: var(--mute);
+      font: 400 13px var(--font-mono);
+    }
+
+    #status.ok  { color: var(--ink-soft); }
+    #status.err { color: var(--seal); }
+
+    .hint {
+      max-width: 1080px;
+      margin: 18px auto 8px;
+      color: var(--mute);
+      font: 400 13px var(--font-mono);
+      text-align: center;
+    }
+
+    .md-input-shell {
+      max-width: 1080px;
+      margin: 14px auto 22px;
+      padding: 0 24px;
+    }
+
+    .md-input-shell label {
+      display: block;
+      font: 500 11px var(--font-mono);
+      color: var(--mute);
+      margin-bottom: 6px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .md-input-shell textarea {
+      width: 100%;
+      min-height: 140px;
+      padding: 14px 16px;
+      border: var(--hairline);
+      border-radius: var(--radius-md);
+      background: var(--paper);
+      color: var(--ink);
+      font: 400 14px/1.5 var(--font-mono);
+      resize: vertical;
+      outline: none;
+    }
+
+    .md-input-shell textarea:focus { border-color: var(--ink); }
+
+    .stage {
+      display: flex;
+      justify-content: center;
+      padding: 0 24px 64px;
+    }
+
+    /* ============================================================
+       Capture area: the real tweet card. Pure white, system fonts,
+       official Twitter/X colors and badge. Do NOT mix in brand tokens —
+       the card has to read as a tweet, not as a brand asset.
+       ============================================================ */
+
+    #capture-area {
+      position: relative;
+      width: var(--card-size);
+      height: var(--card-size);
+      overflow: hidden;
+      background: #ffffff;
+      color: var(--tw-ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                   Helvetica, Arial, sans-serif;
+    }
+
+    .thread-card {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      padding: var(--card-pad-y) var(--card-pad-x);
+    }
+
+    .profile-row {
+      display: grid;
+      grid-template-columns: 112px 1fr;
+      gap: 22px;
+      align-items: center;
+      margin-bottom: 56px;
+    }
+
+    .avatar {
+      width: 112px;
+      height: 112px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center;
+      background: var(--tw-rule);
+    }
+
+    .identity { min-width: 0; }
+
+    .name-line {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .display-name {
+      color: var(--tw-ink);
+      font-size: 38px;
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+      outline: none;
+    }
+
+    .verified {
+      width: 32px;
+      height: 32px;
+      flex-shrink: 0;
+      transform: translateY(1px);
+    }
+
+    .bio {
+      color: var(--tw-mute);
+      font-size: 28px;
+      font-weight: 400;
+      line-height: 1.25;
+      margin-top: 2px;
+      outline: none;
+    }
+
+    /* Tweet text. The rules must apply both to the root .tweet-text and to
+       its <p>/<li> children, because marked.js wraps the content in a <p>.
+       Here we force the children to inherit font-size, line-height and
+       font-family, and to drop max-width. */
+    .tweet-text,
+    .tweet-text p,
+    .tweet-text li {
+      max-width: none;
+      color: var(--tw-ink);
+      font-family: inherit;
+      font-size: var(--tweet-text-size);
+      font-weight: 400;
+      line-height: 1.32;
+      letter-spacing: -0.005em;
+      word-break: break-word;
+    }
+
+    .tweet-text { margin: 0; }
+
+    /* No-images mode: card for the IG carousel. Editorial look, not
+       Twitter-clone. Warm paper background, top-anchored with generous
+       space above and below, small-but-airy text with visible
+       paragraphs. */
+    #capture-area.no-images {
+      background: var(--paper);
+    }
+
+    #capture-area.no-images .thread-card {
+      padding: 150px 84px 110px;
+    }
+
+    #capture-area.no-images .profile-row {
+      grid-template-columns: 84px 1fr;
+      gap: 18px;
+      margin-bottom: 64px;
+    }
+
+    #capture-area.no-images .avatar {
+      width: 84px;
+      height: 84px;
+    }
+
+    #capture-area.no-images .display-name {
+      font-size: 32px;
+    }
+
+    #capture-area.no-images .verified {
+      width: 26px;
+      height: 26px;
+    }
+
+    #capture-area.no-images .bio {
+      font-size: 24px;
+    }
+
+    #capture-area.no-images .tweet-text,
+    #capture-area.no-images .tweet-text p,
+    #capture-area.no-images .tweet-text li {
+      font-size: 34px;
+      line-height: 1.45;
+    }
+
+    #capture-area.no-images .tweet-text p {
+      margin: 0 0 0.95em 0;
+    }
+
+    #capture-area.no-images .tweet-text > *:last-child {
+      margin-bottom: 0;
+    }
+
+    .tweet-text > *:first-child { margin-top: 0; }
+    .tweet-text > *:last-child  { margin-bottom: 0; }
+    .tweet-text p { margin: 0 0 0.75em 0; }
+    .tweet-text strong, .tweet-text b { font-weight: 700; }
+    .tweet-text em, .tweet-text i { font-style: italic; }
+    .tweet-text a { color: var(--tw-blue); text-decoration: none; }
+    .tweet-text code {
+      font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
+      font-size: 0.92em;
+      background: var(--tw-rule);
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+    .tweet-text pre {
+      font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
+      background: var(--tw-rule);
+      padding: 14px 16px;
+      border-radius: 8px;
+      overflow: auto;
+      margin: 0.4em 0;
+    }
+    .tweet-text pre code { background: transparent; padding: 0; }
+    .tweet-text ul, .tweet-text ol { margin: 0.4em 0; padding-left: 1.4em; }
+    .tweet-text li { margin: 0.18em 0; }
+    .tweet-text blockquote {
+      margin: 0.4em 0;
+      padding-left: 16px;
+      border-left: 4px solid var(--tw-rule);
+      color: var(--tw-mute);
+    }
+    .tweet-text hr {
+      border: none;
+      border-top: 1px solid var(--tw-rule);
+      margin: 0.6em 0;
+    }
+
+    [contenteditable="true"]:focus {
+      border-radius: 4px;
+      box-shadow: 0 0 0 2px rgba(29, 155, 240, 0.18);
+    }
+
+    .media-grid {
+      display: none;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+      margin-top: 36px;
+      overflow: hidden;
+    }
+    .media-grid.has-media { display: grid; }
+    .media-grid.one { grid-template-columns: 1fr; }
+    .media-grid img {
+      width: 100%;
+      height: 262px;
+      object-fit: cover;
+      border-radius: 16px;
+      background: var(--tw-rule);
+    }
+    .media-grid.one img { height: 342px; }
+
+    @media (max-width: 1140px) {
+      .stage { overflow: auto; justify-content: flex-start; }
+      #capture-area { flex: 0 0 auto; }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <input id="codename" type="text" placeholder="post-name" spellcheck="false">
+    <button class="button primary" id="btn-export" onclick="exportPrint()">Export PNG</button>
+    <label class="button" for="media-input">Add images</label>
+    <input id="media-input" type="file" accept="image/*" multiple>
+    <button class="button" id="btn-clear-media" type="button">Clear images</button>
+    <span id="status">Ready.</span>
+  </div>
+
+  <div class="hint">Edit the name and bio directly on the card. The tweet text accepts Markdown — write it in the field below.</div>
+
+  <div class="md-input-shell">
+    <label for="md-input">Tweet text · Markdown</label>
+    <textarea id="md-input" spellcheck="false">Write the card text here.
+
+Accepts Markdown: **bold**, *italic* and lists.</textarea>
+  </div>
+
+  <main class="stage">
+    <section id="capture-area" aria-label="Thread card for Instagram">
+      <article class="thread-card">
+        <header class="profile-row">
+          <!-- ponytail: gray placeholder. Swap for <img class="avatar" src="..."> once there is a photo. -->
+          <div class="avatar" aria-label="Profile picture"></div>
+          <div class="identity">
+            <div class="name-line">
+              <span class="display-name" contenteditable="true" spellcheck="false">Pedro Miyasaki</span>
+              <svg class="verified" viewBox="0 0 24 24" aria-label="Verified account" role="img">
+                <g>
+                  <path fill="#1d9bf0" d="M22.25 12c0-1.43-.88-2.67-2.19-3.34.46-1.39.2-2.9-.81-3.91s-2.52-1.27-3.91-.81c-.66-1.31-1.91-2.19-3.34-2.19s-2.67.88-3.33 2.19c-1.4-.46-2.91-.2-3.92.81s-1.26 2.52-.8 3.91c-1.31.67-2.2 1.91-2.2 3.34s.89 2.67 2.2 3.34c-.46 1.39-.21 2.9.8 3.91s2.52 1.26 3.91.81c.67 1.31 1.91 2.19 3.34 2.19s2.68-.88 3.34-2.19c1.39.45 2.9.2 3.91-.81s1.27-2.52.81-3.91c1.31-.67 2.19-1.91 2.19-3.34z"/>
+                  <path fill="#ffffff" d="M10.54 16.2L6.8 12.46l1.41-1.42 2.26 2.26 4.8-5.23 1.47 1.36-6.2 6.77z"/>
+                </g>
+              </svg>
+            </div>
+            <div class="bio" contenteditable="true" spellcheck="false"></div>
+          </div>
+        </header>
+
+        <div class="tweet-text" id="tweet-text"></div>
+
+        <div class="media-grid" id="media-grid" aria-live="polite"></div>
+      </article>
+    </section>
+  </main>
+
+  <script>
+    let dirHandle = null;
+    const objectUrls = [];
+
+    if (window.marked) {
+      marked.setOptions({ breaks: true, gfm: true });
+    }
+
+    // Renders markdown into #tweet-text. Exposed on window so the Playwright
+    // script (scripts/gerar_carrossel_de_thread.py) can call it directly
+    // without duplicating the parser logic.
+    window.setTweetTextMd = function (md) {
+      const el = document.getElementById('tweet-text');
+      if (!el) return;
+      const src = md ?? '';
+      if (window.marked) {
+        el.innerHTML = marked.parse(src);
+      } else {
+        el.textContent = src;
+      }
+    };
+
+    // Toggles no-images mode. The Playwright script calls this when running
+    // without `--with-images` (the default), to raise the text and center it
+    // vertically.
+    window.setNoImagesMode = function (flag) {
+      const el = document.getElementById('capture-area');
+      if (!el) return;
+      el.classList.toggle('no-images', !!flag);
+    };
+
+    function syncFromTextarea() {
+      window.setTweetTextMd(document.getElementById('md-input').value);
+    }
+
+    document.getElementById('md-input').addEventListener('input', syncFromTextarea);
+    syncFromTextarea();
+
+    async function ensurePermission(handle) {
+      const perm = await handle.queryPermission({ mode: 'readwrite' });
+      if (perm === 'granted') return true;
+      const req = await handle.requestPermission({ mode: 'readwrite' });
+      return req === 'granted';
+    }
+
+    async function pickDir() {
+      if (!window.showDirectoryPicker) {
+        setStatus('This browser does not support folder selection. Use Chrome or Edge.', 'err');
+        throw new Error('showDirectoryPicker unavailable');
+      }
+
+      const secure = window.isSecureContext || location.hostname === 'localhost' || location.hostname === '127.0.0.1';
+      if (!secure) {
+        setStatus('Open via http://localhost:8000 to export.', 'err');
+        throw new Error('insecure context');
+      }
+
+      dirHandle = await window.showDirectoryPicker({ mode: 'readwrite' });
+      if (!(await ensurePermission(dirHandle))) {
+        setStatus('Permission denied for the selected folder.', 'err');
+        throw new Error('permission denied');
+      }
+
+      setStatus('Selected folder: ' + dirHandle.name, 'ok');
+      return dirHandle;
+    }
+
+    function timestamp() {
+      const now = new Date();
+      const pad = n => String(n).padStart(2, '0');
+      const pad3 = n => String(n).padStart(3, '0');
+      return now.getFullYear() + pad(now.getMonth() + 1) + pad(now.getDate()) + '_' + pad(now.getHours()) + pad(now.getMinutes()) + pad(now.getSeconds()) + pad3(now.getMilliseconds());
+    }
+
+    function setStatus(msg, type = '') {
+      const el = document.getElementById('status');
+      el.textContent = msg;
+      el.className = type;
+    }
+
+    function clearMedia() {
+      const grid = document.getElementById('media-grid');
+      objectUrls.splice(0).forEach(url => URL.revokeObjectURL(url));
+      grid.innerHTML = '';
+      grid.className = 'media-grid';
+      document.getElementById('media-input').value = '';
+      setStatus('Images removed.', 'ok');
+    }
+
+    function addMedia(files) {
+      const images = Array.from(files).filter(file => file.type.startsWith('image/'));
+      const grid = document.getElementById('media-grid');
+
+      clearMedia();
+      if (!images.length) {
+        setStatus('No valid image selected.', 'err');
+        return;
+      }
+
+      images.slice(0, 4).forEach(file => {
+        const url = URL.createObjectURL(file);
+        objectUrls.push(url);
+
+        const img = document.createElement('img');
+        img.src = url;
+        img.alt = file.name;
+        grid.appendChild(img);
+      });
+
+      grid.className = 'media-grid has-media' + (grid.children.length === 1 ? ' one' : '');
+      setStatus(`${grid.children.length} image(s) added.`, 'ok');
+    }
+
+    async function exportPrint() {
+      const codename = document.getElementById('codename').value.trim();
+      if (!codename) {
+        setStatus('Type a codename before exporting.', 'err');
+        document.getElementById('codename').focus();
+        return;
+      }
+
+      const btn = document.getElementById('btn-export');
+      btn.disabled = true;
+      setStatus('Generating PNG...');
+
+      try {
+        if (!dirHandle) await pickDir();
+
+        const canvas = await html2canvas(document.getElementById('capture-area'), {
+          scale: 3,
+          backgroundColor: null,
+          useCORS: true,
+          allowTaint: true,
+          logging: false,
+          removeContainer: true
+        });
+
+        canvas.toBlob(async blob => {
+          try {
+            const sub = await dirHandle.getDirectoryHandle(codename, { create: true });
+            const name = timestamp() + '.png';
+            const fh = await sub.getFileHandle(name, { create: true });
+            const ws = await fh.createWritable();
+            await ws.write(blob);
+            await ws.close();
+            setStatus(`Saved to ${dirHandle.name}/${codename}/${name}`, 'ok');
+          } catch (err) {
+            setStatus('Error saving: ' + err.message, 'err');
+          } finally {
+            btn.disabled = false;
+          }
+        }, 'image/png');
+      } catch (err) {
+        btn.disabled = false;
+        if (!document.getElementById('status').textContent.includes('Error')) {
+          setStatus(err.message || 'Export cancelled.', 'err');
+        }
+      }
+    }
+
+    document.getElementById('media-input').addEventListener('change', event => addMedia(event.target.files));
+    document.getElementById('btn-clear-media').addEventListener('click', clearMedia);
+  </script>
+</body>
+</html>

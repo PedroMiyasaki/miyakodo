@@ -1,0 +1,16 @@
+# Content data (temp + final) — this repo's craft/skills are versioned, not the output
+posts/
+edit/
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Node (video/ Remotion project)
+node_modules/
+video/node_modules/
+
+# OS
+.DS_Store
+Thumbs.db

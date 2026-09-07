@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>August 2027 — twelve months of publishing</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;800&family=Inter:wght@400;500;700&display=swap');
+
+:root{
+  --paper:#FFFFFF;
+  --ink:#0A0A0A;
+  --display:"Bricolage Grotesque",system-ui,sans-serif;
+  --body:"Inter",system-ui,sans-serif;
+  --pad:clamp(28px,6vw,88px);
+  --rule-dark:rgba(10,10,10,.18);
+  --rule-light:rgba(255,255,255,.18);
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  background:#555;
+  font-family:var(--body);
+  color:var(--ink);
+  padding:clamp(0px,3vw,40px);
+}
+
+.page{max-width:1080px;margin:0 auto}
+
+.panel{
+  position:relative;
+  overflow:hidden;
+  padding:var(--pad);
+  background:var(--paper);
+  color:var(--ink);
+}
+.panel.inv{background:var(--ink);color:var(--paper)}
+.panel:not(.inv)+.panel:not(.inv){border-top:1px solid var(--rule-dark)}
+
+/* paper grain — currentColor, so it survives inversion */
+.panel::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:radial-gradient(currentColor .5px,transparent .6px);
+  background-size:4px 4px;opacity:.05;
+}
+
+.mark{
+  font:500 clamp(11px,1.4vw,14px)/1 var(--body);
+  letter-spacing:.18em;text-transform:uppercase;
+  opacity:.55;
+}
+.eyebrow{
+  font:500 clamp(11px,1.4vw,14px)/1 var(--body);
+  letter-spacing:.18em;text-transform:uppercase;
+  opacity:.55;
+  margin-bottom:clamp(24px,3.5vw,44px);
+}
+
+/* ---- masthead ---- */
+.masthead-top{
+  display:flex;justify-content:space-between;align-items:baseline;
+  gap:20px;flex-wrap:wrap;
+}
+.stamp{
+  font:500 clamp(10px,1.3vw,13px)/1 var(--body);
+  letter-spacing:.18em;text-transform:uppercase;
+  border:1px solid currentColor;
+  padding:7px 11px;
+  opacity:.75;
+}
+.hero{
+  font-family:var(--display);font-weight:800;
+  letter-spacing:-.025em;line-height:.94;
+  font-size:clamp(40px,7.6vw,96px);
+  margin-top:clamp(56px,9vw,124px);
+  max-width:14ch;
+  text-wrap:balance;
+}
+.hero-sub{
+  font:400 clamp(16px,2.1vw,25px)/1.4 var(--body);
+  margin-top:clamp(20px,2.6vw,32px);
+  max-width:34ch;
+  opacity:.8;
+}
+
+/* ---- what it cost ---- */
+.figure-line{
+  font-family:var(--display);font-weight:800;
+  letter-spacing:-.025em;line-height:.94;
+  font-size:clamp(38px,6.4vw,80px);
+}
+.tally{
+  width:100%;height:auto;display:block;
+  margin:clamp(24px,3.4vw,40px) 0 clamp(20px,2.6vw,30px);
+}
+.ledger{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:clamp(16px,2.4vw,28px);
+  border-top:1px solid var(--rule-dark);
+  padding-top:clamp(18px,2.4vw,26px);
+}
+.ledger-n{
+  font-family:var(--display);font-weight:800;
+  letter-spacing:-.025em;line-height:1;
+  font-size:clamp(26px,3.4vw,40px);
+}
+.ledger-l{
+  font:400 clamp(12px,1.5vw,15px)/1.35 var(--body);
+  opacity:.55;margin-top:7px;
+}
+.note{
+  font:400 clamp(14px,1.8vw,19px)/1.55 var(--body);
+  margin-top:clamp(22px,2.8vw,32px);
+  max-width:52ch;opacity:.8;
+}
+
+/* ---- channels ---- */
+.channels{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:clamp(28px,4vw,56px);
+}
+.ch-name{
+  font:500 clamp(11px,1.4vw,14px)/1 var(--body);
+  letter-spacing:.18em;text-transform:uppercase;
+  padding-bottom:14px;
+  border-bottom:1px solid var(--rule-dark);
+}
+.ch-n{
+  font-family:var(--display);font-weight:800;
+  letter-spacing:-.03em;line-height:.92;
+  font-size:clamp(46px,6.4vw,82px);
+  margin-top:clamp(20px,2.6vw,30px);
+}
+.ch-u{
+  font:400 clamp(13px,1.6vw,16px)/1.35 var(--body);
+  opacity:.55;margin-top:10px;
+}
+.ch-pair{display:flex;gap:clamp(20px,3vw,36px);margin-top:clamp(22px,2.8vw,32px)}
+.ch-s{font-family:var(--display);font-weight:700;font-size:clamp(20px,2.4vw,28px);letter-spacing:-.02em}
+.ch-sl{font:400 clamp(11px,1.4vw,14px)/1.3 var(--body);opacity:.55;margin-top:5px}
+
+/* ---- posts ---- */
+.post{
+  display:grid;
+  grid-template-columns:150px 1fr;
+  gap:clamp(14px,2.4vw,32px);
+  padding:clamp(18px,2.4vw,26px) 0;
+  border-top:1px solid var(--rule-dark);
+  align-items:baseline;
+}
+.post:last-child{padding-bottom:0}
+.post-ch{
+  font:500 clamp(10px,1.2vw,12px)/1.4 var(--body);
+  letter-spacing:.16em;text-transform:uppercase;opacity:.55;
+}
+.post-h{
+  font-family:var(--display);font-weight:700;
+  letter-spacing:-.02em;line-height:1.16;
+  font-size:clamp(19px,2.5vw,29px);
+}
+.post-m{
+  font:400 clamp(12px,1.5vw,15px)/1.4 var(--body);
+  opacity:.55;margin-top:9px;
+}
+
+/* ---- what it paid ---- */
+.pay{
+  display:grid;
+  grid-template-columns:minmax(140px,200px) 1fr;
+  gap:clamp(14px,2.4vw,32px);
+  padding:clamp(18px,2.4vw,28px) 0;
+  border-top:1px solid var(--rule-light);
+  align-items:baseline;
+}
+.pay-n{
+  font-family:var(--display);font-weight:800;
+  letter-spacing:-.03em;line-height:.95;
+  font-size:clamp(30px,4.4vw,54px);
+  white-space:nowrap;
+}
+.pay-n small{font-size:.48em;letter-spacing:0}
+.pay-t{
+  font:400 clamp(14px,1.8vw,19px)/1.5 var(--body);
+  opacity:.85;
+}
+.close{
+  font-family:var(--display);font-weight:800;
+  letter-spacing:-.025em;line-height:1.02;
+  font-size:clamp(26px,4.2vw,52px);
+  margin-top:clamp(44px,6vw,76px);
+  padding-top:clamp(36px,5vw,60px);
+  border-top:1px solid var(--rule-light);
+  max-width:25ch;
+  text-wrap:balance;
+}
+.sign{
+  display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
+  margin-top:clamp(40px,5.5vw,68px);
+}
+
+@media (max-width:640px){
+  .post,.pay{grid-template-columns:1fr;gap:8px}
+  .hero{max-width:none}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <filter id="rough2" x="-25%" y="-25%" width="150%" height="150%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.022" numOctaves="3" seed="4" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="6" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <!-- house filter, scale dialled down: at 7 the displacement eats a 10px bar -->
+    <filter id="rough-sm" x="-25%" y="-25%" width="150%" height="150%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="3" seed="11" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="3" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <pattern id="ht-dark" width="11" height="11" patternUnits="userSpaceOnUse">
+      <circle cx="5.5" cy="5.5" r="2.1" fill="#0A0A0A"/>
+    </pattern>
+    <!-- one tile = one weekend -->
+    <pattern id="tally" width="38" height="64" patternUnits="userSpaceOnUse">
+      <rect width="22" height="64" fill="#0A0A0A"/>
+    </pattern>
+  </defs>
+</svg>
+
+<main class="page">
+
+  <header class="panel inv">
+    <div class="masthead-top">
+      <span class="mark">@pedro.miyasaki.ia</span>
+      <span class="stamp">Target &middot; not yet true</span>
+    </div>
+    <h1 class="hero">Nobody applied for any of this.</h1>
+    <p class="hero-sub">August 2027. Everything below is downstream of 52 weekends.</p>
+  </header>
+
+  <section class="panel">
+    <div class="eyebrow">What it cost</div>
+    <div class="figure-line">52 weekends</div>
+
+    <svg class="tally" viewBox="-24 -12 1024 186" role="img" aria-label="A tally of 52 weekends, one bar each">
+      <g filter="url(#rough2)" transform="translate(-9,7)" fill="url(#ht-dark)">
+        <rect width="972" height="64"/>
+        <rect y="86" width="972" height="64"/>
+      </g>
+      <g filter="url(#rough-sm)" fill="url(#tally)">
+        <rect width="972" height="64"/>
+        <rect y="86" width="972" height="64"/>
+      </g>
+    </svg>
+
+    <div class="ledger">
+      <div><div class="ledger-n">260</div><div class="ledger-l">reels recorded</div></div>
+      <div><div class="ledger-n">156</div><div class="ledger-l">LinkedIn posts</div></div>
+      <div><div class="ledger-n">416</div><div class="ledger-l">posts published</div></div>
+      <div><div class="ledger-n">0</div><div class="ledger-l">produced Monday to Friday</div></div>
+    </div>
+
+    <p class="note">Five reels and three LinkedIn posts a week, out of five recordings. One idea works
+    twice. The weekdays are for answering comments.</p>
+  </section>
+
+  <section class="panel">
+    <div class="eyebrow">Where it landed</div>
+    <div class="channels">
+
+      <div>
+        <div class="ch-name">LinkedIn</div>
+        <div class="ch-n">2.4M</div>
+        <div class="ch-u">impressions this year</div>
+        <div class="ch-pair">
+          <div><div class="ch-s">21,400</div><div class="ch-sl">followers</div></div>
+          <div><div class="ch-s">63k</div><div class="ch-sl">reactions</div></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="ch-name">Instagram</div>
+        <div class="ch-n">11,200</div>
+        <div class="ch-u">followers</div>
+        <div class="ch-pair">
+          <div><div class="ch-s">890k</div><div class="ch-sl">reach</div></div>
+          <div><div class="ch-s">4.8%</div><div class="ch-sl">engagement</div></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="ch-name">Substack</div>
+        <div class="ch-n">4,180</div>
+        <div class="ch-u">subscribers</div>
+        <div class="ch-pair">
+          <div><div class="ch-s">196</div><div class="ch-sl">paid</div></div>
+          <div><div class="ch-s">$1,570</div><div class="ch-sl">MRR</div></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="eyebrow">Posts that did the work</div>
+
+    <div class="post">
+      <div class="post-ch">LinkedIn</div>
+      <div>
+        <div class="post-h">Your RAG pilot didn&rsquo;t fail on retrieval. It failed because nobody owned the source of truth.</div>
+        <div class="post-m">148k impressions &middot; 2,940 reactions &middot; 312 comments</div>
+      </div>
+    </div>
+
+    <div class="post">
+      <div class="post-ch">LinkedIn</div>
+      <div>
+        <div class="post-h">The eval suite you skipped is the reason your team can&rsquo;t ship on Fridays</div>
+        <div class="post-m">96k impressions &middot; 1,780 reactions &middot; 204 comments</div>
+      </div>
+    </div>
+
+    <div class="post">
+      <div class="post-ch">Instagram &middot; carousel</div>
+      <div>
+        <div class="post-h">6 questions to ask before you approve an AI budget</div>
+        <div class="post-m">72k reach &middot; 3,100 saves</div>
+      </div>
+    </div>
+
+    <div class="post">
+      <div class="post-ch">Instagram &middot; reel</div>
+      <div>
+        <div class="post-h">What &ldquo;human in the loop&rdquo; actually costs at 40k documents a month</div>
+        <div class="post-m">54k reach &middot; 1,890 saves</div>
+      </div>
+    </div>
+
+    <div class="post">
+      <div class="post-ch">Substack</div>
+      <div>
+        <div class="post-h">Compliance is a data problem wearing a legal costume</div>
+        <div class="post-m">58% open rate &middot; 41 replies</div>
+      </div>
+    </div>
+
+    <div class="post">
+      <div class="post-ch">Substack</div>
+      <div>
+        <div class="post-h">Why your first AI hire should not be an ML engineer</div>
+        <div class="post-m">61% open rate &middot; 67 replies</div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="panel inv">
+    <div class="eyebrow">What it paid &mdash; last six months</div>
+
+    <div class="pay">
+      <div class="pay-n">$3,500</div>
+      <div class="pay-t">Paid keynote at a data engineering conference in Amsterdam. Flights and hotel on top.</div>
+    </div>
+
+    <div class="pay">
+      <div class="pay-n">$250<small>/hr</small></div>
+      <div class="pay-t">Advisory retainer with a European scale-up, six hours a month. All of it inbound from a single post.</div>
+    </div>
+
+    <div class="pay">
+      <div class="pay-n">$2,400</div>
+      <div class="pay-t">Two newsletter sponsorships at $1,200 each &mdash; a vector database and an eval tooling company.</div>
+    </div>
+
+    <div class="pay">
+      <div class="pay-n">+40%</div>
+      <div class="pay-t">Three unsolicited offers from US companies with Brazilian entities. The best one 40% above current base, negotiated without a single application.</div>
+    </div>
+
+    <div class="pay">
+      <div class="pay-n">$7,600</div>
+      <div class="pay-t">Live workshop, 40 engineering leads at $190 a seat. Sold out from one email, no ads.</div>
+    </div>
+
+    <p class="close">The same problem named in 30+ replies. That&rsquo;s the product idea, and an audience that already trusts it.</p>
+
+    <div class="sign">
+      <span class="mark">@pedro.miyasaki.ia</span>
+      <span class="mark">Written in advance &middot; August 2026</span>
+    </div>
+  </footer>
+
+</main>
+</body>
+</html>

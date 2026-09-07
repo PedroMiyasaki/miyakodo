@@ -1,0 +1,8 @@
+[project]
+name = "content-scripts"
+version = "0.1.0"
+description = "Python automations for the content workspace."
+requires-python = ">=3.10"
+dependencies = [
+    "playwright>=1.40",
+]
