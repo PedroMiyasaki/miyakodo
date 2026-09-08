@@ -1,120 +1,120 @@
 ---
 name: writing-feedback
 description: >
-  Use when the user explicitly asks to consolidate a content session's
-  accumulated writing feedback into the voice guide. Triggers: "consolidate
-  this session's writing feedback", "turn this conversation's corrections into
-  rules", "update the voice guide". Applies to content sessions (script,
-  carousel, thread, LinkedIn) after several corrections to tone, vocabulary,
-  rhythm or register. Do NOT invoke on a single mid-session correction: it runs
-  once, on demand, over all corrections in the chat.
+  Use quando o usuário pedir explicitamente para consolidar o feedback de escrita
+  acumulado numa sessão de conteúdo dentro do guia de voz. Gatilhos: "consolida o
+  feedback de escrita dessa sessão", "transforma as correções dessa conversa em
+  regras", "atualiza o guia de voz". Vale para sessões de conteúdo (roteiro,
+  carrossel, thread, LinkedIn) depois de várias correções de tom, vocabulário,
+  ritmo ou registro. NÃO invoque numa correção isolada no meio da sessão: roda
+  uma vez, sob demanda, sobre todas as correções do chat.
 ---
 
-# Writing Feedback · Voice Guide Consolidation
+# Writing Feedback · Consolidação do guia de voz
 
-## Purpose
+## Propósito
 
-Function: consolidate, in a single batch, the writing corrections the user made over a production session into permanent rules in the Voice Guide. Goal: keep the same mistake from coming back in future sessions.
+Função: consolidar, num lote só, as correções de escrita que o usuário fez ao longo de uma sessão de produção em regras permanentes no guia de voz. Objetivo: impedir que o mesmo erro volte nas sessões seguintes.
 
-Central constraint: run this skill **once, on demand, at the end of the conversation**, sweeping the whole session. Do not react to individual corrections during production.
+Restrição central: rode esta skill **uma vez, sob demanda, no fim da conversa**, varrendo a sessão inteira. Não reaja a correções individuais durante a produção.
 
-## When to use
+## Quando usar
 
-Activation condition: the user invokes it explicitly, at the end of a content production session (script, carousel, thread, LinkedIn, caption) in which they corrected tone, vocabulary, rhythm, register or structure more than once. Triggers: "consolidate this session's writing feedback", "turn this conversation's corrections into rules", "update the voice guide".
+Condição de ativação: o usuário invoca explicitamente, no fim de uma sessão de produção de conteúdo (roteiro, carrossel, thread, LinkedIn, legenda do post) em que corrigiu tom, vocabulário, ritmo, registro ou estrutura mais de uma vez. Gatilhos: "consolida o feedback de escrita dessa sessão", "transforma as correções dessa conversa em regras", "atualiza o guia de voz".
 
-**When NOT to use:**
+**Quando NÃO usar:**
 
-- Do not run it during the session, on every correction. The individual correction is already applied on the spot, inside the production skill. This skill only comes in when the user asks for the consolidation.
-- Do not run it on corrections to code, analysis or internal documents. Publishable content only.
+- Não rode durante a sessão, a cada correção. A correção individual já é aplicada na hora, dentro da skill de produção. Esta skill só entra quando o usuário pede a consolidação.
+- Não rode sobre correções de código, análise ou documentos internos. Só conteúdo publicável.
 
-## Protocol
+## Protocolo
 
-### Step 1 · Sweep the conversation
+### Passo 1 · Varrer a conversa
 
-Reread the entire conversation. Collect every moment where the user corrected, rejected or redirected *how* something was written: tone, word choice, vocabulary, rhythm, register, sentence structure, punctuation, format.
+Releia a conversa inteira. Colete todo momento em que o usuário corrigiu, rejeitou ou redirecionou *como* algo foi escrito: tom, escolha de palavra, vocabulário, ritmo, registro, estrutura de frase, pontuação, formato.
 
-For each correction, record:
+Para cada correção, registre:
 
-- **✗ rejected**: what the model had written.
-- **✓ accepted**: what the user asked for instead, or the rewrite they approved.
-- **reason**: the reason they gave, if they gave one.
+- **✗ rejeitado**: o que o modelo tinha escrito.
+- **✓ aceito**: o que o usuário pediu no lugar, ou a reescrita que ele aprovou.
+- **motivo**: a razão que ele deu, se deu.
 
-The conversation holds the real ✗/✓ pairs that feed Step 4. Do not invent examples in Step 4 when the real pair is recorded here.
+A conversa guarda os pares ✗/✓ reais que alimentam o Passo 4. Não invente exemplo no Passo 4 quando o par real está registrado aqui.
 
-If the sweep finds zero writing corrections, say so and stop. If it finds only one, go ahead anyway.
+Se a varredura encontrar zero correções de escrita, diga isso e pare. Se encontrar só uma, siga mesmo assim.
 
-### Step 2 · Assess generalization
+### Passo 2 · Avaliar a generalização
 
-A correction only becomes a rule if it is **generalizable**: if the same choice would be wrong in a future piece, on another subject. Classify each one:
+Uma correção só vira regra se for **generalizável**: se a mesma escolha estaria errada numa peça futura, sobre outro assunto. Classifique cada uma:
 
-- **Generalizable**: points at a pattern ("you always do X", "stop using Y"). The same word or structure would be wrong in any piece.
-- **One-off**: tied to this piece's subject, to a fact, or to a choice that only holds here. Or the user said "just here".
-- **Borderline**: when in doubt, mark it this way and leave the decision to the user in Step 5.
+- **Generalizável**: aponta para um padrão ("você sempre faz X", "para de usar Y"). A mesma palavra ou estrutura estaria errada em qualquer peça.
+- **Pontual**: presa ao assunto desta peça, a um fato, ou a uma escolha que só vale aqui. Ou o usuário disse "só aqui".
+- **Limítrofe**: na dúvida, marque assim e deixe a decisão para o usuário no Passo 5.
 
-Do not silently discard one-off corrections. Include them in the Step 5 proposal with the reason, so the user can promote any of them.
+Não descarte correções pontuais em silêncio. Inclua na proposta do Passo 5 com o motivo, para o usuário poder promover qualquer uma delas.
 
-### Step 3 · Deduplicate and reconcile with the guide
+### Passo 3 · Deduplicar e reconciliar com o guia
 
-The voice lives in `docs/voice/`. Read the target file: `docs/voice/base.md` by default, or the layer in `docs/voice/layers/` if the user named one. No layers exist yet, so today the target is always the base. Then run two passes:
+A voz mora em `docs/voice/`. Leia o arquivo-alvo: `docs/voice/base.md` por padrão, ou a layer em `docs/voice/layers/` se o usuário nomeou uma. Ainda não existe nenhuma layer, então hoje o alvo é sempre a base. Depois rode duas passadas:
 
-**(a) Deduplicate against each other.** If the user corrected the same pattern at different points in the conversation, treat it as one rule, not several. Merge the occurrences and keep the examples.
+**(a) Deduplicar entre si.** Se o usuário corrigiu o mesmo padrão em pontos diferentes da conversa, trate como uma regra, não várias. Junte as ocorrências e guarde os exemplos.
 
-**(b) Reconcile with the guide.** For each remaining rule, apply the table below:
+**(b) Reconciliar com o guia.** Para cada regra que sobrou, aplique a tabela abaixo:
 
-| Situation | Action |
+| Situação | Ação |
 |---|---|
-| Already covered by an existing rule, nothing new | Discard. Do not duplicate. |
-| Covered by an existing rule, but the session produced a sharper example or a broader pattern | Propose **sharpening the existing rule**: rewrite it to absorb the better example. |
-| Contradicts an existing rule | **Do not overwrite.** Flag the contradiction in the proposal and leave the decision to the user. |
-| New, not covered | Becomes a new rule in the most fitting section of the guide. |
+| Já coberta por uma regra existente, nada novo | Descarte. Não duplique. |
+| Coberta por uma regra existente, mas a sessão produziu um exemplo mais afiado ou um padrão mais amplo | Proponha **afiar a regra existente**: reescreva para absorver o exemplo melhor. |
+| Contradiz uma regra existente | **Não sobrescreva.** Aponte a contradição na proposta e deixe a decisão para o usuário. |
+| Nova, não coberta | Vira regra nova na seção do guia que melhor encaixa. |
 
-### Step 4 · Write the rules with sharp examples
+### Passo 4 · Escrever as regras com exemplos afiados
 
-For each new rule and each entry to sharpen, write the item in the style of the guide's rules:
+Para cada regra nova e cada entrada a afiar, escreva o item no estilo das regras do guia:
 
-- **Bold** at the opening, naming the pattern to avoid or the calibration.
-- One diagnostic sentence: why it sounds wrong, or why the calibration matters.
-- A concrete example, preferably the ✗/✓ contrast pulled from the real session: the sentence the model wrote and the one the user accepted. A generic example ("avoid formal words") is precisely what the rule should eliminate.
-- Timeless: no date, no "in this session", no reference to the episode.
+- **Negrito** na abertura, nomeando o padrão a evitar ou a calibração.
+- Uma frase de diagnóstico: por que soa errado, ou por que a calibração importa.
+- Um exemplo concreto, de preferência o contraste ✗/✓ tirado da sessão real: a frase que o modelo escreveu e a que o usuário aceitou. Exemplo genérico ("evite palavras formais") é exatamente o que a regra deveria eliminar.
+- Atemporal: sem data, sem "nesta sessão", sem referência ao episódio.
 
-Place each rule in the most fitting section of the target file. `docs/voice/base.md` is organized as: **Structure**, **Significance inflation and promotional language**, **Vocabulary**, **Grammar-level tics**, **Rhythm and style**, **Hedging, filler, vague attribution**, **Connective tissue**, **Voice and texture**. If a group of rules fits none of them, propose a new section, with a title.
+Coloque cada regra na seção do arquivo-alvo que melhor encaixa. `docs/voice/base.md` está organizado em: **Estrutura**, **Inflação de importância e linguagem promocional**, **Vocabulário**, **Tiques de gramática**, **Ritmo e estilo**, **Hedge, enchimento e atribuição vaga**, **Tecido conectivo**, **Voz e textura**. Se um grupo de regras não encaixa em nenhuma, proponha uma seção nova, com título.
 
-### Step 5 · Propose the batch to the user
+### Passo 5 · Propor o lote ao usuário
 
-Before touching the file, present the whole proposal in one message:
+Antes de tocar no arquivo, apresente a proposta inteira numa mensagem só:
 
-- **New rules**: each one as the literal markdown item that will be inserted, under its target subsection.
-- **Entries to sharpen**: the current item and the proposed one, side by side.
-- **One-offs**: listed, each with a line saying "treating as one-off because X".
-- **Conflicts**: "correction Z contradicts rule N in the guide; pick which of the two holds, the skill does not decide on its own."
+- **Regras novas**: cada uma como o item markdown literal que vai ser inserido, com a subseção de destino.
+- **Entradas a afiar**: o item atual e o proposto, lado a lado.
+- **Pontuais**: listadas, cada uma com uma linha dizendo "tratando como pontual porque X".
+- **Conflitos**: "a correção Z contradiz a regra N do guia; escolha qual das duas vale, a skill não decide sozinha."
 
-The user can approve everything, approve a subset, edit the text, or promote and demote items. Do not write anything without explicit approval.
+O usuário pode aprovar tudo, aprovar um subconjunto, editar o texto, ou promover e rebaixar itens. Não escreva nada sem aprovação explícita.
 
-### Step 6 · Apply in batch
+### Passo 6 · Aplicar em lote
 
-After approval, apply all approved changes at once, to the target file identified in Step 3: `docs/voice/base.md` by default, or the named layer in `docs/voice/layers/`.
+Depois da aprovação, aplique todas as mudanças aprovadas de uma vez, no arquivo-alvo identificado no Passo 3: `docs/voice/base.md` por padrão, ou a layer nomeada em `docs/voice/layers/`.
 
-Preserve the target file's existing structure. Insert each rule inside the section it belongs to, in the voice the file already uses. Do not append a "session corrections" block at the end and do not restructure the document to accommodate a rule.
+Preserve a estrutura existente do arquivo-alvo. Insira cada regra dentro da seção a que ela pertence, na voz que o arquivo já usa. Não acrescente um bloco de "correções da sessão" no fim e não reestruture o documento para acomodar uma regra.
 
-Then confirm to the user what was inserted, and where.
+Depois confirme ao usuário o que foi inserido, e onde.
 
-The skill does not re-correct the session's outputs. The corrections were already applied on the spot, during production.
+A skill não recorrige as saídas da sessão. As correções já foram aplicadas na hora, durante a produção.
 
-## What this skill does not do
+## O que esta skill não faz
 
-- Does not run on its own during the session. Only when the user asks, once, at the end.
-- Does not settle a contradiction between a new correction and an existing rule on its own: it flags it and leaves the decision to the user.
-- Does not invent examples. It uses the real ✗/✓ pairs from the conversation.
-- Does not re-correct the session's outputs.
-- Does not promote a correction to a rule without the user's approval.
-- Does not record feedback about code, analysis or internal documents.
+- Não roda sozinha durante a sessão. Só quando o usuário pede, uma vez, no fim.
+- Não resolve sozinha uma contradição entre uma correção nova e uma regra existente: aponta e deixa a decisão para o usuário.
+- Não inventa exemplos. Usa os pares ✗/✓ reais da conversa.
+- Não recorrige as saídas da sessão.
+- Não promove uma correção a regra sem a aprovação do usuário.
+- Não registra feedback sobre código, análise ou documentos internos.
 
-## Rule quality bar
+## Régua de qualidade da regra
 
-A rule is good enough when:
+Uma regra está boa o bastante quando:
 
-- A senior AI engineer can apply it without ambiguity.
-- It prevents the specific mistake that was corrected, without banning what was never a problem.
-- The example is real (from the session) and sharp (a ✗/✓ contrast, not a generic illustration).
+- Um engenheiro de IA sênior consegue aplicar sem ambiguidade.
+- Ela impede o erro específico que foi corrigido, sem proibir o que nunca foi problema.
+- O exemplo é real (da sessão) e afiado (um contraste ✗/✓, não uma ilustração genérica).
 
-If the rule comes out vague ("don't use formal words"), refine it until it can be applied mechanically.
+Se a regra sair vaga ("não use palavras formais"), refine até dar para aplicar mecanicamente.

@@ -1,43 +1,43 @@
-# Saturday — 5 scripts, 5 recordings, first edit pass
+# Sábado — 5 roteiros, 5 gravações, primeira passada de edição
 
-**Ends with:** 5 scripts in `posts/script/`, 5 videos in `video/inputs/`, 5 first cuts rendering. What stays open depends on the mode.
-**Publishes nothing.** Context and the 🔥 test: [README](README.md).
+**Termina com:** 5 roteiros em `posts/script/`, 5 vídeos em `video/inputs/`, 5 primeiros cortes renderizando. O que fica aberto depende do modo.
+**Não publica nada.** Contexto e o teste 🔥: [README](README.md).
 
-**Mode — pick before opening anything.** `default` unless you want speed.
+**Modo: escolha antes de abrir qualquer coisa.** `default`, a não ser que você queira velocidade.
 
-| Mode | When | What you open |
+| Modo | Quando | O que você abre |
 |---|---|---|
-| **default** | Isolation. One conversation per piece. | 5 agent sessions |
-| **multitask** | Speed. One conversation running the day. | 1 session spanning 5 agents |
+| **default** | Isolamento. Uma conversa por peça. | 5 sessões de agente |
+| **multitask** | Velocidade. Uma conversa tocando o dia. | 1 sessão abrangendo 5 agentes |
 
-- [ ] **Read the latest [aprendizados](../aprendizados.md)** — top entries first, before anything else.
-  ⚠️ Whatever broke last week repeats today unless you read it now. New mistake today → new entry there.
+- [ ] **Leia os [aprendizados](../aprendizados.md) mais recentes**, as entradas do topo primeiro, antes de qualquer coisa.
+  ⚠️ O que quebrou na semana passada repete hoje se você não ler agora. Erro novo hoje → entrada nova lá.
 
-- [ ] **Pick 5 phase-A ideas** from the Ideas database (`ACP Phase` = `A · Audience`), all passing the 🔥 test.
-  ⚠️ No perishable news — a reel recorded today may not air until Thursday.
-  🖋 Try to leave at least one of the 5 with real depth under it — a number, a decision you made, code you can paste. Sunday's article usually comes from one of them. Not a hard rule: news from the week can take that slot instead.
+- [ ] **Escolha 5 ideias de fase A** no banco Ideas (`ACP Phase` = `A · Audience`), todas passando no teste 🔥.
+  ⚠️ Nada de notícia perecível: um reel gravado hoje pode só ir ao ar na quinta.
+  🖋 Tente deixar pelo menos uma das 5 com profundidade de verdade embaixo: um número, uma decisão que você tomou, código que dá para colar. O artigo de domingo normalmente sai de uma delas. Não é regra dura: notícia da semana pode ocupar esse slot no lugar.
 
-- [ ] **Write the 5 scripts.** Iterate to "done" in all 5.
-  🔥 Spend the iterations on the first two lines. A hook that doesn't stop the scroll invalidates the rest.
-  - **default:** Open 5 agent sessions, one per script, and run `write-script` in each.
-  - **multitask:** Open 1 coordinating session. It spans 5 agents, one per script, runs `write-script` in each, and owns the process — you talk to the session, not to the five agents. The agents coordinate through it (shared slugs, no colliding hooks, no two agents on the same piece).
+- [ ] **Escreva os 5 roteiros.** Itere até o "pronto" nos 5.
+  🔥 Gaste as iterações nas duas primeiras linhas. Um hook que não segura o scroll invalida o resto.
+  - **default:** Abra 5 sessões de agente, uma por roteiro, e rode `write-script` em cada uma.
+  - **multitask:** Abra 1 sessão coordenadora. Ela abrange 5 agentes, um por roteiro, roda `write-script` em cada um e é dona do processo: você fala com a sessão, não com os cinco agentes. Os agentes se coordenam por ela (slugs compartilhados, sem hook colidindo, sem dois agentes na mesma peça).
 
-- [ ] **Record all 5 on the teleprompter, in one batch** — same light, same clothes, same setup.
-  💡 Record a 6th if the day allows. It skips the schedule and becomes stock.
+- [ ] **Grave os 5 no teleprompter, num lote só**: mesma luz, mesma roupa, mesmo setup.
+  💡 Grave um 6º se o dia permitir. Ele pula o agendamento e vira stock.
 
-- [ ] **Move the recordings off your phone** into `video/inputs/`, each file **named after its script slug**.
-  ⚠️ Every step from here on is addressed by slug. Don't leave five unnamed exports.
+- [ ] **Tire as gravações do celular** para `video/inputs/`, cada arquivo **com o nome do slug do roteiro**.
+  ⚠️ Daqui em diante todo passo é endereçado por slug. Não deixe cinco exports sem nome.
 
-- [ ] **Fire the first edit pass** in the same layout you wrote in. Run `edit-video` once per script, in the fitting mode:
-  - news-driven → `news`
-  - thesis / position → `baseline`
-  - burned-in captions → only if you ask (`subtitles` is opt-in; Instagram makes its own)
-  **Fire and leave.** Don't review tonight — that's tomorrow's first job.
-  - **default:** fire it in those same 5 agent sessions.
-  - **multitask:** fire it from the coordinating session — it dispatches `edit-video` to each of the 5 agents.
+- [ ] **Dispare a primeira passada de edição** no mesmo layout em que você escreveu. Rode `edit-video` uma vez por roteiro, no mode que encaixa:
+  - puxado por notícia → `news`
+  - tese / posição → `baseline`
+  - legenda queimada no vídeo → só se você pedir (`subtitles` é opt-in, o Instagram gera a dele)
+  **Dispare e vá embora.** Não revise hoje à noite: isso é a primeira tarefa de amanhã.
+  - **default:** dispare nas mesmas 5 sessões de agente.
+  - **multitask:** dispare da sessão coordenadora, que despacha `edit-video` para cada um dos 5 agentes.
 
-- [ ] **Leave a resume note for Sunday.**
-  - **default:** which agent session owns which slug. Tomorrow resumes all 5.
-  - **multitask:** that this weekend is multitask, and the coordinating session's name. Tomorrow resumes that one session.
+- [ ] **Deixe uma nota de retomada para o domingo.**
+  - **default:** qual sessão de agente é dona de qual slug. Amanhã retoma as 5.
+  - **multitask:** que este fim de semana é multitask, e o nome da sessão coordenadora. Amanhã retoma essa única sessão.
 
-Next: **[Sunday](sunday.md)**
+Próximo: **[Domingo](sunday.md)**

@@ -1,100 +1,100 @@
-# Sunday — the article, 3 carousels, 2 LinkedIn posts, schedule the week
+# Domingo — o artigo, 3 carrosséis, 2 posts de LinkedIn, agendar a semana
 
-**Ends with:** 7 Instagram carousels, 3 LinkedIn posts, 1 Substack article and all 11 posts scheduled.
-**No recording and no video editing.**
-**Agent teams are mandatory.** Resume Saturday's coordinator so assignments and slugs stay consistent.
+**Termina com:** 7 carrosséis de Instagram, 3 posts de LinkedIn, 1 artigo no Substack e os 11 posts agendados.
+**Sem gravação e sem edição de vídeo.**
+**Times de agentes são obrigatórios.** Retome a coordenadora do sábado para as atribuições e os slugs continuarem consistentes.
 
-- [ ] **Resume Saturday's coordinating session.**
-  Confirm the 3 carousel drafts awaiting correction, their original agents, the 2 LinkedIn reuse assignments, yesterday's 5 finished slugs and the article subject you left picked.
+- [ ] **Retome a sessão coordenadora do sábado.**
+  Confirme os 3 rascunhos de carrossel esperando correção, seus agentes originais, as 2 atribuições de reuso do LinkedIn, os 5 slugs fechados ontem e o assunto do artigo que você deixou escolhido.
 
-## Substack — fire it first, it runs all day
+## Substack — dispare primeiro, ele roda o dia inteiro
 
-The article is the longest piece of the week and it publishes today. Start it before the first carousel review, then check in between reviews.
+O artigo é a peça mais longa da semana e publica hoje. Comece antes da primeira revisão de carrossel, depois vá dando uma olhada nele entre as revisões.
 
-- [ ] **Confirm the subject** from yesterday's note — one of the week's theses, or **news from this week**. The article publishes today, so nothing here is too perishable.
-  Pick for material, not for hook: the right subject is the one where you can already name three things you could go capture.
-  ⚠️ News only works if you can reach a primary source — the paper, the model card, the pricing page. Without one there is no article, only the fifth summary of the same announcement.
+- [ ] **Confirme o assunto** pela nota de ontem: uma das teses da semana, ou **notícia desta semana**. O artigo publica hoje, então nada aqui é perecível demais.
+  Escolha pelo material, não pelo hook: o assunto certo é aquele em que você já consegue nomear três coisas que dá para ir capturar.
+  ⚠️ Notícia só funciona se você alcança uma fonte primária: o paper, o model card, a página de preços. Sem isso não tem artigo, só o quinto resumo do mesmo anúncio.
 
-- [ ] **Open 1 agent session, run** `write-substack` on it. Then leave it and start the carousel reviews.
+- [ ] **Abra 1 sessão de agente e rode** `write-substack` nela. Depois deixe ela lá e comece as revisões de carrossel.
 
-- [ ] **Approve the plan when it comes back** — spine, outline, shot list. Do this between two reviews; it takes two minutes.
-  🖋 This is the cheapest place all day to change direction. Read the shot list: if you can't picture the image, the agent can't capture it.
+- [ ] **Aprove o plano quando ele voltar**: espinha, outline, shot list. Faça isso entre duas revisões. Leva dois minutos.
+  🖋 É o lugar mais barato do dia inteiro para mudar de direção. Leia a shot list: se você não consegue imaginar a imagem, o agente não consegue capturar.
 
-- [ ] **Iterate the text to locked, then let it run the capture session.** 3 to 8 real browser captures plus a cover.
-  ⚠️ Every image is a real capture from a primary source. If the agent offers a stock photo or a diagram it built, that's a bug — send it back.
+- [ ] **Itere o texto até travar, depois deixe o agente rodar a sessão de captura.** 3 a 8 capturas reais de navegador mais uma capa.
+  ⚠️ Toda imagem é uma captura real de fonte primária. Se o agente oferecer foto de banco de imagens ou um diagrama que ele montou, é bug: devolva.
 
-- [ ] **Review the article with the images in place**, not the text alone. Each image needs runway before it and a takeaway after.
+- [ ] **Revise o artigo com as imagens no lugar**, não só o texto. Cada imagem precisa de pista antes e de conclusão depois.
 
-- [ ] **Spend one round on the title alone.** It's the email subject line and the only thing most of the list will ever read.
+- [ ] **Gaste uma rodada só no título.** Ele é o assunto do email e a única coisa que a maior parte da lista vai ler.
 
-## Review and correction — 3 carousels
+## Revisão e correção — 3 carrosséis
 
-The first drafts already exist. Resume their original agents so each correction becomes a new local version instead of a rewrite.
+Os primeiros rascunhos já existem. Retome os agentes originais para cada correção virar uma versão local nova em vez de uma reescrita.
 
-- [ ] **Put the 3 remaining carousels through the full correction loop, one review at a time:**
-  1. Read the complete slide copy and caption.
-  2. Give concrete notes to that piece's agent.
-  3. Review the revised version; repeat until the text is approved.
-  4. Inspect every rendered slide for hierarchy, overflow, awkward breaks, repetition and weak visual composition.
-  5. Send visual or copy corrections back to the same agent and re-render.
-  6. Say "done" only when both copy and rendered slides are publishable.
+- [ ] **Passe os 3 carrosséis restantes pelo loop de correção completo, uma revisão por vez:**
+  1. Leia a copy completa dos slides e a legenda do post.
+  2. Dê notas concretas ao agente daquela peça.
+  3. Revise a versão corrigida e repita até o texto ser aprovado.
+  4. Inspecione cada slide renderizado: hierarquia, overflow, quebra estranha, repetição e composição visual fraca.
+  5. Mande as correções visuais ou de copy de volta para o mesmo agente e renderize de novo.
+  6. Diga "pronto" só quando copy e slides renderizados estiverem publicáveis.
 
-  While you review the next piece, agents revise the ones already returned. Never use two agents on the same piece.
+  Enquanto você revisa a próxima peça, os agentes corrigem as que já foram devolvidas. Nunca use dois agentes na mesma peça.
 
-## LinkedIn — 2 agents in parallel
+## LinkedIn — 2 agentes em paralelo
 
-- [ ] **Dispatch 2 LinkedIn agents**, one reserved reuse idea per agent. Each runs `build-linkedin`.
-  Reuse the thesis, not the carousel wording.
+- [ ] **Despache 2 agentes de LinkedIn**, uma ideia de reuso reservada por agente. Cada um roda `build-linkedin`.
+  Reaproveite a tese, não o texto do carrossel.
 
-- [ ] **Put both LinkedIn posts through the full correction loop:**
-  1. Review each complete text and return notes.
-  2. Review the revised version; repeat until the writing is approved.
-  3. Review each chosen image with its post.
-  4. Request replacements or text corrections until each pair is publishable.
+- [ ] **Passe os dois posts de LinkedIn pelo loop de correção completo:**
+  1. Revise cada texto completo e devolva notas.
+  2. Revise a versão corrigida e repita até a escrita ser aprovada.
+  3. Revise cada imagem escolhida junto com seu post.
+  4. Peça substituições ou correções de texto até cada par estar publicável.
 
-  A first draft does not count as finished. Use the agents' revision time to review the other post or finish a carousel.
+  Primeiro rascunho não conta como pronto. Use o tempo de correção dos agentes para revisar o outro post ou fechar um carrossel.
 
-- [ ] **If one of the 3 LinkedIn posts shares the article's thesis, hand that agent the article.** Give it `posts/substack/<slug>/final.md` so it doesn't repeat the piece, and have it close on the link.
-  🖋 That post is the subscription engine: cold LinkedIn readers, one click from the list.
+- [ ] **Se um dos 3 posts de LinkedIn tem a mesma tese do artigo, entregue o artigo para esse agente.** Dê a ele `posts/substack/<slug>/final.md` para não repetir a peça, e faça o post fechar no link.
+  🖋 Esse post é o motor de assinatura: leitor frio do LinkedIn a um clique da lista.
 
-- [ ] **Check the complete week's output:**
-  - 7 carousel folders in `posts/carousel/`, each with `final.md` and rendered slides
-  - 3 LinkedIn folders in `posts/linkedin/`, each with `final.md` and `image.png`
-  - 1 Substack folder in `posts/substack/`, with `final.md`, `cover.png` and the numbered captures
-  - no piece still awaiting your review or an agent revision
+- [ ] **Confira a saída completa da semana:**
+  - 7 pastas de carrossel em `posts/carousel/`, cada uma com `final.md` e os slides renderizados
+  - 3 pastas de LinkedIn em `posts/linkedin/`, cada uma com `final.md` e `image.png`
+  - 1 pasta de Substack em `posts/substack/`, com `final.md`, `cover.png` e as capturas numeradas
+  - nenhuma peça ainda esperando sua revisão ou correção de agente
 
-## Schedule
+## Agendar
 
-- [ ] **Start scheduling only after all 11 pieces are approved.**
-  Scheduling is protected work, not the place to discover unfinished copy or broken slides.
+- [ ] **Só comece a agendar depois das 11 peças aprovadas.**
+  Agendamento é trabalho protegido, não o lugar para descobrir copy inacabada ou slide quebrado.
 
-- [ ] **Build the grid before opening any app.** The window starts today.
+- [ ] **Monte a grade antes de abrir qualquer app.** A janela começa hoje.
 
-  | Day             | Instagram  | LinkedIn   | Substack  |
-  | --------------- | ---------- | ---------- | --------- |
-  | **Sun (today)** | carousel 1 | —          | article 🖋 |
-  | Mon             | carousel 2 | LinkedIn 1 | —         |
-  | Tue             | carousel 3 | —          | —         |
-  | Wed             | carousel 4 | LinkedIn 2 | —         |
-  | Thu             | carousel 5 | —          | —         |
-  | Fri             | carousel 6 | LinkedIn 3 | —         |
-  | Sat             | carousel 7 | —          | —         |
+  | Dia             | Instagram   | LinkedIn   | Substack  |
+  | --------------- | ----------- | ---------- | --------- |
+  | **Dom (hoje)**  | carrossel 1 | —          | artigo 🖋 |
+  | Seg             | carrossel 2 | LinkedIn 1 | —         |
+  | Ter             | carrossel 3 | —          | —         |
+  | Qua             | carrossel 4 | LinkedIn 2 | —         |
+  | Qui             | carrossel 5 | —          | —         |
+  | Sex             | carrossel 6 | LinkedIn 3 | —         |
+  | Sáb             | carrossel 7 | —          | —         |
 
-  Put the most timely carousel first. Keep the strongest evergreen piece for the end of the window.
-  ⏱️ Carousel 1 goes out today — if the slot has passed, publish it now instead of scheduling it.
-  🖋 The article goes out today too, written today. That zero lag is what lets it be news.
+  O carrossel mais urgente primeiro. Guarde a peça evergreen mais forte para o fim da janela.
+  ⏱️ O carrossel 1 sai hoje: se o horário já passou, publique agora em vez de agendar.
+  🖋 O artigo também sai hoje, escrito hoje. Esse lag zero é o que deixa ele ser notícia.
 
-- [ ] **Publish the Substack article.** Everything is in `posts/substack/<slug>/`: paste `final.md`, drag each PNG onto its `![NN — …]` marker, paste the captions, set `cover.png` as the cover.
-  ⚠️ Substack sends an email. A typo reaches the whole list and can't be edited after send — read the title and the first paragraph once more before you hit publish.
+- [ ] **Publique o artigo no Substack.** Está tudo em `posts/substack/<slug>/`: cole o `final.md`, arraste cada PNG para o marcador `![NN — …]` dele, cole as legendas das imagens, defina `cover.png` como capa.
+  ⚠️ O Substack manda email. Um erro de digitação chega na lista inteira e não dá para editar depois de enviar: leia o título e o primeiro parágrafo mais uma vez antes de apertar publicar.
 
-- [ ] **Schedule the 7 carousels** on Instagram with their captions.
+- [ ] **Agende os 7 carrosséis** no Instagram, cada um com sua legenda.
 
-- [ ] **Schedule the 3 LinkedIn posts.** If one links the article, put that one on Monday, right behind it.
+- [ ] **Agende os 3 posts de LinkedIn.** Se um deles linka o artigo, coloque esse na segunda, logo atrás dele.
 
-- [ ] **Re-check the whole grid before closing.**
-  Confirm dates, channels, captions, slide order, LinkedIn images and the article's captures.
+- [ ] **Confira a grade inteira antes de fechar.**
+  Confirme datas, canais, legendas, ordem dos slides, imagens do LinkedIn e as capturas do artigo.
 
-- [ ] **Close the 7 ideas in Notion:** `Status` → `Processed`, `Format` → `IG Carousel`.
-  ⚠️ The 3 reused ideas can carry only one `Format`; keep the primary Instagram format. The article adds nothing here; `write-substack` deliberately skips the Notion write when it reuses a thesis. If the article came from fresh news instead, that idea closes on its own as `Substack`.
+- [ ] **Feche as 7 ideias no Notion:** `Status` → `Processed`, `Format` → `IG Carousel`.
+  ⚠️ As 3 ideias reaproveitadas só carregam um `Format`. Mantenha o formato primário do Instagram. O artigo não adiciona nada aqui. `write-substack` pula a escrita no Notion de propósito quando reaproveita uma tese. Se o artigo veio de notícia nova, essa ideia fecha sozinha como `Substack`.
 
-Next: **[Saturday](saturday.md)**
+Próximo: **[Sábado](saturday.md)**

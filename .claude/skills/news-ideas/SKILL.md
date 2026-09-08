@@ -1,181 +1,181 @@
 ---
 name: news-ideas
 description: >
-  Reads recent AI news from leading international sources, distills each
-  relevant fact (new models, apps, funding rounds, startups, research,
-  acquisitions, regulation) into a content idea and writes it straight to the
-  Notion Ideas DB. Activate with commands like "update the ideas with today's AI
-  news", "pull today's AI headlines" or "run the news radar".
+  Lê as notícias recentes de IA nas principais fontes internacionais, destila cada
+  fato relevante (modelos novos, apps, rodadas de investimento, startups, pesquisa,
+  aquisições, regulação) numa ideia de conteúdo e grava direto no banco Ideas do
+  Notion. Ative com comandos como "atualiza as ideias com as notícias de IA de hoje",
+  "puxa as manchetes de IA de hoje" ou "roda o radar de notícias".
 ---
 
-## Ideas from the AI news cycle
+## Ideias a partir do noticiário de IA
 
-Purpose: sweep the AI news cycle, identify what actually counts as news and convert each relevant fact into a content idea filed in the bank. The output is ideas ready to enter the queue.
+Propósito: varrer o noticiário de IA, identificar o que conta de verdade como notícia e converter cada fato relevante numa ideia de conteúdo registrada no banco. A saída são ideias prontas para entrar na fila.
 
-Every idea generated carries the same underlying intent: to report a fact from the news cycle through content. The fact varies, the intent doesn't. A new model, a funding round, a freshly launched app, an acquisition, a paper or a regulatory shift — each case becomes "how the user tells this fact to their audience".
-
----
-
-## Available tools
-
-- **WebFetch**: pull the curated news digests
-- **WebSearch**: catch recent breaking stories not yet in the digests
-- **Notion MCP**: read ideas already on record (dedupe)
-- **Bash**: read and write `last-run.txt`, the sweep window marker
-- **`capture-idea` skill**: handles the filing in Notion. Don't duplicate that write.
+Toda ideia gerada carrega a mesma intenção de fundo: reportar um fato do noticiário por meio de conteúdo. O fato varia, a intenção não. Um modelo novo, uma rodada de investimento, um app recém-lançado, uma aquisição, um paper ou uma mudança regulatória: cada caso vira "como o usuário conta esse fato para a audiência dele".
 
 ---
 
-## Required references
+## Ferramentas disponíveis
 
-Before generating any idea, load everything below:
+- **WebFetch**: puxar os digests curados de notícias
+- **WebSearch**: pegar as notícias quentes recentes que ainda não entraram nos digests
+- **Notion MCP**: ler as ideias já registradas (dedupe)
+- **Bash**: ler e escrever `last-run.txt`, o marcador da janela de varredura
+- **Skill `capture-idea`**: cuida do registro no Notion. Não duplique essa escrita.
 
-**Via Notion (MCP), `notion-fetch` with the ID below:**
+---
 
-| Object | ID | What to look for |
+## Referências obrigatórias
+
+Antes de gerar qualquer ideia, carregue tudo abaixo:
+
+**Via Notion (MCP), `notion-fetch` com o ID abaixo:**
+
+| Objeto | ID | O que procurar |
 |---|---|---|
-| **Ideas** | `e2970ca3-7724-4a81-8f12-7ea34c048c67` | Titles and Notes of the ideas already on record (so you don't repeat a story) |
+| **Ideas** | `e2970ca3-7724-4a81-8f12-7ea34c048c67` | Títulos e Notes das ideias já registradas (para você não repetir uma história) |
 
 ---
 
-## Voice calibration
+## Calibração de voz
 
-The voice lives in `docs/voice/`. Read `docs/voice/base.md`: it is the base voice for every piece, in every format, and the default whenever the user has not named a layer. If the user names a layer, read it from `docs/voice/layers/` as well — a layer wins over the base wherever the two disagree. No layers exist yet, so today the base is the whole voice.
+A voz mora em `docs/voice/`. Leia `docs/voice/base.md`: é a voz base de toda peça, em todo formato, e o padrão sempre que o usuário não nomear uma layer. Se o usuário nomear uma layer, leia também essa layer em `docs/voice/layers/`: a layer ganha da base onde as duas discordarem. Ainda não existe nenhuma layer, então hoje a base é a voz inteira.
 
-There is no audience or pillar document: if the piece needs a target reader or an angle, ask the user.
-
----
-
-## The sweep window
-
-`.claude/skills/news-ideas/last-run.txt` holds a single line: the UTC timestamp of the last sweep, ISO 8601 (`2026-08-26T14:03:11Z`). It defines the window this run covers — **from that timestamp up to now**.
-
-Read it at Step 1, write it at Step 7, every run, whether or not anything was filed. The window was swept either way.
-
-If the file is missing (first run ever, or it was deleted), fall back to **the last 7 days** and carry on — do not treat it as an error.
-
-The window is a filter on *publication date*, not a promise the sources honor it. Digests reprint older items and search results drift; check each candidate's own date and drop anything published before the window opens. Dedupe against the bank still runs on top of this — a boundary story that already got filed does not get filed twice.
+Não existe documento de audiência nem de pilar: se a peça precisar de um leitor-alvo ou de um ângulo, pergunte ao usuário.
 
 ---
 
-## News sources
+## A janela de varredura
 
-### Must check — every run, no exceptions
+`.claude/skills/news-ideas/last-run.txt` guarda uma única linha: o timestamp UTC da última varredura, em ISO 8601 (`2026-08-26T14:03:11Z`). Ele define a janela que esta rodada cobre: **daquele timestamp até agora**.
 
-| Source | URL |
+Leia no Passo 1 e escreva no Passo 7, em toda rodada, tenha registrado alguma coisa ou não. A janela foi varrida de qualquer jeito.
+
+Se o arquivo não existir (primeira rodada da vida, ou alguém apagou), use **os últimos 7 dias** e siga em frente. Não trate isso como erro.
+
+A janela é um filtro de *data de publicação*, não uma promessa de que as fontes vão respeitar. Os digests reimprimem itens antigos e os resultados de busca escorregam: confira a data de cada candidato e descarte o que foi publicado antes de a janela abrir. O dedupe contra o banco continua rodando por cima disso: uma história na fronteira que já foi registrada não entra duas vezes.
+
+---
+
+## Fontes de notícia
+
+### Obrigatórias, em toda rodada, sem exceção
+
+| Fonte | URL |
 |---|---|
-| AI News (smol.ai daily digest) | `https://news.smol.ai/` |
+| AI News (digest diário do smol.ai) | `https://news.smol.ai/` |
 | Anthropic News | `https://www.anthropic.com/news` |
 | OpenAI News | `https://openai.com/news/` |
 | Google Gemini News | `https://gemini.google/latest-news/` |
 
-**The three provider blogs are owned media: most of what they publish is marketing, not news.** Judge each post before it becomes an idea. A shipped model, a real capability, a price change, a deprecation, a published benchmark or paper is news. A customer success story, a partnership announcement with no product behind it, a policy manifesto, a rebrand, an enterprise-tier pitch or a "we believe" essay is advertising — discard it. When the post is a launch wrapped in marketing, keep the shipped fact and throw away the framing.
+**Os três blogs dos provedores são mídia própria: a maior parte do que eles publicam é marketing, não notícia.** Julgue cada post antes de ele virar ideia. Um modelo lançado, uma capacidade real, uma mudança de preço, uma depreciação, um benchmark ou um paper publicado é notícia. Um case de cliente, um anúncio de parceria sem produto por trás, um manifesto de política, um rebrand, um pitch de plano enterprise ou um ensaio do tipo "nós acreditamos" é propaganda: descarte. Quando o post é um lançamento embrulhado em marketing, fique com o fato lançado e jogue fora a embalagem.
 
-### Also check
+### Também conferir
 
-| Source | URL |
+| Fonte | URL |
 |---|---|
 | TLDR AI | `https://tldr.tech/ai` |
 | The Batch (DeepLearning.AI) | `https://www.deeplearning.ai/the-batch/` |
 | Import AI | `https://importai.substack.com/` |
-| Latent Space (essays, podcast) | `https://www.latent.space/` |
+| Latent Space (ensaios, podcast) | `https://www.latent.space/` |
 | Simon Willison | `https://simonwillison.net/` |
-| Hacker News (front page) | `https://news.ycombinator.com/` |
+| Hacker News (página inicial) | `https://news.ycombinator.com/` |
 
-The must-check list is a floor, not a ceiling: the sweep still covers the sources above **and** runs **one WebSearch pass** for breaking stories from the last 7 days not yet in the digests (e.g. `"AI" funding round`, `new LLM release`, `AI acquisition`, anchored on the sweep window). Everything worth reporting that week that no provider blog would ever publish — funding, acquisitions, regulation, rival labs, open source — comes from there. On Hacker News, consider AI items only.
+A lista obrigatória é um piso, não um teto: a varredura ainda cobre as fontes acima **e** roda **uma passada de WebSearch** atrás de notícias quentes dos últimos 7 dias que ainda não entraram nos digests (ex.: `"AI" funding round`, `new LLM release`, `AI acquisition`, ancoradas na janela de varredura). Tudo que vale reportar naquela semana e que nenhum blog de provedor publicaria (investimento, aquisição, regulação, labs concorrentes, open source) vem daí. No Hacker News, considere só os itens de IA.
 
 ---
 
-## Execution protocol
+## Protocolo de execução
 
-### Step 1 · Load context (in parallel)
+### Passo 1 · Carregar o contexto (em paralelo)
 
-- `notion-fetch` on data source `e2970ca3-7724-4a81-8f12-7ea34c048c67` to read the ideas already on record (titles + Notes, which is where the source URL for dedupe comes from)
-- Read the window marker and stamp this run in one shot:
+- `notion-fetch` no data source `e2970ca3-7724-4a81-8f12-7ea34c048c67` para ler as ideias já registradas (títulos + Notes, que é de onde sai a URL de origem para o dedupe)
+- Leia o marcador da janela e carimbe esta rodada de uma vez só:
 
   ```bash
   cat .claude/skills/news-ideas/last-run.txt 2>/dev/null || echo "(no marker — sweep the last 7 days)"
   date -u +%Y-%m-%dT%H:%M:%SZ
   ```
 
-  The first line is where the window **opens**; the second is `NOW`, where it closes — hold on to that exact string, it is what Step 7 writes.
-- Settle tone, audience and angle with the user (see § Voice calibration)
+  A primeira linha é onde a janela **abre**; a segunda é `NOW`, onde ela fecha. Guarde essa string exata: é o que o Passo 7 escreve.
+- Acerte tom, audiência e ângulo com o usuário (ver a seção de calibração de voz acima)
 
-Don't skip this step: dedupe, the sweep window and relevance calibration depend entirely on what gets loaded here.
+Não pule este passo: o dedupe, a janela de varredura e a calibração de relevância dependem inteiramente do que é carregado aqui.
 
-### Step 2 · Fetch the news
+### Passo 2 · Buscar as notícias
 
-Run WebFetch on each curated source plus the WebSearch pass. Gather candidate facts published **inside the window** from Step 1 — since the last sweep, up to `NOW`. Don't include anything published before the window opens, even if it shows up in the search or sits on a digest's front page.
+Rode WebFetch em cada fonte curada, mais a passada de WebSearch. Reúna os fatos candidatos publicados **dentro da janela** do Passo 1: desde a última varredura, até `NOW`. Não inclua nada publicado antes de a janela abrir, mesmo que apareça na busca ou esteja na página inicial de um digest.
 
-### Step 3 · Select what is actually news
+### Passo 3 · Selecionar o que é notícia de verdade
 
-Keep only a **concrete, datable, verifiable fact** from the AI space that touches a pain, decision or curiosity of the audience the user defined.
+Fique só com fatos **concretos, datáveis e verificáveis** do espaço de IA que tocam numa dor, numa decisão ou numa curiosidade da audiência que o usuário definiu.
 
-**Discard:**
-- Warmed-over opinion, listicles, promotional content dressed up as news
-- Rumors without a trustworthy source
-- Any fact already represented in the bank (same story **or** same source URL) — dedupe is mandatory, because this skill writes without human review and may run again tomorrow
+**Descarte:**
+- Opinião requentada, listicles, conteúdo promocional vestido de notícia
+- Boatos sem fonte confiável
+- Qualquer fato que já está representado no banco (mesma história **ou** mesma URL de origem). O dedupe é obrigatório, porque esta skill escreve sem revisão humana e pode rodar de novo amanhã
 
-**Volume:** equal to the number of relevant stories that day. It might be 2, it might be 8. Don't force a number and **don't invent news to fill a quota**. If nothing new clears the bar, file nothing and say so.
+**Volume:** igual ao número de histórias relevantes do dia. Pode ser 2, pode ser 8. Não force um número e **não invente notícia para bater cota**. Se nada novo passar na régua, não registre nada e diga isso.
 
-### Step 4 · Frame each story as an idea
+### Passo 4 · Enquadrar cada história como ideia
 
-For each selected story, produce:
+Para cada história selecionada, produza:
 
-**Idea title:** maximum 10 words, in the user's voice, written in English. It must be the *content angle*, not the headline copied over. Concept by its effect, not by its name; anti-hype; no untranslated jargon; never open with "Did you know", "Today" or "Hi there".
+**Título da ideia:** no máximo 10 palavras, na voz do usuário, escrito em português. Tem que ser o *ângulo de conteúdo*, não a manchete copiada. Conceito pelo efeito, não pelo nome, sem hype e sem jargão sem explicação. Nunca abra com "Você sabia", "Hoje" ou "Olá pessoal".
 
-- Headline: "OpenAI launches GPT-5.5 with a 2M token window"
-- Bad title (copy): "GPT-5.5 arrives with 2M tokens of context"
-- Good title (angle): "A giant context window won't fix your process problem"
+- Manchete: "OpenAI lança o GPT-5.5 com janela de 2M de tokens"
+- Título ruim (cópia): "GPT-5.5 chega com 2M de tokens de contexto"
+- Título bom (ângulo): "Janela de contexto gigante não conserta seu problema de processo"
 
-**Notes:** a 1–2 sentence summary of the fact + `Source: <URL>` + `Suggested format: <Reel | Thread | IG Carousel | LinkedIn Post>`.
+**Notes:** um resumo do fato em 1 ou 2 frases + `Fonte: <URL>` + `Formato sugerido: <Reel | Thread | IG Carousel | LinkedIn Post>`.
 
-### Step 5 · File everything
+### Passo 5 · Registrar tudo
 
-For each idea, invoke the `capture-idea` skill via the Skill tool, passing the **framed title** and the **notes block** (summary + `Source: <URL>` + suggested format). `capture-idea` handles the write to Notion. The source URL **must be preserved in the Notes field**.
+Para cada ideia, invoque a skill `capture-idea` pela ferramenta Skill, passando o **título enquadrado** e o **bloco de notas** (resumo + `Fonte: <URL>` + formato sugerido). A `capture-idea` cuida da escrita no Notion. A URL de origem **precisa ser preservada no campo Notes**.
 
-Don't ask for approval and don't present the ideas beforehand. File them all directly.
+Não peça aprovação e não apresente as ideias antes. Registre todas direto.
 
-### Step 6 · Report
+### Passo 6 · Reportar
 
-Close with a short list of what was filed: one line per idea, with the source. No intro and no commentary.
+Feche com uma lista curta do que foi registrado: uma linha por ideia, com a fonte. Sem introdução e sem comentário.
 
 ```
-Filed in the bank:
-1. [title] — [source]
-2. [title] — [source]
+Registrado no banco:
+1. [título] — [fonte]
+2. [título] — [fonte]
 ```
 
-If nothing cleared the bar: `Nothing new worth covering in today's news. Nothing filed.`
+Se nada passou na régua: `Nada novo que valha cobrir nas notícias de hoje. Nada registrado.`
 
-Say which window was swept in one line: `Window: <last-run> → <NOW>` (or `last 7 days → <NOW>` on a first run).
+Diga em uma linha qual janela foi varrida: `Janela: <last-run> → <NOW>` (ou `últimos 7 dias → <NOW>` numa primeira rodada).
 
-### Step 7 · Stamp the run
+### Passo 7 · Carimbar a rodada
 
-Last thing, always — even when nothing was filed, even when a fetch failed:
+Última coisa, sempre, mesmo quando nada foi registrado, mesmo quando um fetch falhou:
 
 ```bash
 printf '%s
 ' '<NOW>' > .claude/skills/news-ideas/last-run.txt
 ```
 
-`<NOW>` is the exact timestamp captured in Step 1, not a fresh `date` call: anything published while the sweep was running stays inside the next window instead of falling through the gap.
+`<NOW>` é o timestamp exato capturado no Passo 1, não uma chamada nova de `date`: o que foi publicado enquanto a varredura rodava fica dentro da próxima janela em vez de cair no vão.
 
 ---
 
-## Tone and behavior
+## Tom e comportamento
 
-- **No hype.** The angle is always what the fact changes in practice for the audience, not a reaction to the news.
-- **Don't copy the headline.** The title is the content angle, not the press release.
-- **Don't make things up.** If the source doesn't confirm the fact, it doesn't become an idea.
-- **Dedupe first.** Before filing, confirm the story isn't already in the bank.
-- **Always stamp.** Step 7 runs on every path, including the empty one. A skipped stamp makes the next run re-sweep ground already covered.
+- **Sem hype.** O ângulo é sempre o que o fato muda na prática para a audiência, não uma reação à notícia.
+- **Não copie a manchete.** O título é o ângulo de conteúdo, não o press release.
+- **Não invente.** Se a fonte não confirma o fato, ele não vira ideia.
+- **Dedupe primeiro.** Antes de registrar, confirme que a história ainda não está no banco.
+- **Sempre carimbe.** O Passo 7 roda em todo caminho, inclusive o vazio. Um carimbo pulado faz a próxima rodada varrer de novo um terreno já coberto.
 
 ---
 
-## Out of scope
+## Fora do escopo
 
-- Doesn't write the final content (that's the `write-*` skills' job)
-- Doesn't publish anything outside the Ideas DB
-- Doesn't opine on the news or rank the ideas
-- Doesn't ask for approval: it files whatever clears the bar
+- Não escreve o conteúdo final (isso é trabalho das skills `write-*`)
+- Não publica nada fora do banco Ideas
+- Não opina sobre a notícia nem ranqueia as ideias
+- Não pede aprovação: registra o que passar na régua

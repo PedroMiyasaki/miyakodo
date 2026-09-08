@@ -1,255 +1,271 @@
-# Carousel craft
+# Craft de carrossel
 
-Working reference for carousels. Derived from a corpus of five viral carousels in
+Referência de trabalho para carrosséis. Derivada de um corpus de cinco carrosséis virais em
 `examples/carousels/` (`calebraalston`, `habitosqueabracam`, `okaashish`, `souantisocialmedia`,
-`yasminkbs`) — every rule below is a practice observed in **all five**, across two languages and
-five unrelated niches, plus the composition craft that survived contact with that corpus.
+`yasminkbs`): toda regra abaixo é uma prática observada nos **cinco**, em dois idiomas e cinco
+nichos sem relação entre si, mais o craft de composição que sobreviveu ao contato com esse corpus.
 
-**Read before writing copy and before writing HTML.** The `carousel` skill reads this file on every
-run and applies it to both halves of the piece. The principles are one system: a locked template
-can't rescue copy that buries its conclusion, and a good headline can't survive a slide that has
-four other things on it.
+**Leia antes de escrever copy e antes de escrever HTML.** A skill `carousel` lê este arquivo a cada
+execução e aplica ele às duas metades da peça. Os princípios são um sistema só: um template travado
+não salva uma copy que enterra a conclusão, e uma boa headline não sobrevive a um slide que tem
+outras quatro coisas em cima.
 
 ---
 
-## 0 · The identity slots
+## 0 · Os slots de identidade
 
-The visual system is not defined yet. It doesn't need to be for this document to work — but a
-carousel cannot be composed until these slots have values. **Ask the user, or read them from the
-identity doc once it exists, before writing any HTML.** Declare them once in the piece's `<style>`
-and never deviate slide to slide.
+O sistema visual ainda não está definido. Ele não precisa estar para este documento funcionar, só
+que não dá para compor um carrossel enquanto esses slots não tiverem valor. **Pergunte ao usuário,
+ou leia do documento de identidade quando ele existir, antes de escrever qualquer HTML.** Declare
+os slots uma vez no `<style>` da peça e nunca desvie de um slide para outro.
 
-| Slot | What it is | Corpus range |
+| Slot | O que é | Faixa no corpus |
 |---|---|---|
-| `GROUND` | The background. One flat color, every slide. | dark teal / warm paper / white / lime / cream |
-| `INK` | The text color. | cream / brown / black / navy / klein blue |
-| `ACCENT` | **Exactly one.** Marks one consistent meaning throughout. | pale sage / teal / one blue / none |
-| `DISPLAY` | Headline face. | serif, slab, handwriting, grotesque |
-| `BODY` | Body face. May be the same as DISPLAY. | sans, serif, same-as-display |
-| `MARK` | Brand furniture: masthead, handle, or corner mark. Same place, same size, every slide. | logo lockup / dashed rule + dot / handle / asterisk + label |
-| `ART` | The illustration language. One style, used everywhere. May be `none`. | line art / ukiyo-e collage / doodle + mascot / pen drawing / none |
-| `TEXTURE` | Optional ground treatment. Subtle or absent. | paper grain / noise / flat |
+| `GROUND` | O fundo. Uma cor chapada, em todo slide. | teal escuro / papel quente / branco / lima / creme |
+| `INK` | A cor do texto. | creme / marrom / preto / azul-marinho / azul klein |
+| `ACCENT` | **Exatamente um.** Marca um significado consistente do começo ao fim. | sálvia claro / teal / um azul / nenhum |
+| `DISPLAY` | Fonte da headline. | serifada, slab, manuscrita, grotesca |
+| `BODY` | Fonte do body. Pode ser a mesma do DISPLAY. | sans, serifada, a mesma do display |
+| `MARK` | Mobília de marca: masthead, handle ou marca de canto. Mesmo lugar, mesmo tamanho, em todo slide. | lockup do logo / linha tracejada + ponto / handle / asterisco + rótulo |
+| `ART` | A linguagem de ilustração. Um estilo, usado em tudo. Pode ser `none`. | line art / colagem ukiyo-e / doodle + mascote / desenho a caneta / nenhum |
+| `TEXTURE` | Tratamento opcional do fundo. Sutil ou ausente. | grão de papel / ruído / chapado |
 
-Rules that bind regardless of what fills the slots:
+Regras que valem independentemente do que preenche os slots:
 
-- **Two type families maximum.** Three of the five corpus accounts use one. Size is the hierarchy;
-  there is no third family for "meta".
-- **One accent, one meaning.** In `okaashish`, blue means *this is the number or the payoff word* —
-  every time, no exceptions. In `habitosqueabracam`, teal means *this is the fact you didn't know*.
-  An accent that marks three different things is decoration, not a signal.
-- **`ART: none` is viable but is the hard mode.** `yasminkbs` runs 15 type-only slides and works,
-  because the type block is enormous and every sentence is a scene the reader recognizes. Four of
-  five accounts use an illustration language, and it is their primary thumbnail-recognition asset.
-- **The identity must survive the thumbnail test:** shrink a slide to 20% and crop the handle. If it
-  isn't identifiable as this account, the slots are set too weakly.
-
----
-
-## P1 · The cover sells a countable unit, not a topic
-
-The cover tells the reader two things before the first swipe: **what the unit is** and **roughly how
-many there are.** Not the subject — the shape of the thing they're about to consume.
-
-> "Hábitos japoneses que você vai querer copiar" → a list of habits you can steal
-> "I researched **1540** Reddit posts… here's what I found" → findings from a real dataset
-> "Quantity **or** Quality content" → one binary, resolved by a method
-
-A topic is an invitation to *maybe* swipe. A countable unit is a contract: the reader knows slide 2
-holds one habit / one stat / one moment, and that there's an end. Finite promises get finished.
-
-- **A number does the work of a paragraph.** `1540 Reddit posts` is the entire credibility argument
-  for a 13-slide carousel, in three words. In this niche: a model name, a price, a benchmark
-  number, a dated release, a count of things tested.
-- **State the payoff, not the process.** "que você vai querer copiar", "Here's what I found",
-  "hoje mesmo". The reader is told what they walk away with.
-- The cover is the piece's largest typographic gesture. Display at the top of the scale.
-
-**Check:** does the cover name a unit and imply a count? If it names a subject, rewrite it.
+- **No máximo duas famílias tipográficas.** Três das cinco contas do corpus usam uma. O tamanho é a
+  hierarquia. Não existe uma terceira família para "meta".
+- **Um accent, um significado.** No `okaashish`, azul quer dizer *isto é o número ou a palavra do
+  ganho*, toda vez, sem exceção. No `habitosqueabracam`, teal quer dizer *isto é o fato que você
+  não sabia*. Um accent que marca três coisas diferentes é decoração, não sinal.
+- **`ART: none` é viável, mas é o modo difícil.** O `yasminkbs` roda 15 slides só com tipografia e
+  funciona, porque o bloco de texto é enorme e cada frase é uma cena que o leitor reconhece. Quatro
+  das cinco contas usam uma linguagem de ilustração, e ela é o principal ativo de reconhecimento no
+  thumbnail.
+- **A identidade tem que sobreviver ao teste do thumbnail:** encolha um slide para 20% e corte o
+  handle. Se não dá para identificar que é esta conta, os slots estão fracos demais.
 
 ---
 
-## P2 · One idea per slide, headline-first — the headlines alone are the article
+## P1 · A capa vende uma unidade contável, não um tema
 
-Every slide follows the same internal grammar:
+A capa diz duas coisas ao leitor antes do primeiro swipe: **qual é a unidade** e **mais ou menos
+quantas tem.** Não o assunto: a forma da coisa que ele vai consumir.
+
+> "Hábitos japoneses que você vai querer copiar" → uma lista de hábitos para roubar
+> "I researched **1540** Reddit posts… here's what I found" → achados de um dataset real
+> "Quantity **or** Quality content" → um binário, resolvido por um método
+
+Um tema é um convite para *talvez* deslizar. Uma unidade contável é um contrato: o leitor sabe que
+o slide 2 traz um hábito / uma estatística / um momento, e que existe um fim. Promessa finita é
+promessa que o leitor termina.
+
+- **Um número faz o trabalho de um parágrafo.** `1540 Reddit posts` é o argumento de credibilidade
+  inteiro de um carrossel de 13 slides, em três palavras. Neste nicho: o nome de um modelo, um
+  preço, um número de benchmark, um lançamento com data, uma contagem de coisas testadas.
+- **Diga o ganho, não o processo.** "que você vai querer copiar", "Here's what I found", "hoje
+  mesmo". O leitor fica sabendo o que leva embora.
+- A capa é o maior gesto tipográfico da peça. Display no topo da escala.
+
+**Cheque:** a capa nomeia uma unidade e sugere uma contagem? Se ela nomeia um assunto, reescreva.
+
+---
+
+## P2 · Uma ideia por slide, headline primeiro: as headlines sozinhas são o artigo
+
+Todo slide segue a mesma gramática interna:
 
 ```
-HEADLINE   ← the conclusion, a complete self-contained sentence, readable in ~1.5s
-body       ← the support: why, how, the caveat, the example        (optional)
-proof      ← the screenshot, the diagram, the illustration          (optional)
+HEADLINE   ← a conclusão, uma frase completa que se sustenta sozinha, legível em ~1,5s
+body       ← o apoio: por quê, como, a ressalva, o exemplo              (opcional)
+proof      ← o print, o diagrama, a ilustração                          (opcional)
 ```
 
-The headline is **never a label and never a teaser** — it is the finding itself. Not "Automation"
-but "**More than 60% are adding AI to traditional services.**" The body then gives context and
-caveat. This is inverted pyramid: **conclusion first, setup after.**
+A headline **nunca é um rótulo e nunca é um teaser**: ela é o achado em si. Não "Automation", mas
+"**More than 60% are adding AI to traditional services.**" O body então dá contexto e ressalva.
+Isso é pirâmide invertida: **conclusão primeiro, preparação depois.**
 
-> This reverses the old "establish → evidence → effect" rule. The corpus does not spend a slide, or
-> the top of a slide, on setup. What it does instead is make the headline self-sufficient: the
-> number always arrives with its subject attached, never as a naked figure.
+> Isso inverte a regra antiga de "estabelecer → evidência → efeito". O corpus não gasta um slide,
+> nem o topo de um slide, com preparação. O que ele faz é deixar a headline autossuficiente: o
+> número chega sempre com o sujeito grudado, nunca como um número pelado.
 
-**The readthrough test — the single most useful check in this document.** Read only the headlines,
-top to bottom. If that alone is a coherent article, the carousel works. If it reads as fragments,
-the headlines are labels and the piece will lose every skimmer.
+**O teste de leitura corrida, o cheque mais útil deste documento inteiro.** Leia só as headlines,
+de cima a baixo. Se isso sozinho for um artigo coerente, o carrossel funciona. Se ler como
+fragmentos, as headlines são rótulos e a peça vai perder todo mundo que passa o olho.
 
-Carousels are consumed at two speeds at once: a fast skim down the headline layer, and a slow read
-of the two or three slides that landed. Both audiences are served by the same file. A slide that
-needs the previous slide to make sense breaks the skim layer and loses the skimmer permanently.
+O leitor consome carrossel em duas velocidades ao mesmo tempo: uma passada rápida pela camada das
+headlines e uma leitura lenta dos dois ou três slides que pegaram. O mesmo arquivo atende as duas
+audiências. Um slide que precisa do anterior para fazer sentido quebra a camada rápida e perde quem
+passa o olho para sempre.
 
-**One idea per slide, no exceptions.** Not one topic — one idea. Three steps means three slides. A
-four-part formula is one idea and may share a slide, split into four visually separated rows.
+**Uma ideia por slide, sem exceção.** Não um tema: uma ideia. Três passos são três slides. Uma
+fórmula de quatro partes é uma ideia e pode dividir um slide, separada em quatro linhas visualmente
+distintas.
 
 ---
 
-## P3 · Lock one template; spend novelty on content, never on layout
+## P3 · Trave um template e gaste a novidade no conteúdo, nunca no layout
 
-The most disciplined thing the corpus does, and the easiest to get wrong.
+A coisa mais disciplinada que o corpus faz, e a mais fácil de errar.
 
-**The template never changes.** Same slots, same hierarchy, same positions, slide after slide.
-`yasminkbs`: 15 slides, identical header, identical type size, identical margin, only the sentence
-changes. `habitosqueabracam`: a fixed masthead — dashed rule, brand dot, term in display, translation
-in condensed caps, serif body, accent pull-quote — five times without deviation.
+**O template nunca muda.** Mesmos slots, mesma hierarquia, mesmas posições, slide após slide.
+`yasminkbs`: 15 slides, header idêntico, tamanho de tipo idêntico, margem idêntica, só a frase
+muda. `habitosqueabracam`: um masthead fixo (linha tracejada, ponto da marca, termo em display,
+tradução em caixa alta condensada, body serifado, pull-quote no accent), cinco vezes sem desvio.
 
-> This reverses the old "no template, every slide composed on the spot" constraint. That rule was
-> producing variety the reader experiences as friction. The eye re-learns a new layout in about half
-> a second; across 12 slides that is six seconds of attention spent on navigation.
+> Isso inverte a restrição antiga de "sem template, cada slide composto na hora". Aquela regra
+> produzia uma variedade que o leitor sente como atrito. O olho reaprende um layout novo em mais ou
+> menos meio segundo. Em 12 slides são seis segundos de atenção gastos em navegação.
 
-What is allowed to move: `souantisocialmedia` and `calebraalston` shift the text block and the
-illustration around the canvas between slides so the sequence doesn't read as copy-paste. The
-**elements and their hierarchy stay frozen**; only their position on the canvas breathes.
+O que pode se mover: `souantisocialmedia` e `calebraalston` deslocam o bloco de texto e a
+ilustração pelo canvas entre um slide e outro, para a sequência não parecer copiar e colar. Os
+**elementos e a hierarquia deles ficam congelados**. Só a posição no canvas respira.
 
-**Layout, consistent across all five:**
+**Layout, consistente nos cinco:**
 
-- **4:5 — 1080×1350.** Maximum vertical real estate in the feed.
-- **The headline owns the top third.** Every slide, every account. The bottom third is illustration
-  or deliberate air — that's where the IG chrome, the caption preview and the reader's thumb live.
-- **Safe margin ≈ 88px (8%).** The corpus runs 8–9%, not the 4% a 48px margin gives.
-- **Type scale, measured off the corpus at 1080 width:**
+- **4:5, 1080×1350.** O máximo de espaço vertical no feed.
+- **A headline é dona do terço de cima.** Todo slide, toda conta. O terço de baixo é ilustração ou
+  ar de propósito: é ali que moram a interface do Instagram, a prévia da legenda do post e o dedão
+  do leitor.
+- **Margem de segurança ≈ 88px (8%).** O corpus roda entre 8 e 9%, não os 4% que uma margem de
+  48px dá.
+- **Escala tipográfica, medida no corpus a 1080 de largura:**
 
-  | Level | Size | Notes |
+  | Nível | Tamanho | Notas |
   |---|---|---|
-  | Cover hook | 90–130px | The piece's largest gesture |
-  | Slide headline | 70–110px | Tight leading — a block, not a paragraph |
-  | Body | 40–56px | Below ~36px is illegible in the feed |
-  | Reading-carousel body | 38–44px | Density mode only — see the split below |
+  | Hook da capa | 90–130px | O maior gesto da peça |
+  | Headline do slide | 70–110px | Entrelinha apertada: um bloco, não um parágrafo |
+  | Body | 40–56px | Abaixo de ~36px fica ilegível no feed |
+  | Body de carrossel de leitura | 38–44px | Só nesse modo de densidade, veja a divisão abaixo |
 
-- **Whitespace is a level of hierarchy.** `yasminkbs` leaves ~40% of most slides empty and it reads
-  as confidence. That works because the type block is enormous — see the dead-air section.
-- **No page indicator.** Zero of the five have one; Instagram already draws the dots.
+- **Espaço em branco é um nível de hierarquia.** O `yasminkbs` deixa uns 40% da maioria dos slides
+  vazios e isso passa confiança. Funciona porque o bloco de texto é enorme, veja a seção sobre
+  espaço morto.
+- **Sem indicador de página.** Nenhuma das cinco tem. O Instagram já desenha as bolinhas.
 
-**Two densities. Pick one per piece, deliberately.**
+**Duas densidades. Escolha uma por peça, de propósito.**
 
-- **Reading carousel** (`habitosqueabracam`): 6–8 lines of body per slide, serif at large size.
-  Trades reach for depth. Use when the value *is* the information.
-- **Recognition carousel** (`yasminkbs`): one sentence per slide. Trades depth for swipe speed and
-  taggability. Use when the value is "this is literally my team."
+- **Carrossel de leitura** (`habitosqueabracam`): 6 a 8 linhas de body por slide, serifada em
+  tamanho grande. Troca alcance por profundidade. Use quando o valor *é* a informação.
+- **Carrossel de reconhecimento** (`yasminkbs`): uma frase por slide. Troca profundidade por
+  velocidade de swipe e por marcação. Use quando o valor é "isso é literalmente o meu time".
 
-A carousel that lands halfway between them works less well than either.
-
----
-
-## P4 · Every claim anchors to something the reader can picture
-
-Not one slide in the corpus argues with adjectives. Each claim resolves to one of four forms:
-
-1. **A number.** `1540 posts`, `60%`, `<5%`, `$3k–$5k`, `£250`, `20–30 minutes`.
-2. **An artifact.** `okaashish` pins a real screenshot to nearly every slide. It is often unreadable
-   at feed size and that is fine — it isn't there to be read, it's there to prove the claim came
-   from somewhere. *In this niche: a thread, a repo, a pricing page, a benchmark table, a dashboard.*
-3. **A named thing.** `Tsundoku`, `Ichigo ichie`, "the Accordion Method". A named concept is
-   portable — the reader can repeat it to someone else, which is the mechanism behind a share.
-4. **An exact scene.** The sharpest form, and the one the corpus leans on hardest:
-
-   > "sem um áudio de 7 minutos antes" — not *bad communication*
-   > "a única coisa nova que entra na sua cabeça é notificação do Teams" — not *you're in a rut*
-   > "não conta ir num restaurante diferente ou cortar a franja" — pre-empting the reader's excuse
-
-Specificity produces recognition, and recognition is what gets commented and shared. "Be a better
-leader" gets a like; "when someone sends 'resolved' without a 7-minute voice note first" gets tagged
-to a colleague. You cannot tag someone into an abstraction.
-
-**Hedge in the open.** `okaashish` writes "**I did not verify, though**" and "**Not verified**"
-directly on the slides. The honesty adds authority — it reads as someone who actually went to the
-source rather than someone selling the conclusion. This aligns with `docs/voice/base.md` §6: name
-the source, give the date, or drop the claim.
+Um carrossel que fica no meio do caminho entre os dois funciona pior que qualquer um deles.
 
 ---
 
-## P5 · The last two slides: reframe, then one low-effort ask
+## P4 · Toda afirmação ancora em algo que o leitor consegue visualizar
 
-**The penultimate slide is the payoff, never the weakest list item.** It's where the sequence stops
-listing and starts meaning something:
+Nenhum slide do corpus argumenta com adjetivos. Cada afirmação se resolve numa de quatro formas:
 
-> `okaashish` s12: "The real AI money formula" — the answer the previous ten slides earned.
-> `habitosqueabracam` s7: "each of these solves a need we have too, it just never got a name here."
-> `calebraalston` s5: "Repeat the cycle" — closes the loop the metaphor opened.
+1. **Um número.** `1540 posts`, `60%`, `<5%`, `$3k–$5k`, `£250`, `20–30 minutes`.
+2. **Um artefato.** O `okaashish` prega um print real em quase todo slide. Muitas vezes é ilegível
+   no tamanho do feed, e tudo bem: ele não está ali para ser lido, está ali para provar que a
+   afirmação veio de algum lugar. *Neste nicho: uma thread, um repo, uma página de preços, uma
+   tabela de benchmark, um dashboard.*
+3. **Uma coisa com nome.** `Tsundoku`, `Ichigo ichie`, "the Accordion Method". Um conceito com
+   nome viaja: o leitor consegue repetir para outra pessoa, e é esse o mecanismo por trás do
+   compartilhamento.
+4. **Uma cena exata.** A forma mais afiada, e a que o corpus mais usa:
 
-**The final slide asks for exactly one thing the reader already has the answer to.** Two shapes:
+   > "sem um áudio de 7 minutos antes", e não *comunicação ruim*
+   > "a única coisa nova que entra na sua cabeça é notificação do Teams", e não *você está estagnado*
+   > "não conta ir num restaurante diferente ou cortar a franja", antecipando a desculpa do leitor
 
-*Comment gate* — one word, in quotes, with a stated reward bigger than what was just delivered:
+Especificidade produz reconhecimento, e reconhecimento é o que gera comentário e compartilhamento.
+"Seja um líder melhor" ganha um like. "Quando alguém manda 'resolvido' sem um áudio de 7 minutos
+antes" vira marcação para um colega. Ninguém marca alguém numa abstração.
+
+**Faça a ressalva às claras.** O `okaashish` escreve "**I did not verify, though**" e "**Not
+verified**" direto nos slides. A honestidade dá autoridade: soa como alguém que foi mesmo até a
+fonte, não como alguém vendendo a conclusão. Isso bate com `base.md` § 6: nomeie a fonte,
+dê a data, ou derrube a afirmação.
+
+---
+
+## P5 · Os dois últimos slides: a virada, depois um pedido de baixo esforço
+
+**O penúltimo slide é o ganho, nunca o item mais fraco da lista.** É onde a sequência para de
+listar e começa a significar alguma coisa:
+
+> `okaashish` s12: "The real AI money formula", a resposta que os dez slides anteriores mereceram.
+> `habitosqueabracam` s7: "cada um deles resolve uma necessidade que a gente também tem, só nunca
+> ganhou nome aqui."
+> `calebraalston` s5: "Repeat the cycle", fecha o ciclo que a metáfora abriu.
+
+**O último slide pede exatamente uma coisa que o leitor já sabe responder.** Duas formas:
+
+*Comentário com palavra-chave*: uma palavra, entre aspas, com uma recompensa dita maior que o que
+acabou de ser entregue:
 > "Comment **'Select'** — if you want the full system for how to make content that gets you customers."
 > "Comment **'REDDIT'** — and I'll share the full breakdown."
 
-*Answerable question* — no cognitive work required:
-> "If you could steal just one of these habits this month, which one?"
+*Pergunta com resposta pronta*: sem trabalho cognitivo nenhum:
+> "Se você pudesse roubar só um desses hábitos este mês, qual seria?"
 
-Never "what do you think?" Both shapes narrow the answer to a choice the reader already made while
-reading. The follow-ask, if present, comes after and is thrown away as a joke — never the primary CTA.
+Nunca "o que você acha?". As duas formas estreitam a resposta para uma escolha que o leitor já fez
+enquanto lia. O pedido de follow, se existir, vem depois e é jogado como piada, nunca como o CTA
+principal.
 
-**The CTA slide may break visual register.** `calebraalston` flips from dark teal to gold for the
-final slide. `calebraalston` also runs the CTA in the **footer of every slide**, so the ask never
-depends on reaching the end — worth stealing. Both CTA slides in the corpus are dead-centered with
-the largest type in the deck; the CTA is the loudest slide, not the soberest.
+**O slide de CTA pode quebrar o registro visual.** O `calebraalston` vira de teal escuro para
+dourado no último slide. O `calebraalston` também roda o CTA no **rodapé de todo slide**, então o
+pedido nunca depende de chegar ao fim. Vale roubar. Os dois slides de CTA do corpus estão
+centralizados no meio, com o maior tipo do deck: o CTA é o slide que mais grita, não o mais sóbrio.
 
-*Exception, noted so it isn't copied by accident:* `yasminkbs` has no CTA — it ends on the 15th item
-and stops. Viable only when the content is pure identification and the share **is** the CTA. Four of
-five have an explicit ask; treat "no CTA" as the exception it is.
+*Exceção, anotada para não ser copiada sem querer:* o `yasminkbs` não tem CTA. Termina no 15º item
+e para. Só é viável quando o conteúdo é identificação pura e o compartilhamento **é** o CTA. Quatro
+de cinco têm um pedido explícito. Trate "sem CTA" como a exceção que é.
 
 ---
 
-## Craft layer · dead air, optical weight, feedback
+## Camada de craft · espaço morto, peso óptico, feedback
 
-**"Too much empty space" almost always means dead air, not too much negative space.**
+**"Muito espaço vazio" quase sempre quer dizer espaço morto, não espaço negativo demais.**
 
-| | Intentional negative space | Dead air (failure) |
+| | Espaço negativo intencional | Espaço morto (falha) |
 |---|---|---|
-| Function | Frames the content, forces focus | Screen left over because the content is too light |
-| Feel | Deliberate, it breathes | Unfinished, "text-only-at-the-top" |
-| Optical weight | The main block is dense and large | Tiny title + tiny body + huge void underneath |
-| Thumbnail | The hook still dominates | Looks like a blank page with one line |
+| Função | Emoldura o conteúdo, força o foco | Tela que sobrou porque o conteúdo é leve demais |
+| Sensação | Deliberado, respira | Inacabado, "só texto lá em cima" |
+| Peso óptico | O bloco principal é denso e grande | Título minúsculo + body minúsculo + vazio enorme embaixo |
+| Thumbnail | O hook ainda domina | Parece uma página em branco com uma linha |
 
-Fix dead air with **scale, typographic mass and grouping** — never by scattering micro-elements into
-the corners. `yasminkbs` is the proof: 40% empty, and it reads as confidence because the type block
-carries all the weight.
+Corrija espaço morto com **escala, massa tipográfica e agrupamento**, nunca espalhando
+micro-elementos pelos cantos. O `yasminkbs` é a prova: 40% vazio, e passa confiança porque o bloco
+de texto carrega todo o peso.
 
-**Terms to use when planning and when explaining a correction:**
+**Termos para usar ao planejar e ao explicar uma correção:**
 
-- **Visual anchor** — the element carrying the slide. Every slide needs exactly one.
-- **Optical weight** — how much an element weighs in the composition.
-- **Typographic mass** — text as a solid block: high scale plus tight leading, not a blog paragraph.
-- **Grouping (proximity)** — same idea sits close; different ideas get a clear interval.
-- **Asymmetrical balance** — weight in one corner offset by weight in another.
-- **Figure-ground contrast** — the text has to jump off the ground in the thumbnail.
+- **Âncora visual**: o elemento que carrega o slide. Todo slide precisa de exatamente uma.
+- **Peso óptico**: quanto um elemento pesa na composição.
+- **Massa tipográfica**: texto como bloco sólido, escala alta mais entrelinha apertada, não
+  parágrafo de blog.
+- **Agrupamento (proximidade)**: a mesma ideia fica junta. Ideias diferentes ganham um intervalo
+  claro.
+- **Equilíbrio assimétrico**: peso num canto compensado por peso em outro.
+- **Contraste figura-fundo**: o texto tem que saltar do fundo no thumbnail.
 
-**Translating subjective feedback:**
+**Convertendo feedback subjetivo em ajuste:**
 
-| User says | Diagnose |
+| O usuário diz | Diagnostique |
 |---|---|
-| "empty" | Dead air or negative space? Missing anchor? Type scale too timid? |
-| "no impact" | Weak hierarchy, low contrast, insufficient typographic mass |
-| "I didn't get it" | Headline is a label instead of the conclusion, or jargon with no effect on the same screen |
-| "boring" | Template locked correctly but the copy failed P4 — no number, artifact, name or scene |
+| "vazio" | Espaço morto ou espaço negativo? Falta âncora? Escala tipográfica tímida demais? |
+| "sem impacto" | Hierarquia fraca, contraste baixo, massa tipográfica insuficiente |
+| "não entendi" | Headline é rótulo em vez de conclusão, ou jargão sem efeito na mesma tela |
+| "sem graça" | Template travado certo, mas a copy falhou no P4: sem número, artefato, nome ou cena |
 
 ---
 
-## Frame contract (rigid)
+## Contrato de frame (rígido)
 
-1. Each slide is `<section class="slide">`, exactly `width: 1080px; height: 1350px; overflow: hidden`.
-   The renderer reads the `.slide` selector.
-2. Minimum inner padding **88px** on all sides.
-3. Flat `GROUND`. Never a gradient. Inverting to dark is a whole-piece decision, never per-slide.
-4. `data-theme="light"` on the root so the render doesn't inherit OS dark mode.
-5. Fonts: only the `DISPLAY` / `BODY` families. Declared once, at the top.
-6. Render-safe: static final state. No `:hover`, no animation, no JS for content that must appear.
-7. `MARK` in the same corner, same size, every slide.
+1. Cada slide é um `<section class="slide">`, exatamente `width: 1080px; height: 1350px; overflow: hidden`.
+   O renderizador lê o seletor `.slide`.
+2. Padding interno mínimo de **88px** em todos os lados.
+3. `GROUND` chapado. Nunca degradê. Inverter para escuro é decisão da peça inteira, nunca de um
+   slide.
+4. `data-theme="light"` na raiz, para o render não herdar o modo escuro do sistema.
+5. Fontes: só as famílias `DISPLAY` / `BODY`. Declaradas uma vez, no topo.
+6. Seguro para render: estado final estático. Sem `:hover`, sem animação, sem JS para conteúdo que
+   precisa aparecer.
+7. `MARK` no mesmo canto, no mesmo tamanho, em todo slide.
 
 ```bash
 uv run python scripts/render_html_to_pngs.py \
@@ -260,60 +276,61 @@ uv run python scripts/render_html_to_pngs.py \
 
 ---
 
-## Forbidden
+## Proibido
 
-Stock photography. Gradient. Emoji. Icon libraries. Em dash (—). Cards with shadow + accent border.
-Mixed emphasis (bold + color + underline + box on the same phrase). A third type family. More than
-one accent color. A decorative slide that carries no sentence — every slide in the corpus, all 51,
-carries one. Padding a list to hit a slide count. Hedged headlines — caveats live in the body.
-
----
-
-## Hard ceiling: 10 slides
-
-**Instagram carousels on this account cap at 10 images. This is a platform constraint, not an
-editorial preference — an 11th slide does not get posted.** Cover and CTA are two of the ten, so the
-argument has **eight slides** to work with.
-
-This overrides the corpus's "length follows the unit count." When the unit count exceeds eight,
-truncating the list is the wrong fix — cutting item 9 leaves a promise the cover already made. Do
-one of these instead:
-
-1. **Merge siblings.** Three examples that make the same point are one slide with three lines, not
-   three slides. Look for adjacent slides whose headlines could be one sentence.
-2. **Cut the setup.** Context, definition and "why now" slides are the usual fat. If the headline of
-   a slide is a premise rather than a finding, it is a candidate.
-3. **Narrow the promise on the cover.** "The 5 that matter" is a better carousel than a truncated
-   list of 9. Change the count on the cover; do not silently drop the tail.
-4. **Change format.** A list that genuinely needs 14 units is a thread or a Reel, not a carousel.
-   Say so rather than mutilating it.
-
-Never cut: the cover, the reframe, the CTA, or the slide carrying the piece's strongest proof.
+Foto de stock. Degradê. Emoji. Biblioteca de ícones. Travessão (—). Card com sombra + borda no
+accent. Ênfase misturada (negrito + cor + sublinhado + caixa na mesma frase). Uma terceira família
+tipográfica. Mais de uma cor de accent. Slide decorativo sem frase: todo slide do corpus, os 51,
+carrega uma. Encher a lista para bater um número de slides. Headline com ressalva: a ressalva mora
+no body.
 
 ---
 
-## Pre-ship checklist
+## Teto rígido: 10 slides
+
+**Carrossel de Instagram nesta conta para em 10 imagens. Isso é restrição da plataforma, não
+preferência editorial: o 11º slide não sobe.** Capa e CTA são dois dos dez, então o argumento tem
+**oito slides** para trabalhar.
+
+Isso passa por cima do "o tamanho segue a contagem de unidades" do corpus. Quando a contagem passa
+de oito, truncar a lista é o conserto errado: cortar o item 9 deixa uma promessa que a capa já fez.
+Faça uma destas coisas no lugar:
+
+1. **Junte irmãos.** Três exemplos que provam o mesmo ponto são um slide com três linhas, não três
+   slides. Procure slides vizinhos cujas headlines poderiam ser uma frase só.
+2. **Corte a preparação.** Slides de contexto, de definição e de "por que agora" são a gordura de
+   sempre. Se a headline de um slide é uma premissa em vez de um achado, ele é candidato.
+3. **Estreite a promessa da capa.** "Os 5 que importam" é um carrossel melhor que uma lista de 9
+   truncada. Mude a contagem na capa. Não derrube o rabo da lista em silêncio.
+4. **Mude de formato.** Uma lista que precisa mesmo de 14 unidades é uma thread ou um Reel, não um
+   carrossel. Diga isso em vez de mutilar a lista.
+
+Nunca corte: a capa, a virada, o CTA, nem o slide que carrega a prova mais forte da peça.
+
+---
+
+## Checklist antes de publicar
 
 **Copy**
-- [ ] Cover names a countable unit and its payoff, not a topic
-- [ ] A number on the cover if one honestly exists
-- [ ] One idea per slide
-- [ ] Every headline is the conclusion, self-contained, complete sentence
-- [ ] **Headlines read alone, end to end, as a coherent article**
-- [ ] Every claim resolves to a number, artifact, named thing or exact scene
-- [ ] Unverified claims are labelled as unverified
-- [ ] Penultimate slide reframes the piece
-- [ ] Final slide: one word to comment, or one question with an obvious answer
-- [ ] Passes `docs/voice/base.md`
+- [ ] A capa nomeia uma unidade contável e o ganho dela, não um tema
+- [ ] Um número na capa, se existir um de verdade
+- [ ] Uma ideia por slide
+- [ ] Toda headline é a conclusão, frase completa que se sustenta sozinha
+- [ ] **As headlines lidas sozinhas, do começo ao fim, formam um artigo coerente**
+- [ ] Toda afirmação se resolve num número, artefato, coisa com nome ou cena exata
+- [ ] Afirmação não verificada está marcada como não verificada
+- [ ] O penúltimo slide faz a virada da peça
+- [ ] Último slide: uma palavra para comentar, ou uma pergunta com resposta óbvia
+- [ ] Passa em `docs/voice/base.md`
 
 **Design**
-- [ ] All identity slots filled and declared once
-- [ ] One locked template: same slots, same hierarchy, every slide
-- [ ] Headline in the top third; bottom third is art or air
-- [ ] Ground + ink + at most one accent, and the accent means one thing
-- [ ] Two type families maximum
-- [ ] One illustration language, or none, consistently
-- [ ] 4:5 1080×1350, 88px margins
-- [ ] Every slide has exactly one anchor with dominant optical weight
-- [ ] Density mode chosen deliberately: reading or recognition
-- [ ] Thumbnail test at 20%: still reads, and still identifiable as this account with the handle cropped
+- [ ] Todos os slots de identidade preenchidos e declarados uma vez
+- [ ] Um template travado: mesmos slots, mesma hierarquia, em todo slide
+- [ ] Headline no terço de cima, e o terço de baixo é arte ou ar
+- [ ] `GROUND` + `INK` + no máximo um `ACCENT`, e o accent significa uma coisa só
+- [ ] No máximo duas famílias tipográficas
+- [ ] Uma linguagem de ilustração, ou nenhuma, com consistência
+- [ ] 4:5 1080×1350, margens de 88px
+- [ ] Todo slide tem exatamente uma âncora com peso óptico dominante
+- [ ] Modo de densidade escolhido de propósito: leitura ou reconhecimento
+- [ ] Teste do thumbnail a 20%: ainda dá para ler, e ainda dá para identificar a conta com o handle cortado

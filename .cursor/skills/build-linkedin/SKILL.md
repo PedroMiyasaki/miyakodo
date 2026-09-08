@@ -1,340 +1,334 @@
 ---
 name: build-linkedin
 description: >
-  Reads an idea from the Ideas database, produces a native long-form text post for
-  LinkedIn in the user's voice, and then finds and captures the scroll-stopping image
-  that ships with it. Activate with commands like "build the LinkedIn post for the
-  last idea" or "write the LinkedIn post for the last idea".
+  Lê uma ideia do banco Ideas, produz um post de texto longo nativo do LinkedIn na
+  voz do usuário e depois encontra e captura a imagem que para o scroll e sai junto
+  com ele. Ative com comandos como "monta o post do LinkedIn da última ideia" ou
+  "escreve o post do LinkedIn da última ideia".
 ---
 
 # SKILL · build-linkedin
-## Production · LinkedIn post (text + image)
+## Produção · Post de LinkedIn (texto + imagem)
 
-Purpose: produce a complete, ready-to-publish LinkedIn post — the long-form text **and** the image that goes with it. You work by turning raw ideas into LinkedIn posts that argue a case, carry density and take a clear position, in the user's voice, then finding the one image that makes the target reader stop scrolling long enough to read it.
+Propósito: produzir um post de LinkedIn completo e pronto para publicar: o texto longo **e** a imagem que vai com ele. O trabalho é transformar ideias cruas em posts de LinkedIn que defendem uma tese, carregam densidade e tomam uma posição clara, na voz do usuário, e depois encontrar a única imagem que faz o leitor-alvo parar o scroll por tempo suficiente para ler.
 
-**Language of the piece:** English by default. If the user asks for pt-BR (or any other language), write it in that language — follow their lead, do not push back. `docs/voice/base.md` still applies as principle; its Tier 1/Tier 2 word lists are English-specific and do not transfer (see `CLAUDE.md` for the pt-BR equivalents).
-
-The format calls for an argument with more layers than the other formats, with no character ceiling like X and no visual to lean on. Deliver substance.
+O formato pede um argumento com mais camadas que os outros formatos, sem teto de caracteres como no X e sem visual para se apoiar. Entregue substância.
 
 ---
 
-## Available tools
+## Ferramentas disponíveis
 
-Use the Notion MCP to read the **Ideas** database and, at close, to update `Status` and `Format` on the processed idea (the only write to Notion).
+Use o Notion MCP para ler o banco **Ideas** e, no fechamento, atualizar `Status` e `Format` na ideia processada (a única escrita no Notion).
 
-Use the **Chrome browser automation** tools (`mcp__claude-in-chrome__*`) in Step 7 to find and capture the post's image. They are deferred: invoke the `claude-in-chrome` skill before calling any of them.
+Use as ferramentas de **automação do navegador Chrome** (`mcp__claude-in-chrome__*`) no Passo 7 para encontrar e capturar a imagem do post. Elas são deferred: invoque a skill `claude-in-chrome` antes de chamar qualquer uma delas.
 
 ---
 
-## Required references
+## Referências obrigatórias
 
-Read before writing any LinkedIn post:
+Leia antes de escrever qualquer post de LinkedIn:
 
 **Via Notion (MCP):**
 
-| Database | ID | What to look for |
+| Banco | ID | O que procurar |
 |---|---|---|
-| **Ideas** | `e2970ca3-7724-4a81-8f12-7ea34c048c67` (data source ID) | Source idea for the LinkedIn post |
+| **Ideas** | `e2970ca3-7724-4a81-8f12-7ea34c048c67` (ID do data source) | A ideia de origem do post de LinkedIn |
 
-**Locally — read at least two of these on every run:**
+**Localmente, leia os dois em toda rodada:**
 
-`examples/` holds real LinkedIn posts that worked, split into `english/` and `pt-br/`. **Their
-subject matter is irrelevant** and none of them is about the idea you are writing. They are there
-for one thing: calibrating what a human, authoritative, shareable LinkedIn post looks like on the
-page. Read the pair matching the language you are writing in, plus one from the other folder.
+`examples/` guarda dois posts reais de LinkedIn que funcionaram: `assinatura_cc.md` e `hype_ia.md`. **O assunto deles é irrelevante** e nenhum dos dois é sobre a ideia que você está escrevendo. Eles estão ali para uma coisa só: calibrar como um post de LinkedIn humano, com autoridade e compartilhável fica na página. Leia os dois.
 
-What they are collectively showing, and where each rule now lives:
+O que eles mostram em conjunto, e onde cada regra está escrita hoje:
 
-| What the examples do | Written down in |
+| O que os exemplos fazem | Escrito em |
 |---|---|
-| Paragraphs of 3–6 joined sentences, single-sentence paragraphs used as rare beats | `base.md` § 5, *Paragraph density* |
-| Sentences inside a paragraph joined by real connectives | `base.md` § 7 |
-| Repetition used as an audible figure that builds and stops | `base.md` § 5, *Deliberate repetition* |
-| A proper noun or a number every two or three sentences | `sincere-senior.md`, *Concreteness* |
-| The writer's own decision, price, or first-party data on the line | `sincere-senior.md`, *Skin in the game* |
-| No hashtags, no engagement CTA | Step 5 below |
+| Parágrafos de 3 a 6 frases encadeadas, parágrafo de uma frase usado como beat raro | `base.md` § 5, *Densidade de parágrafo* |
+| Frases dentro do parágrafo ligadas por conectivos de verdade | `base.md` § 7 |
+| Repetição usada como figura audível que cresce e para | `base.md` § 5, *Repetição deliberada* |
+| Um nome próprio ou um número a cada duas ou três frases | `sincere-senior.md`, *Concretude* |
+| A decisão, o preço ou o dado próprio do autor em jogo | `sincere-senior.md`, *Skin in the game* |
+| Sem hashtag, sem CTA de engajamento | Passo 5 abaixo |
 
 ---
 
-## When to act
+## Quando agir
 
-Run this when the user says something like:
-- "build the LinkedIn post for the last idea"
-- "write the LinkedIn post for the next idea"
-- "LinkedIn for item X"
-- "generate the LinkedIn copy"
-- or any variation that means turning a raw idea into a long-form LinkedIn post
+Rode quando o usuário disser algo como:
+- "monta o post do LinkedIn da última ideia"
+- "escreve o post do LinkedIn da próxima ideia"
+- "LinkedIn do item X"
+- "gera o texto do LinkedIn"
+- ou qualquer variação que signifique transformar uma ideia crua num post longo de LinkedIn
 
-The deliverable is always text **plus** image. If the user asks for text only, skip Step 7 and say so.
+A entrega é sempre texto **mais** imagem. Se o usuário pedir só o texto, pule o Passo 7 e diga isso.
 
 ---
 
-## Execution protocol, step by step
+## Protocolo de execução, passo a passo
 
-### Step 1 · Identify the idea to work on
+### Passo 1 · Identificar a ideia a trabalhar
 
-If the user did not specify which one:
-- Open the **Ideas** database (`e2970ca3-7724-4a81-8f12-7ea34c048c67`)
-- Filter by `Status = "Pending"` and sort by `Date` descending (most recent first). If `Date` does not exist or is empty, use `createdTime`
-- Take the most recent idea
-- Show the title to the user and confirm before proceeding:
-  > "Idea selected for LinkedIn: [title]. Go ahead with this one?"
+Se o usuário não especificou qual:
+- Abra o banco **Ideas** (`e2970ca3-7724-4a81-8f12-7ea34c048c67`)
+- Filtre por `Status = "Pending"` e ordene por `Date` decrescente (mais recente primeiro). Se `Date` não existir ou estiver vazio, use `createdTime`
+- Pegue a ideia mais recente
+- Mostre o título ao usuário e confirme antes de seguir:
+  > "Ideia selecionada para o LinkedIn: [título]. Sigo com essa?"
 
-If the user specified a title or item: find that idea in the Ideas database and use it directly.
+Se o usuário especificou um título ou item: encontre essa ideia no banco Ideas e use direto.
 
-### Step 2 · Read the full idea
+### Passo 2 · Ler a ideia inteira
 
-Open the matching row in the Ideas database and read everything available:
-- Title
-- Raw idea text
-- Notes, context or attached examples
-- Date and status
+Abra a linha correspondente no banco Ideas e leia tudo que estiver disponível:
+- Título
+- Texto cru da ideia
+- Notas, contexto ou exemplos anexados
+- Data e status
 
-Extract the following elements from the idea:
-- Main angle
-- Possible thesis
-- Available example/proof, or a concrete hypothesis
-- The tension that can become the hook
+Extraia da ideia os seguintes elementos:
+- Ângulo principal
+- Tese possível
+- Exemplo/prova disponível, ou uma hipótese concreta
+- A tensão que pode virar o hook
 
-Also define the ACP Phase.
+Defina também a ACP Phase.
 
-### Step 3 · Voice calibration
+### Passo 3 · Calibração de voz
 
-The voice lives in `docs/voice/`. Read `docs/voice/base.md`: it is the base voice for every piece, in every format.
+A voz mora em `docs/voice/`. Leia `docs/voice/base.md`: é a voz base de toda peça, em todo formato.
 
-Then read `docs/voice/layers/sincere-senior.md`. It is the **default layer for every LinkedIn post** — the senior-engineer register, the argument shape and the honesty rules that make the post sound like the user. Read it on every run, without being asked. Where it disagrees with the base on register, the layer wins; the base's anti-slop rules still hold.
+Depois leia `docs/voice/layers/sincere-senior.md`. É a **layer padrão de todo post de LinkedIn**: o registro de engenheiro sênior, o formato do argumento e as regras de honestidade que fazem o post soar como o usuário. Leia em toda rodada, sem que peçam. Onde ela discorda da base em registro, a layer ganha. As regras anti-slop da base continuam valendo.
 
-If the user names a different layer, read it from `docs/voice/layers/` as well and let it win over both.
+Se o usuário nomear outra layer, leia essa também em `docs/voice/layers/`: ela ganha das outras duas.
 
-Then read the posts in `examples/` for the language you are writing in, plus one from the other folder. The two voice documents state the rules; the examples are what the rules produce on a page, and the gap between reading a rule about paragraph density and seeing one is most of the calibration. Ignore what they are about.
+Depois leia os posts em `examples/`. Os dois documentos de voz enunciam as regras. Os exemplos são o que as regras produzem numa página, e a distância entre ler uma regra sobre densidade de parágrafo e ver uma aplicada é a maior parte da calibração. Ignore o assunto deles.
 
-There is no audience or pillar document: if the piece needs a target reader or an angle, ask the user.
+Não existe documento de audiência nem de pilar: se a peça precisar de um leitor-alvo ou de um ângulo, pergunte ao usuário.
 
-### Step 4 · Decide structure and length
+### Passo 4 · Decidir estrutura e tamanho
 
-LinkedIn text posts have a technical ceiling of 3,000 characters. Let the needs of the argument set the length: no padding, no premature cutoff.
+Um post de texto no LinkedIn tem um teto técnico de 3.000 caracteres. Deixe a necessidade do argumento definir o tamanho: sem enchimento, sem corte prematuro.
 
-**Guiding ranges:**
-- **Short post (600–900 chars)**: a single observation, a data point with an interpretation, a direct position. For ACP phase A, where reach matters more than depth.
-- **Medium post (900–1,800 chars)**: an argument with an example, myth-busting, a framework in 2–3 points. Most common for ACP=A→C.
-- **Long post (1,800–2,800 chars)**: in-depth analysis, a causal chain with multiple layers, an argument that would need a carousel if it were visual. For ACP=C, where authority is the goal.
+**Faixas de referência:**
+- **Post curto (600–900 caracteres)**: uma observação só, um dado com interpretação, uma posição direta. Para a fase A do ACP, em que alcance importa mais que profundidade.
+- **Post médio (900–1.800 caracteres)**: um argumento com exemplo, derrubada de mito, um framework em 2 ou 3 pontos. O mais comum para ACP=A→C.
+- **Post longo (1.800–2.800 caracteres)**: análise aprofundada, cadeia causal com várias camadas, argumento que precisaria de carrossel se fosse visual. Para ACP=C, em que autoridade é o objetivo.
 
-If the idea fits well in a short post, don't stretch it. If the idea needs development that goes past 2,800 chars to hold quality, use the carousel format instead.
+Se a ideia cabe bem num post curto, não estique. Se a ideia precisa de um desenvolvimento que passa de 2.800 caracteres para manter a qualidade, use o formato carrossel.
 
-**Calibrate against `examples/` before assuming you need the long form.** Those posts run 1,200 to 1,900 characters, and only the most polemical one goes past 3,000. Length there tracks how much verifiable material the writer actually has — names, numbers, a decision they made — not how much argument they could construct. A 2,900-character post built from reasoning alone is long because it is padded, and it will read that way next to the 1,231-character one that announces a fact and stops.
+**Calibre contra `examples/` antes de assumir que precisa do formato longo.** Ali, o post que anuncia uma decisão fica em 1.600 caracteres, e só o que é pura polêmica passa de 3.000. O tamanho acompanha quanto material verificável o autor tem de verdade (nomes, números, uma decisão que ele tomou), não quanto argumento ele conseguiria construir. Um post de 2.900 caracteres feito só de raciocínio é longo porque está inchado, e vai parecer isso ao lado do post de 1.600 que anuncia uma decisão com preço e para.
 
-### Step 5 · Write the post
+### Passo 5 · Escrever o post
 
-#### Native LinkedIn formatting
+#### Formatação nativa do LinkedIn
 
-LinkedIn renders line breaks as visual space, and the temptation is to use that space on every sentence. Don't. **A paragraph here is a unit of thought, not a unit of display** — most run three to six sentences that develop one idea, joined by real connectives, per `base.md` § 5 and § 7. The single-sentence paragraph is a beat: it works because it is rare, and two or three of them in a post is the ceiling.
+O LinkedIn renderiza quebra de linha como espaço visual, e a tentação é usar esse espaço em toda frase. Não use. **Aqui, parágrafo é unidade de pensamento, não unidade de exibição.** A maioria tem de três a seis frases que desenvolvem uma ideia, ligadas por conectivos de verdade, conforme `base.md` § 5 e § 7. O parágrafo de uma frase é um beat: funciona porque é raro, e dois ou três deles num post é o teto.
 
-The failure this replaces is specific and it is the most common one in the format: correct sentences stacked one per line, each with the same weight, nothing building, no signal about which idea is load-bearing. It scans as a teleprompter feed. Every post in `examples/` avoids it, including the one that is pure polemic.
+O defeito que isso substitui é específico e é o mais comum do formato: frases corretas empilhadas uma por linha, todas com o mesmo peso, nada construindo, nenhum sinal de qual ideia sustenta o resto. Lê como feed de teleprompter. Os dois posts em `examples/` evitam isso, inclusive o que é pura polêmica.
 
-Vary paragraph length deliberately. One that runs six sentences, then one that runs two, then a fragment — that is what a person writing looks like.
+Varie o tamanho dos parágrafos de propósito. Um que tem seis frases, depois um que tem duas, depois um fragmento: isso é a cara de gente escrevendo.
 
-**A short hyphen list is allowed** when the items are genuinely parallel and short (three solver families, three reasons). Two of the reference posts use one. What is banned is the inline-header list from `base.md` § 5 — `- **Speed:** the system is faster` — which is decoration pretending to be structure.
+**Uma lista curta com hífen é permitida** quando os itens são de fato paralelos e curtos (três famílias de solver, três motivos). Um dos posts de referência usa uma. O que fica de fora é a lista de cabeçalho inline que `base.md` § 5 proíbe, `- **Velocidade:** o sistema é mais rápido`: decoração fingindo ser estrutura.
 
-**No markdown**: LinkedIn does not render `**bold**`, `_italic_` or `# headings`. Use line breaks and verbal structure to create visual hierarchy. Functional symbols (→, •) are acceptable as list markers. Decorative emojis (🚀, 🔥, 💡) are forbidden.
+**Sem markdown**: o LinkedIn não renderiza `**negrito**`, `_itálico_` nem `# headings`. Use quebras de linha e estrutura verbal para criar hierarquia visual. Símbolos funcionais (→, •) são aceitáveis como marcadores de lista. Emojis decorativos (🚀, 🔥, 💡) são proibidos.
 
-#### Required structure
+#### Estrutura obrigatória
 
-**First line: hook**
-- It's the only text visible before the "see more" button in the feed
-- Function: create enough tension for the reader to click "see more"
-- Valid formats (output examples):
-  - Counterintuitive claim: "Most AI projects don't fail on the technology."
-  - A data point with an implicit interpretation: "80% of the AI use cases that reach us have already been attempted in-house once."
-  - A question that names a real pain in the audience: "Why does the automation that worked in the pilot stall at scale?"
-  - **The fact itself, stated flat**, when the fact is genuinely news: "Today marks a big moment for DuckLabs: we are joining Amazon Web Services." No windup, because the announcement is the tension.
-  - **A fragment**, when a decision is the story: "Parei." One word, then the reason on the next line. This only works when what follows is a real decision with a price attached — as a stylistic move on an ordinary post it is theater.
-- **Never open with:** "Hello, LinkedIn", a company introduction, or a generic question ("Did you know that...")
-- The first line should not deliver the answer; it should make the answer irresistible
+**Primeira linha: hook**
+- É o único texto visível antes do botão "ver mais" no feed
+- Função: criar tensão suficiente para o leitor clicar em "ver mais"
+- Formatos válidos (exemplos de saída):
+  - Afirmação contraintuitiva: "A maioria dos projetos de IA não falha na tecnologia."
+  - Um dado com interpretação implícita: "80% dos casos de uso de IA que chegam até a gente já foram tentados internamente uma vez."
+  - Uma pergunta que nomeia uma dor real da audiência: "Por que a automação que funcionou no piloto trava na escala?"
+  - **O fato em si, dito seco**, quando o fato é notícia de verdade: "Hoje é um dia grande para a DuckLabs: estamos entrando na Amazon Web Services." Sem preparação, porque o anúncio é a tensão.
+  - **Um fragmento**, quando a história é uma decisão: "Parei." Uma palavra, e o motivo na linha seguinte. Isso só funciona quando o que vem depois é uma decisão real com um preço anexado. Como recurso de estilo num post comum, é teatro.
+- **Nunca abra com:** "Olá, LinkedIn", apresentação da empresa, ou pergunta genérica ("Você sabia que...")
+- A primeira linha não deve entregar a resposta. Ela deve tornar a resposta irresistível
 
-**Do not manufacture tension the idea does not have.** Two of the four reference posts open by simply saying the thing — an acquisition, a benchmark number — and they hold because the material is real. A fabricated counterintuitive claim bolted onto ordinary material is worse than the flat statement of that material.
+**Não fabrique uma tensão que a ideia não tem.** Os dois posts de referência abrem sem truque: um com uma decisão que custou dinheiro de verdade, o outro só dizendo a tese. Os dois seguram porque o material é real. Uma afirmação contraintuitiva inventada e parafusada em cima de material comum é pior do que a afirmação seca desse material.
 
-**Development (body)**
+**Desenvolvimento (corpo)**
 
-Organize the argument into short blocks with a clear function:
+Organize o argumento em blocos curtos com função clara:
 
-- **Problem block**: names what's wrong in the conventional understanding or the common practice
-- **Cause block**: explains *why* the problem exists, the layer most people don't see
-- **Evidence block**: a data point, a real case (without naming the client), a measurable observation, a concrete comparison
-- **Contrast block**: what most people do vs. what works, with specificity, not generalities
-- **Framework block**: a logic in 2–4 points the reader can apply or use as criteria
-- **Nuance block**: anticipates the obvious objection and answers it, shows depth, avoids oversimplification
+- **Bloco de problema**: nomeia o que está errado no entendimento convencional ou na prática comum
+- **Bloco de causa**: explica *por que* o problema existe, a camada que a maioria não vê
+- **Bloco de evidência**: um dado, um caso real (sem nomear o cliente), uma observação mensurável, uma comparação concreta
+- **Bloco de contraste**: o que a maioria faz vs. o que funciona, com especificidade, não generalidades
+- **Bloco de framework**: uma lógica em 2 a 4 pontos que o leitor consegue aplicar ou usar como critério
+- **Bloco de nuance**: antecipa a objeção óbvia e responde, mostra profundidade, evita a simplificação excessiva
 
-Don't use every block in every post. Pick the ones the idea requires. A medium post has 3–4 well-developed blocks; a long post can have 5–6.
+Não use todo bloco em todo post. Escolha os que a ideia exige. Um post médio tem 3 ou 4 blocos bem desenvolvidos. Um post longo pode ter 5 ou 6.
 
-**These are functions, not a running order, and they are invisible in the output.** The reference posts do not walk problem → cause → evidence → nuance; one is evidence the whole way down, another goes straight from position to contrast and never concedes anything. The nuance block in particular is optional — a post that takes a position and holds it is stronger than one that softens itself on schedule. If a reader could reconstruct the block list from the finished post, the blocks are showing.
+**Isso são funções, não uma ordem de execução, e elas ficam invisíveis na saída.** Os posts de referência não percorrem problema → causa → evidência → nuance: um é decisão e número do começo ao fim, o outro vai direto da posição ao contraste e não concede nada. O bloco de nuance, em particular, é opcional. Um post que toma uma posição e segura é mais forte que um que se amacia na hora marcada. Se um leitor consegue reconstruir a lista de blocos a partir do post pronto, os blocos estão aparecendo.
 
-**Close / CTA**
+**Fechamento / CTA**
 
-A CTA on LinkedIn is not an empty ask for engagement. Valid formats (output examples):
+CTA no LinkedIn não é pedido vazio de engajamento. Formatos válidos (exemplos de saída):
 
-- A clear position that consolidates the argument: "The point is process control before automation, and the technology comes as a consequence of that, not as the starting point."
-- A question the writer genuinely cannot answer, aimed at readers who can: "What other domains have algorithms still outrunning scaling?"
-- The link to the thing the post is announcing, when the post is an announcement: "Read the full announcement here:"
+- Uma posição clara que consolida o argumento: "O ponto é controle de processo antes de automação, e a tecnologia vem como consequência disso, não como ponto de partida."
+- Uma pergunta que o autor genuinamente não consegue responder, dirigida a leitores que conseguem: "Que outros domínios ainda têm algoritmo correndo na frente da escala?"
+- O link para a coisa que o post anuncia, quando o post é um anúncio: "Leia o anúncio completo aqui:"
 
-The close is where the reference posts are most consistent, and it is the opposite of what the format teaches. **None of the four asks for anything.** One ends on the tradeoff, one ends on an accusation, one ends on a link, and one ends on a question its own author cannot answer. The post earns the comment by being worth answering, not by requesting the answer.
+O fechamento é onde os posts de referência são mais consistentes, e é o oposto do que o formato ensina. **Nenhum dos dois pede nada.** Um termina na posição, o outro termina numa acusação. O post ganha o comentário por valer uma resposta, não por pedir a resposta.
 
-So: end on the argument's final compression, or on a question you genuinely don't know the answer to and a qualified reader might. Never on "what do you think?".
+Então: termine na compressão final do argumento, ou numa pergunta cuja resposta você de fato não sabe e um leitor qualificado talvez saiba. Nunca em "o que você acha?".
 
-**Hashtags — default to none.**
+**Hashtags: o padrão é nenhuma.**
 
-All four reference posts carry zero, and the format has not needed them for reach in years. Add them only when the user asks, or when a post is genuinely aimed at a tag people follow — and then three at most, technical and specific, on their own line at the end. `#innovation`, `#technology`, `#AI` are noise and mark the post as marketing output.
+Os dois posts de referência têm zero, e o formato não precisa delas para alcance há anos. Acrescente só quando o usuário pedir, ou quando o post mira de verdade uma tag que as pessoas seguem. Nesse caso, no máximo três, técnicas e específicas, numa linha própria no fim. `#inovação`, `#tecnologia`, `#IA` são ruído e marcam o post como saída de marketing.
 
-#### Output formatting
+#### Formatação da saída
 
-Deliver the complete post in its final publishing form, line breaks included, with no structural labels (no "PROBLEM BLOCK:", no "HOOK:"). The output must be pasteable straight into LinkedIn with no formatting edits.
+Entregue o post completo na forma final de publicação, quebras de linha incluídas, sem rótulos estruturais (sem "BLOCO DE PROBLEMA:", sem "HOOK:"). A saída tem que dar para colar direto no LinkedIn sem edição de formatação.
 
 ```
-[first line: hook]
+[primeira linha: hook]
 
-[development, in paragraphs of varying length]
+[desenvolvimento, em parágrafos de tamanho variado]
 
-[close]
+[fechamento]
 ```
 
-Hashtags are not part of the default shape. When the user asks for them, they go on their own line after the close.
+Hashtags não fazem parte da forma padrão. Quando o usuário pedir, elas vão numa linha própria depois do fechamento.
 
-Alongside the post, also deliver:
-- Character count
-- The ACP Phase identified
+Junto com o post, entregue também:
+- Contagem de caracteres
+- A ACP Phase identificada
 
-### Step 6 · Present, iterate and save locally
+### Passo 6 · Apresentar, iterar e salvar localmente
 
-Present the complete post with the character count and ACP.
+Apresente o post completo com a contagem de caracteres e a ACP.
 
-Derive the slug from the idea title (lowercase, hyphens in place of spaces and special characters, no accents) and save it immediately as `posts/linkedin/<slug>/sketch/v1.md` with Write, containing the post in its final publishing form followed by the line with the character count and ACP.
+Derive o slug do título da ideia (minúsculas, hífens no lugar de espaços e caracteres especiais, sem acentos) e salve na hora como `posts/linkedin/<slug>/sketch/v1.md` com Write, com o post na forma final de publicação seguido da linha com a contagem de caracteres e a ACP.
 
-Ask:
-> "Ready to finalize, or any more corrections?"
+Pergunte:
+> "Pronto para finalizar, ou mais alguma correção?"
 
-For each correction requested:
-- Apply the change, recomputing the character count where needed.
-- Create `posts/linkedin/<slug>/sketch/v(N+1).md`: read the previous version, copy the unchanged blocks verbatim, apply only what changed. Do not regenerate what did not change.
-- Ask again: "Ready to finalize, or any more corrections?"
+Para cada correção pedida:
+- Aplique a mudança, recalculando a contagem de caracteres quando precisar.
+- Crie `posts/linkedin/<slug>/sketch/v(N+1).md`: leia a versão anterior, copie verbatim os blocos que não mudaram, aplique só o que mudou. Não regenere o que não mudou.
+- Pergunte de novo: "Pronto para finalizar, ou mais alguma correção?"
 
-Repeat until the user confirms it's ready. Only then move on to Step 7.
+Repita até o usuário confirmar que está pronto. Só então siga para o Passo 7.
 
-### Step 7 · Find and capture the image
+### Passo 7 · Encontrar e capturar a imagem
 
-The text is locked. Now find the one image that earns the stop.
+O texto está travado. Agora encontre a única imagem que merece a parada.
 
-The audience is AI practitioners and business owners scrolling a feed at speed. The image has one job: make that specific reader pause long enough to read the first line. It does that by showing them **something they recognize from their own work** — not by being pretty.
+A audiência é gente que trabalha com IA e dono de negócio rolando o feed em velocidade. A imagem tem um trabalho só: fazer esse leitor específico parar por tempo suficiente para ler a primeira linha. Ela faz isso mostrando **algo que ele reconhece do próprio trabalho**, não sendo bonita.
 
-#### 7a · Decide what the image has to carry
+#### 7a · Decidir o que a imagem tem que carregar
 
-Before searching, write one sentence: *what does this image have to show?* Answer it from the post, not from a vague sense of the topic.
+Antes de buscar, escreva uma frase: *o que essa imagem tem que mostrar?* Responda a partir do post, não de uma noção vaga do tema.
 
-The strongest answer is almost always **the mechanism the post argues about, drawn**. The reader recognizes their own system in the picture before reading a word, and the argument has already started.
+A resposta mais forte é quase sempre **o mecanismo que o post discute, desenhado**. O leitor reconhece o próprio sistema na figura antes de ler uma palavra, e o argumento já começou.
 
-> **Reference case.** The post arguing against fully autonomous agents shipped with the canonical ReAct loop diagram: `Task → LLM (Reasoning self-loop) → Tools → Environment`, with `Action` and `Result` arrows. Plain black and white, no branding. It is the exact architecture the post takes apart. Anyone who has built one saw their own system and stopped.
+> **Caso de referência.** O post contra agentes totalmente autônomos saiu com o diagrama canônico do loop ReAct: `Task → LLM (Reasoning self-loop) → Tools → Environment`, com as setas `Action` e `Result`. Preto e branco, sem marca. É exatamente a arquitetura que o post desmonta. Quem já construiu um viu o próprio sistema e parou.
 
-Image classes that work, best first:
+Classes de imagem que funcionam, da melhor para a pior:
 
-1. **The architecture diagram of the thing being argued about.** Makes the argument visible before the text is read.
-2. **A chart with a surprising shape** — a benchmark, a cost curve, a latency distribution. Use when the post's spine is a number.
-3. **A screenshot of the real artifact** — a trace, a log, a 400-line system prompt, a dashboard, a tool UI. Reads as proof the thing was seen, not theorized.
-4. **A figure from the paper the post cites.** Credible and specific; credit it.
+1. **O diagrama de arquitetura da coisa em discussão.** Torna o argumento visível antes de o texto ser lido.
+2. **Um gráfico com forma surpreendente**: um benchmark, uma curva de custo, uma distribuição de latência. Use quando a espinha do post é um número.
+3. **Um print do artefato real**: um trace, um log, um system prompt de 400 linhas, um dashboard, a UI de uma ferramenta. Lê como prova de que a coisa foi vista, não teorizada.
+4. **Uma figura do paper que o post cita.** Crível e específica. Dê o crédito.
 
-Never: stock photos of people at laptops, glowing brains, robot hands, abstract blue neural networks, AI-generated art, or a quote card with the hook typed over a gradient. Those signal "content" and get scrolled past by exactly the reader the post is for.
+Nunca: foto de banco de imagem de gente no laptop, cérebro brilhando, mão de robô, rede neural azul abstrata, arte gerada por IA, ou um card com o hook digitado em cima de um gradiente. Isso sinaliza "conteúdo" e é ignorado exatamente pelo leitor para quem o post existe.
 
-#### 7b · Judge it at feed size
+#### 7b · Julgar no tamanho do feed
 
-The image will be seen small, first, on a phone. Before capturing, check:
+A imagem vai ser vista pequena, primeiro, num celular. Antes de capturar, confira:
 
-- **Legible as a thumbnail.** Labels readable at roughly 40% width. If it needs zooming, it fails.
-- **Few elements.** Five or six boxes, not a 30-node system map.
-- **High contrast**, and survives both LinkedIn light and dark mode. Plain white or plain dark backgrounds both work; mid-grey does not.
-- **Landscape or square.** Tall images get cropped in the feed.
-- **No unrelated branding**, no watermark, no visible cookie banner or nav chrome in the capture.
+- **Legível como thumbnail.** Rótulos legíveis em mais ou menos 40% da largura. Se precisa de zoom, falhou.
+- **Poucos elementos.** Cinco ou seis caixas, não um mapa de sistema com 30 nós.
+- **Alto contraste**, e sobrevive tanto ao modo claro quanto ao escuro do LinkedIn. Fundo branco liso ou escuro liso funcionam. Cinza médio não.
+- **Paisagem ou quadrada.** Imagem alta é cortada no feed.
+- **Sem marca alheia**, sem marca d'água, sem banner de cookie nem chrome de navegação visível na captura.
 
-#### 7c · Search and capture
+#### 7c · Buscar e capturar
 
-Invoke the `claude-in-chrome` skill, then work in a **new tab** (`tabs_create_mcp`).
+Invoque a skill `claude-in-chrome`, depois trabalhe numa **aba nova** (`tabs_create_mcp`).
 
-Go to the source before going to image search. Sources rank: the paper on arXiv, the framework's docs page, the original blog post, then image search as the fallback. A source page gives real resolution and a URL that can be verified and credited; an image-search thumbnail gives neither.
+Vá na fonte antes de ir na busca de imagens. Ordem das fontes: o paper no arXiv, a página de docs do framework, o post original do blog, e a busca de imagens como último recurso. Uma página de origem dá resolução de verdade e uma URL que dá para verificar e creditar. Um thumbnail de busca de imagens não dá nenhum dos dois.
 
-Build the query from the canonical term, not from the post's phrasing: `react agent loop diagram`, `langgraph state graph architecture`, `<paper name> figure 2`. If the post argues about a named thing, the named thing has a canonical picture — find that one.
+Monte a query a partir do termo canônico, não da frase do post, e em inglês (é assim que docs e busca indexam): `react agent loop diagram`, `langgraph state graph architecture`, `<paper name> figure 2`. Se o post discute uma coisa com nome, a coisa com nome tem uma figura canônica. Encontre essa.
 
-Capture with a screenshot of the element on the page. Crop to the figure: no surrounding page furniture.
+Capture com um screenshot do elemento na página. Recorte na figura: sem a mobília da página em volta.
 
-Do not fabricate an image, and do not build one in HTML — this step finds an existing artifact. If nothing good exists after a couple of searches, stop and say so rather than settling for a stock photo. A post with no image beats a post with a glowing brain.
+Não fabrique uma imagem e não monte uma em HTML. Este passo encontra um artefato que já existe. Se nada bom aparecer depois de duas ou três buscas, pare e diga isso, em vez de se contentar com foto de banco de imagem. Um post sem imagem ganha de um post com cérebro brilhando.
 
-#### 7d · Save it with the post
+#### 7d · Salvar junto com o post
 
-Save the capture as `posts/linkedin/<slug>/image.png` — at the folder root, beside the `final.md` it ships with, not in `sketch/`.
+Salve a captura como `posts/linkedin/<slug>/image.png`: na raiz da pasta, ao lado do `final.md` com que ela sai, não em `sketch/`.
 
-Then append one line to the metadata footer of the final `posts/linkedin/<slug>/sketch/v<N>.md` (the footer that already carries the character count and ACP — not the publishable body), so the text file points at its image:
+Depois acrescente uma linha ao rodapé de metadados do `posts/linkedin/<slug>/sketch/v<N>.md` final (o rodapé que já carrega a contagem de caracteres e a ACP, não o corpo publicável), para o arquivo de texto apontar para a imagem dele:
 
 ```
-Image: posts/linkedin/<slug>/image.png — <source URL>
+Imagem: posts/linkedin/<slug>/image.png — <URL de origem>
 ```
 
-The footer belongs in `sketch/v<N>.md`, so it rides along into `final.md` when that copy is made in Step 8.
+O rodapé fica em `sketch/v<N>.md`, então ele vai junto para o `final.md` quando essa cópia for feita no Passo 8.
 
-If the image is a figure from a paper or an identifiable blog post, tell the user to credit the source in the post or in the first comment. Generic textbook diagrams don't need it.
+Se a imagem é figura de um paper ou de um post de blog identificável, diga ao usuário para creditar a fonte no post ou no primeiro comentário. Diagrama genérico de livro didático não precisa.
 
-#### 7e · Present it
+#### 7e · Apresentar
 
-Show the user the image, one line on why it was chosen, and the source URL. Ask:
+Mostre a imagem ao usuário, uma linha sobre por que ela foi escolhida, e a URL de origem. Pergunte:
 
-> "Does this image work, or should I look for another?"
+> "Essa imagem funciona, ou procuro outra?"
 
-If they want another, go back to 7a and re-answer *what does this image have to show?* before searching again — a second search on the same premise usually returns the same misses.
+Se ele quiser outra, volte ao 7a e responda de novo *o que essa imagem tem que mostrar?* antes de buscar de novo. Uma segunda busca com a mesma premissa costuma devolver os mesmos erros.
 
-### Step 8 · Close out
+### Passo 8 · Fechar
 
-With the text confirmed and the image approved, assemble the deliverable. Everything for the piece lives in **one** folder, `posts/linkedin/<slug>/`: `sketch/` is the working material, and the folder root holds exactly what gets published:
+Com o texto confirmado e a imagem aprovada, monte a entrega. Tudo da peça mora em **uma** pasta, `posts/linkedin/<slug>/`: `sketch/` é o material de trabalho, e a raiz da pasta guarda exatamente o que é publicado:
 
-| File | What it is | Written by |
+| Arquivo | O que é | Escrito por |
 |---|---|---|
-| `final.md` | copy of the highest-numbered `sketch/v<N>.md` | this skill, now |
-| `image.png` | the capture from Step 7 | this skill, in 7d |
-| `pt-br.md` | copy of the highest-numbered `sketch/pt-br-v<N>.md` | `traduzir`, later, only if a translation is asked for |
+| `final.md` | cópia do `sketch/v<N>.md` de maior número | esta skill, agora |
+| `image.png` | a captura do Passo 7 | esta skill, no 7d |
 
-So at this step you copy the final `sketch/v<N>.md` to `posts/linkedin/<slug>/final.md`. The image is already in place from 7d. The `pt-br.md` slot stays empty unless the user asks for a translation.
+Então neste passo você copia o `sketch/v<N>.md` final para `posts/linkedin/<slug>/final.md`. A imagem já está no lugar desde o 7d.
 
-The `sketch/v<N>` history is never deleted — it is the audit trail, and `final.md` is a copy of its highest version taken at "done". So if the user edits a `sketch/v<N>.md` after that, re-copy it to `final.md`.
+O histórico `sketch/v<N>` nunca é apagado: é a trilha de auditoria, e `final.md` é uma cópia da versão mais alta tirada no "pronto". Então, se o usuário editar um `sketch/v<N>.md` depois disso, copie de novo para `final.md`.
 
-Then update the source idea in the Ideas database: `Status` → `"Processed"` and `Format` → `"LinkedIn Post"` (the format this skill produces; an idea is created without a format, and it is only set now, in production). This is the skill's only write to Notion. `Status` and `Format` accumulate in the database as the real picture of the calendar (phase and format of every piece produced).
+Depois atualize a ideia de origem no banco Ideas: `Status` → `"Processed"` e `Format` → `"LinkedIn Post"` (o formato que esta skill produz: a ideia é criada sem formato, e ele só é definido agora, na produção). Essa é a única escrita desta skill no Notion. `Status` e `Format` se acumulam no banco como o retrato real do calendário (fase e formato de toda peça produzida).
 
-### Step 9 · Point to the next step
+### Passo 9 · Apontar o próximo passo
 
-> "Post ready. Everything ships from `posts/linkedin/<slug>/` — `final.md` and `image.png`. Version history stays in `sketch/`. Next step: publish it manually on LinkedIn."
-
----
-
-## LinkedIn post quality criteria
-
-A post is valid when every criterion below is satisfied:
-- The first line creates enough tension for the "see more" click without revealing the answer
-- The argument is genuinely developed: removing any block makes the post worse
-- The tone matches what the user defined in the conversation: no hype, no motivational register, no untranslated jargon
-- Paragraph length varies, and the single-sentence paragraph appears two or three times at most, as a beat
-- Inside each paragraph, the sentences are joined by real connectives instead of stacked side by side
-- Every paragraph carries at least one proper noun or number a reader could go verify
-- The writer is exposed somewhere: a decision they made, a price they paid, data only they have
-- There is no markdown (`**`, `_`, `#`), only plain text with line breaks
-- The close takes a position or asks something the writer genuinely can't answer, and asks for nothing
-- There are no hashtags, unless the user asked for them
-- The character count does not exceed 3,000
-- Reading only the first line and the CTA, the reader gets the central thesis of the post
-- The image shows something from the post's actual subject, is legible as a thumbnail, and is not a stock photo
-- The image is saved at `posts/linkedin/<slug>/image.png` and the final `sketch/v<N>.md` footer records its path and source URL
-- The root of `posts/linkedin/<slug>/` holds the publishable set: `final.md` (copy of the final `sketch/v<N>.md`) alongside `image.png`, with the `v<N>` history left intact in `sketch/`
-
-If any criterion fails, redo it before presenting.
+> "Post pronto. Tudo sai de `posts/linkedin/<slug>/`: `final.md` e `image.png`. O histórico de versões fica em `sketch/`. Próximo passo: publicar manualmente no LinkedIn."
 
 ---
 
-## Out of scope
+## Critérios de qualidade do post de LinkedIn
 
-- Does not capture raw ideas (that's the idea capture skill)
-- Does not write Reel scripts (that's the script skill)
-- Does not write carousels (that's the carousel skill)
-- Does not write threads (that's the thread skill)
-- Does not adapt a carousel for LinkedIn: when the user wants to publish a carousel on LinkedIn, they should go straight to publishing or design, without passing through this text skill
-- Does not publish anything: publishing on LinkedIn is manual
+Um post é válido quando todo critério abaixo é atendido:
+- A primeira linha cria tensão suficiente para o clique em "ver mais" sem revelar a resposta
+- O argumento é desenvolvido de verdade: tirar qualquer bloco piora o post
+- O tom bate com o que o usuário definiu na conversa: sem hype, sem registro motivacional, sem jargão sem explicação
+- O tamanho dos parágrafos varia, e o parágrafo de uma frase aparece no máximo duas ou três vezes, como beat
+- Dentro de cada parágrafo, as frases estão ligadas por conectivos de verdade em vez de empilhadas lado a lado
+- Todo parágrafo carrega pelo menos um nome próprio ou um número que o leitor poderia ir verificar
+- O autor está exposto em algum lugar: uma decisão que tomou, um preço que pagou, um dado que só ele tem
+- Não há markdown (`**`, `_`, `#`), só texto puro com quebras de linha
+- O fechamento toma uma posição ou pergunta algo que o autor de fato não consegue responder, e não pede nada
+- Não há hashtags, a menos que o usuário tenha pedido
+- A contagem de caracteres não passa de 3.000
+- Lendo só a primeira linha e o CTA, o leitor pega a tese central do post
+- A imagem mostra algo do assunto real do post, é legível como thumbnail e não é foto de banco de imagem
+- A imagem está salva em `posts/linkedin/<slug>/image.png` e o rodapé do `sketch/v<N>.md` final registra o caminho e a URL de origem
+- A raiz de `posts/linkedin/<slug>/` guarda o conjunto publicável: `final.md` (cópia do `sketch/v<N>.md` final) ao lado de `image.png`, com o histórico `v<N>` intacto em `sketch/`
+
+Se qualquer critério falhar, refaça antes de apresentar.
+
+---
+
+## Fora do escopo
+
+- Não captura ideias cruas (isso é a skill de captura de ideias)
+- Não escreve roteiros de Reel (isso é a skill de roteiro)
+- Não escreve carrosséis (isso é a skill de carrossel)
+- Não escreve threads (isso é a skill de thread)
+- Não adapta um carrossel para o LinkedIn: quando o usuário quiser publicar um carrossel no LinkedIn, vai direto para a publicação ou para o design, sem passar por esta skill de texto
+- Não publica nada: publicar no LinkedIn é manual

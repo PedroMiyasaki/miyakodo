@@ -1,15 +1,15 @@
 # Aprendizados
 
-Recording-session learnings, newest first. Read the top entries before every Saturday
-batch; add a new one whenever a session goes wrong in a way that could repeat.
+Aprendizados de sessão de gravação, do mais recente para o mais antigo. Leia as entradas do topo
+antes de todo lote de sábado. Adicione uma nova sempre que uma sessão dá errado de um jeito que pode repetir.
 
-Written by the `registrar-aprendizado` skill: one `## YYYY-MM-DD (sábado)` heading per recording
-session, one bullet per mistake — what happened, then the rule that prevents it.
+Escrito pela skill `registrar-aprendizado`: um heading `## YYYY-MM-DD (sábado)` por sessão de
+gravação, um bullet por erro: o que aconteceu, depois a regra que evita.
 
-<!-- new entries go directly below this line -->
+<!-- entradas novas entram logo abaixo desta linha -->
 
 ## 2026-08-29 (sábado)
 
-- Delivery drifted into YouTuber mode — drop the emphasis, read it the way you'd say it to one person.
-- Same point restated three ways — say it once and move on; a longer take is a worse take.
-- "Basicamente" on repeat — cut the filler, start the sentence at the actual point.
+- Entrou no modo YouTuber na hora de falar: tira a ênfase e lê do jeito que você diria para uma pessoa só.
+- Repetiu a mesma coisa de três jeitos: fala uma vez e segue. Take mais longo é take pior.
+- "Basicamente" em loop: corta a muleta e começa a frase no ponto de verdade.

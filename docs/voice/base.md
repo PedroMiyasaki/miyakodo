@@ -1,356 +1,144 @@
-# Base voice
+# Voz base
 
-This is the base voice for everything produced in this project: Reel scripts, threads, carousels, LinkedIn posts, captions. It applies to every piece, in every format, with no exceptions.
+Esta é a voz base de tudo que sai deste projeto: roteiros de Reel, threads, carrosséis, posts de LinkedIn, legendas. Vale para toda peça, em todo formato, sem exceção.
 
-It is a **base**, not the whole voice. Format-specific and situational rules stack on top of it as layers in `docs/voice/layers/`. When a layer contradicts the base, the layer wins for that piece — but the base is the floor: nothing ships below it.
+É uma **base**, não a voz inteira. Regras de formato e de situação empilham em cima dela como layers em `docs/voice/layers/`. Quando uma layer contradiz a base, a layer vence naquela peça. Mas a base é o piso: nada sai abaixo dela.
 
-**Read this before writing, not after.** These are not repairs applied to a finished draft. They are how the draft comes out the first time. Reviewing against this list afterwards is the backstop, not the method.
-
----
-
-## The core idea
-
-Machine-generated writing has a smell. It is never a single word or trick — it is the combination: predictable structure, hedge-then-assert phrasing, relentless parallelism, inflated significance, and everything wrapped in a tidy bow. Human writing is messier, more opinionated, and varies in rhythm.
-
-**This is not about dumbing the writing down.** It is about sounding like someone who actually knows the subject and has opinions about it. Density is welcome. Polish that erases the person is not.
-
-**Pattern stacking:** when several weak signals land on the same sentence — boldface plus scare quotes plus an em-dash aside on one coined term — that is one strong tell, not three weak ones. Fix it once. Do not count it three times.
+**Leia isto antes de escrever, não depois.** Isto não é conserto aplicado num rascunho pronto. É o jeito como o rascunho sai da primeira vez. Revisar contra esta lista no fim é a rede de segurança, não o método.
 
 ---
 
-## 1. Structure
+## A ideia central
 
-Formulas are the most visible tell. The same section shape repeated ten times. Every paragraph built identically.
+Texto gerado por máquina tem cheiro. Nunca é uma palavra ou um truque isolado: é a combinação. Estrutura previsível, frase que hesita e depois afirma, paralelismo sem descanso, importância inflada, e tudo embrulhado com um laço no fim. Texto humano é mais bagunçado, tem mais opinião e varia de ritmo.
 
-**Avoid:**
-- Every section ending in a neat takeaway or bottom line
-- Repeated callouts: "What this means for you:", "The takeaway:", "Why it matters:"
-- Identical paragraph counts per section, identical item counts per list
-- "Setup, explanation, conclusion" repeated verbatim across sections
-- Formulaic closers: "Challenges and Future Prospects", "Future Outlook"
-- "Despite its [strength]… faces challenges… Despite these challenges…" loops
+**Isso não é pedir texto mais simples.** É soar como alguém que conhece o assunto de verdade e tem opinião sobre ele. Densidade é bem-vinda. Polimento que apaga a pessoa, não.
 
-**Instead:**
-- Vary section length. Some get two paragraphs. Some get five.
-- Let sections end abruptly. Not everything needs a bow.
-- Break the pattern deliberately: if three sections are lists, make the fourth prose.
-- Fold the "what this means" into the text instead of announcing it.
-- Replace challenge/outlook filler with specific facts.
+**O ponto de partida.** O português que sai por padrão vem de um lugar específico: petição, artigo acadêmico e redação de vestibular. Esse é o registro que domina o texto formal em português na internet, então é ele que aparece quando ninguém pede outra coisa. O problema não é a formalidade em si. É que esse registro pertence a documento, e a gente escreve para vídeo, carrossel e post.
 
-> **Weak:** Despite its impressive benchmark performance, the model faces challenges typical of open-weight releases, including inference cost and hardware requirements. Despite these challenges, with its permissive license and growing community, it continues to gain adoption.
+**Nada aqui pede texto errado.** Toda regra deste guia escolhe, entre duas formas corretas, a que alguém usaria falando.
+
+**Empilhamento de padrões:** quando vários sinais fracos caem na mesma frase (negrito, mais aspas de ironia, mais um aparte dramático, tudo em cima de um termo inventado), isso é um sinal forte, não três fracos. Conserte uma vez. Não conte três vezes. O inverso também vale: um caso isolado não é sinal, o empilhamento é.
+
+---
+
+## 1. Estrutura
+
+Fórmula é o sinal mais visível. O mesmo desenho de seção repetido dez vezes. Todo parágrafo montado igual.
+
+**Evite:**
+- Toda seção terminando numa lição arrumada ou numa conclusão
+- Chamada repetida: "O que isso significa para você:", "A lição:", "Por que isso importa:"
+- O mesmo número de parágrafos por seção, o mesmo número de itens por lista
+- "Contexto, explicação, conclusão" repetido ao pé da letra em cada seção
+- Fecho de fórmula: "Desafios e perspectivas", "O que vem pela frente"
+- O loop "Apesar do seu [ponto forte]… enfrenta desafios… Apesar desses desafios…"
+
+**No lugar:**
+- Varie o tamanho das seções. Uma tem dois parágrafos. Outra tem cinco.
+- Deixe uma seção acabar de repente. Nem tudo precisa de laço.
+- Quebre o padrão de propósito: se três seções são lista, a quarta é prosa.
+- Dilua o "o que isso significa" no texto em vez de anunciar.
+- Troque o enchimento de desafio e perspectiva por fato específico.
+
+> **Fraco:** Apesar do desempenho impressionante nos benchmarks, o modelo enfrenta desafios típicos de um lançamento open-weight, como custo de inferência e requisitos de hardware. Apesar desses desafios, com sua licença permissiva e comunidade crescente, ele continua ganhando adoção.
 >
-> **Better:** Inference costs about 3× more than the API alternative at equivalent throughput. Two inference providers added support in the first week, which is what actually drove adoption.
+> **Melhor:** A inferência custa cerca de 3× mais que a alternativa por API no mesmo throughput. Dois provedores de inferência adicionaram suporte na primeira semana, e foi isso que puxou a adoção de verdade.
 
 **A capa fala para o entusiasta médio, não para o especialista.** O leitor brasileiro médio de IA reconhece ChatGPT, OpenAI, SpaceX, Torvalds. Não reconhece harness, page table, change of control, nem “N fatos mostram onde X termina”. A capa precisa de uma frase que alguém falaria, e de um nome ou logo que a pessoa já conhece. A tese técnica entra depois, quando o scroll já aconteceu.
 
-> **Weak:** 6 fatos mostram onde o GPT-6 termina e o discurso de AGI começa.
+> **Fraco:** 6 fatos mostram onde o GPT-6 termina e o discurso de AGI começa.
 >
-> **Better:** O ChatGPT-6 é ótimo. Mas se acalmem, a AGI ainda não está entre nós.
+> **Melhor:** O ChatGPT-6 é ótimo. Mas se acalmem, a AGI ainda não está entre nós.
 
-> **Weak:** 4 elos mostram quem decide quais modelos chegam ao seu IDE
+> **Fraco:** 4 elos mostram quem decide quais modelos chegam ao seu IDE
 >
-> **Better:** A SpaceX comprou o Cursor. E a OpenAI não gostou nada disso.
+> **Melhor:** A SpaceX comprou o Cursor. E a OpenAI não gostou nada disso.
 
 **Conte o caso até o leitor conseguir repetir o que aconteceu.** Se alguém técnico lê o post e ainda não entende o conflito, o bug ou o teste, o texto falhou. Ensina o objeto primeiro, em analogia ou cena cotidiana; o caveat, o número e a tese vêm depois. Abrir no jargão ou no “mas” é inverter a aula.
 
-> **Weak:** O 99,9% mais chamativo veio com o harness da própria OpenAI.
+> **Fraco:** O 99,9% mais chamativo veio com o harness da própria OpenAI.
 >
-> **Better:** O ARC-AGI-3 é um teste que mede a capacidade de um modelo no eixo AGI. Ele gera um mini-game nunca visto pela IA, o que teoricamente testa a capacidade dela de generalizar inteligência em tarefas novas. Nesse contexto, o ChatGPT-6 foi muito bem, com 99,9% de acerto.
+> **Melhor:** O ARC-AGI-3 é um teste que mede a capacidade de um modelo no eixo AGI. Ele gera um mini-game nunca visto pela IA, o que teoricamente testa a capacidade dela de generalizar inteligência em tarefas novas. Nesse contexto, o ChatGPT-6 foi muito bem, com 99,9% de acerto.
 > Mas tem um detalhe importante...
 
-> **Weak:** Numa Battlemage G21 de 16 GiB, o driver Intel Xe entregava parte do armazenamento de compressão como VRAM livre.
+> **Fraco:** Numa Battlemage G21 de 16 GiB, o driver Intel Xe entregava parte do armazenamento de compressão como VRAM livre.
 >
-> **Better:** O computador ligava. Mas a tela de login não parava de reiniciar.
+> **Melhor:** O computador ligava. Mas a tela de login não parava de reiniciar.
 
 **Não reabra o slide seguinte com a prova do slide anterior.** Se o slide 4 já gastou “24 patches e 18 reinicializações”, o 5 começa no próximo fato. Repetir a contagem no gancho é feio e parece que a história não andou.
 
-> **Weak:** Depois de 24 patches e 18 reinicializações, surgiu uma correção de uma linha.
+> **Fraco:** Depois de 24 patches e 18 reinicializações, surgiu uma correção de uma linha.
 >
-> **Better:** Em determinado momento, o sistema arredondava a memória para cima e liberava 2 KiB que deveriam continuar reservados.
+> **Melhor:** Em determinado momento, o sistema arredondava a memória para cima e liberava 2 KiB que deveriam continuar reservados.
 
 **CTA de carrossel pede um comentário-chave, não uma bifurcação retórica.** O fecho oferece o ativo (artigo, commit, link) em troca de uma palavra no comentário. A pergunta “A ou B?” no último slide parece exercício, não conversa.
 
-> **Weak:** Agora escolha: AGI ou ótimo upgrade?
+> **Fraco:** Agora escolha: AGI ou ótimo upgrade?
 >
-> **Better:** Eu escrevi um artigo detalhando melhor esse comparativo. Comenta “COMPARATIVO” e eu te envio!
+> **Melhor:** Eu escrevi um artigo detalhando melhor esse comparativo. Comenta “COMPARATIVO” e eu te envio!
 
-> **Weak:** Quando a IA disser “impossível”, você fecha o relatório ou pede outro diagnóstico?
+> **Fraco:** Quando a IA disser “impossível”, você fecha o relatório ou pede outro diagnóstico?
 >
-> **Better:** Ficou curioso para ver esse processo em detalhes? Comente “COMMIT” que eu te envio o link do commit que exploramos aqui.
+> **Melhor:** Ficou curioso para ver esse processo em detalhes? Comente “COMMIT” que eu te envio o link do commit que exploramos aqui.
 
 ---
 
-## 2. Significance inflation and promotional language
+## 2. Inflação de importância e linguagem promocional
 
-The default failure mode is puffing up importance. Everything becomes pivotal, groundbreaking, vibrant. It reads like a press release.
+O defeito padrão é inflar importância. Tudo vira fundamental, revolucionário, vibrante. Lê como release de assessoria.
 
-**Significance inflation:** stands/serves as, is a testament/reminder, a vital/significant/crucial/pivotal role, key moment, underscores/highlights its importance, reflects broader, symbolizing its ongoing/enduring/lasting, setting the stage for, marking/shaping the, represents/marks a shift, key turning point, evolving landscape, indelible mark, deeply rooted
+**Inflação de importância:** serve como, atua como, é um testemunho de, é um lembrete de, papel fundamental / vital / crucial / central, momento-chave, marco, ressalta a importância, destaca a relevância, reflete uma tendência mais ampla, simbolizando seu legado duradouro, abre caminho para, prepara o terreno para, marca uma virada, representa uma mudança, ponto de inflexão, cenário em constante evolução, marca indelével, profundamente enraizado
 
-**Promotional language:** boasts a, vibrant, rich (figurative), profound, enhancing its, showcasing, exemplifies, commitment to, groundbreaking (figurative), renowned, breathtaking, must-visit, stunning, nestled, in the heart of
+**Linguagem promocional:** conta com, vibrante, rico (no sentido figurado), profundo, aprimorando, exibindo, exemplifica, compromisso com, revolucionário (no sentido figurado), renomado, deslumbrante, imperdível, impressionante, aninhado, no coração de
 
-**The fix is rarely a synonym.** Usually you delete the inflation and put a specific fact in its place.
+**O conserto raramente é um sinônimo.** Quase sempre você apaga a inflação e põe um fato específico no lugar.
 
-> **Weak:** The lab was founded in 2023, marking a pivotal moment in the evolution of open model research.
+> **Fraco:** O laboratório foi fundado em 2023, marcando um momento fundamental na evolução da pesquisa em modelos abertos.
 >
-> **Better:** The lab was founded in 2023 to publish open-weight models, after its founders left a closed lab over release policy.
+> **Melhor:** O laboratório foi fundado em 2023 para publicar modelos open-weight, depois que os fundadores saíram de um laboratório fechado por discordar da política de lançamento.
+
+### Adjetivo que ninguém falaria
+
+*Realidade brutal*, *impacto real*, *tentativa bonita*, *verdade crua*, *escolha corajosa*. O adjetivo foi escolhido pelo peso, não pelo encaixe, e o par só existe no papel.
+
+O teste: você já disse essa combinação em voz alta para alguém? Se a resposta for não, troque o adjetivo ou corte ele.
+
+**Isso não é um pedido para tirar adjetivo forte.** *Erro caro*, *decisão idiota*, *resultado ridículo* são fortes e são falados. Repare que o problema também não é o adjetivo vazio do topo desta seção, que é outro defeito: ali a palavra não diz nada, aqui ela diz, só que na combinação errada.
+
+### O que não é inflação
+
+**Tirar *muito*, *bem*, *bastante*, *realmente*, *ainda*, *tão* para “soar técnico” deixa o texto estéril.** Isso não é o adjetivo inflado do topo da seção. É o jeito normal de uma pessoa pesar o que está dizendo.
+
+> **Fraco:** O GPT-6 é excelente. O 99,9% não prova AGI.
+>
+> **Melhor:** O GPT-6 melhorou muito. Só não virou AGI.
+
+> **Fraco:** Era uma boa história. Também estava errada num detalhe que muda quase tudo.
+>
+> **Melhor:** Só que eu estava simplificando demais. […] A nota é real, o resultado é realmente impressionante…
+
+A regra de inflação continua valendo para *papel fundamental*, *revolucionário*, *impacto real*, *escolha corajosa*. Não use ela para limpar o português falado.
 
 ---
 
-## 3. Vocabulary
+## 3. Vocabulário
 
-Certain words are immediate giveaways.
+Certas palavras entregam na hora.
 
-**Tier 1 — red flags, avoid outright:** delve, landscape (metaphorical), tapestry, paradigm shift, leverage (verb), harness, navigate (metaphorical), realm, embark on a journey, myriad, plethora, multifaceted, groundbreaking, revolutionize, synergy, ecosystem (non-technical), resonate, streamline
+**Nível 1, sinal vermelho, não use:** mergulhar fundo, mergulhar em, cenário (metafórico), tapeçaria, mudança de paradigma, alavancar (como verbo), navegar (metafórico), universo (metafórico), embarcar numa jornada, jornada, miríade, uma infinidade de, multifacetado, revolucionar, sinergia, ecossistema (fora de contexto técnico), ressoar, desbloquear, potencializar
 
-**Tier 2 — suspicious in clusters, three or more in one piece is a tell:** robust, seamless, cutting-edge, innovative, comprehensive, pivotal, nuanced, compelling, transformative, bolster, underscore, evolving, fostering, imperative, intricate, overarching, unprecedented
+**Nível 2, suspeito em grupo, três ou mais na mesma peça é sinal:** robusto, fluido, de ponta, inovador, abrangente, fundamental, cheio de nuances, convincente, transformador, reforçar, ressaltar, em constante evolução, fomentar, imperativo, intrincado, holístico, disruptivo, sem precedentes, otimizar
 
-Note that several Tier 2 words are legitimate technical terms in this subject matter. `ecosystem` describing a package registry is fine; `ecosystem` describing a market is not. `robust` as a property of a system under load is fine; `robust` as a compliment is not. Judge by whether the word is doing technical work or decorative work.
+Repare que várias palavras do nível 2 são termos técnicos legítimos neste assunto. `ecossistema` descrevendo um registro de pacotes está certo. `ecossistema` descrevendo um mercado, não. `robusto` como propriedade de um sistema sob carga está certo. `robusto` como elogio, não. Julgue pelo que a palavra está fazendo: trabalho técnico ou decoração.
 
-**The fix is often structural, not lexical.** The sentence usually needs rebuilding, not a word swap.
+**O conserto costuma ser estrutural, não lexical.** A frase em geral precisa ser remontada, não ter uma palavra trocada.
 
-> **Weak:** A distinctive feature of the framework is the incorporation of streaming. An enduring testament to its research origins is the widespread adoption of async primitives across the ecosystem, showcasing how these patterns have integrated into production workflows.
+> **Fraco:** Uma característica distintiva do framework é a incorporação de streaming. Um testemunho duradouro da sua origem na pesquisa é a ampla adoção de primitivas assíncronas em todo o ecossistema, evidenciando como esses padrões se integraram aos fluxos de produção.
 >
-> **Better:** The framework streams by default. Its async primitives came out of the research prototype and stayed, which is why production code still carries them.
+> **Melhor:** O framework faz streaming por padrão. As primitivas assíncronas vieram do protótipo de pesquisa e ficaram, e é por isso que o código de produção ainda carrega elas.
 
----
-
-## 4. Grammar-level tics
-
-These give the writing away even when the vocabulary is clean.
-
-### Copula avoidance
-
-Elaborate constructions substituted for plain "is", "are", "has". The tell is clustering — a piece that never says "is" and rotates through "serves as", "stands as", "represents", "functions as". One "serves as" in an otherwise normal paragraph is fine.
-
-- "serves as" / "stands as" / "represents" → "is"
-- "boasts" / "features" / "offers" → "has"
-
-> **Weak:** The router serves as the entry point. It features four backends and boasts sub-millisecond overhead.
->
-> **Better:** The router is the entry point. It has four backends and adds under a millisecond.
-
-Not a tell: "the eval serves as both regression test and benchmark" — that is a normal sentence.
-
-### Superficial -ing analyses
-
-Present participles tacked on to fake depth: "highlighting…", "underscoring…", "emphasizing…", "reflecting…", "symbolizing…", "showcasing…", "contributing to…", "fostering…"
-
-Delete the phrase, or promote it into its own sentence with an actual source behind it.
-
-### Negative parallelism
-
-"Not only… but…" and "It's not just about X, it's about Y". Fine once. The tell is density: in a short piece, once is plenty; twice in a long one. It becomes a crutch fast, and it is especially tempting in hooks — watch for it there.
-
-### Rule of three
-
-Forced triads where the third item is padding: "innovation, inspiration, and insights." Tricolons are ancient and legitimate, so do not flag every group of three. Flag the ones where the third item adds nothing or near-repeats the first two. If it pulls its weight, keep it. If not, cut to two.
-
-### Synonym cycling
-
-Excessive elegant variation: "the model… the system… the network… the architecture" all in one paragraph for the same thing. Pick one term and repeat it. Repetition is fine when it is the clearest word — in technical writing it is usually mandatory.
-
-### False ranges
-
-"From X to Y" where X and Y are not on a meaningful scale.
-
-> **Weak:** The shift has taken us from the first transformer paper to the sprawling model zoo, from single GPUs to the enigmatic dance of distributed training.
->
-> **Better:** The piece covers the original transformer paper, the scaling results that followed, and where distributed training stands now.
-
----
-
-## 5. Rhythm and style
-
-The default cadence is metronomic. Medium sentence. Medium sentence. Medium sentence. Humans vary wildly.
-
-**Avoid:** every sentence 15–25 words, no short punchy lines, nothing that runs long and builds, every sentence opening on a noun or "The".
-
-**Instead:** throw in short ones. "That's new." "It works." "Not anymore." Let a sentence run when the idea needs room. Start some with "But", "And", "So". Fragments are fine outside academic registers.
-
-### Paragraph density
-
-Sentence rhythm has a twin one level up, and it fails the same way. The tell is the piece where every paragraph is one sentence, separated by a blank line, all the way down. It reads as a teleprompter feed rather than as someone writing: every line lands with the same weight, nothing accumulates, and the reader gets no signal about which idea is load-bearing.
-
-**A paragraph is a unit of thought, not a unit of display.** Most of them run three to six sentences that belong together, because they are developing one thing. The one-sentence paragraph is a beat, and it works precisely because it is rare — it stops working the moment it becomes the default.
-
-> **Weak:**
-> The system gets it wrong once in a hundred runs.
->
-> That sounds fine.
->
-> But the application runs a thousand times a day.
->
-> That's ten broken outputs nobody sees.
->
-> **Better:** The system gets it wrong once in a hundred runs, which sounds fine until you look at the volume: the application runs a thousand times a day, so that is ten broken outputs a day and nobody is reading them.
-
-Vary it on purpose. A piece where one paragraph runs six sentences, the next runs two, and the one after is a four-word fragment is a piece written by a person.
-
-### Deliberate repetition
-
-Section 1 kills parallelism that sits in the background — every section built the same, every list the same length. That is a different thing from repetition used as a figure: on purpose, in one place, building to something.
-
-> Quem já construiu coisa de verdade com IA sabe reconhecer esse teatro de longe.
-> Sabe a diferença entre protótipo de palco e sistema em produção.
-> Sabe que empresa não se sustenta com thread viral e print bonito.
-> Sabe também que arquitetura séria exige engenharia, avaliação, contexto, governança.
-
-Four sentences opening on the same verb, and it works, because it is doing rhetorical work and then it stops. The test is whether the repetition is *heard*. Background parallelism is invisible and uniform; a figure is audible and it ends.
-
-### Em dashes
-
-Used to inject dramatic asides. The tell is frequency and function both.
-
-- **Frequency:** more than one per three or four paragraphs is above human baseline.
-- **Function:** even one is a tell when it does the classic move — a dramatic explanatory aside dropped mid-sentence to sound punchy.
-
-Use commas or periods. Restructure. Count them before claiming there are too many.
-
-### Boldface
-
-Mechanical emphasis, especially inside lists. Remove most of it. Save it for genuinely important terms on first mention.
-
-In a carousel, bold also belongs on the turn (“Mas tem um detalhe importante...”, “Modelo melhor? / AGI?”) and on the name of the object the slide is teaching (ARC-AGI-3). Mechanical bold inside a list stays forbidden.
-
-### Inline-header lists
-
-> **Weak:**
-> - **Speed:** The system is faster.
-> - **Quality:** Output quality has improved.
-> - **Security:** Security has been strengthened.
->
-> **Better:** The update cuts p99 latency roughly in half, fixes the truncation bug in long contexts, and moves the token store off disk.
-
-### Emojis
-
-None, in any deliverable.
-
-### Title case in headings
-
-Weak signal on its own — title case is standard in several style guides. Only a tell alongside other patterns. Do not flag it in isolation.
-
-In a pt-BR piece, a headline set entirely in caps is not title case: it is a poster. Carousel headlines go in sentence case, as if spoken.
-
-> **Weak:** 4 ELOS MOSTRAM QUEM DECIDE QUAIS MODELOS CHEGAM AO SEU IDE
->
-> **Better:** A SpaceX comprou o Cursor. E a OpenAI não gostou nada disso.
-
-### Curly quotes
-
-Typographically correct and expected in formatted content. Only a tell in plain-text or code contexts where straight quotes are the norm.
-
----
-
-## 6. Hedging, filler, vague attribution
-
-Hedging comes from trying to sound balanced. People with expertise are more direct.
-
-**Hedging to cut:** "It's important to note that…", "It's worth mentioning…", "While there are certainly challenges…", "This is not without its drawbacks…", "To be sure…", "To be fair…", opening with "Certainly," or "Absolutely," and stacked qualifiers like "could potentially possibly be argued that… might have some".
-
-Say the thing. Take the side the piece obviously leans toward. One hedge per piece is fine. Five is the tell.
-
-**Filler:**
-- "In order to achieve this" → "To do this"
-- "Due to the fact that" → "Because"
-- "At this point in time" → "Now"
-- "The system has the ability to" → "The system can"
-- "It is important to note that the data shows" → "The data shows"
-
-**Vague attribution:** "Industry reports", "Experts argue", "Observers have cited". Name the source, give the date, or drop the claim.
-
-> **Weak:** Experts believe the technique plays a crucial role in production reliability.
->
-> **Better:** The technique cut hallucination rate by 40% on the held-out set, according to the 2026 paper that introduced it.
-
-**Chatbot artifacts:** "I hope this helps!", "Let me know if you'd like me to expand on any section!", "Great question!", "Certainly!" Delete entirely — these should never survive into a draft.
-
-**Knowledge-cutoff disclaimers:** "While specific details are limited…", "Based on available information…" Find the source or drop the claim. ("As of [date]" is different — it is standard practice for time-sensitive data and belongs in this subject matter.)
-
-**Sycophancy:** no flattery, no "you're absolutely right". Respond to the substance.
-
-**Generic positive endings:** "The future looks bright", "Exciting times lie ahead", "Only time will tell." End on a specific fact, a position, or just stop.
-
----
-
-## 7. Connective tissue
-
-The same transitions, over and over.
-
-**Overused:** "Moreover", "Furthermore", "Additionally", "In conclusion", "To sum up", "That said", "That being said", "With that in mind", "Moving forward", "When it comes to".
-
-Usually no transition is needed at all — start the next thought. When one is needed, use the real logical connection: because, so, but, and. Reference the previous idea directly instead of reaching for a generic connector. Let paragraph breaks carry the weight.
-
-**That rule is about moving between paragraphs. Inside one, the opposite applies.** Sentences developing the same idea get joined: a comma and a "because", a colon, a "so", a "but", a relative clause. Stripping those out is what produces the metronome from section 5 — four correct sentences standing side by side, none of them touching.
-
-> **Weak:** O prompt é estatístico. Ele acerta 99% das vezes. Uma aplicação roda mil vezes por dia. São dez erros.
->
-> **Better:** O prompt é estatístico, e 99% de acerto vira dez erros por dia numa aplicação que roda mil vezes.
-
-Cutting a generic connector is an improvement. Cutting the logical connection is damage.
-
----
-
-## 8. Voice and texture
-
-Avoiding the patterns above is half the job. Sterile, voiceless writing is just as recognizable as slop.
-
-**Signs of soulless writing, even when technically clean:** uniform sentence length, no opinions, no acknowledged uncertainty, no first person where it fits, no humor or edge, reads like an encyclopedia entry.
-
-**How to put a person in it:**
-
-- **Have opinions.** React to the facts, do not just report them. "I genuinely don't know how to feel about this" is more human than a neutral pro/con list.
-- **Acknowledge complexity.** "This is impressive and also kind of unsettling" beats "This is impressive."
-- **Use "I" when it fits.** First person is honest, not unprofessional. "Here's what gets me…" signals a real person thinking.
-- **Let some mess in.** Perfect structure feels algorithmic. Asides and half-formed thoughts are human.
-- **Be specific about feelings.** Not "this is concerning" but "there's something unsettling about agents grinding away at 3am with nobody watching."
-- **Show lived experience.** "used to be a science project", "that already sounds quaint", "anyone who's debugged a…"
-- **Let real enthusiasm punctuate.** An exclamation mark on the fact that genuinely surprised you — "the biggest jump of the decade came from preprocessing!" — reads as someone who cares about the subject. One or two in a piece. It is only slop when the excitement is manufactured for the reader instead of felt about the thing.
-
-**Limits:** one or two casual asides per section, maximum. No slang, no trying to be hip — it reads as forced. Do not insert "I" if the piece is not already first person. No humor that does not serve the point.
-
-> **Clean but dead:** The experiment produced interesting results. The agents generated 3 million lines of code. Some developers were impressed while others were skeptical. The implications remain unclear.
->
-> **Alive:** I genuinely don't know how to feel about this one. 3 million lines of code, generated while the humans presumably slept. Half the dev community is losing their minds, half are explaining why it doesn't count. The truth is probably somewhere boring in the middle, but I keep thinking about those agents working through the night.
-
----
-
-## 9. Brazilian Portuguese
-
-Sections 1–8 are written against English drafts. When a piece ships in pt-BR, this section stacks on top of them, and it is deliberately written in Portuguese: the prose here doubles as a working sample of the register it describes. Reading rules about spoken Portuguese in English calibrates nothing.
-
-### O ponto de partida
-
-O português que sai por padrão vem de um lugar específico: petição, artigo acadêmico e redação de vestibular. Esse é o registro que domina o texto formal em português na internet, então é ele que aparece quando ninguém pede outra coisa. O problema não é a formalidade em si. É que esse registro pertence a documento, e a gente escreve para vídeo, carrossel e post.
-
-**Nada aqui pede texto errado.** Toda regra abaixo escolhe, entre duas formas corretas, a que alguém usaria falando. Vale a mesma lógica do topo do documento: um caso isolado não é sinal, o empilhamento é.
-
-### 9.1 Verbo com "-se" no lugar de sujeito
-
-O alvo é o `-se` que apaga quem fez a ação: *trata-se de*, *faz-se necessário*, *nota-se*, *observa-se*, *pode-se dizer*, *torna-se*, *encontra-se*, *percebe-se*. Junto com ele vem a passiva sem agente e o *é recomendado que*.
-
-> **Fraco:** Trata-se de um erro comum, e nota-se que ele aparece mais em carrossel.
->
-> **Melhor:** Esse erro é comum, e aparece mais em carrossel.
-
-> **Fraco:** É recomendado que o roteiro seja lido em voz alta antes da gravação.
->
-> **Melhor:** Leia o roteiro em voz alta antes de gravar.
-
-**Não confunda com pronome reflexivo ou verbo pronominal.** *Ela se conecta*, *o post se espalhou*, *a gente se acostuma*, *não se sente bem*: todos normais, todos ficam. O critério é outro: pergunte "quem?" para a frase. Se a frase se recusa a responder, o `-se` está escondendo o sujeito.
-
-A mesóclise (*far-se-á*, *dir-se-ia*) não tem uso nenhum em nenhum formato daqui.
-
-### 9.2 Substantivo sem artigo e sem plural
-
-Em inglês, o substantivo contável dispensa artigo no plural: *avoid bad posts*. Em português não dispensa, e a estrutura do inglês atravessa junto com a tradução. O resultado passa na gramática e trava no ouvido, geralmente sem que o leitor consiga apontar o motivo.
-
-> **Fraco:** É melhor escrever tudo na mão para evitar post ruim.
->
-> **Melhor:** …para evitar um post ruim. / …para evitar posts ruins.
-
-**Isso não quer dizer que todo substantivo pede artigo.** *Eu gosto de música*, *ele vive de conteúdo*, *sem medo*: aí o substantivo é genérico e não conta unidade, então está certo do jeito que está. O alvo é o substantivo contável na posição de objeto, do tipo que dá para contar: um post, dois posts.
-
-### 9.3 Palavra comprida onde cabe palavra curta
+### Palavra comprida onde cabe palavra curta
 
 | Sai | Entra |
 |---|---|
@@ -365,41 +153,11 @@ Em inglês, o substantivo contável dispensa artigo no plural: *avoid bad posts*
 | iniciar, finalizar | começar, acabar |
 | elaborar | escrever, montar |
 
-**Nenhuma dessas palavras está proibida.** O teste é se existe uma palavra curta que diz a mesma coisa *naquela frase*. "Realizar um sonho" fica, porque "fazer um sonho" não é a mesma coisa. "Realizar uma análise" vira "analisar". E em peça técnica algumas delas carregam sentido de verdade: *otimizar* uma query é trabalho técnico, *otimizar* o seu dia é enfeite. Julgue pela função, igual à seção 3.
+**Nenhuma dessas palavras está proibida.** O teste é se existe uma palavra curta que diz a mesma coisa *naquela frase*. "Realizar um sonho" fica, porque "fazer um sonho" não é a mesma coisa. "Realizar uma análise" vira "analisar". E em peça técnica algumas delas carregam sentido de verdade: *otimizar* uma query é trabalho técnico, *otimizar* o seu dia é enfeite. Julgue pela função, igual ao critério do topo desta seção.
 
-### 9.4 Quem está falando
+### Decalque do inglês
 
-Três hábitos que empurram o texto para longe da fala, agrupados porque aparecem juntos.
-
-**Pronome oblíquo antes do verbo:** *isso lhe permite*, *conferindo-lhe*, *ao fazê-lo*, *eu o vi*. Nenhum formato daqui aguenta essa fileira. Na fala o pronome vira tônico ("eu vi ele") ou some ("Viu o vídeo?" "Vi.").
-
-**Futuro em -rá:** *você notará*, *isso trará*, *poderá*. Vira "você vai notar", "isso vai trazer". Cuidado com o exagero: *será* e *vai ser* convivem sem problema, e o alvo é a forma empilhada, não uma ocorrência.
-
-**Primeira pessoa do plural:** *precisamos*, *fizemos*, *observamos*. Em roteiro e legenda isso quase sempre é "a gente precisa", "a gente fez".
-
-**O formato move o limite.** Roteiro de Reel é fala transcrita e aguenta o registro mais solto que existe nesta seção. Post técnico de LinkedIn aguenta menos, e "nós" ali pode ser a escolha certa. O que nenhum dos dois aguenta é o clítico culto.
-
-### 9.5 Conectores de redação
-
-A seção 7 já trata de conector genérico, mas o repertório em português é outro, e vem inteiro da redação escolar:
-
-*Ademais* · *Outrossim* · *Por conseguinte* · *Dessa forma* · *Sendo assim* · *Nesse sentido* · *Diante do exposto* · *Em suma* · *Vale ressaltar que* · *Cabe destacar* · *É importante frisar* · *Convém salientar* · *Em contrapartida*
-
-Some a família inteira do *É importante...*: *é importante lembrar que*, *é fundamental entender*, *vale lembrar que*.
-
-Na maior parte dos casos o conector escolar não precisa existir, e a frase seguinte começa sozinha. Quando precisa, use a ligação real: mas, só que, porque, aí, então. *No entanto* uma vez num texto longo não é crime.
-
-**O outro lado do mesmo defeito:** cortar o conector de redação e não recolocar a ligação falada. O resultado é o português de IA: declaração, ponto, declaração, ponto.
-
-> **Fraco:** As duas notas são verdadeiras. Elas só respondem a perguntas diferentes.
->
-> **Melhor:** Portanto, não existe um resultado verdadeiro e outro falso. Existem dois resultados verdadeiros medindo coisas diferentes, embora apenas um deles tenha ido parar no centro do lançamento.
-
-Em parágrafo de peça em pt-BR, *só que*, *porque*, *aí*, *então*, *mesmo assim*, *ainda assim* não são enfeite. São o tecido. A seção 5 pede frase curta como beat em inglês; aplicada dentro do parágrafo em português, vira o empilhamento que denuncia a máquina. Aqui esta seção ganha da 5.
-
-### 9.6 Decalque do inglês
-
-Construções que passam na gramática e não passam no ouvido, porque foram pensadas em inglês:
+Construções que passam na gramática e não passam no ouvido, porque foram pensadas em inglês. Saber de onde cada uma vem ajuda a reconhecer:
 
 | Decalque | Origem |
 |---|---|
@@ -416,9 +174,7 @@ Construções que passam na gramática e não passam no ouvido, porque foram pen
 | Aqui está o porquê | *Here's why* |
 | Espero que este email o encontre bem | *I hope this email finds you well* |
 
-A lista Tier 1 da seção 3 traduz quase inteira e continua valendo: *delve* vira "mergulhar", *landscape* vira "cenário", *journey* vira "jornada", *tapestry* vira "tapeçaria".
-
-**Algumas dessas expressões já são português de verdade.** "Divisor de águas" existia muito antes do ChatGPT, e "no final do dia" está na boca de qualquer pessoa que trabalha em empresa. Sozinha, nenhuma delas prova nada. Elas contam quando aparecem em cima das outras coisas desta seção.
+**Algumas dessas expressões já são português de verdade.** "Divisor de águas" existia muito antes do ChatGPT, e "no final do dia" está na boca de qualquer pessoa que trabalha em empresa. Sozinha, nenhuma delas prova nada. Elas contam quando aparecem em cima das outras coisas deste guia.
 
 O decalque também mora no heading e no fecho aforístico: a frase foi pensada como título de newsletter em inglês e só depois traduzida.
 
@@ -426,15 +182,263 @@ O decalque também mora no heading e no fecho aforístico: a frase foi pensada c
 >
 > **Melhor:** O mesmo GPT-6 tirou 62,7% e 99,9% na mesma prova. / O GPT-6 ainda alucina muito, só que quase a metade.
 
-### 9.7 Adjetivo que ninguém falaria
+---
 
-*Realidade brutal*, *impacto real*, *tentativa bonita*, *verdade crua*, *escolha corajosa*. O adjetivo foi escolhido pelo peso, não pelo encaixe, e o par só existe no papel.
+## 4. Tiques de gramática
 
-O teste: você já disse essa combinação em voz alta para alguém? Se a resposta for não, troque o adjetivo ou corte ele.
+Esses entregam o texto mesmo quando o vocabulário está limpo.
 
-**Isso não é um pedido para tirar adjetivo forte.** *Erro caro*, *decisão idiota*, *resultado ridículo* são fortes e são falados. Repare que o problema também não é o adjetivo vazio da seção 2, que é outro defeito: ali a palavra não diz nada, aqui ela diz, só que na combinação errada.
+### Fuga do verbo "ser"
 
-### 9.8 Frase de guru e frase sem referente
+Construção rebuscada no lugar de "é", "são", "tem". O sinal é o acúmulo: a peça que nunca diz "é" e fica alternando entre "serve como", "atua como", "representa", "funciona como". Um "serve como" num parágrafo normal não é nada.
+
+- "serve como" / "atua como" / "representa" → "é"
+- "conta com" / "apresenta" / "oferece" / "dispõe de" → "tem"
+
+> **Fraco:** O roteador atua como ponto de entrada. Ele conta com quatro backends e apresenta um overhead abaixo de um milissegundo.
+>
+> **Melhor:** O roteador é o ponto de entrada. Tem quatro backends e adiciona menos de um milissegundo.
+
+Não é sinal: "o eval serve de teste de regressão e de benchmark ao mesmo tempo". Frase normal.
+
+### Gerúndio de análise rasa
+
+Gerúndio pendurado no fim da frase para fingir profundidade: "destacando…", "ressaltando…", "enfatizando…", "refletindo…", "simbolizando…", "evidenciando…", "contribuindo para…", "fomentando…"
+
+Apague o trecho, ou promova ele a frase própria com uma fonte real por trás.
+
+### Paralelismo negativo
+
+"Não só… mas também…" e "Não é só sobre X, é sobre Y". Uma vez, tudo bem. O sinal é a densidade: numa peça curta, uma vez já basta. Duas numa longa. Vira muleta rápido, e tenta muito no gancho, então olhe ali primeiro.
+
+### Regra de três
+
+Tríade forçada onde o terceiro item é enchimento: "inovação, inspiração e insights". Tricólon é figura antiga e legítima, então não marque todo grupo de três. Marque os que têm um terceiro item que não acrescenta nada ou quase repete os dois primeiros. Se ele carrega peso, fica. Se não, corte para dois.
+
+### Rodízio de sinônimos
+
+Variação elegante demais: "o modelo… o sistema… a rede… a arquitetura", tudo no mesmo parágrafo, tudo para a mesma coisa. Escolha um termo e repita. Repetir é normal quando é a palavra mais clara. Em texto técnico é quase obrigatório.
+
+### Intervalo falso
+
+"De X a Y" onde X e Y não estão numa escala que faça sentido.
+
+> **Fraco:** A virada nos levou do primeiro paper do transformer ao zoológico de modelos de hoje, de uma GPU só à dança enigmática do treinamento distribuído.
+>
+> **Melhor:** A peça cobre o paper original do transformer, os resultados de escala que vieram depois e onde o treinamento distribuído está agora.
+
+### Verbo com "-se" no lugar de sujeito
+
+O alvo é o `-se` que apaga quem fez a ação: *trata-se de*, *faz-se necessário*, *nota-se*, *observa-se*, *pode-se dizer*, *torna-se*, *encontra-se*, *percebe-se*. Junto com ele vem a passiva sem agente e o *é recomendado que*.
+
+> **Fraco:** Trata-se de um erro comum, e nota-se que ele aparece mais em carrossel.
+>
+> **Melhor:** Esse erro é comum, e aparece mais em carrossel.
+
+> **Fraco:** É recomendado que o roteiro seja lido em voz alta antes da gravação.
+>
+> **Melhor:** Leia o roteiro em voz alta antes de gravar.
+
+**Não confunda com pronome reflexivo ou verbo pronominal.** *Ela se conecta*, *o post se espalhou*, *a gente se acostuma*, *não se sente bem*: todos normais, todos ficam. O critério é outro: pergunte "quem?" para a frase. Se a frase se recusa a responder, o `-se` está escondendo o sujeito.
+
+A mesóclise (*far-se-á*, *dir-se-ia*) não tem uso nenhum em nenhum formato daqui.
+
+### Substantivo sem artigo e sem plural
+
+O substantivo contável em posição de objeto pede artigo ou plural. O hábito de largar ele pelado vem do inglês, onde *avoid bad posts* dispensa artigo, e atravessa junto com a estrutura da frase. O resultado passa na gramática e trava no ouvido, geralmente sem que o leitor consiga apontar o motivo.
+
+> **Fraco:** É melhor escrever tudo na mão para evitar post ruim.
+>
+> **Melhor:** …para evitar um post ruim. / …para evitar posts ruins.
+
+**Isso não quer dizer que todo substantivo pede artigo.** *Eu gosto de música*, *ele vive de conteúdo*, *sem medo*: aí o substantivo é genérico e não conta unidade, então está certo do jeito que está. O alvo é o substantivo contável na posição de objeto, do tipo que dá para contar: um post, dois posts.
+
+### Quem está falando
+
+Três hábitos que empurram o texto para longe da fala, agrupados porque aparecem juntos.
+
+**Pronome oblíquo antes do verbo:** *isso lhe permite*, *conferindo-lhe*, *ao fazê-lo*, *eu o vi*. Nenhum formato daqui aguenta essa fileira. Na fala o pronome vira tônico ("eu vi ele") ou some ("Viu o vídeo?" "Vi.").
+
+**Futuro em -rá:** *você notará*, *isso trará*, *poderá*. Vira "você vai notar", "isso vai trazer". Cuidado com o exagero: *será* e *vai ser* convivem sem problema, e o alvo é a forma empilhada, não uma ocorrência.
+
+**Primeira pessoa do plural:** *precisamos*, *fizemos*, *observamos*. Em roteiro e legenda isso quase sempre é "a gente precisa", "a gente fez".
+
+**O formato move o limite.** Roteiro de Reel é fala transcrita e aguenta o registro mais solto que existe neste guia. Post técnico de LinkedIn aguenta menos, e "nós" ali pode ser a escolha certa. O que nenhum dos dois aguenta é o clítico culto.
+
+---
+
+## 5. Ritmo e estilo
+
+A cadência padrão é metronômica. Frase média. Frase média. Frase média. Gente de verdade varia muito.
+
+**Evite:** toda frase com 15 a 25 palavras, nenhuma frase curta de impacto, nenhuma que corre longa e vai construindo, toda frase começando por substantivo ou por artigo.
+
+**No lugar:** jogue frases curtas. "Isso é novo." "Funciona." "Não mais." Deixe uma frase correr quando a ideia precisa de espaço. Comece algumas com "Mas", "E", "Aí", "Então". Fragmento é normal fora de registro acadêmico.
+
+**A frase curta é um beat, não o padrão.** Ela fecha um parágrafo, abre outro, cai uma vez para marcar o ponto. Dentro do parágrafo, frase que desenvolve a mesma ideia fica ligada à vizinha, e a seção 7 diz como. Empilhar frase curta dentro do parágrafo não é ritmo, é o staccato que denuncia a máquina.
+
+### Densidade de parágrafo
+
+O ritmo da frase tem um gêmeo um nível acima, e ele falha do mesmo jeito. O sinal é a peça onde todo parágrafo tem uma frase só, separado por linha em branco, até o fim. Lê como feed de teleprompter, não como alguém escrevendo: toda linha cai com o mesmo peso, nada acumula, e o leitor não recebe nenhum sinal de qual ideia sustenta o resto.
+
+**Parágrafo é unidade de pensamento, não de exibição.** A maioria tem de três a seis frases que pertencem uma à outra, porque estão desenvolvendo uma coisa só. O parágrafo de uma frase é um beat, e funciona justamente porque é raro. Para de funcionar na hora em que vira o padrão.
+
+> **Fraco:**
+> O sistema erra uma vez a cada cem execuções.
+>
+> Parece bom.
+>
+> Só que a aplicação roda mil vezes por dia.
+>
+> São dez saídas quebradas que ninguém vê.
+>
+> **Melhor:** O sistema erra uma vez a cada cem execuções, o que parece bom até você olhar o volume: a aplicação roda mil vezes por dia, então são dez saídas quebradas por dia e ninguém está lendo.
+
+Varie de propósito. Uma peça onde um parágrafo tem seis frases, o seguinte tem duas e o outro é um fragmento de quatro palavras é uma peça escrita por uma pessoa.
+
+### Frase pensada em inglês
+
+**A frase inteira foi pensada em inglês e só depois vestida de português.** A lista de decalques da seção 3 pega a expressão. Este item pega a arquitetura: título em caixa alta, “N fatos mostram X”, heading de tese, metáfora importada, sentença curta + ponto + sentença curta, sem o continuísmo que o ouvido brasileiro espera. O teste é o mesmo do guia inteiro: você falaria isso assim? Se a resposta for “só se eu estivesse traduzindo um headline”, reescreve. Não basta trocar o vocabulário.
+
+> **Fraco:** Ele não esperou um palpite genial. Cada dúvida virava mais código de diagnóstico, uma nova reinicialização e outra rodada de análise. A IA fazia o trabalho repetitivo. Ele decidia o próximo teste.
+>
+> **Melhor:** Ele não esperou um palpite genial: cada dúvida virava mais código de diagnóstico, que levava a uma nova reinicialização e gerava outra rodada de análise, enquanto a IA fazia o trabalho repetitivo e ele decidia o próximo teste.
+
+### Repetição deliberada
+
+A seção 1 mata o paralelismo que fica no fundo: toda seção montada igual, toda lista do mesmo tamanho. Isso é diferente de repetição usada como figura: de propósito, num lugar só, construindo até alguma coisa.
+
+> Quem já construiu coisa de verdade com IA sabe reconhecer esse teatro de longe.
+> Sabe a diferença entre protótipo de palco e sistema em produção.
+> Sabe que empresa não se sustenta com thread viral e print bonito.
+> Sabe também que arquitetura séria exige engenharia, avaliação, contexto, governança.
+
+Quatro frases abrindo no mesmo verbo, e funciona, porque está fazendo trabalho retórico e depois para. O teste é se a repetição é *ouvida*. Paralelismo de fundo é invisível e uniforme. Figura é audível e acaba.
+
+### Travessão e ponto e vírgula
+
+O travessão entra para injetar aparte dramático. O sinal é frequência e função ao mesmo tempo.
+
+- **Frequência:** mais de um a cada três ou quatro parágrafos está acima do que uma pessoa escreve.
+- **Função:** um só já é sinal quando faz o movimento clássico: o aparte explicativo largado no meio da frase para soar afiado.
+
+A regra é uma: o aparte no meio da frase pede vírgula, dois-pontos ou parênteses. Ou vira frase nova. O travessão dramático é hábito tipográfico importado do inglês, e a essa altura virou piada pronta. Conte antes de dizer que tem demais.
+
+**Ponto e vírgula** não aparece em post nem em legenda. Ele engessa a frase e denuncia na hora.
+
+### Negrito
+
+Ênfase mecânica, principalmente dentro de lista. Tire a maior parte. Guarde para termo importante de verdade na primeira vez que aparece.
+
+Em carrossel, o negrito também vai na virada (“Mas tem um detalhe importante...”, “Modelo melhor? / AGI?”) e no nome do objeto que o slide está ensinando (ARC-AGI-3). Negrito mecânico dentro de lista continua proibido.
+
+### Lista com cabeçalho inline
+
+> **Fraco:**
+> - **Velocidade:** O sistema está mais rápido.
+> - **Qualidade:** A qualidade da saída melhorou.
+> - **Segurança:** A segurança foi reforçada.
+>
+> **Melhor:** A atualização corta a latência p99 mais ou menos pela metade, corrige o bug de truncamento em contexto longo e tira o token store do disco.
+
+### Emojis
+
+Nenhum, em nenhuma peça.
+
+### Título em caixa alta
+
+Inicial maiúscula em cada palavra do título é sinal fraco sozinho: vários manuais de estilo pedem isso. Só conta junto com outros padrões, então não marque isolado.
+
+Título inteiro em caixa alta é outra coisa. Não é estilo, é cartaz. Título de carrossel vai em caixa normal, como se fosse falado.
+
+> **Fraco:** 4 ELOS MOSTRAM QUEM DECIDE QUAIS MODELOS CHEGAM AO SEU IDE
+>
+> **Melhor:** A SpaceX comprou o Cursor. E a OpenAI não gostou nada disso.
+
+### Aspas curvas
+
+Tipograficamente corretas e esperadas em conteúdo formatado. Só são sinal em texto puro ou em contexto de código, onde a aspa reta é a norma.
+
+---
+
+## 6. Hedge, enchimento e atribuição vaga
+
+Hedge vem da tentativa de soar equilibrado. Quem entende do assunto é mais direto.
+
+**Hedge para cortar:** "É importante notar que…", "Vale mencionar que…", "Embora certamente existam desafios…", "Isso não é isento de desvantagens…", "Para ser justo…", "Sem dúvida…", abrir com "Certamente," ou "Com certeza,", e qualificador empilhado como "poderia talvez se argumentar que… pode ter algum".
+
+Diga a coisa. Fique do lado para onde a peça obviamente pende. Um hedge por peça é normal. Cinco é o sinal.
+
+**Enchimento:**
+- "a fim de" → "para"
+- "devido ao fato de que" → "porque"
+- "neste momento" → "agora"
+- "o sistema tem a capacidade de" → "o sistema pode"
+- "é importante notar que os dados mostram" → "os dados mostram"
+
+**Atribuição vaga:** "Relatórios do setor", "Especialistas afirmam", "Observadores apontam". Nomeie a fonte, dê a data, ou tire a afirmação.
+
+> **Fraco:** Especialistas acreditam que a técnica tem papel fundamental na confiabilidade em produção.
+>
+> **Melhor:** A técnica cortou a taxa de alucinação em 40% no conjunto de teste, segundo o paper de 2026 que apresentou ela.
+
+**Resto de chatbot:** "Espero ter ajudado!", "Me avise se quiser que eu detalhe alguma seção!", "Ótima pergunta!", "Claro!" Apague inteiro. Isso nunca deveria chegar a um rascunho.
+
+**Aviso de data de corte:** "Embora os detalhes sejam limitados…", "Com base nas informações disponíveis…" Ache a fonte ou tire a afirmação. ("Até [data]" é outra coisa: é prática normal para dado que envelhece e cabe neste assunto.)
+
+**Bajulação:** nada de elogio, nada de "você está absolutamente certo". Responda ao conteúdo.
+
+**Fecho positivo genérico:** "O futuro é promissor", "Vêm tempos empolgantes por aí", "Só o tempo dirá." Termine num fato específico, numa posição, ou só pare.
+
+---
+
+## 7. Tecido conectivo
+
+As mesmas transições, sem parar. O repertório vem inteiro da redação escolar:
+
+*Ademais* · *Outrossim* · *Além disso* · *Adicionalmente* · *Por conseguinte* · *Dessa forma* · *Sendo assim* · *Nesse sentido* · *Diante do exposto* · *Em suma* · *Em conclusão* · *Dito isso* · *Com isso em mente* · *Quando se trata de* · *Vale ressaltar que* · *Cabe destacar* · *É importante frisar* · *Convém salientar* · *Em contrapartida*
+
+Some a família inteira do *É importante...*: *é importante lembrar que*, *é fundamental entender*, *vale lembrar que*.
+
+Na maior parte dos casos o conector não precisa existir, e a frase seguinte começa sozinha. Quando precisa, use a ligação real: mas, só que, porque, aí, então. Faça referência direta à ideia anterior em vez de pegar um conector genérico. Deixe a quebra de parágrafo carregar o peso. *No entanto* uma vez num texto longo não é crime.
+
+**Essa regra é sobre passar de um parágrafo para outro. Dentro do parágrafo, vale o contrário.** Frase que desenvolve a mesma ideia fica ligada à vizinha: vírgula e "porque", dois-pontos, "só que", "aí", "então", "mesmo assim", "ainda assim", oração relativa. Isso não é enfeite. É o tecido. Tirar essas ligações é o que produz o metrônomo da seção 5: quatro frases corretas lado a lado, nenhuma encostando na outra. A frase curta é beat entre parágrafos ou como fecho, não o padrão dentro do parágrafo.
+
+> **Fraco:** O prompt é estatístico. Ele acerta 99% das vezes. Uma aplicação roda mil vezes por dia. São dez erros.
+>
+> **Melhor:** O prompt é estatístico, e 99% de acerto vira dez erros por dia numa aplicação que roda mil vezes.
+
+> **Fraco:** As duas notas são verdadeiras. Elas só respondem a perguntas diferentes.
+>
+> **Melhor:** Portanto, não existe um resultado verdadeiro e outro falso. Existem dois resultados verdadeiros medindo coisas diferentes, embora apenas um deles tenha ido parar no centro do lançamento.
+
+Cortar um conector de redação é melhoria. Cortar a ligação lógica é estrago, e o resultado é o português de IA: declaração, ponto, declaração, ponto.
+
+---
+
+## 8. Voz e textura
+
+Evitar os padrões acima é metade do trabalho. Texto estéril, sem voz, é tão reconhecível quanto o slop.
+
+**Sinais de texto sem alma, mesmo tecnicamente limpo:** frase sempre do mesmo tamanho, nenhuma opinião, nenhuma dúvida admitida, nenhuma primeira pessoa onde ela caberia, nenhum humor ou aresta, lê como verbete de enciclopédia.
+
+**Como colocar uma pessoa no texto:**
+
+- **Tenha opinião.** Reaja aos fatos, não só relate. "Eu sinceramente não sei o que sentir sobre isso" é mais humano que uma lista neutra de prós e contras.
+- **Admita a complexidade.** "Isso é impressionante e também meio inquietante" ganha de "Isso é impressionante."
+- **Use "eu" quando cabe.** Primeira pessoa é honesta, não é falta de profissionalismo. "O que me pega é…" sinaliza uma pessoa de verdade pensando.
+- **Deixe entrar um pouco de bagunça.** Estrutura perfeita parece algoritmo. Aparte e pensamento pela metade são humanos.
+- **Seja específico sobre o que sente.** Não "isso é preocupante", mas "tem algo inquietante em agente moendo código às 3 da manhã sem ninguém olhando".
+- **Mostre experiência vivida.** "era projeto de feira de ciências", "isso já soa antigo", "quem já debugou um…"
+- **Deixe o entusiasmo de verdade pontuar.** Um ponto de exclamação no fato que te surpreendeu de verdade ("o maior salto da década veio do pré-processamento!") lê como alguém que se importa com o assunto. Um ou dois por peça. Só vira slop quando a empolgação é fabricada para o leitor em vez de sentida pela coisa.
+
+**Limites:** um ou dois apartes casuais por seção, no máximo. Sem gíria colocada de propósito, sem tentar ser descolado: soa forçado. Não enfie "eu" se a peça não é em primeira pessoa. Nenhum humor que não sirva ao ponto.
+
+> **Limpo mas morto:** O experimento produziu resultados interessantes. Os agentes geraram 3 milhões de linhas de código. Alguns desenvolvedores ficaram impressionados, outros céticos. As implicações ainda não estão claras.
+>
+> **Vivo:** Eu sinceramente não sei o que sentir sobre esse. 3 milhões de linhas de código, geradas enquanto os humanos supostamente dormiam. Metade da comunidade dev está surtando, a outra metade está explicando por que não conta. A verdade provavelmente está em algum lugar chato no meio, mas eu não paro de pensar naqueles agentes trabalhando a noite inteira.
+
+### Frase de guru e frase sem referente
 
 **O repertório de guru** já vem gasto de fábrica: "a parte que ninguém vê", "não é sobre X, é sobre Y", "o resultado? [lista]", "no fim, fulano não fez X, ele percebeu Y", "e foi aí que tudo mudou", "ninguém te conta isso", "spoiler:".
 
@@ -444,81 +448,48 @@ O teste: você já disse essa combinação em voz alta para alguém? Se a respos
 
 O teste: tente dizer a frase com outras palavras. Se não dá, ela não significa nada, e quem lê também não entende.
 
-**Frase curta de efeito continua liberada.** A seção 8 pede exatamente isso. A diferença é que a boa fala de alguma coisa concreta: "Inferência custa 3× mais" é curta, é forte, e tem referente.
+**Frase curta de efeito continua liberada.** Esta seção pede exatamente isso. A diferença é que a boa fala de alguma coisa concreta: "Inferência custa 3× mais" é curta, é forte, e tem referente.
 
 **Provérbio de verdade também não é frase de guru.** "Em casa de ferreiro, o espeto de pau", "a conta vem", "quem paga mal paga duas vezes": essas existem na boca das pessoas há décadas e chegam com o significado pronto, sem precisar de explicação. A frase de guru imita esse formato sem ter nem a idade nem o referente. O teste é a origem, não o formato: se a sua avó reconheceria a frase, é provérbio; se ela parece ter sido inventada para o post, é guru.
 
-### 9.9 Pontuação
+---
 
-**Travessão.** A seção 5 já limita a frequência, e em português o limite aperta mais, porque a alternativa é melhor: o aparte no meio da frase pede vírgula, dois-pontos ou parênteses. O travessão dramático é hábito tipográfico importado do inglês, e a essa altura virou piada pronta.
+## O teste de ler em voz alta
 
-**Ponto e vírgula.** Não aparece em post nem em legenda. Ele engessa a frase e denuncia na hora.
+Antes de dar a peça por pronta, leia em voz alta, ou imagine lendo para um colega. Marque tudo que:
 
-### 9.10 Português pensado em inglês
+- Soa como release de assessoria
+- Ninguém diria em voz alta numa conversa
+- Dá uma leve vergonha
+- Está se esforçando demais para parecer inteligente
+- Poderia ter sido escrito sobre qualquer assunto trocando meia dúzia de substantivos
 
-**A frase inteira foi pensada em inglês e só depois vestida de português.** A lista da 9.6 pega o decalque de expressão. Este item pega a arquitetura: título em caixa alta, “N fatos mostram X”, heading de tese, metáfora importada, sentença curta + ponto + sentença curta, sem o continuísmo que o ouvido brasileiro espera. O teste é o mesmo da 9: você falaria isso assim? Se a resposta for “só se eu estivesse traduzindo um headline”, reescreve. Não basta trocar o vocabulário.
+O último é o teste mais afiado. Se a peça sobrevive à troca de assunto, nunca foi sobre o assunto.
 
-> **Fraco:** 4 ELOS MOSTRAM QUEM DECIDE QUAIS MODELOS CHEGAM AO SEU IDE
->
-> **Melhor:** A SpaceX comprou o Cursor. E a OpenAI não gostou nada disso.
+---
 
-> **Fraco:** Ele não esperou um palpite genial. Cada dúvida virava mais código de diagnóstico, uma nova reinicialização e outra rodada de análise. A IA fazia o trabalho repetitivo. Ele decidia o próximo teste.
->
-> **Melhor:** Ele não esperou um palpite genial: cada dúvida virava mais código de diagnóstico, que levava a uma nova reinicialização e gerava outra rodada de análise, enquanto a IA fazia o trabalho repetitivo e ele decidia o próximo teste.
+## O que não sacrificar
 
-### 9.11 Advérbio de intensidade da fala
+Voz não passa por cima de precisão. Mantenha:
 
-**Em pt-BR, tirar *muito*, *bem*, *bastante*, *realmente*, *ainda*, *tão* para “soar técnico” deixa o texto estéril.** Isso não é o adjetivo inflado da seção 2. É o jeito normal de uma pessoa pesar o que está dizendo.
+- Precisão técnica e números específicos
+- Nomes próprios, nomes de produto, versões, atribuições
+- O argumento central
+- Formatação que está fazendo trabalho de verdade, não decoração
 
-> **Fraco:** O GPT-6 é excelente. O 99,9% não prova AGI.
->
-> **Melhor:** O GPT-6 melhorou muito. Só não virou AGI.
+Se uma regra daqui forçar uma afirmação factual a ficar vaga, o fato vence. Ficar vago para soar casual é a mesma falha que inflar para soar importante.
 
-> **Fraco:** Era uma boa história. Também estava errada num detalhe que muda quase tudo.
->
-> **Melhor:** Só que eu estava simplificando demais. […] A nota é real, o resultado é realmente impressionante…
-
-A seção 2 continua valendo para *impacto real*, *escolha corajosa*, *groundbreaking*. Não use ela para limpar o português falado.
-
-### O que esta seção não está pedindo
+E o que este guia não está pedindo:
 
 - **Não é para escrever errado.** Nada aqui pede crase trocada, concordância quebrada ou erro de digitação plantado. Isso aparece em lista de detector porque detector procura sinal, e o objetivo aqui é escrever, não caçar. Texto correto e falado é o alvo.
 - **Não é para forçar gíria.** "Mano", "tipo assim" e "sério mesmo" entram quando saem sozinhos. Gíria colocada de propósito soa pior que a formalidade que ela veio consertar.
 - **Não é lista de palavra proibida.** Cada bloco tem um critério, e o critério vale mais que a lista. Palavra da lista com trabalho para fazer, fica.
-- **Não vale para peça em inglês.** Ali as seções 1 a 8 já bastam.
 - **Não vale igual para todo formato.** Roteiro de Reel, legenda, thread e post de LinkedIn ocupam pontos diferentes da mesma escala.
 
-**Fonte:** os itens 9.2, 9.7 e 9.8 vêm do carrossel de [@souantisocialmedia](https://www.instagram.com/souantisocialmedia/) sobre vícios de linguagem de IA em português. O resto é observação de corpus.
-
 ---
 
-## The read-it-out-loud test
+## Fontes
 
-Before a piece is done, read it out loud, or imagine reading it to a colleague. Flag anything that:
+Os padrões vêm da página [Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing) da Wikipedia, mantida pelo WikiProject AI Cleanup, mais prática editorial comum. Adaptados aqui como padrão de produção, não como checklist de limpeza.
 
-- Sounds like a press release
-- No one would say out loud in conversation
-- Makes you cringe slightly
-- Is trying too hard to sound smart
-- Could have been written about any topic by swapping a few nouns
-
-That last one is the sharpest test. If the piece survives having its subject swapped, it was never about the subject.
-
----
-
-## What not to sacrifice
-
-Voice does not override accuracy. Keep:
-
-- Technical accuracy and specific numbers
-- Proper nouns, product names, versions, attributions
-- The core argument
-- Formatting that is doing real work, not decoration
-
-If a rule here would force a factual claim to become vague, the fact wins. Being vague to sound casual is the same failure as being inflated to sound important.
-
----
-
-## Source
-
-The patterns come from Wikipedia's [Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing), maintained by WikiProject AI Cleanup, plus standard editorial practice. Adapted here as a production standard rather than a cleanup checklist.
+Os blocos sobre substantivo sem artigo, adjetivo que ninguém falaria e frase de guru vêm do carrossel de [@souantisocialmedia](https://www.instagram.com/souantisocialmedia/) sobre vícios de linguagem de IA em português. O resto é observação de corpus.

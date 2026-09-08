@@ -1,63 +1,63 @@
 # Assets · edit-video
 
-## Features and modes
+## Features e modos
 
-- **Features** (one capability each): `features/<id>.md`
-- **Modes** (ordered collections of features): `modes/<id>.md`
+- **Features** (uma capacidade cada): `features/<id>.md`
+- **Modos** (coleções ordenadas de features): `modes/<id>.md`
 
-The orchestrator is `../SKILL.md`: it picks the mode, reads each feature, runs
-them.
+O orquestrador é o `../SKILL.md`: ele escolhe o modo, lê cada feature e roda
+todas.
 
-| Feature | Phase | Script / mechanism |
+| Feature | Fase | Script / mecanismo |
 |---|---|---|
-| `cut-dead-air` | `edl` | ranges in `edl.json` (`video-use` helpers) |
-| `zoom-emphasis` | `plate` | `plate_effects` → `zoompan` with a smoothstep curve |
-| `black-and-white` | `plate` | `plate_effects` → `hue=s=` window with ramps |
+| `cut-dead-air` | `edl` | ranges no `edl.json` (helpers da `video-use`) |
+| `zoom-emphasis` | `plate` | `plate_effects` → `zoompan` com curva smoothstep |
+| `black-and-white` | `plate` | `plate_effects` → janela `hue=s=` com rampas |
 | `pop-it` | `plate` | micro punch-ins + `assets/sfx/click.wav` *(spec)* |
 | `news-inserts` | `overlays` | `news_insert.py` |
 | `motion-third` | `overlays` | HTML/CSS → `motion_terco.py` *(spec)* |
-| `subtitles` | `render` | **every mode, final render only** — `render_vertical.py --subtitles` |
-| `loudnorm` | `render` | `render_vertical.py` (without `--no-loudnorm`) |
+| `subtitles` | `render` | **todo modo, só no render final**: `render_vertical.py --subtitles` |
+| `loudnorm` | `render` | `render_vertical.py` (sem `--no-loudnorm`) |
 
-| Mode | Features |
+| Modo | Features |
 |---|---|
 | `baseline` | cut-dead-air → loudnorm |
 | `news` | cut-dead-air → news-inserts → loudnorm |
 | `authority` | baseline + zoom-emphasis + black-and-white + motion-third *(spec)* + news-inserts *(opt-in)* |
 
-`subtitles` is in no mode's list because it rides on all of them — burned at the
-final render, never on a preview.
+`subtitles` não está na lista de nenhum modo porque vai junto em todos:
+queimada no render final, nunca num preview.
 
 ---
 
-# `news_insert.py` — the news insert CLI (upper third)
+# `news_insert.py` — a CLI do insert de notícia (terço superior)
 
-Used by the `news-inserts` feature. Turns **one image** into a 1080×1920
-overlay: the image in the **upper third**, the rest transparent (face visible
-below). Ken Burns (zoom 1.0→1.06) inside the band + alpha fades + minimal
-chrome. Output ProRes 4444 alpha → `edl.json` `overlays`.
+Usada pela feature `news-inserts`. Transforma **uma imagem** num overlay
+1080×1920: a imagem no **terço superior**, o resto transparente (rosto visível
+embaixo). Ken Burns (zoom 1.0→1.06) dentro da faixa + fades de alpha + chrome
+mínimo. Saída em ProRes 4444 com alpha → `overlays` do `edl.json`.
 
-Each call writes `<out>/frames/*.png` and `<out>/render.mov`.
+Cada chamada escreve `<out>/frames/*.png` e `<out>/render.mov`.
 
-| Flag | Default | What it does |
+| Flag | Padrão | O que faz |
 |---|---|---|
-| `--image` | required | path to the image (screenshot, chart, logo, photo) |
-| `--out` | required | the slot's folder (e.g. `<edit>/animations/slot_news_01`) |
-| `--duration` | required | seconds = the size of the beat's window |
-| `--fit` | `contain` | `contain` = the whole image fits in the band. `cover` = fills the band and crops |
-| `--source` | `""` | mono chyron at the top of the band ("FONTE: …"); omit for a clean insert |
+| `--image` | obrigatória | caminho da imagem (print, gráfico, logo, foto) |
+| `--out` | obrigatória | a pasta do slot (ex.: `<edit>/animations/slot_news_01`) |
+| `--duration` | obrigatória | segundos = o tamanho da janela do beat |
+| `--fit` | `contain` | `contain` = a imagem inteira cabe na faixa. `cover` = preenche a faixa e corta |
+| `--source` | `""` | chyron mono no topo da faixa ("FONTE: …"). Omita para um insert limpo |
 
-The card's colours (ink/paper/seal) are constants in the script itself; the
-chyron's font is `fonts/JetBrainsMono.ttf`.
+As cores do card (ink/paper/seal) são constantes no próprio script. A fonte do
+chyron é `fonts/JetBrainsMono.ttf`.
 
 ## `fonts/`
 
-| File | Used by | Voice |
+| Arquivo | Usada por | Voz |
 |---|---|---|
-| `JetBrainsMono.ttf` | `news_insert.py` | the card's source chyron |
-| `BricolageGrotesque-ExtraBold.ttf` | captions (`BODY`) | Alvinegro DISPLAY |
-| `Newsreader-Italic.ttf` | captions (`EMPH`) | Alvinegro READ |
+| `JetBrainsMono.ttf` | `news_insert.py` | o chyron de fonte do card |
+| `BricolageGrotesque-ExtraBold.ttf` | legendas do vídeo (`BODY`) | DISPLAY do Alvinegro |
+| `Newsreader-Italic.ttf` | legendas do vídeo (`EMPH`) | READ do Alvinegro |
 
-The two caption faces are copied into `<edit>/fonts/` at render time and reached
-via libass's `fontsdir` — they are not installed system-wide, so nothing outside
-this skill can resolve them by name.
+As duas fontes das legendas são copiadas para `<edit>/fonts/` na hora do render
+e alcançadas pelo `fontsdir` do libass: elas não estão instaladas no sistema,
+então nada fora desta skill consegue resolver elas pelo nome.

@@ -1,508 +1,505 @@
 ---
 name: write-substack
 description: >
-  Produces a full illustrated Substack article — a sequential story with a real narrative
-  spine, 3 to 8 images captured live from primary sources in the browser, and a title
-  built to be opened. Works from a thesis that already shipped as a Reel, from breaking
-  news, or from a raw idea. Activate with commands like "write this week's Substack",
-  "turn <slug> into an article", "write the Substack piece about <news>".
+  Produz um artigo ilustrado completo para o Substack: uma história sequencial com
+  espinha narrativa de verdade, 3 a 8 imagens capturadas ao vivo de fontes primárias
+  no navegador, e um título feito para ser aberto. Parte de uma tese que já saiu como
+  Reel, de uma notícia recém-saída ou de uma ideia crua. Ative com comandos como
+  "escreve o Substack da semana", "transforma <slug> em artigo",
+  "escreve o artigo do Substack sobre <notícia>".
 ---
 
 # SKILL · write-substack
-## Production · Substack article (long-form + captured images)
+## Produção · Artigo de Substack (texto longo + imagens capturadas)
 
-Purpose: produce a **finished article** — one a technically literate reader chooses to spend twenty minutes on and forwards to somebody. Not a long post. An article: a story that moves in sequence, carried by images captured from the real thing.
+Propósito: produzir um **artigo acabado**, daqueles que um leitor com base técnica escolhe gastar vinte minutos lendo e encaminha para alguém. Não é um post longo. É um artigo: uma história que anda em sequência, sustentada por imagens capturadas da coisa real.
 
-Three properties separate what this skill ships from what everything else in this repo ships:
+Três propriedades separam o que esta skill publica de tudo o mais que sai deste repositório:
 
-1. **It runs on a narrative spine, not an argument structure.** The reader follows someone finding something out, in order.
-2. **It is illustrated with real captures.** Three to eight images, every one screenshotted from a primary source in the browser, every one placed where the text just raised the question it answers.
-3. **It has no length ceiling.** It ends when the material ends.
-
-**Language of the piece:** English by default. If the user asks for pt-BR (or any other language), write it in that language — follow their lead, do not push back. `docs/voice/base.md` still applies as principle; its Tier 1/Tier 2 word lists are English-specific and do not transfer (see `CLAUDE.md`). A finished English article can be adapted later with `traduzir`.
+1. **Roda numa espinha narrativa, não numa estrutura de argumento.** O leitor acompanha alguém descobrindo alguma coisa, na ordem.
+2. **É ilustrado com capturas reais.** De três a oito imagens, cada uma printada de uma fonte primária no navegador, cada uma colocada onde o texto acabou de levantar a pergunta que ela responde.
+3. **Não tem teto de tamanho.** Acaba quando o material acaba.
 
 ---
 
-## What this channel is for
+## Para que serve este canal
 
-Instagram and LinkedIn are rented audience. Substack is the **owned list** — the only channel here where the reader hands over an address and can answer you directly.
+Instagram e LinkedIn são audiência alugada. O Substack é a **lista própria**: o único canal aqui em que o leitor entrega um endereço e pode responder direto para você.
 
 | | Instagram / LinkedIn | Substack |
 |---|---|---|
-| Metric that matters | reach, reactions | **open rate and replies** |
-| Reader's state | scrolling, cold | opted in, twenty minutes available |
-| What earns the click | a hook that creates tension | a **title worth an evening** |
-| What the piece carries | the conclusion | **the whole route to it, shown** |
-| Role in ACP | A · Audience → C · Community | **C · Community → P · Product** |
+| Métrica que importa | alcance, reações | **taxa de abertura e respostas** |
+| Estado do leitor | rolando o feed, frio | optou por entrar, com vinte minutos disponíveis |
+| O que ganha o clique | um hook que cria tensão | um **título que vale uma noite** |
+| O que a peça carrega | a conclusão | **o caminho inteiro até ela, mostrado** |
+| Papel no ACP | A · Audience → C · Community | **C · Community → P · Product** |
 
-Replies are the product of this channel. The same problem named in thirty replies is the next workshop, the next offer, the next thing worth building. Write toward the reply.
+As respostas são o produto deste canal. O mesmo problema nomeado em trinta respostas é o próximo workshop, a próxima oferta, a próxima coisa que vale construir. Escreva mirando a resposta.
 
-## The rule that keeps this from being a long post
+## A regra que impede isso de virar um post longo
 
-**LinkedIn ships the conclusion. This ships the route.**
+**O LinkedIn publica a conclusão. Aqui sai o caminho.**
 
-An article that reaches the same conclusion by the same road, with more paragraphs, has failed. What the shorter formats could not carry is the sequence: the wrong first guess, the number that broke it, the page you actually went and read, the thing you tried that did not work.
+Um artigo que chega à mesma conclusão pela mesma estrada, com mais parágrafos, falhou. O que os formatos curtos não conseguiram carregar é a sequência: o primeiro palpite errado, o número que quebrou ele, a página que você foi ler de verdade, a coisa que você tentou e não funcionou.
 
-Two concrete tests, applied at Step 5 and again at the end:
+Dois testes concretos, aplicados no Passo 5 e de novo no fim:
 
-- **The artifact test.** The article carries at least one thing that could not have been posted on LinkedIn: a captured figure, a code block, a real log or trace, a table, a number series.
-- **The sequence test.** Read only the section headings, in order. If they do not read as one thing happening after another, the piece is an argument wearing an article's clothes. Rewrite the spine.
-
----
-
-## News is a legitimate subject
-
-Perishable material is welcome here, and often the best subject available. Nothing about this format requires an evergreen thesis.
-
-**But news becomes an article only through reconstruction.** A summary of what was announced is not an article, and the reader has already seen four of those. What makes it yours is the gap between what the coverage said and what the primary document actually says — read on page 14, captured, and put next to the headline. That is the **reconstruction** spine in Step 4, and it is the most image-dependent of the four. If you cannot get to a primary source, there is no article; say so rather than writing the fifth summary.
+- **O teste do artefato.** O artigo carrega pelo menos uma coisa que não caberia num post de LinkedIn: uma figura capturada, um bloco de código, um log ou trace real, uma tabela, uma série de números.
+- **O teste da sequência.** Leia só os headings das seções, na ordem. Se eles não soam como uma coisa acontecendo depois da outra, a peça é um argumento vestido de artigo. Reescreva a espinha.
 
 ---
 
-## Available tools
+## Notícia é assunto legítimo
 
-**Notion MCP** — to read the **Ideas** database, and on the standalone path to update `Status` and `Format` at close.
+Material perecível é bem-vindo aqui, e muitas vezes é o melhor assunto disponível. Nada neste formato exige tese perene.
 
-**Chrome browser automation** (`mcp__claude-in-chrome__*`) — the capture engine, used across a whole session in Step 7. They are deferred: invoke the `claude-in-chrome` skill before calling any of them.
+**Mas notícia só vira artigo por reconstrução.** Um resumo do que foi anunciado não é artigo, e o leitor já viu quatro desses. O que torna o texto seu é a distância entre o que a cobertura disse e o que o documento primário diz de fato, lido na página 14, capturado e colocado ao lado da manchete. Essa é a espinha de **reconstrução** do Passo 4, e é a que mais depende de imagem entre as quatro. Se você não consegue chegar a uma fonte primária, não existe artigo: diga isso em vez de escrever o quinto resumo.
 
 ---
 
-## Required references
+## Ferramentas disponíveis
 
-**The voice, every run:**
+**MCP do Notion**: para ler o banco **Ideas** e, no caminho standalone, para atualizar `Status` e `Format` no fechamento.
 
-| Document | Why |
+**Automação do navegador Chrome** (`mcp__claude-in-chrome__*`): o motor de captura, usado ao longo de uma sessão inteira no Passo 7. Essas ferramentas são carregadas sob demanda (deferred): invoque a skill `claude-in-chrome` antes de chamar qualquer uma delas.
+
+---
+
+## Referências obrigatórias
+
+**A voz, em toda rodada:**
+
+| Documento | Por quê |
 |---|---|
-| `docs/voice/base.md` | The base voice for every piece, in every format. Non-negotiable floor. |
-| `docs/voice/layers/sincere-senior.md` | The register — senior engineer, position first, skin in the game. Default layer for Substack articles as well as LinkedIn posts. Where it disagrees with the base on register, the layer wins; the base's anti-slop rules still hold. |
+| `docs/voice/base.md` | A voz base de toda peça, em todo formato. Piso inegociável. |
+| `docs/voice/layers/sincere-senior.md` | O registro: engenheiro sênior, posição primeiro, o autor exposto. Layer padrão para artigos do Substack, assim como para posts de LinkedIn. Onde ela discorda da base no registro, a layer ganha; as regras anti-slop da base continuam valendo. |
 
-If the user names a different layer, read it from `docs/voice/layers/` too and let it win over both.
+Se o usuário nomear outra layer, leia ela também em `docs/voice/layers/` e deixe ela ganhar das duas.
 
-**Prior art on this thesis, when it exists:**
+**O que já existe sobre esta tese, quando existe:**
 
-| File | Why |
+| Arquivo | Por quê |
 |---|---|
-| `posts/script/<slug>/final.md` | The Reel that carried the idea. Read it so the article does not repeat its framing — and to find what the 60-second version had to throw away. |
-| `posts/linkedin/<slug>/final.md` | Only if it already exists. Read it for what to avoid: not one sentence carries over verbatim. |
+| `posts/script/<slug>/final.md` | O Reel que carregou a ideia. Leia para o artigo não repetir o enquadramento dele, e para achar o que a versão de 60 segundos teve que jogar fora. |
+| `posts/linkedin/<slug>/final.md` | Só se já existir. Leia para saber o que evitar: nenhuma frase passa verbatim. |
 
-**Calibration, every run:**
+**Calibração, em toda rodada:**
 
-| Source | What you are reading for |
+| Fonte | O que você está lendo ali |
 |---|---|
-| `posts/substack/*/final.md` — the articles already published here | House style as it actually stands, including how images are placed and captioned. Read the two most recent. On the first run there are none; skip this rather than inventing one. |
-| `.claude/skills/build-linkedin/examples/` (`english/` and `pt-br/`) | Prose register at the sentence level: paragraph density, real connectives, a proper noun or number every two or three sentences, the writer exposed. **Their subject matter is irrelevant.** Read the pair matching the language you are writing in. |
+| `posts/substack/*/final.md`, os artigos já publicados aqui | O estilo da casa como ele está de fato, inclusive como as imagens são colocadas e legendadas. Leia os dois mais recentes. Na primeira rodada não existe nenhum; pule em vez de inventar um. |
+| `.claude/skills/build-linkedin/examples/` | Registro da prosa no nível da frase: densidade de parágrafo, conectivos reais, um nome próprio ou número a cada duas ou três frases, o autor exposto. **O assunto deles é irrelevante.** |
 
-There is no audience document and no content-pillar document, by design. If the piece needs a target reader or an angle, ask the user.
-
----
-
-## When to act
-
-- "write this week's Substack"
-- "turn `<slug>` into an article"
-- "write the Substack piece about [something that happened this week]"
-- "write the article version of the reel about X"
-- any variation meaning a long-form illustrated newsletter piece
+Não existe documento de audiência nem de pilar de conteúdo, de propósito. Se a peça precisar de um leitor-alvo ou de um ângulo, pergunte ao usuário.
 
 ---
 
-## Two entry paths
+## Quando agir
 
-They differ only in Step 1 and Step 9.
-
-**Reuse path.** A thesis that already shipped in another format — usually a Reel, sometimes a LinkedIn post — taken deep. The sibling `final.md` exists in `posts/`, and the source idea is already `Processed` in Notion carrying that format. **This path writes nothing to Notion.**
-
-**Standalone path.** A fresh idea from the Ideas database, or news the user brings in directly. No siblings. This path closes the idea in Notion at Step 9.
-
----
-
-# Execution protocol
-
-## Step 1 · Identify the subject
-
-**Reuse path.** The user names a slug. If they did not, list the most recent slugs in `posts/script/` and `posts/linkedin/` by mtime, show them, and ask which one goes long.
-
-Choose for **depth of available material**, never for hook strength. The right subject is the one where you can name, before writing a word, at least three things you could go capture.
-
-**Standalone path.** For news the user brings in, take it directly. Otherwise open the **Ideas** database (`e2970ca3-7724-4a81-8f12-7ea34c048c67`), filter `Status = "Pending"`, sort by `Date` descending (fall back to `createdTime`), and confirm the most recent:
-
-> "Idea selected for the article: [title]. Go ahead with this one?"
-
-## Step 2 · Read everything, and separate it
-
-**Reuse path.** Read `posts/script/<slug>/final.md` in full, plus the idea row in Notion. Then build two lists explicitly, in your own working notes:
-
-- **Burned** — every claim, example and turn of phrase the audience already saw in the Reel. The article may land on the same conclusion, never by the same sentences.
-- **Cut for time** — the caveat that did not fit in 60 seconds, the second example, the number that needed a chart, the thing you tried first that failed, the source you read but could not cite out loud. **This is the article.**
-
-If "cut for time" is thin, the subject is thin. Say so and propose a different slug rather than padding.
-
-**Standalone path.** Read the idea in full. Then, before anything else, **go find the primary sources**. For news, that means the announcement post, the model card, the paper, the pricing page, the changelog, the repo — not the coverage. You cannot plan the article until you know what those documents actually say, and on the reconstruction spine the gap between them and the coverage *is* the article.
-
-## Step 3 · Voice calibration
-
-Read the two voice documents and the calibration sources under **Required references**. The documents state the rules; the examples are what those rules look like on a page.
-
-## Step 4 · Plan: spine, then outline, then shot list
-
-**This step is done before a sentence of the article is written, and it is presented to the user before writing.** The images are not decoration added at the end — the text is written to set each one up, so the shot list has to exist first.
-
-### 4a · Choose one narrative spine
-
-Every spine below is **sequential**: it is one thing happening after another, not a set of points. That is the difference between an article and a long post.
+- "escreve o Substack da semana"
+- "transforma `<slug>` em artigo"
+- "escreve o artigo do Substack sobre [algo que aconteceu esta semana]"
+- "escreve a versão em artigo do reel sobre X"
+- qualquer variação que signifique uma peça longa e ilustrada de newsletter
 
 ---
 
-**1 · The investigation** — *something broke and you found out why*
+## Dois caminhos de entrada
 
-1. A dated, concrete scene with a number in it. Not a thesis.
-2. The wrong first reading, and why it was reasonable — this is where the reader recognizes themselves.
-3. The evidence that did not fit. **First image usually lands here.**
-4. The descent: one step per short section, each with its own capture.
-5. The turn — what was actually happening.
-6. What it means outside your case, and where it stops being true.
-7. The real objection, answered.
-8. The question.
+Eles só diferem no Passo 1 e no Passo 9.
 
-Use when you watched something fail closely enough to reconstruct it.
+**Caminho de reuso.** Uma tese que já saiu em outro formato, geralmente um Reel, às vezes um post de LinkedIn, levada a fundo. O `final.md` irmão existe em `posts/`, e a ideia de origem já está `Processed` no Notion, carregando aquele formato. **Este caminho não escreve nada no Notion.**
+
+**Caminho standalone.** Uma ideia nova do banco Ideas, ou uma notícia que o usuário traz direto. Sem irmãos. Este caminho fecha a ideia no Notion no Passo 9.
 
 ---
 
-**2 · The reconstruction** — *this is what actually happened* · **the news spine**
+# Protocolo de execução
 
-1. What was announced, in one sentence, with no adjective.
-2. What the coverage said it meant. **Image: the headline, the chart from the announcement post.**
-3. What the primary document actually says. **Images: the page of the paper, the model card, the pricing table, the config default.** This is the spine's center of gravity — expect three or four captures here.
-4. The distance between 2 and 3, named plainly.
-5. What changes in practice, with numbers.
-6. What still cannot be known, said honestly.
-7. The question.
+## Passo 1 · Identificar o assunto
 
-Use when something landed this week. **Requires primary sources.** Without them, do not write it.
+**Caminho de reuso.** O usuário nomeia um slug. Se não nomeou, liste os slugs mais recentes em `posts/script/` e `posts/linkedin/` por mtime, mostre e pergunte qual vai virar artigo.
 
----
+Escolha pela **profundidade do material disponível**, nunca pela força do hook. O assunto certo é aquele em que você consegue nomear, antes de escrever uma palavra, pelo menos três coisas que daria para ir capturar.
 
-**3 · The test** — *you ran it, here is what happened*
+**Caminho standalone.** Se for notícia que o usuário trouxe, pegue direto. Senão, abra o banco **Ideas** (`e2970ca3-7724-4a81-8f12-7ea34c048c67`), filtre `Status = "Pending"`, ordene por `Date` decrescente (na falta, `createdTime`) e confirme a mais recente:
 
-1. The question you wanted answered, and why it matters to someone doing this work.
-2. The setup, with its limitations admitted up front. **Image: the environment, the config, the prompt.**
-3. What happened, in the order it happened. **Images: the results, and the errors — the failures are more interesting than the successes and get captured too.**
-4. The result you did not expect.
-5. What you would change about the test itself.
-6. The question.
+> "Ideia selecionada para o artigo: [título]. Sigo com essa?"
 
-Use when you have access to the thing and can actually run it.
+## Passo 2 · Ler tudo, e separar
 
----
+**Caminho de reuso.** Leia `posts/script/<slug>/final.md` inteiro, mais a linha da ideia no Notion. Depois monte duas listas explícitas, nas suas notas de trabalho:
 
-**4 · The decision** — *A or B, and what it cost*
+- **Queimado**: toda afirmação, exemplo e virada de frase que a audiência já viu no Reel. O artigo pode chegar à mesma conclusão, nunca pelas mesmas frases.
+- **Cortado por tempo**: a ressalva que não coube em 60 segundos, o segundo exemplo, o número que precisava de um gráfico, a coisa que você tentou primeiro e falhou, a fonte que você leu mas não dava para citar falando. **Isso é o artigo.**
 
-1. What was at stake, and the deadline that forced it.
-2. The options, honestly, with the price of each. **Images: the comparison, the docs, the pricing.**
-3. What you almost chose, and why it was tempting.
-4. What you chose, and what it cost you.
-5. What would make you switch back.
-6. The question.
+Se o "cortado por tempo" for magro, o assunto é magro. Diga isso e proponha outro slug em vez de encher linguiça.
 
-Use when you paid for a choice. Maximum skin in the game.
+**Caminho standalone.** Leia a ideia inteira. Depois, antes de qualquer outra coisa, **vá atrás das fontes primárias**. Para notícia, isso quer dizer o post do anúncio, o model card, o paper, a página de preços, o changelog, o repositório, não a cobertura. Você não consegue planejar o artigo sem saber o que esses documentos dizem de fato, e na espinha de reconstrução a distância entre eles e a cobertura *é* o artigo.
+
+## Passo 3 · Calibração de voz
+
+Leia os dois documentos de voz e as fontes de calibração em **Referências obrigatórias**. Os documentos declaram as regras; os exemplos mostram como essas regras ficam numa página.
+
+## Passo 4 · Planejar: espinha, depois outline, depois shot list
+
+**Este passo acontece antes de qualquer frase do artigo ser escrita, e é apresentado ao usuário antes de escrever.** As imagens não são decoração acrescentada no fim: o texto é escrito para preparar cada uma delas, então a shot list precisa existir primeiro.
+
+### 4a · Escolher uma espinha narrativa
+
+Toda espinha abaixo é **sequencial**: é uma coisa acontecendo depois da outra, não um conjunto de pontos. É essa a diferença entre um artigo e um post longo.
 
 ---
 
-**The pull rule, whichever spine you pick:** every section ends by opening the question the next section answers. Read your headings in order — if you would not want to read the next one, the sequence is slack.
+**1 · A investigação** — *alguma coisa quebrou e você descobriu por quê*
 
-### 4b · Outline it
+1. Uma cena concreta, datada, com um número dentro. Não uma tese.
+2. A primeira leitura errada, e por que ela era razoável: é aqui que o leitor se reconhece.
+3. A evidência que não encaixou. **A primeira imagem costuma cair aqui.**
+4. A descida: um passo por seção curta, cada uma com a própria captura.
+5. A virada: o que estava acontecendo de verdade.
+6. O que isso significa fora do seu caso, e onde deixa de ser verdade.
+7. A objeção real, respondida.
+8. A pergunta.
 
-Five to nine sections. **Headings are sentences, not labels** — "Retrieval was never the problem", not "Analysis". A reader who scans only the headings should come away with the story.
+Use quando você viu algo falhar de perto o bastante para reconstruir.
 
-Write one line per section saying what happens in it. If two adjacent sections say the same kind of thing, merge them.
+---
 
-### 4c · Build the shot list
+**2 · A reconstrução** — *isto é o que aconteceu de fato* · **a espinha de notícia**
 
-Before opening a browser, write the shot list as a table in `posts/substack/<slug>/sketch/shotlist.md`:
+1. O que foi anunciado, em uma frase, sem adjetivo.
+2. O que a cobertura disse que aquilo significava. **Imagem: a manchete, o gráfico do post de anúncio.**
+3. O que o documento primário diz de fato. **Imagens: a página do paper, o model card, a tabela de preços, o default da config.** Esse é o centro de gravidade da espinha: espere três ou quatro capturas aqui.
+4. A distância entre 2 e 3, nomeada sem rodeio.
+5. O que muda na prática, com números.
+6. O que ainda não dá para saber, dito com honestidade.
+7. A pergunta.
 
-| # | Anchor — the sentence it lands after | What it must show | Where to capture it | Status |
+Use quando alguma coisa aconteceu esta semana. **Exige fontes primárias.** Sem elas, não escreva.
+
+---
+
+**3 · O teste** — *você rodou, e foi isto que aconteceu*
+
+1. A pergunta que você queria responder, e por que ela importa para quem faz esse trabalho.
+2. O setup, com as limitações admitidas logo de cara. **Imagem: o ambiente, a config, o prompt.**
+3. O que aconteceu, na ordem em que aconteceu. **Imagens: os resultados, e os erros. As falhas são mais interessantes que os acertos e também são capturadas.**
+4. O resultado que você não esperava.
+5. O que você mudaria no próprio teste.
+6. A pergunta.
+
+Use quando você tem acesso à coisa e consegue rodar de verdade.
+
+---
+
+**4 · A decisão** — *A ou B, e o que custou*
+
+1. O que estava em jogo, e o prazo que forçou a escolha.
+2. As opções, com honestidade, com o preço de cada uma. **Imagens: a comparação, a documentação, os preços.**
+3. O que você quase escolheu, e por que era tentador.
+4. O que você escolheu, e o que te custou.
+5. O que faria você voltar atrás.
+6. A pergunta.
+
+Use quando você pagou por uma escolha. É a espinha em que o autor mais se expõe.
+
+---
+
+**A regra do encadeamento, seja qual for a espinha:** toda seção termina abrindo a pergunta que a próxima responde. Leia seus headings na ordem: se você não quiser ler o próximo, a sequência está frouxa.
+
+### 4b · Fazer o outline
+
+De cinco a nove seções. **Headings são frases, não rótulos**: "O retrieval nunca foi o problema", não "Análise". Um leitor que escaneia só os headings tem que sair com a história.
+
+Escreva uma linha por seção dizendo o que acontece nela. Se duas seções vizinhas dizem o mesmo tipo de coisa, junte as duas.
+
+### 4c · Montar a shot list
+
+Antes de abrir o navegador, escreva a shot list como tabela em `posts/substack/<slug>/sketch/shotlist.md`:
+
+| # | Âncora — a frase depois da qual ela entra | O que precisa mostrar | Onde capturar | Status |
 |---|---|---|---|---|
-| cover | — | the mechanism the article is about | arXiv fig. 2 | planned |
-| 01 | "the cost tripled without the traffic moving" | the cost curve, with the log axis visible | the provider's status page | planned |
+| cover | — | o mecanismo de que o artigo trata | arXiv fig. 2 | planejada |
+| 01 | "o custo triplicou sem o tráfego se mexer" | a curva de custo, com o eixo log visível | a página de status do provedor | planejada |
 
-Rules for the list:
+Regras para a lista:
 
-- **Three to eight images**, plus the cover. One image per 250–400 words is the right rhythm. Under three in a long article reads as a wall; over eight reads as a deck.
-- **Every image answers a question the text just asked.** If you cannot write the anchor sentence, you do not need the image.
-- **Every image has a real, linkable source.** If you cannot name where you would capture it, it does not go on the list.
-- **Capture failures too**, on the test spine — an error message is more credible than a success screenshot.
+- **De três a oito imagens**, mais a capa. Uma imagem a cada 250 a 400 palavras é o ritmo certo. Menos de três num artigo longo vira paredão de texto; mais de oito vira apresentação de slides.
+- **Toda imagem responde a uma pergunta que o texto acabou de fazer.** Se você não consegue escrever a frase-âncora, você não precisa da imagem.
+- **Toda imagem tem uma fonte real, com link.** Se você não consegue dizer onde iria capturar, ela não entra na lista.
+- **Capture as falhas também**, na espinha de teste: uma mensagem de erro é mais crível que um print de sucesso.
 
-### 4d · Present the plan
+### 4d · Apresentar o plano
 
-Show the user the spine, the outline and the shot list before writing:
+Mostre ao usuário a espinha, o outline e a shot list antes de escrever:
 
-> "Spine: [name]. Outline: [headings]. Shot list: [N images, sources]. Want changes before I write it?"
+> "Espinha: [nome]. Outline: [headings]. Shot list: [N imagens, fontes]. Quer mudar alguma coisa antes de eu escrever?"
 
-This is the cheapest place in the whole run to change direction. Do not skip it.
+É o lugar mais barato da rodada inteira para mudar de direção. Não pule.
 
-## Step 5 · Write the article
+## Passo 5 · Escrever o artigo
 
-### The title
+### O título
 
-**The title is the product** — the email subject line, the feed card, the only thing most of the list ever sees.
+**O título é o produto**: a linha de assunto do email, o card do feed, a única coisa que a maior parte da lista chega a ver.
 
-A title states the **thesis or the finding**, never the topic:
+O título declara a **tese ou a descoberta**, nunca o tema:
 
-- **The reframe:** "Compliance is a data problem wearing a legal costume"
-- **The negation:** "Why your first AI hire should not be an ML engineer"
-- **The named cost:** "What human-in-the-loop actually costs at 40,000 documents a month"
-- **The reconstruction:** "What the GPT-5 model card says on page 14"
-- **The flat fact**, when the fact is genuinely news and genuinely yours
+- **O reenquadramento:** "Compliance é um problema de dados fantasiado de jurídico"
+- **A negação:** "Por que a sua primeira contratação em IA não deveria ser um engenheiro de ML"
+- **O custo nomeado:** "Quanto custa de verdade o humano no loop a 40.000 documentos por mês"
+- **A reconstrução:** "O que o model card do GPT-5 diz na página 14"
+- **O fato seco**, quando o fato é notícia de verdade e é seu de verdade
 
-**Never:** the topic-colon-promise shape ("RAG at scale: a practical guide") — that is a corporate blog and reads like one. A listicle number. A question the article does not answer. Anything the reader cannot parse without opening the email.
+**Nunca:** o formato tema-dois-pontos-promessa ("RAG em escala: um guia prático"), que é blog corporativo e soa como um. Número de listicle. Pergunta que o artigo não responde. Qualquer coisa que o leitor não consiga entender sem abrir o email.
 
-### The subtitle
+### O subtítulo
 
-Substack renders it under the title and in the email preview. **It does not restate the title** — it adds the consequence, the cost or the scope the title leaves implicit. One sentence. If deleting it loses no information, rewrite it.
+O Substack mostra ele embaixo do título e no preview do email. **Ele não repete o título**: acrescenta a consequência, o custo ou o escopo que o título deixou implícito. Uma frase. Se apagar ele não perde informação, reescreva.
 
-### The opening
+### A abertura
 
-**Cold open, on a scene.** The first paragraph is a specific moment with a specific number in it, not a general claim with examples underneath.
+**Abertura fria, numa cena.** O primeiro parágrafo é um momento específico com um número específico dentro, não uma afirmação geral com exemplos embaixo.
 
-Banned, all of them: "In this week's issue", "Welcome back", any greeting, any summary of what is coming, any throat-clearing, any definition of a term the reader knows.
+Proibidos, todos: "Na edição desta semana", "Bem-vindo de volta", qualquer saudação, qualquer resumo do que vem, qualquer pigarro, qualquer definição de termo que o leitor já conhece.
 
-### The body
+### O corpo
 
-Write to the outline, and **write each image its runway**. The two or three sentences before an image tell the reader what they are about to look at and why it matters; the sentence after it tells them what to take away. An image dropped in without runway is decoration, and the reader scrolls past it.
+Escreva seguindo o outline, e **prepare o terreno para cada imagem**. As duas ou três frases antes de uma imagem dizem ao leitor o que ele vai olhar e por que importa; a frase depois diz o que ele leva. Imagem jogada sem preparação é decoração, e o leitor rola por cima.
 
-Mark image positions inline as you write:
+Marque a posição das imagens inline enquanto escreve:
 
 ```
 ![01 — <caption placeholder>](01.png)
 ```
 
-Substack renders markdown, which is the opposite of LinkedIn's constraint. Use it, and use it for what LinkedIn could not hold:
+O Substack renderiza markdown, que é o oposto da restrição do LinkedIn. Use, e use para o que o LinkedIn não conseguia segurar:
 
-- `##` for section headings
-- Fenced code blocks — real, short, runnable or pasteable. Not pseudocode standing in for an idea.
-- Tables, when two things sit on the same axis and the comparison is the point
-- Blockquotes for a real log line, trace excerpt, error message or quoted source
-- Inline links — **at least three verifiable ones**: the paper, the repo, the doc page, the benchmark
-- `**bold**` sparingly, per `base.md` § 5 — for a term being defined, not for a sentence you liked
+- `##` para heading de seção
+- Blocos de código com fence: reais, curtos, executáveis ou coláveis. Não pseudocódigo fazendo as vezes de uma ideia.
+- Tabelas, quando duas coisas ficam no mesmo eixo e a comparação é o ponto
+- Blockquote para uma linha de log real, trecho de trace, mensagem de erro ou fonte citada
+- Links inline, **pelo menos três verificáveis**: o paper, o repositório, a página da documentação, o benchmark
+- `**negrito**` com parcimônia, conforme `base.md` § 5, *Negrito*: para um termo sendo definido, não para uma frase de que você gostou
 
-Paragraph rules from `base.md` § 5 and § 7 hold and matter more at this length: three to six sentences joined by real connectives, the single-sentence paragraph kept as a rare beat. The one-line-per-sentence scroll is a feed artifact; in an email it reads as someone with nothing to say.
+As regras de parágrafo de `base.md` § 5 e § 7 valem e importam mais neste tamanho: de três a seis frases ligadas por conectivos reais, o parágrafo de uma frase só guardado como beat raro. A rolagem de uma frase por linha é artefato de feed; num email, soa como alguém sem nada para dizer.
 
-**Anticipate one real objection and answer it.** At this length a reader who disagrees has time to compose the counterargument. Get there first, state it fairly, and say what would change your mind.
+**Antecipe uma objeção real e responda.** Neste tamanho, um leitor que discorda tem tempo de montar o contra-argumento. Chegue antes, formule com justiça e diga o que mudaria a sua opinião.
 
-### Length
+### Tamanho
 
-**1,200 to 3,000 words is the normal body of an article here, and there is no ceiling when the material holds.** A 4,000-word piece backed by six captures, a table and a decision you paid for is a good article. A 1,400-word piece built out of reasoning alone is padded at 1,400.
+**De 1.200 a 3.000 palavras é o corpo normal de um artigo aqui, e não existe teto quando o material aguenta.** Uma peça de 4.000 palavras sustentada por seis capturas, uma tabela e uma decisão pela qual você pagou é um bom artigo. Uma peça de 1.400 palavras feita só de raciocínio está enchendo linguiça já nas 1.400.
 
-The working rule: **every 400 words must introduce something new that is checkable** — a number, a name, a capture, a quote, a link. Stretches that do not, get cut, however well written.
+A regra de trabalho: **a cada 400 palavras entra alguma coisa nova e checável**: um número, um nome, uma captura, uma citação, um link. Trecho que não entrega isso é cortado, por mais bem escrito que esteja.
 
-### The close
+### O fecho
 
-**The close asks for the reply.** On an owned list a reply is the whole point, and forty replies beat three thousand reactions. This is the one place the format deliberately breaks the LinkedIn rule against asking for anything.
+**O fecho pede a resposta.** Numa lista própria, a resposta é o objetivo inteiro, e quarenta respostas valem mais que três mil reações. É o único lugar em que o formato quebra de propósito a regra do LinkedIn de não pedir nada.
 
-The question has to earn it:
+A pergunta tem que merecer:
 
-- One **you genuinely cannot answer** and a qualified reader can.
-- Asking for **their material, not their opinion** — "What does your team do when the eval suite disagrees with the customer?" not "What do you think?"
-- After the story has landed, not instead of landing it.
+- Uma que **você de verdade não consegue responder** e um leitor qualificado consegue.
+- Que peça **o material dele, não a opinião dele**: "O que o seu time faz quando a suíte de evals discorda do cliente?", não "O que você acha?".
+- Depois que a história assentou, não no lugar dela.
 
-**No subscribe CTA in the body** — Substack injects its own. **No sign-off block**, no "until next week", no link dump. End on the question.
+**Sem CTA de assinatura no corpo**: o Substack injeta o dele. **Sem bloco de despedida**, sem "até semana que vem", sem despejo de links. Termine na pergunta.
 
-### Output shape
+### Formato da saída
 
 ```
-# <title>
-### <subtitle>
+# <título>
+### <subtítulo>
 
-<the article, with ![NN — caption](NN.png) markers in place>
+<o artigo, com os marcadores ![NN — caption](NN.png) no lugar>
 ```
 
-Then a metadata footer — not publishable text, but the piece's record, carried into `final.md`:
+Depois, um rodapé de metadados: não é texto publicável, é o registro da peça, e vai junto para o `final.md`:
 
 ```
 ---
-Words: <count>
-ACP: <phase>
-Spine: <investigation | reconstruction | test | decision>
-Artifact: <the thing that could not have been a LinkedIn post>
-Images: <N> — see shotlist.md
-Sources: <the primary sources used, as URLs>
-Reuse of: <slug>   <- reuse path only
+Palavras: <contagem>
+ACP: <fase>
+Espinha: <investigação | reconstrução | teste | decisão>
+Artefato: <a coisa que não caberia num post de LinkedIn>
+Imagens: <N>, ver shotlist.md
+Fontes: <as fontes primárias usadas, como URLs>
+Reuso de: <slug>   <- só no caminho de reuso
 ```
 
-## Step 6 · Present, iterate, save
+## Passo 6 · Apresentar, iterar, salvar
 
-Present the full article with title, subtitle, word count and the image markers in place.
+Apresente o artigo completo com título, subtítulo, contagem de palavras e os marcadores de imagem no lugar.
 
-Derive the slug from the title (lowercase, hyphens for spaces and punctuation, no accents). On the reuse path, **reuse the sibling's slug** so the thesis lives under one name across `posts/script/`, `posts/linkedin/` and `posts/substack/`.
+Derive o slug do título (minúsculas, hífens no lugar de espaços e pontuação, sem acentos). No caminho de reuso, **reaproveite o slug do irmão**, para a tese morar sob um nome só em `posts/script/`, `posts/linkedin/` e `posts/substack/`.
 
-Save immediately as `posts/substack/<slug>/sketch/v1.md`.
+Salve na hora como `posts/substack/<slug>/sketch/v1.md`.
 
-Ask:
+Pergunte:
 
-> "Ready to lock the text and go capture the images, or corrections first?"
+> "Pronto para travar o texto e ir capturar as imagens, ou correções antes?"
 
-For each correction: apply it, recompute the word count, and create `posts/substack/<slug>/sketch/v(N+1).md` — read the previous version, copy unchanged blocks **verbatim**, apply only the diff. Never regenerate what did not change.
+Para cada correção: aplique, recalcule a contagem de palavras e crie `posts/substack/<slug>/sketch/v(N+1).md`: leia a versão anterior, copie os blocos que não mudaram **verbatim** e aplique só o diff. Nunca regenere o que não mudou.
 
-**Offer a title pass explicitly, once, before locking.** The title carries more of this piece's outcome than any paragraph, and it is what the user is most likely to accept passively:
+**Ofereça uma passada no título explicitamente, uma vez, antes de travar.** O título carrega mais do resultado desta peça do que qualquer parágrafo, e é o que o usuário tem mais chance de aceitar sem pensar:
 
-> "Three alternates before we lock it: [A] / [B] / [C]. Keep the current one?"
+> "Três alternativas antes de travar: [A] / [B] / [C]. Fica com o atual?"
 
-Lock the text before Step 7. Capturing against a moving draft wastes the session.
+Trave o texto antes do Passo 7. Capturar contra um rascunho em movimento desperdiça a sessão.
 
-## Step 7 · The capture session
+## Passo 7 · A sessão de captura
 
-Invoke the `claude-in-chrome` skill. Work in a **new tab** (`tabs_create_mcp`). Work the shot list top to bottom in one sitting.
+Invoque a skill `claude-in-chrome`. Trabalhe numa **aba nova** (`tabs_create_mcp`). Percorra a shot list de cima a baixo numa sentada só.
 
-### 7a · Non-negotiables
+### 7a · Inegociáveis
 
-- **Every image is a real capture from a live page.** Never fabricate one, never build one in HTML, never use an AI-generated image, never use stock. This is the rule the channel's credibility rests on.
-- **Primary source, always.** The paper on arXiv over a blog quoting it. The pricing page over a screenshot of the pricing page. The repo over the tweet about the repo. A screenshot of a tweet is never evidence of a fact — go to what the tweet cites.
-- **Nothing paywalled, nothing private.** No customer data, no internal dashboards, no logged-in views containing anyone's information.
-- **The source URL is recorded for every capture**, in the shot list, at the moment of capture. A capture without a URL cannot be credited and does not ship.
+- **Toda imagem é uma captura real de uma página ao vivo.** Nunca fabrique uma, nunca monte uma em HTML, nunca use imagem gerada por IA, nunca use stock. É nessa regra que a credibilidade do canal se apoia.
+- **Fonte primária, sempre.** O paper no arXiv em vez de um blog citando ele. A página de preços em vez de um print da página de preços. O repositório em vez do tweet sobre o repositório. Print de tweet nunca é evidência de um fato: vá até o que o tweet cita.
+- **Nada atrás de paywall, nada privado.** Sem dado de cliente, sem dashboard interno, sem tela logada com informação de alguém.
+- **A URL da fonte é registrada em toda captura**, na shot list, no momento da captura. Captura sem URL não tem crédito e não sai.
 
-### 7b · Capture craft
+### 7b · Técnica de captura
 
-- **Zoom in before capturing**, do not capture wide and crop down — cropping throws away the resolution that makes labels readable.
-- **Frame the element, not the page.** No browser chrome, no nav bar, no sidebar, no cookie banner, no scrollbar, no half-visible neighboring section.
-- **Dismiss the banners first**, then capture. A cookie notice in the corner reads as carelessness.
-- **Pick the higher-contrast theme** when the page offers both — usually light, for text and figures.
-- **Zoom the browser to 125–150% for text-heavy captures** (a paper paragraph, a config, a log). Default zoom produces text nobody reads in an email.
+- **Dê zoom antes de capturar**, não capture aberto para cortar depois: cortar joga fora a resolução que deixa os rótulos legíveis.
+- **Enquadre o elemento, não a página.** Sem interface do navegador, sem barra de navegação, sem sidebar, sem banner de cookie, sem scrollbar, sem seção vizinha aparecendo pela metade.
+- **Feche os banners primeiro**, depois capture. Aviso de cookie no canto passa descuido.
+- **Escolha o tema de maior contraste** quando a página oferece os dois: em geral o claro, para texto e figuras.
+- **Zoom do navegador em 125 a 150% para capturas cheias de texto** (um parágrafo de paper, uma config, um log). No zoom padrão sai um texto que ninguém lê num email.
 
-### 7c · Per-image check, before moving on
+### 7c · Checagem por imagem, antes de seguir
 
-Each capture passes all five or gets retaken:
+Cada captura passa nas cinco ou é refeita:
 
-1. **Legible at 50% width** — that is roughly how it renders in a phone email client.
-2. **One idea visible.** If the reader has to hunt for what you meant, crop tighter.
-3. **Nothing extraneous** — no chrome, no watermark, no unrelated branding.
-4. **It answers its anchor sentence.** Read the anchor, look at the image. If it does not land, the shot was wrong, not the crop.
-5. **The URL is recorded.**
+1. **Legível a 50% da largura**: é mais ou menos assim que ela aparece no cliente de email do celular.
+2. **Uma ideia visível.** Se o leitor precisa caçar o que você quis dizer, corte mais apertado.
+3. **Nada sobrando**: sem interface de navegador, sem marca d'água, sem marca de terceiros sem relação.
+4. **Ela responde à frase-âncora.** Leia a âncora, olhe a imagem. Se não encaixa, o take estava errado, não o corte.
+5. **A URL está registrada.**
 
-### 7d · The cover
+### 7d · A capa
 
-The cover is seen at the top of the email, on the feed card, and on the social share card cropped to roughly 2:1. So: **landscape, wide, nothing load-bearing in the outer sixth, legible small, high contrast, few elements.**
+A capa aparece no topo do email, no card do feed e no card de compartilhamento social, cortada em mais ou menos 2:1. Então: **paisagem, larga, nada essencial no sexto externo, legível pequena, alto contraste, poucos elementos.**
 
-The strongest cover is almost always **the mechanism the article is about, drawn** — the reader recognizes their own system before reading a word. Otherwise: the chart with the surprising shape, the screenshot of the real artifact, the figure from the cited paper.
+A capa mais forte é quase sempre **o mecanismo de que o artigo trata, desenhado**: o leitor reconhece o próprio sistema antes de ler uma palavra. Senão: o gráfico com a forma surpreendente, o print do artefato real, a figura do paper citado.
 
-Often the best cover is a shot already on your list. Reusing one is fine and better than a weak dedicated cover.
+Muitas vezes a melhor capa é um take que já está na sua lista. Reaproveitar um é bom, e melhor que uma capa dedicada fraca.
 
-If a LinkedIn post on this thesis already exists and `posts/linkedin/<slug>/image.png` is there, show it and ask whether to reuse it. **Never reuse it silently.**
+Se já existe um post de LinkedIn sobre esta tese e `posts/linkedin/<slug>/image.png` está lá, mostre e pergunte se reaproveita. **Nunca reaproveite em silêncio.**
 
-### 7e · When a shot does not exist
+### 7e · Quando um take não existe
 
-If a planned capture has no real source after a couple of honest attempts, **the text changes, not the image**. Rewrite that passage so it does not depend on the picture, and strike the row from the shot list. Never substitute a decorative image to fill the slot. Say what you dropped and why.
+Se uma captura planejada não tem fonte real depois de algumas tentativas honestas, **muda o texto, não a imagem**. Reescreva aquela passagem para ela não depender da figura, e risque a linha da shot list. Nunca coloque uma imagem decorativa para preencher a vaga. Diga o que caiu e por quê.
 
-### 7f · Save and record
+### 7f · Salvar e registrar
 
-Save to the slug root, beside the `final.md` they ship with — not in `sketch/`:
+Salve na raiz do slug, ao lado do `final.md` com que elas saem, não em `sketch/`:
 
 - `posts/substack/<slug>/cover.png`
-- `posts/substack/<slug>/01.png` … `NN.png`, numbered in reading order
+- `posts/substack/<slug>/01.png` … `NN.png`, numeradas na ordem de leitura
 
-Update `sketch/shotlist.md`: every row gets its final status and its **source URL**.
+Atualize `sketch/shotlist.md`: toda linha recebe o status final e a **URL da fonte**.
 
-## Step 8 · Caption, place, and review the pairs
+## Passo 8 · Legendar, posicionar e revisar os pares
 
-Now the article and the images exist. This step is where a good piece becomes a finished one — do not skip it.
+Agora o artigo e as imagens existem. É neste passo que uma peça boa vira uma peça acabada: não pule.
 
-### 8a · Write the captions
+### 8a · Escrever as legendas
 
-Every image gets a caption doing two jobs:
+Toda imagem ganha uma legenda com dois trabalhos:
 
-1. **What to look at**, in one clause. Not a description of the image — a direction. "The Y axis is log; the drop between 8k and 32k tokens is the part the announcement chart leaves out."
-2. **The source, linked.** "— [OpenAI, GPT-5 model card, p.14](url)"
+1. **O que olhar**, em uma oração. Não uma descrição da imagem, uma direção. "O eixo Y é log; a queda entre 8k e 32k tokens é a parte que o gráfico do anúncio deixa de fora."
+2. **A fonte, com link.** "— [OpenAI, GPT-5 model card, p.14](url)"
 
-A caption that only names the image ("Figure 2: the architecture") is wasted space. If the image needs a paper's figure credited, credit it here; Substack has the room LinkedIn does not.
+Legenda que só nomeia a imagem ("Figura 2: a arquitetura") é espaço jogado fora. Se a imagem precisa creditar a figura de um paper, credite aqui; o Substack tem o espaço que o LinkedIn não tem.
 
-### 8b · Read the article with the images in place
+### 8b · Ler o artigo com as imagens no lugar
 
-Read it end to end as a reader would, and check three things:
+Leia de ponta a ponta como um leitor leria, e cheque três coisas:
 
-- **Every image has runway** — the sentences before it set it up, the sentence after it says what to take.
-- **The rhythm holds.** No two images back to back with a sentence between them. No 900-word stretch with nothing to look at.
-- **Nothing is redundant.** If the caption says what the paragraph already said, cut one.
+- **Toda imagem tem preparação**: as frases antes montam a cena, a frase depois diz o que levar.
+- **O ritmo segura.** Nenhuma dupla de imagens coladas com uma frase entre elas. Nenhum trecho de 900 palavras sem nada para olhar.
+- **Nada redundante.** Se a legenda diz o que o parágrafo já disse, corte um dos dois.
 
-Write the corrections into a new `sketch/v(N+1).md` with the real captions replacing the placeholders.
+Escreva as correções num novo `sketch/v(N+1).md`, com as legendas reais no lugar dos placeholders.
 
-### 8c · Present the whole thing
+### 8c · Apresentar o conjunto
 
-Show the user the article and every image with its caption. Ask:
+Mostre ao usuário o artigo e cada imagem com a legenda. Pergunte:
 
-> "Article and [N] images. Anything to reshoot or rewrite?"
+> "Artigo e [N] imagens. Alguma coisa para refazer ou reescrever?"
 
-If an image gets rejected, go back to 4c and re-answer *what does this image have to show?* before recapturing — a second attempt on the same premise returns the same miss.
+Se uma imagem for rejeitada, volte ao 4c e responda de novo *o que esta imagem precisa mostrar?* antes de recapturar: uma segunda tentativa com a mesma premissa erra do mesmo jeito.
 
-## Step 9 · Close out
+## Passo 9 · Fechar
 
-Everything lives in `posts/substack/<slug>/`. `sketch/` is working material; the root is exactly what ships:
+Tudo mora em `posts/substack/<slug>/`. `sketch/` é material de trabalho; a raiz é exatamente o que sai:
 
-| File | What it is | Written by |
+| Arquivo | O que é | Escrito por |
 |---|---|---|
-| `final.md` | copy of the highest-numbered `sketch/v<N>.md` | this skill, now |
-| `cover.png` | the cover from Step 7d | this skill, in 7f |
-| `01.png` … `NN.png` | the body captures, in reading order | this skill, in 7f |
-| `pt-br.md` | copy of the highest `sketch/pt-br-v<N>.md` | `traduzir`, later, only if asked |
+| `final.md` | cópia do `sketch/v<N>.md` de maior número | esta skill, agora |
+| `cover.png` | a capa do Passo 7d | esta skill, no 7f |
+| `01.png` … `NN.png` | as capturas do corpo, na ordem de leitura | esta skill, no 7f |
 
-`sketch/` keeps `v<N>.md` and `shotlist.md` as the audit trail. If the user edits a `sketch/v<N>.md` afterwards, re-copy it to `final.md`.
+`sketch/` guarda `v<N>.md` e `shotlist.md` como trilha de auditoria. Se o usuário editar um `sketch/v<N>.md` depois, copie de novo para `final.md`.
 
-**Notion, by path:**
+**Notion, por caminho:**
 
-- **Reuse path: write nothing.** The idea is closed by the Reel and carries a single `Format`. Writing `Substack` over it would erase the primary format and corrupt the calendar picture the database accumulates. Say you are skipping the write, and why.
-- **Standalone path:** `Status` → `"Processed"` and `Format` → `"Substack"`. If `Format` has no `Substack` option, **stop and ask the user to add it in the Notion UI**. Do not add it through the MCP: editing a select property's option set there replaces it wholesale and silently clears the value on every row (see `CLAUDE.md`).
+- **Caminho de reuso: não escreva nada.** A ideia foi fechada pelo Reel e carrega um único `Format`. Escrever `Substack` por cima apagaria o formato primário e corromperia a foto do calendário que o banco acumula. Diga que está pulando a escrita, e por quê.
+- **Caminho standalone:** `Status` → `"Processed"` e `Format` → `"Substack"`. Se `Format` não tiver a opção `Substack`, **pare e peça ao usuário para adicionar na interface do Notion**. Não adicione pelo MCP: editar o conjunto de opções de uma propriedade select por ali substitui o conjunto inteiro e apaga em silêncio o valor de toda linha (veja o `CLAUDE.md`).
 
-## Step 10 · Hand it off
+## Passo 10 · Entregar
 
-> "Article ready: [title], [N] words, [N] images. Everything is in `posts/substack/<slug>/`.
-> To publish: paste `final.md` into the Substack editor, then drag each PNG onto its `![NN — …]` marker and paste the caption underneath. Set `cover.png` as the post cover."
-
----
-
-## Quality criteria
-
-**The story**
-- The title states a thesis or a finding, with no colon-promise and no listicle number
-- The subtitle adds the consequence or cost rather than restating the title
-- It opens cold, on a specific scene with a number, not on a general claim
-- One spine is chosen and the section headings, read in order, tell that story
-- Every section ends by opening the question the next one answers
-- One real objection is named fairly and answered, with what would change the writer's mind
-- The close asks a question the writer genuinely cannot answer, for the reader's material rather than their opinion
-- No subscribe CTA and no sign-off block in the body
-
-**The images**
-- Three to eight body images plus a cover, roughly one per 250–400 words
-- **Every one is a real browser capture from a primary source.** No stock, no AI-generated art, no HTML-built diagram, no screenshot of a tweet standing in for a fact
-- Every one lands where the text just raised the question it answers, with runway before and a takeaway after
-- Every one is legible at 50% width, framed on the element, free of chrome, banners and watermarks
-- Every one has a caption that directs the eye and links its source
-- The cover is landscape, survives a 2:1 crop, and shows the article's actual subject
-- Every source URL is recorded in `sketch/shotlist.md`
-
-**What makes it an article**
-- It carries at least one artifact that could not have been a LinkedIn post
-- At least three inline links a reader could go verify
-- Every 400 words introduces something checkable — a number, a name, a capture, a quote
-- On the reuse path, not one sentence carries over verbatim from the Reel, and the material is what the 60-second version had to cut
-
-**The voice**
-- Paragraph length varies; the single-sentence paragraph is a rare beat, not the default
-- Sentences inside a paragraph are joined by real connectives, not stacked
-- Every section carries a proper noun or number a reader could verify
-- The writer is exposed somewhere: a decision made, a price paid, a wrong first guess admitted
-- No hype, no motivational register, no untranslated jargon
-
-**The files**
-- `posts/substack/<slug>/` root holds `final.md`, `cover.png` and `01.png`…`NN.png`
-- `sketch/` holds the `v<N>.md` history and `shotlist.md` with every source URL
-- Notion was written to on the standalone path only
-
-If any criterion fails, fix it before presenting.
+> "Artigo pronto: [título], [N] palavras, [N] imagens. Está tudo em `posts/substack/<slug>/`.
+> Para publicar: cole o `final.md` no editor do Substack, depois arraste cada PNG para cima do marcador `![NN — …]` dele e cole a legenda embaixo. Defina `cover.png` como capa do post."
 
 ---
 
-## Out of scope
+## Critérios de qualidade
 
-- Does not capture raw ideas (that is `capture-idea`)
-- Does not write Reel scripts, carousels, threads or LinkedIn posts — their own skills
-- Does not translate: `traduzir` adapts the finished `final.md` on its own parallel sequence
-- Does not design or generate artwork. Every image is captured from something that already exists. A piece needing composed art in the Alvinegro system is a carousel, not an article
-- Does not publish: pasting into Substack is manual
+**A história**
+- O título declara uma tese ou uma descoberta, sem promessa depois de dois-pontos e sem número de listicle
+- O subtítulo acrescenta a consequência ou o custo em vez de repetir o título
+- Abre frio, numa cena específica com um número, não numa afirmação geral
+- Uma espinha foi escolhida, e os headings das seções, lidos na ordem, contam essa história
+- Toda seção termina abrindo a pergunta que a próxima responde
+- Uma objeção real é nomeada com justiça e respondida, com o que mudaria a opinião do autor
+- O fecho faz uma pergunta que o autor de verdade não consegue responder, pedindo o material do leitor em vez da opinião dele
+- Sem CTA de assinatura e sem bloco de despedida no corpo
+
+**As imagens**
+- De três a oito imagens no corpo mais uma capa, mais ou menos uma a cada 250 a 400 palavras
+- **Toda imagem é uma captura real do navegador, de fonte primária.** Sem stock, sem arte gerada por IA, sem diagrama montado em HTML, sem print de tweet no lugar de um fato
+- Toda imagem cai onde o texto acabou de levantar a pergunta que ela responde, com preparação antes e conclusão depois
+- Toda imagem é legível a 50% da largura, enquadrada no elemento, sem interface de navegador, banner ou marca d'água
+- Toda imagem tem uma legenda que dirige o olhar e linka a fonte
+- A capa é paisagem, sobrevive ao corte 2:1 e mostra o assunto real do artigo
+- Toda URL de fonte está registrada em `sketch/shotlist.md`
+
+**O que faz disso um artigo**
+- Carrega pelo menos um artefato que não caberia num post de LinkedIn
+- Pelo menos três links inline que o leitor pode ir verificar
+- A cada 400 palavras entra alguma coisa checável: um número, um nome, uma captura, uma citação
+- No caminho de reuso, nenhuma frase passa verbatim do Reel, e o material é o que a versão de 60 segundos teve que cortar
+
+**A voz**
+- O tamanho dos parágrafos varia; o parágrafo de uma frase só é um beat raro, não o padrão
+- As frases dentro de um parágrafo são ligadas por conectivos reais, não empilhadas
+- Toda seção carrega um nome próprio ou um número que o leitor pode verificar
+- O autor está exposto em algum lugar: uma decisão tomada, um preço pago, um primeiro palpite errado admitido
+- Sem hype, sem registro motivacional, sem jargão sem explicação
+
+**Os arquivos**
+- A raiz de `posts/substack/<slug>/` tem `final.md`, `cover.png` e `01.png`…`NN.png`
+- `sketch/` tem o histórico `v<N>.md` e o `shotlist.md` com toda URL de fonte
+- O Notion só foi escrito no caminho standalone
+
+Se algum critério falhar, conserte antes de apresentar.
+
+---
+
+## Fora do escopo
+
+- Não captura ideias cruas (isso é `capture-idea`)
+- Não escreve roteiro de Reel, carrossel, thread nem post de LinkedIn: cada um tem a própria skill
+- Não desenha nem gera arte. Toda imagem é capturada de algo que já existe. Uma peça que precisa de arte composta no sistema Alvinegro é um carrossel, não um artigo
+- Não publica: colar no Substack é manual

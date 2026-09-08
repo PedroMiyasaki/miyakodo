@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Thread Cards</title>
+  <title>Cards de Thread</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <style>
@@ -371,18 +371,18 @@
 </head>
 <body>
   <div class="toolbar">
-    <input id="codename" type="text" placeholder="post-name" spellcheck="false">
-    <button class="button primary" id="btn-export" onclick="exportPrint()">Export PNG</button>
-    <label class="button" for="media-input">Add images</label>
+    <input id="codename" type="text" placeholder="nome-do-post" spellcheck="false">
+    <button class="button primary" id="btn-export" onclick="exportPrint()">Exportar PNG</button>
+    <label class="button" for="media-input">Adicionar imagens</label>
     <input id="media-input" type="file" accept="image/*" multiple>
-    <button class="button" id="btn-clear-media" type="button">Clear images</button>
-    <span id="status">Ready.</span>
+    <button class="button" id="btn-clear-media" type="button">Limpar imagens</button>
+    <span id="status">Pronto.</span>
   </div>
 
-  <div class="hint">Edit the name and bio directly on the card. The tweet text accepts Markdown — write it in the field below.</div>
+  <div class="hint">Edite o nome e a bio direto no card. O texto do tweet aceita Markdown, escreva ele no campo abaixo.</div>
 
   <div class="md-input-shell">
-    <label for="md-input">Tweet text · Markdown</label>
+    <label for="md-input">Texto do tweet · Markdown</label>
     <textarea id="md-input" spellcheck="false">Write the card text here.
 
 Accepts Markdown: **bold**, *italic* and lists.</textarea>

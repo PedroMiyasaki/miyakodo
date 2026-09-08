@@ -3,23 +3,24 @@ id: cut-dead-air
 phase: edl
 ---
 
-# Feature · Cut dead air
+# Feature · Cortar tempo morto
 
-## What it does
-Removes long silences and verbal slips from the talking-head. The deliverable
-gets denser; the speech stays in the same order, just without the dead air.
+## O que faz
+Tira os silêncios longos e os tropeços de fala do talking-head. O vídeo final
+fica mais denso, e a fala continua na mesma ordem, só sem o tempo morto.
 
-## How to run it
-With the word-level transcript (`takes_packed.md` / `video-use` helpers):
+## Como rodar
+Com a transcrição por palavra (`takes_packed.md` / helpers do `video-use`):
 
-1. **First:** find and cut every **editor note** — the direction plus the
-   botched take it belongs to. They follow no fixed phrasing, so read for
-   intent, not for a marker. The notes drive other features, but they do **not**
-   stay in the deliverable — see `SKILL.md` § Editor notes.
-2. Mark silences ≥ ~1.0s and verbal slips.
-3. Cut on a **word boundary**, with padding in the 30–200ms window.
-4. Preserve dramatic pauses when they are intentional (do not cut everything
-   that happens to be silence).
-5. Materialize the cuts as `ranges` in `edl.json` (`video-use` format).
+1. **Primeiro:** ache e corte todas as **notas de editor**: a instrução mais o
+   take errado ao qual ela pertence. Elas não seguem uma frase fixa, então leia
+   procurando a intenção, não um marcador. As notas orientam outras features,
+   mas **não** ficam no vídeo final (ver a seção de notas de editor da
+   `SKILL.md`).
+2. Marque os silêncios ≥ ~1.0s e os tropeços de fala.
+3. Corte em **fronteira de palavra**, com padding na janela de 30–200ms.
+4. Preserve as pausas dramáticas quando forem intencionais (não corte tudo que
+   por acaso é silêncio).
+5. Materialize os cortes como `ranges` no `edl.json` (formato do `video-use`).
 
-Never cut inside a word (`video-use` Hard Rule).
+Nunca corte dentro de uma palavra (Hard Rule do `video-use`).

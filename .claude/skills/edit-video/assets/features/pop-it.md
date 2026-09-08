@@ -4,50 +4,50 @@ phase: plate
 industry: staccato punch-ins + hit SFX (word pops)
 ---
 
-# Feature · Pop-it (staccato punch + hit SFX)
+# Feature · Pop-it (punch staccato + hit SFX)
 
-## Industry name
-A sequence of **micro punch-ins** synced to target words in the VO, each one
-accompanied by a **hit SFX** (click / tick). In motion/edit: *word pops*,
-*staccato zooms*, *impact hits on VO*. It is not kinetic on-screen typography —
-it is the **shot** “blinking” in scale + a click in the audio, at the onset of
-each word in the list.
+## Nome na indústria
+Uma sequência de **micro punch-ins** sincronizados com palavras-alvo da VO, cada
+um acompanhado de um **hit SFX** (click / tick). Em motion/edição: *word pops*,
+*staccato zooms*, *impact hits on VO*. Não é tipografia cinética na tela: é o
+**plano** "piscando" em escala + um click no áudio, no onset de cada palavra da
+lista.
 
-## What it does
-On spoken lists (names, adjectives, pillars), for **each** item in the list:
+## O que faz
+Em listas faladas (nomes, adjetivos, pilares), para **cada** item da lista:
 
-1. at the word's onset → **click** in the audio
-2. at the same instant → **mini-zoom** (~1.00 → ~1.04 → 1.00 in ~120–180ms)
-3. the next item only fires after the previous one has reset
+1. no onset da palavra → **click** no áudio
+2. no mesmo instante → **mini-zoom** (~1.00 → ~1.04 → 1.00 em ~120–180ms)
+3. o próximo item só dispara depois que o anterior resetou
 
-After the last item, scale = 1.0 and SFX silence.
+Depois do último item, escala = 1.0 e silêncio de SFX.
 
-## Contextual examples
+## Exemplos em contexto
 
-**Proper nouns:**
-> “companies like **Google**, **Amazon** and **Microsoft**”
-Three hits: Google / Amazon / Microsoft.
+**Nomes próprios:**
+> "empresas como **Google**, **Amazon** e **Microsoft**"
+Três hits: Google / Amazon / Microsoft.
 
-**Value adjectives:**
-> “with guardrails your applications become more **secure**, **reliable** and
-> **auditable**”
-Three hits: secure / reliable / auditable.
+**Adjetivos de valor:**
+> "com guardrails as suas aplicações ficam mais **seguras**, **confiáveis** e
+> **auditáveis**"
+Três hits: seguras / confiáveis / auditáveis.
 
-Do not mark connectors (“like”, “and”, “more”) — only the list's terms.
+Não marque conectores ("como", "e", "mais"): só os termos da lista.
 
-## Parameters (defaults)
+## Parâmetros (padrões)
 
-| Param | Default |
+| Parâmetro | Padrão |
 |---|---|
-| `scale_peak` per hit | 1.04 (max 1.06) |
-| Micro-zoom duration | 120–180ms (rise + reset) |
-| SFX | `assets/sfx/click.wav` (mono, short, ~30–80ms) |
-| SFX gain | ~-18 to -12 dBFS under the VO — that holds for an isolated hit on a beat with no simultaneous speech. When the click lands exactly where the VO is speaking (the image-pop case in `news-inserts`: the click marks the overlay's start, which is also where the beat's speech begins), that range is far too low and the click disappears under the voice. `render_vertical.py --pop-it` uses `+4dB` over `click.wav` (effective peak ~-3.5dBFS) for that case — measured, not just heard: `-14dB` of attenuation left the click's peak at ~-25dBFS against a voice RMS of ~-15dB, inaudible. Confirm by ear before assuming "present" — a measured peak does not imply perceptible under speech. |
-| Max hits per beat | 2–5 (beyond that it turns into a metronome; split it into two beats) |
+| `scale_peak` por hit | 1.04 (máx. 1.06) |
+| Duração do micro-zoom | 120–180ms (subida + reset) |
+| SFX | `assets/sfx/click.wav` (mono, curto, ~30–80ms) |
+| Ganho do SFX | ~-18 a -12 dBFS abaixo da VO. Isso vale para um hit isolado num beat sem fala simultânea. Quando o click cai exatamente onde a VO está falando (o caso do pop de imagem em `news-inserts`: o click marca o início do overlay, que também é onde a fala do beat começa), essa faixa é baixa demais e o click some debaixo da voz. O `render_vertical.py --pop-it` usa `+4dB` sobre o `click.wav` (pico efetivo ~-3.5dBFS) para esse caso. Medido, não só ouvido: `-14dB` de atenuação deixou o pico do click em ~-25dBFS contra um RMS de voz de ~-15dB, inaudível. Confirme de ouvido antes de assumir "presente": pico medido não quer dizer perceptível debaixo da fala. |
+| Máximo de hits por beat | 2–5 (mais que isso vira metrônomo, divida em dois beats) |
 
-## How to run it
+## Como rodar
 
-1. On the output timeline, list the word-level onsets of the target words
+1. Na timeline de output, liste os onsets por palavra das palavras-alvo
    (`takes_packed.md` / ASR).
 2. EDL:
 
@@ -66,34 +66,33 @@ Do not mark connectors (“like”, “and”, “more”) — only the list's t
 ]
 ```
 
-3. Plate render: for each hit, a scale keyframe centred on `t`.
-4. Audio mix: `amix` / `adelay` of the click at each `t` (path relative to the
-   repo root or to the skill). Loudnorm (the `loudnorm` feature) runs
-   **afterwards** and swallows the final mix.
+3. Render do plate: para cada hit, um keyframe de escala centralizado em `t`.
+4. Mix de áudio: `amix` / `adelay` do click em cada `t` (caminho relativo à
+   raiz do repo ou à skill). O loudnorm (a feature `loudnorm`) roda **depois** e
+   engole o mix final.
 
-## Hard rules
-- Reset between hits. No overlapping micro-zooms.
-- Do not combine it with `zoom-emphasis` in the same window (scale conflict).
-- Do not use it on a sceptical impression — that is `black-and-white`'s
-  territory.
-- If the ASR gets the onset wrong, adjust `t` by hand before the final render (1
-  frame of error already “detaches” the click from the mouth).
+## Regras duras
+- Reset entre hits. Sem micro-zooms sobrepostos.
+- Não combine com `zoom-emphasis` na mesma janela (conflito de escala).
+- Não use em imitação de cético: isso é território do `black-and-white`.
+- Se o ASR errar o onset, ajuste o `t` na mão antes do render final (1 frame de
+  erro já "descola" o click da boca).
 
-## Asset dependency
-Canonical click: `.claude/skills/edit-video/assets/sfx/click.wav`
-(mono, ~45ms, a dry tick of filtered white noise — generated and versioned in
-the repo). If the file disappears, do not invent an SFX at render time: restore
-the asset or skip the audio hits and report it. To change the sound, replace the
-file keeping the name.
+## Dependência de asset
+Click canônico: `.claude/skills/edit-video/assets/sfx/click.wav` (mono, ~45ms,
+um tick seco de ruído branco filtrado, gerado e versionado no repo). Se o
+arquivo sumir, não invente um SFX na hora do render: restaure o asset ou pule os
+hits de áudio e avise. Para trocar o som, substitua o arquivo mantendo o nome.
 
 ## Status
-**Implemented (partially): the audio click.** `render_vertical.py --pop-it`
-mixes `click.wav` (adelay + amix, `normalize=0`, before loudnorm) at the
-`start_in_output` of each entry in `overlays` — this is what `news-inserts` uses
-to play a click for every card that appears. That case needs neither
-`plate_effects` nor manual hits: one overlay = one click, automatically.
+**Implementado (parcialmente): o click de áudio.** O `render_vertical.py
+--pop-it` mixa o `click.wav` (adelay + amix, `normalize=0`, antes do loudnorm)
+no `start_in_output` de cada entrada em `overlays`. É isso que o `news-inserts`
+usa para tocar um click a cada card que aparece. Esse caso não precisa de
+`plate_effects` nem de hits manuais: um overlay = um click, automaticamente.
 
-**Spec, not implemented: the micro punch-in on a spoken list** (the `hits`/
-`plate_effects` in the EDL above, for proper nouns or adjectives in sequence,
-with a zoom on the talking-head image itself). That is still pure plate
-transform, with no code — a future implementation if some mode calls for it.
+**Spec, não implementado: o micro punch-in em lista falada** (os
+`hits`/`plate_effects` no EDL acima, para nomes próprios ou adjetivos em
+sequência, com zoom na imagem do próprio talking-head). Isso continua sendo
+transformação pura de plate, sem código. Fica para uma implementação futura, se
+algum modo pedir.

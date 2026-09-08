@@ -1,59 +1,59 @@
-# Saturday — draft 7 carousels, finish 4 + 1 LinkedIn post
+# Sábado — rascunhar 7 carrosséis, fechar 4 + 1 post de LinkedIn
 
-**Ends with:** first drafts for all 7 Instagram carousels, 4 carousels fully approved and 1 LinkedIn post fully approved.
-**No recording and no video editing.** This mode is for travel or any week when recording is not possible.
-**Agent teams are mandatory.** The time budget depends on parallel production.
+**Termina com:** primeiros rascunhos dos 7 carrosséis de Instagram, 4 carrosséis totalmente aprovados e 1 post de LinkedIn totalmente aprovado.
+**Sem gravação e sem edição de vídeo.** Esse modo é para viagem ou qualquer semana em que gravar não dá.
+**Times de agentes são obrigatórios.** O orçamento de tempo depende de produção em paralelo.
 
-- [x] **Open one coordinating session for the weekend.**
-  It owns all 7 ideas, slugs and assignments. You talk to the coordinator; it dispatches the work and prevents duplicate hooks or two agents touching the same piece.
+- [x] **Abra uma sessão coordenadora para o fim de semana.**
+  Ela é dona das 7 ideias, dos slugs e das atribuições. Você fala com a coordenadora, e ela despacha o trabalho e evita hook duplicado ou dois agentes mexendo na mesma peça.
 
-- [x] **Pick 7 phase-A ideas** from the Ideas database (`ACP Phase` = `A · Audience`), all strong enough to carry a carousel.
-  Choose evergreen ideas that do not depend on recording, a location or fast-breaking news.
+- [x] **Escolha 7 ideias de fase A** no banco Ideas (`ACP Phase` = `A · Audience`), todas fortes o bastante para carregar um carrossel.
+  Escolha ideias evergreen, que não dependam de gravação, de lugar nem de notícia quente.
 
-- [ ] **Choose 3 of the 7 ideas for LinkedIn reuse.**
-  Mark one for Saturday and two for Sunday. LinkedIn reuses the thesis; it is not a caption or a reformatted carousel.
+- [ ] **Escolha 3 das 7 ideias para reuso no LinkedIn.**
+  Marque uma para sábado e duas para domingo. O LinkedIn reaproveita a tese. Não é legenda nem carrossel reformatado.
 
-## First-draft wave — 7 carousel agents in parallel
+## Onda de primeiro rascunho — 7 agentes de carrossel em paralelo
 
-- [ ] **Dispatch all 7 carousel agents**, one idea per agent. Each runs `carousel` through its first complete copy draft and first visual render, then waits for review.
-  These are drafts, not Saturday's output. An agent returning files does not mean the piece is done.
+- [ ] **Despache os 7 agentes de carrossel**, uma ideia por agente. Cada um roda `carousel` até o primeiro rascunho completo de copy e o primeiro render visual, depois espera revisão.
+  Isso é rascunho, não a saída do sábado. Um agente devolvendo arquivos não quer dizer que a peça está pronta.
 
-- [ ] **Choose the 4 carousel drafts to finish today.**
-  Prioritize the strongest and most time-sensitive pieces. Leave the other 3 agents and their drafts ready to resume Sunday.
+- [ ] **Escolha os 4 rascunhos de carrossel para fechar hoje.**
+  Priorize as peças mais fortes e as mais sensíveis a tempo. Deixe os outros 3 agentes e seus rascunhos prontos para retomar no domingo.
 
-## Review and correction — reserve the rest of the day
+## Revisão e correção — reserve o resto do dia
 
-Claude's first draft is the start of the work. Do not move to the output check until every piece below has survived your review.
+O primeiro rascunho do Claude é o começo do trabalho. Não passe para a conferência de saída até toda peça abaixo ter sobrevivido à sua revisão.
 
-- [ ] **Put the 4 chosen carousels through the full correction loop, one review at a time:**
-  1. Read the complete slide copy and caption.
-  2. Give concrete notes to that piece's agent.
-  3. Review the revised version; repeat until the text is approved.
-  4. Inspect every rendered slide for hierarchy, overflow, awkward breaks, repetition and weak visual composition.
-  5. Send visual or copy corrections back to the same agent and re-render.
-  6. Say "done" only when both copy and rendered slides are publishable.
+- [ ] **Passe os 4 carrosséis escolhidos pelo loop de correção completo, uma revisão por vez:**
+  1. Leia a copy completa dos slides e a legenda do post.
+  2. Dê notas concretas ao agente daquela peça.
+  3. Revise a versão corrigida e repita até o texto ser aprovado.
+  4. Inspecione cada slide renderizado: hierarquia, overflow, quebra estranha, repetição e composição visual fraca.
+  5. Mande as correções visuais ou de copy de volta para o mesmo agente e renderize de novo.
+  6. Diga "pronto" só quando copy e slides renderizados estiverem publicáveis.
 
-  Keep the team moving: while you review the next carousel, agents revise the ones you already returned. Never use two agents on the same piece.
+  Mantenha o time andando: enquanto você revisa o próximo carrossel, os agentes corrigem os que você já devolveu. Nunca use dois agentes na mesma peça.
 
-- [ ] **Dispatch 1 LinkedIn agent** on Saturday's reuse idea once its carousel thesis is stable. Run `build-linkedin`.
-  Presence, not reach. Keep the shared thesis, but let the post stand on its own.
+- [ ] **Despache 1 agente de LinkedIn** na ideia de reuso do sábado assim que a tese do carrossel dela estiver estável. Rode `build-linkedin`.
+  Presença, não alcance. Mantenha a tese compartilhada, mas deixe o post se sustentar sozinho.
 
-- [ ] **Correct the LinkedIn post to "done":**
-  1. Review the complete text and return notes.
-  2. Repeat until the writing is approved.
-  3. Review the chosen image with the post.
-  4. Request replacements or text corrections until the pair is publishable.
+- [ ] **Corrija o post de LinkedIn até o "pronto":**
+  1. Revise o texto completo e devolva notas.
+  2. Repita até a escrita ser aprovada.
+  3. Revise a imagem escolhida junto com o post.
+  4. Peça substituições ou correções de texto até o par estar publicável.
 
-- [ ] **Check Saturday's output:**
-  - 4 carousel folders in `posts/carousel/`, each with `final.md` and rendered slides
-  - 1 LinkedIn folder in `posts/linkedin/`, with `final.md` and `image.png`
-  - 3 carousel first drafts, each still owned by its original agent for Sunday
+- [ ] **Confira a saída do sábado:**
+  - 4 pastas de carrossel em `posts/carousel/`, cada uma com `final.md` e os slides renderizados
+  - 1 pasta de LinkedIn em `posts/linkedin/`, com `final.md` e `image.png`
+  - 3 primeiros rascunhos de carrossel, cada um ainda com seu agente original para o domingo
 
-- [ ] **Leave one resume note for Sunday** containing:
-  - the 3 carousel drafts still awaiting correction
-  - the 2 reserved LinkedIn reuse ideas
-  - the 5 finished slugs
-  - the candidate subject for tomorrow's Substack article — one of the week's theses, or news worth writing about. Tomorrow fires that agent first thing, so leave the pick made
-  - any open notes from today's reviews
+- [ ] **Deixe uma nota de retomada para o domingo** contendo:
+  - os 3 rascunhos de carrossel ainda esperando correção
+  - as 2 ideias de reuso reservadas para o LinkedIn
+  - os 5 slugs fechados
+  - o assunto candidato para o artigo de Substack de amanhã: uma das teses da semana, ou notícia que vale escrever. Amanhã esse agente é disparado logo cedo, então deixe a escolha feita
+  - qualquer nota em aberto das revisões de hoje
 
-Next: **[Sunday](sunday.md)**
+Próximo: **[Domingo](sunday.md)**

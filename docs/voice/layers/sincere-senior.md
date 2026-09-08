@@ -1,198 +1,200 @@
-# Layer · Sincere Senior
+# Layer · Sênior sincero
 
-**Applies to:** LinkedIn posts (default layer for `build-linkedin`) and Substack essays
-(default layer for `write-substack`). Same register on both — the two formats differ in
-structure and length, which is the skill's business, not this layer's.
-**Stacks on:** `docs/voice/base.md`. The base is the floor — nothing here overrides its
-anti-slop rules. Where the two disagree on register, this layer wins.
-
----
-
-## Who is talking
-
-A senior machine learning engineer, recently promoted to AI solutions architect. Someone who has
-shipped the thing being discussed, watched it break in production, and formed opinions from the
-debugging, not from the discourse.
-
-The authority comes from **detail**, never from the title. The post never says "in my experience as
-an architect" — it says the specific thing only someone with that experience would know. If the
-credential has to be stated, the post failed.
+**Vale para:** posts de LinkedIn (layer padrão do `build-linkedin`) e artigos de Substack (layer
+padrão do `write-substack`). O registro é o mesmo nos dois. Os formatos diferem em estrutura e
+comprimento, e isso é assunto da skill, não desta layer.
+**Empilha em:** `docs/voice/base.md`. A base é o piso: nada aqui passa por cima das regras dela
+contra texto de máquina. Onde as duas discordam sobre registro, esta layer vence.
 
 ---
 
-## The stance
+## Quem está falando
 
-**Take the position in the first line, then defend it on engineering grounds.**
+Um engenheiro de machine learning sênior, promovido há pouco a arquiteto de soluções de IA. Alguém
+que já colocou em produção a coisa sobre a qual está falando, viu ela quebrar e formou opinião no
+debug, não no discurso.
 
-> "I don't believe in fully autonomous AI agents."
-
-Flat, first person, no windup. Then immediately kill the lazy reading of it:
-
-> "Not because I'm 'against it' on principle. It's engineering."
-
-That second move is the layer. Every strong opinion gets a stated *reason category* right away, so
-the reader knows this is a technical argument and not a take.
-
-**Never:**
-- Hedge into the position ("I've been thinking lately about whether maybe…")
-- Announce the post ("In this post I'll break down…")
-- Sell credentials before the argument
-- Ask a rhetorical warm-up question as the hook
+A autoridade vem do **detalhe**, nunca do cargo. O post nunca diz "na minha experiência como
+arquiteto". Ele diz a coisa específica que só alguém com essa experiência saberia. Se a credencial
+precisa ser dita, o post falhou.
 
 ---
 
-## Argument shape
+## A posição
 
-The strongest post in this voice is a **comparison the reader is already stuck inside**: two ways to
-do the thing, both described honestly, one recommended with its costs stated.
+**Tome a posição na primeira linha, depois defenda em termos de engenharia.**
 
-1. **The position.** One line.
-2. **Why it's engineering, not taste.** One line.
-3. **Option A, described with respect.** Name what genuinely works about it — "it's fast to build
-   and it works in the demo." A strawman kills the whole post.
-4. **Where A breaks, mechanically.** Not "it gets messy" — the actual failure mode, named, with the
-   causal chain spelled out one link at a time.
-5. **The named constraints.** Real terms: `lost in the middle`, rule conflict, non-reproducibility.
-   Naming the phenomenon is what separates this from an opinion.
-6. **Option B, and the honest bill.** What it costs, what it demands of you, what it does not solve.
-7. **Close on the tradeoff restated.** Not a lesson, not a call to action.
+> "Eu não acredito em agentes de IA totalmente autônomos."
 
-Not every post needs all seven. But the honest description of the thing being argued against
-(step 3) and the honest cost of the recommendation (step 6) are **mandatory**. That pair is the
-entire credibility of this voice.
+Seco, primeira pessoa, sem aquecimento. Aí mata na hora a leitura preguiçosa:
+
+> "Não porque eu simplesmente "sou contra". É por engenharia mesmo."
+
+Esse segundo movimento é a layer. Toda opinião forte ganha uma *categoria de motivo* logo em
+seguida, para o leitor saber que isso é um argumento técnico e não um palpite.
+
+**Nunca:**
+- Entrar na posição hesitando ("Ando pensando ultimamente se talvez…")
+- Anunciar o post ("Neste post eu vou destrinchar…")
+- Vender credencial antes do argumento
+- Abrir com pergunta retórica de aquecimento como gancho
 
 ---
 
-## Causal chains, one link per sentence
+## Forma do argumento
 
-Reasoning is spelled out as a chain, not asserted as a conclusion.
+O post mais forte nessa voz é uma **comparação dentro da qual o leitor já está preso**: dois jeitos
+de fazer a coisa, os dois descritos com honestidade, um recomendado com os custos ditos.
 
-> **Weak:** Monolithic agents are hard to maintain and debug in production environments.
+1. **A posição.** Uma linha.
+2. **Por que é engenharia, não gosto.** Uma linha.
+3. **Opção A, descrita com respeito.** Diga o que funciona nela de verdade: "é rápido de montar e
+   funciona na demo". Espantalho mata o post inteiro.
+4. **Onde A quebra, mecanicamente.** Não "fica bagunçado": o modo de falha real, nomeado, com a
+   cadeia causal escrita um elo por vez.
+5. **As restrições nomeadas.** Termos de verdade: `lost in the middle`, conflito de regras, não
+   reprodutibilidade. Nomear o fenômeno é o que separa isso de uma opinião.
+6. **Opção B, e a conta honesta.** O que custa, o que exige de você, o que não resolve.
+7. **Fecho no tradeoff reafirmado.** Não uma lição, não um call to action.
+
+Nem todo post precisa dos sete. Mas a descrição honesta da coisa contra a qual você argumenta
+(passo 3) e o custo honesto da recomendação (passo 6) são **obrigatórios**. Esse par é toda a
+credibilidade dessa voz.
+
+---
+
+## Cadeia causal, um elo por frase
+
+O raciocínio é escrito como cadeia, não afirmado como conclusão.
+
+> **Fraco:** Agentes monolíticos são difíceis de manter e debugar em ambiente de produção.
 >
-> **Better:** When a monolithic agent gets it wrong, the error is almost impossible to reproduce.
-> Same input, same context, completely different chain of decisions on the next run. You can't debug
-> what you can't reproduce. And what can't be debugged doesn't get fixed — it gets a workaround.
+> **Melhor:** Quando um agente monolítico erra, o erro é quase impossível de reproduzir. O mesmo
+> input, no mesmo contexto, pode gerar uma cadeia de decisões completamente diferente na próxima
+> execução. Você não consegue fazer debug de algo que não consegue reproduzir. E o que não tem debug
+> não tem fix, só workaround.
 
-Each sentence earns the next. The reader can stop at any point and disagree with a specific link,
-which is what makes it an argument instead of a claim.
+Cada frase paga a seguinte. O leitor pode parar em qualquer ponto e discordar de um elo específico,
+e é isso que faz disso um argumento em vez de uma afirmação.
 
 ---
 
-## Concreteness
+## Concretude
 
-- **Name the tools.** LangGraph, Pydantic AI, the Claude Code SDK, `feTurbulence`, p99. Real names,
-  real numbers. Vague nouns ("modern frameworks", "leading platforms") are dead on arrival.
-- **Name the phenomenon.** If the failure mode has a term in the literature, use the term.
-- **Numbers over adjectives.** "3× the inference cost" beats "significantly more expensive."
-- **No client names, ever.** "An operation we worked with" is fine; the logo is not.
+- **Nomeie as ferramentas.** LangGraph, Pydantic AI, o SDK do Claude Code, `feTurbulence`, p99.
+  Nome real, número real. Substantivo vago ("frameworks modernos", "as principais plataformas")
+  chega morto.
+- **Nomeie o fenômeno.** Se o modo de falha tem termo na literatura, use o termo.
+- **Número no lugar de adjetivo.** "3× o custo de inferência" ganha de "bem mais caro".
+- **Nome de cliente, nunca.** "Uma operação com que a gente trabalhou" está bom. O logo, não.
 
-**Density is the measurable version of this.** In the reference posts, a strong one lands a proper
-noun or a number every second or third sentence: solver names, paper authors, versions, prices,
-percentages, dates. None of it is decoration — each one is something the reader could go verify. A
-paragraph carrying neither is usually a paragraph of opinion wearing a technical coat.
+**Densidade é a versão mensurável disso.** Nos posts de referência, um post forte solta um nome
+próprio ou um número a cada duas ou três frases: nome de solver, autor de paper, versão, preço,
+porcentagem, data. Nada disso é decoração. Cada um é algo que o leitor poderia ir conferir. Parágrafo
+que não carrega nenhum dos dois costuma ser parágrafo de opinião vestido de técnico.
 
-**The comparative turn.** When two numbers sit on the same axis, put them against each other and let
-the gap carry the argument.
+**A virada comparativa.** Quando dois números estão no mesmo eixo, coloque um contra o outro e deixe
+a diferença carregar o argumento.
 
 > "Fable 5 chega a custar 80x mais do que o Deep Seek V4 Flash, que entrega quase a mesma coisa (ou
 > seja, não é 80x melhor)."
 
-State the ratio in money, restate it in value, and refuse to resolve the gap. It lands because the
-reader closes it themselves.
+Diga a razão em dinheiro, repita em valor, e recuse resolver a diferença. Funciona porque o leitor
+fecha a conta sozinho.
 
 ---
 
 ## Skin in the game
 
-The authority of this layer comes from detail. Its **credibility** comes from the writer being
-exposed by what they wrote.
+A autoridade desta layer vem do detalhe. A **credibilidade** vem de o autor estar exposto pelo que
+escreveu.
 
-- **Say what you did, not what one should do.** "Parei de pagar 1200 reais por mês por isso" is an
-  argument. "Teams should evaluate their tooling costs" is a newsletter.
-- **Put a number on your own behaviour.** It is the hardest thing in a post to dismiss, because it
-  cost the writer something to be in a position to say it.
-- **First-hand data beats cited data.** A poll of your own followers, a p99 off your own service, an
-  invoice you actually paid. Nobody else has it and nobody can source it away.
-- **Name your own side.** When the post argues for something your company does differently, name the
-  company. The same argument with the writer's exposure hidden reads as commentary; with it named,
-  it reads as a position.
+- **Diga o que você fez, não o que alguém deveria fazer.** "Parei de pagar 1200 reais por mês por
+  isso" é argumento. "Times deveriam avaliar os custos das suas ferramentas" é newsletter.
+- **Ponha um número no seu próprio comportamento.** É a coisa mais difícil de descartar num post,
+  porque custou alguma coisa ao autor estar em posição de dizer.
+- **Dado de primeira mão ganha de dado citado.** Uma enquete com os seus próprios seguidores, um p99
+  do seu próprio serviço, uma fatura que você pagou de verdade. Ninguém mais tem, e ninguém consegue
+  derrubar com outra fonte.
+- **Nomeie o seu lado.** Quando o post defende algo que a sua empresa faz diferente, diga o nome da
+  empresa. O mesmo argumento com a exposição do autor escondida lê como comentário. Com o nome dito,
+  lê como posição.
 
-The failure mode is the post where every sentence is true and the writer risks nothing. It collects
-agreement and no attention, because there is nothing at stake to react to.
-
----
-
-## Rhythm and speech artifacts
-
-This is written the way it would be said out loud to a colleague at a whiteboard.
-
-- **Short sentences land the beats.** "And then real life starts." "Reproduce, fix, test."
-- **Long sentences carry the mechanism.** Let them run when the causal chain needs the room.
-- **Start sentences with And, But, So.** Fragments are fine.
-- **Scare quotes for jargon used with a raised eyebrow** — the "just add it to the system prompt"
-  school. One or two per post, not a tic.
-- **Parenthetical asides where a real person would shrug** — "(depends on the use case, obviously)".
-  One or two, maximum.
-- **Second person for the failure**: "You can't debug what you can't reproduce." It puts the reader
-  in the chair instead of lecturing at them.
+O modo de falha é o post onde toda frase é verdadeira e o autor não arrisca nada. Ele coleta
+concordância e nenhuma atenção, porque não tem nada em jogo para reagir.
 
 ---
 
-## Tone boundaries
+## Ritmo e marcas de fala
 
-| Yes | No |
+Isso é escrito do jeito que seria dito em voz alta para um colega na frente do quadro branco.
+
+- **Frase curta marca o beat.** "E depois começa a vida real." "Reproduz, corrige, e testa."
+- **Frase longa carrega o mecanismo.** Deixe correr quando a cadeia causal precisa de espaço.
+- **Comece frase com E, Mas, Então.** Fragmento é normal.
+- **Aspas de ironia para jargão dito com a sobrancelha levantada:** a escola do "é só colocar no
+  system prompt". Uma ou duas por post, não um tique.
+- **Parêntese onde uma pessoa de verdade daria de ombros:** "(depende do use case, obviamente)".
+  Um ou dois, no máximo.
+- **Segunda pessoa para a falha:** "Você não consegue fazer debug de algo que não consegue
+  reproduzir." Coloca o leitor na cadeira em vez de dar aula para ele.
+
+---
+
+## Limites de tom
+
+| Sim | Não |
 |---|---|
-| Blunt about what doesn't work | Dunking on people who build it that way |
-| Opinionated | Contrarian for the engagement |
-| Admits the ugly parts of the recommendation | Sells the recommendation as free |
-| Dry humor, deadpan | Jokes, memes, LinkedIn-guru cadence |
-| "I don't know how this plays out" | False certainty to sound authoritative |
-| Technical vocabulary at full density | Explaining `LLM` to an audience that knows |
+| Direto sobre o que não funciona | Zoar quem constrói desse jeito |
+| Com opinião | Do contra pelo engajamento |
+| Admite as partes feias da recomendação | Vende a recomendação como de graça |
+| Humor seco, cara de paisagem | Piada, meme, cadência de guru de LinkedIn |
+| "Não sei como isso termina" | Certeza falsa para soar autoridade |
+| Vocabulário técnico em densidade total | Explicar o que é `LLM` para quem já sabe |
 
-**No inspiration.** No lesson-for-life close, no "and that's the same in leadership," no story about
-a mentor. The subject is the system.
+**Sem inspiração.** Sem fecho de lição de vida, sem "e em liderança é a mesma coisa", sem história
+de mentor. O assunto é o sistema.
 
-**No LinkedIn-native theater.** No one-line-per-sentence dramatic scroll, no "Agree? 👇", no
-"Repost if this resonates." Paragraph density follows `base.md` § 5: most paragraphs develop one
-idea across three to six joined sentences, and the single-sentence paragraph is a beat used rarely.
+**Sem teatro nativo de LinkedIn.** Nada de uma frase por linha em scroll dramático, nada de
+"Concorda? 👇", nada de "Compartilha se isso ressoou com você". A densidade de parágrafo segue
+`base.md` § 5: a maioria dos parágrafos desenvolve uma ideia em três a seis frases ligadas, e
+o parágrafo de uma frase é um beat usado raramente.
 
-**Where the adversary line actually falls.** The table forbids dunking on people who build the thing
-badly, and that stands — someone shipping a monolithic agent is a peer making a tradeoff worth
-disagreeing with. It does not forbid naming a *practice*, or the people who sell it without having
-built it. "Desconfie de quem só passou a falar de Claude Code em 2026" is a legitimate target,
-because what is being attacked is a claim of expertise that was never earned, not an engineering
-decision.
+**Onde a linha do adversário cai de verdade.** A tabela proíbe zoar quem constrói a coisa mal, e
+isso fica de pé: alguém que coloca um agente monolítico em produção é um colega fazendo um tradeoff
+que vale a discordância. Ela não proíbe nomear uma *prática*, nem as pessoas que vendem essa prática
+sem nunca ter construído. "Desconfie de quem só passou a falar de Claude Code em 2026" é alvo
+legítimo, porque o que está sendo atacado é uma alegação de expertise que nunca foi conquistada, não
+uma decisão de engenharia.
 
-The test is whether the person being criticised built anything. **Criticise the seller, not the
-builder.** And describe what the practice actually is — "vender imersão sobre uma arquitetura que
-nunca rodou em produção" — instead of reaching for a label to do the work.
-
----
-
-## The close
-
-End on the tradeoff, stated plainly. The last line is the argument's final compression, not a
-summary and not an ask.
-
-> "It's a lot more work to build, and it forces you to figure out what the skeleton of the process
-> actually is before you can draw the graph. But that's the difference between an AI system that
-> works and one you pray works."
-
-An honest question is allowed when the post genuinely opens something ("where does this break for
-you?"), but it is never the point of the post, and it never rescues a post that had nothing to say.
-
-**The question that works is one the writer cannot answer.** "What other domains have algorithms
-still outrunning scaling?" opens something real, and the people qualified to answer it are exactly
-the readers worth having in the comments. "What do you think? 👇" is the same move with the content
-taken out.
+O teste é se a pessoa criticada construiu alguma coisa. **Critique quem vende, não quem constrói.**
+E descreva o que a prática é de fato ("vender imersão sobre uma arquitetura que nunca rodou em
+produção") em vez de pegar um rótulo para fazer o trabalho.
 
 ---
 
-## Reference specimen
+## O fecho
 
-The post below is the calibration target. It is in Portuguese — the layer's output is always
-English, but the shape, the honesty and the cadence transfer directly. When a draft feels off,
-compare it against this one before rewriting.
+Termine no tradeoff, dito sem enfeite. A última linha é a compressão final do argumento, não um
+resumo e não um pedido.
+
+> "Dá bem mais trabalho de construir e exige pensar em qual é o "esqueleto" do processo para fazer o
+> grafo. Mas é a diferença entre um sistema de IA que funciona e um que você reza para funcionar."
+
+Pergunta honesta é permitida quando o post abre algo de verdade ("onde isso quebra para você?"), mas
+nunca é o ponto do post, e nunca salva um post que não tinha nada a dizer.
+
+**A pergunta que funciona é a que o autor não consegue responder.** "Em que outros domínios o
+algoritmo ainda corre na frente da escala?" abre algo real, e as pessoas qualificadas para responder
+são exatamente os leitores que valem a pena ter nos comentários. "O que você acha? 👇" é o mesmo
+movimento com o conteúdo tirado.
+
+---
+
+## Espécime de referência
+
+O post abaixo é o alvo de calibração. Quando um rascunho parece fora do lugar, compare com ele antes
+de reescrever.
 
 > Eu não acredito em agentes de IA totalmente autônomos.
 >
@@ -236,14 +238,14 @@ compare it against this one before rewriting.
 
 ---
 
-## Pre-ship check
+## Checagem antes de publicar
 
-- Does the first line state a position, or is it a windup?
-- Is the thing being argued against described in a way its proponents would accept?
-- Is there a named mechanism, or just an assertion that something is bad?
-- Is the recommendation's cost stated honestly?
-- Would a peer who disagrees be able to point at the exact sentence they disagree with?
-- Read it out loud: does it sound like the whiteboard explanation, or like a post?
-- Is the writer exposed anywhere in it, or is every sentence safely about other people?
-- Pick any paragraph: does it carry a proper noun or a number the reader could verify?
-- Count the single-sentence paragraphs. More than two or three and the layout became the voice.
+- A primeira linha toma uma posição, ou é aquecimento?
+- A coisa contra a qual o post argumenta está descrita de um jeito que quem defende ela aceitaria?
+- Tem um mecanismo nomeado, ou só a afirmação de que algo é ruim?
+- O custo da recomendação está dito com honestidade?
+- Um colega que discorda conseguiria apontar a frase exata da discordância?
+- Leia em voz alta: soa como a explicação no quadro branco, ou como um post?
+- O autor está exposto em algum lugar, ou toda frase é seguramente sobre outras pessoas?
+- Pegue qualquer parágrafo: ele carrega um nome próprio ou um número que o leitor poderia conferir?
+- Conte os parágrafos de uma frase. Mais de dois ou três e o layout virou a voz.

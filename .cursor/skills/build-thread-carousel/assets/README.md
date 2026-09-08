@@ -1,97 +1,97 @@
-# assets/ — archetypes for a thread-derived IG carousel (build-thread-carousel skill)
+# assets/ — arquétipos do carrossel de IG derivado de thread (skill build-thread-carousel)
 
-Runnable reference folder for the archetypes of the Instagram carousel **derived from a thread** (`build-thread-carousel` skill). Each archetype is a complete, standalone HTML file — open it in a browser and it renders a demo slide with placeholders.
+Pasta de referência executável dos arquétipos do carrossel de Instagram **derivado de uma thread** (skill `build-thread-carousel`). Cada arquétipo é um arquivo HTML completo e independente: abra no navegador e ele renderiza um slide de demonstração com placeholders.
 
-The skill has two modes, each with its own archetype subfolder — same file structure (`_carousel.css`, `hook-display.html`, `body-paragraph.html`), different content:
+A skill tem dois modos, cada um com sua subpasta de arquétipos, com a mesma estrutura de arquivos (`_carousel.css`, `hook-display.html`, `body-paragraph.html`) e conteúdo diferente:
 
-- **`default/`** — the default mode. X-cosplay layout in a light, neutral palette. Documented below.
-- **`x/`** — X mode. Dark mode, a faithful Twitter/X clone (inherited from the retired `gerar-prints-reel` skill, historically used to generate Reel background images).
+- **`default/`**: o modo padrão. Layout X-cosplay em paleta clara e neutra. Documentado abaixo.
+- **`x/`**: o modo X. Dark mode, clone fiel do Twitter/X (herdado da skill aposentada `gerar-prints-reel`, usada historicamente para gerar imagem de fundo de Reel).
 
-Which one to use in each case is in the skill's `SKILL.md`, "Modes" section.
+Qual usar em cada caso está no `SKILL.md` da skill, seção "Modos".
 
-**Identity placeholders:** the archetypes carry `{{NAME}}`, `{{HANDLE}}` and `{{AVATAR_URL}}` in the header (and `{{IMAGE_URL}}` in the sample media slot) — the personal brand identity has not been defined yet, so the skill **asks the user** for the name, handle and avatar path before generating the HTML.
+**Placeholders de identidade:** os arquétipos carregam `{{NAME}}`, `{{HANDLE}}` e `{{AVATAR_URL}}` no cabeçalho (e `{{IMAGE_URL}}` no slot de mídia de exemplo). A identidade da marca pessoal ainda não foi definida, então a skill **pergunta ao usuário** o nome, o handle e o caminho do avatar antes de gerar o HTML.
 
-## X-cosplay layout, light palette (default mode)
+## Layout X-cosplay, paleta clara (modo default)
 
-These archetypes use the **editorial X-cosplay layout** (reference: Adriano Couto / "Gestão com IA"), in a light, neutral palette:
+Estes arquétipos usam o **layout X-cosplay editorial** (referência: Adriano Couto / "Gestão com IA"), em paleta clara e neutra:
 
-- Compact X header (circular avatar + bold name + blue `#1d9bf0` verified badge + handle) — **it is the layout, not the color, that makes it look like a tweet**
-- Neutral bg `oklch(0.96 0 0)` (off-white with no warm cast)
-- Text in pure black `oklch(0 0 0)`, neutral grays (chroma 0)
-- Inter for the body (via Google Fonts `@import`), JetBrains Mono for `code`, with a fallback to system fonts
-- `--seal` brick-red accent on links, the `code` chip and the quote border
-- Content vertically centered on the slide — a little text floats in the middle with generous air, a lot of text takes up more
+- Cabeçalho compacto do X (avatar circular + nome em negrito + selo azul `#1d9bf0` de verificado + handle). **É o layout, não a cor, que faz parecer um tweet**
+- Fundo neutro `oklch(0.96 0 0)` (off-white sem tom quente)
+- Texto em preto puro `oklch(0 0 0)`, cinzas neutros (chroma 0)
+- Inter no body (via `@import` do Google Fonts), JetBrains Mono em `code`, com fallback para as fontes do sistema
+- Acento vermelho-tijolo `--seal` nos links, no chip de `code` e na borda da citação
+- Conteúdo centralizado na vertical no slide: pouco texto flutua no meio com bastante ar, muito texto ocupa mais
 
-The **only X-native trait retained** is the `#1d9bf0` blue of the verified badge: a recolored check would read as a fake seal. The stylesheet is self-sufficient: all the values live inline in it. Do not generalize these archetypes to other contexts.
+O **único traço nativo do X que ficou** é o azul `#1d9bf0` do selo de verificado: um check recolorido pareceria selo falso. O stylesheet é autossuficiente: todos os valores estão inline nele. Não generalize estes arquétipos para outros contextos.
 
-## The system (inside each subfolder)
+## O sistema (dentro de cada subpasta)
 
-- **`_carousel.css`** — shared chrome: 1080×1350 dimensions, `.slide` as a centered flex column, `.profile-row`, `.tweet-text` with inline markdown rendering, optional `.tweet-media` slot. Changed here = changed in every carousel of that mode.
-- **`hook-display.html`** — the first slide. The first paragraph becomes a larger bold headline (40px), the rest regular body (30px). Everything vertically centered.
-- **`body-paragraph.html`** — the middle and last slides. Tweet-text at 30px with paragraphs. Supports markdown and `→ ` markers.
+- **`_carousel.css`**: o chrome compartilhado. Dimensões 1080×1350, `.slide` como coluna flex centralizada, `.profile-row`, `.tweet-text` com render de markdown inline, slot opcional `.tweet-media`. Mudou aqui, mudou em todo carrossel daquele modo.
+- **`hook-display.html`**: o primeiro slide. O primeiro parágrafo vira uma headline maior em negrito (40px), o resto body regular (30px). Tudo centralizado na vertical.
+- **`body-paragraph.html`**: os slides do meio e o último. Tweet-text a 30px com parágrafos. Aceita markdown e marcadores `→ `.
 
-## Which to use when
+## Qual usar quando
 
-| Position | Default | When to swap |
+| Posição | Padrão | Quando trocar |
 |---|---|---|
-| T1 | `hook-display` | Short hook (up to ~250 chars). Above that it becomes `body-paragraph`. |
-| T2 through T(N) | `body-paragraph` | No variants. Use markdown bold/italics/arrows inside the body to give it rhythm. |
+| T1 | `hook-display` | Hook curto (até ~250 caracteres). Acima disso vira `body-paragraph`. |
+| T2 até T(N) | `body-paragraph` | Sem variantes. Use negrito/itálico/setas de markdown dentro do body para dar ritmo. |
 
-There is no separate archetype for the closer — to give weight to the last tweet's test sentence, wrap it in `**bold**` or `> blockquote` inside `body-paragraph`.
+Não tem arquétipo separado para o fechamento: para dar peso à frase de teste do último tweet, envolva ela em `**negrito**` ou `> blockquote` dentro do `body-paragraph`.
 
-## Formatting in the carousel .md
+## Formatação no .md do carrossel
 
-The carousel .md **can be more formatted than the original thread**. There is no character limit on IG, so use the space:
+O .md do carrossel **pode ser mais formatado que a thread original**. Não tem limite de caracteres no IG, então use o espaço:
 
-- `**bold**` on one key sentence per slide
-- `*italics*` on highlighted terms
-- `` `code` `` on technical terms (`RAG`, `eval`, etc.)
-- `> quote` to pull out an important sentence
-- **`→ ` as an inline list marker** — write `→ ` at the start of each item, with a paragraph break between items. Do not use markdown `*` or `-` (they render as a `<ul>`, which looks visually different). The arrow is literal text.
+- `**negrito**` em uma frase-chave por slide
+- `*itálico*` em termos destacados
+- `` `code` `` em termos técnicos (`RAG`, `eval` etc.)
+- `> citação` para destacar uma frase importante
+- **`→ ` como marcador de lista inline**: escreva `→ ` no começo de cada item, com quebra de parágrafo entre os itens. Não use `*` nem `-` do markdown (eles renderizam como `<ul>`, que fica visualmente diferente). A seta é texto literal.
 
-Example of good arrow use (Adriano slide 6):
+Exemplo de bom uso da seta (slide 6 do Adriano):
 ```
-The rule is simple and holds for any AI on the market:
+A regra é simples e vale para qualquer IA do mercado:
 
-→ Your knowledge bases live somewhere that belongs to you.
+→ Suas bases de conhecimento ficam num lugar que é seu.
 
-→ Your agents' instructions are documented in a file.
+→ As instruções dos seus agentes estão documentadas num arquivo.
 
-→ The AI is just the engine running on top of that.
+→ A IA é só o motor que roda em cima disso.
 ```
 
-## Image slot (`.tweet-media`)
+## Slot de imagem (`.tweet-media`)
 
-Optional slot below the text. When present, it fills space on short slides. 18px rounded corners, fixed height of 360px, `object-fit: cover` handles the crop.
+Slot opcional embaixo do texto. Quando presente, preenche espaço em slide curto. Cantos arredondados de 18px, altura fixa de 360px, `object-fit: cover` cuida do corte.
 
-**When a slide gets an image** (detail in `.claude/skills/build-thread-carousel/SKILL.md` § "Proactive image sourcing"). Three rules, in order:
+**Quando um slide ganha imagem** (detalhe em `.claude/skills/build-thread-carousel/SKILL.md` § "Busca proativa de imagem"). Três regras, em ordem:
 
-1. **A manual image always wins.** If `posts/thread/<slug>/sketch/images/0N.<ext>` (or unpadded `N.<ext>`) exists for slide N, it gets used, no exceptions — the heuristic does not even run.
-2. **T1 always has an image** — manual, or searched, but never absent. It is what stops the scroll.
-3. **T2+ with no manual image:** heuristic — `body < 250 chars with no arrows` = search; otherwise, text only.
+1. **Imagem manual sempre ganha.** Se `posts/thread/<slug>/sketch/images/0N.<ext>` (ou `N.<ext>` sem zero) existe para o slide N, ela é usada, sem exceção: a heurística nem roda.
+2. **T1 sempre tem imagem**, manual ou buscada, mas nunca ausente. É o que para o scroll.
+3. **T2+ sem imagem manual:** heurística. `body < 250 caracteres sem setas` = busca. Senão, só texto.
 
-When the skill goes searching, Claude:
-   - Derives a semantic query from the content of **that specific tweet**, not from the thread's general theme (in English, better for stock photo sites)
-   - `WebSearch` for `<query> unsplash photo` or `<query> stock free`
-   - `WebFetch` on the candidate page to extract the direct image URL
-   - `bash curl -L -o posts/thread/<slug>/sketch/images/0N.<ext> <url>` to download it
-   - `Read` on the downloaded image (Claude is multimodal) to judge whether it matches the text of **that slide** — not just the thread's theme. An image that illustrates the general subject but clashes with the slide gets discarded.
-   - If it works, includes it in the HTML; if not, tries the next candidate or skips (T1 never skips)
+Quando a skill sai para buscar, o Claude:
+   - Deriva uma query semântica do conteúdo **daquele tweet específico**, não do tema geral da thread (em inglês, que funciona melhor em banco de imagens)
+   - `WebSearch` com `<query> unsplash photo` ou `<query> stock free`
+   - `WebFetch` na página candidata para extrair a URL direta da imagem
+   - `bash curl -L -o posts/thread/<slug>/sketch/images/0N.<ext> <url>` para baixar
+   - `Read` na imagem baixada (o Claude é multimodal) para julgar se ela bate com o texto **daquele slide**, e não só com o tema da thread. Imagem que ilustra o assunto geral mas briga com o slide é descartada.
+   - Se funciona, inclui no HTML. Se não, tenta a próxima candidata ou pula (T1 nunca pula)
 
-Images live in `posts/thread/<slug>/sketch/images/0N.<ext>` — working material, alongside the carousel rewrite (`sketch/carousel-v<N>.md`) and the composition (`sketch/carousel.html`) they feed. On re-render: the skill checks whether the slide's image already exists before searching; if so, it reuses it.
+As imagens ficam em `posts/thread/<slug>/sketch/images/0N.<ext>`: material de trabalho, ao lado da reescrita do carrossel (`sketch/carousel-v<N>.md`) e da composição (`sketch/carousel.html`) que elas alimentam. Ao re-renderizar, a skill confere se a imagem do slide já existe antes de buscar. Se existe, reaproveita.
 
-## Header identity (X-cosplay)
+## Identidade do cabeçalho (X-cosplay)
 
-No identity is hardcoded: the three fields are placeholders, filled with whatever the user provides.
+Nenhuma identidade está fixa: os três campos são placeholders, preenchidos com o que o usuário informar.
 
-- Avatar: `{{AVATAR_URL}}` — path to the file, relative to the generated `carousel.html`
-- Display name: `{{NAME}}`
-- Handle / second line: `{{HANDLE}}`
-- Verified badge: inline X-style SVG (blue `#1d9bf0`) — it is layout, not identity, and stays fixed
+- Avatar: `{{AVATAR_URL}}`, caminho do arquivo, relativo ao `carousel.html` gerado
+- Nome de exibição: `{{NAME}}`
+- Handle / segunda linha: `{{HANDLE}}`
+- Selo de verificado: SVG inline no estilo do X (azul `#1d9bf0`). É layout, não identidade, e fica fixo
 
-## System limits
+## Limites do sistema
 
-- Everything is optimized for **1080×1350**. Other dimensions require revising the type scale.
-- Background color: fixed neutral off-white in the default mode, near-black (`oklch(0.06)`) in X mode. It is not configurable per slide within the same mode.
-- Images in `.tweet-media`: 3:1 aspect ratio (1080×360 visually). Taller/shorter images get cropped by `object-fit`. The skill is responsible for picking reasonable images.
-- `--seal` (the brick-red accent) shows up on links, the code chip and the quote border. The only X blue left is the verified badge's.
+- Tudo é otimizado para **1080×1350**. Outras dimensões exigem revisar a escala tipográfica.
+- Cor de fundo: off-white neutro fixo no modo default, quase preto (`oklch(0.06)`) no modo X. Não é configurável por slide dentro do mesmo modo.
+- Imagens em `.tweet-media`: proporção 3:1 (1080×360 visualmente). Imagem mais alta ou mais baixa é cortada pelo `object-fit`. Escolher imagens razoáveis é responsabilidade da skill.
+- `--seal` (o acento vermelho-tijolo) aparece nos links, no chip de code e na borda da citação. O único azul do X que sobrou é o do selo de verificado.

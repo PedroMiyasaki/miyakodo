@@ -4,22 +4,22 @@ aliases: [pedagogical, teaching, thesis, teach]
 status: ready
 ---
 
-# Mode · authority
+# Modo · authority
 
-Pedagogical + authoritative tone: teaching guardrails, harnesses, evals,
-mechanisms.
+Tom pedagógico + de autoridade: ensinar guardrails, harnesses, evals,
+mecanismos.
 
-Implementation state: `plate_effects` exists in `render_vertical.py` (it covers
-`zoom-emphasis` and `black-and-white`, with a self-check in
-`assets/test_plate_effects.py`), and so do `news-inserts` / `news_insert.py`.
-Only `motion_terco.py` is missing, and it is **opt-in** and does not block the
-mode: without it, the diagram beat falls back to the third's default judgement
-(empty, or a reference insert).
+Estado da implementação: `plate_effects` existe no `render_vertical.py` (cobre
+`zoom-emphasis` e `black-and-white`, com autoteste em
+`assets/test_plate_effects.py`), e `news-inserts` / `news_insert.py` também.
+Só falta o `motion_terco.py`, que é **opt-in** e não trava o modo: sem ele, o
+beat de diagrama cai no julgamento padrão do terço (vazio, ou um insert de
+referência).
 
-`pop-it` today is only the click SFX (`--pop-it`, tied to the start of each
-overlay); the spec's visual micro-zoom does not exist yet.
+`pop-it` hoje é só o SFX de click (`--pop-it`, amarrado ao início de cada
+overlay). O micro-zoom visual da spec ainda não existe.
 
-## Features (order)
+## Features (ordem)
 
 1. `cut-dead-air` → `assets/features/cut-dead-air.md`
 2. `zoom-emphasis` → `assets/features/zoom-emphasis.md`        *(plate)*
@@ -29,44 +29,44 @@ overlay); the spec's visual micro-zoom does not exist yet.
 6. `news-inserts` → `assets/features/news-inserts.md`          *(overlays · opt-in)*
 7. `loudnorm` → `assets/features/loudnorm.md`
 
-`subtitles` is not listed because it rides on every mode — burned at the final
-render only (`assets/features/subtitles.md`).
+`subtitles` não está listada porque vai junto em todo modo: queimada só no
+render final (`assets/features/subtitles.md`).
 
-Not every beat uses every feature: the mode **enables** the vocabulary; the
-editor picks per beat (slow push on the thesis, B&W on the impression, pop-it on
-the list, motion on the diagram, a paper screenshot on the citation). No beat =
-no effect emitted.
+Nem todo beat usa toda feature: o modo **habilita** o vocabulário, e o editor
+escolhe por beat (push lento na tese, P&B na imitação, pop-it na lista, motion
+no diagrama, print de paper na citação). Sem beat = nenhum efeito emitido.
 
-### Upper third — judgement, not a fixed grid
-In `news`, the third's exposure is relatively predictable (insert when the news
-is cited → gone at the CTA). Here it is **not**: the editor decides **at each
-moment** whether the emphasis goes on the diagram (`motion-third`), on a
-**reference image** (`news-inserts`), or on the face/plate (zoom, B&W, pop-it,
-or nothing). When in doubt, leave the third empty. See “Editorial judgement” in
+### Terço superior: julgamento, não grade fixa
+No `news`, a exposição do terço é relativamente previsível (insert quando a
+notícia é citada → some no CTA). Aqui **não**: o editor decide **a cada
+momento** se a ênfase vai para o diagrama (`motion-third`), para uma **imagem
+de referência** (`news-inserts`) ou para o rosto/plate (zoom, P&B, pop-it, ou
+nada). Na dúvida, deixe o terço vazio. Veja “Julgamento editorial” em
 `motion-third.md`.
 
-Two kinds of content in the same slot (never at the same time):
+Dois tipos de conteúdo no mesmo slot (nunca ao mesmo tempo):
 
-| Type | Feature | When |
+| Tipo | Feature | Quando |
 |---|---|---|
-| Animated diagram / flow | `motion-third` | The speech teaches a mechanism that gains from a structured visual |
-| Static screenshot (paper, article, launch) | `news-inserts` | The speech **cites** a concrete source and the screenshot anchors the claim |
+| Diagrama / fluxo animado | `motion-third` | A fala ensina um mecanismo que ganha com um visual estruturado |
+| Print estático (paper, artigo, lançamento) | `news-inserts` | A fala **cita** uma fonte concreta e o print ancora a afirmação |
 
-**Reference inserts (optional, same engine as news mode).** Typically: a
-screenshot of a paper, an article, a model/library announcement, a figure from a
-study. Same pipeline: `news_insert.py`, the `video/inputs/<slug>-imagens/`
-folder, a `FONTE:` chyron where it makes sense. Gone at the CTA.
+**Inserts de referência (opcional, mesma engine do modo news).** Normalmente: o
+print de um paper, de um artigo, do anúncio de um modelo ou biblioteca, uma
+figura de um estudo. Mesmo pipeline: `news_insert.py`, a pasta
+`video/inputs/<slug>-imagens/`, um chyron `FONTE:` onde fizer sentido. Some no
+CTA.
 
-Example: in the middle of a Reel about guardrails you say
+Exemplo: no meio de um Reel sobre guardrails você diz
 
-> “Making negative statements pollutes the AI's global workspace, as this paper
-> from university X showed”
+> “Fazer afirmações negativas polui o workspace global da IA, como esse paper
+> da universidade X mostrou”
 
-→ the upper third with the paper's screenshot (title/authors/figure legible),
-while the VO carries on. It is not breaking news; it is **visual evidence** for
-the pedagogical thesis.
+→ o terço superior com o print do paper (título/autores/figura legíveis),
+enquanto a fala segue. Não é notícia quente, é **evidência visual** para a tese
+pedagógica.
 
-## When to use it
-Content that teaches a mechanism (guardrails, evals, harnesses, pipelines) in an
-authoritative voice — not pure breaking news (that is `news`). Citing a paper or
-a launch inside the lesson is still `authority` + `news-inserts`.
+## Quando usar
+Conteúdo que ensina um mecanismo (guardrails, evals, harnesses, pipelines) com
+voz de autoridade, e não notícia pura (isso é `news`). Citar um paper ou um
+lançamento dentro da aula continua sendo `authority` + `news-inserts`.

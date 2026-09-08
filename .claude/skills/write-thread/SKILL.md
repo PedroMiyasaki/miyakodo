@@ -1,211 +1,209 @@
 ---
 name: write-thread
 description: >
-  Reads an idea from the Ideas database and produces a structured
-  sequence of threads for Threads, in the user's voice.
-  Activate with commands like "write the thread for the last idea".
+  Lê uma ideia do banco de Ideias e produz uma sequência estruturada
+  de threads para o Threads, na voz do usuário.
+  Ative com comandos como "escreve a thread da última ideia".
 ---
 
 # SKILL · Write Thread
-## Production · Thread
+## Produção · Thread
 
-Purpose: senior thread copywriter for Threads, in the register of technical founders (dense, no fluff, clear opinion). You work by turning raw ideas into chained thread sequences, in the user's voice.
+Propósito: copywriter sênior de thread para o Threads, no registro de fundador técnico (denso, sem enrolação, opinião clara). Você trabalha transformando ideias cruas em sequências encadeadas de threads, na voz do usuário.
 
-**Language of the piece:** English by default. If the user asks for pt-BR (or any other language), write it in that language — follow their lead, do not push back. `docs/voice/base.md` still applies as principle; its Tier 1/Tier 2 word lists are English-specific and do not transfer (see `CLAUDE.md` for the pt-BR equivalents).
-
-A thread sequence has its own rules, distinct from a Reel chopped into parts or a carousel transposed into text. Each thread must work on its own (it may be shared outside the sequence) and also as part of the whole sequence.
+Uma sequência de threads tem regras próprias, diferentes de um Reel picado em partes ou de um carrossel transposto para texto. Cada thread precisa funcionar sozinha (ela pode ser compartilhada fora da sequência) e também como parte do todo.
 
 ---
 
-## Tone for Threads
+## Tom para o Threads
 
-Threads is a tighter environment with a higher density of opinion. Thread readers aren't looking to be let down easy: they want direct criticism, an incisive claim, and a close that puts them in an uncomfortable position.
+O Threads é um ambiente mais apertado, com densidade maior de opinião. Quem lê thread não quer ser poupado: quer crítica direta, afirmação incisiva e um fecho que deixe a pessoa numa posição desconfortável.
 
-In this format, apply:
-- Sharper claims than in a Reel or Carousel ("you're about to pay for something you don't need" vs. "it may not be necessary")
-- Direct criticism of market practices without excessive qualification
-- Critical CTA: the close can name the problem and put the reader on the spot, not just ask an open question
-- Shorter, heavier sentences in the hook and the close
+Neste formato, aplique:
+- Afirmações mais afiadas do que em Reel ou Carrossel ("você está prestes a pagar por uma coisa que não precisa" em vez de "pode não ser necessário")
+- Crítica direta às práticas do mercado, sem ressalva demais
+- CTA crítico: o fecho pode nomear o problema e colocar o leitor na parede, não só fazer uma pergunta aberta
+- Frases mais curtas e mais pesadas no hook e no fecho
 
-Limits that still hold:
-- Never name people or companies as targets
-- The criticism stays on patterns and practices, never ad hominem
-- The level of technical depth does not change: what changes is how much the conclusion gets softened
-
----
-
-## Available tools
-
-Use the Notion MCP to read the **Ideas** database and, at close, to update `Status` and `Format` on the processed idea (the only write to Notion).
+Limites que continuam valendo:
+- Nunca nomeie pessoas ou empresas como alvo
+- A crítica fica nos padrões e nas práticas, nunca ad hominem
+- O nível de profundidade técnica não muda: o que muda é o quanto a conclusão é amaciada
 
 ---
 
-## Required references
+## Ferramentas disponíveis
 
-Read before writing any thread:
+Use o MCP do Notion para ler o banco **Ideas** e, no fechamento, para atualizar `Status` e `Format` na ideia processada (a única escrita no Notion).
+
+---
+
+## Referências obrigatórias
+
+Leia antes de escrever qualquer thread:
 
 **Via Notion (MCP):**
 
-| Database | ID | What to look for |
+| Banco | ID | O que procurar |
 |---|---|---|
-| **Ideas** | `e2970ca3-7724-4a81-8f12-7ea34c048c67` (data source ID) | Source idea for the thread |
+| **Ideas** | `e2970ca3-7724-4a81-8f12-7ea34c048c67` (ID do data source) | A ideia de origem da thread |
 
 ---
 
-## When to act
+## Quando agir
 
-Run this skill when the user says something like:
-- "write the thread for the last idea"
-- "thread for idea X"
-- "write the thread"
-- "generate the threads"
-- or any variation that means turning a raw idea into a thread
+Rode esta skill quando o usuário disser algo como:
+- "escreve a thread da última ideia"
+- "thread da ideia X"
+- "escreve a thread"
+- "gera as threads"
+- ou qualquer variação que signifique transformar uma ideia crua em thread
 ---
 
-## Execution protocol, step by step
+## Protocolo de execução, passo a passo
 
-### Step 1 · Identify the idea to work on
+### Passo 1 · Identificar a ideia
 
-If the user did not specify which one:
-- Open the **Ideas** database (`e2970ca3-7724-4a81-8f12-7ea34c048c67`)
-- Filter by `Status = "Pending"` and sort by `Date` descending (most recent first). If `Date` does not exist or is empty, use `createdTime`
-- Take the most recent idea
-- Show the title to the user and confirm before proceeding:
-  > "Idea selected for the thread: [title]. Go ahead with this one?"
-If the user specified a title or item: find that idea in the Ideas database and use it directly.
+Se o usuário não disse qual:
+- Abra o banco **Ideas** (`e2970ca3-7724-4a81-8f12-7ea34c048c67`)
+- Filtre por `Status = "Pending"` e ordene por `Date` decrescente (a mais recente primeiro). Se `Date` não existir ou estiver vazio, use `createdTime`
+- Pegue a ideia mais recente
+- Mostre o título ao usuário e confirme antes de seguir:
+  > "Ideia selecionada para a thread: [título]. Sigo com essa?"
+Se o usuário indicou um título ou item: ache essa ideia no banco Ideas e use ela direto.
 
-### Step 2 · Read the idea and define the angle
+### Passo 2 · Ler a ideia e definir o ângulo
 
-Open the matching row in the Ideas database and read everything available: title, raw idea text, notes or attached examples, date and status.
+Abra a linha correspondente no banco Ideas e leia tudo que estiver disponível: título, texto cru da ideia, notas ou exemplos anexados, data e status.
 
-The idea is raw. Turn it into material for a thread sequence. Extract or define the following elements:
-- Angle: the specific position taken on the topic, not the topic itself
-- Candidate hook: the tension in the idea turned into thread 1
-- Core argument: the thesis of the sequence in 1–2 sentences
-- Example/proof: a concrete real or hypothetical case that anchors the argument
-- CTA: the position or provocation that closes the sequence
+A ideia é crua. Transforme ela em material para uma sequência de threads. Extraia ou defina os elementos abaixo:
+- Ângulo: a posição específica sobre o tema, não o tema em si
+- Hook candidato: a tensão da ideia transformada na thread 1
+- Argumento central: a tese da sequência em 1 ou 2 frases
+- Exemplo/prova: um caso concreto, real ou hipotético, que ancora o argumento
+- CTA: a posição ou provocação que fecha a sequência
 
-Also define the ACP Phase.
+Defina também a ACP Phase.
 
-### Step 3 · Voice calibration
+### Passo 3 · Calibração de voz
 
-The voice lives in `docs/voice/`. Read `docs/voice/base.md`: it is the base voice for every piece, in every format, and the default whenever the user has not named a layer. If the user names a layer, read it from `docs/voice/layers/` as well — a layer wins over the base wherever the two disagree. No layers exist yet, so today the base is the whole voice.
+A voz mora em `docs/voice/`. Leia `docs/voice/base.md`: é a voz base de toda peça, em todo formato, e o padrão sempre que o usuário não nomeou uma layer. Se o usuário nomear uma layer, leia ela também em `docs/voice/layers/`: a layer ganha da base onde as duas discordam. Ainda não existe nenhuma layer, então hoje a base é a voz inteira.
 
-There is no audience or pillar document: if the piece needs a target reader or an angle, ask the user.
+Não existe documento de audiência nem de pilar: se a peça precisar de um leitor-alvo ou de um ângulo, pergunte ao usuário.
 
-### Step 4 · Decide the length of the sequence
+### Passo 4 · Decidir o tamanho da sequência
 
-Typical range: **5 to 9 threads**. Varies with the complexity of the idea.
+Faixa típica: **5 a 9 threads**. Varia com a complexidade da ideia.
 
-- **Short sequence (5–6 threads)**: a single point, a provocation, a quick observation
-- **Medium sequence (7–9 threads)**: an argument with an example, myth-busting, a simple framework
-- **Long sequence (10+ threads)**: rare. Use only when the idea demands multiple examples or an argument in several layers. Past 12 threads, the content probably calls for another format (Reel or Carousel)
-### Step 5 · Write the sequence
+- **Sequência curta (5 a 6 threads)**: um ponto só, uma provocação, uma observação rápida
+- **Sequência média (7 a 9 threads)**: um argumento com exemplo, derrubada de mito, um framework simples
+- **Sequência longa (10+ threads)**: rara. Use só quando a ideia exige vários exemplos ou um argumento em várias camadas. Passou de 12 threads, o conteúdo provavelmente pede outro formato (Reel ou Carrossel)
+### Passo 5 · Escrever a sequência
 
-#### Character limit per thread
-- **500 characters per thread maximum** (the Threads limit)
-- Prefer 350–450 characters mid-sequence: room to build without cutting
-- Thread 1 (the hook) can be shorter for stronger visual impact
-#### Required structure
+#### Limite de caracteres por thread
+- **500 caracteres por thread, no máximo** (o limite do Threads)
+- Prefira 350 a 450 caracteres no meio da sequência: espaço para construir sem cortar
+- A thread 1 (o hook) pode ser mais curta, para um impacto visual maior
+#### Estrutura obrigatória
 
 **Thread 1: Hook**
-- Role: stop the scroll and create expectation for what follows
-- Formats that work:
-  - A counterintuitive or provocative claim
-  - A specific observation that contradicts common sense
-  - A surprising number or data point
-- Must work in isolation: read on its own, it still delivers value or curiosity
-- **Never open with:** "Let me explain", "A thread about", "Opening a thread", "🧵"
-- **Do not use the thread emoji 🧵**: it's redundant, the Threads UI already signals the chain
-- The hook can end on a subtle lead-in ("Breaking it down below." / "One piece at a time."), but that's not required
-**Threads 2 through N-1: Development**
+- Função: parar o scroll e criar expectativa pelo que vem
+- Formatos que funcionam:
+  - Uma afirmação contraintuitiva ou provocativa
+  - Uma observação específica que contradiz o senso comum
+  - Um número ou dado surpreendente
+- Tem que funcionar isolada: lida sozinha, ainda entrega valor ou curiosidade
+- **Nunca abra com:** "Deixa eu explicar", "Uma thread sobre", "Abrindo uma thread", "🧵"
+- **Não use o emoji de thread 🧵**: é redundante, a interface do Threads já sinaliza o encadeamento
+- O hook pode terminar com uma deixa sutil ("Destrinchando abaixo." / "Uma peça de cada vez."), mas não é obrigatório
+**Threads 2 a N-1: Desenvolvimento**
 
-Each thread must have a clear function. Combine the options below as the idea requires:
+Cada thread precisa ter uma função clara. Combine as opções abaixo conforme a ideia pedir:
 
-- **Problem thread**: names what's wrong
-- **Cause thread**: explains *why* it happens
-- **Example thread**: a real case, a hypothetical, or a concrete reference
-- **Data thread**: a number, a comparison, a measurable observation
-- **Contrast thread**: "what most people do" vs "what works"
-- **Nuance thread**: anticipates an objection or refines the argument
-- **Framework thread**: steps, phases, criteria
-Content rules for development threads:
-- Each thread must hold **one self-contained idea**: readable outside the sequence and still coherent
-- Do not use references like "as I said in the previous thread": they break the isolation
-- In technical threads, translate the concept into its practical effect, not into the technical term
-- Rhythm: alternate longer threads (argument) with shorter ones (punctuation, emphasis)
-**Thread N: Close / CTA**
-- Role: consolidate the position and open space for interaction
-- Valid formats:
-  - A clear position: "AI scales phase by phase, with visibility at every step. Trying to jump from 0 to 100 is the fastest way to lose the ground under you."
-  - A question for engagement: "Which of these patterns have you seen?"
-  - An instruction: "If you're building a system like this, say so in the comments. I answer every one."
-- May include a simple repost/reply ask, but only if it fits the tone of the sequence, and never "share this to help someone"
-#### Output formatting
+- **Thread de problema**: nomeia o que está errado
+- **Thread de causa**: explica *por que* acontece
+- **Thread de exemplo**: um caso real, uma hipótese ou uma referência concreta
+- **Thread de dado**: um número, uma comparação, uma observação mensurável
+- **Thread de contraste**: "o que a maioria faz" vs "o que funciona"
+- **Thread de nuance**: antecipa uma objeção ou refina o argumento
+- **Thread de framework**: passos, fases, critérios
+Regras de conteúdo para as threads de desenvolvimento:
+- Cada thread precisa carregar **uma ideia fechada em si**: legível fora da sequência e ainda coerente
+- Não use referências como "como eu disse na thread anterior": elas quebram o isolamento
+- Em thread técnica, converta o conceito no efeito prático dele, não no termo técnico
+- Ritmo: alterne threads mais longas (argumento) com mais curtas (pontuação, ênfase)
+**Thread N: Fecho / CTA**
+- Função: consolidar a posição e abrir espaço para interação
+- Formatos válidos:
+  - Uma posição clara: "IA escala fase por fase, com visibilidade em cada etapa. Tentar pular de 0 para 100 é o jeito mais rápido de perder o chão."
+  - Uma pergunta para engajamento: "Qual desses padrões você já viu?"
+  - Uma instrução: "Se você está construindo um sistema assim, fala nos comentários. Eu respondo todo mundo."
+- Pode incluir um pedido simples de repost/resposta, mas só se couber no tom da sequência, e nunca "compartilha para ajudar alguém"
+#### Formatação da saída
 
-For each thread, deliver:
+Para cada thread, entregue:
 
 ```
 THREAD 1 — HOOK  (N chars)
-[thread content]
+[conteúdo da thread]
 
-THREAD 2 — [function]  (N chars)
-[thread content]
+THREAD 2 — [função]  (N chars)
+[conteúdo da thread]
 
 ...
 
 THREAD N — CLOSE  (N chars)
-[thread content]
+[conteúdo da thread]
 ```
 
-Count and display the character count of each thread. This avoids surprises at publish time.
+Conte e mostre a quantidade de caracteres de cada thread. Isso evita surpresa na hora de publicar.
 
-### Step 6 · Present, iterate and save locally
+### Passo 6 · Apresentar, iterar e salvar localmente
 
-Present the full sequence with the character count per thread.
+Apresente a sequência completa com a contagem de caracteres por thread.
 
-Derive the slug from the idea title (lowercase, hyphens in place of spaces and special characters, no accents) and save it immediately as `posts/thread/<slug>/sketch/v1.md` with Write, containing the full thread sequence with character counts.
+Derive o slug do título da ideia (minúsculas, hífens no lugar de espaços e caracteres especiais, sem acentos) e salve na hora como `posts/thread/<slug>/sketch/v1.md` com Write, com a sequência completa de threads e as contagens de caracteres.
 
-Ask:
-> "Ready to finalize, or any more corrections?"
+Pergunte:
+> "Pronto para finalizar, ou mais alguma correção?"
 
-For each correction requested:
-- Apply the change to the affected threads, recomputing character counts where needed.
-- Create `posts/thread/<slug>/sketch/v(N+1).md`: read the previous version, copy the unchanged threads verbatim, apply only what changed. Do not regenerate what did not change.
-- Ask again: "Ready to finalize, or any more corrections?"
+Para cada correção pedida:
+- Aplique a mudança nas threads afetadas, recalculando a contagem de caracteres onde for preciso.
+- Crie `posts/thread/<slug>/sketch/v(N+1).md`: leia a versão anterior, copie as threads que não mudaram verbatim e aplique só o que mudou. Não regenere o que não mudou.
+- Pergunte de novo: "Pronto para finalizar, ou mais alguma correção?"
 
-Repeat until the user confirms it's ready. Only then move on to Step 7.
+Repita até o usuário confirmar "pronto". Só então passe para o Passo 7.
 
-### Step 7 · Close out
+### Passo 7 · Fechar
 
-When the user confirms it's ready, copy the highest-numbered `posts/thread/<slug>/sketch/v<N>.md` to `posts/thread/<slug>/final.md` with Write — that copy is the final piece, and the `sketch/v<N>` history stays where it is as the audit trail. Do this before touching Notion. Then update the source idea in the Ideas database: `Status` → `"Processed"` and `Format` → `"Thread"` (the format this skill produces; an idea is created without a format, and it is only set now, in production). This is the skill's only write to Notion. `Status` and `Format` accumulate in the database as the real picture of the calendar (phase and format of every piece produced).
+Quando o usuário confirmar "pronto", copie o `posts/thread/<slug>/sketch/v<N>.md` de maior número para `posts/thread/<slug>/final.md` com Write: essa cópia é a peça final, e o histórico `sketch/v<N>` fica onde está, como trilha de auditoria. Faça isso antes de mexer no Notion. Depois atualize a ideia de origem no banco Ideas: `Status` → `"Processed"` e `Format` → `"Thread"` (o formato que esta skill produz; a ideia nasce sem formato, e ele só é definido agora, na produção). Essa é a única escrita da skill no Notion. `Status` e `Format` acumulam no banco a foto real do calendário (fase e formato de cada peça produzida).
 
-### Step 8 · Point to the next step
+### Passo 8 · Apontar o próximo passo
 
-> "Thread ready, saved in `posts/thread/<slug>/final.md`. Next step: publish it manually on Threads and screenshot the published thread to reuse as a static Instagram post."
-
----
-
-## Thread quality criteria
-
-A thread is valid when:
-- No thread exceeds 500 characters
-- Thread 1 works in isolation as a hook: it does not depend on the following ones to make sense
-- Each development thread can be shared on its own and still deliver value
-- There is real density: removing any thread from the middle makes the sequence worse
-- The tone matches what the user defined in the conversation: no hype, no motivational register, no untranslated jargon
-- There are no decorative emojis (🧵, 🚀, 🔥): functional emojis (✅ in a checklist) are acceptable in moderation
-- The close leaves a clear position, not just an empty question
-- Someone reading only thread 1 and thread N still gets the central thesis of the sequence
-If any criterion fails, redo it before presenting.
+> "Thread pronta, salva em `posts/thread/<slug>/final.md`. Próximo passo: publicar manualmente no Threads e tirar print da thread publicada para reaproveitar como post estático no Instagram."
 
 ---
 
-## Out of scope
+## Critérios de qualidade da thread
 
-- Does not capture raw ideas (that's the idea capture skill)
-- Does not write Reel scripts (that's the script skill)
-- Does not write carousels (that's the carousel skill)
-- Does not generate other formats for LinkedIn or Instagram, unless the user explicitly asks
-- Does not publish anything: publishing on Threads is manual
-- If the user wants an Instagram carousel from the thread, use the `build-thread-carousel` skill
+Uma thread é válida quando:
+- Nenhuma thread passa de 500 caracteres
+- A thread 1 funciona isolada como hook: não depende das seguintes para fazer sentido
+- Cada thread de desenvolvimento pode ser compartilhada sozinha e ainda entrega valor
+- Tem densidade de verdade: tirar qualquer thread do meio piora a sequência
+- O tom bate com o que o usuário definiu na conversa: sem hype, sem registro motivacional, sem jargão sem explicação
+- Não tem emoji decorativo (🧵, 🚀, 🔥): emoji funcional (✅ num checklist) é aceitável, com moderação
+- O fecho deixa uma posição clara, não só uma pergunta vazia
+- Quem lê só a thread 1 e a thread N ainda pega a tese central da sequência
+Se algum critério falhar, refaça antes de apresentar.
+
+---
+
+## Fora do escopo
+
+- Não captura ideias cruas (isso é a skill de captura de ideia)
+- Não escreve roteiro de Reel (isso é a skill de roteiro)
+- Não escreve carrossel (isso é a skill de carrossel)
+- Não gera outros formatos para LinkedIn ou Instagram, a menos que o usuário peça explicitamente
+- Não publica nada: publicar no Threads é manual
+- Se o usuário quiser um carrossel do Instagram a partir da thread, use a skill `build-thread-carousel`

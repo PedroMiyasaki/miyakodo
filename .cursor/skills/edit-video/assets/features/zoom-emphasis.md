@@ -4,56 +4,54 @@ phase: plate
 industry: punch-in / push-in (with reset / punch-out)
 ---
 
-# Feature · Zoom for emphasis (punch-in / push-in)
+# Feature · Zoom de ênfase (punch-in / push-in)
 
-## Industry name
-In editing, tightening the framing without cutting the shot is called a
-**push-in** (when it is slow, the camera “pushes”) or a **punch-in** (when it is
-fast, it “punches” the frame). The return to 100% is called a **reset** /
-**punch-out**. It is not a cut to another take: it is a **scale + crop
-transform** on the same talking-head.
+## Nome na indústria
+Na edição, fechar o enquadramento sem cortar o plano se chama **push-in** (quando
+é lento, a câmera "empurra") ou **punch-in** (quando é rápido, "soca" o frame). A
+volta para 100% se chama **reset** / **punch-out**. Não é um corte para outro
+take: é uma **transformação de scale + crop** no mesmo talking-head.
 
-## What it does
-On emphasis beats, the frame moves closer to the face/thesis and
-**mandatorily returns to 1.0×** before the next beat. Never leave the video
-“stuck” in the zoom.
+## O que faz
+Nos beats de ênfase, o frame se aproxima do rosto/tese e **obrigatoriamente
+volta para 1.0×** antes do próximo beat. Nunca deixe o vídeo "preso" no zoom.
 
-Two modes (pick one per beat):
+Dois modos (escolha um por beat):
 
-| Mode | Industry name | When to use it | Behaviour |
+| Modo | Nome na indústria | Quando usar | Comportamento |
 |---|---|---|---|
-| `slow` | **slow push-in** | Long line of reasoning, thesis, CTA | Scale rises very subtly across the sentence |
-| `fast` | **crash / punch-in** | Short payoff (“…you're wrong”) | Fast zoom **right before** the key word/phrase, holds a moment, resets |
+| `slow` | **slow push-in** | Linha de raciocínio longa, tese, CTA | A escala sobe bem sutil ao longo da frase |
+| `fast` | **crash / punch-in** | Payoff curto ("…você está errado") | Zoom rápido **logo antes** da palavra/frase-chave, segura um instante, reseta |
 
-## Contextual example
+## Exemplo em contexto
 
-**Slow** — opening:
-> “You need protections on your artificial intelligence applications.”
-Push-in from ~1.00 → ~1.06 across the whole sentence; at the full stop, ease-out
-back to 1.00.
+**Slow**, na abertura:
+> "Você precisa de proteções nas suas aplicações de inteligência artificial."
+Push-in de ~1.00 → ~1.06 ao longo da frase inteira. No ponto final, ease-out de
+volta para 1.00.
 
-**Fast** — the blow:
-> “You could put negative instructions in the system prompt, but if you do
-> that, **you're wrong**.”
-Punch-in (~180–250ms) landing on the onset of “you're wrong” (peak scale
-~1.12–1.15), holds ~200–400ms, resets in ~200ms.
+**Fast**, o golpe:
+> "Você poderia colocar instruções negativas no system prompt, mas se fizer
+> isso, **você está errado**."
+Punch-in (~180–250ms) caindo no onset de "você está errado" (escala de pico
+~1.12–1.15), segura ~200–400ms, reseta em ~200ms.
 
-## Parameters (defaults)
+## Parâmetros (padrões)
 
-| Param | `slow` | `fast` |
+| Parâmetro | `slow` | `fast` |
 |---|---|---|
 | `scale_peak` | 1.06–1.08 | 1.12–1.15 |
-| Rise | length of the beat's window (ease-in-out) | 180–250ms (ease-out) |
-| Hold at peak | optional, short | 200–400ms |
-| Reset → 1.0 | last ~20–30% of the window, or 200–300ms after the hold | 150–250ms after the hold |
-| Crop anchor | centre of the face (or centre of the frame if there is no face track) | same |
+| Subida | duração da janela do beat (ease-in-out) | 180–250ms (ease-out) |
+| Segurada no pico | opcional, curta | 200–400ms |
+| Reset → 1.0 | últimos ~20–30% da janela, ou 200–300ms depois da segurada | 150–250ms depois da segurada |
+| Âncora do crop | centro do rosto (ou centro do frame se não houver face track) | igual |
 
-## How to run it
+## Como rodar
 
-1. On the output transcript, mark the emphasis beats. Classify each one `slow`
-   or `fast`. For `fast`, note the payoff word and the **start** timestamp of
-   that word (`land_at` on the output timeline).
-2. Write it into the EDL (a plate extension), with no overlapping zooms:
+1. Na transcrição de output, marque os beats de ênfase. Classifique cada um como
+   `slow` ou `fast`. Para `fast`, anote a palavra de payoff e o timestamp de
+   **início** dessa palavra (`land_at` na timeline de output).
+2. Escreva no EDL (uma extensão de plate), sem zooms sobrepostos:
 
 ```json
 "plate_effects": [
@@ -68,24 +66,23 @@ Punch-in (~180–250ms) landing on the onset of “you're wrong” (peak scale
 ]
 ```
 
-> The `type` string is the literal the renderer matches on — keep it exactly as
-> written above.
+> A string `type` é o literal que o renderer compara. Mantenha exatamente como
+> está escrito acima.
 
-3. In the plate render (before the overlays), apply a centred `scale` + `crop`
-   with keyframes; at `end_in_output` the scale **must** be 1.0.
+3. No render do plate (antes dos overlays), aplique um `scale` + `crop`
+   centralizado com keyframes. Em `end_in_output` a escala **tem** que ser 1.0.
 
-## Hard rules
-- Every zoom has a reset. If `end` arrives and the scale ≠ 1.0, the effect is
-  wrong.
-- Do not stack it with `pop-it` in the same window (pop-it's micro-zooms are a
-  different vocabulary).
-- It can be combined with `black-and-white` on the same beat (impression /
-  criticism).
-- Do not zoom over an upper-third insert in a way that “eats” the band: the zoom
-  is on the **plate** (the face); third-band overlays go on top afterwards.
+## Regras duras
+- Todo zoom tem reset. Se `end` chega e a escala ≠ 1.0, o efeito está errado.
+- Não empilhe com `pop-it` na mesma janela (os micro-zooms do pop-it são outro
+  vocabulário).
+- Pode combinar com `black-and-white` no mesmo beat (imitação / crítica).
+- Não dê zoom sobre um insert do terço superior de um jeito que "coma" a faixa:
+  o zoom é no **plate** (o rosto), e os overlays de terço entram por cima
+  depois.
 
 ## Status
-Implemented. `render_vertical.py` reads `plate_effects` and applies them to the
-plate (after the concat, before the overlays) via `zoompan` with a smoothstep
-curve. The reset to 1.0× is guaranteed by construction, and overlapping zoom
-windows are rejected with an error. Self-check: `assets/test_plate_effects.py`.
+Implementada. O `render_vertical.py` lê `plate_effects` e aplica no plate
+(depois do concat, antes dos overlays) via `zoompan` com curva smoothstep. O
+reset para 1.0× é garantido por construção, e janelas de zoom sobrepostas são
+rejeitadas com erro. Autoteste: `assets/test_plate_effects.py`.

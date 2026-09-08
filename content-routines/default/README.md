@@ -1,78 +1,78 @@
-# Default routine — the whole week in two days
+# Rotina default — a semana inteira em dois dias
 
-Everything for the week is produced and scheduled on Saturday and Sunday. Monday to Friday you produce nothing: you answer comments.
+Tudo da semana é produzido e agendado no sábado e no domingo. De segunda a sexta você não produz nada: você responde comentários.
 
-Two files, one per day. Open the file, work the checklist top to bottom.
+Dois arquivos, um por dia. Abra o arquivo e trabalhe o checklist de cima para baixo.
 
-- **[saturday.md](saturday.md)** — write 5 scripts, record all 5, fire the first edit pass.
-- **[sunday.md](sunday.md)** — fire the article, review the 5 cuts, write 3 LinkedIn posts, publish and schedule the week.
+- **[saturday.md](saturday.md)**: escrever 5 roteiros, gravar os 5, disparar a primeira passada de edição.
+- **[sunday.md](sunday.md)**: disparar o artigo, revisar os 5 cortes, escrever 3 posts de LinkedIn, publicar e agendar a semana.
 
-## What the week produces
+## O que a semana produz
 
-| Channel | Posts/week | Role |
+| Canal | Posts/semana | Papel |
 |---|---|---|
-| Instagram | 5 reels | reach — all 5 are 🔥 |
-| LinkedIn | 3 technical posts | presence and credibility |
-| Substack | 1 illustrated article | the owned list — depth, replies, subscribers |
+| Instagram | 5 reels | alcance: os 5 são 🔥 |
+| LinkedIn | 3 posts técnicos | presença e credibilidade |
+| Substack | 1 artigo ilustrado | a lista própria: profundidade, respostas, assinantes |
 
-**9 posts from 5 recordings.** The 3 LinkedIn posts reuse ideas the reels already came from, and the article usually takes one of those deeper still — so one idea can work three times. The article is the one slot that may also come from outside the five: if something worth writing about landed this week, it takes the slot.
+**9 posts a partir de 5 gravações.** Os 3 posts de LinkedIn reaproveitam ideias de onde os reels já saíram, e o artigo normalmente aprofunda uma delas ainda mais, então uma ideia pode render três vezes. O artigo é o único slot que também pode vir de fora das cinco: se aconteceu alguma coisa nesta semana que vale escrever, ela pega o slot.
 
-The window runs Sunday → Friday. The article and reel 1 open it on Sunday, reels run through Thursday, Friday is stock, LinkedIn lands Monday / Wednesday / Friday.
+A janela vai de domingo → sexta. O artigo e o reel 1 abrem a janela no domingo, os reels vão até quinta, sexta é stock, LinkedIn cai segunda / quarta / sexta.
 
-## What 🔥 means
+## O que 🔥 quer dizer
 
-A piece is 🔥 when it is built to be pushed by the algorithm to people who **don't** follow you. It needs all three at once:
+Uma peça é 🔥 quando foi feita para o algoritmo empurrar para quem **não** te segue. Precisa das três coisas ao mesmo tempo:
 
-1. **A hook that stops the scroll in ≤2s** — real tension: a counterintuitive claim, a recognizable pain, hot news. Never empty clickbait.
-2. **Packaging that pulls** — hard cut from the first frame, no intro, no burned-in captions (Instagram makes its own).
-3. **Demand outside the bubble** — a technically curious stranger recognizes it with no context on your work.
+1. **Um hook que segura o scroll em ≤2s**: tensão de verdade, uma afirmação contraintuitiva, uma dor reconhecível, notícia quente. Nunca clickbait vazio.
+2. **Empacotamento que puxa**: corte seco desde o primeiro frame, sem intro, sem legenda queimada no vídeo (o Instagram gera a dele).
+3. **Demanda fora da bolha**: um estranho tecnicamente curioso reconhece a peça sem contexto nenhum sobre o seu trabalho.
 
-All 5 reels are 🔥, no exceptions. If an idea fails the three tests it doesn't become a script.
+Os 5 reels são 🔥, sem exceção. Se uma ideia reprova nos três testes, ela não vira roteiro.
 
-The 3 LinkedIn posts are deliberately the opposite: presence, not reach. Substance over hook. They are not held to this test, and they don't get cut for failing it — they are what makes the channel credible to someone who checks you out after seeing a reel.
+Os 3 posts de LinkedIn são deliberadamente o oposto: presença, não alcance. Substância acima de hook. Eles não passam por esse teste e não são cortados por reprovar nele. São o que torna o canal crível para quem vai te checar depois de ver um reel.
 
-The Substack article is a third register again, and it is not held to the 🔥 test either. Instagram and LinkedIn are rented audience; Substack is the only channel here where the reader hands over an address and can answer you directly. So the metric is the open rate and the replies, not the reach — and forty replies naming the same problem is the next workshop, the next offer, the next thing worth building. It is the piece that turns an audience into a list.
+O artigo do Substack é um terceiro registro, e também não passa pelo teste 🔥. Instagram e LinkedIn são audiência alugada. O Substack é o único canal aqui em que o leitor entrega um endereço e pode te responder direto. Então a métrica é a taxa de abertura e as respostas, não o alcance. E quarenta respostas apontando o mesmo problema são o próximo workshop, a próxima oferta, a próxima coisa que vale construir. É a peça que transforma audiência em lista.
 
-The three registers stack on one idea:
+Os três registros empilham numa ideia só:
 
-| | Job | What it ships |
+| | Trabalho | O que entrega |
 |---|---|---|
-| Reel | reach a stranger | the hook |
-| LinkedIn | be credible to someone checking you out | the conclusion |
-| Substack | be worth an evening to someone who already trusts you | **the whole route, shown** |
+| Reel | alcançar um estranho | o hook |
+| LinkedIn | ser crível para quem está te checando | a conclusão |
+| Substack | valer uma noite de quem já confia em você | **o caminho inteiro, mostrado** |
 
-That last row is the whole rule, and it is why the article is illustrated. It runs on a narrative spine — one thing happening after another, not a set of points — and it carries three to eight images, every one captured live from a primary source: the paper, the pricing page, the dashboard, the error. A piece that reaches the same conclusion as the LinkedIn post by the same road, with more paragraphs, has failed. What the list has not seen is the sequence: the wrong first guess, the number that broke it, the page you actually went and read.
+Essa última linha é a regra inteira, e é por isso que o artigo é ilustrado. Ele roda numa espinha narrativa (uma coisa acontecendo depois da outra, não um conjunto de pontos) e carrega de três a oito imagens, cada uma capturada ao vivo de uma fonte primária: o paper, a página de preços, o dashboard, o erro. Uma peça que chega na mesma conclusão do post de LinkedIn pelo mesmo caminho, com mais parágrafos, falhou. O que a lista ainda não viu é a sequência: o primeiro palpite errado, o número que quebrou o palpite, a página que você foi lá e leu de verdade.
 
-## Why the setup is what it is
+## Por que o setup é o que é
 
-**Recording is batched** because the setup cost — light, clothes, teleprompter — gets paid once a week instead of three times. The price is that no reel can react to Wednesday's news.
+**A gravação é em lote** porque o custo de setup (luz, roupa, teleprompter) é pago uma vez por semana em vez de três. O preço é que nenhum reel consegue reagir à notícia de quarta.
 
-**The first edit pass runs Saturday, not Sunday.** It is the longest step and it needs no supervision. Fire it at the end of Saturday, let it render, review with fresh eyes the next day.
+**A primeira passada de edição roda no sábado, não no domingo.** É o passo mais longo e não precisa de supervisão. Dispare no fim do sábado, deixe renderizar, revise com olho descansado no dia seguinte.
 
-**Saturday has two session layouts.** Pick one before opening anything — the layout you write in is the layout you edit in and the layout Sunday resumes.
+**O sábado tem dois layouts de sessão.** Escolha um antes de abrir qualquer coisa: o layout em que você escreve é o layout em que você edita e o layout que o domingo retoma.
 
-- **default** is isolation: 5 agent sessions, one per script. Session N writes script N, edits video N, and on Sunday you resume it to review cut N. Keeping script and video together means an editing note like "cut where I repeat the thesis" lands without re-explaining the piece. This is the normal weekend.
-- **multitask** is speed: 1 coordinating session spans 5 agents, runs `write-script` then `edit-video` on each, and is what you resume on Sunday. You talk to the session; it talks to the agents. The agents coordinate through it so slugs stay unique and hooks don't collide. Use it when managing five conversations is the bottleneck, not the writing. It does not change the output (5 scripts, 5 recordings, 5 first cuts).
+- **default** é isolamento: 5 sessões de agente, uma por roteiro. A sessão N escreve o roteiro N, edita o vídeo N, e no domingo você retoma ela para revisar o corte N. Manter roteiro e vídeo juntos faz uma nota de edição como "corta onde eu repito a tese" cair sem precisar reexplicar a peça. Esse é o fim de semana normal.
+- **multitask** é velocidade: 1 sessão coordenadora abrange 5 agentes, roda `write-script` e depois `edit-video` em cada um, e é ela que você retoma no domingo. Você fala com a sessão, e ela fala com os agentes. Os agentes se coordenam por ela para os slugs continuarem únicos e os hooks não colidirem. Use quando gerenciar cinco conversas é o gargalo, não a escrita. Não muda a saída (5 roteiros, 5 gravações, 5 primeiros cortes).
 
-**The article is written Sunday and published Sunday.** Zero lag, and that is the whole reason news is allowed in this slot when it is banned in every other one. A reel recorded Saturday may not air until Thursday, so reels stay off perishable material; the article ships the day it is written, so an announcement from Wednesday is fair game. It is also the only piece here that can react to the week at all.
+**O artigo é escrito no domingo e publicado no domingo.** Lag zero, e essa é a razão inteira de notícia ser permitida nesse slot quando é proibida em todos os outros. Um reel gravado no sábado pode só ir ao ar na quinta, então os reels ficam longe de material perecível. O artigo sai no dia em que é escrito, então um anúncio de quarta está liberado. Ele também é a única peça aqui que consegue reagir à semana.
 
-**The article is fired first thing Sunday, before the cuts.** It is the longest piece of the week — a plan to approve, several text rounds, then a browser capture session — and it needs to be finished by the end of the same day. Firing it first buys it the whole morning of cut reviews as working time; firing it last means publishing something you stopped editing because you ran out of Sunday.
+**O artigo é disparado logo cedo no domingo, antes dos cortes.** É a peça mais longa da semana (um plano para aprovar, várias rodadas de texto, depois uma sessão de captura no navegador) e precisa estar pronta até o fim do mesmo dia. Disparar primeiro compra a manhã inteira de revisão de cortes como tempo de trabalho. Disparar por último quer dizer publicar algo que você parou de editar porque o domingo acabou.
 
-**Its LinkedIn sibling comes after it, not before.** The article is the fullest version of the thesis, so the LinkedIn post is cut from it rather than the other way around. That post goes out Monday, one day behind the article, and closes on a link to it — which is the only place in the whole week where cold LinkedIn reach converts into subscribers on a list you own.
+**O irmão dele no LinkedIn vem depois, não antes.** O artigo é a versão mais completa da tese, então o post de LinkedIn é cortado dele, e não o contrário. Esse post sai na segunda, um dia atrás do artigo, e fecha com um link para ele, que é o único lugar da semana inteira em que alcance frio do LinkedIn converte em assinante de uma lista que é sua.
 
-**Never sacrifice scheduling.** If the day runs long, serialize the LinkedIn sessions, then split the review into waves. Skipping the scheduling block means the weekend produced files, not a week.
+**Nunca sacrifique o agendamento.** Se o dia estica, serialize as sessões de LinkedIn e depois divida a revisão em ondas. Pular o bloco de agendamento quer dizer que o fim de semana produziu arquivos, não uma semana.
 
-**If Sunday genuinely runs out, the article slips to Monday evening — never past that.** It is the one piece with anywhere to slip, because everything else is already scheduled. But an article that slips two weeks running means the subject was thin, not the weekend: pick a different one next time rather than protecting a piece that will not close.
+**Se o domingo acabar de verdade, o artigo escorrega para segunda à noite, nunca além disso.** É a única peça com algum lugar para escorregar, porque todo o resto já está agendado. Mas um artigo que escorrega duas semanas seguidas quer dizer que o assunto era raso, não que o fim de semana foi curto: escolha outro da próxima vez em vez de proteger uma peça que não vai fechar.
 
-Never parallelize creative iteration on the *same* piece. Five reviews at once, yes. Two agents revising one video, no — that rule holds in both layouts.
+Nunca paralelize iteração criativa na *mesma* peça. Cinco revisões ao mesmo tempo, sim. Dois agentes revisando um vídeo, não. Essa regra vale nos dois layouts.
 
-## Stock, and when the weekend fails
+## Stock, e quando o fim de semana falha
 
-The mode publishes exactly what it produces, so it has **no slack built in** — losing a Saturday costs the following week.
+O modo publica exatamente o que produz, então **não tem folga embutida**: perder um sábado custa a semana seguinte.
 
-1. **Record a 6th whenever the day allows.** It skips the schedule and becomes stock — landing in its own script's folder like any other reel. It is what fills Friday.
-2. **Lost the weekend?** Publish from stock, write what you can in one evening, treat the next weekend as a double batch. Do not try to make up 5 reels mid-week — that's how the setup cost you avoided comes right back.
+1. **Grave um 6º sempre que o dia permitir.** Ele pula o agendamento e vira stock, caindo na pasta do próprio roteiro como qualquer outro reel. É ele que preenche a sexta.
+2. **Perdeu o fim de semana?** Publique do stock, escreva o que der numa noite, trate o próximo fim de semana como lote duplo. Não tente repor 5 reels no meio da semana: é assim que o custo de setup que você evitou volta na hora.
 
-No stock means Friday and Saturday go dark on Instagram. That is the real cost of the mode.
+Sem stock, sexta e sábado ficam no escuro no Instagram. Esse é o custo real do modo.
 
-The target is the **yearly average**, not the isolated week.
+O alvo é a **média anual**, não a semana isolada.

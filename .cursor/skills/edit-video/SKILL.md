@@ -1,256 +1,258 @@
 ---
 name: edit-video
 description: >
-  Use when editing a talking-head video into a finished Reel — "edit this
-  video", "turn this into a Reel", "edit it in news mode", or when a file in
-  video/inputs/ needs editing.
+  Use quando for editar um vídeo de talking head até virar um Reel pronto: "edita
+  esse vídeo", "transforma isso num Reel", "edita no modo news", ou quando um
+  arquivo em video/inputs/ precisa de edição.
 ---
 
-# SKILL · Edit video (Reel)
+# SKILL · Editar vídeo (Reel)
 
-Project layer on top of the `video-use` skill. `video-use` is the generic engine
-(transcription, cutting, concat, loudnorm, compositing) and carries the
-production-correctness rules. This skill does not reimplement the engine: it
-picks a **mode** (a collection of **features**) and runs each feature.
+Camada do projeto em cima da skill `video-use`. A `video-use` é a engine genérica
+(transcrição, corte, concat, loudnorm, composição) e carrega as regras de correção
+de produção. Esta skill não reimplementa a engine: ela escolhe um **modo** (uma
+coleção de **features**) e roda cada feature.
 
-## Architecture
+## Arquitetura
 
-| Layer | Where | Role |
+| Camada | Onde | Papel |
 |---|---|---|
-| **Feature** | `assets/features/<id>.md` | One editing capability (what + how) |
-| **Mode** | `assets/modes/<id>.md` | Ordered list of feature ids |
-| **Orchestrator** | this `SKILL.md` | I/O, invariants, mode choice, protocol |
+| **Feature** | `assets/features/<id>.md` | Uma capacidade de edição (o quê + como) |
+| **Modo** | `assets/modes/<id>.md` | Lista ordenada de ids de feature |
+| **Orquestrador** | este `SKILL.md` | Entrada e saída, invariantes, escolha do modo, protocolo |
 
-Current features: `cut-dead-air`, `subtitles`, `loudnorm`, `news-inserts`,
+Features atuais: `cut-dead-air`, `subtitles`, `loudnorm`, `news-inserts`,
 `zoom-emphasis`, `black-and-white`, `pop-it`, `motion-third`.
-Current modes: `baseline`, `news`, `authority`. Only the `motion-third` helper
-(opt-in, blocks no mode) and the visual micro-zoom of `pop-it` are still
-missing — see `assets/modes/authority.md`.
+Modos atuais: `baseline`, `news`, `authority`. Só faltam o helper do
+`motion-third` (opt-in, não trava nenhum modo) e o micro-zoom visual do `pop-it`.
+Veja `assets/modes/authority.md`.
 
-To add a new capability: write `assets/features/<id>.md`, then reference it from
-an existing mode or create `assets/modes/<id>.md`. Do not embed new feature
-logic in this file.
+Para adicionar uma capacidade nova: escreva `assets/features/<id>.md` e depois
+referencie de um modo que já existe, ou crie `assets/modes/<id>.md`. Não embuta
+lógica de feature nova neste arquivo.
 
-Every feature declares a `phase` in its frontmatter — run them in the mode's
-order, grouped by the pipeline's natural phases:
+Toda feature declara uma `phase` no frontmatter. Rode as features na ordem do
+modo, agrupadas pelas fases naturais do pipeline:
 
-1. `edl` — builds `ranges` (and whatever else the feature changes in the EDL)
-2. `plate` — effects on the talking-head (`plate_effects`: zoom, B&W, pop-it)
-3. `overlays` — generates clips and fills `edl.overlays` (news, motion)
-4. `render` — calls `render_vertical.py` with the feature's flags (loudnorm;
-   `subtitles` on the final render only — `assets/features/subtitles.md`)
+1. `edl`: monta os `ranges` (e o que mais a feature mudar na EDL)
+2. `plate`: efeitos sobre o talking head (`plate_effects`: zoom, P&B, pop-it)
+3. `overlays`: gera os clipes e preenche `edl.overlays` (news, motion)
+4. `render`: chama o `render_vertical.py` com as flags da feature (loudnorm,
+   e `subtitles` só no render final, veja `assets/features/subtitles.md`)
 
-## Invariants (every mode)
+## Invariantes (todo modo)
 
-- **No 9:16 conversion.** Preserve the source framing/resolution.
-- **The talking-head is never resized or cropped.** Reference images
-  (`news-inserts`) are a **floating card** composited over the video, always
-  — they never reserve space nor force a crop/pillarbox. In `news` each card
-  is brief (a few seconds, synced to the subject being spoken about) and goes
-  away; it does not have to cover the whole piece nor hold until the next
-  subject. See `news-inserts.md`. In `authority` / pedagogical content the
-  editor **judges beat by beat** where the emphasis has to land (face
-  vs diagram); when in doubt, empty third. See `motion-third.md` § Editorial
-  judgement.
-- **Editor notes:** directions the user speaks to the editor mid-take, in
-  whatever words come out — **obey** them in the edit and **cut** them from the
-  deliverable (audio, image and subtitles). They are never announced, follow no
-  format, and are **not bounded by the feature list below** — the user is
-  briefing an editor, not filling in a form. Watch for them on every take. See
-  § Editor notes.
-- Follow `video-use`'s Hard Rules (per-segment extract + concat `-c copy`,
-  30ms fade, overlay with `setpts`, never cut inside a word, word-level ASR,
-  transcript cache, confirm the strategy before executing, outputs in
-  `<edit>/`).
-- **Subtitles ship by default, on the final render only.** Every mode gets
-  burned-in captions, but never on a preview: they are burned once the cut is
-  locked, so iterating on the edit never pays for the re-encode. The user turns
-  them off by saying so. Sentence case, the Alvinegro faces, words accumulating
-  two at a time, one serif-italic inversion for a word under emphasis — and the
-  generated file is a skeleton you edit by hand before burning. See
-  `assets/features/subtitles.md`.
+- **Nada de conversão para 9:16.** Preserve o enquadramento e a resolução da
+  fonte.
+- **O talking head nunca é redimensionado nem cortado.** Imagem de referência
+  (`news-inserts`) é sempre um **card flutuante** composto por cima do vídeo:
+  ela nunca reserva espaço nem força crop ou pillarbox. No `news` cada card é
+  breve (alguns segundos, sincronizado com o assunto que está sendo falado) e
+  some. Ele não precisa cobrir a peça inteira nem segurar até o assunto
+  seguinte. Veja `news-inserts.md`. Em `authority` e em conteúdo pedagógico o
+  editor **julga beat a beat** onde a ênfase tem que cair (rosto ou diagrama).
+  Na dúvida, terço vazio. Veja `motion-third.md` § Julgamento editorial.
+- **Notas de editor:** instruções que o usuário fala para o editor no meio do
+  take, com as palavras que saírem. **Obedeça** na edição e **corte** da
+  entrega (áudio, imagem e legendas do vídeo). Elas nunca são anunciadas, não
+  seguem formato e **não ficam presas à lista de features abaixo**: o usuário
+  está passando um briefing para um editor, não preenchendo um formulário.
+  Fique atento a elas em todo take. Veja § Notas de editor.
+- Siga as Hard Rules da `video-use` (extração por segmento + concat `-c copy`,
+  fade de 30ms, overlay com `setpts`, nunca cortar no meio de uma palavra, ASR
+  com timestamp por palavra, cache de transcrição, confirmar a estratégia antes
+  de executar, outputs em `<edit>/`).
+- **As legendas do vídeo saem por padrão, e só no render final.** Todo modo
+  recebe legendas queimadas, mas nunca num preview: elas são queimadas quando o
+  corte já travou, então iterar na edição nunca paga o re-encode. O usuário
+  desliga só pedindo. Só a inicial da frase em maiúscula, as fontes do
+  Alvinegro, palavras acumulando de duas em duas, uma inversão em serifa
+  itálica para a palavra em ênfase. E o arquivo gerado é um esqueleto que você
+  edita na mão antes de queimar. Veja `assets/features/subtitles.md`.
 
-## Editor notes
-Mid-take, the user stops narrating and talks to **you** instead. There is no
-required phrasing and there are no markers to look for — recording is already
-enough work without remembering a syntax. Notes come out however they come out,
-in English or pt-BR:
+## Notas de editor
+No meio do take, o usuário para de narrar e fala com **você**. Não existe frase
+obrigatória nem marcador para procurar: gravar já dá trabalho demais sem ter
+que lembrar de uma sintaxe. A nota sai do jeito que sair:
 
 > “Editor, corta essa parte, vou falar o final de novo.”
 > “corta, vou falar de novo”
 > “open editor note, on that impression bit go black and white, close editor
-> note” — the old marker form still reads as a note, it is just no longer
-> required
+> note”: a forma antiga, com marcador, ainda conta como nota, só não é mais
+> obrigatória
 
-**Assume every recording has them.** Read the packed transcript the way a person
-would, not as a pattern match: a note is any stretch aimed at whoever is cutting
-the video rather than at the audience. The tells are addressing the editor,
-talking *about* the video instead of *inside* it, abandoning a sentence to
-restart it, or narrating an intention (“vou falar de novo”, “deixa eu refazer”)
-instead of an idea. If a line only makes sense to the person editing, it is a
-note.
+**Parta do princípio de que toda gravação tem notas.** Leia a transcrição
+empacotada como uma pessoa leria, não como um match de padrão: nota é qualquer
+trecho dirigido a quem está cortando o vídeo, e não ao público. Os sinais são
+falar com o editor, falar *sobre* o vídeo em vez de *dentro* dele, abandonar
+uma frase para recomeçar, ou narrar uma intenção (“vou falar de novo”, “deixa
+eu refazer”) em vez de uma ideia. Se uma linha só faz sentido para quem está
+editando, é nota.
 
-**The boundaries are yours to judge.** A note usually runs from where the
-delivery breaks to where the next real take starts, with a pause on either side.
-When the edge is ambiguous, cut slightly wide rather than leave a fragment of the
-note in the deliverable — and say what you cut.
+**Os limites são você quem julga.** Uma nota normalmente vai de onde a fala
+quebra até onde o próximo take de verdade começa, com uma pausa de cada lado.
+Quando a borda é ambígua, corte um pouco mais largo em vez de deixar um pedaço
+da nota na entrega, e diga o que cortou.
 
-### What to do with the note
-1. **Read and apply it.** The note governs the edit of the stretch it comments
-   on (usually the VO right before or right after the note block).
+### O que fazer com a nota
+1. **Leia e aplique.** A nota manda na edição do trecho que ela comenta
+   (normalmente a fala logo antes ou logo depois do bloco da nota).
 
-   **Do not start by asking which feature it is.** Ask what the user wants the
-   video to do, then reach for the cheapest thing that does it, in this order:
-   a feature in the mode → a feature outside it → a knob in the render that no
-   feature wraps (a range boundary, the order of two ranges, a level, a caption
-   style or position, a margin, a duration) → something that would have to be
-   built. Only the last one is a conversation; the first three you do and
-   report.
+   **Não comece perguntando qual feature é.** Pergunte o que o usuário quer que
+   o vídeo faça, aí pegue a coisa mais barata que faz isso, nesta ordem: uma
+   feature do modo → uma feature fora dele → um ajuste do render que nenhuma
+   feature embrulha (o limite de um range, a ordem de dois ranges, um nível, o
+   estilo ou a posição das legendas do vídeo, uma margem, uma duração) → algo
+   que teria que ser construído. Só o último vira conversa. Os três primeiros
+   você faz e reporta.
 
-   **A note is not required to name anything this skill has a word for.** The
-   feature list is the implementation's vocabulary, not the vocabulary of
-   someone talking while filming, and the two will not line up. Treat every
-   note as a direction to an editor who is expected to figure out how — because
-   that is what it is.
-2. **Cut it from the final video.** Remove the whole note — the direction plus
-   whatever botched take it belongs to — from the output timeline, on a word
-   boundary. The note does **not** go into the audio, does **not** go into the
-   subtitles, and does **not** produce an effect over the words of the note
-   itself.
-3. **Log it** in `<edit>/project.md` (note text → effect applied → `start/end`
-   cut from the source).
+   **A nota não precisa nomear nada que esta skill tenha palavra para.** A lista
+   de features é o vocabulário da implementação, não o vocabulário de quem fala
+   enquanto grava, e os dois não vão bater. Trate toda nota como uma instrução
+   para um editor que tem a obrigação de descobrir o como, porque é exatamente
+   isso que ela é.
+2. **Corte do vídeo final.** Tire a nota inteira, a instrução mais o take
+   estragado a que ela pertence, da timeline de saída, num limite de palavra. A
+   nota **não** vai para o áudio, **não** vai para as legendas do vídeo e
+   **não** gera efeito sobre as palavras da própria nota.
+3. **Registre** em `<edit>/project.md` (texto da nota → efeito aplicado →
+   `start/end` cortados da fonte).
 
-### Examples — shapes, not a menu
+### Exemplos: formas, não um menu
 
-Eight notes that came up early. They are here to show the **range** a note can
-have, not to be the set of notes that exist. A note resembling none of these is
-not an unrecognised note — it is the ordinary case, and answering it by hunting
-for its nearest row below is how you end up doing something adjacent to what was
-asked instead of the thing itself.
+Oito notas que apareceram nas primeiras edições. Estão aqui para mostrar o
+**alcance** que uma nota pode ter, não para ser o conjunto das notas que
+existem. Uma nota que não parece com nenhuma destas não é uma nota
+desconhecida: é o caso comum, e responder a ela caçando a linha mais parecida
+abaixo é o jeito de acabar fazendo algo parecido com o que foi pedido em vez da
+coisa em si.
 
-| Spoken note | Typical effect |
+| Nota falada | Efeito típico |
 |---|---|
-| “on that impression bit, go black and white” | `black-and-white` on the adjacent impression |
-| “do a quick punch-in on ‘you’re wrong’” | `zoom-emphasis` `fast` on the payoff |
-| “pop-it on safe, reliable and auditable” | `pop-it` on those three onsets |
-| “show the screenshot of the paper here” | `news-inserts` in the third (image from the folder / search) |
-| “animate the retrieve → rank → generate flow” | `motion-third` on that beat |
-| “don't put anything in the third on this part” | empty third; clean plate |
-| “cut this bit, I messed up” / “corta, vou falar de novo” | drop the abandoned take and the note |
-| “corta todo esse final que eu falei de X” | drop **every** take covering X, back to where that stretch begins |
+| “nessa parte da imitação, vai pra preto e branco” | `black-and-white` na imitação adjacente |
+| “dá um punch-in rápido no ‘você tá errado’” | `zoom-emphasis` `fast` no fecho da frase |
+| “pop-it em seguro, confiável e auditável” | `pop-it` no início dessas três palavras |
+| “mostra o print do paper aqui” | `news-inserts` no terço (imagem da pasta / busca) |
+| “anima o fluxo retrieve → rank → generate” | `motion-third` nesse beat |
+| “não bota nada no terço nessa parte” | terço vazio, plate limpo |
+| “corta essa parte, eu errei” / “corta, vou falar de novo” | descartar o take abandonado e a nota |
+| “corta todo esse final que eu falei de X” | descartar **todos** os takes que cobrem X, voltando até onde esse trecho começa |
 
-Full example, from a real take:
+Exemplo completo, de um take real:
 
 > …“Nesse contexto, se você pagar, por exemplo, a assinatura da OpenAI…”
 > **“Editor, corta essa parte, vou falar o final de novo.”**
 > “Mas você vai ver que os da Anthropic tão muito altos na coluna de custo…”
 
-Deliverable: the abandoned OpenAI sentence **and** the direction are both gone,
-and the piece continues on the retake. Nothing signals that a note was there.
+Entrega: a frase abandonada sobre a OpenAI **e** a instrução somem as duas, e a
+peça continua no retake. Nada sinaliza que havia uma nota ali.
 
-A note can also reach backwards well past its own take:
+A nota também pode alcançar bem para trás, além do próprio take:
 
 > **“Corta todo esse final que eu falei dos modelos da Anthropic serem bons,
 > corta tudo isso. Eu vou falar só o finalzinho agora.”**
 
-That one scopes by **subject**, not by proximity — find where the Anthropic
-stretch begins and cut from there, not just from the sentence before the note.
-(The subtitles are built from the output timeline, so a note cut in the EDL can
-never surface in them.)
+Essa delimita por **assunto**, não por proximidade: ache onde o trecho da
+Anthropic começa e corte dali, não só da frase anterior à nota. (As legendas do
+vídeo são montadas a partir da timeline de saída, então uma nota cortada na EDL
+nunca aparece nelas.)
 
-### Hard rules
-- **Never leave a note in the deliverable.** When you cannot tell whether a line
-  is a note or content, treat it as a note: cut it and tell the user. Shipping a
-  Reel where he is heard talking to his editor is the one unrecoverable failure
-  here.
-- **Report every note before rendering** — what was said, how you read its
-  scope, what you cut, and what you did about it. That is the user's only chance
-  to catch a note you scoped too wide or too narrow. A note you decided *not* to
-  act on gets reported too: saying nothing reads as "handled", and the user
-  finds out on the deliverable.
-- Note contradicts the mode's default judgement → **the note wins** (it is the
-  user's direction).
-- **A note you cannot act on is answered, never quietly dropped.** If nothing in
-  the pipeline does what it asks, say so plainly, name the closest thing that is
-  reachable, and let the user choose. Building something new mid-edit is a
-  conversation rather than a decision you make alone — but "no feature covers
-  this" is never a reason to leave a note unmentioned.
+### Regras duras
+- **Nunca deixe uma nota na entrega.** Quando não der para saber se uma linha é
+  nota ou conteúdo, trate como nota: corte e avise o usuário. Publicar um Reel
+  em que dá para ouvir o usuário falando com o editor é a única falha
+  irrecuperável aqui.
+- **Reporte toda nota antes de renderizar**: o que foi dito, como você leu o
+  alcance, o que cortou e o que fez a respeito. Essa é a única chance do
+  usuário pegar uma nota que você delimitou larga ou estreita demais. Nota que
+  você decidiu *não* aplicar também entra no relato: ficar em silêncio soa como
+  "resolvido", e o usuário só descobre na entrega.
+- Nota contradiz o julgamento padrão do modo → **a nota ganha** (é a instrução
+  do usuário).
+- **Nota que você não consegue aplicar é respondida, nunca descartada em
+  silêncio.** Se nada no pipeline faz o que ela pede, diga isso na lata, aponte
+  a coisa mais próxima que está ao alcance e deixe o usuário escolher.
+  Construir algo novo no meio da edição é uma conversa, não uma decisão sua
+  sozinho. Só que "nenhuma feature cobre isso" nunca é motivo para deixar uma
+  nota sem menção.
 
-## Prerequisites
+## Pré-requisitos
 
-- `video-use` installed (`~/.claude/skills/video-use/`) with `ffmpeg`/`ffprobe`
-  on the PATH and `ELEVENLABS_API_KEY` resolving (in the environment or in
-  `video-use`'s `.env`, **never** in the content repo).
+- `video-use` instalada (`~/.claude/skills/video-use/`) com `ffmpeg`/`ffprobe`
+  no PATH e `ELEVENLABS_API_KEY` resolvendo (no ambiente ou no `.env` da
+  `video-use`, **nunca** no repositório de conteúdo).
 - Scripts: `assets/news_insert.py`, `assets/render_vertical.py`,
   `assets/fonts/`.
 
-## Input and output
+## Entrada e saída
 
-- **Input:** `video/inputs/`. No file named → the **most recent** one (highest
-  mtime). Only disambiguate if the request names a file that does not exist.
-- **Scratch:** `edit/<slug>/` at the repo root (= `<edit>`). Outside `video/`'s
-  git.
-- **Output:** on "done", **one folder** — `posts/script/<slug>/`, the script's
-  own folder, where its `sketch/v<N>.md` history and its `final.md` already
-  live — holding all three artifacts side by side:
+- **Entrada:** `video/inputs/`. Sem arquivo nomeado → o **mais recente** (maior
+  mtime). Só desambigue se o pedido nomear um arquivo que não existe.
+- **Rascunho:** `edit/<slug>/` na raiz do repositório (= `<edit>`). Fora do git
+  de `video/`.
+- **Saída:** no "pronto", **uma pasta só**, `posts/script/<slug>/`, a pasta do
+  próprio roteiro, onde o histórico `sketch/v<N>.md` e o `final.md` já moram,
+  com os três artefatos lado a lado:
 
-  | File | What |
+  | Arquivo | O que é |
   |---|---|
-  | `reels.mp4` | the cut, with burned-in subtitles |
-  | `caption.md` | the Instagram caption |
-  | `cover.png` | the cover (its `cover.html` source stays in `sketch/`) |
+  | `reels.mp4` | o corte, com as legendas do vídeo queimadas |
+  | `caption.md` | a legenda do post no Instagram |
+  | `cover.png` | a capa (a fonte `cover.html` fica em `sketch/`) |
 
-  They ship together and they live together: posting a Reel means opening one
-  folder and finding everything it needs there. The video is not delivered
-  without its caption and its cover, and none of the three goes anywhere else.
+  Eles saem juntos e moram juntos: postar um Reel é abrir uma pasta e encontrar
+  ali tudo que ele precisa. O vídeo não é entregue sem a legenda do post e sem
+  a capa, e nenhum dos três vai para outro lugar.
 
-  **The filenames are fixed and generic — never build them from the slug.** The
-  folder is already named for the piece, so repeating it inside would say the
-  same thing twice; every Reel folder holds the same three names, which is what
-  makes them scannable side by side. `reels.mp4` / `caption.md` / `cover.png`,
-  in every folder, always.
+  **Os nomes de arquivo são fixos e genéricos. Nunca monte a partir do slug.**
+  A pasta já tem o nome da peça, então repetir dentro dela seria dizer a mesma
+  coisa duas vezes. Toda pasta de Reel tem os mesmos três nomes, e é isso que
+  deixa as pastas comparáveis lado a lado. `reels.mp4` / `caption.md` /
+  `cover.png`, em toda pasta, sempre.
 
-## Protocol
+## Protocolo
 
-### 1. Source + inventory + transcription
-Source = the named file or the most recent one in `video/inputs/`. `video-use`
-helpers: `ffprobe`, `transcribe.py` (cached), `pack_transcripts.py`. Define the
-**slug** (title → lowercase, no accents, hyphens). Scratch in `edit/<slug>/`.
+### 1. Fonte + inventário + transcrição
+Fonte = o arquivo nomeado ou o mais recente em `video/inputs/`. Helpers da
+`video-use`: `ffprobe`, `transcribe.py` (com cache), `pack_transcripts.py`.
+Defina o **slug** (título → minúsculas, sem acento, hífens). Rascunho em
+`edit/<slug>/`.
 
-**That slug is the script's slug.** A Reel starts life as a script, so the
-deliverables land in that script's existing folder, `posts/script/<slug>/`,
-beside its `sketch/` history and its `final.md` — which is the script; there is
-no separate copy of it in the folder. If `posts/script/<slug>/` does not exist
-(a video with no script behind it), create it and write the deliverables in;
-there is simply no `sketch/` and no `final.md`.
+**Esse slug é o slug do roteiro.** Um Reel nasce como roteiro, então as
+entregas caem na pasta que esse roteiro já tem, `posts/script/<slug>/`, ao lado
+do histórico em `sketch/` e do `final.md`, que é o roteiro. Não existe cópia
+separada dele na pasta. Se `posts/script/<slug>/` não existe (um vídeo sem
+roteiro por trás), crie a pasta e escreva as entregas nela. Só não vai ter
+`sketch/` nem `final.md`.
 
-Right after packing the transcript: read it end to end hunting for **editor
-notes** (§ Editor notes) — assume there are some. Extract each one, plan its
-effect, and mark the whole span for cutting in the EDL — **before** picking
-feature beats “on autopilot”.
+Logo depois de empacotar a transcrição: leia do começo ao fim caçando **notas
+de editor** (§ Notas de editor), partindo do princípio de que existem. Extraia
+cada uma, planeje o efeito e marque o trecho inteiro para corte na EDL,
+**antes** de escolher os beats das features "no automático".
 
-### 2. Pick the mode
-1. If the user names a mode (or an alias), use it.
-2. Otherwise, if the transcript cites a concrete news item (new model, funding
-   round, acquisition, research) → `news`.
-3. Otherwise → `baseline`.
+### 2. Escolher o modo
+1. Se o usuário nomear um modo (ou um alias), use esse.
+2. Senão, se a transcrição cita uma notícia concreta (modelo novo, rodada de
+   investimento, aquisição, pesquisa) → `news`.
+3. Senão → `baseline`.
 
-Read `assets/modes/<id>.md` with the Read tool. Confirm the strategy (mode +
-features) with the user before executing. `subtitles` rides on every mode
-without being listed in one — drop it only if the user says so.
+Leia `assets/modes/<id>.md` com a ferramenta Read. Confirme a estratégia (modo +
+features) com o usuário antes de executar. `subtitles` vai junto em todo modo
+sem estar listada em nenhum. Só tire se o usuário pedir.
 
-### 3. Load and run the features
-For each feature listed in the mode (+ explicit opt-ins), **in this order**:
+### 3. Carregar e rodar as features
+Para cada feature listada no modo (+ opt-ins explícitos), **nesta ordem**:
 
-1. `Read` `assets/features/<id>.md`
-2. Do what the file says, in its `phase`
+1. `Read` em `assets/features/<id>.md`
+2. Faça o que o arquivo diz, na `phase` dele
 
-Before the render, `edl.json` must exist (`video-use` format: `sources`,
-`ranges` on word boundaries, `grade`, `overlays`). No overlay features →
-`overlays: []`. **No** `subtitles` key in the EDL while you are previewing —
-it goes in at the final render (§ 5), or never, if the user turned them off.
+Antes do render, o `edl.json` precisa existir (formato da `video-use`:
+`sources`, `ranges` em limites de palavra, `grade`, `overlays`). Sem feature de
+overlay → `overlays: []`. **Nenhuma** chave `subtitles` na EDL enquanto você
+está no preview: ela entra no render final (§ 5), ou nunca, se o usuário
+desligou as legendas.
 
-Iterate on previews (loudnorm = without `--no-loudnorm`; **no** `--subtitles`):
+Itere nos previews (loudnorm = sem `--no-loudnorm`, e **sem** `--subtitles`):
 
 ```bash
 PYTHONUTF8=1 VIRTUAL_ENV= uv run --no-sync --project "$HOME/.claude/skills/video-use" \
@@ -258,23 +260,23 @@ PYTHONUTF8=1 VIRTUAL_ENV= uv run --no-sync --project "$HOME/.claude/skills/video
   "<edit>/edl.json" -o "<edit>/preview.mp4" --preview
 ```
 
-Re-render the preview as many times as the cut needs. Subtitles stay out of
-every one of them — see § 5 for the final.
+Renderize o preview quantas vezes o corte precisar. As legendas do vídeo ficam
+fora de todos eles. Veja § 5 para o final.
 
-### 4. Self-eval (step 7 of video-use)
-`timeline_view` on the output at every cut boundary and overlay window. Check
-for discontinuity, audio pops and misaligned overlays (Hard Rule 4). `ffprobe`
-the duration. Up to 3 passes; if it persists, flag it. **Ask the user to listen
-to the cut junctions** (you do not hear audio).
+### 4. Autoavaliação (passo 7 da video-use)
+`timeline_view` na saída em toda borda de corte e janela de overlay. Procure
+descontinuidades, estalos no áudio e overlays desalinhados (Hard Rule 4). `ffprobe`
+na duração. Até 3 passadas. Se persistir, sinalize. **Peça para o usuário ouvir
+as emendas do corte** (você não ouve áudio).
 
-The subtitle check (Hard Rule 1 — no overlay covering the bottom band) belongs
-to the final, since the previews carry no subtitles. Overlays that already sit
-low in the frame are the ones to watch.
+A checagem das legendas do vídeo (Hard Rule 1: nenhum overlay cobrindo a faixa
+de baixo) é do final, porque os previews não têm legenda. Os overlays que já
+ficam baixos no quadro são os que merecem atenção.
 
-### 5. Delivery
-"Done" is the signal that the cut is locked — and the only moment the final
-render happens. Add `"subtitles": "master.ass"` to `edl.json` and render with
-`--subtitles` (drop both if the user turned subtitles off):
+### 5. Entrega
+"Pronto" é o sinal de que o corte travou, e o único momento em que o render
+final acontece. Adicione `"subtitles": "master.ass"` ao `edl.json` e renderize
+com `--subtitles` (tire os dois se o usuário desligou as legendas):
 
 ```bash
 PYTHONUTF8=1 VIRTUAL_ENV= uv run --no-sync --project "$HOME/.claude/skills/video-use" \
@@ -282,118 +284,119 @@ PYTHONUTF8=1 VIRTUAL_ENV= uv run --no-sync --project "$HOME/.claude/skills/video
   "<edit>/edl.json" -o "<edit>/final.mp4" --subtitles
 ```
 
-Say the subtitles are being burned before you start — this render is slower than
-the previews, and it is the first one that has them.
+Avise que as legendas estão sendo queimadas antes de começar: esse render é
+mais lento que os previews, e é o primeiro que tem legenda.
 
-**The first pass generates `master.ass` from a dumb rule — six-word blocks,
-two words revealed per step. Do not ship that.** Regroup by breath, vary how
-each block assembles, mark the payoff words `\rEMPH`, adjust the holds — § The
-edit in `assets/features/subtitles.md` — then run the same command again to burn
-the edited file (an existing `master.ass` is reused, never regenerated over).
-That edit is where the captions stop looking auto-generated; it is a listening
-pass, not a formatting pass.
+**A primeira passada gera o `master.ass` por uma regra burra: blocos de seis
+palavras, duas reveladas por passo. Não publique isso.** Reagrupe por
+respiração, varie como cada bloco se monta, marque as palavras de fecho com
+`\rEMPH`, ajuste os holds (§ A edição, em `assets/features/subtitles.md`), e
+rode o mesmo comando de novo para queimar o arquivo editado (um `master.ass`
+existente é reaproveitado, nunca regenerado por cima). Essa edição é onde as
+legendas param de parecer geradas automaticamente. É uma passada de escuta,
+não de formatação.
 
-Then check the subtitles (§ 4) and ship the three artifacts into the piece's
-own folder — the cut, its caption and its cover, all in `posts/script/<slug>/`.
-The folder almost always exists already (the script was written there), so the
-`mkdir -p` is a no-op safeguard for the scriptless case, not what creates the
-piece.
+Aí cheque as legendas (§ 4) e leve os três artefatos para a pasta da própria
+peça: o corte, a legenda do post e a capa, tudo em `posts/script/<slug>/`. A
+pasta quase sempre já existe (o roteiro foi escrito lá), então o `mkdir -p` é
+uma proteção para o caso sem roteiro, não o que cria a peça.
 
 ```bash
 mkdir -p "posts/script/<slug>" && mv "<edit>/final.mp4" "posts/script/<slug>/reels.mp4"
 ```
 
-If the user reopens the cut after this, go back to previews — a further edit
-re-renders the final from scratch.
+Se o usuário reabrir o corte depois disso, volte para os previews: uma edição a
+mais renderiza o final do zero de novo.
 
-Then write `posts/script/<slug>/caption.md` — the Instagram caption for that
-Reel, in the language actually spoken in the video. It lands next to the video
-it belongs to, not in a folder of its own.
+Depois escreva `posts/script/<slug>/caption.md`, a legenda do post no Instagram
+para esse Reel. Ela fica ao lado do vídeo a que pertence, não numa pasta
+própria.
 
-**The caption is two lines, not a rewrite of the Reel.** The video already said
-everything; the caption's whole job is to land after it and ask for the follow.
+**A legenda do post tem duas linhas, não é uma reescrita do Reel.** O vídeo já
+disse tudo. O trabalho inteiro da legenda é cair depois dele e pedir o follow.
 
 ```
-<one short line that hooks off what the Reel just said>
+<uma linha curta que engancha no que o Reel acabou de dizer>
 siga @pedro.miyasaki.ia
 ```
 
-The first line is a **single sentence** that only makes sense to someone who
-just watched. It names the Reel's subject and turns back to the viewer — check
-the surprise, open the comments, or ask where they stand. It does not summarize
-the video, does not repeat the hook, and does not teach anything new.
+A primeira linha é **uma frase só**, que só faz sentido para quem acabou de
+assistir. Ela nomeia o assunto do Reel e vira para quem está vendo: confere a
+surpresa, abre os comentários ou pergunta de que lado a pessoa está. Não resume
+o vídeo, não repete o hook e não ensina nada novo.
 
-The follow line is always the second line. The handle is verbatim; the verb
-follows the language spoken in the video (`siga` / `follow`).
+A linha do follow é sempre a segunda. O handle é verbatim e o verbo é `siga`.
 
-Each block below is one whole caption, for a different kind of Reel:
+Cada bloco abaixo é uma legenda inteira, para um tipo diferente de Reel:
 
 ```
-# Reel: what the terminal bench is (baseline · explanatory)
+# Reel: o que é o terminal bench (baseline · explicativo)
 E aí? Sabia que o terminal bench era assim?
 siga @pedro.miyasaki.ia
 
-# Reel: a new model announcement (news)
+# Reel: anúncio de um modelo novo (news)
 Esse lançamento me pegou de surpresa. Você já tinha visto?
 siga @pedro.miyasaki.ia
 
-# Reel: how guardrails actually work (authority · pedagogical)
+# Reel: como guardrails funcionam de verdade (authority · pedagógico)
 Ficou com alguma dúvida? Coloca nos comentários
 siga @pedro.miyasaki.ia
 
-# Reel: "RAG is a crutch" (baseline · thesis)
+# Reel: "RAG é muleta" (baseline · tese)
 Concorda ou acha que eu tô viajando?
 siga @pedro.miyasaki.ia
 
-# Reel: the mistake everyone makes when writing evals (authority)
+# Reel: o erro que todo mundo comete escrevendo evals (authority)
 Já perdeu tempo com isso também?
 siga @pedro.miyasaki.ia
 
-# Reel recorded in English: why your agent keeps looping
-Wait — did you know it worked like that?
-follow @pedro.miyasaki.ia
+# Reel: por que o seu agente fica em loop (baseline · explicativo)
+Espera, você sabia que funcionava assim?
+siga @pedro.miyasaki.ia
 ```
 
-What it must never look like — the Reel rewritten as text:
+Como ela nunca pode ficar, o Reel reescrito em texto:
 
 ```
-# ✗ wrong
+# ✗ errado
 O terminal bench é um benchmark que mede a capacidade de agentes de IA
 resolverem tarefas reais em um terminal. Nesse Reel eu explico como ele
 funciona, por que ele é difícil e o que os resultados dizem sobre...
 ```
 
-Present the caption in the chat too, so the user can correct it before posting.
-Corrections rewrite `posts/script/<slug>/caption.md` in place — it is a build
-artifact next to the render, not versioned as `v<N>`.
+Mostre a legenda do post no chat também, para o usuário corrigir antes de
+postar. Correção reescreve `posts/script/<slug>/caption.md` no lugar: é um
+artefato de build ao lado do render, não versionado como `v<N>`.
 
-#### The cover
-The Reel also ships a cover — the frame that holds the grid, so it is composed,
-never a grabbed still. Its render lands in the same `posts/script/<slug>/`
-folder the cut and the caption ship to; the HTML source is a build intermediate,
-so it stays in `sketch/`. Build it in the **Alvinegro** system, not improvised:
-read `design/identity.md` and copy the `01 COVER` archetype from
-`design/templates/slides.html` (`<style>` and `<defs>` included) into
-`posts/script/<slug>/sketch/cover.html`.
+#### A capa
+O Reel também sai com capa: o quadro que segura o feed, então ela é composta,
+nunca um frame capturado. O render dela cai na mesma pasta
+`posts/script/<slug>/` para onde vão o corte e a legenda do post. A fonte HTML
+é um intermediário de build, então fica em `sketch/`. Monte no sistema
+**Alvinegro**, sem improviso: leia `design/identity.md` e copie o arquétipo
+`01 COVER` de `design/templates/slides.html` (`<style>` e `<defs>` incluídos)
+para `posts/script/<slug>/sketch/cover.html`.
 
-- **Frame 1080×1920 — 9:16, the Reel's own aspect**, so the cover fills the
-  Reels tab instead of sitting letterboxed inside it.
-- **The archetype is 1080×1350, so the copied CSS has to be overridden.** Add
-  `.slide{height:1920px}` in `cover.html` after the `<style>` you copied in.
-  The renderer's `--width/--height` only size the *viewport*: the PNG comes from
-  the element's own CSS box, so without that override the cover renders 4:5 no
-  matter what the command line says. Check the rendered pixel size before
-  shipping — 3240×5760 at the default `--scale 3`.
-- **The grid crops it back to 4:5, from the middle.** Anything that has to be
-  read at thumbnail size — the hook above all — belongs inside the central
-  1080×1350. The ~285px above and below are bleed: the mark and the line art can
-  live out there, and the extra height is air, not a licence for a third size.
-- Inverted slide (`.slide.inv`), the `@handle` mark, `.hook` display line,
-  optional `.bd` support line, optional line art from the drawing vocabulary
-  (boxes, arrows, flows, terminals — nothing figurative).
-- The hook is the Reel's own opening line, tightened to fit — not a new claim
-  and not the caption's first line.
-- Strictly black and white. No palette, no typeface, no logo outside the system.
+- **Quadro 1080×1920, 9:16, a proporção do próprio Reel**, para a capa
+  preencher a aba de Reels em vez de ficar com barra em cima e embaixo.
+- **O arquétipo é 1080×1350, então o CSS copiado precisa de override.**
+  Adicione `.slide{height:1920px}` no `cover.html` depois do `<style>` que você
+  copiou. O `--width/--height` do renderizador só dimensiona o *viewport*: o
+  PNG sai da caixa CSS do próprio elemento, então sem esse override a capa
+  renderiza em 4:5 independente do que a linha de comando diz. Confira o
+  tamanho em pixels do render antes de publicar: 3240×5760 no `--scale 3`
+  padrão.
+- **O feed corta de volta para 4:5, a partir do meio.** Tudo que precisa ser
+  lido em tamanho de miniatura, o hook acima de tudo, mora dentro do
+  1080×1350 central. Os ~285px acima e abaixo são sangria: a marca e o line art
+  podem morar ali, e a altura extra é ar, não licença para um terceiro tamanho.
+- Slide invertido (`.slide.inv`), a marca `@handle`, linha display `.hook`,
+  linha de apoio `.bd` opcional, line art opcional do vocabulário de desenho
+  (caixas, setas, fluxos, terminais, nada figurativo).
+- O hook é a própria linha de abertura do Reel, apertada para caber: não é uma
+  afirmação nova nem a primeira linha da legenda do post.
+- Estritamente preto e branco. Nada de paleta, tipografia ou logo fora do
+  sistema.
 
 ```bash
 uv run python scripts/render_html_to_pngs.py \
@@ -404,26 +407,26 @@ uv run python scripts/render_html_to_pngs.py \
 mv "posts/script/<slug>/sketch/1.png" "posts/script/<slug>/cover.png"
 ```
 
-The renderer names by sequence, and one `.slide` renders as `1.png` — hence
-the rename. It renders into `sketch/` and the finished cover is moved out, so a
-failed rename leaves a stray `1.png` in the working material rather than beside
-the deliverables.
+O renderizador nomeia por sequência, e um `.slide` só renderiza como `1.png`,
+daí o rename. Ele renderiza em `sketch/` e a capa pronta é movida para fora,
+então um rename que falha deixa um `1.png` perdido no material de trabalho, e
+não ao lado das entregas.
 
-Show the render to the user. Corrections edit the HTML and re-render — `sketch/`
-is working material and the slug root holds only what gets published; the
-deliverables are regenerable, never versioned as `v<N>`.
+Mostre o render para o usuário. Correção edita o HTML e renderiza de novo:
+`sketch/` é material de trabalho e a raiz do slug só guarda o que é publicado.
+As entregas dá para gerar de novo, nunca são versionadas como `v<N>`.
 
-The scratch in `edit/<slug>/` can be discarded.
+O rascunho em `edit/<slug>/` pode ser descartado.
 
-## Wiring
+## Mapa
 
-| Piece | Where |
+| Peça | Onde |
 |---|---|
 | Features | `assets/features/*.md` |
-| Modes | `assets/modes/*.md` |
-| News insert CLI | `assets/news_insert.py` + `assets/README.md` |
-| Render | `assets/render_vertical.py` (legacy name; does not force 9:16) |
-| News images | `video/inputs/<slug>-imagens/` (manual wins) |
+| Modos | `assets/modes/*.md` |
+| CLI do insert de notícia | `assets/news_insert.py` + `assets/README.md` |
+| Render | `assets/render_vertical.py` (nome legado, não força 9:16) |
+| Imagens de notícia | `video/inputs/<slug>-imagens/` (manual ganha) |
 | Engine | `~/.claude/skills/video-use/` |
 
-Session memory: `<edit>/project.md` (`video-use` format).
+Memória da sessão: `<edit>/project.md` (formato da `video-use`).

@@ -1,45 +1,45 @@
-# Thread Cards Template
+# Template de cards de thread
 
-HTML template for generating thread cards with an X/Threads-like look for Instagram carousel posts. It no longer mimics the Twitter/X interface: it uses a profile picture, a description, free text and optional images.
+Template HTML para gerar cards de thread com cara de X/Threads para posts de carrossel no Instagram. Ele não imita mais a interface do Twitter/X: usa foto de perfil, descrição, texto livre e imagens opcionais.
 
-## How to use
+## Como usar
 
-### 1. Start the local server
+### 1. Suba o servidor local
 
 **Windows:**
 ```bash
-# Double-click:
+# Clique duas vezes em:
 start-server.bat
 
-# Or run in the terminal, from the project root:
+# Ou rode no terminal, a partir da raiz do projeto:
 python -m http.server 8000
 ```
 
-### 2. Open the template
+### 2. Abra o template
 
-Open in the browser: **http://localhost:8000/templates/twitter-print/**
+Abra no navegador: **http://localhost:8000/templates/twitter-print/**
 
-⚠️ **IMPORTANT:**
-- Use **Chrome** or **Edge** (Firefox and Safari do not support the folder picker API)
-- Do not open the HTML file directly (file://) - always use the local server
-- The "Export PNG" button needs the server running to work
+⚠️ **IMPORTANTE:**
+- Use **Chrome** ou **Edge** (Firefox e Safari não suportam a API de seleção de pasta)
+- Não abra o arquivo HTML direto (file://) - use sempre o servidor local
+- O botão "Export PNG" precisa do servidor rodando para funcionar
 
-### 3. Use the template
+### 3. Use o template
 
-1. Edit the name, the description and the text directly on the card
-2. Optionally, click **Add images**
-3. Type a **codename** (post name)
-4. Click **Export PNG**
-5. Select the destination folder
-6. The PNG will be saved to: `selected-folder/codename/timestamp.png`
+1. Edite o nome, a descrição e o texto direto no card
+2. Se quiser, clique em **Add images**
+3. Digite um **codename** (nome do post)
+4. Clique em **Export PNG**
+5. Selecione a pasta de destino
+6. O PNG vai ser salvo em: `pasta-escolhida/codename/timestamp.png`
 
-## Troubleshooting
+## Resolução de problemas
 
 ### "This browser does not support folder selection"
-→ Use Chrome or Edge
+→ Use Chrome ou Edge
 
 ### "This page must be served over HTTPS or localhost"
-→ You opened the file directly. Use `start-server.bat`
+→ Você abriu o arquivo direto. Use o `start-server.bat`
 
 ### "You cancelled the selection"
-→ You cancelled the folder picker. Click Export PNG again.
+→ Você cancelou o seletor de pasta. Clique em Export PNG de novo.

@@ -1,62 +1,62 @@
 ---
 name: registrar-aprendizado
 description: >
-  Records what went wrong in a recording session into content-routines/aprendizados.md,
-  grouped under the date of the last Saturday (inclusive — if it runs on a Saturday,
-  that Saturday counts). Saturday's first step reads that file back, so the next batch
-  doesn't repeat the mistake.
-  Activate with "/registrar-aprendizado", "registrar aprendizado", "log this learning",
-  or whenever the user reports something that went wrong in a recording or editing session.
+  Registra o que deu errado numa sessão de gravação em content-routines/aprendizados.md,
+  agrupado sob a data do último sábado (inclusive: se rodar num sábado, é aquele sábado
+  mesmo). O primeiro passo do sábado lê esse arquivo de volta, então o lote seguinte não
+  repete o erro.
+  Ative com "/registrar-aprendizado", "registrar aprendizado", "anota esse aprendizado",
+  ou sempre que o usuário contar algo que deu errado numa sessão de gravação ou de edição.
 ---
-## Record a recording-session learning
+## Registrar um aprendizado de sessão de gravação
 
-Purpose: capture the user's observations about what went wrong in a session and file them in
-`content-routines/aprendizados.md` under the session's Saturday, so the first step of
-[saturday.md](../../../content-routines/default/saturday.md) surfaces them before the next batch.
+Objetivo: pegar o que o usuário observou de errado na sessão e guardar em
+`content-routines/aprendizados.md` sob o sábado daquela sessão, para que o primeiro passo do
+[saturday.md](../../../content-routines/default/saturday.md) mostre isso antes do lote seguinte.
 
-Zero friction: the user dumps the observation, this skill dates it, phrases it as a rule and files it.
-Don't ask questions before saving.
+Atrito zero: o usuário despeja a observação, esta skill data, transforma em regra e guarda.
+Não faça perguntas antes de salvar.
 
 ---
 
-## Step 1 · Get the observations
+## Passo 1 · Pegar as observações
 
-They usually come with the invocation ("/registrar-aprendizado the teleprompter was too far away").
-If the invocation is bare, ask once: *"O que deu errado nessa sessão?"* — then proceed.
+Elas costumam vir junto com a invocação ("/registrar-aprendizado o teleprompter estava longe demais").
+Se a invocação vier sem nada, pergunte uma vez: *"O que deu errado nessa sessão?"* — e siga.
 
-## Step 2 · Compute the session's Saturday
+## Passo 2 · Calcular o sábado da sessão
 
-Inclusive — running on a Saturday files under that same Saturday:
+Inclusive: rodando num sábado, guarda naquele mesmo sábado.
 
 ```bash
 date -d "-$(( ($(date +%u) + 1) % 7 )) days" +%F
 ```
 
-## Step 3 · Write the entry
+## Passo 3 · Escrever a entrada
 
-One bullet per distinct mistake, in English (repo convention). Each bullet is
-**what happened → the rule that prevents it**, one line, imperative. No preamble, no sympathy.
+Um bullet por erro distinto, em português. Cada bullet é
+**o que aconteceu → a regra que evita**, uma linha, no imperativo. Sem preâmbulo, sem consolo.
 
-- ❌ "The audio was bad because the mic was far away and this hurt the edit."
-- ✅ "Lav mic ended up under the collar — clip it outside the shirt, check 10s of audio before recording all 5."
+- ❌ "O áudio ficou ruim porque o microfone estava longe e isso atrapalhou a edição."
+- ✅ "O lapela acabou por baixo da gola: prenda ele por fora da camisa e ouça 10s de áudio antes de gravar os 5."
 
-## Step 4 · File it in `content-routines/aprendizados.md`
+## Passo 4 · Guardar em `content-routines/aprendizados.md`
 
-Newest Saturday first, directly below the `<!-- new entries go directly below this line -->` marker.
+Sábado mais recente primeiro, logo abaixo do marcador `<!-- entradas novas entram logo abaixo desta linha -->`.
 
-- Heading for that Saturday already there → append the bullets to it.
-- Not there → create `## YYYY-MM-DD (sábado)` right below the marker, with the bullets under it.
+- Já existe o heading daquele sábado → acrescente os bullets nele.
+- Não existe → crie `## YYYY-MM-DD (sábado)` logo abaixo do marcador, com os bullets embaixo.
 
-Leave everything else in the file untouched.
+Não mexa em mais nada do arquivo.
 
-## Step 5 · Confirm in one line
+## Passo 5 · Confirmar em uma linha
 
 > Registrado em 2026-08-29: 2 aprendizados.
 
 ---
 
-## Out of scope
+## Fora do escopo
 
-- Doesn't touch Notion, the scripts, or the videos.
-- Doesn't edit or reword past entries.
-- Doesn't grade the session or offer encouragement — it files the rule and stops.
+- Não toca no Notion, nos roteiros nem nos vídeos.
+- Não edita nem reescreve entrada antiga.
+- Não avalia a sessão nem dá incentivo: guarda a regra e para.

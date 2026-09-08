@@ -3,63 +3,65 @@ id: news-inserts
 phase: overlays
 ---
 
-# Feature · News / reference inserts
+# Feature · Inserts de notícia / referência
 
-## What it does
-A reference image appears as a **floating card**, composited straight over the
-video — it does **not** resize or crop the talking-head, the whole frame stays
-exactly as it was shot. The card sits **centered in the lower-third zone**
-(not glued to the bottom edge) for **a few seconds, while the VO talks about
-that subject**, and then goes away — it does not have to stay until the next
-subject starts, and stretches with no card between one insert and the next are
-normal. Scale pop (slight overshoot) + quick fade on entry, synced with the
-`pop-it` click (§3); soft fade on exit. Gentle Ken Burns inside the card while
-it holds. Optional: a `FONTE: …` chyron in the card's corner.
+## O que faz
+Uma imagem de referência aparece como um **card flutuante**, composto direto por
+cima do vídeo: ele **não** redimensiona nem corta o talking-head, o frame inteiro
+fica exatamente como foi gravado. O card fica **centralizado na zona do terço
+inferior** (não colado na borda de baixo) por **alguns segundos, enquanto a VO
+fala daquele assunto**, e depois some. Ele não precisa ficar até o próximo
+assunto começar, e trechos sem card nenhum entre um insert e o outro são
+normais. Pop de escala (leve overshoot) + fade rápido na entrada, sincronizado
+com o click do `pop-it` (§3), e fade suave na saída. Um Ken Burns discreto
+dentro do card enquanto ele segura. Opcional: um chyron `FONTE: …` no canto do card.
 
-Uses:
+Usos:
 
-- `news` mode — 2–5 specific images across the piece (announcement, benchmark,
-  specs, platform mentioned), each one a brief card at the moment the VO
-  mentions it.
-- `authority` mode (opt-in) — visual evidence for the thesis: a screenshot of a
-  **paper**, an article, a model/library launch, a figure from a study.
+- modo `news`: 2–5 imagens específicas ao longo da peça (anúncio, benchmark,
+  specs, plataforma citada), cada uma um card curto no momento em que a VO
+  menciona o assunto.
+- modo `authority` (opt-in): prova visual da tese: o screenshot de um
+  **paper**, um artigo, o lançamento de um modelo ou biblioteca, uma figura de um
+  estudo.
 
-Script: `assets/news_insert.py` (ProRes 4444 alpha, full canvas, transparent
-except for the card). The canvas is passed via `--width`/`--height` — **always
-the source's real output** (rotation applied, not the stream's raw
-`width`/`height`; `render_vertical.py` prints `canvas: WxH` at the start of the
-render — use that value), never a fixed value. CLI in `assets/README.md`.
+Script: `assets/news_insert.py` (ProRes 4444 com alpha, canvas inteiro,
+transparente fora do card). O canvas é passado por `--width`/`--height`,
+**sempre o output real da fonte** (com a rotação aplicada, não o
+`width`/`height` cru do stream. O `render_vertical.py` imprime `canvas: WxH` no
+começo do render, use esse valor), nunca um valor fixo. A CLI está em
+`assets/README.md`.
 
-## How to run it
+## Como rodar
 
-### 1. Beats + windows
-Reading `takes_packed.md`, locate every mention of something worth visual proof
-(product name, benchmark claim, platform mentioned, etc.) and the word range in
-which it is said. Map the **start** of that range onto the output timeline —
-that is where the card is born. **Short duration: 4–7s per card**, not the whole
-beat. It does not have to cover 100% of the piece; gaps with no card are normal
-and expected. Also locate the **CTA** — no card enters from there on (clean
-frame for the close).
+### 1. Beats + janelas
+Lendo o `takes_packed.md`, localize toda menção a algo que mereça prova visual
+(nome de produto, afirmação de benchmark, plataforma citada etc.) e o intervalo
+de palavras em que isso é dito. Mapeie o **início** desse intervalo na timeline
+de output: é ali que o card nasce. **Duração curta: 4–7s por card**, não o beat
+inteiro. Não precisa cobrir 100% da peça. Trechos sem card são normais e
+esperados. Localize também o **CTA**: dali em diante nenhum card entra (frame
+limpo para o fecho).
 
-### 2. Image for each card
-- **Manual wins.** Check `video/inputs/<slug>-imagens/` for `01.<ext>`,
-  `02.<ext>`… (`.png/.jpg/.jpeg/.webp`, with or without the leading zero). If
-  they exist, use them without second-guessing.
-- **Otherwise, search proactively.** One image per card, specific to what is
-  being said right there — do not repeat the same generic cover image for the
-  whole piece. A screenshot of the announcement, a model card, a benchmark
-  chart, the page of the platform mentioned: each technical section gets its own
-  visual evidence when the primary source offers one. A real screenshot of the
-  official site (via browser, cropped to the relevant section) beats any generic
-  cover image on specificity. Query in English → `WebSearch`/browser → crop with
-  `zoom` (`save_to_disk: true`) → copy into the folder (`0N.png`) → inspect with
-  `Read`. Criteria: does it match *that* moment? legible in the card? no
-  watermark? No image > wrong image. Avoid generic stock.
-- **Report** to the user, before rendering, which image covers which moment and
-  where each one came from.
+### 2. Imagem de cada card
+- **Manual ganha.** Olhe em `video/inputs/<slug>-imagens/` por `01.<ext>`,
+  `02.<ext>`… (`.png/.jpg/.jpeg/.webp`, com ou sem o zero na frente). Se
+  existirem, use sem questionar.
+- **Se não, procure por conta própria.** Uma imagem por card, específica do que
+  está sendo dito naquele ponto. Não repita a mesma imagem de capa genérica na
+  peça inteira. Um screenshot do anúncio, um model card, um gráfico de
+  benchmark, a página da plataforma citada: cada trecho técnico ganha a própria
+  prova visual quando a fonte primária oferece uma. Um screenshot real do site
+  oficial (pelo browser, recortado na seção relevante) ganha de qualquer imagem
+  de capa genérica em especificidade. Query em inglês → `WebSearch`/browser →
+  recorte com `zoom` (`save_to_disk: true`) → copie para a pasta (`0N.png`) →
+  inspecione com `Read`. Critérios: bate com *aquele* momento? Fica legível no
+  card? Sem marca d'água? Nenhuma imagem > imagem errada. Evite stock genérico.
+- **Reporte** ao usuário, antes de renderizar, qual imagem cobre qual momento e
+  de onde cada uma veio.
 
-### 3. Generate the cards + pop-it
-One clip per card:
+### 3. Gerar os cards + pop-it
+Um clipe por card:
 
 ```bash
 PYTHONUTF8=1 VIRTUAL_ENV= uv run --no-sync --project "$HOME/.claude/skills/video-use" \
@@ -70,48 +72,49 @@ PYTHONUTF8=1 VIRTUAL_ENV= uv run --no-sync --project "$HOME/.claude/skills/video
   --width 2160 --height 3840
 ```
 
-- `--width`/`--height`: the source's real output, from the `canvas:` line
-  `render_vertical.py` prints — not a fixed value.
-- `--fit contain` (the default, and preferred almost always): the whole image
-  fits inside the card, cropping no content. The card's background is white —
-  most site screenshots already have a white/light background, so `contain`'s
-  letterbox usually stays invisible rather than reading as empty filler.
-- `--fit cover`: only when the excess cropped at the edges is guaranteed to be
-  empty (an isolated logo, a photo with plenty of air around it). Test first: if
-  the image has text running all the way to the edge (e.g. a very wide page
-  title), `cover` cuts the text — use `contain`.
-- `--source`: mono chyron in the card's corner; omit it for a clean insert.
+- `--width`/`--height`: o output real da fonte, tirado da linha `canvas:` que o
+  `render_vertical.py` imprime, não um valor fixo.
+- `--fit contain` (o padrão, e o preferido quase sempre): a imagem inteira cabe
+  dentro do card, sem cortar nada. O fundo do card é branco, e a maioria dos
+  screenshots de site já tem fundo branco ou claro, então o letterbox do
+  `contain` costuma ficar invisível em vez de parecer espaço vazio.
+- `--fit cover`: só quando a sobra cortada nas bordas é garantidamente vazia (um
+  logo isolado, uma foto com bastante ar em volta). Teste antes: se a imagem tem
+  texto indo até a borda (um título de página muito largo, por exemplo), o
+  `cover` corta o texto. Use `contain`.
+- `--source`: chyron mono no canto do card. Omita para um insert limpo.
 
-**Pop-it (audio click on the pop):** when rendering (`render_vertical.py`),
-pass `--pop-it` — it mixes a click (`assets/sfx/click.wav`) at each overlay's
-`start_in_output`, synced with the scale pop that `news_insert.py` already draws
-in the clip's first ~150ms. Nothing separate needs to be generated for it; it is
-a render flag. See `pop-it.md` for the SFX itself.
+**Pop-it (click de áudio no pop):** no render (`render_vertical.py`), passe
+`--pop-it`: ele mixa um click (`assets/sfx/click.wav`) no `start_in_output` de
+cada overlay, sincronizado com o pop de escala que o `news_insert.py` já desenha
+nos primeiros ~150ms do clipe. Não precisa gerar nada separado para isso, é uma
+flag de render. Ver `pop-it.md` para o SFX em si.
 
-### 4. Position them in the EDL
-Each card goes into `overlays` with `start_in_output` = the start of the moment
-and `duration` = 4–7s (it does not have to be contiguous with the next one; gaps
-are expected). There is no `band` field in `ranges` anymore — the talking-head
-is never resized, so the EDL's `ranges` need nothing special for this feature.
+### 4. Posicionar no EDL
+Cada card entra em `overlays` com `start_in_output` = o início do momento e
+`duration` = 4–7s (não precisa ser contíguo com o próximo, trechos vazios são
+esperados). Não existe mais o campo `band` em `ranges`: o talking-head nunca é
+redimensionado, então os `ranges` do EDL não precisam de nada especial para esta
+feature.
 
-> Third-party screenshot: the chyron credits the source; the user decides what
-> to publish. Flag any doubt about usage rights.
+> Screenshot de terceiro: o chyron dá o crédito da fonte, e o usuário decide o
+> que publicar. Aponte qualquer dúvida sobre direito de uso.
 
-## Calibration
-Canvas = the source's real output, always recomputed (never hardcoded — this was
-a bug: an overlay generated at a fixed 1080×1920 and composited over a 4K source
-showed up at 1/4 of the size, covering only the corner). Card: side margin ~8%
-of the canvas on each side, max height ~70% of the lower third (so it keeps air
-above/below and never sticks to the bottom edge), rounded corners + a soft
-shadow to separate it from the video behind it (there is never an opaque band
-covering the video — the rest of the frame stays visible the whole time,
-including behind/around the card).
+## Calibração
+Canvas = o output real da fonte, sempre recalculado (nunca hardcoded, isso já
+foi um bug: um overlay gerado em 1080×1920 fixo e composto sobre uma fonte 4K
+apareceu com 1/4 do tamanho, cobrindo só o canto). Card: margem lateral de ~8%
+do canvas de cada lado, altura máxima de ~70% do terço inferior (assim ele mantém
+ar em cima e embaixo e nunca gruda na borda de baixo), cantos arredondados + uma
+sombra suave para separar do vídeo atrás (nunca existe uma faixa opaca cobrindo o
+vídeo: o resto do frame fica visível o tempo todo, inclusive atrás e em volta do
+card).
 
-## History
-There were two earlier versions of this feature: (1) an opt-in per-beat burst
-with no canvas control (the tiny-image bug); (2) a full band in the upper third,
-persistent until the CTA, with the talking-head resized to fit below it. Both
-were abandoned — with v2 the user found resizing the video for no reason
-annoying, and the persistent band stayed on screen far too long without the
-matching subject. The current version (floating card, brief, resizing nothing)
-is the definitive one until new feedback.
+## Histórico
+Esta feature teve duas versões anteriores: (1) um burst opt-in por beat sem
+controle de canvas (o bug da imagem minúscula), e (2) uma faixa inteira no
+terço superior, persistente até o CTA, com o talking-head redimensionado para
+caber embaixo dela. As duas foram abandonadas: na v2 o usuário achou irritante
+redimensionar o vídeo sem motivo, e a faixa persistente ficava na tela tempo
+demais sem o assunto correspondente. A versão atual (card flutuante, curto, sem
+redimensionar nada) é a definitiva até chegar feedback novo.

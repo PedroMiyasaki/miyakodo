@@ -1,84 +1,84 @@
-# Sunday — review the cuts, write LinkedIn and the article, schedule the week
+# Domingo — revisar os cortes, escrever LinkedIn e o artigo, agendar a semana
 
-**Ends with:** 5 reels in `posts/script/<slug>/` (each script folder holding `reels.mp4`, `caption.md` and `cover.png`), 3 LinkedIn posts, 1 Substack article, 9 posts scheduled.
-**Sessions at peak:** default — 9 (1 Substack + 5 resumed + 3 LinkedIn) · multitask — 5 (1 Substack + 1 resumed + 3 LinkedIn). Context: [README](README.md).
+**Termina com:** 5 reels em `posts/script/<slug>/` (cada pasta de roteiro com `reels.mp4`, `caption.md` e `cover.png`), 3 posts de LinkedIn, 1 artigo no Substack, 9 posts agendados.
+**Sessões no pico:** default: 9 (1 Substack + 5 retomadas + 3 LinkedIn) · multitask: 5 (1 Substack + 1 retomada + 3 LinkedIn). Contexto: [README](README.md).
 
-## Substack — fire it first, it runs all day
+## Substack — dispare primeiro, ele roda o dia inteiro
 
-The article is the longest piece of the week and it publishes today. Start it before you watch a single cut, then check in on it between reviews.
+O artigo é a peça mais longa da semana e publica hoje. Comece antes de assistir a um único corte, depois vá dando uma olhada nele entre as revisões.
 
-- [ ] **Pick the subject.** Either the deepest of the 5 ideas you recorded, or **news from this week** — the article publishes today, so nothing here is too perishable.
-  Pick for material, not for hook: the right subject is the one where you can already name three things you could go capture.
-  ⚠️ News only works if you can reach a primary source — the paper, the model card, the pricing page. Without one there is no article, only the fifth summary of the same announcement.
+- [ ] **Escolha o assunto.** Ou a mais profunda das 5 ideias que você gravou, ou **notícia desta semana**: o artigo publica hoje, então nada aqui é perecível demais.
+  Escolha pelo material, não pelo hook: o assunto certo é aquele em que você já consegue nomear três coisas que dá para ir capturar.
+  ⚠️ Notícia só funciona se você alcança uma fonte primária: o paper, o model card, a página de preços. Sem isso não tem artigo, só o quinto resumo do mesmo anúncio.
 
-- [ ] **Open 1 agent session, run** `write-substack` on it. Then leave it and go watch the cuts.
+- [ ] **Abra 1 sessão de agente e rode** `write-substack` nela. Depois deixe ela lá e vá assistir aos cortes.
 
-- [ ] **Approve the plan when it comes back** — spine, outline, shot list. Do this between two cut reviews; it takes two minutes.
-  🖋 This is the cheapest place all day to change direction. Read the shot list: if you can't picture the image, the agent can't capture it.
+- [ ] **Aprove o plano quando ele voltar**: espinha, outline, shot list. Faça isso entre duas revisões de corte. Leva dois minutos.
+  🖋 É o lugar mais barato do dia inteiro para mudar de direção. Leia a shot list: se você não consegue imaginar a imagem, o agente não consegue capturar.
 
-- [ ] **Iterate the text to locked, then let it run the capture session.** 3 to 8 real browser captures plus a cover.
-  ⚠️ Every image is a real capture from a primary source. If the agent offers a stock photo or a diagram it built, that's a bug — send it back.
+- [ ] **Itere o texto até travar, depois deixe o agente rodar a sessão de captura.** 3 a 8 capturas reais de navegador mais uma capa.
+  ⚠️ Toda imagem é uma captura real de fonte primária. Se o agente oferecer foto de banco de imagens ou um diagrama que ele montou, é bug: devolva.
 
-- [ ] **Review the article with the images in place**, not the text alone. Each image needs runway before it and a takeaway after.
+- [ ] **Revise o artigo com as imagens no lugar**, não só o texto. Cada imagem precisa de pista antes e de conclusão depois.
 
-- [ ] **Spend one round on the title alone.** It's the email subject line and the only thing most of the list will ever read.
-
-
-
-## Review the 5 cuts
-
-- [ ] **Resume yesterday's layout.** Reopen everything you need before reviewing any cut.
-  - **default:** yesterday's 5 agent sessions, one per slug.
-  - **multitask:** yesterday's coordinating session. It already knows the five slugs — don't open five new ones.
-
-- [ ] **Watch each cut, hand back notes in plain language** — dragging opening, repeated point, dead pause, cut landing on the wrong word. The session that wrote the script knows it, so refer to content, not timestamps. Iterate until postable.
-  🔥 First two seconds: hard cut, zero intro. If the opening drags, that's the first note.
-  A cut that needs nothing is finished. Accept it and move on.
-
-- [ ] **Check:** `video/inputs/` empty, this week's 5 script folders in `posts/script/` each holding its video, caption and cover.
+- [ ] **Gaste uma rodada só no título.** Ele é o assunto do email e a única coisa que a maior parte da lista vai ler.
 
 
 
-## LinkedIn (3 new agent sessions, in parallel)
+## Revisar os 5 cortes
 
-- [ ] **Pick the 3 most technical of the 5 ideas you recorded.** Reuse beats a fresh idea from the bank.
+- [ ] **Retome o layout de ontem.** Reabra tudo que você precisa antes de revisar qualquer corte.
+  - **default:** as 5 sessões de agente de ontem, uma por slug.
+  - **multitask:** a sessão coordenadora de ontem. Ela já conhece os cinco slugs. Não abra cinco novas.
 
-- [ ] **Open 3 agent sessions, run** `build-linkedin` on each. Iterate to "done" (text + image).
-  Presence, not reach. Don't force a hook onto them.
+- [ ] **Assista a cada corte e devolva notas em linguagem simples**: abertura arrastada, ponto repetido, pausa morta, corte caindo na palavra errada. A sessão que escreveu o roteiro conhece ele, então fale do conteúdo, não de timestamp. Itere até dar para postar.
+  🔥 Dois primeiros segundos: corte seco, zero intro. Se a abertura arrasta, essa é a primeira nota.
+  Um corte que não precisa de nada está pronto. Aceite e siga.
 
-- [ ] **If one of the 3 shares the article's thesis, hand that agent the article.** Give it `posts/substack/<slug>/final.md` so it doesn't repeat the piece, and have it close on the link.
-  🖋 That post is the subscription engine: cold LinkedIn readers, one click from the list.
+- [ ] **Confira:** `video/inputs/` vazia, as 5 pastas de roteiro desta semana em `posts/script/`, cada uma com seu vídeo, sua legenda do post e sua capa.
 
 
 
-## Schedule
+## LinkedIn (3 sessões de agente novas, em paralelo)
 
-- [ ] **Build the grid before opening any app.** The window starts today.
+- [ ] **Escolha as 3 mais técnicas das 5 ideias que você gravou.** Reaproveitar ganha de ideia nova do banco.
 
-  | Day             | Instagram          | LinkedIn   | Substack  |
-  | --------------- | ------------------ | ---------- | --------- |
-  | **Sun (today)** | reel 1 🔥          | —          | article 🖋 |
-  | Mon             | reel 2 🔥          | LinkedIn 1 | —         |
-  | Tue             | reel 3 🔥          | —          | —         |
-  | Wed             | reel 4 🔥          | LinkedIn 2 | —         |
-  | Thu             | reel 5 🔥          | —          | —         |
-  | Fri             | stock reel, if any | LinkedIn 3 | —         |
-  | Sat             | —                  | —          | —         |
+- [ ] **Abra 3 sessões de agente e rode** `build-linkedin` em cada uma. Itere até o "pronto" (texto + imagem).
+  Presença, não alcance. Não force um hook nelas.
 
-  Most perishable reel first. News today or Monday; a timeless thesis survives to Thursday.
-  ⏱️ Reel 1 goes out today — if the slot has passed, publish it now instead of scheduling.
-  🖋 The article goes out today too, written today. That zero lag is what lets it be news.
+- [ ] **Se um dos 3 tem a mesma tese do artigo, entregue o artigo para esse agente.** Dê a ele `posts/substack/<slug>/final.md` para não repetir a peça, e faça o post fechar no link.
+  🖋 Esse post é o motor de assinatura: leitor frio do LinkedIn a um clique da lista.
 
-- [ ] **Publish the Substack article.** Everything is in `posts/substack/<slug>/`: paste `final.md`, drag each PNG onto its `![NN — …]` marker, paste the captions, set `cover.png` as the cover.
-  ⚠️ Substack sends an email. A typo reaches the whole list and can't be edited after send — read the title and the first paragraph once more before you hit publish.
 
-- [ ] **Schedule the 5 reels** on Instagram, each with its script's caption.
 
-- [ ] **Schedule the 3 LinkedIn posts.** If one links the article, put that one on Monday, right behind it.
+## Agendar
 
-- [ ] **Re-check the whole grid before closing.** A post on the wrong day only surfaces Thursday, too late to fix.
+- [ ] **Monte a grade antes de abrir qualquer app.** A janela começa hoje.
 
-- [ ] **Close the ideas in Notion:** `Status` → `Processed`.
-  ⚠️ A reused idea can only carry one `Format` — record `Reel`. The article adds nothing here; `write-substack` deliberately skips the Notion write when it reuses a thesis. If the article came from fresh news instead, that idea closes on its own as `Substack`.
+  | Dia             | Instagram                | LinkedIn   | Substack  |
+  | --------------- | ------------------------ | ---------- | --------- |
+  | **Dom (hoje)**  | reel 1 🔥                | —          | artigo 🖋 |
+  | Seg             | reel 2 🔥                | LinkedIn 1 | —         |
+  | Ter             | reel 3 🔥                | —          | —         |
+  | Qua             | reel 4 🔥                | LinkedIn 2 | —         |
+  | Qui             | reel 5 🔥                | —          | —         |
+  | Sex             | reel de stock, se houver | LinkedIn 3 | —         |
+  | Sáb             | —                        | —          | —         |
 
-Next: **[Saturday](saturday.md)**
+  O reel mais perecível primeiro. Notícia hoje ou segunda. Uma tese atemporal sobrevive até quinta.
+  ⏱️ O reel 1 sai hoje: se o horário já passou, publique agora em vez de agendar.
+  🖋 O artigo também sai hoje, escrito hoje. Esse lag zero é o que deixa ele ser notícia.
+
+- [ ] **Publique o artigo no Substack.** Está tudo em `posts/substack/<slug>/`: cole o `final.md`, arraste cada PNG para o marcador `![NN — …]` dele, cole as legendas das imagens, defina `cover.png` como capa.
+  ⚠️ O Substack manda email. Um erro de digitação chega na lista inteira e não dá para editar depois de enviar: leia o título e o primeiro parágrafo mais uma vez antes de apertar publicar.
+
+- [ ] **Agende os 5 reels** no Instagram, cada um com a legenda do seu roteiro.
+
+- [ ] **Agende os 3 posts de LinkedIn.** Se um deles linka o artigo, coloque esse na segunda, logo atrás dele.
+
+- [ ] **Confira a grade inteira antes de fechar.** Post no dia errado só aparece na quinta, tarde demais para consertar.
+
+- [ ] **Feche as ideias no Notion:** `Status` → `Processed`.
+  ⚠️ Uma ideia reaproveitada só carrega um `Format`: registre `Reel`. O artigo não adiciona nada aqui. `write-substack` pula a escrita no Notion de propósito quando reaproveita uma tese. Se o artigo veio de notícia nova, essa ideia fecha sozinha como `Substack`.
+
+Próximo: **[Sábado](saturday.md)**

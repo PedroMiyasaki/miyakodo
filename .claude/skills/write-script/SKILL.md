@@ -1,222 +1,222 @@
 ---
 name: write-script
 description: >
-  Reads an idea from the Ideas database and produces a complete Reel script
-  formatted for the teleprompter, in the user's voice.
-  Activate with commands like "write the script for the last idea".
+  Lê uma ideia do banco de Ideias e produz um roteiro de Reel completo,
+  formatado para o teleprompter, na voz do usuário.
+  Ative com comandos como "escreve o roteiro da última ideia".
 ---
-## Production · Reel script
+## Produção · Roteiro de Reel
 
-Purpose: turn an idea from the Ideas database into a complete Reel script, formatted for the teleprompter, in the user's voice. You work as a senior script ghostwriter.
+Propósito: transformar uma ideia do banco de Ideias em um roteiro de Reel completo, formatado para o teleprompter, na voz do usuário. Você trabalha como ghostwriter sênior de roteiro.
 
-Target cadence: dense, direct, no filler, outcome-oriented, in spoken language — English by default, pt-BR (or another language) when the user asks. Follow their lead, do not push back.
-
----
-
-## Available tools
-
-You have access to the Notion MCP. Use it to read the **Ideas** database and, at close, to update `Status` and `Format` on the processed idea (the only write to Notion).
+Cadência alvo: densa, direta, sem enchimento, orientada a resultado, em linguagem falada.
 
 ---
 
-## Required references
+## Ferramentas disponíveis
 
-Read before writing any script:
+Você tem acesso ao MCP do Notion. Use ele para ler o banco **Ideas** e, no fechamento, para atualizar `Status` e `Format` na ideia processada (a única escrita no Notion).
+
+---
+
+## Referências obrigatórias
+
+Leia antes de escrever qualquer roteiro:
 
 **Via Notion (MCP):**
 
-| Database | ID | What to look for |
+| Banco | ID | O que procurar |
 |---|---|---|
-| **Ideas** | `e2970ca3-7724-4a81-8f12-7ea34c048c67` (data source ID) | Source idea for the script |
+| **Ideas** | `e2970ca3-7724-4a81-8f12-7ea34c048c67` (ID do data source) | A ideia de origem do roteiro |
 
 ---
 
-## When to act
+## Quando agir
 
-Run this skill when the user asks, in any phrasing, to turn a raw idea into a Reel script. Example triggers:
-- "write the script for the last idea"
-- "script for idea X"
-- "write the script"
+Rode esta skill quando o usuário pedir, com qualquer frase, para transformar uma ideia crua em roteiro de Reel. Exemplos de gatilho:
+- "escreve o roteiro da última ideia"
+- "roteiro da ideia X"
+- "escreve o roteiro"
 
 ---
 
-## Execution protocol
+## Protocolo de execução
 
-### Step 1 · Identify the idea to work on
+### Passo 1 · Identificar a ideia
 
-If the user did not specify which idea:
-- Open the **Ideas** database (`e2970ca3-7724-4a81-8f12-7ea34c048c67`).
-- Filter by `Status = "Pending"` and sort by `Date` descending (most recent first). If `Date` does not exist or is empty, use `createdTime`.
-- Select the most recent idea.
-- Show the title to the user and confirm before proceeding:
-  > "Idea selected for the script: [title]. Go ahead with this one?"
+Se o usuário não disse qual ideia:
+- Abra o banco **Ideas** (`e2970ca3-7724-4a81-8f12-7ea34c048c67`).
+- Filtre por `Status = "Pending"` e ordene por `Date` decrescente (a mais recente primeiro). Se `Date` não existir ou estiver vazio, use `createdTime`.
+- Pegue a ideia mais recente.
+- Mostre o título ao usuário e confirme antes de seguir:
+  > "Ideia selecionada para o roteiro: [título]. Sigo com essa?"
 
-If the user specified a title or item, find that idea in the Ideas database and use it directly.
+Se o usuário indicou um título ou item, ache essa ideia no banco Ideas e use ela direto.
 
-### Step 2 · Read the idea and define the angle
+### Passo 2 · Ler a ideia e definir o ângulo
 
-Open the matching row in the Ideas database and read everything available: title, raw idea text, notes or attached examples, date and status.
+Abra a linha correspondente no banco Ideas e leia tudo que estiver disponível: título, texto cru da ideia, notas ou exemplos anexados, data e status.
 
-The idea is raw. Extract or define the following elements:
-- **Angle:** the specific position taken on the topic, not the topic itself.
-- **Candidate hook:** the tension in the idea turned into the first spoken line.
-- **Core argument:** the thesis of the script in 1–2 sentences.
-- **Example/proof:** a concrete real or hypothetical case that anchors the argument.
-- **CTA:** what the viewer should think, feel or do when it ends.
+A ideia é crua. Extraia ou defina os elementos abaixo:
+- **Ângulo:** a posição específica sobre o tema, não o tema em si.
+- **Hook candidato:** a tensão da ideia transformada na primeira frase falada.
+- **Argumento central:** a tese do roteiro em 1 ou 2 frases.
+- **Exemplo/prova:** um caso concreto, real ou hipotético, que ancora o argumento.
+- **CTA:** o que o espectador deve pensar, sentir ou fazer quando acabar.
 
-Also define the ACP Phase.
+Defina também a ACP Phase.
 
-### Step 3 · Voice calibration
+### Passo 3 · Calibração de voz
 
-The voice lives in `docs/voice/`. Read `docs/voice/base.md`: it is the base voice for every piece, in every format, and the default whenever the user has not named a layer. If the user names a layer, read it from `docs/voice/layers/` as well — a layer wins over the base wherever the two disagree. No layers exist yet, so today the base is the whole voice.
+A voz mora em `docs/voice/`. Leia `docs/voice/base.md`: é a voz base de toda peça, em todo formato, e o padrão sempre que o usuário não nomeou uma layer. Se o usuário nomear uma layer, leia ela também em `docs/voice/layers/`: a layer ganha da base onde as duas discordam. Ainda não existe nenhuma layer, então hoje a base é a voz inteira.
 
-There is no audience or pillar document: if the piece needs a target reader or an angle, ask the user.
+Não existe documento de audiência nem de pilar: se a peça precisar de um leitor-alvo ou de um ângulo, pergunte ao usuário.
 
-### Step 4 · Write the script
+### Passo 4 · Escrever o roteiro
 
-#### Target length
-- Reel of 60 to 90 seconds of speech.
-- Roughly 150–220 spoken words.
-- Pace: ~130 words per minute (natural teleprompter delivery).
+#### Duração alvo
+- Reel de 60 a 90 segundos de fala.
+- Mais ou menos 150 a 220 palavras faladas.
+- Ritmo: ~130 palavras por minuto (leitura natural no teleprompter).
 
-#### Required script structure
+#### Estrutura obrigatória do roteiro
 
-**[HOOK · 0 to 5 seconds]**
-- One sentence. Two at most.
-- Must stop the scroll immediately.
-- Formats that work:
-  - Counterintuitive claim: "Most companies adopting AI are doing it wrong."
-  - Concrete number: "An operation that took 3 weeks now takes 4 hours."
-  - A question the audience already asks itself: "Do you know how much this manual step is costing you?"
-- NEVER open with: "Hi", "Hey there", "Today I'm going to", "Did you know that", "In this video".
+**[HOOK · 0 a 5 segundos]**
+- Uma frase. Duas no máximo.
+- Tem que parar o scroll na hora.
+- Formatos que funcionam:
+  - Afirmação contraintuitiva: "A maioria das empresas que adotam IA está fazendo errado."
+  - Número concreto: "Uma operação que levava 3 semanas agora leva 4 horas."
+  - Uma pergunta que a audiência já se faz: "Você sabe quanto essa etapa manual está te custando?"
+- NUNCA abra com: "Oi", "E aí, pessoal", "Hoje eu vou", "Você sabia que", "Neste vídeo".
 
-**[PROBLEM · 5 to 20 seconds]**
-- Expands on what the hook raises.
-- Names the problem so the audience recognizes itself in it.
-- 2 to 3 short sentences. No unexplained jargon.
+**[PROBLEM · 5 a 20 segundos]**
+- Expande o que o hook levantou.
+- Nomeia o problema de um jeito que a audiência se reconheça nele.
+- 2 a 3 frases curtas. Sem jargão sem explicação.
 
-**[CORE ARGUMENT · 20 to 55 seconds]**
-- The user's position. The thesis.
-- Include 1 concrete example or real/hypothetical case that makes the argument tangible.
-- May include 1 number, statistic or comparison.
-- Short sentences. Paragraphs of 1–2 lines on the teleprompter.
-- This is the body of the script. Concentrate the highest information density here.
+**[CORE ARGUMENT · 20 a 55 segundos]**
+- A posição do usuário. A tese.
+- Inclua 1 exemplo concreto ou caso real/hipotético que deixe o argumento palpável.
+- Pode incluir 1 número, estatística ou comparação.
+- Frases curtas. Parágrafos de 1 ou 2 linhas no teleprompter.
+- Esse é o corpo do roteiro. Concentre aqui a maior densidade de informação.
 
-**[TURN OR INSIGHT · 55 to 75 seconds]**
-- The "aha moment": what the viewer walks away with, concretely.
-- Can be a simple framework (e.g. "think of it this way: phase 1, phase 2, phase 3"), a rule of thumb, or a reframing of the situation.
-- Should sound like something the viewer will want to repeat to someone else.
+**[TURN OR INSIGHT · 55 a 75 segundos]**
+- O "momento aha": o que o espectador leva embora, em concreto.
+- Pode ser um framework simples (ex.: "pensa assim: fase 1, fase 2, fase 3"), uma regra de bolso ou uma reformulação da situação.
+- Tem que soar como algo que o espectador vai querer repetir para outra pessoa.
 
-**[CTA · 75 to 90 seconds]**
-- A final action or stance.
-- Cannot be generic ("drop a like"). Must be specific to the content.
-- Valid examples:
-  - "If you're at a company with this problem, send me a DM."
-  - "Which of these mistakes have you made? Tell me in the comments."
-  - "Save this one. You're going to need to show it to someone."
+**[CTA · 75 a 90 segundos]**
+- Uma ação ou posição final.
+- Não pode ser genérico ("deixa o like"). Tem que ser específico do conteúdo.
+- Exemplos válidos:
+  - "Se você está numa empresa com esse problema, me manda uma DM."
+  - "Qual desses erros você já cometeu? Me conta nos comentários."
+  - "Salva esse aqui. Você vai precisar mostrar para alguém."
 
-#### Teleprompter formatting
+#### Formatação para o teleprompter
 
-- Short paragraphs: 2 lines per block, maximum.
-- A blank line between every block.
-- Mark pauses with `[pause]` where the user should breathe or land the emphasis.
-- Mark emphasis with **bold** on the words to be hit harder.
-- Tag each section in brackets: `[HOOK]`, `[PROBLEM]`, `[ARGUMENT]`, `[TURN]`, `[CTA]`.
-- Write it exactly as it will be spoken: no formal connectives, no "therefore" or "as mentioned above".
+- Parágrafos curtos: 2 linhas por bloco, no máximo.
+- Uma linha em branco entre cada bloco.
+- Marque as pausas com `[pause]` onde o usuário deve respirar ou assentar a ênfase.
+- Marque a ênfase com **negrito** nas palavras que devem ser ditas com mais força.
+- Marque cada seção entre colchetes: `[HOOK]`, `[PROBLEM]`, `[ARGUMENT]`, `[TURN]`, `[CTA]`.
+- Escreva exatamente como vai ser falado: sem conectivo formal, sem "portanto" nem "conforme mencionado acima".
 
-#### Formatting example (output model — preserve this voice register):
+#### Exemplo de formatação (modelo de saída, preserve este registro de voz):
 
 ```
 [HOOK]
-Most companies trying to implement AI **get it wrong before they start.**
+A maioria das empresas que tentam implementar IA **erra antes de começar.**
  
 [pause]
  
 [PROBLEM]
-The technology is already available, and so is the data.
-What these companies get wrong
-is trying to automate everything at once,
-and in the process they lose track of what's actually running.
+A tecnologia já está disponível, e os dados também.
+O que essas empresas erram
+é tentar automatizar tudo de uma vez,
+e no caminho elas perdem de vista o que está rodando de verdade.
  
 [ARGUMENT]
-A client of mine had a document review operation.
-20 reviews a week, all by hand.
-The original plan was to replace the whole thing with an autonomous agent.
+Um cliente meu tinha uma operação de revisão de documentos.
+20 revisões por semana, tudo na mão.
+O plano original era trocar tudo por um agente autônomo.
  
 [pause]
  
-But we did it differently.
-We started with **one step** of the process.
-Just the initial triage: classify each document by type.
-In 3 weeks that was running at 94% accuracy.
+Só que a gente fez diferente.
+A gente começou por **uma etapa** do processo.
+Só a triagem inicial: classificar cada documento por tipo.
+Em 3 semanas isso estava rodando com 94% de acerto.
  
 [TURN]
-Here's the insight:
-when you automate one thing and it works,
-the team **trusts** the system.
-And trust is what makes room for the next phase.
+O insight é esse:
+quando você automatiza uma coisa e ela funciona,
+o time **confia** no sistema.
+E confiança é o que abre espaço para a próxima fase.
  
 [pause]
  
-AI scales **phase by phase**, with visibility at every step.
-Jumping from 0 to 100 is the fastest way to lose the ground under you.
+IA escala **fase por fase**, com visibilidade em cada etapa.
+Pular de 0 para 100 é o jeito mais rápido de perder o chão.
  
 [CTA]
-If your company has tried AI and it stalled,
-tell me in the comments what blocked it.
-I bet it was this.
+Se a sua empresa tentou IA e travou,
+me conta nos comentários o que emperrou.
+Aposto que foi isso.
 ```
 
-### Step 5 · Present, iterate and save locally
+### Passo 5 · Apresentar, iterar e salvar localmente
 
-Present the full script.
+Apresente o roteiro completo.
 
-Derive the slug from the idea title (lowercase, hyphens in place of spaces and special characters, no accents) and save it immediately as `posts/script/<slug>/sketch/v1.md` with Write.
+Derive o slug do título da ideia (minúsculas, hífens no lugar de espaços e caracteres especiais, sem acentos) e salve na hora como `posts/script/<slug>/sketch/v1.md` com Write.
 
-Ask:
-> "Ready to finalize, or any more corrections?"
+Pergunte:
+> "Pronto para finalizar, ou mais alguma correção?"
 
-**Always end the message with the file path**, on its own line, as the very last element — after the question, after everything. Path relative to the project root, so the user can click it, open the file and come back with corrections:
+**Sempre termine a mensagem com o caminho do arquivo**, numa linha própria, como o último elemento de tudo: depois da pergunta, depois de todo o resto. Caminho relativo à raiz do projeto, para o usuário clicar, abrir o arquivo e voltar com correções:
 
 ```
 posts/script/<slug>/sketch/v1.md
 ```
 
-For each correction requested:
-- Apply the change to the script.
-- Create `posts/script/<slug>/sketch/v(N+1).md`: read the previous version, copy the unchanged sections verbatim, apply only the diff. Do not regenerate content that did not change.
-- Ask again: "Ready to finalize, or any more corrections?" — and again close the message with the new path (`posts/script/<slug>/sketch/v(N+1).md`) as the last line.
+Para cada correção pedida:
+- Aplique a mudança no roteiro.
+- Crie `posts/script/<slug>/sketch/v(N+1).md`: leia a versão anterior, copie as seções que não mudaram verbatim e aplique só o diff. Não regenere conteúdo que não mudou.
+- Pergunte de novo: "Pronto para finalizar, ou mais alguma correção?", e de novo feche a mensagem com o caminho novo (`posts/script/<slug>/sketch/v(N+1).md`) na última linha.
 
-Repeat until the user confirms it's ready. Only then move on to Step 6.
+Repita até o usuário confirmar "pronto". Só então passe para o Passo 6.
 
-### Step 6 · Close out
+### Passo 6 · Fechar
 
-When the user confirms it's ready, copy the highest-numbered `posts/script/<slug>/sketch/v<N>.md` to `posts/script/<slug>/final.md`. This is a literal copy: read that file and write its content to `final.md` verbatim, changing nothing. Do this before touching Notion — it is not optional and it is not implied by anything else in this step. The `sketch/v<N>` history stays where it is, it is the audit trail; `final.md` is the final piece and the content lives locally. Then update the source idea in the Ideas database: `Status` → `"Processed"` and `Format` → `"Reel"` (the format this skill produces; an idea is created without a format, and it is only set now, in production). This is the skill's only write to Notion. `Status` and `Format` accumulate in the database as the real picture of the calendar (phase and format of every piece produced).
+Quando o usuário confirmar "pronto", copie o `posts/script/<slug>/sketch/v<N>.md` de maior número para `posts/script/<slug>/final.md`. É uma cópia literal: leia esse arquivo e escreva o conteúdo dele em `final.md` verbatim, sem mudar nada. Faça isso antes de mexer no Notion: não é opcional e nada mais neste passo substitui isso. O histórico `sketch/v<N>` fica onde está, ele é a trilha de auditoria; `final.md` é a peça final, e o conteúdo mora localmente. Depois atualize a ideia de origem no banco Ideas: `Status` → `"Processed"` e `Format` → `"Reel"` (o formato que esta skill produz; a ideia nasce sem formato, e ele só é definido agora, na produção). Essa é a única escrita da skill no Notion. `Status` e `Format` acumulam no banco a foto real do calendário (fase e formato de cada peça produzida).
 
-### Step 7 · Confirm and point to the next step
+### Passo 7 · Confirmar e apontar o próximo passo
 
-> "Script ready, saved in `posts/script/<slug>/final.md`. Next step: record the Reel with the teleprompter."
-
----
-
-## Script quality criteria
-
-A script is valid when:
-- The hook can be said in under 5 seconds and creates discomfort or curiosity.
-- There is a concrete example in the argument, not just abstraction.
-- The tone matches what the user defined in the conversation: no hype, no motivational register, no untranslated jargon.
-- The turn delivers something the viewer will want to repeat.
-- The formatting is teleprompter-ready: no rework before recording.
-- The word count is between 150 and 220.
-
-If any criterion fails, rewrite before presenting.
+> "Roteiro pronto, salvo em `posts/script/<slug>/final.md`. Próximo passo: gravar o Reel com o teleprompter."
 
 ---
 
-## Out of scope
+## Critérios de qualidade do roteiro
 
-This skill does not do:
-- Capturing raw ideas (that's the `capture-idea` skill).
-- Adapting to LinkedIn or Instagram, unless the user explicitly asks for another format.
-- Publishing.
-- Performance analysis.
+Um roteiro é válido quando:
+- O hook cabe em menos de 5 segundos e cria desconforto ou curiosidade.
+- Tem um exemplo concreto no argumento, não só abstração.
+- O tom bate com o que o usuário definiu na conversa: sem hype, sem registro motivacional, sem jargão sem explicação.
+- A virada entrega algo que o espectador vai querer repetir.
+- A formatação está pronta para o teleprompter: nenhum retrabalho antes de gravar.
+- A contagem de palavras fica entre 150 e 220.
+
+Se algum critério falhar, reescreva antes de apresentar.
+
+---
+
+## Fora do escopo
+
+Esta skill não faz:
+- Captura de ideias cruas (isso é a skill `capture-idea`).
+- Adaptação para LinkedIn ou Instagram, a menos que o usuário peça outro formato explicitamente.
+- Publicação.
+- Análise de desempenho.

@@ -1,8 +1,8 @@
 # SFX · edit-video
 
-| File | Feature | Spec |
+| Arquivo | Feature | Spec |
 |---|---|---|
-| `click.wav` | `pop-it` | mono 44.1kHz, ~45ms, dry tick (white noise hipass/lopass + fade). Already versioned. |
+| `click.wav` | `pop-it` | mono 44.1kHz, ~45ms, tick seco (ruído branco com hipass/lopass + fade). Já versionado. |
 
-To swap the click: replace `click.wav` keeping the name. Without the file,
-`pop-it` does not invent an SFX at render time.
+Para trocar o click: substitua o `click.wav` mantendo o nome. Sem o arquivo, o
+`pop-it` não inventa SFX na hora do render.

@@ -3,27 +3,27 @@ id: news
 aliases: [news mode, breaking news]
 ---
 
-# Mode · news
+# Modo · news
 
-Baseline (cutting + loudnorm) + reference images as a **floating card** in the
-lower third, synced to the speech. This mode's rule: each card appears for a few
-seconds while the VO talks about that specific subject and then goes away — it
-does not have to hold until the next subject, it does not have to cover the
-whole piece, and the talking-head is never resized (the card only composites on
-top, it never reserves space). Every card pop comes with a click (`pop-it`). See
-`news-inserts.md` for the mechanism. Burned-in subtitles like every mode, at the
-final render only — the cards sit in the lower third, so check they clear the
-subtitle band (`assets/features/subtitles.md`).
+Baseline (corte + loudnorm) + imagens de referência como **card flutuante** no
+terço inferior, sincronizadas com a fala. A regra deste modo: cada card aparece
+por alguns segundos enquanto a fala trata daquele assunto específico e depois
+some. Ele não precisa segurar até o assunto seguinte, não precisa cobrir a peça
+inteira, e o talking head nunca é redimensionado (o card só compõe por cima,
+nunca reserva espaço). Todo pop de card vem com um click (`pop-it`). Veja
+`news-inserts.md` para o mecanismo. Legendas do vídeo queimadas como em todo
+modo, só no render final. Os cards ficam no terço inferior, então confira que
+eles não invadem a faixa das legendas (`assets/features/subtitles.md`).
 
-## Features (order)
+## Features (ordem)
 
 1. `cut-dead-air` → `assets/features/cut-dead-air.md`
 2. `news-inserts` → `assets/features/news-inserts.md`
-3. `pop-it` → `assets/features/pop-it.md` (only the audio click on each image
-   pop — `render_vertical.py --pop-it`; the plate's micro punch-in on spoken
-   words is still spec, not used here)
+3. `pop-it` → `assets/features/pop-it.md` (só o click de áudio em cada pop de
+   imagem, `render_vertical.py --pop-it`. O micro punch-in do plate nas
+   palavras faladas ainda é spec, não entra aqui)
 4. `loudnorm` → `assets/features/loudnorm.md`
 
-## When to use it
-A news Reel: new model, funding round, acquisition, research. Also whenever the
-user explicitly asks for `news mode`.
+## Quando usar
+Reel de notícia: modelo novo, rodada de investimento, aquisição, pesquisa.
+Também sempre que o usuário pedir o modo `news` explicitamente.

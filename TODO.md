@@ -1,11 +1,11 @@
 # TODO.md
-This document organizes the medium-term todos, activities to be done **beyond** the main content production activity
-These activities will most likely be done on the weekend, outside the main content routine
+Este documento organiza os todos de médio prazo, atividades a fazer **além** da atividade principal de produção de conteúdo
+Essas atividades muito provavelmente vão ser feitas no fim de semana, fora da rotina principal de conteúdo
 
 ## Fazer branch pt-br por hora
 Nota: Camingo até o final do ano vai ser 100% pt-br com certeza então talvez seja melhor já fazer isso até la
-[ ] Make portuguese branch, harsh reality, better to be a pt-br creator is where I have more leverage (Montano, Anderson, lots of Brazilian ai creators that are tecnhinical are making good money)
-    [ ] Add `switch-language` command hook for init of sessions
+[ ] Fazer a branch em português, dói admitir, mas ser criador em pt-br é onde eu tenho mais vantagem (Montano, Anderson, um monte de criador brasileiro de IA que é técnico está ganhando bem)
+    [ ] Adicionar hook do comando `switch-language` no início das sessões
 
 ## Substack
 [ ] Estruturar o Substack no linkedn e no instagram da mesma maneira que o @jonascastromp4 (Link bio, story, apenas copiar)
@@ -18,21 +18,21 @@ Nota: Camingo até o final do ano vai ser 100% pt-br com certeza então talvez s
 
 
 ## Backlog
-### Define content strategy enforcer (long term, use ice-berg analogy @jonascastromp4)
-[ ] Watch the reels that explains the iceberg again, annotate what are the layers agnosticaly
-[ ] Transform the agnostic layer document into a customized `pedro-miyasaki` "content layers" document
-[ ] Think of a weekly strategy that makes the content follow `pedro-miyasaki` "content layers" document 
-    * Strategy should use: skills, sub-agents, research, automations, etc (claude-code resources to facilitate and speed up things)
-[ ] Document the weekly strategy ussing a multi-folder organization
-[ ] Configure the day to day hooks (alarms, reminders, tasks) that force me to follow the weekly strategy, after that, just be consistent and do it!
-Obs!!! This seems complicated, but, it dont need to be, strategy should be optimized to one type of person that can generate me 100k a month, thats it! Executing 15k followers > idealizing 1kk followers
+### Definir um enforcer de estratégia de conteúdo (longo prazo, usar a analogia do iceberg do @jonascastromp4)
+[ ] Assistir de novo os reels que explicam o iceberg, anotar quais são as camadas de forma agnóstica
+[ ] Transformar o documento de camadas agnóstico num documento de "camadas de conteúdo" customizado para `pedro-miyasaki`
+[ ] Pensar numa estratégia semanal que faça o conteúdo seguir o documento de "camadas de conteúdo" do `pedro-miyasaki`
+    * A estratégia deve usar: skills, sub-agentes, pesquisa, automações etc (recursos do claude-code para facilitar e acelerar as coisas)
+[ ] Documentar a estratégia semanal usando uma organização em várias pastas
+[ ] Configurar os hooks do dia a dia (alarmes, lembretes, tarefas) que me forcem a seguir a estratégia semanal, depois disso, é só ser consistente e fazer!
+Obs!!! Isso parece complicado, mas não precisa ser, a estratégia deve ser otimizada para um tipo de pessoa que consiga me gerar 100k por mês, só isso! Executar 15k seguidores > idealizar 1kk seguidores
 
 ### Edit-video
-[ ] Refactor the edit video skill to in pedagogic mode use images and animations with brand book explaining the concepts
-    [ ] Test a video with > 5 editor observations and in this mode, lets see if it works, prompting while recording
+[ ] Refatorar a skill edit-video para, no modo pedagógico, usar imagens e animações com o brand book explicando os conceitos
+    [ ] Testar um vídeo com > 5 observações de editor nesse modo, ver se funciona, dando prompt enquanto grava
 
-### AI-powered Reels
-[ ] Reels pipeline with clone (Ygen)
+### Reels com IA
+[ ] Pipeline de Reels com clone (Ygen)
 
 ### Conhecimento
 [ ] If You Only Watch One Personal Brand Video, Make It This: https://www.youtube.com/watch?v=lRe3iKyAXQA

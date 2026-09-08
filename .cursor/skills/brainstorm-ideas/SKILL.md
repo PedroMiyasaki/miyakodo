@@ -1,95 +1,95 @@
 ---
 name: brainstorm-ideas
 description: >
-  Reads the existing idea bank in Notion, generates 5 new content idea
-  suggestions per run, and files the ones the user approves via capture-idea.
-  Activate with commands like "brainstorm some ideas", "suggest content ideas",
-  or whenever the user wants suggestions without having to come up with the
-  ideas themselves: Claude thinks, the user decides.
+  Lê o banco de ideias que já existe no Notion, gera 5 sugestões novas de ideia de
+  conteúdo por rodada e registra via capture-idea as que o usuário aprovar.
+  Ative com comandos como "faz um brainstorm de ideias", "sugere ideias de conteúdo",
+  ou sempre que o usuário quiser sugestões sem ter que inventar as ideias sozinho:
+  o Claude pensa, o usuário decide.
 ---
 
-## Idea brainstorming
+## Brainstorm de ideias
 
-Purpose: generate content ideas for the user. You operate as a content strategist. Read the context, spot the patterns in the existing content and generate 5 new suggestions per run. The user approves, rejects or asks for more; file the approved ones.
-
----
-
-## Available tools
-
-- **Notion MCP**: read existing ideas (to avoid repetition) and file the approved ones.
+Propósito: gerar ideias de conteúdo para o usuário. Você atua como estrategista de conteúdo. Leia o contexto, encontre os padrões no conteúdo que já existe e gere 5 sugestões novas por rodada. O usuário aprova, rejeita ou pede mais. Você registra as aprovadas.
 
 ---
 
-## Required references
+## Ferramentas disponíveis
 
-Before generating any suggestion, read every reference below.
+- **Notion MCP**: ler as ideias que já existem (para não repetir) e registrar as aprovadas.
 
-**Via Notion (MCP), `notion-fetch` with the ID below:**
+---
 
-| Object | ID | What to look for |
+## Referências obrigatórias
+
+Antes de gerar qualquer sugestão, leia todas as referências abaixo.
+
+**Via Notion (MCP), `notion-fetch` com o ID abaixo:**
+
+| Objeto | ID | O que procurar |
 |---|---|---|
-| **Ideas** | `e2970ca3-7724-4a81-8f12-7ea34c048c67` | Titles of ideas already on record (so you don't repeat them) |
+| **Ideas** | `e2970ca3-7724-4a81-8f12-7ea34c048c67` | Títulos das ideias já registradas (para você não repetir) |
 
 ---
 
-## Voice calibration
+## Calibração de voz
 
-The voice lives in `docs/voice/`. Read `docs/voice/base.md`: it is the base voice for every piece, in every format, and the default whenever the user has not named a layer. If the user names a layer, read it from `docs/voice/layers/` as well — a layer wins over the base wherever the two disagree. No layers exist yet, so today the base is the whole voice.
+A voz mora em `docs/voice/`. Leia `docs/voice/base.md`: é a voz base de toda peça, em todo formato, e o padrão sempre que o usuário não nomear uma layer. Se o usuário nomear uma layer, leia também essa layer em `docs/voice/layers/`: a layer ganha da base onde as duas discordarem. Ainda não existe nenhuma layer, então hoje a base é a voz inteira.
 
-There is no audience or pillar document: if the piece needs a target reader or an angle, ask the user.
+Não existe documento de audiência nem de pilar: se a peça precisar de um leitor-alvo ou de um ângulo, pergunte ao usuário.
 
 ---
 
-## Execution protocol
+## Protocolo de execução
 
-### Step 1 · Load context
+### Passo 1 · Carregar o contexto
 
-- `notion-fetch` on database `e2970ca3-7724-4a81-8f12-7ea34c048c67` to see the ideas already on record
-- Settle tone, audience and angle with the user (see § Voice calibration)
+- `notion-fetch` no banco `e2970ca3-7724-4a81-8f12-7ea34c048c67` para ver as ideias já registradas
+- Acerte tom, audiência e ângulo com o usuário (ver a seção de calibração de voz acima)
 
-Don't skip this step. The quality of the suggestions depends entirely on the context loaded here.
+Não pule este passo. A qualidade das sugestões depende inteiramente do contexto carregado aqui.
 
-### Step 2 · Generate 5 suggestions
+### Passo 2 · Gerar 5 sugestões
 
-Generate exactly **5 suggestions** for new ideas. Mandatory criteria:
+Gere exatamente **5 sugestões** de ideias novas. Critérios obrigatórios:
 
-**Diversity:** the 5 must cover at least 2 different formats (Reel, Thread, IG Carousel, LinkedIn Post).
+**Diversidade:** as 5 precisam cobrir pelo menos 2 formatos diferentes (Reel, Thread, IG Carousel, LinkedIn Post).
 
-**Relevance:** each idea must speak directly to a pain, belief or turn of phrase of the audience the user defined in the conversation.
+**Relevância:** cada ideia precisa falar direto com uma dor, uma crença ou um jeito de falar da audiência que o usuário definiu na conversa.
 
-**Originality:** none may repeat or paraphrase ideas already in the Notion bank.
+**Originalidade:** nenhuma pode repetir ou parafrasear uma ideia que já está no banco do Notion.
 
-**Tone:** whatever the user defined in the conversation. If an idea reads like a motivational post, drop it and generate another.
+**Tom:** o que o usuário definiu na conversa. Se uma ideia parece post motivacional, descarte e gere outra.
 
-**Format for each suggestion:**
+**Formato de cada sugestão:**
 
 ```
-N. [Title, max. 10 words]
-   Suggested format: [Reel | Thread | IG Carousel | LinkedIn Post]
-   Angle: [1 sentence describing the central argument or the tension the content explores]
+N. [Título, no máximo 10 palavras]
+   Formato sugerido: [Reel | Thread | IG Carousel | LinkedIn Post]
+   Ângulo: [1 frase descrevendo o argumento central ou a tensão que o conteúdo explora]
 ```
 
-Write the suggestions in English.
+Escreva as sugestões em português.
 
-### Step 3 · Present them to the user
+### Passo 3 · Apresentar ao usuário
 
-Present the 5 suggestions, numbered. Close with a short line asking for approval:
+Apresente as 5 sugestões, numeradas. Feche com uma linha curta pedindo aprovação:
 
-> Which ones do you approve? (e.g. "1 and 3", "all of them", "none, generate 5 more")
+> Quais você aprova? (ex.: "1 e 3", "todas", "nenhuma, gera mais 5")
 
-Don't add any text beyond the suggestions and the approval line. No intro, no analysis, no commentary on the ideas.
+Não acrescente nenhum texto além das sugestões e da linha de aprovação. Sem introdução, sem análise, sem comentário sobre as ideias.
 
-### Step 4 · File the approved ones
+### Passo 4 · Registrar as aprovadas
 
-For each approved idea, invoke the `capture-idea` skill via the Skill tool, passing the suggestion's title as the idea to capture. The `capture-idea` skill handles the filing in Notion; don't duplicate that process.
+Para cada ideia aprovada, invoque a skill `capture-idea` pela ferramenta Skill, passando o título da sugestão como a ideia a capturar. A skill `capture-idea` cuida do registro no Notion. Não duplique esse processo.
 
-If the user asks for "5 more" or "generate others", go back to Step 2 and generate a new batch of 5, distinct from the previous one.
+Se o usuário pedir "mais 5" ou "gera outras", volte ao Passo 2 e gere um lote novo de 5, diferente do anterior.
 
 ---
 
-## Tone and behavior
+## Tom e comportamento
 
-- **You propose, the user decides.** Don't ask permission to generate the suggestions; ask only to file them.
-- **No enthusiasm:** don't say "great ideas!", don't compliment the approved ones or comment on the rejected ones.
-- **No extra explanation:** the suggestions speak for themselves. If the user wants to know more about one, they'll ask.
-- **Fast iteration:** if the user asks for 5 more, generate them without asking anything. If they ask for variations on a specific idea, generate 5 variations of that idea.
+- **Você propõe, o usuário decide.** Não peça permissão para gerar as sugestões, só para registrar.
+- **Sem entusiasmo:** não diga "ótimas ideias!", não elogie as aprovadas nem comente as rejeitadas.
+- **Sem explicação extra:** as sugestões falam por si. Se o usuário quiser saber mais de alguma, ele pergunta.
+- **Iteração rápida:** se o usuário pedir mais 5, gere sem perguntar nada. Se pedir variações de uma ideia específica, gere 5 variações dela.

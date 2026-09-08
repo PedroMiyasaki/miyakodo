@@ -3,100 +3,102 @@ id: subtitles
 phase: render
 ---
 
-# Feature · Subtitles
+# Feature · Legendas do vídeo
 
-## What it does
-Burns captions into the video (does not rely on Instagram's auto-caption).
-Three things define the look, and only the first is mechanical:
+## O que faz
+Queima as legendas no vídeo (não depende da legenda automática do Instagram).
+Três coisas definem o visual, e só a primeira é mecânica:
 
-- **Sentence case**, as transcribed. Uppercase only where the language wants it
-  — names, acronyms, the start of a sentence. Never a blanket `.upper()`.
-- **Words accumulate two at a time inside a block**, then the block clears and
-  the next one starts. Not a fresh pair flashing every 400ms.
-- **The Alvinegro faces**: Bricolage Grotesque ExtraBold for the line,
-  Newsreader italic for a word under emphasis, which also inverts.
+- **Sentence case**, como foi transcrito. Maiúscula só onde a língua pede:
+  nomes, siglas, começo de frase. Nunca um `.upper()` geral.
+- **As palavras se acumulam de duas em duas dentro de um bloco**, aí o bloco
+  limpa e o próximo começa. Não é um par novo piscando a cada 400ms.
+- **As fontes do Alvinegro**: Bricolage Grotesque ExtraBold para a linha,
+  Newsreader itálico para a palavra em ênfase, que também inverte.
 
-The file is `<edit>/master.ass` — **ASS, not SRT**. SRT carries exactly one
-style for the whole file and ffmpeg's SRT parser strips `{\...}` override tags
-*silently*, so per-word emphasis renders as plain text and you think it worked.
-ASS was the upgrade path this feature was always pointing at; it is now the
-only path.
+O arquivo é `<edit>/master.ass`, **ASS, não SRT**. O SRT carrega exatamente um
+estilo para o arquivo inteiro, e o parser de SRT do ffmpeg descarta as tags de
+override `{\...}` *em silêncio*, então a ênfase por palavra renderiza como texto
+comum e você acha que funcionou. O ASS era o caminho de upgrade para onde esta
+feature sempre apontou. Agora é o único caminho.
 
-The timeline is the **output** timeline (after the dead-air cuts).
+A timeline é a timeline de **output** (depois dos cortes de tempo morto).
 
-`video-use` Hard Rule 1: subtitles go in **last** in the composite — no overlay
-may cover them.
+Hard Rule 1 do `video-use`: as legendas entram por **último** no composite, e
+nenhum overlay pode cobrir elas.
 
-## On by default — final render only
+## Ligadas por padrão, só no render final
 
-Every mode ships burned-in captions. **But they are burned only on the final
-render**, never on a preview.
+Todo modo sai com legendas queimadas. **Mas elas só são queimadas no render
+final**, nunca num preview.
 
-The reason is cost, not taste. Building `master.ass` is cheap (it reads the
-cached transcripts off disk), but burning through libass forces a full re-encode
-of the composite, and previews exist to be re-rendered a dozen times while the
-cut is still moving. Captions on every iteration would tax each round-trip for
-an output nobody is reading yet.
+O motivo é custo, não gosto. Montar o `master.ass` é barato (ele lê as
+transcrições cacheadas do disco), mas queimar pelo libass força um re-encode
+completo do composite, e os previews existem para serem re-renderizados uma
+dúzia de vezes enquanto o cut ainda está mudando. Legendas em toda iteração
+encareceriam cada rodada por um output que ninguém está lendo ainda.
 
-| Render | Captions |
+| Render | Legendas |
 |---|---|
-| `--preview` (iteration) | **never** — no `--subtitles`, no `master.ass` |
-| `final.mp4` (after "done") | **always**, unless the user turned them off |
+| `--preview` (iteração) | **nunca**: sem `--subtitles`, sem `master.ass` |
+| `final.mp4` (depois do "pronto") | **sempre**, a não ser que o usuário tenha desligado |
 
-The user turns them off by saying so ("sem legenda", "no subtitles", "skip the
-captions"). Then the final renders like a preview: no `subtitles` in the EDL, no
-`--subtitles`, no `master.ass`.
+O usuário desliga dizendo isso ("sem legenda", "sem legendas", "pula as
+legendas"). Aí o final renderiza como um preview: sem `subtitles` no EDL, sem
+`--subtitles`, sem `master.ass`.
 
-The words being burned are the ones already approved in the previews, so there
-is nothing to review twice — the cut is locked before the captions exist.
+As palavras queimadas são as que já foram aprovadas nos previews, então não tem
+nada para revisar duas vezes: o cut fecha antes de as legendas existirem.
 
-## The two styles
+## Os dois estilos
 
-`master.ass` ships a `[V4+ Styles]` block with exactly two entries. Every size
-is written as a fraction of the real output height, and `PlayResX/Y` is the real
-canvas, so the same numbers hold whatever the phone shot.
+O `master.ass` sai com um bloco `[V4+ Styles]` com exatamente duas entradas.
+Todo tamanho é escrito como fração da altura real do output, e `PlayResX/Y` é o
+canvas real, então os mesmos números valem seja qual for a resolução que o
+celular gravou.
 
-| Style | Face | Look |
+| Estilo | Fonte | Visual |
 |---|---|---|
-| `BODY` | Bricolage Grotesque ExtraBold | White, **no outline** — a drop shadow is the only separation from the footage. The default for every cue. |
-| `EMPH` | Newsreader italic, 2pt up | **Inverted** — near-black glyph inside a fat white outline. Reads as a highlighter over footage. |
+| `BODY` | Bricolage Grotesque ExtraBold | Branco, **sem contorno**: uma sombra projetada é a única separação da imagem. O padrão de toda cue. |
+| `EMPH` | Newsreader itálico, 2pt maior | **Invertido**: glifo quase preto dentro de um contorno branco grosso. Lê como marca-texto sobre a imagem. |
 
-`BODY` running edge-free is a deliberate call, and it is the one setting that
-depends on the footage: white on a blown-out wall or a white shirt survives on
-the shadow alone, but only just. If a take is bright enough to lose the text,
-raise `Shadow` before you reach for `Outline` — the black edge is what made the
-old captions read as auto-generated.
+O `BODY` rodar sem contorno é uma escolha deliberada, e é o único ajuste que
+depende da imagem: branco sobre uma parede estourada ou uma camisa branca
+sobrevive só com a sombra, mas por pouco. Se um take for claro o bastante para
+perder o texto, aumente `Shadow` antes de recorrer a `Outline`: a borda preta é
+o que fazia as legendas antigas parecerem geradas automaticamente.
 
-`EMPH` is the brand's accent, and the brand has no accent *colour*:
-`design/identity.md` says inversion is the accent, and this is inversion. Do not
-introduce a hue to make a word pop. The serif italic against the grotesque is
-already a hard tonal break — that plus the inversion is the whole device.
+O `EMPH` é o acento da marca, e a marca não tem *cor* de acento: o
+`design/identity.md` diz que a inversão é o acento, e isto é inversão. Não
+introduza um matiz para destacar uma palavra. O itálico serifado contra a
+grotesca já é uma quebra tonal dura. Isso mais a inversão é o dispositivo
+inteiro.
 
-Switch mid-cue with `\r<style>`:
+Troque no meio da cue com `\r<style>`:
 
 ```
 Dialogue: 0,0:00:03.10,0:00:04.40,BODY,,0,0,0,,não vai\h\h{\rEMPH}substituir{\r}
 ```
 
-`\rEMPH` restores *every* property of that style, `BorderStyle` included — no
-other tag can change border style inline. `\r` alone returns to the cue's own
-style. The `\h\h` before it is load-bearing: `EMPH`'s outline is fat enough to
-swallow a normal space and butt the words together.
+`\rEMPH` restaura *todas* as propriedades daquele estilo, `BorderStyle`
+inclusive. Nenhuma outra tag muda border style inline. `\r` sozinho volta ao
+estilo da própria cue. O `\h\h` antes dele é estrutural: o contorno do `EMPH` é
+grosso o bastante para engolir um espaço normal e colar as palavras.
 
-**Fonts.** Neither face is installed on Windows. The TTFs live in
-`assets/fonts/` and the renderer copies them into `<edit>/fonts/`, which is
-passed as `fontsdir=fonts` — relative, because an absolute Windows path breaks
-the filter arg on the drive colon. If a caption comes out in a fallback sans,
-that copy is what failed.
+**Fontes.** Nenhuma das duas está instalada no Windows. Os TTFs ficam em
+`assets/fonts/` e o renderer copia eles para `<edit>/fonts/`, que é passado
+como `fontsdir=fonts`, relativo, porque um caminho absoluto do Windows quebra o
+argumento do filtro nos dois-pontos do drive. Se uma legenda sair numa sans de
+fallback, foi essa cópia que falhou.
 
-## How to run it
+## Como rodar
 
-At the final render — not before:
+No render final, não antes:
 
-1. In `edl.json`, declare `"subtitles": "master.ass"` (path relative to
+1. No `edl.json`, declare `"subtitles": "master.ass"` (caminho relativo a
    `<edit>/`).
-2. Run the renderer **with** `--subtitles`. It builds `master.ass` from the
-   transcripts + ranges and burns it via libass:
+2. Rode o renderer **com** `--subtitles`. Ele monta o `master.ass` a partir das
+   transcrições + ranges e queima via libass:
 
 ```bash
 PYTHONUTF8=1 VIRTUAL_ENV= uv run --no-sync --project "$HOME/.claude/skills/video-use" \
@@ -104,108 +106,115 @@ PYTHONUTF8=1 VIRTUAL_ENV= uv run --no-sync --project "$HOME/.claude/skills/video
   "<edit>/edl.json" -o "<edit>/final.mp4" --subtitles
 ```
 
-3. **Pass the generated `master.ass` through the edit below**, then run the same
-   command again to burn the edited file.
+3. **Passe o `master.ass` gerado pela edição abaixo**, depois rode o mesmo
+   comando de novo para queimar o arquivo editado.
 
-The renderer only builds `master.ass` when it is missing — an existing one is
-reused as-is, so your edit survives re-renders. To start over from the
-transcripts, delete the file.
+O renderer só monta o `master.ass` quando ele não existe. Um existente é
+reaproveitado como está, então a sua edição sobrevive aos re-renders. Para
+recomeçar do zero a partir das transcrições, apague o arquivo.
 
-## The edit — the part that stops it looking auto-generated
+## A edição — a parte que tira a cara de legenda automática
 
-The generator is deliberately dumb. It groups on punctuation, caps blocks at six
-words, reveals two at a time and wraps at eighteen characters. That is a
-skeleton with a correct pulse, not a finished caption track. **Read it against
-the audio and edit it.** Three moves, in order of how much they buy.
+O gerador é burro de propósito. Ele agrupa por pontuação, limita os blocos a
+seis palavras, revela de duas em duas e quebra a linha em dezoito caracteres.
+Isso é um esqueleto com o pulso certo, não uma trilha de legenda pronta. **Leia
+contra o áudio e edite.** Três movimentos, em ordem de quanto cada um rende.
 
-### 1. Regroup by breath, not by count
+### 1. Reagrupe por respiração, não por contagem
 
-A block should be a unit someone would actually say in one push. Merge or split
-the generator's blocks until they are — then vary the length on purpose.
+Um bloco tem que ser uma unidade que alguém diria de uma vez só. Junte ou divida
+os blocos do gerador até ficarem assim, e aí varie o tamanho de propósito.
 
-| Line does this | Block |
+| A linha faz isso | Bloco |
 |---|---|
-| Runs, connects, sets up | 5–6 words, revealed in three steps |
-| Lands, turns, contradicts | 2–3 words, one or two steps |
-| **The punchline** | 1–2 words, alone, nothing before it on screen |
+| Corre, conecta, prepara | 5–6 palavras, reveladas em três passos |
+| Aterrissa, vira, contradiz | 2–3 palavras, um ou dois passos |
+| **A punchline** | 1–2 palavras, sozinha, nada antes dela na tela |
 
-The variation *is* the effect. A six-word block followed by a two-word block
-reads as acceleration even though nothing moved.
+A variação *é* o efeito. Um bloco de seis palavras seguido de um bloco de duas
+lê como aceleração mesmo sem nada ter se movido.
 
-### 2. Vary how a block assembles
+### 2. Varie como o bloco se monta
 
-Two words at a time is the default, not a rule, and the generator applies it
-uniformly because it cannot hear the take. You can.
+Duas palavras por vez é o padrão, não uma regra, e o gerador aplica isso
+uniformemente porque não consegue ouvir o take. Você consegue.
 
-- A line delivered fast can arrive **whole** — one cue, no reveal.
-- A list can arrive **one word per step**, each item landing on its own beat.
-- A turn can **hold the setup, then drop the last word alone** after a longer
-  gap than the speech strictly needs.
-- A line can break where the *voice* breaks, not where eighteen characters ran
-  out. Move the `\N`.
+- Uma linha dita rápido pode chegar **inteira**: uma cue, sem revelar aos
+  poucos.
+- Uma lista pode chegar **uma palavra por passo**, cada item caindo no próprio
+  beat.
+- Uma virada pode **segurar a preparação e aí soltar a última palavra sozinha**,
+  depois de um intervalo maior do que a fala exige.
+- Uma linha pode quebrar onde a *voz* quebra, não onde os dezoito caracteres
+  acabaram. Mova o `\N`.
 
-Nothing here is a fixed behaviour to reproduce. Watch what the delivery does and
-build the block that matches it.
+Nada aqui é um comportamento fixo para reproduzir. Veja o que a entrega faz e
+monte o bloco que combina com ela.
 
-### 3. Emphasise the words the delivery already hits
+### 3. Dê ênfase às palavras que a entrega já acerta
 
-Two devices, and they stack:
+Dois dispositivos, e eles se somam:
 
-**Isolation** — give a word the frame to itself and hold it a beat longer than
-the speech needs. Free, and it works on any word.
+**Isolamento**: deixe a palavra sozinha no frame e segure um beat a mais do que
+a fala precisa. De graça, e funciona com qualquer palavra.
 
-**`\rEMPH`** — the serif italic inversion, for the word the whole line exists to
-deliver. Budget: **2–4 in a 45-second Reel, at most one per block.** More than
-that and every word is emphasised, which is the same as none. A word marked
-`EMPH` should be one you would lean on if you read the line out loud; if you are
-reaching for the second one in a block, the first was the wrong choice.
+**`\rEMPH`**: a inversão em itálico serifado, para a palavra que a linha inteira
+existe para entregar. Orçamento: **2–4 num Reel de 45 segundos, no máximo uma
+por bloco.** Mais que isso e toda palavra fica enfatizada, o que é o mesmo que
+nenhuma. Uma palavra marcada `EMPH` tem que ser uma em que você se apoiaria se
+lesse a linha em voz alta. Se você está procurando a segunda num bloco, a
+primeira foi a escolha errada.
 
-### 4. Hold through the pause
+### 4. Segure na pausa
 
-The generator already extends a block's last cue up to 0.6s into the silence
-after it, stopping before the next block and never across a segment's hard cut.
-Lengthen those holds where the delivery actually rests, and shorten them where
-the next line comes in hot. Never bridge a cut.
+O gerador já estende a última cue de um bloco até 0.6s dentro do silêncio
+seguinte, parando antes do próximo bloco e nunca cruzando o corte seco de um
+segmento. Alongue essas seguradas onde a entrega realmente descansa, e encurte
+onde a linha seguinte entra em cima. Nunca atravesse um corte.
 
-### Where the line is
-The subject is serious; the captions carry the seriousness. No karaoke word-pop,
-no bounce, no per-word colour cycling, no emoji. What is borrowed from viral
-editing is **pacing and one emphasis device** — the sense that the text is
-reacting to the speech instead of ticking alongside it.
+### Onde fica o limite
+O assunto é sério, e as legendas carregam a seriedade. Sem pop de palavra estilo
+karaokê, sem bounce, sem cor ciclando por palavra, sem emoji. O que a gente pega
+emprestado da edição viral é **ritmo e um único dispositivo de ênfase**: a
+sensação de que o texto está reagindo à fala em vez de correr do lado dela.
 
-`\t` (animated transforms) and `\fad` work in ASS and are deliberately not used.
-If a Reel ever needs motion on a word, that is a decision about the system: it
-goes in this file first, with a budget, or it does not get used.
+`\t` (transformações animadas) e `\fad` funcionam no ASS e não são usados de
+propósito. Se algum Reel um dia precisar de movimento numa palavra, isso é uma
+decisão sobre o sistema: entra neste arquivo primeiro, com orçamento, ou não é
+usado.
 
-## Self-eval
-On the final (the previews have no captions to check):
+## Autoavaliação
+No final (os previews não têm legenda para conferir):
 
-- **Case** — sentence case, not a wall of caps.
-- **Rhythm** — scan the block sizes down the file. **If every block is six words
-  revealed in three even steps, the edit did not happen.**
-- **Emphasis** — count the `\rEMPH` runs. More than ~4 in a 45s Reel means back
-  off. Zero is also a finding: a Reel with no line worth leaning on is usually a
-  script problem, not a caption one.
-- **Fonts** — the burn is grotesque, not a fallback sans. If it looks like
-  Arial, `<edit>/fonts/` is empty.
-- **Hard Rule 1** — no overlay hides the captions' band. If one does, reposition
-  the *overlay*, never the captions.
+- **Caixa**: sentence case, não um paredão de maiúsculas.
+- **Ritmo**: passe o olho nos tamanhos de bloco ao longo do arquivo. **Se todo
+  bloco tem seis palavras reveladas em três passos iguais, a edição não
+  aconteceu.**
+- **Ênfase**: conte os `\rEMPH`. Mais de ~4 num Reel de 45s é sinal de recuar.
+  Zero também é um achado: um Reel sem nenhuma linha em que valha se apoiar
+  costuma ser problema de roteiro, não de legenda.
+- **Fontes**: a queima está em grotesca, não numa sans de fallback. Se parece
+  Arial, `<edit>/fonts/` está vazia.
+- **Hard Rule 1**: nenhum overlay esconde a faixa das legendas. Se algum
+  esconder, reposicione o *overlay*, nunca as legendas.
 
-**They share the lower third with the news/reference cards.** The caption block
-sits at 31.25% of the frame height from the bottom and **grows upward** as words
-accumulate, so a three-line block reaches higher than a one-line block does. The
-card is centred in the lower third at ~70% of its height. That was already a
-couple of percent of air with fixed-height SRT cues; with a block that grows, it
-is the accumulating cues you have to check, not the first one. If they touch,
-move the **card** up (`news_insert.py`'s geometry), never the captions down.
+**Elas dividem o terço inferior com os cards de notícia/referência.** O bloco de
+legenda fica a 31.25% da altura do frame a partir de baixo e **cresce para
+cima** conforme as palavras se acumulam, então um bloco de três linhas chega
+mais alto que um de uma linha. O card fica centralizado no terço inferior com
+~70% da altura dele. Com cues de SRT de altura fixa isso já era uns dois por
+cento de ar. Com um bloco que cresce, o que você tem que conferir são as cues
+acumuladas, não a primeira. Se encostarem, suba o **card** (a geometria do
+`news_insert.py`), nunca desça as legendas.
 
-An overlay window that moves here needs the final re-rendered, so check it
-before handing the file over.
+Uma janela de overlay que muda aqui exige re-renderizar o final, então confira
+antes de entregar o arquivo.
 
-## Self-check
-`assets/test_captions.py` asserts the accumulation, the contiguous reveal steps,
-the hold-through-pause bounds and the preserved case, then burns a frame to
-prove the fonts resolve and `\rEMPH` survives libass:
+## Autoteste
+`assets/test_captions.py` verifica a acumulação, os passos de revelação
+contíguos, os limites da segurada na pausa e a caixa preservada, e depois queima
+um frame para provar que as fontes resolvem e que o `\rEMPH` sobrevive ao
+libass:
 
 ```bash
 PYTHONUTF8=1 VIRTUAL_ENV= uv run --no-sync --project "$HOME/.claude/skills/video-use" \

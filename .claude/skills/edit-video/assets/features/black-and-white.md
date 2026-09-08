@@ -4,56 +4,56 @@ phase: plate
 industry: B&W grade window / desaturate pass
 ---
 
-# Feature · Black and white (B&W grade window)
+# Feature · Preto e branco (janela de grade P&B)
 
-## Industry name
-A temporal **desaturation** window (saturation → 0) on the shot. In cutting
-rooms it usually shows up as a **B&W grade**, a **flashback grade** or, when it
-marks someone else's speech / irony, a **diegetic imitation grade** — the grade
-changes to signal “I am quoting / impersonating another voice now”, not a
-literal flashback.
+## Nome na indústria
+Uma janela temporal de **dessaturação** (saturação → 0) no plano. Na ilha de
+edição costuma aparecer como **B&W grade**, **flashback grade** ou, quando marca
+a fala de outra pessoa / ironia, **diegetic imitation grade**: a colorização muda
+para sinalizar "agora estou citando / imitando outra voz", não um flashback
+literal.
 
-## What it does
-For a short stretch, the talking-head (the **plate**) goes black and white.
-Outside the window, normal colour. It serves to:
+## O que faz
+Por um trecho curto, o talking-head (o **plate**) fica em preto e branco. Fora
+da janela, cor normal. Serve para:
 
-- impersonate the sceptical counterpart
-- mark criticism / “the voice of the market”
-- highlight an argument you are rebutting
+- imitar o interlocutor cético
+- marcar crítica / "a voz do mercado"
+- destacar um argumento que você está rebatendo
 
-## Contextual example
-You explain that a guardrail is an **external** mechanism. Then you impersonate
-the objection:
+## Exemplo em contexto
+Você explica que um guardrail é um mecanismo **externo**. Aí você imita a
+objeção:
 
-> “Yeah, but can't you just put the rule in the prompt?”
+> "Tá, mas não dá para só colocar a regra no prompt?"
 
-On that stretch: **B&W** (and, for extra weight, `zoom-emphasis` `fast` over the
-same range — the classic “get inside the objection's head” combo).
+Nesse trecho: **P&B** (e, para dar mais peso, `zoom-emphasis` `fast` sobre o
+mesmo intervalo: o combo clássico de "entrar na cabeça da objeção").
 
-When you go back to your own voice / answer, the colour returns (end of the
-window).
+Quando você volta para a sua própria voz / resposta, a cor volta (fim da
+janela).
 
-Explicit direction during the recording (an editor note) also counts — and
-prevails:
+Instrução explícita durante a gravação (uma nota de editor) também conta, e
+prevalece:
 
-> …“Well, I can just put a rule in the prompt” **“on that impression bit, go
-> black and white”** And you could actually…
+> …"Ah, eu posso só colocar uma regra no prompt" **"nessa parte da imitação,
+> vai para preto e branco"** E na verdade você poderia…
 
-Apply B&W to the impression; **cut** the spoken direction itself from the
-video/subtitles (`SKILL.md` § Editor notes).
+Aplique o P&B na imitação e **corte** a instrução falada em si do vídeo e das
+legendas (ver a seção de notas de editor da `SKILL.md`).
 
-## Parameters (defaults)
+## Parâmetros (padrões)
 
-| Param | Default | Notes |
+| Parâmetro | Padrão | Notas |
 |---|---|---|
-| `start_in_output` / `end_in_output` | the impression's window | typically 1.5–4s |
-| Desaturation fade in/out | 80–120ms | avoids a “hard cut” of colour |
-| Scope | **the plate only** | third-band overlays (motion / news) and subtitles do **not** inherit the B&W — they stay coloured on top, unless the beat calls for the opposite |
+| `start_in_output` / `end_in_output` | a janela da imitação | tipicamente 1.5–4s |
+| Fade in/out da dessaturação | 80–120ms | evita um "corte seco" de cor |
+| Escopo | **só o plate** | overlays de terço (motion / news) e legendas **não** herdam o P&B: ficam coloridos por cima, a não ser que o beat peça o contrário |
 
-## How to run it
+## Como rodar
 
-1. Mark on the output timeline the range where the voice is “the other person”
-   (impression) or the staged criticism.
+1. Marque na timeline de output o intervalo em que a voz é "a outra pessoa"
+   (imitação) ou a crítica encenada.
 2. EDL:
 
 ```json
@@ -66,27 +66,27 @@ video/subtitles (`SKILL.md` § Editor notes).
 ]
 ```
 
-> The `type` string is the literal the renderer matches on — keep it exactly as
-> written above.
+> A string `type` é o literal que o renderer compara. Mantenha exatamente como
+> está escrito acima.
 
-3. In the plate render: `hue=s=0` (or equivalent) enabled between start/end,
-   with short fades at the edges.
+3. No render do plate: `hue=s=0` (ou equivalente) ligado entre start/end, com
+   fades curtos nas bordas.
 
 ## Combos
-- **With `zoom-emphasis`:** allowed and desirable on impressions (“punch-in +
-  B&W”).
-- **With `pop-it`:** avoid it in the same window — pop-it is an affirmative
-  list; B&W is someone else's voice / criticism.
-- **With `motion-third`:** fine; the diagram in the upper third stays in colour,
-  the face below goes B&W.
+- **Com `zoom-emphasis`:** permitido e desejável em imitações ("punch-in +
+  P&B").
+- **Com `pop-it`:** evite na mesma janela: o pop-it é lista afirmativa, o P&B é
+  voz de outra pessoa / crítica.
+- **Com `motion-third`:** tranquilo: o diagrama no terço superior fica em cor, o
+  rosto embaixo vai para P&B.
 
-## Hard rules
-- Short window. B&W that runs too long becomes an aesthetic, not a signal.
-- Back to colour **before** the final CTA (the close of the piece stays in
-  colour, unless the user explicitly asks otherwise).
+## Regras duras
+- Janela curta. P&B que dura demais vira estética, não sinal.
+- De volta à cor **antes** do CTA final (o fecho da peça fica em cor, a não ser
+  que o usuário peça explicitamente o contrário).
 
 ## Status
-Implemented. `render_vertical.py` reads `plate_effects` and applies `hue=s=`
-with edge ramps (`fade`, default 100ms) on the plate, before the overlays — so
-third-band cards and subtitles stay coloured on top.
-Self-check: `assets/test_plate_effects.py`.
+Implementada. O `render_vertical.py` lê `plate_effects` e aplica `hue=s=` com
+rampas nas bordas (`fade`, padrão 100ms) no plate, antes dos overlays, então os
+cards de terço e as legendas ficam coloridos por cima.
+Autoteste: `assets/test_plate_effects.py`.

@@ -1,166 +1,154 @@
 # CLAUDE.md
 
-This file guides Claude Code (claude.ai/code) when working in this repository.
+Este arquivo orienta o Claude Code (claude.ai/code) quando ele trabalha neste repositório.
 
-## What this repo is
+## O que é este repositório
 
-This repo holds the user's content production: Reel scripts, threads, carousels and LinkedIn posts. It is not a software project. Everything that looks like "code" here is really content. Production runs through skills plus the Notion MCP.
+Este repositório guarda a produção de conteúdo do usuário: roteiros de Reel, threads, carrosséis e posts de LinkedIn. Não é um projeto de software. Tudo que parece "código" aqui é conteúdo. A produção roda por skills mais o MCP do Notion.
 
-Practically, that means there is no build, no test suite and no linter. The deliverable is text and image assets, not software.
+Na prática, isso quer dizer que não existe build, não existe suíte de testes e não existe linter. O que sai daqui é texto e imagem, não software.
 
-**Current state: the repo is in transition.** The former brand was removed — strategy documents, visual system and logos are gone — and the new direction, a personal brand, is still being built out.
+**Estado atual: o repositório está em transição.** A marca antiga foi removida (documentos de estratégia, sistema visual e logos foram embora) e a direção nova, uma marca pessoal, ainda está sendo montada.
 
-Rebuilt so far: the base voice (`docs/voice/base.md`), the weekend cadence (`content-routines/default/`) and the visual system (`design/identity.md`). Deliberately absent, not pending: there is no audience document and no content-pillar document — both were dropped to simplify the process. If a piece needs a target reader or an angle, ask the user.
+Já reconstruído: a voz base (`docs/voice/base.md`), a cadência de fim de semana (`content-routines/default/`) e o sistema visual (`design/identity.md`). Ausência deliberada, não pendência: não existe documento de audiência nem documento de pilares de conteúdo. Os dois foram cortados para simplificar o processo. Se uma peça precisa de um leitor-alvo ou de um ângulo, pergunte ao usuário.
 
-**Language.** The repo works in English: skills, docs, this file, the Notion schema and the conversation. **Published pieces are a separate call** — a script, carousel, thread, LinkedIn post or Substack article ships in whatever language the user asks for, pt-BR included. Default to English when they do not say; follow their lead when they do, and do not push back on it.
-## How work flows here
+**Idioma.** O repositório trabalha em português do Brasil: skills, docs, este arquivo e a conversa. As peças publicadas (roteiro, carrossel, thread, post de LinkedIn, artigo de Substack) saem em português do Brasil. O schema do Notion (nomes de propriedades e valores) fica em inglês: o banco de ideias é um só.
 
-The point of this repo is producing good content with little friction. When the user asks for a post, script, thread, carousel or idea capture, invoke the matching skill and deliver the best possible draft instead of forcing the request through a rigid process.
+## Como o trabalho flui aqui
 
-The flow is direct, with no intermediate brief step: an idea is captured in the **Ideas** database → a content skill (`write-script`, `carousel`, `write-thread`, `build-linkedin`, `write-substack`) reads the idea, then writes and refines the draft locally in `posts/<type>/<slug>/sketch/` for as many iterations as it takes → once the user confirms "done", the final version is copied to `posts/<type>/<slug>/final.md`. There is no intermediate publishing database: the piece lives locally, and the only write back to Notion happens at "done" (`Status` → `Processed`, plus the `Format` that was produced).
+A razão de ser deste repositório é produzir conteúdo bom com pouco atrito. Quando o usuário pede um post, um roteiro, uma thread, um carrossel ou a captura de uma ideia, invoque a skill correspondente e entregue o melhor rascunho possível, em vez de forçar o pedido por um processo rígido.
 
-Every content production skill carries the same standardized closing step: **record `Status` → `Processed` and the piece's `Format`** at "done". Those two fields are what accumulate the real picture of the calendar in the database — an idea is born without a format, and the format is decided during production. This list of skills is not closed: when creating a new production skill, copy the closing step from an existing one.
+O fluxo é direto, sem etapa de brief no meio: a ideia é capturada no banco **Ideas** → uma skill de conteúdo (`write-script`, `carousel`, `write-thread`, `build-linkedin`, `write-substack`) lê a ideia, escreve e refina o rascunho localmente em `posts/<type>/<slug>/sketch/` por quantas iterações forem necessárias → quando o usuário confirma "pronto", a versão final é copiada para `posts/<type>/<slug>/final.md`. Não existe banco intermediário de publicação: a peça mora localmente, e a única escrita de volta no Notion acontece no "pronto" (`Status` → `Processed`, mais o `Format` que foi produzido).
 
-**`write-substack` is the one documented exception, and only on its reuse path.** The article rewrites a thesis whose idea was already closed by the Reel, and an idea carries a single `Format`. Writing `Substack` over it would erase the primary format and corrupt the calendar picture the database accumulates, so the reuse path writes nothing to Notion at all. Run standalone on a fresh `Pending` idea, the skill closes it normally with `Format` → `Substack`. Do not "fix" the reuse path to match the other skills.
+Toda skill de produção de conteúdo carrega o mesmo passo de fechamento padronizado: **registrar `Status` → `Processed` e o `Format` da peça** no "pronto". São esses dois campos que acumulam a foto real do calendário no banco: uma ideia nasce sem formato, e o formato é decidido durante a produção. Essa lista de skills não é fechada: ao criar uma skill de produção nova, copie o passo de fechamento de uma existente.
 
-**`carousel` is the exception to the write-then-build split.** It produces copy *and* art in one skill, because for a carousel the two are one deliverable: the headline is the visual anchor, a locked template only holds if the copy has a repeating shape, and a copy edit is often the right fix for a visual problem. Its craft standard lives in `.claude/skills/carousel/assets/carousel-craft.md`, reverse-engineered from the viral corpus in `examples/carousels/`, and it governs both halves. Threads keep the split (`write-thread` → `build-thread-carousel`), because a thread ships as text and the carousel is an optional derivative.
+**`write-substack` é a única exceção documentada, e só no caminho de reuso.** O artigo reescreve uma tese cuja ideia já foi fechada pelo Reel, e uma ideia carrega um único `Format`. Escrever `Substack` por cima apagaria o formato primário e corromperia a foto do calendário que o banco acumula, então o caminho de reuso não escreve nada no Notion. Rodando sozinha numa ideia `Pending` nova, a skill fecha a ideia normalmente com `Format` → `Substack`. Não "conserte" o caminho de reuso para ficar igual às outras skills.
 
-Skills are invoked through natural English commands (e.g. "write the script for the last idea", "make a carousel", "write a LinkedIn post"), **not** slash commands. They live in `.claude/skills/<skill-name>/SKILL.md` and are discovered automatically. When a request matches one, invoke it via the Skill tool.
+**`carousel` é a exceção à divisão escrever-depois-montar.** Ela produz copy *e* arte numa skill só, porque num carrossel os dois são uma entrega só: a headline é a âncora visual, um template travado só se sustenta se a copy tem uma forma que se repete, e mexer na copy costuma ser a correção certa para um problema visual. O padrão de craft dela mora em `.claude/skills/carousel/assets/carousel-craft.md`, extraído por engenharia reversa do corpus viral em `examples/carousels/`, e governa as duas metades. Threads mantêm a divisão (`write-thread` → `build-thread-carousel`), porque uma thread sai como texto e o carrossel é um derivado opcional.
 
-`writing-feedback` is the meta-skill: at the end of a production session the user invokes it to consolidate every tone and writing correction made during the conversation into permanent rules in the voice folder — `docs/voice/base.md` by default, or a named layer in `docs/voice/layers/`.
+As skills são invocadas por comandos naturais em português (por exemplo "escreve o roteiro da última ideia", "faz um carrossel", "escreve um post pro LinkedIn"), **não** por slash commands. Elas moram em `.claude/skills/<skill-name>/SKILL.md` e são descobertas automaticamente. Quando um pedido bate com uma delas, invoque pela ferramenta Skill.
 
-## Content routines
+`writing-feedback` é a meta-skill: no fim de uma sessão de produção o usuário invoca ela para consolidar toda correção de tom e de escrita feita na conversa em regras permanentes na pasta de voz, `docs/voice/base.md` por padrão, ou uma layer nomeada em `docs/voice/layers/`.
 
-`content-routines/` holds the operating cadence — when the work happens, as opposed to how a single piece is made. `default/` is the normal weekend; `maintainance/` is the travel mode, where nothing is recorded and the week runs on 7 carousels instead of 5 reels. Another cadence (a weekday mode, a launch week) becomes a sibling folder. **A change to the cadence lands in both modes** — the weekly Substack article, for instance, is fired first thing on Sunday and published that same Sunday in each.
+## Rotinas de conteúdo
 
-The default mode produces and schedules the whole week across two days. Monday to Friday nothing is produced.
+`content-routines/` guarda a cadência de operação: quando o trabalho acontece, em oposição a como uma peça é feita. `default/` é o fim de semana normal. `maintainance/` é o modo viagem, em que nada é gravado e a semana roda com 7 carrosséis em vez de 5 reels. Outra cadência (um modo de dia de semana, uma semana de lançamento) vira uma pasta irmã. **Uma mudança na cadência entra nos dois modos.** O artigo semanal do Substack, por exemplo, é disparado logo cedo no domingo e publicado nesse mesmo domingo em cada um.
 
-| File | What it is |
+O modo default produz e agenda a semana inteira em dois dias. De segunda a sexta nada é produzido.
+
+| Arquivo | O que é |
 |---|---|
-| `default/README.md` | What the week produces, the 🔥 definition, why the setup is what it is, stock rules |
-| `default/saturday.md` | 5 scripts → batch recording → move files → fire the first edit pass |
-| `default/sunday.md` | Fire the article → review the 5 cuts → 3 LinkedIn posts → publish and schedule the week |
+| `default/README.md` | O que a semana produz, a definição de 🔥, por que o setup é o que é, regras de stock |
+| `default/saturday.md` | 5 roteiros → gravação em lote → mover os arquivos → disparar a primeira passada de edição |
+| `default/sunday.md` | Disparar o artigo → revisar os 5 cortes → 3 posts de LinkedIn → publicar e agendar a semana |
 
-Output per week: **5 reels (Instagram) + 3 technical LinkedIn posts + 1 illustrated Substack article = 9 posts from 5 recordings.** The LinkedIn posts reuse ideas the reels came from, and the article usually takes one of those deeper still, so one idea works up to three times. The article is the exception that may come from outside the five: it is written and published on the same Sunday, and that zero lag is what makes it the only slot where perishable news is allowed. Its LinkedIn sibling goes out Monday and links back to it, which is where cold reach turns into subscribers. The same 5 Claude Code sessions carry both days: session N writes script N on Saturday, edits video N, and is resumed on Sunday to review that cut.
+Saída por semana: **5 reels (Instagram) + 3 posts técnicos de LinkedIn + 1 artigo ilustrado no Substack = 9 posts a partir de 5 gravações.** Os posts de LinkedIn reaproveitam as ideias de onde os reels saíram, e o artigo normalmente aprofunda uma delas ainda mais, então uma ideia rende até três vezes. O artigo é a exceção que pode vir de fora das cinco: ele é escrito e publicado no mesmo domingo, e esse lag zero é o que faz dele o único slot em que notícia perecível é permitida. O irmão dele no LinkedIn sai na segunda e linka de volta para o artigo, que é onde alcance frio vira assinante. As mesmas 5 sessões de Claude Code carregam os dois dias: a sessão N escreve o roteiro N no sábado, edita o vídeo N e é retomada no domingo para revisar aquele corte.
 
-**When editing these files, keep the split:** the two day files are checklists worked top to bottom with hands busy, so reasoning belongs in the README and only decisions made in the moment stay inline.
+**Ao editar esses arquivos, mantenha a divisão:** os dois arquivos de dia são checklists trabalhados de cima para baixo com as mãos ocupadas, então o raciocínio fica no README e só as decisões tomadas na hora ficam inline.
 
-## Voice calibration
+## Calibração de voz
 
-The base voice for every piece, in every format, is `docs/voice/base.md`. Read it before writing. Layers that stack on top live in `docs/voice/layers/`; when a layer applies, it wins over the base for that piece.
+A voz base de toda peça, em todo formato, é `docs/voice/base.md`. Leia antes de escrever. As layers que empilham por cima moram em `docs/voice/layers/`. Quando uma layer se aplica, ela ganha da base naquela peça.
 
-There is deliberately **no audience document and no content-pillar document**. Both were dropped to simplify the process. If a piece needs a target reader or an angle, ask the user — do not reconstruct an audience profile from old content.
+Deliberadamente **não existe documento de audiência nem documento de pilares de conteúdo**. Os dois foram cortados para simplificar o processo. Se uma peça precisa de um leitor-alvo ou de um ângulo, pergunte ao usuário. Não reconstrua um perfil de audiência a partir de conteúdo antigo.
 
-## Notion MCP: critical IDs
+## MCP do Notion: IDs críticos
 
-The idea bank is the only canonical object in Notion. Treat the ID as canonical:
+O banco de ideias é o único objeto canônico no Notion. Trate o ID como canônico:
 
-| Object | ID |
+| Objeto | ID |
 |---|---|
 | **Ideas** (data source) | `e2970ca3-7724-4a81-8f12-7ea34c048c67` |
 
-Its schema is in English: properties `Idea`, `Notes`, `Date`, `Status`, `Format`, `ACP Phase`. Values — Status: `Pending` / `Processing` / `Processed` / `Discarded`. Format: `Reel` / `IG Carousel` / `Thread` / `LinkedIn Post` — plus `Substack`, **not created yet** (see below). ACP Phase: `A · Audience` / `C · Community` / `P · Product`.
+O schema dele está em inglês: propriedades `Idea`, `Notes`, `Date`, `Status`, `Format`, `ACP Phase`. Valores de Status: `Pending` / `Processing` / `Processed` / `Discarded`. Valores de Format: `Reel` / `IG Carousel` / `Thread` / `LinkedIn Post`, mais `Substack`, **ainda não criado** (veja abaixo). Valores de ACP Phase: `A · Audience` / `C · Community` / `P · Product`.
 
-The `Pillar` property was deleted along with the content-pillar document. Do not recreate it.
+A propriedade `Pillar` foi apagada junto com o documento de pilares de conteúdo. Não recrie.
 
-Notion plays two roles. It is the **read source** for the production skills (`write-script`, `carousel`, `write-thread`, `build-linkedin`, `write-substack`): they read the idea from here, save the content locally in `posts/`, and the only write back is marking `Status` as `Processed` and recording the `Format` at the end (the content itself never goes up). It is the **write target** for idea capture (`capture-idea`, `brainstorm-ideas`, `news-ideas`), which record new ideas in the database. Reads (`notion-search`, `notion-fetch`) are pre-approved; writing to the idea bank (`create-database-row`) asks for confirmation, and that is by design, not a misconfiguration.
+O Notion tem dois papéis. É a **fonte de leitura** das skills de produção (`write-script`, `carousel`, `write-thread`, `build-linkedin`, `write-substack`): elas leem a ideia daqui, salvam o conteúdo localmente em `posts/`, e a única escrita de volta é marcar `Status` como `Processed` e registrar o `Format` no fim (o conteúdo em si nunca sobe). E é o **alvo de escrita** da captura de ideias (`capture-idea`, `brainstorm-ideas`, `news-ideas`), que registram ideias novas no banco. Leituras (`notion-search`, `notion-fetch`) são pré-aprovadas. Escrever no banco de ideias (`create-database-row`) pede confirmação, e isso é de propósito, não é configuração errada.
 
-**Caution when changing the schema:** renaming a select property's options through the MCP replaces the option set wholesale and silently clears the stored value on every row. Snapshot the rows first, then restore them after the change.
+**Cuidado ao mudar o schema:** renomear as opções de uma propriedade select pelo MCP substitui o conjunto de opções inteiro e apaga em silêncio o valor guardado em toda linha. Tire um snapshot das linhas antes e restaure depois da mudança.
 
-That is why the `Substack` option on `Format` is added **by hand, in the Notion UI** — one click, no risk. As of 2026-09-05 it has not been added. `write-substack` only needs it on its standalone path; if the option is missing there, the skill stops and asks rather than creating it through the MCP.
+É por isso que a opção `Substack` em `Format` é adicionada **na mão, pela interface do Notion**: um clique, risco zero. Até 2026-09-05 ela não tinha sido adicionada. `write-substack` só precisa dela no caminho standalone. Se a opção não existir ali, a skill para e pergunta, em vez de criar pelo MCP.
 
-## Local draft convention
+## Convenção de rascunho local
 
-The production skills (script, carousel, thread, linkedin, substack) follow a strict drafting protocol:
+As skills de produção (script, carousel, thread, linkedin, substack) seguem um protocolo estrito de rascunho:
 
-1. Slug = title → lowercase, no accents, hyphens replacing spaces and punctuation.
-2. The first draft is saved to `posts/<type>/<slug>/sketch/v1.md` at the moment it is presented, where `<type>` is `script`, `carousel`, `thread`, `linkedin` or `substack`, depending on which skill produced it.
-3. Every user correction creates `posts/<type>/<slug>/sketch/v(N+1).md` in the same folder. Read v(N), copy unchanged blocks **verbatim**, and apply only the diff. Never regenerate content that did not change.
-4. When the user explicitly confirms "done", the highest-numbered `sketch/v<N>.md` is copied to `posts/<type>/<slug>/final.md` — that copy is the publishable piece, and the `sketch/v<N>` history stays put as the audit trail. The skill then updates the source idea in Notion (`Status` → `Processed` and the piece's `Format`; none of the content goes up).
+1. Slug = título → minúsculas, sem acento, hífen no lugar de espaço e pontuação.
+2. O primeiro rascunho é salvo em `posts/<type>/<slug>/sketch/v1.md` no momento em que é apresentado, onde `<type>` é `script`, `carousel`, `thread`, `linkedin` ou `substack`, conforme a skill que produziu.
+3. Toda correção do usuário cria `posts/<type>/<slug>/sketch/v(N+1).md` na mesma pasta. Leia v(N), copie os blocos que não mudaram **verbatim** e aplique só o diff. Nunca regenere conteúdo que não mudou.
+4. Quando o usuário confirma "pronto" explicitamente, o `sketch/v<N>.md` de número mais alto é copiado para `posts/<type>/<slug>/final.md`. Essa cópia é a peça publicável, e o histórico `sketch/v<N>` fica onde está como trilha de auditoria. A skill então atualiza a ideia de origem no Notion (`Status` → `Processed` e o `Format` da peça, e nada do conteúdo sobe).
 
-This versioning is deliberate: the local files are the audit trail and the single source of the piece. Publishing is manual, done by the user on the target platform from the final file.
+Esse versionamento é deliberado: os arquivos locais são a trilha de auditoria e a fonte única da peça. A publicação é manual, feita pelo usuário na plataforma de destino a partir do arquivo final.
 
-**Translations run on a parallel sequence.** The `traduzir` skill adapts a finished piece into pt-BR and saves it as `posts/<type>/<slug>/sketch/pt-br-v<N>.md`, beside the original's own iterations, with the same diff protocol; at "done" the highest one is copied to `posts/<type>/<slug>/pt-br.md`, next to `final.md`. The sequence is kept separate from `v<N>.md` so the original stays canonical and `final.md` stays the final piece. The layout is the same for every type — there is no LinkedIn special case. `traduzir` runs after "done" and writes nothing to Notion — the `Status` and `Format` update already happened when the original shipped. Its rules live in `docs/voice/base.md` § 9, the only section of the voice guide written in Portuguese.
+**Tudo de uma peça mora em `posts/<type>/<slug>/`, assets visuais incluídos.** A pasta tem dois níveis. `sketch/` é o material de trabalho (`v<N>.md`, as composições HTML, imagens de origem que o usuário solta lá) e a raiz do slug guarda só o que é publicado, nada mais:
 
-**Everything for a piece lives in `posts/<type>/<slug>/`, visual assets included.** The folder has two levels. `sketch/` is the working material — `v<N>.md`, the HTML compositions, source images the user drops in — and the slug root holds only what gets published, nothing else:
-
-| Type | Slug root | `sketch/` |
+| Tipo | Raiz do slug | `sketch/` |
 |---|---|---|
 | `script` | `final.md`, `reels.mp4`, `caption.md`, `cover.png` | `v<N>.md`, `cover.html` |
-| `carousel` | `final.md` (slide copy + caption), `01.png` … `10.png` | `v<N>.md`, `carousel.html` |
-| `thread` | `final.md` (the thread text), `01.png` … `10.png` when `build-thread-carousel` runs | `v<N>.md`, `carousel-v<N>.md` (the slide-copy rewrite), `carousel.html`, `images/` |
-| `linkedin` | `final.md`, `image.png` (source URL recorded in the `final.md` footer) | `v<N>.md` |
-| `substack` | `final.md` (title + subtitle + article with inline image markers + metadata footer), `cover.png`, `01.png` … `NN.png` | `v<N>.md`, `shotlist.md` |
+| `carousel` | `final.md` (copy dos slides + legenda do post), `01.png` … `10.png` | `v<N>.md`, `carousel.html` |
+| `thread` | `final.md` (o texto da thread), `01.png` … `10.png` quando `build-thread-carousel` roda | `v<N>.md`, `carousel-v<N>.md` (a reescrita da copy para slide), `carousel.html`, `images/` |
+| `linkedin` | `final.md`, `image.png` (URL de origem registrada no rodapé do `final.md`) | `v<N>.md` |
+| `substack` | `final.md` (título + subtítulo + artigo com marcadores de imagem inline + rodapé de metadados), `cover.png`, `01.png` … `NN.png` | `v<N>.md`, `shotlist.md` |
 
-Rendered PNGs sit loose at the slug root — no `render/` and no `editorial/` subfolder — and the HTML composition is a build intermediate, so it stays in `sketch/`. `output/` is gone entirely: every skill writes into `posts/<type>/<slug>/`, `edit-video` included. A Reel is not its own object — it is the script's deliverable, so its video, caption and cover land in that script's own folder.
+Os PNGs renderizados ficam soltos na raiz do slug, sem subpasta `render/` nem `editorial/`, e a composição HTML é um intermediário de build, então fica em `sketch/`. `output/` sumiu por completo: toda skill escreve em `posts/<type>/<slug>/`, `edit-video` incluída. Um Reel não é um objeto próprio. Ele é a entrega do roteiro, então o vídeo, a legenda do post e a capa caem na pasta do próprio roteiro.
 
-## Video editing: Reels
+## Edição de vídeo: Reels
 
-The `edit-video` skill turns a talking-head video into a finished Reel. It is a layer over the generic `video-use` skill (which lives in `~/.claude/skills/video-use/` and carries the production-correctness rules): `edit-video` does not rebuild the engine — it picks a **mode** (a collection of **features** in `.claude/skills/edit-video/assets/features/` and `assets/modes/`) and runs each one. Invoked by natural command ("edit this video", "turn this into a Reel", "edit it in news mode"). While recording, the user can speak **editor notes** between `open editor note` and `close editor note`: the skill obeys the instruction during assembly and **cuts** the whole block from the deliverable, so it reaches neither the audio nor the captions.
+A skill `edit-video` transforma um vídeo de talking head num Reel pronto. Ela é uma camada sobre a skill genérica `video-use` (que mora em `~/.claude/skills/video-use/` e carrega as regras de correção de produção): `edit-video` não reconstrói o motor. Ela escolhe um **mode** (uma coleção de **features** em `.claude/skills/edit-video/assets/features/` e `assets/modes/`) e roda cada uma. Invocada por comando natural ("edita esse vídeo", "transforma isso num Reel", "edita no modo news"). Durante a gravação, o usuário pode falar **notas de edição** para o editor no meio do take (por exemplo "editor, corta essa parte, vou falar o final de novo"): a skill obedece a instrução na montagem e **corta** o trecho inteiro da entrega, então ele não chega nem no áudio nem nas legendas do vídeo.
 
-Current features: `cut-dead-air`, `loudnorm`, `news-inserts`, `subtitles` (**on by default, burned only on the final render** — previews never carry them, so iterating on the cut stays cheap), plus specs for `zoom-emphasis`, `black-and-white`, `pop-it` and `motion-third`. Modes: `baseline` and `news` (implemented) and `authority` (features defined, helpers pending). Invariant: never force 9:16. Input in `video/inputs/` (default = most recent), scratch in `edit/<slug>/` at the root (outside the `video/` git repo), and at "done" the three deliverables land together in the script's own folder, `posts/script/<slug>/`, beside the script that produced them rather than in a separate tree: `reels.mp4` (the cut), `caption.md` (the Instagram caption) and `cover.png` (the cover, composed in the Alvinegro system from the `01 COVER` archetype). The filenames are fixed and generic in every Reel folder — the slug is the folder, never part of the filename. Nothing ships to `video/outputs/` anymore.
+Features atuais: `cut-dead-air`, `loudnorm`, `news-inserts`, `subtitles` (**ligada por padrão, queimada só no render final**: os previews nunca carregam legenda, então iterar no corte continua barato), mais specs de `zoom-emphasis`, `black-and-white`, `pop-it` e `motion-third`. Modes: `baseline` e `news` (implementados) e `authority` (features definidas, helpers pendentes). Invariante: nunca force 9:16. Input em `video/inputs/` (padrão = o mais recente), scratch em `edit/<slug>/` na raiz (fora do repositório git `video/`), e no "pronto" as três entregas caem juntas na pasta do próprio roteiro, `posts/script/<slug>/`, ao lado do roteiro que as produziu, e não numa árvore separada: `reels.mp4` (o corte), `caption.md` (a legenda do post no Instagram) e `cover.png` (a capa, composta no sistema Alvinegro a partir do arquétipo `01 COVER`). Os nomes de arquivo são fixos e genéricos em toda pasta de Reel: o slug é a pasta, nunca parte do nome do arquivo. Nada mais sai para `video/outputs/`.
 
-## Visual system: Alvinegro
+## Sistema visual: Alvinegro
 
-`design/identity.md` is the visual system for every deliverable with its own layout: strictly black
-and white, heavy grotesque display, hand-drawn wobble line art with a halftone fill. `design/proof/`
-holds a rendered three-slide proof — copy its `<style>` and `<defs>` to start a new piece. **Do not
-improvise a palette or typeface**, and do not reintroduce the old brand.
+`design/identity.md` é o sistema visual de toda entrega com layout próprio: preto e branco estrito, display grotesca pesada, line art com wobble de traço à mão e preenchimento em halftone. `design/proof/` guarda uma prova renderizada de três slides: copie o `<style>` e o `<defs>` dela para começar uma peça nova. **Não improvise paleta nem fonte**, e não traga a marca antiga de volta.
 
-The full brand book is `design/brandbook/book.html` (17 pages, rendered to `render/`). It is the
-system *shown*; `identity.md` is the system *stated*, and the markdown is canonical if the two ever
-disagree. Alongside it: `design/logotype/` (the stamp mark, badge and masthead, plus the routes that
-were explored), `design/templates/slides.html` (eight slide archetypes) and
-`design/stationery/stationery.html` (business card and A4 letterhead, digital only). All of them
-render through `scripts/render_html_to_pngs.py` — nothing here needs a design tool.
+O brand book completo é `design/brandbook/book.html` (17 páginas, renderizadas em `render/`). Ele é o sistema *mostrado*. `identity.md` é o sistema *enunciado*, e o markdown é canônico se os dois algum dia discordarem. Ao lado dele: `design/logotype/` (o stamp mark, o badge e o masthead, mais as rotas que foram exploradas), `design/templates/slides.html` (oito arquétipos de slide) e `design/stationery/stationery.html` (cartão de visita e papel timbrado A4, só digital). Todos renderizam por `scripts/render_html_to_pngs.py`: nada aqui precisa de ferramenta de design.
 
-The artwork is generated, not sourced: clean SVG geometry torn up by an `feTurbulence` +
-`feDisplacementMap` filter at render time, with a halftone-dot fill offset from the outline. The
-drawing vocabulary is deliberately geometric (boxes, arrows, flows, charts, terminals) — figurative
-subjects are out of reach for that technique and belong in `design/art/` as real scanned files.
+A arte é gerada, não buscada: geometria SVG limpa rasgada por um filtro `feTurbulence` + `feDisplacementMap` na hora do render, com preenchimento de pontos de halftone deslocado do contorno. O vocabulário de desenho é deliberadamente geométrico (caixas, setas, fluxos, gráficos, terminais). Assunto figurativo está fora do alcance dessa técnica e pertence a `design/art/`, como arquivo escaneado de verdade.
 
-The two carousel skills still work, using their own assets, which live next to them rather than in `design/`:
+As duas skills de carrossel continuam funcionando, com assets próprios, que moram ao lado delas e não em `design/`:
 
-- `build-thread-carousel` uses archetypes in `.claude/skills/build-thread-carousel/assets/` (`hook-display`, `body-paragraph` and `_carousel.css`, in `default` and `x` modes). The CSS is self-contained: values are inline, with no external import. Name, handle and avatar are placeholders — ask the user before rendering.
-- `carousel` keeps its craft standard in `.claude/skills/carousel/assets/carousel-craft.md`: identity slots, five principles reverse-engineered from `examples/carousels/`, frame contract, type scale and pre-ship checklist. It covers copy and design together and survives a change of identity — the visual system plugs into its slot table (`GROUND / INK / ACCENT / DISPLAY / BODY / MARK / ART / TEXTURE`) rather than being written into the doc. **`design/identity.md` fills those slots — that is what connects the identity to production.**
+- `build-thread-carousel` usa arquétipos em `.claude/skills/build-thread-carousel/assets/` (`hook-display`, `body-paragraph` e `_carousel.css`, nos modes `default` e `x`). O CSS é autocontido: valores inline, sem import externo. Nome, handle e avatar são placeholders: pergunte ao usuário antes de renderizar.
+- `carousel` mantém o padrão de craft em `.claude/skills/carousel/assets/carousel-craft.md`: slots de identidade, cinco princípios extraídos por engenharia reversa de `examples/carousels/`, contrato de frame, escala tipográfica e checklist de pré-publicação. Ele cobre copy e design juntos e sobrevive a uma troca de identidade: o sistema visual encaixa na tabela de slots (`GROUND / INK / ACCENT / DISPLAY / BODY / MARK / ART / TEXTURE`) em vez de ser escrito no doc. **`design/identity.md` preenche esses slots. É isso que liga a identidade à produção.**
 
-Tone and vocabulary critique still goes through the `writing-feedback` skill.
+Crítica de tom e vocabulário continua passando pela skill `writing-feedback`.
 
-## Twitter print template (legacy)
+## Template de print do Twitter (legado)
 
-`templates/twitter-print/` renders thread tweets as PNGs with a Twitter-clone look (round avatar, handle, date). **It is not the default path for Instagram carousels** — `build-thread-carousel` uses an editorial pipeline (archetypes plus a generic HTML renderer). The template stays available for the occasional case where the Twitter-clone register is exactly what you want.
+`templates/twitter-print/` renderiza os tweets de uma thread como PNGs com cara de clone do Twitter (avatar redondo, handle, data). **Não é o caminho padrão para carrossel de Instagram**: `build-thread-carousel` usa um pipeline editorial (arquétipos mais um renderizador HTML genérico). O template fica disponível para o caso ocasional em que o registro de clone do Twitter é exatamente o que você quer.
 
-To use it manually:
+Para usar na mão:
 
 ```bash
-python -m http.server 8000   # from inside templates/twitter-print/
+python -m http.server 8000   # de dentro de templates/twitter-print/
 ```
 
-Open `http://localhost:8000` in **Chrome or Edge** (Firefox and Safari do not support the directory picker the API requires). Opening `index.html` directly over `file://` makes the "Export PNG" button fail, and that is deliberate, not a bug to fix.
+Abra `http://localhost:8000` no **Chrome ou no Edge** (Firefox e Safari não suportam o seletor de diretório que a API exige). Abrir `index.html` direto por `file://` faz o botão "Export PNG" falhar, e isso é de propósito, não é bug para consertar.
 
-## Automation scripts
+## Scripts de automação
 
-Some skills delegate mechanical work (rendering, parsing, exporting) to Python scripts in `scripts/`. Dependencies live in `pyproject.toml` at the root and are managed with **uv**.
+Algumas skills delegam trabalho mecânico (render, parsing, export) a scripts Python em `scripts/`. As dependências moram no `pyproject.toml` da raiz e são gerenciadas com **uv**.
 
-First-time setup per machine:
+Setup inicial por máquina:
 
 ```bash
 uv sync
-uv run playwright install chromium   # only if the script needs a browser
+uv run playwright install chromium   # só se o script precisar de navegador
 ```
 
-To run a script: `uv run python scripts/<name>.py [args]`. The skills that depend on these routines call the script via Bash, so there is no command to memorize: just follow the skill that invokes it.
+Para rodar um script: `uv run python scripts/<name>.py [args]`. As skills que dependem dessas rotinas chamam o script via Bash, então não tem comando para decorar: siga a skill que invoca.
 
-Current scripts:
+Scripts atuais:
 
-| Script | Invoked by | What it does |
+| Script | Invocado por | O que faz |
 |---|---|---|
-| `scripts/render_html_to_pngs.py` | `build-thread-carousel` (and any future skill needing HTML→PNG) | Generic renderer: takes `--html` and `--selector` and screenshots every element matching the selector via headless Playwright. It knows nothing about content type. Output at `device_scale_factor=3` by default. |
+| `scripts/render_html_to_pngs.py` | `build-thread-carousel` (e qualquer skill futura que precise de HTML→PNG) | Renderizador genérico: recebe `--html` e `--selector` e tira screenshot de cada elemento que bate com o seletor via Playwright headless. Não sabe nada sobre tipo de conteúdo. Saída em `device_scale_factor=3` por padrão. |
 
-Adding a new script: declare the dependency in `pyproject.toml`, run `uv sync`, and reference it from `scripts/`. If the skill invoking the script is a production routine, document it here too.
+Para adicionar um script novo: declare a dependência no `pyproject.toml`, rode `uv sync` e referencie a partir de `scripts/`. Se a skill que invoca o script é uma rotina de produção, documente aqui também.
 
-## Platform notes
+## Notas de plataforma
 
-- Windows plus a bash shell. Use `/dev/null` and forward slashes, but absolute paths need the Windows drive letter (`C:/Users/Pedro Miyasaki/...`).
-- This is a personal, local-only repo with no remote and no collaborators. Commit messages can be short and plain — a one-line summary of what changed and why is enough, no conventional-commit format, no body sections, no PR-style detail.
-- The user instructions in `~/.claude/CLAUDE.md` (Karpathy guidelines) apply here: simplicity first, surgical changes, surface tradeoffs, define verifiable success criteria.
+- Windows com shell bash. Use `/dev/null` e barras normais, mas caminho absoluto precisa da letra do drive do Windows (`C:/Users/Pedro Miyasaki/...`).
+- Este é um repositório pessoal, só local, sem remote e sem colaboradores. Mensagem de commit pode ser curta e simples: uma linha resumindo o que mudou e por quê basta, sem formato de conventional commit, sem seções de corpo, sem detalhe de PR.
+- As instruções de usuário em `~/.claude/CLAUDE.md` (Karpathy guidelines) valem aqui: simplicidade primeiro, mudanças cirúrgicas, expor tradeoffs, definir critérios de sucesso verificáveis.

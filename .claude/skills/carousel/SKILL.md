@@ -1,222 +1,224 @@
 ---
 name: carousel
 description: >
-  Produces a complete Instagram carousel end to end: reads an idea from the
-  Ideas database, writes the slide copy and caption in the user's voice, then
-  composes and renders the slide art as 4:5 PNGs. Activate with commands like
-  "write the carousel for the last idea", "make a carousel", "render the
-  carousel <slug>", "redraw the carousel art", or when feedback is about empty
-  space, weak hierarchy or storytelling in carousel slides. Not for thread
-  X-cosplay carousels (that is build-thread-carousel).
+  Produz um carrossel de Instagram completo, de ponta a ponta: lê uma ideia do
+  banco Ideas, escreve a copy dos slides e a legenda do post na voz do usuário,
+  depois compõe e renderiza a arte dos slides como PNGs 4:5. Ative com comandos
+  como "escreve o carrossel da última ideia", "faz um carrossel", "renderiza o
+  carrossel <slug>", "redesenha a arte do carrossel", ou quando o feedback é
+  sobre espaço vazio, hierarquia fraca ou narrativa nos slides do carrossel.
+  Não serve para carrossel de thread em X-cosplay (isso é build-thread-carousel).
 ---
 
-# SKILL · Carousel
+# SKILL · Carrossel
 
-Turn a raw idea into a finished carousel: copy **and** art, in one pass. Copy and composition are
-one deliverable here — the headline is the anchor, the template only locks if the copy has a
-repeating shape, and a copy fix is often the right answer to a visual problem.
+Transforme uma ideia crua num carrossel pronto: copy **e** arte, numa passada só. Aqui copy e
+composição são uma entrega única: a headline é a âncora, o template só trava se a copy tiver uma
+forma que se repete, e mexer na copy costuma ser a resposta certa para um problema visual.
 
-Act as a senior copywriter and art director on the same piece.
+Assuma o papel de copywriter sênior e de diretor de arte na mesma peça.
 
 ---
 
-## Required reading — before writing anything
+## Leitura obrigatória, antes de escrever qualquer coisa
 
-1. **`assets/carousel-craft.md`** — the craft standard. Identity slots, the five principles derived
-   from the viral corpus in `examples/carousels/`, the frame contract, the type scale, the forbidden
-   list and the pre-ship checklist. **Read it in full on every run.** Where this file and the craft
-   doc appear to disagree, the craft doc wins.
-2. **`docs/voice/base.md`** — the base voice for every piece. If the user names a layer, read it
-   from `docs/voice/layers/` too; a layer beats the base where they disagree.
-3. **`design/identity.md`** — the visual system (Alvinegro). It fills every identity slot the craft
-   doc requires, carries the type scale, and specifies how the artwork is drawn: clean SVG geometry
-   torn up by an `feTurbulence` + `feDisplacementMap` filter, with a halftone fill offset from the
-   outline. Copy the `<style>` and `<defs>` from `design/proof/proof.html` as the starting point.
-   Do not invent a palette or typeface — the system is defined. Only ask the user when a piece needs
-   something the system has no value for.
-4. On the first run of a session, or when feedback is about composition: read 3–4 PNGs from
-   `examples/carousels/<account>/`. Extract the principles; copy no account's aesthetic.
+1. **`assets/carousel-craft.md`**: o padrão de craft. Os slots de identidade, os cinco princípios
+   tirados do corpus viral em `examples/carousels/`, o contrato de frame, a escala tipográfica, a
+   lista do que é proibido e o checklist antes de publicar. **Leia inteiro a cada execução.** Se
+   este arquivo e o craft doc parecerem discordar, o craft doc ganha.
+2. **`docs/voice/base.md`**: a voz base de toda peça. Se o usuário citar uma layer, leia ela
+   também em `docs/voice/layers/`. Onde a layer e a base discordam, a layer ganha.
+3. **`design/identity.md`**: o sistema visual (Alvinegro). Ele preenche todo slot de identidade que
+   o craft doc exige, carrega a escala tipográfica e diz como a arte é desenhada: geometria SVG
+   limpa rasgada por um filtro `feTurbulence` + `feDisplacementMap`, com preenchimento em halftone
+   deslocado do contorno. Copie o `<style>` e o `<defs>` de `design/proof/proof.html` como ponto de
+   partida. Não invente paleta nem fonte: o sistema já está definido. Só pergunte ao usuário quando
+   a peça precisar de algo que o sistema não define.
+4. Na primeira execução da sessão, ou quando o feedback for sobre composição: leia 3 ou 4 PNGs de
+   `examples/carousels/<account>/`. Extraia os princípios. Não copie a estética de nenhuma conta.
 
-There is no audience or pillar document. If the piece needs a target reader or an angle, ask.
-
-**Language of the piece:** English by default. If the user asks for pt-BR (or any other language), write it in that language — follow their lead, do not push back. `docs/voice/base.md` still applies as principle; its Tier 1/Tier 2 word lists are English-specific and do not transfer (see `CLAUDE.md` for the pt-BR equivalents).
+Não existe documento de audiência nem de pilar. Se a peça precisar de um leitor-alvo ou de um
+ângulo, pergunte.
 
 ---
 
 ## Notion
 
-| Object | ID |
+| Objeto | ID |
 |---|---|
 | **Ideas** (data source) | `e2970ca3-7724-4a81-8f12-7ea34c048c67` |
 
-Read the idea at the start; write `Status` and `Format` at the end. That is the only write.
+Leia a ideia no começo e escreva `Status` e `Format` no fim. Essa é a única escrita.
 
 ---
 
-## When to activate
+## Quando ativar
 
-Any request that means "turn an idea into a carousel" — "write the carousel for the last idea",
-"carousel for idea X", "make a carousel" — **and** any request about carousel art: "render the
-carousel `<slug>`", "redraw the art", "too much empty space", "no impact", "weak hierarchy".
+Qualquer pedido que signifique "transformar uma ideia em carrossel" ("escreve o carrossel da última
+ideia", "carrossel da ideia X", "faz um carrossel") **e** qualquer pedido sobre a arte do carrossel:
+"renderiza o carrossel `<slug>`", "redesenha a arte", "tem muito espaço vazio", "não tem impacto",
+"a hierarquia está fraca".
 
-**Entering mid-flow:** if `posts/carousel/<slug>/sketch/v<N>.md` already exists and the request is
-about art, skip to Step 7 and work from the highest version. If the request is a copy change on a
-piece already rendered, edit the copy (new `v<N+1>`), then re-render.
+**Entrando no meio do fluxo:** se `posts/carousel/<slug>/sketch/v<N>.md` já existe e o pedido é
+sobre arte, pule para o Passo 7 e trabalhe a partir da versão mais alta. Se o pedido é uma mudança
+de copy numa peça já renderizada, edite a copy (novo `v<N+1>`) e renderize de novo.
 
 ---
 
-## Part 1 · Copy
+## Parte 1 · Copy
 
-### Step 1 · Pick the idea
+### Passo 1 · Escolha a ideia
 
-If the user did not name one: open **Ideas**, filter `Status = "Pending"`, sort by `Date`
-descending (fall back to `createdTime`), take the most recent, and confirm:
+Se o usuário não citou nenhuma: abra **Ideas**, filtre `Status = "Pending"`, ordene por `Date`
+decrescente (se não tiver, use `createdTime`), pegue a mais recente e confirme:
 
-> "Idea selected for the carousel: [title]. Go ahead with this one?"
+> "Ideia selecionada para o carrossel: [título]. Sigo com essa?"
 
-If they named one, find it and use it directly.
+Se o usuário citou uma, encontre e use direto.
 
-### Step 2 · Define the angle
+### Passo 2 · Defina o ângulo
 
-Read the whole row — title, raw text, notes, date, status. The idea is raw. Extract:
+Leia a linha inteira: título, texto bruto, notas, data, status. A ideia é crua. Extraia:
 
-- **Angle** — the position taken on the topic, not the topic
-- **Unit** — what the carousel is a list of: steps, findings, habits, moments, mistakes (P1)
-- **Core argument** — the thesis in 1–2 sentences
-- **Proof** — the numbers, artifacts, named things or exact scenes that will anchor the claims (P4)
-- **The reframe** — what the penultimate slide says that the list alone doesn't (P5)
-- **The ask** — one word to comment, or one question with an obvious answer (P5)
+- **Ângulo**: a posição tomada sobre o tema, não o tema
+- **Unidade**: do que o carrossel é uma lista: passos, achados, hábitos, momentos, erros (P1)
+- **Argumento central**: a tese em 1 ou 2 frases
+- **Prova**: os números, artefatos, coisas com nome ou cenas exatas que vão ancorar as afirmações (P4)
+- **A virada**: o que o penúltimo slide diz que a lista sozinha não diz (P5)
+- **O pedido**: uma palavra para comentar, ou uma pergunta com resposta óbvia (P5)
 - **ACP Phase**
 
-### Step 3 · Choose the density mode
+### Passo 3 · Escolha o modo de densidade
 
-Per the craft doc, pick one deliberately and hold it for the whole piece:
+Como manda o craft doc, escolha um de propósito e segure ele na peça inteira:
 
-- **Recognition** — one sentence per slide, big type, high swipe speed, built to be tagged.
-- **Reading** — 6–8 lines of body per slide, built to be saved. Use when the value *is* the
-  information.
+- **Reconhecimento**: uma frase por slide, tipo grande, swipe rápido, feito para o leitor marcar
+  alguém.
+- **Leitura**: 6 a 8 linhas de body por slide, feito para salvar. Use quando o valor *é* a
+  informação.
 
-Halfway between them works less well than either.
+Ficar no meio do caminho funciona pior que qualquer um dos dois.
 
-### Step 4 · Decide the slide count
+### Passo 4 · Decida o número de slides
 
-**Hard ceiling: 10 slides.** Instagram caps the carousel at 10 images — an 11th does not get posted.
-Cover and CTA take two, so the argument has **eight**. Never ship more than 10.
+**Teto rígido: 10 slides.** O Instagram limita o carrossel a 10 imagens: o 11º não sobe. Capa e
+CTA ocupam dois, então o argumento tem **oito**. Nunca publique mais de 10.
 
-Do not pad to hit a number. If the unit count exceeds eight, do not truncate the list — merge
-siblings, cut the setup slides, narrow the promise on the cover, or send the idea to another format.
-The full rule is in the craft doc under **Hard ceiling: 10 slides**; read it before cutting.
+Não encha para bater um número. Se a contagem de unidades passar de oito, não trunque a lista:
+junte irmãos, corte os slides de contexto, estreite a promessa da capa ou mande a ideia para outro
+formato. A regra completa está no craft doc, em **Teto rígido: 10 slides**. Leia antes de cortar.
 
-Two slides are mandatory: **slide 1 is the cover**, **the last slide is the CTA**. The penultimate
-slide is the reframe, never the weakest list item.
+Dois slides são obrigatórios: **o slide 1 é a capa** e **o último slide é o CTA**. O penúltimo
+slide é a virada, nunca o item mais fraco da lista.
 
-### Step 5 · Write the slides
+### Passo 5 · Escreva os slides
 
-Every slide follows the craft doc's grammar: **headline = the conclusion, stated as a complete
-self-contained sentence**, then optional body (the why, the caveat, the example), then optional
-proof. The headline is never a label and never a teaser.
+Todo slide segue a gramática do craft doc: **headline = a conclusão, dita como uma frase completa
+que se sustenta sozinha**, depois body opcional (o porquê, a ressalva, o exemplo), depois prova
+opcional. A headline nunca é um rótulo e nunca é um teaser.
 
-**Cover:** names the countable unit and the payoff. A number if one honestly exists. Not a topic.
+**Capa:** nomeia a unidade contável e o ganho. Um número, se existir um de verdade. Não um tema.
 
-> Good: "I researched 1540 Reddit posts to see how people are making money with AI"
-> Bad: "Everything about AI for business"
+> Bom: "Eu li 1540 posts do Reddit para ver como as pessoas estão ganhando dinheiro com IA"
+> Ruim: "Tudo sobre IA para negócios"
 
-**Development slides:** one idea each. Useful functions to combine as the idea requires — problem,
-data, contrast, example, framework, insight, objection — but whichever function a slide serves, its
-headline still states the conclusion.
+**Slides de desenvolvimento:** uma ideia cada. Funções úteis para combinar conforme a ideia pedir:
+problema, dado, contraste, exemplo, framework, insight, objeção. Mas seja qual for a função do
+slide, a headline continua dizendo a conclusão.
 
-Every claim resolves to a number, an artifact, a named thing or an exact scene. Label unverified
-claims as unverified; the hedge adds authority.
+Toda afirmação se resolve num número, num artefato, numa coisa com nome ou numa cena exata. Marque
+como não verificada a afirmação que não foi verificada: a ressalva dá autoridade.
 
-**Word budget:** recognition mode ~20 words per slide; reading mode up to ~60. If a slide carries
-two ideas, split it.
+**Orçamento de palavras:** modo reconhecimento, uns 20 por slide. Modo leitura, até uns 60. Se um
+slide carrega duas ideias, divida.
 
-**CTA:** one word to comment, in quotes, with a stated reward — or one question the reader already
-has the answer to. Never "what do you think?", never a bare follow-ask.
+**CTA:** uma palavra para comentar, entre aspas, com a recompensa dita, ou uma pergunta que o
+leitor já sabe responder. Nunca "o que você acha?", nunca um pedido de follow seco.
 
-> "Comment 'SYSTEM' and I'll send the full breakdown."
-> "If you could steal one of these this month, which one?"
+> "Comenta 'SISTEMA' que eu te mando o passo a passo completo."
+> "Se você pudesse roubar um desses este mês, qual seria?"
 
-**Before moving on, run the readthrough test:** read only the headlines, top to bottom. If that
-alone is not a coherent article, the headlines are labels — rewrite them.
+**Antes de seguir, rode o teste de leitura corrida:** leia só as headlines, de cima a baixo. Se
+isso sozinho não for um artigo coerente, as headlines são rótulos. Reescreva.
 
-**Output format:**
+**Formato de saída:**
 
 ```
 SLIDE 1 — COVER
-Headline: [the unit + the payoff]
-Sub: [optional, 1 line]
+Headline: [a unidade + o ganho]
+Sub: [opcional, 1 linha]
 
-SLIDE 2 — [function]
-Headline: [the conclusion, complete sentence]
-Body: [support]
-Proof: [number / artifact / named thing / scene, if any]
+SLIDE 2 — [função]
+Headline: [a conclusão, frase completa]
+Body: [o apoio]
+Proof: [número / artefato / coisa com nome / cena, se tiver]
 
 ...
 
 SLIDE N-1 — REFRAME
-Headline: [what the list adds up to]
+Headline: [a que a lista chega no fim]
 
 SLIDE N — CTA
-Headline: [the ask]
-Action: [the one word, or the question]
+Headline: [o pedido]
+Action: [a palavra, ou a pergunta]
 ```
 
-### Step 6 · Caption, then save and iterate
+### Passo 6 · Legenda do post, depois salve e itere
 
-The caption carries the context around the post, not a prose restatement of the slides. First line
-must stop the scroll on its own. 2–4 short paragraphs expanding the argument or adding a nuance
-that didn't fit. A specific CTA. 3–5 hashtags. 80–180 words, never past 250.
+A legenda do post carrega o contexto em volta da publicação, não uma repetição dos slides em prosa.
+A primeira linha precisa parar o scroll sozinha. 2 a 4 parágrafos curtos ampliando o argumento ou
+somando uma nuance que não coube. Um CTA específico. 3 a 5 hashtags. 80 a 180 palavras, nunca mais
+de 250.
 
-Present slides and caption separately. Derive the slug from the idea title (lowercase, no accents,
-hyphens for spaces and punctuation) and save immediately to `posts/carousel/<slug>/sketch/v1.md` —
-slides, then `---`, then the caption.
+Apresente slides e legenda separados. Derive o slug do título da ideia (minúsculas, sem acento,
+hífen no lugar de espaço e pontuação) e salve na hora em `posts/carousel/<slug>/sketch/v1.md`:
+slides, depois `---`, depois a legenda.
 
-Ask: *"Ready to move to the art, or any more corrections?"*
+Pergunte: *"Posso partir para a arte, ou tem mais alguma correção?"*
 
-Each correction creates `posts/carousel/<slug>/sketch/v(N+1).md`: read `v(N)`, copy unchanged blocks
-**verbatim**, apply only the diff. Never regenerate what did not change.
+Cada correção cria `posts/carousel/<slug>/sketch/v(N+1).md`: leia `v(N)`, copie os blocos que não
+mudaram **verbatim** e aplique só o diff. Nunca regenere o que não mudou.
 
 ---
 
-## Part 2 · Art
+## Parte 2 · Arte
 
-Prerequisites, once per machine:
+Pré-requisitos, uma vez por máquina:
 
 ```bash
 uv sync
 uv run playwright install chromium
 ```
 
-### Step 7 · Lock the template
+### Passo 7 · Trave o template
 
-The identity is fixed by `design/identity.md` — do not re-decide it. What varies per piece is the
-template. State in 3–6 lines and present to the user:
+A identidade está fixada em `design/identity.md`, não decida ela de novo. O que varia por peça é o
+template. Descreva em 3 a 6 linhas e apresente ao usuário:
 
-- **The one template**: which slots each slide carries, in what hierarchy, in what position.
-- Which slides invert (cover and CTA by default — inversion marks the frame of the piece).
-- The drawing per slide, from the geometric vocabulary in `design/identity.md`.
-- Where the optical mass sits on each slide, so none falls into dead air.
+- **O template único**: quais slots cada slide carrega, em que hierarquia, em que posição.
+- Quais slides invertem (capa e CTA por padrão: a inversão emoldura a peça).
+- O desenho de cada slide, tirado do vocabulário geométrico de `design/identity.md`.
+- Onde fica a massa óptica em cada slide, para nenhum cair em espaço morto.
 
-The locked template is what produces coherence. Position may breathe across slides; elements and
-hierarchy do not change. Do not compose slide-by-slide inventions.
+O template travado é o que produz coerência. A posição pode respirar de um slide para outro. Os
+elementos e a hierarquia não mudam. Não invente uma composição para cada slide.
 
-### Step 8 · Compose `posts/carousel/<slug>/sketch/carousel.html`
+### Passo 8 · Componha `posts/carousel/<slug>/sketch/carousel.html`
 
-One self-sufficient file, N × `<section class="slide">`, with a `<style>` in the `<head>` carrying
-the frame contract, the identity slots and the type scale — all per the craft doc. No external
-stylesheet.
+Um arquivo só, autossuficiente, N × `<section class="slide">`, com um `<style>` no `<head>`
+carregando o contrato de frame, os slots de identidade e a escala tipográfica, tudo como manda o
+craft doc. Nada de stylesheet externa.
 
-**Anti-patterns this skill has produced before:**
+**Anti-padrões que esta skill já produziu:**
 
-1. A tiny mono kicker standing in as the slide title — nobody reads it, and the body then lands with
-   no context.
-2. `justify-content: space-between` pushing a sliver of text to the top and another to the bottom,
-   with a hole in the middle serving no narrative function.
-3. Jargon with no effect on the same screen ("16 out of 896 specialists", unexplained).
-4. Treating negative space as an excuse for timid typography.
+1. Um kicker minúsculo em mono fazendo as vezes de título do slide: ninguém lê, e o body chega sem
+   contexto.
+2. `justify-content: space-between` empurrando uma lasca de texto para cima e outra para baixo, com
+   um buraco no meio que não serve a narrativa nenhuma.
+3. Jargão sem efeito na mesma tela ("16 de 896 especialistas", sem explicação).
+4. Tratar espaço negativo como desculpa para tipografia tímida.
 
-### Step 9 · Render
+### Passo 9 · Renderize
 
 ```bash
 uv run python scripts/render_html_to_pngs.py \
@@ -226,57 +228,59 @@ uv run python scripts/render_html_to_pngs.py \
   --width 1080 --height 1350
 ```
 
-PNGs land loose in `posts/carousel/<slug>/` at 3240×4050 (3× device scale). The renderer zero-pads
-the filename to the width of the slide count: ten slides give `01.png`–`10.png`, a shorter deck
-gives `1.png`–`8.png`. Both sort in slide order; leave the names as they come out.
+Os PNGs caem soltos em `posts/carousel/<slug>/` a 3240×4050 (device scale 3×). O renderizador
+preenche o nome do arquivo com zero à esquerda até a largura da contagem de slides: dez slides dão
+`01.png` a `10.png`, um deck menor dá `1.png` a `8.png`. Os dois ordenam na sequência dos slides.
+Deixe os nomes como saírem.
 
-### Step 10 · QA before presenting
+### Passo 10 · QA antes de apresentar
 
-Open the cover, one development slide and the CTA with the Read tool and run the **pre-ship
-checklist** at the end of the craft doc — both halves, copy and design. Any failure: fix and
-re-render **before** delivering.
+Abra a capa, um slide de desenvolvimento e o CTA com a ferramenta Read e rode o **checklist antes
+de publicar** que fica no fim do craft doc, as duas metades, copy e design. Qualquer falha: corrija
+e renderize de novo **antes** de entregar.
 
-### Step 11 · Present and iterate
+### Passo 11 · Apresente e itere
 
-Present the renders. Use the craft doc's feedback translation table to turn subjective feedback into
-a diagnosis before acting.
+Apresente os renders. Use a tabela do craft doc que converte feedback subjetivo em ajuste concreto
+para chegar num diagnóstico antes de agir.
 
-**A visual problem is often a copy problem.** A headline that overflows the type scale, a slide with
-no anchor because the sentence has no conclusion in it, a "boring" slide that carries no number or
-scene — fix the copy. That means a new `posts/carousel/<slug>/sketch/v(N+1).md`, then re-render. Do
-not shrink the type to fit bad copy.
+**Problema visual costuma ser problema de copy.** Uma headline que estoura a escala tipográfica, um
+slide sem âncora porque a frase não tem conclusão, um slide "sem graça" que não carrega número nem
+cena: conserte a copy. Isso significa um novo `posts/carousel/<slug>/sketch/v(N+1).md` e um novo
+render. Não encolha a tipografia para caber copy ruim.
 
-`sketch/` is the working material — the `v<N>` audit trail and the HTML composition — and it stays
-there. The slug root carries only what gets published: the PNGs, and `final.md` at close-out.
+`sketch/` é o material de trabalho (a trilha de `v<N>` e a composição HTML) e fica lá. A raiz do
+slug só carrega o que é publicado: os PNGs e, no fechamento, o `final.md`.
 
-### Step 12 · Close out
+### Passo 12 · Fechamento
 
-When the user confirms "done", copy the highest `posts/carousel/<slug>/sketch/v<N>.md` **verbatim**
-to `posts/carousel/<slug>/final.md` — slides and caption, nothing rewritten. That file plus the PNGs
-is the deliverable; the `sketch/v<N>` history stays where it is. Then update the source idea in
-**Ideas**: `Status` → `"Processed"` and `Format` → `"IG Carousel"`. This is the only write to Notion.
+Quando o usuário confirmar "pronto", copie o `posts/carousel/<slug>/sketch/v<N>.md` mais alto
+**verbatim** para `posts/carousel/<slug>/final.md`: slides e legenda, nada reescrito. Esse arquivo
+mais os PNGs é a entrega. O histórico em `sketch/v<N>` fica onde está. Depois atualize a ideia de
+origem em **Ideas**: `Status` → `"Processed"` e `Format` → `"IG Carousel"`. Essa é a única escrita
+no Notion.
 
-If the user stops at the copy stage and explicitly calls it done there, write `final.md` and the
-Notion update then.
+Se o usuário parar na etapa de copy e disser "pronto" ali, escreva o `final.md` e faça a
+atualização no Notion nesse momento.
 
-Deliver the paths to `final.md` and the PNGs, and report the slide count.
+Entregue os caminhos do `final.md` e dos PNGs e informe quantos slides são.
 
 ---
 
-## Out of scope
+## Fora do escopo
 
-- Capturing raw ideas (`capture-idea`), Reel scripts (`write-script`), threads (`write-thread`),
-  LinkedIn posts (`build-linkedin`).
-- The X-cosplay thread aesthetic (`build-thread-carousel`).
-- Adapting the piece to another platform unless asked.
-- Publishing — that is manual, by the user, from the final files.
+- Capturar ideias cruas (`capture-idea`), roteiros de Reel (`write-script`), threads
+  (`write-thread`), posts de LinkedIn (`build-linkedin`).
+- A estética X-cosplay de thread (`build-thread-carousel`).
+- Adaptar a peça para outra plataforma, a menos que peçam.
+- Publicar: isso é manual, feito pelo usuário a partir dos arquivos finais.
 
-## Known limitations
+## Limitações conhecidas
 
-- Fixed 1080×1350. Another format means revisiting the frame contract in the craft doc.
-- Overflow is not checked automatically; a slide with long text may clip. Review renders before
-  approving.
-- Webfonts via `@import` in the piece's `<style>`; the renderer waits for `document.fonts.ready`.
-  With no network it falls back to system fonts.
-- The `ART` slot is only as good as what the identity provides. With `ART: none` the piece runs
-  type-only — viable, but the hardest mode to make land (craft doc, §0).
+- 1080×1350 fixo. Outro formato significa revisitar o contrato de frame no craft doc.
+- O overflow não é checado automaticamente, então um slide com texto longo pode cortar. Revise os
+  renders antes de aprovar.
+- Webfonts entram via `@import` no `<style>` da peça, e o renderizador espera `document.fonts.ready`.
+  Sem rede, cai nas fontes do sistema.
+- O slot `ART` é tão bom quanto o que a identidade fornece. Com `ART: none` a peça roda só com
+  tipografia: viável, mas é o modo mais difícil de fazer funcionar (craft doc, §0).
