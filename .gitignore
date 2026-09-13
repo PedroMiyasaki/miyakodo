@@ -1,6 +1,7 @@
 # Dados de conteúdo (temporário + final): o que é versionado aqui é o craft e as skills, não a saída
 posts/
 edit/
+video/inputs/
 
 # Python
 .venv/
