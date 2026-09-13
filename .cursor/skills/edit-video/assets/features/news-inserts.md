@@ -106,7 +106,11 @@ foi um bug: um overlay gerado em 1080×1920 fixo e composto sobre uma fonte 4K
 apareceu com 1/4 do tamanho, cobrindo só o canto). Card: margem lateral de ~8%
 do canvas de cada lado, altura máxima de ~70% do terço inferior (assim ele mantém
 ar em cima e embaixo e nunca gruda na borda de baixo), cantos arredondados + uma
-sombra suave para separar do vídeo atrás (nunca existe uma faixa opaca cobrindo o
+sombra suave para separar do vídeo atrás. **A imagem dentro do card também
+entra com cantos levemente arredondados, nunca quadrada**: um print de canto
+reto dentro do card arredondado fica com cara datada. O `news_insert.py` já faz
+isso sozinho (mesmo raio do card, `RADIUS_FRAC`). Se algum dia uma imagem for
+composta por outro caminho, arredonde os cantos do mesmo jeito (nunca existe uma faixa opaca cobrindo o
 vídeo: o resto do frame fica visível o tempo todo, inclusive atrás e em volta do
 card).
 

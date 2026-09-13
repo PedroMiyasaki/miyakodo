@@ -56,8 +56,7 @@ chyron é `fonts/JetBrainsMono.ttf`.
 |---|---|---|
 | `JetBrainsMono.ttf` | `news_insert.py` | o chyron de fonte do card |
 | `BricolageGrotesque-ExtraBold.ttf` | legendas do vídeo (`BODY`) | DISPLAY do Alvinegro |
-| `Newsreader-Italic.ttf` | legendas do vídeo (`EMPH`) | READ do Alvinegro |
 
-As duas fontes das legendas são copiadas para `<edit>/fonts/` na hora do render
-e alcançadas pelo `fontsdir` do libass: elas não estão instaladas no sistema,
-então nada fora desta skill consegue resolver elas pelo nome.
+A fonte das legendas é copiada para `<edit>/fonts/` na hora do render e
+alcançada pelo `fontsdir` do libass: ela não está instalada no sistema, então
+nada fora desta skill consegue resolver ela pelo nome.

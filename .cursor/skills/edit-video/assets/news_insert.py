@@ -31,7 +31,7 @@ import argparse
 import subprocess
 from pathlib import Path
 
-from PIL import Image, ImageDraw, ImageFilter, ImageFont
+from PIL import Image, ImageChops, ImageDraw, ImageFilter, ImageFont
 
 W, H = 1080, 1920        # overridden in main() from --width/--height
 FPS = 24
@@ -142,6 +142,14 @@ def _build_card(image_path: Path, fit: str, source_label: str) -> Image.Image:
         fw, fh = inner_w, inner_h
 
     card_w, card_h = fw + 2 * pad, fh + pad + top_pad
+    radius = max(12, round(min(card_w, card_h) * RADIUS_FRAC))
+
+    # the image gets its own rounded corners — a square print inside the
+    # rounded card reads dated. Multiply keeps any transparency the source has.
+    img_mask = Image.new("L", (fw, fh), 0)
+    ImageDraw.Draw(img_mask).rounded_rectangle([0, 0, fw - 1, fh - 1], radius=radius, fill=255)
+    fitted.putalpha(ImageChops.multiply(fitted.getchannel("A"), img_mask))
+
     card = Image.new("RGBA", (card_w, card_h), PAPER + (255,))
     px, py = (card_w - fw) // 2, top_pad
     card.alpha_composite(fitted, (px, py))
@@ -149,7 +157,6 @@ def _build_card(image_path: Path, fit: str, source_label: str) -> Image.Image:
     chyron = _chyron(card_w, source_label, pad)
     card.alpha_composite(chyron, (0, 0))
 
-    radius = max(12, round(min(card_w, card_h) * RADIUS_FRAC))
     mask = Image.new("L", (card_w, card_h), 0)
     ImageDraw.Draw(mask).rounded_rectangle([0, 0, card_w - 1, card_h - 1], radius=radius, fill=255)
     card.putalpha(mask)

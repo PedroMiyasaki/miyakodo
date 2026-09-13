@@ -65,10 +65,9 @@ modo, agrupadas pelas fases naturais do pipeline:
 - **As legendas do vídeo saem por padrão, e só no render final.** Todo modo
   recebe legendas queimadas, mas nunca num preview: elas são queimadas quando o
   corte já travou, então iterar na edição nunca paga o re-encode. O usuário
-  desliga só pedindo. Só a inicial da frase em maiúscula, as fontes do
-  Alvinegro, palavras acumulando de duas em duas, uma inversão em serifa
-  itálica para a palavra em ênfase. E o arquivo gerado é um esqueleto que você
-  edita na mão antes de queimar. Veja `assets/features/subtitles.md`.
+  desliga só pedindo. Só a inicial da frase em maiúscula, a fonte do
+  Alvinegro, trechos curtos que se substituem como a legenda padrão do
+  Instagram. Veja `assets/features/subtitles.md`.
 
 ## Notas de editor
 No meio do take, o usuário para de narrar e fala com **você**. Não existe frase
@@ -286,15 +285,6 @@ PYTHONUTF8=1 VIRTUAL_ENV= uv run --no-sync --project "$HOME/.claude/skills/video
 
 Avise que as legendas estão sendo queimadas antes de começar: esse render é
 mais lento que os previews, e é o primeiro que tem legenda.
-
-**A primeira passada gera o `master.ass` por uma regra burra: blocos de seis
-palavras, duas reveladas por passo. Não publique isso.** Reagrupe por
-respiração, varie como cada bloco se monta, marque as palavras de fecho com
-`\rEMPH`, ajuste os holds (§ A edição, em `assets/features/subtitles.md`), e
-rode o mesmo comando de novo para queimar o arquivo editado (um `master.ass`
-existente é reaproveitado, nunca regenerado por cima). Essa edição é onde as
-legendas param de parecer geradas automaticamente. É uma passada de escuta,
-não de formatação.
 
 Aí cheque as legendas (§ 4) e leve os três artefatos para a pasta da própria
 peça: o corte, a legenda do post e a capa, tudo em `posts/script/<slug>/`. A

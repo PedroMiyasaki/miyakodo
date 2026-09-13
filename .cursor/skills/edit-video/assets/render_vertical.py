@@ -21,10 +21,9 @@ compositing). This layer customizes:
      cwd=edit_dir and RELATIVE master.ass / fontsdir paths (absolute Windows
      paths break libass — the drive colon is a filter-arg separator).
   4. build_master_ass(): captions as ASS, not SRT — sentence case, the
-     Alvinegro faces bundled in assets/fonts/, and words revealed two at a
-     time inside an accumulating block. ASS because SRT carries exactly one
-     style for the whole file and silently drops inline override tags, which
-     makes per-word emphasis impossible. See assets/features/subtitles.md.
+     Alvinegro face bundled in assets/fonts/, and short chunks that replace
+     each other, like Instagram's own captions. ASS so the file carries its
+     own style, sized to the real canvas. See assets/features/subtitles.md.
 
 Honors video-use Hard Rules 1–7, 12. Run via:
   PYTHONUTF8=1 VIRTUAL_ENV= uv run --no-sync --project <video-use> python render_vertical.py <edl.json> -o <out.mp4>
@@ -43,13 +42,12 @@ SFX_CLICK = Path(__file__).parent / "sfx" / "click.wav"
 # one or it resamples the plate and the punch-in drifts off its landing word.
 FPS = 24
 
-# Captions — the Alvinegro voices (design/identity.md). Neither face is
-# installed on Windows, so the TTFs ship here and get copied into <edit>/fonts/
+# Captions — the Alvinegro DISPLAY voice (design/identity.md). The face isn't
+# installed on Windows, so the TTF ships here and gets copied into <edit>/fonts/
 # for libass to pick up via `fontsdir` (a relative path: see docstring note 3).
 CAPTION_FONTS = Path(__file__).parent / "fonts"
-CAPTION_TTFS = ("BricolageGrotesque-ExtraBold.ttf", "Newsreader-Italic.ttf")
-BODY_FONT = "Bricolage Grotesque ExtraBold"   # DISPLAY voice. Bold=0: the file
-EMPH_FONT = "Newsreader"                      # is already 800, don't fake-bold.
+CAPTION_TTFS = ("BricolageGrotesque-ExtraBold.ttf",)
+BODY_FONT = "Bricolage Grotesque ExtraBold"   # Bold=0: the file is already 800, don't fake-bold.
 
 # Fractions of the OUTPUT height/width, so one set of numbers holds whatever the
 # phone shot. PlayRes is written as the real canvas, so nothing is rescaled.
@@ -57,11 +55,11 @@ CAP_SIZE = 0.0583        # 112px at 1920 — matches the reference caption weigh
 CAP_MARGIN_V = 0.3125    # bottom safe zone, unchanged from the SRT era
 CAP_MARGIN_H = 0.074
 
-BLOCK_WORDS = 6          # a block is one breath; it clears before the next
-REVEAL_WORDS = 2         # words added per step inside a block
+CUE_WORDS = 4            # like Instagram's own captions: a short chunk that
+                         # replaces the last one, never a block that grows
 LINE_CHARS = 18          # wrap before the line reaches the safe margins
-HOLD_MAX = 0.6           # seconds a finished block rests through the pause
-MIN_STEP = 0.25          # shorter than this is a flash, not a reveal
+HOLD_MAX = 0.6           # seconds a cue rests through the pause after it
+MIN_STEP = 0.25          # shorter than this is a flash, not a caption
 
 
 def probe_output_dims(source: Path) -> tuple[int, int]:
@@ -233,14 +231,7 @@ def _ass_time(seconds: float) -> str:
 
 
 def _ass_header(w: int, h: int) -> str:
-    """Two styles: BODY for everything, EMPH for a word the delivery hits.
-
-    EMPH is the brand's own accent — inversion (design/identity.md: there is no
-    accent colour, the system inverts instead). Black serif italic inside a fat
-    white outline reads as a highlighter over footage. Switch to it mid-cue with
-    {\\rEMPH}word{\\r}; `\\r<style>` restores every property including
-    BorderStyle, which no other tag can do.
-    """
+    """One style, BODY, for every cue."""
     size = round(h * CAP_SIZE)
     return "\n".join([
         "[Script Info]",
@@ -261,10 +252,6 @@ def _ass_header(w: int, h: int) -> str:
         f"&H90000000,0,0,0,0,100,100,0,0,1,0,"
         f"{round(size * 0.045)},2,{round(w * CAP_MARGIN_H)},"
         f"{round(w * CAP_MARGIN_H)},{round(h * CAP_MARGIN_V)},1",
-        f"Style: EMPH,{EMPH_FONT},{size + 2},&H000A0A0A,&H000A0A0A,"
-        f"&H00FFFFFF,&H90000000,0,1,0,0,100,100,0,0,1,{round(size * 0.107)},"
-        f"0,2,{round(w * CAP_MARGIN_H)},{round(w * CAP_MARGIN_H)},"
-        f"{round(h * CAP_MARGIN_V)},1",
         "",
         "[Events]",
         "Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, "
@@ -273,22 +260,20 @@ def _ass_header(w: int, h: int) -> str:
     ])
 
 
-def _blocks(words: list[dict]) -> list[list[dict]]:
-    """Split a segment's words into breath-sized blocks.
-
-    Hard stops always break. A comma only breaks once the block has enough
-    words to have been a phrase — otherwise every subordinate clause becomes
-    its own two-word flash, which is the metronome look we are getting away
-    from."""
+def _chunks(words: list[dict]) -> list[list[dict]]:
+    """Split a segment's words into short caption chunks: break after any
+    punctuation, once the chunk reaches CUE_WORDS, or before it would wrap
+    to a third line."""
     out, cur = [], []
     for w in words:
         text = (w.get("text") or "").strip()
         if not text:
             continue
+        if cur and _wrap([x["text"].strip() for x in cur] + [text]).count("\\N") >= 2:
+            out.append(cur)
+            cur = []
         cur.append(w)
-        last = text[-1]
-        if last in ".!?…" or (last in ",;:" and len(cur) >= 4) \
-                or len(cur) >= BLOCK_WORDS:
+        if text[-1] in ".!?…,;:" or len(cur) >= CUE_WORDS:
             out.append(cur)
             cur = []
     if cur:
@@ -313,14 +298,10 @@ def build_master_ass(edl: dict, edit_dir: Path, out_path: Path,
                      canvas: tuple[int, int]) -> None:
     """Build an output-timeline ASS from the per-source transcripts.
 
-    Words accumulate REVEAL_WORDS at a time inside a block, so the text builds
-    the way someone speaks instead of flashing a fresh pair every 400ms. The
-    cue that ends a block holds through the pause after it. Sentence case is
-    kept as transcribed — the transcript already capitalises names and
-    sentence starts, and forcing UPPERCASE throws that away.
-
-    This is a STARTING POINT. The rhythm and emphasis pass in
-    assets/features/subtitles.md edits the file by hand before it is burned."""
+    One cue per chunk; the next chunk replaces it, nothing accumulates. A cue
+    holds through the pause after it. Sentence case is kept as transcribed —
+    the transcript already capitalises names and sentence starts, and forcing
+    UPPERCASE throws that away."""
     transcripts_dir = edit_dir / "transcripts"
     w, h = canvas
     lines: list[str] = []
@@ -336,50 +317,25 @@ def build_master_ass(edl: dict, edit_dir: Path, out_path: Path,
             continue
 
         transcript = json.loads(tr_path.read_text(encoding="utf-8"))
-        blocks = _blocks(R._words_in_range(transcript, seg_start, seg_end))
+        chunks = _chunks(R._words_in_range(transcript, seg_start, seg_end))
 
-        for bi, block in enumerate(blocks):
-            texts = [(x.get("text") or "").strip() for x in block]
-            steps = [block[i:i + REVEAL_WORDS]
-                     for i in range(0, len(block), REVEAL_WORDS)]
-
-            # Fold in a step that lands too soon after the one before it.
-            # Delivered fast enough, two pairs are 90ms apart: as separate
-            # cues they flash unreadably, and forcing each to MIN_STEP makes
-            # them overlap and stack on screen. Reveal them together instead.
-            folded: list[list[dict]] = []
-            for step in steps:
-                if folded and step[0].get("start", 0.0) - \
-                        folded[-1][0].get("start", 0.0) < MIN_STEP:
-                    folded[-1] = folded[-1] + step
-                else:
-                    folded.append(step)
-            steps = folded
-
-            # Nothing may run past the next block, or across the hard cut.
-            limit = min(blocks[bi + 1][0].get("start", seg_end)
-                        if bi + 1 < len(blocks) else seg_end, seg_end)
-
-            shown = 0
-            for si, step in enumerate(steps):
-                shown += len(step)
-                start = max(seg_start, step[0].get("start", seg_start))
-                if si + 1 < len(steps):
-                    end = steps[si + 1][0].get("start", start + 0.4)
-                else:
-                    # Last cue of the block: hold through the pause after it.
-                    end = block[-1].get("end", seg_end) + HOLD_MAX
-                # Floor first, cap second — the cap has to win, or a cue can
-                # be pushed past the next one and the two draw stacked.
-                end = min(max(end, start + MIN_STEP), limit)
-                text = _wrap(texts[:shown]).rstrip(",;:.")
-                text = text.replace("{", "(").replace("}", ")")
-                lines.append(
-                    f"Dialogue: 0,"
-                    f"{_ass_time(start - seg_start + seg_offset)},"
-                    f"{_ass_time(end - seg_start + seg_offset)},"
-                    f"BODY,,0,0,0,,{text}"
-                )
+        for ci, chunk in enumerate(chunks):
+            start = max(seg_start, chunk[0].get("start", seg_start))
+            # Nothing may run past the next cue, or across the hard cut.
+            limit = min(chunks[ci + 1][0].get("start", seg_end)
+                        if ci + 1 < len(chunks) else seg_end, seg_end)
+            end = chunk[-1].get("end", seg_end) + HOLD_MAX
+            # Floor first, cap second — the cap has to win, or a cue can
+            # be pushed past the next one and the two draw stacked.
+            end = min(max(end, start + MIN_STEP), limit)
+            text = _wrap([(x.get("text") or "").strip() for x in chunk])
+            text = text.rstrip(",;:.").replace("{", "(").replace("}", ")")
+            lines.append(
+                f"Dialogue: 0,"
+                f"{_ass_time(start - seg_start + seg_offset)},"
+                f"{_ass_time(end - seg_start + seg_offset)},"
+                f"BODY,,0,0,0,,{text}"
+            )
 
         seg_offset += seg_dur
 
@@ -402,8 +358,7 @@ def _build_fc(overlays: list[dict], subs: Path | None,
         )
         cur = f"[v{idx}]"
     if subs is not None:
-        # No force_style: master.ass carries its own [V4+ Styles], and
-        # force_style would flatten the BODY/EMPH split back into one look.
+        # No force_style: master.ass carries its own [V4+ Styles].
         parts.append(f"{cur}subtitles={subs.name}:fontsdir=fonts[outv]")
     elif overlays:
         parts[-1] = parts[-1].rsplit("[", 1)[0] + "[outv]"
@@ -540,8 +495,8 @@ def main() -> None:
         for ttf in CAPTION_TTFS:
             if not (fonts_dir / ttf).exists():
                 shutil.copy2(CAPTION_FONTS / ttf, fonts_dir / ttf)
-        # ponytail: keep a hand-edited master.ass (the rhythm + emphasis pass)
-        # instead of regenerating over it. Delete the file to rebuild it from
+        # ponytail: keep a hand-edited master.ass (e.g. a fixed transcription
+        # typo) instead of regenerating over it. Delete the file to rebuild it from
         # the transcripts.
         if subs.exists():
             print(f"reusing existing {subs.name} (delete it to regenerate)")
