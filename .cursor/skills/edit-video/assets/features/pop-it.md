@@ -41,8 +41,8 @@ Não marque conectores ("como", "e", "mais"): só os termos da lista.
 |---|---|
 | `scale_peak` por hit | 1.04 (máx. 1.06) |
 | Duração do micro-zoom | 120–180ms (subida + reset) |
-| SFX | `assets/sfx/click.wav` (mono, curto, ~30–80ms) |
-| Ganho do SFX | ~-18 a -12 dBFS abaixo da VO. Isso vale para um hit isolado num beat sem fala simultânea. Quando o click cai exatamente onde a VO está falando (o caso do pop de imagem em `news-inserts`: o click marca o início do overlay, que também é onde a fala do beat começa), essa faixa é baixa demais e o click some debaixo da voz. O `render_vertical.py --pop-it` usa `+4dB` sobre o `click.wav` (pico efetivo ~-3.5dBFS) para esse caso. Medido, não só ouvido: `-14dB` de atenuação deixou o pico do click em ~-25dBFS contra um RMS de voz de ~-15dB, inaudível. Confirme de ouvido antes de assumir "presente": pico medido não quer dizer perceptível debaixo da fala. |
+| SFX | `assets/sfx/click.wav` (mono, dois toques, ~278ms) |
+| Ganho do SFX | ~-18 a -12 dBFS abaixo da VO. Isso vale para um hit isolado num beat sem fala simultânea. Quando o click cai exatamente onde a VO está falando (o caso do pop de imagem em `news-inserts`: o click marca o início do overlay, que também é onde a fala do beat começa), essa faixa é baixa demais e o click some debaixo da voz. O `render_vertical.py --pop-it` usa `+6dB` sobre o `click.wav` (pico efetivo ~-1.5dBFS) para esse caso. Medido, não só ouvido: `-14dB` de atenuação deixou o pico do click em ~-25dBFS contra um RMS de voz de ~-15dB, inaudível. Confirme de ouvido antes de assumir "presente": pico medido não quer dizer perceptível debaixo da fala. |
 | Máximo de hits por beat | 2–5 (mais que isso vira metrônomo, divida em dois beats) |
 
 ## Como rodar
@@ -79,8 +79,8 @@ Não marque conectores ("como", "e", "mais"): só os termos da lista.
   erro já "descola" o click da boca).
 
 ## Dependência de asset
-Click canônico: `.claude/skills/edit-video/assets/sfx/click.wav` (mono, ~45ms,
-um tick seco de ruído branco filtrado, gerado e versionado no repo). Se o
+Click canônico: `.claude/skills/edit-video/assets/sfx/click.wav` (mono, ~278ms,
+um click gravado de dois toques, versionado no repo; spec em `sfx/README.md`). Se o
 arquivo sumir, não invente um SFX na hora do render: restaure o asset ou pule os
 hits de áudio e avise. Para trocar o som, substitua o arquivo mantendo o nome.
 

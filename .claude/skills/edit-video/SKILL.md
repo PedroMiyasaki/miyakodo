@@ -42,8 +42,9 @@ modo, agrupadas pelas fases naturais do pipeline:
 
 ## Invariantes (todo modo)
 
-- **Nada de conversão para 9:16.** Preserve o enquadramento e a resolução da
-  fonte.
+- **Nada de conversão para 9:16.** Preserve o enquadramento, a resolução e o
+  frame rate da fonte (60fps gravado sai 60fps, preview incluído, e os cards do
+  `news_insert.py` recebem o mesmo `--fps`).
 - **O talking head nunca é redimensionado nem cortado.** Imagem de referência
   (`news-inserts`) é sempre um **card flutuante** composto por cima do vídeo:
   ela nunca reserva espaço nem força crop ou pillarbox. No `news` cada card é

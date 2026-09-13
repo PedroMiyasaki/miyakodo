@@ -368,23 +368,21 @@ def _build_fc(overlays: list[dict], subs: Path | None,
     if click_idx is not None and click_ts:
         # click.wav's own peak is -7.5dBFS. Clicks land at overlay start —
         # exactly where the VO is usually mid-word, not a pause — so a click
-        # that just sits "under" the voice gets masked entirely. +4dB (peak
-        # ~-3.5dBFS, 24dB above the silent floor) still wasn't audible on
-        # playback — likely the click's own timbre (hipass/lopass-filtered
-        # white noise) is thin next to voice on small speakers, not just
-        # level. +10dB (peak ~+2.5dBFS pre-mix) to compensate; loudnorm's
-        # -1dBTP ceiling downstream catches any overs from the sum.
+        # that just sits "under" the voice gets masked entirely. The old
+        # filtered-white-noise click needed +10dB to cut through; the current
+        # recorded two-hit click has real transients and was too loud at
+        # +10dB, so +6dB (peak ~-1.5dBFS pre-mix). This is the volume knob.
         n = len(click_ts)
         parts.append(
             f"[{click_idx}:a]aformat=sample_rates=48000:channel_layouts=stereo,"
-            f"volume=+10dB,asplit={n}" + "".join(f"[cs{i}]" for i in range(n))
+            f"volume=+6dB,asplit={n}" + "".join(f"[cs{i}]" for i in range(n))
         )
         for i, t in enumerate(click_ts):
             parts.append(f"[cs{i}]adelay={round(t*1000)}:all=1[cd{i}]")
         clicks = "".join(f"[cd{i}]" for i in range(n))
         # alimiter is load-bearing, not belt-and-braces: click.wav peaks at
-        # -7.5dBFS, so volume=+10dB puts the click alone at +2.5dBFS and the
-        # sum clips inside THIS stage's AAC encode. Downstream loudnorm cannot
+        # -7.5dBFS, so volume=+6dB puts the click alone at -1.5dBFS, and
+        # summed over a VO peak it still clips inside THIS stage's AAC encode. Downstream loudnorm cannot
         # undo it — worse, it runs linear=true (constant gain, no peak
         # limiting) and measures the already-clipped file as TP~0, reads that
         # as headroom, and adds another ~3dB. Cap the mix here, before the

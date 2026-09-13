@@ -15,3 +15,6 @@ video/node_modules/
 # OS
 .DS_Store
 Thumbs.db
+
+# Rotinas de conteúdo: ficam só locais
+content-routines/**/*.md
