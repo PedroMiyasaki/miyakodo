@@ -69,10 +69,10 @@ PYTHONUTF8=1 VIRTUAL_ENV= uv run --no-sync --project "$HOME/.claude/skills/video
   --image "video/inputs/<slug>-imagens/01.png" \
   --out "<edit>/animations/slot_news_01" \
   --duration 6 --source "openai.com" --fit contain \
-  --width 2160 --height 3840
+  --width 2160 --height 3840 --fps 60
 ```
 
-- `--width`/`--height`: o output real da fonte, tirado da linha `canvas:` que o
+- `--width`/`--height`/`--fps`: o output real da fonte (resolução **e** frame rate), tirado da linha `canvas:` que o
   `render_vertical.py` imprime, não um valor fixo.
 - `--fit contain` (o padrão, e o preferido quase sempre): a imagem inteira cabe
   dentro do card, sem cortar nada. O fundo do card é branco, e a maioria dos

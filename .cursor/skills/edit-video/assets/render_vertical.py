@@ -40,7 +40,10 @@ SFX_CLICK = Path(__file__).parent / "sfx" / "click.wav"
 
 # extract_clip pins every segment to this rate; zoompan must be told the same
 # one or it resamples the plate and the punch-in drifts off its landing word.
-FPS = 24
+FPS = 24  # overridden in main() with the first source's frame rate — never force a lower rate
+# ponytail: fixed thread cap so a 1440x2560@60 x264 encode stays ~1.2-1.6 GB instead of 2-2.5 GB
+# (the uncapped run swapped and got OOM-killed on a 16 GB laptop). Raise it on a bigger machine.
+ENC_THREADS = ["-filter_threads", "2", "-threads", "6"]
 
 # Captions — the Alvinegro DISPLAY voice (design/identity.md). The face isn't
 # installed on Windows, so the TTF ships here and gets copied into <edit>/fonts/
@@ -62,6 +65,40 @@ HOLD_MAX = 0.6           # seconds a cue rests through the pause after it
 MIN_STEP = 0.25          # shorter than this is a flash, not a caption
 
 
+def _has_nvenc() -> bool:
+    """One-frame probe: the gyan build lists h264_nvenc even on machines without an NVIDIA GPU."""
+    r = subprocess.run(["ffmpeg", "-v", "error", "-f", "lavfi", "-i", "color=s=256x256:d=0.1",
+                        "-c:v", "h264_nvenc", "-f", "null", "-"], capture_output=True)
+    return r.returncode == 0
+
+
+NVENC = _has_nvenc()
+
+
+def video_codec(intermediate: bool) -> list[str]:
+    """Segments are a near-lossless intermediate; the composite is the one delivery encode, the
+    same for preview and final so the preview shows the real quality. Measured on one 1440x2560@60
+    HLG frame vs the tonemapped source: NVENC cq19 uncapped 43.8 dB PSNR, x264 medium crf17 42.5 dB
+    at 9x the time. A maxrate cap (25M/45M) visibly smeared skin texture at 60fps — don't cap.
+    libx264 is the fallback when there is no NVIDIA GPU."""
+    if NVENC:
+        if intermediate:
+            return ["-c:v", "h264_nvenc", "-preset", "p1", "-rc", "constqp", "-qp", "14"]
+        return ["-c:v", "h264_nvenc", "-preset", "p5", "-tune", "hq", "-rc", "vbr", "-cq", "19", "-b:v", "0"]
+    preset, crf = ("ultrafast", "14") if intermediate else ("medium", "17")
+    return ["-c:v", "libx264", "-preset", preset, "-crf", crf, *ENC_THREADS[2:]]
+
+
+def probe_fps(source: Path) -> str:
+    """Source frame rate as ffmpeg's rational string ("60/1", "30000/1001")."""
+    out = subprocess.run(
+        ["ffprobe", "-v", "error", "-select_streams", "v:0",
+         "-show_entries", "stream=r_frame_rate", "-of", "default=nw=1:nk=1", str(source)],
+        capture_output=True, text=True, check=True,
+    )
+    return out.stdout.split()[0].strip(",")
+
+
 def probe_output_dims(source: Path) -> tuple[int, int]:
     """Decoded (post-rotation) width/height — what ffmpeg actually outputs,
     not the raw stream dims (iPhone footage stores landscape + a rotate
@@ -70,8 +107,10 @@ def probe_output_dims(source: Path) -> tuple[int, int]:
     canvas — a fixed 1080x1920 assumption was the session-2 "tiny image" bug."""
     out = subprocess.run(
         ["ffprobe", "-v", "error", "-select_streams", "v:0",
-         "-show_entries", "stream=width,height", "-show_entries",
-         "side_data=rotation", "-of", "json", str(source)],
+         # stream_side_data, not side_data: the top-level section makes ffprobe read every
+         # frame's side data — 167s per call on a 2-min 1440p HEVC, and this runs per segment
+         "-show_entries", "stream=width,height:stream_side_data=rotation",
+         "-of", "json", str(source)],
         capture_output=True, text=True, check=True,
     )
     data = json.loads(out.stdout)
@@ -88,15 +127,17 @@ def probe_output_dims(source: Path) -> tuple[int, int]:
 
 
 def extract_clip(source: Path, seg_start: float, duration: float,
-                 grade_filter: str, out_path: Path, preview: bool) -> None:
+                 grade_filter: str, out_path: Path,
+                 canvas: tuple[int, int] | None = None) -> None:
     """Extract a cut range; preserve source resolution/aspect. Never crops or
-    resizes — image overlays float as a card, they don't need reserved space."""
+    resizes — image overlays float as a card, they don't need reserved space.
+    The one exception is a second source shot at another resolution (a pickup
+    take): it is scaled to `canvas` so the `-c copy` concat doesn't break."""
     out_path.parent.mkdir(parents=True, exist_ok=True)
     fo = max(0.0, duration - 0.03)
     af = f"afade=t=in:st=0:d=0.03,afade=t=out:st={fo:.3f}:d=0.03"
-    preset, crf = ("medium", "22") if preview else ("fast", "20")
     cmd = [
-        "ffmpeg", "-y", "-ss", f"{seg_start:.3f}", "-i", str(source),
+        "ffmpeg", "-y", *ENC_THREADS[:2], "-ss", f"{seg_start:.3f}", "-i", str(source),
         "-t", f"{duration:.3f}",
     ]
     vf_parts: list[str] = []
@@ -104,11 +145,15 @@ def extract_clip(source: Path, seg_start: float, duration: float,
         vf_parts.append(R.TONEMAP_CHAIN)
     if grade_filter:
         vf_parts.append(grade_filter)
+    if canvas and probe_output_dims(source) != canvas:
+        # ponytail: plain scale assumes the pickup has the same aspect (9:16 phone
+        # takes do); a different aspect would stretch — pad/crop if that ever happens.
+        vf_parts.append(f"scale={canvas[0]}:{canvas[1]}:flags=lanczos,setsar=1")
     if vf_parts:
         cmd += ["-vf", ",".join(vf_parts)]
     cmd += [
         "-af", af,
-        "-c:v", "libx264", "-preset", preset, "-crf", crf,
+        *video_codec(intermediate=True),
         "-pix_fmt", "yuv420p", "-r", str(FPS),
         "-c:a", "aac", "-b:a", "192k", "-ar", "48000",
         "-movflags", "+faststart", str(out_path),
@@ -426,7 +471,7 @@ def composite(base: Path, overlays: list[dict], subs: Path | None,
     audio_codec = ["-c:a", "aac", "-b:a", "192k"] if click_ts else ["-c:a", "copy"]
     cmd = ["ffmpeg", "-y", *inputs, "-filter_complex", fc,
            "-map", "[outv]", "-map", audio_map,
-           "-c:v", "libx264", "-preset", "fast", "-crf", "18", "-pix_fmt", "yuv420p",
+           *video_codec(intermediate=False), "-pix_fmt", "yuv420p",
            *audio_codec, "-movflags", "+faststart", str(out_path)]
     print(
         f"compositing -> {out_path.name}  "
@@ -461,7 +506,10 @@ def main() -> None:
 
     first_src = R.resolve_path(next(iter(edl["sources"].values())), edit_dir)
     canvas = probe_output_dims(first_src)
-    print(f"canvas: {canvas[0]}x{canvas[1]}  (pass this as --width/--height to news_insert.py)")
+    global FPS
+    FPS = probe_fps(first_src)
+    print(f"canvas: {canvas[0]}x{canvas[1]} @ {FPS} fps  (pass as --width/--height/--fps to news_insert.py)"
+          f"  encoder: {'h264_nvenc' if NVENC else 'libx264'}")
 
     seg_paths = []
     print(f"extracting {len(edl['ranges'])} segment(s) -> {clips_dir.name}/")
@@ -470,11 +518,16 @@ def main() -> None:
         s, e = float(r["start"]), float(r["end"])
         op = clips_dir / f"seg_{i:02d}.mp4"
         print(f"  [{i:02d}] {s:7.2f}-{e:7.2f} ({e-s:5.2f}s)")
-        extract_clip(src, s, e - s, grade, op, args.preview)
+        extract_clip(src, s, e - s, grade, op, canvas)
         seg_paths.append(op)
 
     base = edit_dir / ("base_preview.mp4" if args.preview else "base.mp4")
     R.concat_segments(seg_paths, base, edit_dir)
+    # ponytail: segments and base are rebuilt on every run, and at the near-lossless intermediate
+    # they're ~1.7 GB per 2 minutes each — drop each one as soon as the next stage has consumed it
+    # (keeping them across parallel sessions filled the disk).
+    shutil.rmtree(clips_dir)
+    intermediates = [base]
 
     # Plate effects run on the concatenated talking-head, before overlays, so
     # third-band cards and captions stay in colour and at 1.0x on top of them.
@@ -484,6 +537,7 @@ def main() -> None:
         print(f"plate effects -> {len(plate_fx)} (zoom/B&W)")
         apply_plate_effects(base, plate_fx, canvas[0], canvas[1], plate, args.preview)
         base = plate
+        intermediates.append(plate)
 
     subs = None
     if args.subtitles:
@@ -510,6 +564,8 @@ def main() -> None:
         print("loudnorm -> -14 LUFS / -1 dBTP / LRA 11")
         R.apply_loudnorm_two_pass(tmp, out_path, preview=args.preview)
         tmp.unlink(missing_ok=True)
+    for f in intermediates:
+        f.unlink(missing_ok=True)
 
     mb = out_path.stat().st_size / (1024 * 1024)
     print(f"\ndone: {out_path} ({mb:.1f} MB)")

@@ -335,7 +335,7 @@ Conserte o que a leitura apontar **traduzindo antes de cortar.** O material mais
 | não continuaria, ou nenhuma pergunta ficou | volte ao 4c: o gancho falhou em reconhecimento, aposta ou pergunta aberta |
 | palavra que não entendeu | traduza na primeira menção (4a, item 4). Corte só o que não é material forte |
 | arrastaria o dedo | o trecho não abriu nada novo: reescreva a virada, ponha uma prova, ou corte o tópico |
-| o final não respondeu | reescreva a recompensa numa das três formas |
+| o final não respondeu | reescreva a recompensa numa das quatro formas |
 | o resumo em duas frases saiu confuso | a pergunta do vídeo não está clara: volte ao 4a, item 3 |
 | o roteiro tem sacada, e nenhuma ideia maior chegou | reescreva o degrau da sacada. Se ela não se sustenta nem reescrita, tire a sacada e feche na notícia |
 | tópico vago | a pista não diz o que explicar: ponha nela a analogia, o exemplo ou o número escolhido |

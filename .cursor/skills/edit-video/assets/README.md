@@ -45,6 +45,7 @@ Cada chamada escreve `<out>/frames/*.png` e `<out>/render.mov`.
 | `--out` | obrigatória | a pasta do slot (ex.: `<edit>/animations/slot_news_01`) |
 | `--duration` | obrigatória | segundos = o tamanho da janela do beat |
 | `--fit` | `contain` | `contain` = a imagem inteira cabe na faixa. `cover` = preenche a faixa e corta |
+| `--width`/`--height`/`--fps` | `1080`/`1920`/`24` | canvas e frame rate reais da fonte: copie da linha `canvas:` do `render_vertical.py` |
 | `--source` | `""` | chyron mono no topo da faixa ("FONTE: …"). Omita para um insert limpo |
 
 As cores do card (ink/paper/seal) são constantes no próprio script. A fonte do

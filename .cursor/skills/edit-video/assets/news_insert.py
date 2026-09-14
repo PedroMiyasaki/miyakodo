@@ -34,7 +34,7 @@ from pathlib import Path
 from PIL import Image, ImageChops, ImageDraw, ImageFilter, ImageFont
 
 W, H = 1080, 1920        # overridden in main() from --width/--height
-FPS = 24
+FPS = 24                 # overridden in main() from --fps
 
 # Card geometry, as fractions of canvas — resolution-independent.
 MARGIN_X_FRAC = 0.08     # side margins
@@ -243,7 +243,7 @@ def build_insert(out_dir: Path, image_path: Path, duration: float,
 
 
 def main():
-    global W, H
+    global W, H, FPS
     ap = argparse.ArgumentParser(description="Lower-third news reference card")
     ap.add_argument("--image", type=Path, required=True)
     ap.add_argument("--out", type=Path, required=True)
@@ -252,9 +252,10 @@ def main():
     ap.add_argument("--fit", choices=("contain", "cover"), default="contain")
     ap.add_argument("--width", type=int, default=1080, help="canvas width — match the base video's actual output width")
     ap.add_argument("--height", type=int, default=1920, help="canvas height — match the base video's actual output height")
+    ap.add_argument("--fps", type=float, default=24, help="frame rate — match the base video's (the render's `canvas:` line)")
     a = ap.parse_args()
 
-    W, H = a.width, a.height
+    W, H, FPS = a.width, a.height, a.fps
 
     a.out.mkdir(parents=True, exist_ok=True)
     mov = build_insert(a.out, a.image, a.duration, a.source, a.fit)
