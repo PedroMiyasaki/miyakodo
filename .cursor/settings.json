@@ -1,0 +1,7 @@
+{
+  "plugins": {
+    "remotion": {
+      "enabled": true
+    }
+  }
+}
