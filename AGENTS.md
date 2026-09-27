@@ -91,17 +91,11 @@ Esse versionamento é deliberado: os arquivos locais são a trilha de auditoria 
 | `linkedin` | `final.md`, `image.png` (URL de origem registrada no rodapé do `final.md`) | `v<N>.md` |
 | `substack` | `final.md` (título + subtítulo + artigo com marcadores de imagem inline + rodapé de metadados), `cover.png`, `01.png` … `NN.png` | `v<N>.md`, `shotlist.md` |
 
-Os PNGs renderizados ficam soltos na raiz do slug, sem subpasta `render/` nem `editorial/`, e a composição HTML é um intermediário de build, então fica em `sketch/`. `output/` sumiu por completo: toda skill escreve em `posts/<type>/<slug>/`, `edit-video` incluída. Um Reel não é um objeto próprio. Ele é a entrega do roteiro, então o vídeo, a legenda do post e a capa caem na pasta do próprio roteiro.
+Os PNGs renderizados ficam soltos na raiz do slug, sem subpasta `render/` nem `editorial/`, e a composição HTML é um intermediário de build, então fica em `sketch/`. `output/` sumiu por completo: toda skill escreve em `posts/<type>/<slug>/`. Um Reel não é um objeto próprio. Ele é a entrega do roteiro, então o vídeo, a legenda do post e a capa caem na pasta do próprio roteiro.
 
-## Edição de vídeo: Reels
+## Vídeo: Reels
 
-A skill `.agents/skills/edit-video/SKILL.md` guarda as **preferências editoriais** dos Reels: modos `baseline`, `news` e `authority`, cortes, notas faladas ao editor, legendas, caption e capa. Os detalhes ficam em `references/modos.md` e `references/legendas-e-entregas.md`, dentro da skill. Ela é invocada por pedidos como "edita esse vídeo", "transforma isso num Reel" e "edita no modo news".
-
-A execução usa os recursos de edição disponíveis na sessão do Codex, com preferência pelos nativos quando houver. Verifique a disponibilidade antes de prometer efeitos ou exportação. A edição deste projeto **não depende da skill global legada `video-use`**: não carregue seu setup nem os scripts das cópias em `.claude/` ou `.cursor/` como pré-requisito. A skill local define o resultado editorial, sem impor fornecedor de transcrição, instalação ou motor de renderização.
-
-Preserve o enquadramento original, sem forçar 9:16. As legendas ficam ligadas por padrão no vídeo final; previews de corte podem ficar sem elas. Notas faladas ao editor orientam a montagem e são retiradas integralmente do áudio, da imagem e das legendas, junto dos takes descartados que elas indicarem.
-
-Input em `video/inputs/` (padrão = o mais recente), material de edição em `edit/<slug>/` e, no "pronto", as três entregas juntas na pasta do roteiro, `posts/script/<slug>/`: `reels.mp4`, `caption.md` e `cover.png`. A capa segue o Alvinegro e o arquétipo `01 COVER`. Os nomes são fixos; o slug identifica a pasta. O roteiro e seu histórico permanecem no lugar.
+Vídeo de Reel é produzido com Hyperframes, pela skill `hyperframes`. No "pronto", as entregas ficam na pasta do roteiro, `posts/script/<slug>/`: `reels.mp4`, `caption.md` e `cover.png`. A capa segue o Alvinegro e o arquétipo `01 COVER`. Os nomes são fixos; o slug identifica a pasta.
 
 ## Sistema visual: Alvinegro
 

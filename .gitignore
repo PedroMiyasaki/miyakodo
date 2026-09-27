@@ -8,9 +8,8 @@ video/inputs/
 __pycache__/
 *.pyc
 
-# Node (projeto Remotion em video/)
+# Node
 node_modules/
-video/node_modules/
 
 # OS
 .DS_Store
@@ -18,3 +17,6 @@ Thumbs.db
 
 # Rotinas de conteúdo: ficam só locais
 content-routines/**/*.md
+
+# Chave da Gemini API (AI Studio). Nao versionar.
+reference.txt

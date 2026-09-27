@@ -10,7 +10,7 @@ Este documento registra os formatos editoriais que o projeto produz hoje. A list
 
 Vídeo curto de talking head. A ideia vira uma história guiada por uma pergunta, com roteiro híbrido de trechos literais e tópicos para preservar, ao mesmo tempo, retenção e naturalidade na fala.
 
-O formato é escrito pela skill `write-script` e finalizado pela `edit-video`. A entrega completa mora em `posts/script/<slug>/`: roteiro (`final.md`), vídeo (`reels.mp4`), legenda (`caption.md`) e capa (`cover.png`). No banco Ideas, o valor de `Format` é `Reel`.
+O formato é escrito pela skill `write-script`. O vídeo é produzido com Hyperframes. A entrega completa mora em `posts/script/<slug>/`: roteiro (`final.md`), vídeo (`reels.mp4`), legenda (`caption.md`) e capa (`cover.png`). No banco Ideas, o valor de `Format` é `Reel`.
 
 ### Modos e variações atuais
 
@@ -26,13 +26,7 @@ O formato é escrito pela skill `write-script` e finalizado pela `edit-video`. A
 - **Literal:** hook, viradas, recompensa e CTA são falados exatamente como foram escritos.
 - **Tópicos:** promessa e degraus funcionam como pistas para uma explicação natural.
 
-**Modo de edição do vídeo:**
-
-- **Baseline:** corte de pausas e normalização de áudio, sem overlays; serve para tese e posicionamento.
-- **News:** acrescenta imagens de referência sincronizadas para notícias concretas.
-- **Authority:** habilita ênfases visuais e evidências para conteúdo pedagógico que ensina um mecanismo.
-
-Esses modos mudam a narrativa ou a montagem, mas a peça continua sendo um Reel.
+Esses modos mudam a narrativa, mas a peça continua sendo um Reel.
 
 ## Carrossel editorial — Canal Principal: Instagram
 
@@ -100,5 +94,4 @@ Os caminhos de **reuso** e **standalone** são fluxos de entrada e fechamento no
 ## O que não conta como formato
 
 - `capture-idea` e `content-research` alimentam o banco Ideas, mas não produzem uma peça publicável.
-- `edit-video` completa o Reel; seus modos são estilos de edição, não formatos novos.
 - `build-thread-carousel` cria uma apresentação derivada para Instagram, sem substituir o `Format` primário `Thread`.

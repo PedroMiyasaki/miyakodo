@@ -22,10 +22,6 @@ Essas atividades muito provavelmente vão ser feitas no fim de semana, fora da r
 [ ] Configurar os hooks do dia a dia (alarmes, lembretes, tarefas) que me forcem a seguir a estratégia semanal, depois disso, é só ser consistente e fazer!
 Obs!!! Isso parece complicado, mas não precisa ser, a estratégia deve ser otimizada para um tipo de pessoa que consiga me gerar 100k por mês, só isso! Executar 15k seguidores > idealizar 1kk seguidores
 
-### Edit-video
-[ ] Refatorar a skill edit-video para, no modo pedagógico, usar imagens e animações com o brand book explicando os conceitos
-    [ ] Testar um vídeo com > 5 observações de editor nesse modo, ver se funciona, dando prompt enquanto grava
-
 ### Reels com IA
 [ ] Pipeline de Reels com clone (Ygen)
 

@@ -91,13 +91,11 @@ Esse versionamento é deliberado: os arquivos locais são a trilha de auditoria 
 | `linkedin` | `final.md`, `image.png` (URL de origem registrada no rodapé do `final.md`) | `v<N>.md` |
 | `substack` | `final.md` (título + subtítulo + artigo com marcadores de imagem inline + rodapé de metadados), `cover.png`, `01.png` … `NN.png` | `v<N>.md`, `shotlist.md` |
 
-Os PNGs renderizados ficam soltos na raiz do slug, sem subpasta `render/` nem `editorial/`, e a composição HTML é um intermediário de build, então fica em `sketch/`. `output/` sumiu por completo: toda skill escreve em `posts/<type>/<slug>/`, `edit-video` incluída. Um Reel não é um objeto próprio. Ele é a entrega do roteiro, então o vídeo, a legenda do post e a capa caem na pasta do próprio roteiro.
+Os PNGs renderizados ficam soltos na raiz do slug, sem subpasta `render/` nem `editorial/`, e a composição HTML é um intermediário de build, então fica em `sketch/`. `output/` sumiu por completo: toda skill escreve em `posts/<type>/<slug>/`. Um Reel não é um objeto próprio. Ele é a entrega do roteiro, então o vídeo, a legenda do post e a capa caem na pasta do próprio roteiro.
 
-## Edição de vídeo: Reels
+## Vídeo: Reels
 
-A skill `edit-video` transforma um vídeo de talking head num Reel pronto. Ela é uma camada sobre a skill genérica `video-use` (que mora em `~/.claude/skills/video-use/` e carrega as regras de correção de produção): `edit-video` não reconstrói o motor. Ela escolhe um **mode** (uma coleção de **features** em `.claude/skills/edit-video/assets/features/` e `assets/modes/`) e roda cada uma. Invocada por comando natural ("edita esse vídeo", "transforma isso num Reel", "edita no modo news"). Durante a gravação, o usuário pode falar **notas de edição** para o editor no meio do take (por exemplo "editor, corta essa parte, vou falar o final de novo"): a skill obedece a instrução na montagem e **corta** o trecho inteiro da entrega, então ele não chega nem no áudio nem nas legendas do vídeo.
-
-Features atuais: `cut-dead-air`, `loudnorm`, `news-inserts`, `subtitles` (**ligada por padrão, queimada só no render final**: os previews nunca carregam legenda, então iterar no corte continua barato), mais specs de `zoom-emphasis`, `black-and-white`, `pop-it` e `motion-third`. Modes: `baseline` e `news` (implementados) e `authority` (features definidas, helpers pendentes). Invariante: nunca force 9:16. Input em `video/inputs/` (padrão = o mais recente), scratch em `edit/<slug>/` na raiz (fora do repositório git `video/`), e no "pronto" as três entregas caem juntas na pasta do próprio roteiro, `posts/script/<slug>/`, ao lado do roteiro que as produziu, e não numa árvore separada: `reels.mp4` (o corte), `caption.md` (a legenda do post no Instagram) e `cover.png` (a capa, composta no sistema Alvinegro a partir do arquétipo `01 COVER`). Os nomes de arquivo são fixos e genéricos em toda pasta de Reel: o slug é a pasta, nunca parte do nome do arquivo. Nada mais sai para `video/outputs/`.
+Vídeo de Reel é produzido com Hyperframes, pela skill `hyperframes`. No "pronto", as entregas ficam na pasta do roteiro, `posts/script/<slug>/`: `reels.mp4`, `caption.md` e `cover.png`. A capa segue o Alvinegro e o arquétipo `01 COVER`. Os nomes são fixos; o slug identifica a pasta.
 
 ## Sistema visual: Alvinegro
 
