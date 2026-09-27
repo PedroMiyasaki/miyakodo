@@ -143,7 +143,9 @@ def extract_clip(source: Path, seg_start: float, duration: float,
     vf_parts: list[str] = []
     if R.is_hdr_source(source):
         vf_parts.append(R.TONEMAP_CHAIN)
-    if grade_filter:
+    # "auto" resolves to the sentinel "__AUTO__". On HDR sources the Hable
+    # tonemap above is the grade; feeding the sentinel into -vf breaks ffmpeg.
+    if grade_filter and grade_filter != "__AUTO__":
         vf_parts.append(grade_filter)
     if canvas and probe_output_dims(source) != canvas:
         # ponytail: plain scale assumes the pickup has the same aspect (9:16 phone

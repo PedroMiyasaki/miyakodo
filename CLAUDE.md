@@ -64,7 +64,7 @@ O schema dele está em inglês: propriedades `Idea`, `Notes`, `Date`, `Status`, 
 
 A propriedade `Pillar` foi apagada junto com o documento de pilares de conteúdo. Não recrie.
 
-O Notion tem dois papéis. É a **fonte de leitura** das skills de produção (`write-script`, `carousel`, `write-thread`, `build-linkedin`, `write-substack`): elas leem a ideia daqui, salvam o conteúdo localmente em `posts/`, e a única escrita de volta é marcar `Status` como `Processed` e registrar o `Format` no fim (o conteúdo em si nunca sobe). E é o **alvo de escrita** da captura de ideias (`capture-idea`, `brainstorm-ideas`, `news-ideas`), que registram ideias novas no banco. Leituras (`notion-search`, `notion-fetch`) são pré-aprovadas. Escrever no banco de ideias (`create-database-row`) pede confirmação, e isso é de propósito, não é configuração errada.
+O Notion tem dois papéis. É a **fonte de leitura** das skills de produção (`write-script`, `carousel`, `write-thread`, `build-linkedin`, `write-substack`): elas leem a ideia daqui, salvam o conteúdo localmente em `posts/`, e a única escrita de volta é marcar `Status` como `Processed` e registrar o `Format` no fim (o conteúdo em si nunca sobe). E é o **alvo de escrita** da captura de ideias (`capture-idea`, `brainstorm-ideas`, `content-research`), que registram ideias novas no banco. Leituras (`notion-search`, `notion-fetch`) são pré-aprovadas. Escrever no banco de ideias (`create-database-row`) pede confirmação, e isso é de propósito, não é configuração errada.
 
 **Cuidado ao mudar o schema:** renomear as opções de uma propriedade select pelo MCP substitui o conjunto de opções inteiro e apaga em silêncio o valor guardado em toda linha. Tire um snapshot das linhas antes e restaure depois da mudança.
 

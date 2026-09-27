@@ -45,7 +45,9 @@ apenas quando faltar uma decisão editorial que o material não resolve.
   emendas ou efeitos sonoros cobrindo a fala.
 - Legendas ficam ligadas por padrão. Leia
   [Legendas, caption e capa](references/legendas-e-entregas.md) para o estilo
-  e as entregas. "Sem legenda" desliga a legenda do vídeo.
+  e as entregas. "Sem legenda" desliga a legenda do vídeo. O mesmo arquivo
+  cobre a label "Aperte aqui para 2X": borda direita, não o canto, mesma
+  fonte das legendas, ~1 cm acima do meio da tela.
 - Preserve a cor natural do talking head, salvo efeito pontual. Capas e
   diagramas próprios seguem design/identity.md; imagens de fontes externas
   preservam seu conteúdo.

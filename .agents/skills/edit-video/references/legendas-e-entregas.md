@@ -14,6 +14,19 @@
 - Posição inferior com margem segura. Cards nunca cobrem o texto; rosto e
   legendas precisam continuar legíveis juntos.
 
+## Label 2X
+
+Todo Reel leva o texto "Aperte aqui para 2X" o tempo inteiro, na mesma
+fonte das legendas (Bricolage Grotesque ExtraBold, 32px). Fica na borda
+direita, nunca no canto superior. O centro da label fica ~1 cm acima do
+meio da tela do celular (`y=(H-h)/2-182` num canvas de 2560 px; `x=W-w-24`).
+
+Gere o PNG com [assets/make_tap2x.py](../assets/make_tap2x.py). Num vídeo
+já renderizado sem a label, grave por cima com
+[assets/apply_tap2x.py](../assets/apply_tap2x.py). Se a label antiga já
+estiver queimada no canto, re-renderize o corte; overlay por cima deixa as
+duas.
+
 As fontes de referência estão em
 [assets/fonts/](../assets/fonts/). A identidade canônica é design/identity.md.
 

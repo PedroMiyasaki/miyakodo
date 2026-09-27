@@ -69,6 +69,12 @@ modo, agrupadas pelas fases naturais do pipeline:
   desliga só pedindo. Só a inicial da frase em maiúscula, a fonte do
   Alvinegro, trechos curtos que se substituem como a legenda padrão do
   Instagram. Veja `assets/features/subtitles.md`.
+- **"Aperte aqui para 2X" fica o tempo inteiro na borda direita, nunca no
+  canto superior.** Mesma fonte das legendas (Bricolage ExtraBold, 32px).
+  Centro da label ~1 cm acima do meio da tela do celular:
+  `overlay=x=W-w-24:y=(H-h)/2-182` num canvas de 2560 px. Gere o PNG com
+  `.agents/skills/edit-video/assets/make_tap2x.py`. Se a label antiga já
+  estiver queimada no canto, re-renderize; overlay por cima deixa as duas.
 
 ## Notas de editor
 No meio do take, o usuário para de narrar e fala com **você**. Não existe frase

@@ -2,11 +2,6 @@
 Este documento organiza os todos de médio prazo, atividades a fazer **além** da atividade principal de produção de conteúdo
 Essas atividades muito provavelmente vão ser feitas no fim de semana, fora da rotina principal de conteúdo
 
-## Fazer branch pt-br por hora
-Nota: Camingo até o final do ano vai ser 100% pt-br com certeza então talvez seja melhor já fazer isso até la
-[ ] Fazer a branch em português, dói admitir, mas ser criador em pt-br é onde eu tenho mais vantagem (Montano, Anderson, um monte de criador brasileiro de IA que é técnico está ganhando bem)
-    [ ] Adicionar hook do comando `switch-language` no início das sessões
-
 ## Substack
 [ ] Estruturar o Substack no linkedn e no instagram da mesma maneira que o @jonascastromp4 (Link bio, story, apenas copiar)
 
