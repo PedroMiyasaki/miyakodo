@@ -20,7 +20,7 @@ O formato pede um argumento com mais camadas que os outros formatos, sem teto de
 
 Use o Notion MCP para ler o banco **Ideas** e, no fechamento, atualizar `Status` e `Format` na ideia processada (a única escrita no Notion).
 
-Use as ferramentas de **automação do navegador Chrome** (`mcp__claude-in-chrome__*`) no Passo 7 para encontrar e capturar a imagem do post. Elas são deferred: invoque a skill `Codex-in-chrome` antes de chamar qualquer uma delas.
+Use as ferramentas de **automação do navegador Chrome** (`mcp__claude-in-chrome__*`) no Passo 7 para encontrar e capturar a imagem do post. Elas são deferred: invoque a skill `claude-in-chrome` antes de chamar qualquer uma delas.
 
 ---
 
@@ -248,7 +248,7 @@ A imagem vai ser vista pequena, primeiro, num celular. Antes de capturar, confir
 
 #### 7c · Buscar e capturar
 
-Invoque a skill `Codex-in-chrome`, depois trabalhe numa **aba nova** (`tabs_create_mcp`).
+Invoque a skill `claude-in-chrome`, depois trabalhe numa **aba nova** (`tabs_create_mcp`).
 
 Vá na fonte antes de ir na busca de imagens. Ordem das fontes: o paper no arXiv, a página de docs do framework, o post original do blog, e a busca de imagens como último recurso. Uma página de origem dá resolução de verdade e uma URL que dá para verificar e creditar. Um thumbnail de busca de imagens não dá nenhum dos dois.
 

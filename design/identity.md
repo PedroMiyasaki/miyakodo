@@ -1,7 +1,7 @@
 # Identidade visual — Alvinegro
 
 O sistema visual de todo entregável que tem layout próprio. Preenche os slots de identidade que o
-craft doc do carrossel (`.claude/skills/carousel/assets/carousel-craft.md`, §0) exige.
+craft doc do carrossel (`.agents/skills/carousel/assets/carousel-craft.md`, §0) exige.
 
 Prova do sistema renderizada: `design/proof/` (HTML + PNGs). Copie o `<style>` e o `<defs>` de lá
 como ponto de partida de qualquer peça nova.

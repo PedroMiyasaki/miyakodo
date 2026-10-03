@@ -136,7 +136,7 @@ Para os slides do T2 em diante sem imagem manual, identifique os curtos que se b
 - Rode `WebFetch` na página candidata para extrair a URL direta do arquivo de imagem. Se a URL vier como `plus.unsplash.com/premium_photo-...`, é Unsplash+ pago: descarte e tente a próxima candidata.
 - Crie a pasta: `mkdir -p posts/thread/<slug>/sketch/images` (se não existir).
 - Baixe via Bash: `curl -L -o "posts/thread/<slug>/sketch/images/0N.jpg" "<direct-url>"` (imagem baixada pela skill é sempre salva com zero à esquerda, `0N.jpg`).
-- **Inspecione a imagem com `Read`** (o Codex é multimodal). Julgue com rigor:
+- **Inspecione a imagem com `Read`** (o Claude é multimodal). Julgue com rigor:
   - **A imagem bate com o texto DAQUELE slide específico, e não só com o tema geral da thread?** Esse é o erro mais comum: usar uma imagem que ilustra o assunto da thread mas briga com o slide onde ela entra. Exemplo real: colocar a foto de uma lixeira cheia de papel amassado num slide de hook que fala de *excesso de confiança*. Ela combina com a thread ("IA produz trabalho ruim"), mas não com o ponto do hook. Uma imagem assim tem que ser descartada, por melhor que a foto seja.
   - A qualidade está adequada? Está livre de texto sobreposto que ia brigar com o slide?
 - Se funciona, mantenha. Senão: para slides T2+, apague e tente a próxima candidata, ou pule o slide (sem imagem é melhor que imagem fora do assunto). **No T1, não pule**: amplie ou reformule a query e busque mais. Se mesmo assim nada funcionar, avise o usuário e peça uma imagem manual.
@@ -159,7 +159,7 @@ Peça confirmação ou ajustes.
 Depois da aprovação:
 
 - Importe **só** o `_carousel.css` do modo escolhido via `<link>` (stylesheet autossuficiente). Caminho relativo a `posts/thread/<slug>/sketch/`:
-  - `../../../../.Codex/skills/build-thread-carousel/assets/<mode>/_carousel.css`
+  - `../../../../.agents/skills/build-thread-carousel/assets/<mode>/_carousel.css`
 - Inclua um `<style>` no `<head>` copiando, dos arquétipos do modo escolhido, os blocos das classes `.slide-hook` e `.slide-body`.
 - Cada tweet vira `<section class="slide slide-<archetype>" data-slide="NN">`, com:
   - um `<header class="profile-row">` completo (avatar + nome + SVG de verificado + handle), com `{{NAME}}`, `{{HANDLE}}` e `{{AVATAR_URL}}` já substituídos pelo que o usuário informou. Se ainda não informou, **pergunte antes de gerar**

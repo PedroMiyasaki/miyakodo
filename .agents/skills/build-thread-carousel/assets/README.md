@@ -64,7 +64,7 @@ A regra é simples e vale para qualquer IA do mercado:
 
 Slot opcional embaixo do texto. Quando presente, preenche espaço em slide curto. Cantos arredondados de 18px, altura fixa de 360px, `object-fit: cover` cuida do corte.
 
-**Quando um slide ganha imagem** (detalhe em `.claude/skills/build-thread-carousel/SKILL.md` § "Busca proativa de imagem"). Três regras, em ordem:
+**Quando um slide ganha imagem** (detalhe em `.agents/skills/build-thread-carousel/SKILL.md` § "Busca proativa de imagem"). Três regras, em ordem:
 
 1. **Imagem manual sempre ganha.** Se `posts/thread/<slug>/sketch/images/0N.<ext>` (ou `N.<ext>` sem zero) existe para o slide N, ela é usada, sem exceção: a heurística nem roda.
 2. **T1 sempre tem imagem**, manual ou buscada, mas nunca ausente. É o que para o scroll.

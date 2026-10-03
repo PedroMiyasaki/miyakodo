@@ -61,7 +61,7 @@ Material perecível é bem-vindo aqui, e muitas vezes é o melhor assunto dispon
 
 **MCP do Notion**: para ler o banco **Ideas** e, no caminho standalone, para atualizar `Status` e `Format` no fechamento.
 
-**Automação do navegador Chrome** (`mcp__claude-in-chrome__*`): o motor de captura, usado ao longo de uma sessão inteira no Passo 7. Essas ferramentas são carregadas sob demanda (deferred): invoque a skill `Codex-in-chrome` antes de chamar qualquer uma delas.
+**Automação do navegador Chrome** (`mcp__claude-in-chrome__*`): o motor de captura, usado ao longo de uma sessão inteira no Passo 7. Essas ferramentas são carregadas sob demanda (deferred): invoque a skill `claude-in-chrome` antes de chamar qualquer uma delas.
 
 ---
 
@@ -88,7 +88,7 @@ Se o usuário nomear outra layer, leia ela também em `docs/voice/layers/` e dei
 | Fonte | O que você está lendo ali |
 |---|---|
 | `posts/substack/*/final.md`, os artigos já publicados aqui | O estilo da casa como ele está de fato, inclusive como as imagens são colocadas e legendadas. Leia os dois mais recentes. Na primeira rodada não existe nenhum; pule em vez de inventar um. |
-| `.Codex/skills/build-linkedin/examples/` | Registro da prosa no nível da frase: densidade de parágrafo, conectivos reais, um nome próprio ou número a cada duas ou três frases, o autor exposto. **O assunto deles é irrelevante.** |
+| `.agents/skills/build-linkedin/examples/` | Registro da prosa no nível da frase: densidade de parágrafo, conectivos reais, um nome próprio ou número a cada duas ou três frases, o autor exposto. **O assunto deles é irrelevante.** |
 
 Não existe documento de audiência nem de pilar de conteúdo, de propósito. Se a peça precisar de um leitor-alvo ou de um ângulo, pergunte ao usuário.
 
@@ -349,7 +349,7 @@ Trave o texto antes do Passo 7. Capturar contra um rascunho em movimento desperd
 
 ## Passo 7 · A sessão de captura
 
-Invoque a skill `Codex-in-chrome`. Trabalhe numa **aba nova** (`tabs_create_mcp`). Percorra a shot list de cima a baixo numa sentada só.
+Invoque a skill `claude-in-chrome`. Trabalhe numa **aba nova** (`tabs_create_mcp`). Percorra a shot list de cima a baixo numa sentada só.
 
 ### 7a · Inegociáveis
 
@@ -445,7 +445,7 @@ Tudo mora em `posts/substack/<slug>/`. `sketch/` é material de trabalho; a raiz
 **Notion, por caminho:**
 
 - **Caminho de reuso: não escreva nada.** A ideia foi fechada pelo Reel e carrega um único `Format`. Escrever `Substack` por cima apagaria o formato primário e corromperia a foto do calendário que o banco acumula. Diga que está pulando a escrita, e por quê.
-- **Caminho standalone:** `Status` → `"Processed"` e `Format` → `"Substack"`. Se `Format` não tiver a opção `Substack`, **pare e peça ao usuário para adicionar na interface do Notion**. Não adicione pelo MCP: editar o conjunto de opções de uma propriedade select por ali substitui o conjunto inteiro e apaga em silêncio o valor de toda linha (veja o `AGENTS.md`).
+- **Caminho standalone:** `Status` → `"Processed"` e `Format` → `"Substack"`. Se `Format` não tiver a opção `Substack`, **pare e peça ao usuário para adicionar na interface do Notion**. Não adicione pelo MCP: editar o conjunto de opções de uma propriedade select por ali substitui o conjunto inteiro e apaga em silêncio o valor de toda linha (veja o `CLAUDE.md`).
 
 ## Passo 10 · Entregar
 
