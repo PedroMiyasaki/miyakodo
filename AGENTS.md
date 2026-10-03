@@ -1,6 +1,21 @@
 # AGENTS.md
 
-Este arquivo orienta agentes de código (Codex, Claude Code, Cursor, etc.) neste repositório. **`CLAUDE.md` na raiz é um link local para este arquivo** — edite só `AGENTS.md`; após clone, rode `scripts/link-skills.cmd` (Windows) ou `scripts/link-skills.sh` (macOS/Linux).
+Este arquivo orienta agentes de código (Codex, Claude Code, Cursor, etc.) neste repositório.
+
+## Links locais: onde editar
+
+Há **uma cópia** no disco; os outros caminhos são espelhos para cada ferramenta achar o que espera:
+
+| Caminho | Papel |
+|---|---|
+| `AGENTS.md` | **Canônico.** Instruções do repo — edite sempre aqui. |
+| `CLAUDE.md` | Link local → `AGENTS.md` (não versionado). |
+| `.agents/skills/` | **Única** árvore de skills no git. |
+| `.claude/skills/`, `.cursor/skills/` | Links locais → `.agents/skills/` (não versionados). |
+
+**Skills:** quando o usuário pedir criar, mudar ou refinar uma skill (`SKILL.md`, `assets/`, exemplos, scripts da skill), o trabalho é **sempre** em `.agents/skills/<nome-da-skill>/`. Não duplique em `.claude/skills` nem `.cursor/skills`. Se o arquivo apareceu aberto via `.claude/...` ou `.cursor/...`, é o **mesmo** arquivo — use o path `.agents/skills/...` ao salvar e no commit.
+
+**Setup após clone:** `scripts/link-skills.cmd` (Windows) ou `scripts/link-skills.sh` (macOS/Linux) recria os links de skills e `CLAUDE.md`.
 
 ## O que é este repositório
 
@@ -26,7 +41,7 @@ Toda skill de produção de conteúdo carrega o mesmo passo de fechamento padron
 
 **`carousel` é a exceção à divisão escrever-depois-montar.** Ela produz copy *e* arte numa skill só, porque num carrossel os dois são uma entrega só: a headline é a âncora visual, um template travado só se sustenta se a copy tem uma forma que se repete, e mexer na copy costuma ser a correção certa para um problema visual. O padrão de craft dela mora em `.agents/skills/carousel/assets/carousel-craft.md`, extraído por engenharia reversa do corpus viral em `examples/carousels/`, e governa as duas metades. Threads mantêm a divisão (`write-thread` → `build-thread-carousel`), porque uma thread sai como texto e o carrossel é um derivado opcional.
 
-As skills são invocadas por comandos naturais em português (por exemplo "escreve o roteiro da última ideia", "faz um carrossel", "escreve um post pro LinkedIn"), **não** por slash commands. O canônico é `.agents/skills/<skill-name>/SKILL.md`. Codex, Claude Code e Cursor leem `.agents/skills` direto; `.claude/skills` e `.cursor/skills` apontam para lá via `scripts/link-skills.*` após clone. Quando um pedido bate com uma delas, leia o `SKILL.md` correspondente e siga suas orientações (Claude Code pode invocar pela ferramenta Skill).
+As skills são invocadas por comandos naturais em português (por exemplo "escreve o roteiro da última ideia", "faz um carrossel", "escreve um post pro LinkedIn"), **não** por slash commands. Leia `.agents/skills/<skill-name>/SKILL.md` (ver **Links locais** acima). Claude Code pode invocar pela ferramenta Skill.
 
 `writing-feedback` é a meta-skill: no fim de uma sessão de produção o usuário invoca ela para consolidar toda correção de tom e de escrita feita na conversa em regras permanentes na pasta de voz, `docs/voice/base.md` por padrão, ou uma layer nomeada em `docs/voice/layers/`.
 
