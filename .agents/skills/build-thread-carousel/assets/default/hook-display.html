@@ -5,22 +5,10 @@
 <title>Arquétipo · hook-display</title>
 <link rel="stylesheet" href="_carousel.css">
 <style>
-  /* ============================================================
-     Archetype: hook-display
-     ============================================================
-     When to use: the first slide of the carousel (T1).
-
-     Structure: profile-row + tweet-text with the first paragraph
-     set as a HEADLINE TITLE (bold, larger), followed by body
-     paragraphs at regular weight. Everything vertically centered
-     on the slide. Optionally a .tweet-media below.
-
-     The tweet's first sentence gets headline treatment via
-     :first-child in the CSS — the user does not need to add a class.
-
-     Practical limit: ~250 chars total. Above that the text competes
-     with the generous air that gives it editorial impact.
-  */
+  /* Archetype: hook-display — first slide (T1).
+     First paragraph renders as 40px bold headline (:first-child),
+     rest as 30px body. Vertically centered; optional .tweet-media.
+     Practical limit ~250 chars total. */
   .slide-hook .tweet-text > p:first-child {
     font-size: 40px;
     font-weight: 700;
