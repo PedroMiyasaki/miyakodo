@@ -134,6 +134,10 @@ Se o "cortado por tempo" for magro, o assunto é magro. Diga isso e proponha out
 
 Leia as fontes de calibração em **Referências obrigatórias**: os exemplos mostram como a voz fica numa página.
 
+## Passo 3.5 · Calibração pelo histórico
+
+Amplia a tabela de Calibração das Referências obrigatórias (2 artigos → últimos 5). Liste os slugs mais recentes em `posts/substack/` e leia a ÚLTIMA versão de cada um dos últimos 5 (o `final.md` quando existir, senão o `sketch/v<N>.md` de maior N; nunca rascunho antigo), observando também como as imagens são colocadas e legendadas. Extraia como heurística de leitura, não checklist: registro (falado ou formal, você/a gente/nós, gíria ou não), ritmo (frases curtas vs. parágrafos longos, tamanho de parágrafo), densidade técnica (jargão, números e nomes próprios por seção), aberturas frias e fechos típicos, pessoa e opinião (quanto de "eu", autor exposto, humor), tamanho médio do artigo e formatação (headings, code fences, tabelas, blockquotes, negrito). Escreva imitando o padrão observado, sem copiar frases; se os 5 divergirem, siga o mais recente. Com menos de 5, leia o que houver; sem nenhum (primeira rodada), siga sem calibrar e avise ao usuário em uma linha.
+
 ## Passo 4 · Planejar: espinha, depois outline, depois shot list
 
 **Este passo acontece antes de qualquer frase do artigo ser escrita, e é apresentado ao usuário antes de escrever.** As imagens não são decoração acrescentada no fim: o texto é escrito para preparar cada uma delas, então a shot list precisa existir primeiro.

@@ -91,6 +91,10 @@ Escreva como o usuário fala: direto, sem inflação, sem jargão sem tradução
 
 Não existe documento de audiência nem de pilar: se a peça precisar de um leitor-alvo ou de um ângulo, pergunte ao usuário.
 
+### Passo 3.5 · Calibração pelo histórico
+
+Antes de decidir o tamanho e escrever, calibre pelo que foi publicado neste formato: liste os slugs mais recentes em `posts/thread/` e leia a ÚLTIMA versão do texto da thread de cada um dos últimos 5 (o `final.md` quando existir, senão o `sketch/v<N>.md` de maior N — o da thread, nunca `carousel-v<N>.md` nem rascunho antigo). Extraia como heurística de leitura, não checklist: registro (falado ou formal, você/a gente, gíria ou não), ritmo (frases curtas e pesadas vs. longas que desenvolvem), densidade técnica (jargão, números e nomes próprios por thread), hooks e fechos típicos, pessoa e opinião (quanto de "eu", crítica direta, humor), tamanho médio da sequência e formatação (listas, emojis funcionais, quebras). Escreva imitando o padrão observado, sem copiar frases; se os 5 divergirem, siga o mais recente. Com menos de 5, leia o que houver; sem nenhum (`posts/` é gitignored), siga sem calibrar e avise ao usuário em uma linha.
+
 ### Passo 4 · Decidir o tamanho da sequência
 
 Faixa típica: **5 a 9 threads**. Varia com a complexidade da ideia.

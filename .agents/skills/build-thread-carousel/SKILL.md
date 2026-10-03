@@ -89,6 +89,10 @@ Não ative se a thread ainda não existe em `posts/thread/<slug>/sketch/v<N>.md`
 
 Subpasta em `posts/thread/`. Se estiver ambíguo, confira com Glob `posts/thread/<input>*`.
 
+### 1.5 · Calibração pelo histórico
+
+Antes de adaptar o texto, calibre pelo que foi publicado neste derivado: liste os slugs mais recentes em `posts/thread/` e, de cada um dos últimos 5, leia a copy de carrossel mais recente (o `sketch/carousel-v<N>.md` de maior N) e abra os PNGs finais soltos na raiz do slug. Observe como heurística de leitura, não checklist: registro (falado ou formal, conectores de ritmo, gíria ou não), ritmo (headline curta vs. body, uso de listas de setas), densidade técnica (jargão, números e nomes por slide), hooks e CTAs típicos, pessoa e opinião (quanto de "eu", humor), tamanho médio (nº de slides), formatação (negrito/itálico/code/blockquote) e o que as imagens escolhidas têm em comum. Reescreva imitando o padrão observado, sem copiar frases; se os 5 divergirem, siga o mais recente. Com menos de 5 (ou sem nenhum `carousel-v<N>.md` — `posts/` é gitignored), use o que houver ou siga sem calibrar, avisando ao usuário em uma linha.
+
 ### 2. Adaptar o texto para carrossel
 
 O carrossel **pode ser mais formatado e mais longo que a thread original**: o IG não tem limite de caracteres, e os slides ficam melhores com mais espaçamento e estrutura.

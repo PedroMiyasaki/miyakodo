@@ -88,6 +88,10 @@ Abra a linha correspondente no banco Ideas e leia tudo que estiver disponível: 
 
 Roteiro de Reel é fala transcrita: escreva como o usuário fala - direto, sem inflação, sem jargão sem tradução. Leia também a seção **Calibração**, no fim desta skill: ela mostra um roteiro aprovado e as correções reais que o usuário fez em primeiras versões.
 
+### Passo 3.5 · Calibração pelo histórico
+
+O Passo 3 calibra pela seção estática; este calibra pelo que foi de fato ao ar. Liste os slugs mais recentes em `posts/script/` e leia a ÚLTIMA versão de cada um dos últimos 5 (o `final.md` quando existir, senão o `sketch/v<N>.md` de maior N; nunca rascunho antigo). Extraia como heurística de leitura, não checklist: registro (falado ou formal, você/a gente/nós, gíria ou não), ritmo (frases curtas de impacto vs. longas, tamanho de parágrafo), densidade técnica (jargão, números e nomes próprios por parágrafo), aberturas e fechos típicos, pessoa e opinião (quanto de "eu", posição explícita, humor), tamanho médio do roteiro e formatação (negrito, listas, quebras). Escreva imitando o padrão observado, sem copiar frases; se os 5 divergirem, siga o mais recente. Com menos de 5, leia o que houver; sem nenhum (`posts/` é gitignored), siga sem calibrar e avise ao usuário em uma linha.
+
 ### Passo 4 · Planejar antes de escrever
 
 Os três blocos abaixo ficam nas suas notas de trabalho, não no arquivo. É aqui que o roteiro fica bom ou ruim: um texto bem escrito em cima de um ângulo de analista continua sendo um vídeo que ninguém assiste.

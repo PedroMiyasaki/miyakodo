@@ -86,6 +86,10 @@ Leia a linha inteira: título, texto bruto, notas, data, status. A ideia é crua
 - **O pedido**: uma palavra para comentar, ou uma pergunta com resposta óbvia (P5)
 - **ACP Phase**
 
+### Passo 2.5 · Calibração pelo histórico
+
+Antes de travar densidade e escrever, calibre pelo que foi publicado neste formato: liste os slugs mais recentes em `posts/carousel/` e leia a ÚLTIMA versão de cada um dos últimos 5 (o `final.md` — copy dos slides + legenda — quando existir, senão o `sketch/v<N>.md` de maior N; nunca rascunho antigo). Extraia como heurística de leitura, não checklist: registro (falado ou formal, você/a gente/nós, gíria ou não), ritmo (headlines curtas de impacto vs. body que desenvolve), densidade técnica (jargão, números e nomes próprios por slide), capas e CTAs típicos, pessoa e opinião (quanto de "eu", posição explícita, humor), tamanho médio (nº de slides, modo de densidade dominante) e formatação (negrito, listas, emojis). Escreva imitando o padrão observado, sem copiar frases; se os 5 divergirem, siga o mais recente. Com menos de 5, leia o que houver; sem nenhum (`posts/` é gitignored), siga sem calibrar e avise ao usuário em uma linha.
+
 ### Passo 3 · Escolha o modo de densidade
 
 Como manda o craft doc, escolha um de propósito e segure ele na peça inteira:
