@@ -25,7 +25,7 @@ Na prática, isso quer dizer que não existe build, não existe suíte de testes
 
 **Estado atual: o repositório está em transição.** A marca antiga foi removida (documentos de estratégia, sistema visual e logos foram embora) e a direção nova, uma marca pessoal, ainda está sendo montada.
 
-Já reconstruído: a cadência de fim de semana (`content-routines/default/`) e o sistema visual (`design/identity.md`). Ausência deliberada, não pendência: não existe documento de audiência, de pilares de conteúdo nem de voz. Se uma peça precisa de um leitor-alvo ou de um ângulo, pergunte ao usuário.
+Já reconstruído: o sistema visual (`design/identity.md`). Ausência deliberada, não pendência: não existe documento de audiência, de pilares de conteúdo nem de voz. Se uma peça precisa de um leitor-alvo ou de um ângulo, pergunte ao usuário.
 
 **Idioma.** O repositório trabalha em português do Brasil: skills, docs, este arquivo e a conversa. As peças publicadas (roteiro, carrossel, thread, post de LinkedIn, artigo de Substack) saem em português do Brasil. O schema do Notion (nomes de propriedades e valores) fica em inglês: o banco de ideias é um só.
 
@@ -42,22 +42,6 @@ Toda skill de produção de conteúdo carrega o mesmo passo de fechamento padron
 **`carousel` é a exceção à divisão escrever-depois-montar.** Ela produz copy *e* arte numa skill só, porque num carrossel os dois são uma entrega só: a headline é a âncora visual, um template travado só se sustenta se a copy tem uma forma que se repete, e mexer na copy costuma ser a correção certa para um problema visual. O padrão de craft dela mora em `.agents/skills/carousel/assets/carousel-craft.md`, extraído por engenharia reversa do corpus viral em `examples/carousels/`, e governa as duas metades. Threads mantêm a divisão (`write-thread` → `build-thread-carousel`), porque uma thread sai como texto e o carrossel é um derivado opcional.
 
 As skills são invocadas por comandos naturais em português (por exemplo "escreve o roteiro da última ideia", "faz um carrossel", "escreve um post pro LinkedIn"), **não** por slash commands. Leia `.agents/skills/<skill-name>/SKILL.md` (ver **Links locais** acima). Claude Code pode invocar pela ferramenta Skill.
-
-## Rotinas de conteúdo
-
-`content-routines/` guarda a cadência de operação: quando o trabalho acontece, em oposição a como uma peça é feita. `default/` é o fim de semana normal. `maintainance/` é o modo viagem, em que nada é gravado e a semana roda com 7 carrosséis em vez de 5 reels. Outra cadência (um modo de dia de semana, uma semana de lançamento) vira uma pasta irmã. **Uma mudança na cadência entra nos dois modos.** O artigo semanal do Substack, por exemplo, é disparado logo cedo no domingo e publicado nesse mesmo domingo em cada um.
-
-O modo default produz e agenda a semana inteira em dois dias. De segunda a sexta nada é produzido.
-
-| Arquivo | O que é |
-|---|---|
-| `default/README.md` | O que a semana produz, a definição de 🔥, por que o setup é o que é, regras de stock |
-| `default/saturday.md` | 5 roteiros → gravação em lote → mover os arquivos → disparar a primeira passada de edição |
-| `default/sunday.md` | Disparar o artigo → revisar os 5 cortes → 3 posts de LinkedIn → publicar e agendar a semana |
-
-Saída por semana: **5 reels (Instagram) + 3 posts técnicos de LinkedIn + 1 artigo ilustrado no Substack = 9 posts a partir de 5 gravações.** Os posts de LinkedIn reaproveitam as ideias de onde os reels saíram, e o artigo normalmente aprofunda uma delas ainda mais, então uma ideia rende até três vezes. O artigo é a exceção que pode vir de fora das cinco: ele é escrito e publicado no mesmo domingo, e esse lag zero é o que faz dele o único slot em que notícia perecível é permitida. O irmão dele no LinkedIn sai na segunda e linka de volta para o artigo, que é onde alcance frio vira assinante. As mesmas 5 sessões do agente carregam os dois dias: a sessão N escreve o roteiro N no sábado, edita o vídeo N e é retomada no domingo para revisar aquele corte.
-
-**Ao editar esses arquivos, mantenha a divisão:** os dois arquivos de dia são checklists trabalhados de cima para baixo com as mãos ocupadas, então o raciocínio fica no README e só as decisões tomadas na hora ficam inline.
 
 ## Voz
 

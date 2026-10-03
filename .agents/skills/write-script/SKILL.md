@@ -26,7 +26,7 @@ O usuário não lê roteiro palavra por palavra, **parte do trabalho aqui a rete
 
 ## Quem assiste
 
-O Reel existe para alcançar quem ainda não segue o usuário (o teste 🔥 de `content-routines/default/README.md`). O espectador padrão, definido pelo usuário em 2026-09-12, é o **entusiasta curioso de IA**: brasileiro, usa o ChatGPT, vê manchete de IA passando no feed, acha o assunto interessante e **não é da área**.
+O Reel existe para alcançar quem ainda não segue o usuário. O espectador padrão, definido pelo usuário em 2026-09-12, é o **entusiasta curioso de IA**: brasileiro, usa o ChatGPT, vê manchete de IA passando no feed, acha o assunto interessante e **não é da área**.
 
 - **Ele reconhece:** ChatGPT, OpenAI, Google, Nvidia, Elon Musk, Apple, robô, algoritmo, assinatura, chip (de ouvir falar).
 - **Ele não sabe o que é:** harness, token, benchmark, wrapper, pretraining, peso aberto, inferência, API, valuation, Series E.
@@ -126,7 +126,7 @@ Responda por escrito, em uma ou duas linhas cada:
 
 Se as notas da ideia, ou a conversa, trazem um ângulo escrito pelo usuário, esse ângulo manda na tradução inteira, e é ele que vira a sacada (item 7).
 
-**Portão 🔥.** Se o item 2 ficou sem resposta, a ideia não passa no teste 🔥 do README. Diga isso ao usuário antes de escrever, junto com o ângulo mais próximo que passaria (ou a sugestão de outro formato, como post de LinkedIn), e espere a decisão dele.
+**Portão 🔥.** Se o item 2 ficou sem resposta, a ideia não passa no portão 🔥. Diga isso ao usuário antes de escrever, junto com o ângulo mais próximo que passaria (ou a sugestão de outro formato, como post de LinkedIn), e espere a decisão dele.
 
 #### 4b · Escolher o formato da história
 
@@ -300,7 +300,7 @@ Quando o roteiro cita algo que existe para ser mostrado (o post no X, o gráfico
 - Uma linha em branco entre blocos.
 - **Sacada proposta pela skill** (4a, item 7, quando as notas só resumem o fato): todo bloco que só existe por causa dela, e a recompensa quando ela responde no nível da sacada, leva `· sacada proposta` no fim do cabeçalho. Exemplo: `[DEGRAU] · tópicos · sacada proposta`. Sacada que veio do usuário não leva marca.
 - `[pause]` numa linha própria, só onde um beat precisa assentar: depois do gancho e antes de uma revelação.
-- **Negrito em no máximo três lugares no roteiro inteiro, só em bloco literal,** na palavra cuja ênfase muda o sentido. Negrito em toda frase de efeito empurra a leitura para o "modo YouTuber" que `content-routines/aprendizados.md` (2026-08-29) pede para evitar.
+- **Negrito em no máximo três lugares no roteiro inteiro, só em bloco literal,** na palavra cuja ênfase muda o sentido. Negrito em toda frase de efeito empurra a leitura para um "modo YouTuber" que afasta o espectador.
 - O arquivo começa direto no `[HOOK] · literal`, sem cabeçalho, e termina num rodapé depois de uma linha `---`: a linha `Gravação: um take por bloco. Literal lido, tópicos falados olhando pra lente.` e, quando houver, as fontes dos inserts.
 
 ### Passo 6 · Leitura fria
