@@ -43,8 +43,6 @@ Toda skill de produção de conteúdo carrega o mesmo passo de fechamento padron
 
 As skills são invocadas por comandos naturais em português (por exemplo "escreve o roteiro da última ideia", "faz um carrossel", "escreve um post pro LinkedIn"), **não** por slash commands. Leia `.agents/skills/<skill-name>/SKILL.md` (ver **Links locais** acima). Claude Code pode invocar pela ferramenta Skill.
 
-`writing-feedback` é a meta-skill: no fim de uma sessão de produção o usuário invoca ela para consolidar as correções de tom e de escrita feitas na conversa. (Os docs de voz foram removidos; a skill está pendente de redefinição.)
-
 ## Rotinas de conteúdo
 
 `content-routines/` guarda a cadência de operação: quando o trabalho acontece, em oposição a como uma peça é feita. `default/` é o fim de semana normal. `maintainance/` é o modo viagem, em que nada é gravado e a semana roda com 7 carrosséis em vez de 5 reels. Outra cadência (um modo de dia de semana, uma semana de lançamento) vira uma pasta irmã. **Uma mudança na cadência entra nos dois modos.** O artigo semanal do Substack, por exemplo, é disparado logo cedo no domingo e publicado nesse mesmo domingo em cada um.
@@ -122,8 +120,6 @@ As duas skills de carrossel continuam funcionando, com assets próprios, que mor
 
 - `build-thread-carousel` usa arquétipos em `.agents/skills/build-thread-carousel/assets/` (`hook-display`, `body-paragraph` e `_carousel.css`, nos modes `default` e `x`). O CSS é autocontido: valores inline, sem import externo. Nome, handle e avatar são placeholders: pergunte ao usuário antes de renderizar.
 - `carousel` mantém o padrão de craft em `.agents/skills/carousel/assets/carousel-craft.md`: slots de identidade, cinco princípios extraídos por engenharia reversa de `examples/carousels/`, contrato de frame, escala tipográfica e checklist de pré-publicação. Ele cobre copy e design juntos e sobrevive a uma troca de identidade: o sistema visual encaixa na tabela de slots (`GROUND / INK / ACCENT / DISPLAY / BODY / MARK / ART / TEXTURE`) em vez de ser escrito no doc. **`design/identity.md` preenche esses slots. É isso que liga a identidade à produção.**
-
-Crítica de tom e vocabulário continua passando pela skill `writing-feedback`.
 
 ## Template de print do Twitter (legado)
 
