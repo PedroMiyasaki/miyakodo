@@ -17,63 +17,164 @@ description: >
 ---
 
 # SKILL · Montar carrossel de thread
+## Montar carrossel de thread
 
-**Propósito:** transformar uma thread pronta (texto da `write-thread`) num carrossel de Instagram. Entra texto, sai `carousel.html` + PNGs. É um derivado opcional: o fechamento no Notion já aconteceu na thread — **esta skill não escreve no Notion**.
+Objetivo: montar o carrossel de IG a partir de uma thread já escrita. Cada slide reproduz o cabeçalho do X (avatar + nome + selo azul de verificado + handle na segunda linha), com o conteúdo **centralizado na vertical**. Slot de imagem opcional embaixo do texto, para preencher slides curtos.
 
-## Quando ativar
+> **A identidade do cabeçalho é placeholder.** Os arquétipos carregam `{{NAME}}`, `{{HANDLE}}` e `{{AVATAR_URL}}`, porque a marca pessoal ainda não foi definida. **Pergunte ao usuário o nome, o handle e o caminho do arquivo de avatar antes de gerar o HTML**, e substitua os três na composição. Não invente nenhum deles.
 
-Comandos como "monta o carrossel da thread `<slug>`", "renderiza os PNGs de `<slug>`", "monta o carrossel em modo X de `<slug>`" (e os legados "gera as stills do reel", "faz as stills de `<slug>`", que também ativam o modo X).
+A skill tem **dois modos visuais**: mesmo conteúdo, mesma estrutura, arte diferente. Veja a seção "Modos" abaixo para escolher qual usar e como ativar cada um.
 
-Não ative se a thread ainda não existe em `posts/thread/<slug>/sketch/v<N>.md` — aponte o usuário para a `write-thread`.
+Referência visual do modo default: Adriano Couto / "Gestão com IA". O **layout** é X-cosplay editorial: imita a cara de um tweet, já que o conteúdo nasce de threads do X.
 
-## Entrada e saída
-
-Tudo mora em `posts/thread/<slug>/`, mesma convenção nos dois modos:
-
-| Arquivo | Papel |
-|---|---|
-| `sketch/v<N>.md` (entrada) | Thread original, já escrita — só leitura |
-| `sketch/carousel-v<N>.md` | Reescrita da copy para slides (sequência paralela à da thread: nunca crie um `v<N+1>.md` para o carrossel) |
-| `sketch/carousel.html` | Composição dos slides |
-| `sketch/images/` | Imagens manuais (colocadas pelo usuário) ou buscadas pela skill |
-| `01.png` … `10.png` (raiz do slug) | PNGs renderizados |
+---
 
 ## Modos
 
 | | **default** | **X** |
 |---|---|---|
-| Quando usar | Carrossel para o feed do IG (padrão) | Stills de fundo para um Reel, ou clone explícito do X/Twitter |
-| Paleta | Clara e neutra (off-white, texto preto) | Dark mode do X (fundo quase preto) |
+| Quando usar | Carrossel para o feed do IG | Imagens de fundo para um Reel (uma sequência de stills), ou quando o pedido é explicitamente um clone do X/Twitter |
+| Paleta | Clara e neutra: fundo off-white, texto preto puro, acento vermelho-tijolo `--seal` | Dark mode nativo do X: fundo quase preto (`oklch(0.06)`), texto quase branco |
+| Avatar | `{{AVATAR_URL}}`, fornecido pelo usuário | `{{AVATAR_URL}}`, fornecido pelo usuário |
 | Arquétipos | `assets/default/` | `assets/x/` |
+| Dimensões do slide | 1080×1350 (4:5), iguais nos dois modos | |
+| Output | `posts/thread/<slug>/sketch/carousel.html` + `sketch/carousel-v<N>.md` + PNGs soltos em `posts/thread/<slug>/`. **Mesma convenção nos dois modos**, não separe por modo | |
 
-Qualquer menção a "modo X", "estilo X", "dark mode" ou aos comandos legados de stills ativa o modo X; o resto cai no default. Fora a subpasta de `assets/`, o protocolo é idêntico.
+Ativar o modo X: comandos que mencionem "modo X", "estilo X", "dark mode", ou os comandos legados da skill aposentada `gerar-prints-reel` ("gera as stills do reel da thread `<slug>`", "faz as stills de `<slug>`", "usa a skill gerar-prints-reel no post `<slug>`"). Qualquer outro comando ativa o modo default.
+
+O resto deste protocolo é **idêntico nos dois modos**, exceto onde estiver marcado: a única diferença real é qual subpasta de `assets/` importar.
+
+---
+
+## Pré-requisitos (uma vez por máquina)
+
+```bash
+uv sync
+uv run playwright install chromium
+```
+
+---
+
+## Leitura obrigatória antes de gerar
+
+Os arquétipos ficam em `assets/`, empacotados com esta skill (caminho relativo a este SKILL.md), organizados por modo:
+
+1. `assets/README.md`: documenta a exceção do X-cosplay, os dois modos e quando usar cada arquétipo
+2. `assets/<mode>/_carousel.css`: chrome compartilhado do modo escolhido (cabeçalho do X, centralização vertical, slot de mídia, render de markdown)
+3. `assets/<mode>/hook-display.html`: arquétipo do primeiro slide, no modo escolhido
+4. `assets/<mode>/body-paragraph.html`: arquétipo dos demais slides, no modo escolhido
+
+Onde `<mode>` é `default` ou `x`, conforme a seção "Modos" acima.
+
+Cada `_carousel.css` é autossuficiente: cor e tipografia já estão embutidas nele, não tem stylesheet externo para carregar.
+
+---
+
+## Quando ativar
+
+Comandos como:
+
+- "Usa a skill `build-thread-carousel` no post `<slug>`"
+- "Monta o carrossel da thread `<slug>`"
+- "Renderiza os PNGs de `<slug>`"
+- "Monta o carrossel em modo X de `<slug>`" / "gera as stills do reel da thread `<slug>`" / "faz as stills de `<slug>`" (modo X)
+
+Não ative se a thread ainda não existe em `posts/thread/<slug>/sketch/v<N>.md`. Aponte o usuário para a `write-thread`.
+
+---
 
 ## Protocolo
 
-### 1. Reescrever a copy para slides
+### 1. Identificar o slug
 
-Leia a `v<N>.md` mais recente e salve a adaptação em `sketch/carousel-v1.md` (copie o cabeçalho YAML da thread e registre o que mudou). O IG não tem limite de caracteres: pode expandir com conectores ("Pensa comigo:", "Na prática:"), listas e transições que na thread eram implícitas. Mantenha o núcleo do argumento.
+Subpasta em `posts/thread/`. Se estiver ambíguo, confira com Glob `posts/thread/<input>*`.
 
-Mapeamento: T1 → `slide-hook` (primeiro parágrafo vira headline em negrito de 40px, resto em body de 30px); T2–T(N) → `slide-body` (texto de 30px). Use markdown rico: `**negrito**` numa frase-chave por slide, `*itálico*`, `` `code` `` em termos técnicos, `> citação` para destaque, `→ ` como marcador de lista (ver exemplo em Calibração).
+### 2. Adaptar o texto para carrossel
 
-### 2. Resolver as imagens
+O carrossel **pode ser mais formatado e mais longo que a thread original**: o IG não tem limite de caracteres, e os slides ficam melhores com mais espaçamento e estrutura.
 
-Para cada slide, em ordem: (a) **imagem manual em `sketch/images/` sempre ganha**, sem exceção — o usuário pôs ali de propósito; (b) **o slide 1 sempre tem imagem** (é o que para o scroll): sem manual, busque; (c) nos demais, busque só para slides curtos que ficariam vazios (heurística: body abaixo de ~250 caracteres sem lista de setas).
+- Leia `posts/thread/<slug>/sketch/v<N>.md` (a versão mais recente da thread).
+- Salve a reescrita em `posts/thread/<slug>/sketch/carousel-v1.md`. **Não** crie um `v<N+1>.md`: a sequência `v<N>` é a thread (o que vai para o X), e a versão de número mais alto dela tem que continuar sendo a versão mais recente *da thread*, não uma adaptação para carrossel. Então `sketch/` guarda duas sequências paralelas, `v<N>.md` para a thread e `carousel-v<N>.md` para o carrossel, cada uma iterada por conta própria, ao lado do `carousel.html` que vai ser gerado a partir da segunda.
+- Na reescrita, mantenha o **núcleo do argumento**. Você pode:
+  - Adicionar conectores ("Pensa comigo:", "Dois caminhos:", "Na prática:") que dão ritmo
+  - Reformatar como lista de setas `→ ` quando o conteúdo tem itens paralelos
+  - Adicionar parágrafos de transição que na thread só existiam implícitos
+  - Usar markdown rico:
+    - `**negrito**` em uma frase-chave por slide
+    - `*itálico*` em um termo destacado
+    - `` `code` `` em termos técnicos (`RAG`, `eval` etc.)
+    - `> citação` para destacar uma frase importante
+    - `→ ` como marcador de lista inline (texto literal, quebra de parágrafo entre itens; **não** use `*` nem `-` do markdown)
+- Copie o cabeçalho/metadados YAML da thread para o topo do `carousel-v1.md`. Registre o que mudou da thread `v<N>.md` para esta adaptação.
+- Tradeoff: a versão expandida diverge da que vai para o X. Isso é esperado: o .md do carrossel é um entregável próprio.
 
-Para buscar: derive a query **daquele slide específico** (em inglês), procure foto gratuita (`WebSearch` em Unsplash/Pexels — descarte resultado pago Unsplash+), baixe para `sketch/images/0N.jpg` e **inspecione com `Read`**: a imagem tem que bater com o ponto do slide, não só com o tema da thread. Se não bater, tente outra ou pule o slide (menos no T1, que nunca vai sem imagem — reformule a query ou peça uma manual ao usuário). Prefira Pexels quando o Unsplash devolver muito resultado pago; evite marca d'água e texto sobreposto.
+### 3. Mapear cada tweet para um arquétipo
 
-### 3. Montar o HTML e revisar com o usuário
+- T1 → `slide-hook` (o primeiro parágrafo vira uma **headline em negrito de 40px**, o resto em body regular de 30px).
+- T2 até T(N) → `slide-body` (texto regular de 30px com markdown).
 
-Mostre o mapeamento dos slides + quais ganharam imagem (e de onde) e peça ok antes de gerar. Depois:
+Não crie arquétipo novo sem aprovação.
 
-- Importe **só** o `_carousel.css` do modo escolhido (`../../../../.agents/skills/build-thread-carousel/assets/<mode>/_carousel.css`) e copie os blocos `.slide-hook` / `.slide-body` dos arquétipos para um `<style>` no `<head>`.
-- Cada tweet vira `<section class="slide slide-<archetype>">` com cabeçalho do X completo, `<div class="tweet-text">` (markdown convertido em HTML inline) e `<div class="tweet-media">` só se o slide tem imagem (`images/<arquivo>`, sem `../`).
-- Nome, handle e avatar são placeholders (`{{NAME}}`, `{{HANDLE}}`, `{{AVATAR_URL}}`): **pergunte ao usuário antes de gerar** e substitua. Não invente nenhum.
-- O usuário revisa abrindo o HTML no navegador. Ajuste de copy → novo `carousel-v<N+1>.md` (blocos intactos copiados verbatim, só o diff) + HTML refeito; ajuste de imagem → trocar o arquivo ou buscar de novo.
+### 4. Busca proativa de imagem
 
-### 4. Renderizar
+Se um slide ganha imagem ou não é decidido por três regras, em ordem de prioridade:
 
-Setup (uma vez por máquina): `uv sync` + `uv run playwright install chromium`.
+**Regra 1: imagem manual sempre ganha (qualquer slide).**
+Para cada slide N, confira se já existe um arquivo de imagem correspondente em `posts/thread/<slug>/sketch/images/`. Aceite as duas formas, com zero à esquerda ou sem (`01.jpg` ou `1.jpg`), em `.png`, `.jpg`, `.jpeg` ou `.webp`. Se existir, **use essa imagem, sem exceção**: não rode a heurística, não busque, não avalie. O usuário colocou ela ali de propósito.
+
+**Regra 2: o slide 1 sempre tem imagem.**
+O primeiro slide (T1, o hook) sempre ganha imagem, independente da heurística: é o que faz o carrossel parar o scroll. Se não tem imagem manual para ele (regra 1), busque proativamente. Nunca entregue o T1 sem imagem.
+
+**Regra 3: demais slides, heurística de tamanho.**
+Para os slides do T2 em diante sem imagem manual, identifique os curtos que se beneficiariam de uma imagem. Heurística: **body < 250 caracteres sem lista de setas** = candidato, e nesse caso busque proativamente. Slide longo fica só com texto.
+
+**Procedimento de busca proativa** (quando a regra 2 ou a 3 pede busca):
+
+- Derive uma query semântica do conteúdo **daquele slide específico**, não do tema geral da thread (em inglês, que funciona melhor em banco de imagens). Ex.: para "a IA está produzindo profissionais ineficientes", a query seria `frustrated professional computer screen stock photo`.
+- Rode `WebSearch` com `<query> unsplash` ou `<query> pexels free`.
+- Selecione 2–3 URLs candidatas (priorize unsplash.com, pexels.com, pixabay.com).
+- Rode `WebFetch` na página candidata para extrair a URL direta do arquivo de imagem. Se a URL vier como `plus.unsplash.com/premium_photo-...`, é Unsplash+ pago: descarte e tente a próxima candidata.
+- Crie a pasta: `mkdir -p posts/thread/<slug>/sketch/images` (se não existir).
+- Baixe via Bash: `curl -L -o "posts/thread/<slug>/sketch/images/0N.jpg" "<direct-url>"` (imagem baixada pela skill é sempre salva com zero à esquerda, `0N.jpg`).
+- **Inspecione a imagem com `Read`** (o Claude é multimodal). Julgue com rigor:
+  - **A imagem bate com o texto DAQUELE slide específico, e não só com o tema geral da thread?** Esse é o erro mais comum: usar uma imagem que ilustra o assunto da thread mas briga com o slide onde ela entra. Exemplo real: colocar a foto de uma lixeira cheia de papel amassado num slide de hook que fala de *excesso de confiança*. Ela combina com a thread ("IA produz trabalho ruim"), mas não com o ponto do hook. Uma imagem assim tem que ser descartada, por melhor que a foto seja.
+  - A qualidade está adequada? Está livre de texto sobreposto que ia brigar com o slide?
+- Se funciona, mantenha. Senão: para slides T2+, apague e tente a próxima candidata, ou pule o slide (sem imagem é melhor que imagem fora do assunto). **No T1, não pule**: amplie ou reformule a query e busque mais. Se mesmo assim nada funcionar, avise o usuário e peça uma imagem manual.
+
+**Informe ao usuário** quais slides ganharam imagem e de onde (manual ou buscada), antes de gerar o HTML.
+
+Não precisa cortar: o CSS de `.tweet-media` usa `object-fit: cover` com altura fixa de 360px, e o navegador corta sozinho no render do Playwright.
+
+### 5. Apresentar o plano ao usuário
+
+Antes de gerar o HTML, liste para o usuário:
+- O mapeamento dos slides (T1 → hook, T2-T(N) → body)
+- Quais slides ganharam imagem e a fonte (link da imagem original)
+- Ênfases de markdown adicionadas (frases que viraram negrito/itálico)
+
+Peça confirmação ou ajustes.
+
+### 6. Gerar `posts/thread/<slug>/sketch/carousel.html`
+
+Depois da aprovação:
+
+- Importe **só** o `_carousel.css` do modo escolhido via `<link>` (stylesheet autossuficiente). Caminho relativo a `posts/thread/<slug>/sketch/`:
+  - `../../../../.agents/skills/build-thread-carousel/assets/<mode>/_carousel.css`
+- Inclua um `<style>` no `<head>` copiando, dos arquétipos do modo escolhido, os blocos das classes `.slide-hook` e `.slide-body`.
+- Cada tweet vira `<section class="slide slide-<archetype>" data-slide="NN">`, com:
+  - um `<header class="profile-row">` completo (avatar + nome + SVG de verificado + handle), com `{{NAME}}`, `{{HANDLE}}` e `{{AVATAR_URL}}` já substituídos pelo que o usuário informou. Se ainda não informou, **pergunte antes de gerar**
+  - `<div class="tweet-text">` com o markdown já convertido em HTML inline (`**` → `<strong>`, `*` → `<em>`, `` ` `` → `<code>`, `>` → `<blockquote>`)
+  - `<div class="tweet-media"><img src="images/<file>" alt="..."></div>` **só se** o slide tem imagem associada. As imagens ficam em `sketch/images/`, irmã do HTML, então a referência é só a pasta e o nome do arquivo, sem nenhum `../`. `<file>` é o nome real do arquivo: `0N.jpg` quando a skill baixou, ou `0N`/`N` em qualquer extensão (`.png`/`.jpg`/`.jpeg`/`.webp`) se foi imagem manual
+- `<body class="carrossel-preview">` para dar um fundo neutro (ou escuro, no modo X) quando abrir no navegador.
+
+### 7. Apresentar o HTML para o usuário revisar
+
+O usuário pode abrir o arquivo direto no navegador (`file://` no Chrome/Edge). Quando pedir ajuste:
+- Mudança de copy → crie `posts/thread/<slug>/sketch/carousel-v<N+1>.md` (copie literalmente os blocos que não mudaram do `carousel-v<N>.md`, aplique só o diff) e gere o HTML de novo.
+- Mudança de imagem em um slide → troque o arquivo em `posts/thread/<slug>/sketch/images/` ou rode a busca de imagem de novo.
+- Mudança visual sistêmica → ajuste o arquétipo em `assets/<mode>/`.
+
+### 8. Renderizar os PNGs
 
 ```bash
 uv run python scripts/render_html_to_pngs.py \
@@ -83,24 +184,45 @@ uv run python scripts/render_html_to_pngs.py \
   --width 1080 --height 1350
 ```
 
-Revise o HTML antes de renderizar: o tamanho é fixo em 1080×1350, o navegador corta a imagem sozinho (`object-fit: cover`, moldura 3:1) e texto longo demais + imagem pode estourar o slide. Ao final, diga quantos PNGs saíram e quais slides têm imagem.
+PNGs gerados soltos em `posts/thread/<slug>/`, 3240×4050 (device scale 3×). O script numera em sequência, com zero à esquerda até a largura da contagem de slides: carrossel com 10 slides ou mais sai `01.png … 10.png`, com 9 ou menos sai `1.png … 9.png`.
 
-## Restrições
+### 9. Relatar
 
-- Não escreva no Notion; não crie arquétipo novo sem aprovação.
-- Cada `_carousel.css` é autocontido (cor e tipografia inline, sem stylesheet externo).
-- Detalhe dos arquétipos, do slot de imagem e dos placeholders: `assets/README.md`.
+Diga quantos PNGs foram gerados, a pasta de saída, e quais slides ganharam imagem e de onde. Se algum slide ainda mostra muito espaço vazio, sugira ao usuário adicionar uma imagem manual.
 
-## Calibração
+---
 
-Lista com setas (texto literal, quebra de parágrafo entre itens — nunca `*`/`-` do markdown, que renderizam como `<ul>`):
+## Identidade nos slides (placeholders)
 
-```
-A regra é simples e vale para qualquer IA do mercado:
+Nenhuma identidade está fixa nos arquétipos. Os campos abaixo são preenchidos com o que o usuário informar, em toda peça:
 
-→ Suas bases de conhecimento ficam num lugar que é seu.
+- Avatar: `{{AVATAR_URL}}`, caminho do arquivo de imagem, relativo ao `carousel.html` gerado
+- Nome de exibição: `{{NAME}}`
+- Handle / segunda linha do cabeçalho: `{{HANDLE}}`
+- Selo de verificado: SVG inline no estilo do X (azul `#1d9bf0`). É layout, não identidade, e fica fixo
 
-→ As instruções dos seus agentes estão documentadas num arquivo.
+Quando o usuário fechar nome, handle e avatar de vez, grave os valores nos 2 arquétipos do modo afetado E no `carousel.html` já gerado.
 
-→ A IA é só o motor que roda em cima disso.
-```
+---
+
+## Busca de imagem — sites preferidos
+
+Em ordem de preferência:
+
+1. **Unsplash** (`unsplash.com`): fotos editoriais de alta qualidade. **Cuidado:** a busca mistura resultado grátis e pago. Só as URLs diretas `images.unsplash.com/photo-<id>?...` funcionam (grátis). As `plus.unsplash.com/premium_photo-<id>?...` são **Unsplash+ pago** e têm que ser descartadas na hora. Na demo, 2 das 4 primeiras candidatas eram premium.
+2. **Pexels** (`pexels.com`): alternativa equivalente. 100% grátis, sem plano pago: o padrão recomendado para evitar a triagem de premium do Unsplash.
+3. **Pixabay** (`pixabay.com`): reserva
+4. **Wikipedia / Wikimedia Commons**: para imagem de evento, lugar, pessoa conhecida. Atenção à licença.
+
+Evite:
+- Google Imagens direto (direito autoral incerto)
+- Sites com marca d'água (thumbnails de Getty, Shutterstock)
+- Imagens com texto sobreposto (rótulos em inglês, logos de outras marcas)
+
+## Limitações conhecidas
+
+- Tamanho fixo: 1080×1350. Mudar as dimensões exige revisar os arquétipos.
+- Slot de imagem com proporção 3:1 (1080×360 visualmente). Imagens muito quadradas ou muito altas perdem informação no corte. Revise antes de aprovar.
+- O overflow não é checado automaticamente. Slide com texto muito longo + imagem pode cortar embaixo. Revise o HTML antes de renderizar.
+- O texto usa Inter (e JetBrains Mono em `code`), carregadas via `@import` do Google Fonts no `_carousel.css`. O renderer espera `document.fonts.ready` antes do screenshot, então a webfont chega ao PNG. Sem rede, cai para as fontes do sistema (`-apple-system` etc.), visualmente quase idênticas.
+- A busca de imagem depende de o `WebSearch` devolver links do Unsplash/Pexels. Se não devolver, use uma query mais genérica ou o Wikimedia.

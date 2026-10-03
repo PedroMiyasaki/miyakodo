@@ -5,9 +5,28 @@
 <title>Arquétipo · body-paragraph</title>
 <link rel="stylesheet" href="_carousel.css">
 <style>
-  /* Archetype: body-paragraph — slides T2 through T(N).
-     Regular 30px text, rich markdown encouraged
-     (bold, italics, code, quote, "→ " list marker). */
+  /* ============================================================
+     Archetype: body-paragraph
+     ============================================================
+     When to use: the middle AND last slides (T2 through T(N)).
+     The workhorse of the carousel.
+
+     Structure: profile-row + tweet-text with regular-weight
+     paragraphs, everything vertically centered. Optionally a
+     .tweet-media below the text.
+
+     Encourages rich formatting (more than the original thread):
+     - **bold** on a key sentence
+     - *italics* on a highlighted term
+     - `code` on technical terms
+     - > quote pulls out an important sentence
+     - "→ " as an inline list marker, with a paragraph break
+       between items (see Adriano slides 3 and 6)
+
+     No hard character limit on the carousel — the IG post can be
+     more formatted than the original tweet, with more spacing
+     and structure.
+  */
   .slide-body .tweet-text {
     font-size: 30px;
     font-weight: 400;
