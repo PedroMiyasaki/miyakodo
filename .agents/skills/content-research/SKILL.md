@@ -102,9 +102,9 @@ Fontes: <URLs consolidadas, identificando fontes primárias e criadores originai
 
 Explique o assunto em palavras próprias. Preserve autoria e links de conteúdos de inspiração. Não traduza peças inteiras nem acrescente hook, CTA, opinião atribuída ao usuário, formato sugerido ou recomendação de canal. Os temas não viram propriedades adicionais no banco.
 
-**SUB-SKILL OBRIGATÓRIA:** leia e use `capture-idea` no próprio coordenador para classificar ACP e registrar cada título e Notes já preparados. Preserve o título factual e as notas; a captura não deve reenquadrá-los como um argumento. `Date` é a data de registro, `Status` é `Pending` e `Format` é omitido.
+**SUB-SKILL OBRIGATÓRIA:** leia e use `registrar-ideia` no próprio coordenador para classificar ACP e registrar cada título e Notes já preparados. Preserve o título factual e as notas; a captura não deve reenquadrá-los como um argumento. `Date` é a data de registro, `Status` é `Pending` e `Format` é omitido.
 
-Nesta composição, `capture-idea` cuida da classificação e criação. Seu “zero atrito” não dispensa autorização do conector, e sua confirmação curta não substitui o relatório agregado desta skill.
+Nesta composição, `registrar-ideia` cuida da classificação e criação. Seu “zero atrito” não dispensa autorização do conector, e sua confirmação curta não substitui o relatório agregado desta skill.
 
 Antes de escrever, confira novamente o banco para incorporar entradas criadas durante a pesquisa. Sem leitura suficiente para deduplicar, apresente os candidatos como não registrados. Respeite a autorização exigida pelo conector; em execução agendada sem aprovação disponível, reporte a pendência.
 

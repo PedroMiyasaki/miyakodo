@@ -550,7 +550,7 @@ Confira antes de apresentar. Se algum item falhar, conserte antes.
 
 Esta skill não faz:
 
-- Captura de ideias cruas (isso é a skill `capture-idea`).
+- Captura de ideias cruas (isso é a skill `registrar-ideia`).
 - Adaptação para LinkedIn ou Instagram, a menos que o usuário peça outro formato explicitamente.
 - Publicação.
 - Análise de desempenho.

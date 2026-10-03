@@ -499,7 +499,7 @@ Se algum critério falhar, conserte antes de apresentar.
 
 ## Fora do escopo
 
-- Não captura ideias cruas (isso é `capture-idea`)
+- Não captura ideias cruas (isso é `registrar-ideia`)
 - Não escreve roteiro de Reel, carrossel, thread nem post de LinkedIn: cada um tem a própria skill
 - Não desenha nem gera arte. Toda imagem é capturada de algo que já existe. Uma peça que precisa de arte composta no sistema Alvinegro é um carrossel, não um artigo
 - Não publica: colar no Substack é manual

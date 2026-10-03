@@ -93,5 +93,5 @@ Os caminhos de **reuso** e **standalone** são fluxos de entrada e fechamento no
 
 ## O que não conta como formato
 
-- `capture-idea` e `content-research` alimentam o banco Ideas, mas não produzem uma peça publicável.
+- `registrar-ideia` e `content-research` alimentam o banco Ideas, mas não produzem uma peça publicável.
 - `build-thread-carousel` cria uma apresentação derivada para Instagram, sem substituir o `Format` primário `Thread`.

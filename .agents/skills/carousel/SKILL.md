@@ -269,7 +269,7 @@ Entregue os caminhos do `final.md` e dos PNGs e informe quantos slides são.
 
 ## Fora do escopo
 
-- Capturar ideias cruas (`capture-idea`), roteiros de Reel (`write-script`), threads
+- Capturar ideias cruas (`registrar-ideia`), roteiros de Reel (`write-script`), threads
   (`write-thread`), posts de LinkedIn (`build-linkedin`).
 - A estética X-cosplay de thread (`build-thread-carousel`).
 - Adaptar a peça para outra plataforma, a menos que peçam.
