@@ -20,3 +20,7 @@ content-routines/**/*.md
 
 # Chave da Gemini API (AI Studio). Nao versionar.
 reference.txt
+
+# Links locais para .agents/skills (criar com scripts/link-skills.*)
+.claude/skills
+.cursor/skills
