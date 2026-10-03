@@ -7,4 +7,8 @@ mklink /J ".claude\skills" ".agents\skills"
 if errorlevel 1 exit /b 1
 mklink /J ".cursor\skills" ".agents\skills"
 if errorlevel 1 exit /b 1
-echo OK: .claude\skills e .cursor\skills apontam para .agents\skills
+if exist "CLAUDE.md" del "CLAUDE.md"
+mklink "CLAUDE.md" "AGENTS.md" >nul 2>&1
+if errorlevel 1 mklink /H "CLAUDE.md" "AGENTS.md"
+if errorlevel 1 exit /b 1
+echo OK: skills junctions + CLAUDE.md aponta para AGENTS.md

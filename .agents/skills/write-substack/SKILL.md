@@ -445,7 +445,7 @@ Tudo mora em `posts/substack/<slug>/`. `sketch/` é material de trabalho; a raiz
 **Notion, por caminho:**
 
 - **Caminho de reuso: não escreva nada.** A ideia foi fechada pelo Reel e carrega um único `Format`. Escrever `Substack` por cima apagaria o formato primário e corromperia a foto do calendário que o banco acumula. Diga que está pulando a escrita, e por quê.
-- **Caminho standalone:** `Status` → `"Processed"` e `Format` → `"Substack"`. Se `Format` não tiver a opção `Substack`, **pare e peça ao usuário para adicionar na interface do Notion**. Não adicione pelo MCP: editar o conjunto de opções de uma propriedade select por ali substitui o conjunto inteiro e apaga em silêncio o valor de toda linha (veja o `CLAUDE.md`).
+- **Caminho standalone:** `Status` → `"Processed"` e `Format` → `"Substack"`. Se `Format` não tiver a opção `Substack`, **pare e peça ao usuário para adicionar na interface do Notion**. Não adicione pelo MCP: editar o conjunto de opções de uma propriedade select por ali substitui o conjunto inteiro e apaga em silêncio o valor de toda linha (veja o `AGENTS.md`).
 
 ## Passo 10 · Entregar
 

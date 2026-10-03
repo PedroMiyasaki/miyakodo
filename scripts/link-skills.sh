@@ -9,4 +9,6 @@ for parent in .claude .cursor; do
   rm -rf "$link"
   ln -s "$target" "$link"
 done
-echo "OK: $root/.claude/skills e $root/.cursor/skills -> .agents/skills"
+rm -f CLAUDE.md
+ln -sf AGENTS.md CLAUDE.md
+echo "OK: .claude/skills e .cursor/skills -> .agents/skills; CLAUDE.md -> AGENTS.md"

@@ -1,6 +1,6 @@
 # AGENTS.md
 
-Este arquivo orienta o Codex (Codex.ai/code) quando ele trabalha neste repositório.
+Este arquivo orienta agentes de código (Codex, Claude Code, Cursor, etc.) neste repositório. **`CLAUDE.md` na raiz é um link local para este arquivo** — edite só `AGENTS.md`; após clone, rode `scripts/link-skills.cmd` (Windows) ou `scripts/link-skills.sh` (macOS/Linux).
 
 ## O que é este repositório
 
@@ -26,7 +26,7 @@ Toda skill de produção de conteúdo carrega o mesmo passo de fechamento padron
 
 **`carousel` é a exceção à divisão escrever-depois-montar.** Ela produz copy *e* arte numa skill só, porque num carrossel os dois são uma entrega só: a headline é a âncora visual, um template travado só se sustenta se a copy tem uma forma que se repete, e mexer na copy costuma ser a correção certa para um problema visual. O padrão de craft dela mora em `.agents/skills/carousel/assets/carousel-craft.md`, extraído por engenharia reversa do corpus viral em `examples/carousels/`, e governa as duas metades. Threads mantêm a divisão (`write-thread` → `build-thread-carousel`), porque uma thread sai como texto e o carrossel é um derivado opcional.
 
-As skills são invocadas por comandos naturais em português (por exemplo "escreve o roteiro da última ideia", "faz um carrossel", "escreve um post pro LinkedIn"), **não** por slash commands. O canônico é `.agents/skills/<skill-name>/SKILL.md`. Codex, Claude Code e Cursor também resolvem `.agents/skills`; para `.claude/skills` e `.cursor/skills` apontarem para lá após clone, rode `scripts/link-skills.cmd` (Windows) ou `scripts/link-skills.sh` (macOS/Linux). Quando um pedido bate com uma delas, leia o `SKILL.md` correspondente e siga suas orientações.
+As skills são invocadas por comandos naturais em português (por exemplo "escreve o roteiro da última ideia", "faz um carrossel", "escreve um post pro LinkedIn"), **não** por slash commands. O canônico é `.agents/skills/<skill-name>/SKILL.md`. Codex, Claude Code e Cursor leem `.agents/skills` direto; `.claude/skills` e `.cursor/skills` apontam para lá via `scripts/link-skills.*` após clone. Quando um pedido bate com uma delas, leia o `SKILL.md` correspondente e siga suas orientações (Claude Code pode invocar pela ferramenta Skill).
 
 `writing-feedback` é a meta-skill: no fim de uma sessão de produção o usuário invoca ela para consolidar toda correção de tom e de escrita feita na conversa em regras permanentes na pasta de voz, `docs/voice/base.md` por padrão, ou uma layer nomeada em `docs/voice/layers/`.
 
@@ -42,7 +42,7 @@ O modo default produz e agenda a semana inteira em dois dias. De segunda a sexta
 | `default/saturday.md` | 5 roteiros → gravação em lote → mover os arquivos → disparar a primeira passada de edição |
 | `default/sunday.md` | Disparar o artigo → revisar os 5 cortes → 3 posts de LinkedIn → publicar e agendar a semana |
 
-Saída por semana: **5 reels (Instagram) + 3 posts técnicos de LinkedIn + 1 artigo ilustrado no Substack = 9 posts a partir de 5 gravações.** Os posts de LinkedIn reaproveitam as ideias de onde os reels saíram, e o artigo normalmente aprofunda uma delas ainda mais, então uma ideia rende até três vezes. O artigo é a exceção que pode vir de fora das cinco: ele é escrito e publicado no mesmo domingo, e esse lag zero é o que faz dele o único slot em que notícia perecível é permitida. O irmão dele no LinkedIn sai na segunda e linka de volta para o artigo, que é onde alcance frio vira assinante. As mesmas 5 sessões de Codex carregam os dois dias: a sessão N escreve o roteiro N no sábado, edita o vídeo N e é retomada no domingo para revisar aquele corte.
+Saída por semana: **5 reels (Instagram) + 3 posts técnicos de LinkedIn + 1 artigo ilustrado no Substack = 9 posts a partir de 5 gravações.** Os posts de LinkedIn reaproveitam as ideias de onde os reels saíram, e o artigo normalmente aprofunda uma delas ainda mais, então uma ideia rende até três vezes. O artigo é a exceção que pode vir de fora das cinco: ele é escrito e publicado no mesmo domingo, e esse lag zero é o que faz dele o único slot em que notícia perecível é permitida. O irmão dele no LinkedIn sai na segunda e linka de volta para o artigo, que é onde alcance frio vira assinante. As mesmas 5 sessões do agente carregam os dois dias: a sessão N escreve o roteiro N no sábado, edita o vídeo N e é retomada no domingo para revisar aquele corte.
 
 **Ao editar esses arquivos, mantenha a divisão:** os dois arquivos de dia são checklists trabalhados de cima para baixo com as mãos ocupadas, então o raciocínio fica no README e só as decisões tomadas na hora ficam inline.
 
@@ -149,4 +149,4 @@ Para adicionar um script novo: declare a dependência no `pyproject.toml`, rode 
 
 - Windows com shell bash. Use `/dev/null` e barras normais, mas caminho absoluto precisa da letra do drive do Windows (`C:/Users/Pedro Miyasaki/...`).
 - Este é um repositório pessoal, só local, sem remote e sem colaboradores. Mensagem de commit pode ser curta e simples: uma linha resumindo o que mudou e por quê basta, sem formato de conventional commit, sem seções de corpo, sem detalhe de PR.
-- As instruções de usuário em `~/.Codex/AGENTS.md` (Karpathy guidelines) valem aqui: simplicidade primeiro, mudanças cirúrgicas, expor tradeoffs, definir critérios de sucesso verificáveis.
+- As instruções de usuário em `~/.Codex/AGENTS.md` ou `~/.claude/CLAUDE.md` (Karpathy guidelines) valem aqui: simplicidade primeiro, mudanças cirúrgicas, expor tradeoffs, definir critérios de sucesso verificáveis.
