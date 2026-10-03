@@ -6,4 +6,4 @@
 
 ## Interview
 
-- Not served by the intent layer — a migration with no brief. Route directly.
+- Not served by the intent layer - a migration with no brief. Route directly.

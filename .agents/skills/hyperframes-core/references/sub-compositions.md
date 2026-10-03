@@ -24,7 +24,7 @@ In the host composition, the sub-composition appears as a clip with `data-compos
 
 ## Sub-Composition File Structure
 
-### Mental model — what the runtime actually does
+### Mental model - what the runtime actually does
 
 When a host loads a sub-composition via `data-composition-src`, the runtime:
 
@@ -33,7 +33,7 @@ When a host loads a sub-composition via `data-composition-src`, the runtime:
 3. **Finds the `<template>` element and clones ONLY its contents into the host slot.**
 4. Everything **outside** the `<template>` (including the entire `<head>`) is **discarded**.
 
-So `<template>` is not just a wrapper — it is the **transport container**. If a node needs to exist in the live render, it must be inside `<template>`. Full stop.
+So `<template>` is not just a wrapper - it is the **transport container**. If a node needs to exist in the live render, it must be inside `<template>`. Full stop.
 
 ### File shape
 
@@ -54,7 +54,7 @@ So `<template>` is not just a wrapper — it is the **transport container**. If 
           inset: 0;
           color: #fff;
         }
-        /* .label, #bar, … — descendants, plain selectors */
+        /* .label, #bar, … - descendants, plain selectors */
       </style>
 
       <div id="root" data-composition-id="data-chart" data-width="1920" data-height="1080">
@@ -77,10 +77,10 @@ Contrast with **standalone** compositions, which put the root directly in `<body
 
 Static file checks cannot prove the **cross-file mount contract**. These failures appear only when the runtime mounts the sub-composition.
 
-### Pitfall 1 — `<style>` in `<head>` instead of inside `<template>`
+### Pitfall 1 - `<style>` in `<head>` instead of inside `<template>`
 
 ```html
-<!-- ❌ WRONG — looks normal, ships catastrophically broken -->
+<!-- ❌ WRONG - looks normal, ships catastrophically broken -->
 <head>
   <style>
     #root { font-size: 88px; ... }
@@ -92,7 +92,7 @@ Static file checks cannot prove the **cross-file mount contract**. These failure
   </template>
 </body>
 
-<!-- ✅ RIGHT — styles are inside the template, root styled by #root (see Pitfall 3) -->
+<!-- ✅ RIGHT - styles are inside the template, root styled by #root (see Pitfall 3) -->
 <head></head>
 <body>
   <template>
@@ -104,14 +104,14 @@ Static file checks cannot prove the **cross-file mount contract**. These failure
 </body>
 ```
 
-**Why this happens:** standard HTML conventions tell you to put `<style>` in `<head>`. In a standalone HTML file that's correct. In a HyperFrames sub-composition it is **not** — the runtime only clones `<template>` contents, so `<head><style>` is dropped on the floor.
+**Why this happens:** standard HTML conventions tell you to put `<style>` in `<head>`. In a standalone HTML file that's correct. In a HyperFrames sub-composition it is **not** - the runtime only clones `<template>` contents, so `<head><style>` is dropped on the floor.
 
 **Symptom:** isolated checks pass and the render completes, but every text element appears as tiny unstyled default text in the top-left and SVGs expand to canvas size because no CSS reached the live DOM. The same trap applies to `<script>` blocks, `<link rel="stylesheet">`, and custom-element registrations: anything that must execute or apply in the render belongs inside `<template>`.
 
-### Pitfall 2 — Host `data-composition-id` ≠ inner template `data-composition-id`
+### Pitfall 2 - Host `data-composition-id` ≠ inner template `data-composition-id`
 
 ```html
-<!-- ❌ WRONG — host renames the slot; runtime can't find the timeline -->
+<!-- ❌ WRONG - host renames the slot; runtime can't find the timeline -->
 <!-- host file (e.g. index.html) -->
 <div data-composition-id="chart-mount" data-composition-src="compositions/chart.html" ...></div>
 
@@ -123,17 +123,17 @@ Static file checks cannot prove the **cross-file mount contract**. These failure
   </script>
 </template>
 
-<!-- ✅ RIGHT — both ids match, and the timeline key matches them too -->
+<!-- ✅ RIGHT - both ids match, and the timeline key matches them too -->
 <div data-composition-id="data-chart" data-composition-src="compositions/chart.html" ...></div>
 <!-- chart.html template root: data-composition-id="data-chart" -->
 <!-- timeline: window.__timelines["data-chart"] = tl; -->
 ```
 
-**Why this happens:** it feels natural to give the host slot a different name like `chart-mount` ("the mount point") vs `data-chart` ("the actual chart"). HyperFrames does not work that way — **the host's `data-composition-id` is the lookup key the framework uses to find the registered timeline**. Lint passes because each file's ids are individually valid; the cross-file mismatch only blows up at render.
+**Why this happens:** it feels natural to give the host slot a different name like `chart-mount` ("the mount point") vs `data-chart` ("the actual chart"). HyperFrames does not work that way - **the host's `data-composition-id` is the lookup key the framework uses to find the registered timeline**. Lint passes because each file's ids are individually valid; the cross-file mismatch only blows up at render.
 
 **Symptom:** the render logs `Sub-composition timelines not registered after 45000ms: <host-id>` for every mismatched slot, waits 45s per scene, then captures static initial-state frames (so the video is full-length but no animation plays).
 
-### Pitfall 3 — Styling the root by a class instead of `#root`
+### Pitfall 3 - Styling the root by a class instead of `#root`
 
 `lint` still errors (`subcomposition_root_styled_by_class`) if a sub-composition styles the host root's own class. Style the root with `#root`.
 
@@ -143,14 +143,14 @@ Static file checks cannot prove the **cross-file mount contract**. These failure
 - Seeks the sub-composition's timeline independently from the host's playhead.
 - Plays the sub-composition's content from `data-start` of the host clip, for `data-duration` seconds.
 
-**Do not** manually `master.add(child)` a sub-composition timeline into the host timeline. HyperFrames already drives them independently — nesting them in GSAP causes double-seeks.
+**Do not** manually `master.add(child)` a sub-composition timeline into the host timeline. HyperFrames already drives them independently - nesting them in GSAP causes double-seeks.
 
 ### The host clip's `data-duration` is the slot's visible window
 
 `data-duration` on the host clip defines **how long the slot is visible**, and it takes precedence over the sub-composition's internal GSAP timeline length. Two consequences follow:
 
 - **Internal timeline shorter than the slot → the slot holds.** If the sub-composition's GSAP timeline finishes before `data-duration` elapses, the slot keeps showing its final frame for the rest of the window. You do **not** need to pad the timeline with empty tweens.
-- **`data-duration` shorter than the host composition → the slot ends (and goes blank) when its own `data-duration` elapses.** This is intended: the clip is a fixed-length window on the timeline, not "fill until the composition ends." To keep a sub-composition visible for the whole composition, set its `data-duration` to span the host window (or add another clip to cover the remaining time). Leaving a single full-bleed sub-composition shorter than the composition is almost always a mistake — the linter flags it as `subcomposition_blanks_before_host`.
+- **`data-duration` shorter than the host composition → the slot ends (and goes blank) when its own `data-duration` elapses.** This is intended: the clip is a fixed-length window on the timeline, not "fill until the composition ends." To keep a sub-composition visible for the whole composition, set its `data-duration` to span the host window (or add another clip to cover the remaining time). Leaving a single full-bleed sub-composition shorter than the composition is almost always a mistake - the linter flags it as `subcomposition_blanks_before_host`.
 
 ## Animations Inside Sub-Compositions
 

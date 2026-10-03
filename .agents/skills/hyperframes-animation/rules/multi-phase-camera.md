@@ -7,14 +7,14 @@ metadata:
 
 # Multi-Phase Camera
 
-A camera wrapper around the ENTIRE scene that progresses through discrete zoom phases at scripted triggers, with continuous sine-driven micro-drift overlaid so the camera never feels static between phases. Distinct from a single linear zoom — multi-phase creates cinematic pacing (anticipation → reveal → settle).
+A camera wrapper around the ENTIRE scene that progresses through discrete zoom phases at scripted triggers, with continuous sine-driven micro-drift overlaid so the camera never feels static between phases. Distinct from a single linear zoom - multi-phase creates cinematic pacing (anticipation → reveal → settle).
 
 ## How It Works
 
 The camera is one wrapping `<div>` whose `transform: scale() translate(x, y)` is composed from two channels inside a single `onUpdate` writer:
 
-1. **Phase scale** — a proxy object `{ scale }` stepped through phases at trigger times (`PHASE_1_SCALE` at t=0 → `PHASE_2_SCALE` at `PHASE_2_AT` → `PHASE_3_SCALE` at `PHASE_3_AT`).
-2. **Drift offset** — a continuous sine-based `translateX` / `translateY` (small amplitude, slow frequency) ADDED to the phase transform. X and Y run at slightly different frequencies (`DRIFT_FREQ_RATIO ≈ 1.3`) — equal frequencies produce a perfect diagonal that reads mechanical; ~1.3 gives an organic Lissajous.
+1. **Phase scale** - a proxy object `{ scale }` stepped through phases at trigger times (`PHASE_1_SCALE` at t=0 → `PHASE_2_SCALE` at `PHASE_2_AT` → `PHASE_3_SCALE` at `PHASE_3_AT`).
+2. **Drift offset** - a continuous sine-based `translateX` / `translateY` (small amplitude, slow frequency) ADDED to the phase transform. X and Y run at slightly different frequencies (`DRIFT_FREQ_RATIO ≈ 1.3`) - equal frequencies produce a perfect diagonal that reads mechanical; ~1.3 gives an organic Lissajous.
 
 ## Recipe
 
@@ -30,8 +30,8 @@ The camera is one wrapping `<div>` whose `transform: scale() translate(x, y)` is
 
 ```css
 .scene {
-  overflow: hidden; /* REQUIRED — any phase scale < 1 exposes the content's edges */
-  background: {sceneBgColor}; /* background on .scene, NOT .camera — a camera-borne
+  overflow: hidden; /* REQUIRED - any phase scale < 1 exposes the content's edges */
+  background: {sceneBgColor}; /* background on .scene, NOT .camera - a camera-borne
      background warps/translates with the transform and reveals the outer void */
 }
 .camera {
@@ -48,15 +48,15 @@ The camera is one wrapping `<div>` whose `transform: scale() translate(x, y)` is
 const camera = document.getElementById("camera");
 
 // Three-phase scale plan: pullback → focus → push.
-const phase = { scale: PHASE_1_SCALE }; // Phase 1 is the initial value — no tween
+const phase = { scale: PHASE_1_SCALE }; // Phase 1 is the initial value - no tween
 
-// Phase 2 — settle to neutral focus
+// Phase 2 - settle to neutral focus
 tl.to(phase, { scale: PHASE_2_SCALE, duration: PHASE_2_DUR, ease: PHASE_2_EASE }, PHASE_2_AT);
 
-// Phase 3 — slow push-in for the climax
+// Phase 3 - slow push-in for the climax
 tl.to(phase, { scale: PHASE_3_SCALE, duration: PHASE_3_DUR, ease: PHASE_3_EASE }, PHASE_3_AT);
 
-// Drift driver — continuous sine motion overlaid on the phase scale.
+// Drift driver - continuous sine motion overlaid on the phase scale.
 // The ONE writer of camera.style.transform.
 const drift = { p: 0 };
 tl.to(
@@ -89,8 +89,8 @@ tl.to(
 ## Variations
 
 - **Phase trigger by content beat**: align a camera tween's start with a content tween's end (entry completes → push begins) rather than a fixed clock value.
-- **Camera shake (panic / impact)**: a brief higher-amplitude, higher-frequency drift tween over a short window — same `drift` mechanism with `SHAKE_AMP` / `SHAKE_CYCLES` / `SHAKE_DUR` at `SHAKE_AT`.
-- **Targeted zoom into an off-center element**: combine scale with counter-translation so the target lands at viewport center — divide the measured offset by the current scale before feeding it into the writer:
+- **Camera shake (panic / impact)**: a brief higher-amplitude, higher-frequency drift tween over a short window - same `drift` mechanism with `SHAKE_AMP` / `SHAKE_CYCLES` / `SHAKE_DUR` at `SHAKE_AT`.
+- **Targeted zoom into an off-center element**: combine scale with counter-translation so the target lands at viewport center - divide the measured offset by the current scale before feeding it into the writer:
 
 ```js
 const tRect = document.querySelector(".cta").getBoundingClientRect();
@@ -111,18 +111,18 @@ const offsetY = (STAGE_H / 2 - (tRect.top + tRect.height / 2)) / phase.scale;
 | PHASE_2_EASE / PHASE_3_EASE | `power2.out` `power3.out` `power2.inOut` | spring/back easing on a camera feels uncomfortable; each later phase settles deeper |
 | TOTAL_DURATION              | = `data-duration`                        | the drift tween must span the whole composition                                     |
 | DRIFT_CYCLES                | 1–3                                      | 1 = one slow breath; high values read as mechanical wobble                          |
-| DRIFT_AMP_X / DRIFT_AMP_Y   | 2–8 px / 1–4 px                          | imperceptible per-frame, visible over time — if it reads as a shake, it's too much  |
+| DRIFT_AMP_X / DRIFT_AMP_Y   | 2–8 px / 1–4 px                          | imperceptible per-frame, visible over time - if it reads as a shake, it's too much  |
 | DRIFT_FREQ_RATIO            | 1.2–1.5                                  | 1.0 = perfect diagonal (mechanical); ~1.3 = organic Lissajous                       |
 | HERO_AT (etc.)              | after Phase-2 settle lands               | a hero fading in mid-pull-back feels like it's flying away                          |
 
 ## Critical Constraints
 
-- **Camera wraps EVERYTHING in the scene** — a per-element camera creates parallax bugs and breaks the "one viewpoint" read.
+- **Camera wraps EVERYTHING in the scene** - a per-element camera creates parallax bugs and breaks the "one viewpoint" read.
 - **One writer**: phase scale and drift compose inside the single drift `onUpdate`; nothing else touches `camera.style.transform`.
-- **`overflow: hidden` on `.scene`** — required whenever any phase scale < 1.
-- **`transform-origin: 50% 50%` on `.camera`** — off-center origin creates unpredictable phase-to-phase drift.
-- **Scene background on `.scene`, not `.camera`** — otherwise scaling/translating reveals the outer void.
-- **Hero reveal starts AFTER the initial pull-back ease lands** — otherwise the headline feels like it's flying away.
+- **`overflow: hidden` on `.scene`** - required whenever any phase scale < 1.
+- **`transform-origin: 50% 50%` on `.camera`** - off-center origin creates unpredictable phase-to-phase drift.
+- **Scene background on `.scene`, not `.camera`** - otherwise scaling/translating reveals the outer void.
+- **Hero reveal starts AFTER the initial pull-back ease lands** - otherwise the headline feels like it's flying away.
 
 ## See also
 

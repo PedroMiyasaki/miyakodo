@@ -1,4 +1,4 @@
-# Storyboard recipe — plan a video like the launch films
+# Storyboard recipe - plan a video like the launch films
 
 Applies wherever a run plans on a storyboard (`storyboard: yes` in `brief-contract.md`). This file owns **how to make the storyboard**: what goes in it, and the one HTML page the user reviews. `review-loop.md` owns when the user is asked; `storyboard-format.md` owns the `STORYBOARD.md` file the scripts parse; `story-spine.md` owns the order of the story. The method is distilled from the shipped launch films' storyboards (a header, a named spine, a beat list, a contact sheet, a review round) and how their handoffs describe them, plus a few rules (the held frame, the slideshow/screensaver bans, the caption keep-out) that show up consistently in the wider storyboard corpus even where a given launch film omits them. Nothing here is a Studio feature: the agent writes the storyboard, the user reads it in chat and in a browser.
 
@@ -20,7 +20,7 @@ One beat per idea, one focus per beat. Give each beat a short semantic name that
 
 | Field       | Rule                                                                                                                                    |
 | ----------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| Heading     | `NN — Name (start–end, ~dur)`, absolute times. Sum the durations and state the total; check it against the target length by arithmetic. |
+| Heading     | `NN - Name (start–end, ~dur)`, absolute times. Sum the durations and state the total; check it against the target length by arithmetic. |
 | Beat length | 1.5–3.5 s. A beat that must be read gets ~3 s; a beat that only hands off gets 1.5–2 s; a line of 5–7 words gets 2–2.5 s.               |
 | On screen   | What is visible, in concrete terms (the object, its count, its position), with every on-screen word verbatim in quotes.                 |
 | Voiceover   | Verbatim, or `onscreen` for silent films. Reveals land on the word or beat cue that names them.                                         |

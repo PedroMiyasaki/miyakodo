@@ -1,6 +1,6 @@
 ---
 name: hyperframes-core
-description: The HyperFrames composition contract — build one renderable project. Use for composition structure, the `data-*` timing attributes, `class="clip"`, tracks, sub-compositions, variables, framework-owned media playback, deterministic-render rules, and validation. Read before writing composition HTML.
+description: The HyperFrames composition contract - build one renderable project. Use for composition structure, the `data-*` timing attributes, `class="clip"`, tracks, sub-compositions, variables, framework-owned media playback, deterministic-render rules, and validation. Read before writing composition HTML.
 ---
 
 # HyperFrames Core
@@ -14,7 +14,7 @@ description: The HyperFrames composition contract — build one renderable proje
 
 HyperFrames renders video from HTML. A composition is an HTML file whose DOM declares timing with `data-*` attributes, whose animation runtime is seekable, and whose media playback is owned by the framework.
 
-This skill is the **technical contract** — how to build one hyperframes project. The body below is the build guide; per-topic detail lives in `references/` (index next), read on demand. Process docs (brief, storyboard, review, production, dispatch, frame-worker) live in `/hyperframes` → `references/`. Other concerns live in the sibling domain skills — `hyperframes-animation`, `hyperframes-creative`, `media-use`, `hyperframes-cli`, `hyperframes-registry`. The capability map in `/hyperframes` says what each one covers.
+This skill is the **technical contract** - how to build one hyperframes project. The body below is the build guide; per-topic detail lives in `references/` (index next), read on demand. Process docs (brief, storyboard, review, production, dispatch, frame-worker) live in `/hyperframes` → `references/`. Other concerns live in the sibling domain skills - `hyperframes-animation`, `hyperframes-creative`, `media-use`, `hyperframes-cli`, `hyperframes-registry`. The capability map in `/hyperframes` says what each one covers.
 
 ## References
 
@@ -57,11 +57,11 @@ Each composition registers **exactly one** `gsap.timeline({ paused: true })` at 
 
 Rules that `lint` **does** catch, but only after the fact. Write them right the first time:
 
-- Never pair a CSS initial `transform` with a GSAP tween on the **same** property — the CSS value and the tween's start fight and `lint` rejects it with `gsap_css_transform_conflict`. Set the initial state inside the tween with `gsap.fromTo(el, { x: -40 }, { x: 0 })` instead of a CSS `transform: translateX(-40px)`.
+- Never pair a CSS initial `transform` with a GSAP tween on the **same** property - the CSS value and the tween's start fight and `lint` rejects it with `gsap_css_transform_conflict`. Set the initial state inside the tween with `gsap.fromTo(el, { x: -40 }, { x: 0 })` instead of a CSS `transform: translateX(-40px)`.
 - Never put `crossorigin` on `<video>`/`<audio>`. `lint` rejects it unconditionally with `media_crossorigin_breaks_preview` (error), including for canvas/WebGL/WebAudio readback. There is no suppression.
 - Never give a `<video data-start>` an ancestor that also carries `data-start`. `lint` rejects it with `video_nested_in_timed_element` (error). Time the wrapper **or** the video, not both.
 - Every `<audio>` needs an `id`. `lint` rejects it with `media_missing_id`, and an id-less `<audio>` is never picked up by the mixer, so the render is **silent**.
-- Never tween a `.clip` with `autoAlpha` or `visibility` — `lint` rejects it with `gsap_animates_clip_element`. Animate a child instead.
+- Never tween a `.clip` with `autoAlpha` or `visibility` - `lint` rejects it with `gsap_animates_clip_element`. Animate a child instead.
 - A named CSS `font-family` needs an in-file `@font-face` to a shipped local file, or `lint` fires `font_family_without_font_face`.
 - Sub-composition `#root` uses `width`/`height: 100%` (or `inset: 0`), not hardcoded `1920px`/`1080px`. Canvas size is `data-width`/`data-height`.
 

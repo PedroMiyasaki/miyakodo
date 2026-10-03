@@ -120,7 +120,7 @@ describe("HyperFrames skill helpers", () => {
 // The two package-loader.mjs copies are intentionally byte-identical (each
 // skill ships standalone, so neither can import the other's) and now carry
 // shared logic (initializeSessionWithRetry + FALLBACK_TRANSIENT_PATTERNS)
-// that a future fix could land in one copy and silently miss in the other —
+// that a future fix could land in one copy and silently miss in the other -
 // the exact drift class the audio.mjs identity pin was born to catch.
 describe("package-loader parity", () => {
   it("package-loader.mjs is byte-identical to hyperframes-creative's copy (the stated contract)", () => {
@@ -140,7 +140,7 @@ describe("package-loader parity", () => {
 // A valid modular project's sub-composition timelines register asynchronously;
 // the first initializeSession can time out with the transient "zero duration /
 // Runtime ready: false" diagnostic. The render pipeline closes the crashed
-// session and retries once with a fresh browser (probeStage) — the standalone
+// session and retries once with a fresh browser (probeStage) - the standalone
 // helpers must do the same instead of reporting the project as zero-duration.
 
 /** Write a fake node_modules with the given producer index.mjs source. */
@@ -241,7 +241,7 @@ describe("transient-init retry", () => {
             FAKE_PRODUCER_COMMON,
             "export async function initializeSession() {",
             // The fast-fail shape: runtime IS ready, there is genuinely no
-            // timeline/duration — an authoring bug retries can't fix.
+            // timeline/duration - an authoring bug retries can't fix.
             '  throw new Error("Composition has zero duration after initialization.\\nRuntime ready: true");',
             "}",
           ].join("\n"),
@@ -265,7 +265,7 @@ describe("transient-init retry", () => {
         root,
         [
           FAKE_PRODUCER_COMMON,
-          // A message the frozen fallback patterns would NOT match — only the
+          // A message the frozen fallback patterns would NOT match - only the
           // producer-provided classifier can mark it transient.
           "export function isTransientBrowserError(err) { return String(err && err.message).includes('CUSTOM_TRANSIENT'); }",
           "let initCalls = 0;",
@@ -357,7 +357,7 @@ const FAKE_PARENT_DRIVER_ENV = [
   "  startTime: () => 0,",
   "  duration: () => 12,",
   "};",
-  // Same driven timeline, but this one alters nothing — the repaint it triggers is
+  // Same driven timeline, but this one alters nothing - the repaint it triggers is
   // identical frame to frame, so it must NOT count as motion.
   "const spacerTween = {",
   "  targets: () => [{}],",
@@ -406,7 +406,7 @@ describe("proxy-driver tweens", () => {
       assert.deepEqual(drivers[0].flags, []);
 
       assert.deepEqual(report.deadZones, [], "2-4s is animating, not dead");
-      // The bare spacer stays out — only the element tween and the driver are mapped.
+      // The bare spacer stays out - only the element tween and the driver are mapped.
       assert.equal(report.tweens.length, 2);
 
       // Per-ELEMENT analyses must not adopt the driver as a pseudo-element.

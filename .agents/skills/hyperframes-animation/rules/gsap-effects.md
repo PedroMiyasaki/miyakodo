@@ -2,8 +2,8 @@
 
 Drop-in animation patterns. Snippets show mechanism only, inside a standard scene clip (hyperframes-core); assume `tl` exists.
 
-- [Typewriter](#typewriter) — character-by-character reveal with optional cursor / backspace / word rotation
-- [Audio Visualizer](#audio-visualizer) — pre-extract audio data, drive Canvas/DOM rendering from the timeline
+- [Typewriter](#typewriter) - character-by-character reveal with optional cursor / backspace / word rotation
+- [Audio Visualizer](#audio-visualizer) - pre-extract audio data, drive Canvas/DOM rendering from the timeline
 
 ## Typewriter
 
@@ -20,7 +20,7 @@ Requires GSAP's TextPlugin alongside the core script:
 
 ```js
 const text = "Hello, world!";
-const cps = 10; // chars per second — see timing table
+const cps = 10; // chars per second - see timing table
 tl.to(
   "#typed-text",
   { text: { value: text }, duration: text.length / cps, ease: "none" },
@@ -71,7 +71,7 @@ Multi-line handoff: hide previous cursor → blink new → brief pause (~0.5s) �
 
 ### Backspacing
 
-TextPlugin removes from the front — wrong for backspace. Use manual substring removal:
+TextPlugin removes from the front - wrong for backspace. Use manual substring removal:
 
 ```js
 function backspace(tl, selector, word, startTime, cps) {
@@ -122,7 +122,7 @@ Build a sentence word-by-word into the same element: keep an `accumulated` strin
 
 ## Audio Visualizer
 
-Pre-extract audio data, drive Canvas / DOM rendering from the timeline. **Do not use the Web Audio API at render time** — there's no playback during seek.
+Pre-extract audio data, drive Canvas / DOM rendering from the timeline. **Do not use the Web Audio API at render time** - there's no playback during seek.
 
 ### Extract Audio Data
 
@@ -133,7 +133,7 @@ python skills/hyperframes-creative/scripts/extract-audio-data.py audio.mp3 -o au
 python skills/hyperframes-creative/scripts/extract-audio-data.py video.mp4 --fps 30 --bands 16 -o audio-data.json
 ```
 
-Output: `{ "fps": 30, "totalFrames": 5415, "frames": [{ "time": 0.0, "rms": 0.42, "bands": [0.8, 0.6, 0.3] }] }` — `rms` (0-1) is overall loudness; `bands[]` (0-1) are frequency magnitudes, index 0 = bass, each band normalized independently.
+Output: `{ "fps": 30, "totalFrames": 5415, "frames": [{ "time": 0.0, "rms": 0.42, "bands": [0.8, 0.6, 0.3] }] }` - `rms` (0-1) is overall loudness; `bands[]` (0-1) are frequency magnitudes, index 0 = bass, each band normalized independently.
 
 ### Loading (Synchronously)
 
@@ -141,16 +141,16 @@ Inline the JSON for small files (< ~500 KB), or sync XHR for large ones:
 
 ```js
 const xhr = new XMLHttpRequest();
-xhr.open("GET", "audio-data.json", false); // synchronous — deliberate
+xhr.open("GET", "audio-data.json", false); // synchronous - deliberate
 xhr.send();
 const AUDIO_DATA = JSON.parse(xhr.responseText);
 ```
 
-**Do NOT use async `fetch()`** — HyperFrames reads `window.__timelines` synchronously after page load; building the timeline inside `.then()` means it isn't ready when capture starts.
+**Do NOT use async `fetch()`** - HyperFrames reads `window.__timelines` synchronously after page load; building the timeline inside `.then()` means it isn't ready when capture starts.
 
 ### Driving the Timeline
 
-Canvas 2D is the workhorse (bars, waveforms, circles, gradients) — one `tl.call` per frame:
+Canvas 2D is the workhorse (bars, waveforms, circles, gradients) - one `tl.call` per frame:
 
 ```js
 const ctx = document.getElementById("viz").getContext("2d");
@@ -167,7 +167,7 @@ for (let f = 0; f < AUDIO_DATA.totalFrames; f++) {
 }
 ```
 
-WebGL / Three.js: HyperFrames patches `THREE.Clock` for deterministic time — update uniforms from audio data each frame. DOM elements: fine under ~20 elements, slower than Canvas beyond that.
+WebGL / Three.js: HyperFrames patches `THREE.Clock` for deterministic time - update uniforms from audio data each frame. DOM elements: fine under ~20 elements, slower than Canvas beyond that.
 
 ### Smoothing
 
@@ -189,8 +189,8 @@ function smooth(f) {
 
 ### Design Guide
 
-- **Spatial mapping** — horizontal: bass left, treble right; vertical: bass bottom; circular: bass at 12 o'clock, wrap clockwise (mirror for a full circle).
+- **Spatial mapping** - horizontal: bass left, treble right; vertical: bass bottom; circular: bass at 12 o'clock, wrap clockwise (mirror for a full circle).
 - **Bass drives big moves** (scale, glow, position); **treble drives detail** (shimmer, flicker, edges); **RMS drives globals** (background brightness, overall energy).
-- Pick 2-3 animated properties — more looks noisy. Keep minimums above zero so quiet sections still have life.
+- Pick 2-3 animated properties - more looks noisy. Keep minimums above zero so quiet sections still have life.
 - **Band count**: 4 = background glow/pulse, 8 = bar charts, 16 = detailed EQ (default), 32 = dense radial layouts.
-- **Layering**: stack canvases with `z-index` — a background layer driven by bass/rms under a foreground layer driven by individual bands gives depth without per-element complexity.
+- **Layering**: stack canvases with `z-index` - a background layer driven by bass/rms under a foreground layer driven by individual bands gives depth without per-element complexity.

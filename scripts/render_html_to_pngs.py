@@ -1,6 +1,6 @@
 """Render every element matching --selector in an HTML file as a PNG via Playwright.
 
-Generic — knows nothing about threads, briefs, posts or content types. Takes an
+Generic - knows nothing about threads, briefs, posts or content types. Takes an
 HTML file and a CSS selector, spits out one PNG per element into the given
 directory. Used by skills that produce custom layouts via the design system
 (instead of fixed templates).
@@ -91,7 +91,7 @@ def main() -> None:
     n = asyncio.run(
         render(html_path, out_dir, args.selector, args.width, args.height, args.scale)
     )
-    print(f"OK — {n} slide(s) rendered.")
+    print(f"OK - {n} slide(s) rendered.")
 
 
 if __name__ == "__main__":

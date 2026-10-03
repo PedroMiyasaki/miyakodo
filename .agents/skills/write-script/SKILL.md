@@ -86,7 +86,7 @@ Abra a linha correspondente no banco Ideas e leia tudo que estiver disponível: 
 
 ### Passo 3 · Calibrar a voz
 
-Roteiro de Reel é fala transcrita: escreva como o usuário fala — direto, sem inflação, sem jargão sem tradução. Leia também a seção **Calibração**, no fim desta skill: ela mostra um roteiro aprovado e as correções reais que o usuário fez em primeiras versões.
+Roteiro de Reel é fala transcrita: escreva como o usuário fala - direto, sem inflação, sem jargão sem tradução. Leia também a seção **Calibração**, no fim desta skill: ela mostra um roteiro aprovado e as correções reais que o usuário fez em primeiras versões.
 
 ### Passo 4 · Planejar antes de escrever
 

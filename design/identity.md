@@ -1,4 +1,4 @@
-# Identidade visual — Alvinegro
+# Identidade visual - Alvinegro
 
 O sistema visual de todo entregável que tem layout próprio. Preenche os slots de identidade que o
 craft doc do carrossel (`.agents/skills/carousel/assets/carousel-craft.md`, §0) exige.
@@ -42,7 +42,7 @@ retângulos brancos.
 
 ---
 
-## Tipografia — três vozes
+## Tipografia - três vozes
 
 | Voz | Fonte | Função |
 |---|---|---|
@@ -63,7 +63,7 @@ dois slides.
 
 ---
 
-## Cor — a rampa de halftone
+## Cor - a rampa de halftone
 
 Cinza é retícula, nunca cor chapada. São quatro densidades na mesma grade de 11px: escolha uma, não
 interpole, e nunca use `opacity` nem um cinza em hex para chegar lá.
@@ -74,7 +74,7 @@ interpole, e nunca use `opacity` nem um cinza em hex para chegar lá.
 | Retícula | 2.1 | 11.4% | O padrão: preenchimento da arte |
 | Sombra | 3.0 | 23.3% | Peso dentro de um desenho |
 | Quase chapado | 3.9 | 39.4% | Parece escuro, mas ainda é ponto |
-| Tinta | — | 100% | Chapado. Sem retícula. |
+| Tinta | - | 100% | Chapado. Sem retícula. |
 
 Sobre fundo preto o ponto inverte para branco: mesmos raios, mesma grade. **Nunca coloque retícula
 sobre retícula:** duas grades sobrepostas geram moiré na exportação, e o artefato sobrevive à
@@ -86,7 +86,7 @@ o grão de papel ligado nos frames exportados: ele também funciona como dither.
 
 ---
 
-## Padrões — seis recursos
+## Padrões - seis recursos
 
 O filtro e a retícula são técnica. Estes são os elementos que você coloca na página:
 
@@ -152,7 +152,7 @@ serve para todo tamanho: `scale="7"` parece tinta a 900px e lama a 120px.
 | ≥ 600px | `#rough-lg` | 7 | .018 |
 | 300–600px | `#rough-md` | 4 | .026 |
 | 120–300px | `#rough-sm` | 2 | .042 |
-| < 120px | nenhum | — | — |
+| < 120px | nenhum | - | - |
 
 A impressão é **fixada no tamanho de render**. Nunca redimensione um PNG exportado da marca:
 renderize de novo no tamanho de destino para a faixa ficar certa.

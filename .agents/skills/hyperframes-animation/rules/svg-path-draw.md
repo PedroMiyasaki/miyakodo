@@ -7,7 +7,7 @@ metadata:
 
 # SVG Path Draw
 
-Reveals an SVG shape by animating its stroke as if a pen were tracing it. Two stroke properties together: **`stroke-dasharray = <pathLength>`** makes the entire path one dash; **`stroke-dashoffset`** starts at the path length (dash shifted fully out of view → invisible) and tweens to `0` (fully drawn). The length comes from the DOM API `path.getTotalLength()` — measured, never guessed.
+Reveals an SVG shape by animating its stroke as if a pen were tracing it. Two stroke properties together: **`stroke-dasharray = <pathLength>`** makes the entire path one dash; **`stroke-dashoffset`** starts at the path length (dash shifted fully out of view → invisible) and tweens to `0` (fully drawn). The length comes from the DOM API `path.getTotalLength()` - measured, never guessed.
 
 Works on anything with a stroke: `<path>`, `<circle>`, `<rect>`, `<line>`, `<polyline>`, `<polygon>`, `<ellipse>`.
 
@@ -24,7 +24,7 @@ Works on anything with a stroke: `<path>`, `<circle>`, `<rect>`, `<line>`, `<pol
 
 ```css
 .logo-mark path {
-  fill: none; /* outline-only draw — a fill would appear immediately and ruin the reveal */
+  fill: none; /* outline-only draw - a fill would appear immediately and ruin the reveal */
   stroke: {accentColor};
   stroke-width: 12;
   stroke-linecap: round; /* softer endpoints */
@@ -40,7 +40,7 @@ document.querySelectorAll(".logo-mark path").forEach((p) => {
   p.style.strokeDashoffset = `${len}`;
 });
 
-// Stagger draws so the eye reads continuous motion — each segment starts at
+// Stagger draws so the eye reads continuous motion - each segment starts at
 // ~70-80% of the previous segment's duration, before it finishes.
 tl.to(
   "#bar-left",
@@ -68,7 +68,7 @@ tl.to(
 
 ## Variations
 
-- **Ring starting at 12 o'clock** — `<circle>` / `<rect>` strokes start at 3 o'clock by default; rotate the element `-90deg` so a progress ring draws from the top:
+- **Ring starting at 12 o'clock** - `<circle>` / `<rect>` strokes start at 3 o'clock by default; rotate the element `-90deg` so a progress ring draws from the top:
 
 ```html
 <circle
@@ -80,8 +80,8 @@ tl.to(
 />
 ```
 
-- **Linear (constant-speed) draw** — `ease: "none"` for a steady-rate "real pen" trace.
-- **Draw then fill** — for filled shapes, tween `fillOpacity: 0 → 1` AFTER the stroke completes (requires `fill-opacity: 0` initially and a real `fill` in CSS):
+- **Linear (constant-speed) draw** - `ease: "none"` for a steady-rate "real pen" trace.
+- **Draw then fill** - for filled shapes, tween `fillOpacity: 0 → 1` AFTER the stroke completes (requires `fill-opacity: 0` initially and a real `fill` in CSS):
 
 ```js
 tl.to(
@@ -101,21 +101,21 @@ tl.to(
 | token             | range                                   | notes                                                                                              |
 | ----------------- | --------------------------------------- | -------------------------------------------------------------------------------------------------- |
 | SEGMENT_DRAW_DUR  | 0.3–0.8s                                | fast snap vs deliberate pen trace; >~1s feels sluggish for a logo reveal                           |
-| FINAL_SEGMENT_DUR | 60–80% of SEGMENT_DRAW_DUR              | proportional to segment length — a short connector at full duration reads slower than its siblings |
+| FINAL_SEGMENT_DUR | 60–80% of SEGMENT_DRAW_DUR              | proportional to segment length - a short connector at full duration reads slower than its siblings |
 | SEG_N_START       | previous start + 70–80% of its duration | reads as continuous motion, not N isolated animations                                              |
 | SEG_1_START       | 0–0.4s                                  | a small ~0.2s lead-in lets the viewer settle before motion                                         |
 | BRAND_FADE_START  | ≥ last stroke end (+ ~0.2s beat)        | earlier and the wordmark competes with the draw                                                    |
 | BRAND_FADE_DUR    | 0.3–0.8s                                | snap (urgent) vs glide (premium)                                                                   |
 
-Ease families are discrete choices: **stroke draws** use `power2.out` (a hand lifting at end of stroke) or `none` for constant speed — never `back.out` / `elastic.out` (pens don't bounce). **Fades** use `power1.out`.
+Ease families are discrete choices: **stroke draws** use `power2.out` (a hand lifting at end of stroke) or `none` for constant speed - never `back.out` / `elastic.out` (pens don't bounce). **Fades** use `power1.out`.
 
 ## Critical Constraints
 
-- **`fill: none`** for outline-only draws — otherwise the fill appears immediately.
+- **`fill: none`** for outline-only draws - otherwise the fill appears immediately.
 - **Dasharray/dashoffset = the measured `getTotalLength()`**, set at setup; requires the SVG in the DOM (inline SVG is fine; a loaded `<image>` SVG is not).
-- **Complex paths**: if `getTotalLength()` looks wrong, overestimate slightly (`len * 1.05`) — too large is invisible at animation start; too small clips the end.
+- **Complex paths**: if `getTotalLength()` looks wrong, overestimate slightly (`len * 1.05`) - too large is invisible at animation start; too small clips the end.
 - **Stagger multi-path draws at ~70–80%** of the previous segment's duration.
-- **A drawn line must land on something.** When the path is a connector (rail, beam, underline, callout) rather than a shape, both endpoints must sit on real elements and the draw must do a job — reveal, route, validate, or emphasize. A stroke that only decorates empty space reads as filler; attach it or cut it.
+- **A drawn line must land on something.** When the path is a connector (rail, beam, underline, callout) rather than a shape, both endpoints must sit on real elements and the draw must do a job - reveal, route, validate, or emphasize. A stroke that only decorates empty space reads as filler; attach it or cut it.
 
 ## See also
 

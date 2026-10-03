@@ -1,13 +1,13 @@
 ---
 name: scale-swap-transition
-description: Coordinated shrink-out + spring pop-in morph-like transition between two elements — no SVG path interpolation needed.
+description: Coordinated shrink-out + spring pop-in morph-like transition between two elements - no SVG path interpolation needed.
 metadata:
   tags: transition, morph, scale, swap, spring, pop
 ---
 
 # Scale-Swap Transition
 
-Simulates a "morph" between two DOM elements by overlapping exit and entrance scale animations. Lighter weight than [card-morph-anchor.md](card-morph-anchor.md) (which morphs container dimensions — use that for SHAPE changes; this rule is for SAME-shape state swaps) and easier than SVG path interpolation.
+Simulates a "morph" between two DOM elements by overlapping exit and entrance scale animations. Lighter weight than [card-morph-anchor.md](card-morph-anchor.md) (which morphs container dimensions - use that for SHAPE changes; this rule is for SAME-shape state swaps) and easier than SVG path interpolation.
 
 At a single trigger, two coordinated tweens fire:
 
@@ -19,7 +19,7 @@ A small `OVERLAP` window during which both are mid-tween creates the morph illus
 ## Recipe
 
 ```html
-<!-- Both cards position: absolute; inset: 0 in one fixed-size wrapper — same
+<!-- Both cards position: absolute; inset: 0 in one fixed-size wrapper - same
      footprint, same transform-origin: 50% 50%. Incoming starts opacity: 0,
      transform: scale(EXIT_SCALE), z-index above the outgoing. -->
 <div class="swap-wrap">
@@ -57,9 +57,9 @@ tl.fromTo(
 
 ## Variations
 
-- **Delayed inner content reveal** — the classic pattern above: morph the container, then reveal inner text once it settles; the 0.2–0.4 s gap lets the eye land on the new shape before reading.
-- **Triple swap (3-state cycle)** — chain A→B→C with triggers `TRIGGER_AB` / `TRIGGER_BC`; each transition is its own tween pair, the previous incoming becoming the next outgoing. State-evolution narratives (early → mid → final labels).
-- **Color-shift transition (no scale)** — for a flat morph between same-shape states, drop the scale and keep opacity + a brief background hue tween; less dramatic, more product-UI tone.
+- **Delayed inner content reveal** - the classic pattern above: morph the container, then reveal inner text once it settles; the 0.2–0.4 s gap lets the eye land on the new shape before reading.
+- **Triple swap (3-state cycle)** - chain A→B→C with triggers `TRIGGER_AB` / `TRIGGER_BC`; each transition is its own tween pair, the previous incoming becoming the next outgoing. State-evolution narratives (early → mid → final labels).
+- **Color-shift transition (no scale)** - for a flat morph between same-shape states, drop the scale and keep opacity + a brief background hue tween; less dramatic, more product-UI tone.
 
 ## Values
 
@@ -76,13 +76,13 @@ tl.fromTo(
 
 ## Critical Constraints
 
-- **Incoming z-index ABOVE outgoing** — otherwise the outgoing's fade-tail (opacity 0.3–0.5) bleeds through and double-exposes the frame.
-- **Both elements share `transform-origin: 50% 50%`** — different origins make the morph read as one thing teleporting elsewhere.
-- **Bouncy ease ONLY on the incoming** — outgoing `power2.in`, incoming `back.out`; reversed, the swap feels mechanical.
+- **Incoming z-index ABOVE outgoing** - otherwise the outgoing's fade-tail (opacity 0.3–0.5) bleeds through and double-exposes the frame.
+- **Both elements share `transform-origin: 50% 50%`** - different origins make the morph read as one thing teleporting elsewhere.
+- **Bouncy ease ONLY on the incoming** - outgoing `power2.in`, incoming `back.out`; reversed, the swap feels mechanical.
 - **Both cards `position: absolute; inset: 0`** in the same fixed-size wrapper (sized to fit both states; the wrap never resizes).
-- **Don't `display: none` the outgoing** after the fade — leave it at `opacity: 0` so layout doesn't reflow.
+- **Don't `display: none` the outgoing** after the fade - leave it at `opacity: 0` so layout doesn't reflow.
 - **Inner content reveals after the container settles**; **climax dwell ≥ 1 s** after the final state + subline land.
 
 ## See also
 
-`press-release-spring` (a button press TRIGGERS the swap — cause and effect) · `card-morph-anchor` (shape-changing alternative) · `reactive-displacement` (when the replacement should read as a causal collision) · `sine-wave-loop` (idle breathing on the final state).
+`press-release-spring` (a button press TRIGGERS the swap - cause and effect) · `card-morph-anchor` (shape-changing alternative) · `reactive-displacement` (when the replacement should read as a causal collision) · `sine-wave-loop` (idle breathing on the final state).

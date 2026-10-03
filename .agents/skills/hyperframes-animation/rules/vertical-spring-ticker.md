@@ -1,17 +1,17 @@
 ---
 name: vertical-spring-ticker
-description: Slot-machine style vertical scrolling using additive spring physics within a masked container — each spring contributes one "step" of scroll.
+description: Slot-machine style vertical scrolling using additive spring physics within a masked container - each spring contributes one "step" of scroll.
 metadata:
   tags: text, ticker, spring, scroll, vertical, slot-machine, sequence
 ---
 
 # Vertical Spring Ticker (Slot Machine)
 
-Multiple spring tweens are ADDED TOGETHER to produce total Y translation — each spring contributes one discrete "step", so instead of a single linear scroll you get the slot-machine "click click click" rhythm with natural settling. Distinct from a continuous marquee: this rule's semantics are discrete steps that land; for endless linear motion see [sine-wave-loop.md](sine-wave-loop.md).
+Multiple spring tweens are ADDED TOGETHER to produce total Y translation - each spring contributes one discrete "step", so instead of a single linear scroll you get the slot-machine "click click click" rhythm with natural settling. Distinct from a continuous marquee: this rule's semantics are discrete steps that land; for endless linear motion see [sine-wave-loop.md](sine-wave-loop.md).
 
 ## How It Works
 
-A masked window of fixed height `ITEM_HEIGHT` (`overflow: hidden`) holds a vertical stack of items, each exactly `ITEM_HEIGHT` tall. Each spring holds a 0→1 progress; a shared `onUpdate` sums them and applies `translateY(-sum × ITEM_HEIGHT)`. Springs fire sequentially with overlap (`STEP_SPACING ≤ STEP_DUR`), so each step snaps in while the previous is still settling — that overlap is what makes them additive, and the `back.out` overshoot is what makes each step read as a "click".
+A masked window of fixed height `ITEM_HEIGHT` (`overflow: hidden`) holds a vertical stack of items, each exactly `ITEM_HEIGHT` tall. Each spring holds a 0→1 progress; a shared `onUpdate` sums them and applies `translateY(-sum × ITEM_HEIGHT)`. Springs fire sequentially with overlap (`STEP_SPACING ≤ STEP_DUR`), so each step snaps in while the previous is still settling - that overlap is what makes them additive, and the `back.out` overshoot is what makes each step read as a "click".
 
 ## Recipe
 
@@ -34,14 +34,14 @@ A masked window of fixed height `ITEM_HEIGHT` (`overflow: hidden`) holds a verti
 }
 .stack-inner {
   display: flex;
-  flex-direction: column; /* mandatory — vertical stacking */
+  flex-direction: column; /* mandatory - vertical stacking */
 }
 .item {
   height: ITEM_HEIGHT; /* MUST equal .ticker height */
   display: flex;
   align-items: center;
   justify-content: center;
-  /* font-variant-numeric: tabular-nums; — for numeric tickers */
+  /* font-variant-numeric: tabular-nums; - for numeric tickers */
 }
 ```
 
@@ -71,10 +71,10 @@ springs.forEach((spring, i) => {
 
 ## Variations
 
-- **Numeric ticker (price / counter rolling)** — items are the digit sequence; run the same spring-step pattern per decimal position. `font-variant-numeric: tabular-nums` required.
-- **Reverse direction (countdown)** — flip the sign (`translateY(${sumP * ITEM_HEIGHT}px)`) and arrange items in reverse order.
-- **Pause between groups** — several fast steps (small `STEP_SPACING`), a long pause, then one dramatic final step with a bigger `BOUNCE_FACTOR`. The pause is where the eye locks in.
-- **Continuous infinite ticker** — NOT this rule (this rule is discrete steps); a looping news ticker is a single linear tween with duplicated items — see [sine-wave-loop.md](sine-wave-loop.md) for continuous-motion semantics.
+- **Numeric ticker (price / counter rolling)** - items are the digit sequence; run the same spring-step pattern per decimal position. `font-variant-numeric: tabular-nums` required.
+- **Reverse direction (countdown)** - flip the sign (`translateY(${sumP * ITEM_HEIGHT}px)`) and arrange items in reverse order.
+- **Pause between groups** - several fast steps (small `STEP_SPACING`), a long pause, then one dramatic final step with a bigger `BOUNCE_FACTOR`. The pause is where the eye locks in.
+- **Continuous infinite ticker** - NOT this rule (this rule is discrete steps); a looping news ticker is a single linear tween with duplicated items - see [sine-wave-loop.md](sine-wave-loop.md) for continuous-motion semantics.
 
 ## Values
 
@@ -91,13 +91,13 @@ Reference: `../examples/proof-logo-chain.html` (204px, 1 step, 0.45s).
 
 ## Critical Constraints
 
-- **Container height = item height, pixel-exact, all items equal** — mismatches show partial item edges above/below the mask and accumulate drift across steps.
+- **Container height = item height, pixel-exact, all items equal** - mismatches show partial item edges above/below the mask and accumulate drift across steps.
 - **`overflow: hidden` on the container, not the inner stack**; `flex-direction: column` on the stack.
-- **Sum the springs in `onUpdate` — never tween the final position directly.** Each spring contributing its OWN snap is the slot-machine pacing.
-- **Overlap steps and keep `back.out` per step** — non-overlapping steps or an out-only ease collapse into a linear scroll.
-- **Never update items via `innerHTML` between steps** — the ticker moves the SAME items via translate; swapping content shows the previous item AS the new one (broken illusion).
+- **Sum the springs in `onUpdate` - never tween the final position directly.** Each spring contributing its OWN snap is the slot-machine pacing.
+- **Overlap steps and keep `back.out` per step** - non-overlapping steps or an out-only ease collapse into a linear scroll.
+- **Never update items via `innerHTML` between steps** - the ticker moves the SAME items via translate; swapping content shows the previous item AS the new one (broken illusion).
 - **Climax dwell ≥1s after the final step** (SKILL universal constraint).
-- **`tabular-nums` for numeric tickers** — variable digit widths break alignment.
+- **`tabular-nums` for numeric tickers** - variable digit widths break alignment.
 
 ## See also
 

@@ -6,7 +6,7 @@ Este documento registra os formatos editoriais que o projeto produz hoje. A list
 - **modo** é uma variação narrativa, de densidade ou de edição dentro do formato;
 - **derivado** reapresenta uma peça que já existe e não cria um novo formato canônico no banco Ideas.
 
-## Reel — Canal Principal: Instagram
+## Reel - Canal Principal: Instagram
 
 Vídeo curto de talking head. A ideia vira uma história guiada por uma pergunta, com roteiro híbrido de trechos literais e tópicos para preservar, ao mesmo tempo, retenção e naturalidade na fala.
 
@@ -28,7 +28,7 @@ O formato é escrito pela skill `write-script`. O vídeo é produzido com Hyperf
 
 Esses modos mudam a narrativa, mas a peça continua sendo um Reel.
 
-## Carrossel editorial — Canal Principal: Instagram
+## Carrossel editorial - Canal Principal: Instagram
 
 Sequência visual nativa em que copy e arte são produzidas como uma entrega única. Cada slide sustenta uma conclusão, e a leitura das headlines em sequência deve formar um argumento coerente. A peça usa proporção 4:5, tem no máximo dez slides e inclui capa e CTA.
 
@@ -41,7 +41,7 @@ A skill `carousel` produz o formato completo em `posts/carousel/<slug>/`: `final
 
 O modo de densidade vale para a peça inteira; misturar os dois enfraquece a hierarquia.
 
-## Thread — Canal Principal: Threads
+## Thread - Canal Principal: Threads
 
 Sequência de textos encadeados para o Threads. Cada publicação precisa funcionar isoladamente e, ao mesmo tempo, mover o argumento da sequência. A faixa típica é de cinco a nove posts, com limite de 500 caracteres por post.
 
@@ -55,7 +55,7 @@ A skill `write-thread` salva a peça em `posts/thread/<slug>/final.md`. No banco
 
 Essas variações regulam o tamanho. A estrutura permanece hook, desenvolvimento e fecho.
 
-## Carrossel derivado de thread — Canal Principal: Instagram
+## Carrossel derivado de thread - Canal Principal: Instagram
 
 Adaptação visual de uma thread já escrita. A copy pode ser reformatada para o espaço do slide, mas a origem continua sendo a thread. Por isso, este é um **derivado**, não um novo formato canônico no banco Ideas.
 
@@ -68,7 +68,7 @@ A skill `build-thread-carousel` grava a reescrita e o HTML em `posts/thread/<slu
 
 Os dois modos mantêm o mesmo conteúdo, estrutura e proporção 4:5; muda apenas o tratamento visual.
 
-## Post de LinkedIn — Canal Principal: LinkedIn
+## Post de LinkedIn - Canal Principal: LinkedIn
 
 Post de texto longo nativo, acompanhado por uma imagem que interrompe o scroll. Defende uma tese com substância, evidência e posição clara, em até 3.000 caracteres. A primeira linha cria tensão antes do “ver mais”; o corpo desenvolve o argumento em parágrafos; o fecho comprime a posição ou faz uma pergunta genuína.
 
@@ -76,7 +76,7 @@ A skill `build-linkedin` entrega `final.md` e `image.png` em `posts/linkedin/<sl
 
 A skill não declara modos formais para este formato. Extensão, blocos argumentativos e tipo de hook variam conforme o material, sem virar categorias separadas.
 
-## Artigo ilustrado — Canal Principal: Substack
+## Artigo ilustrado - Canal Principal: Substack
 
 Artigo longo construído como uma história sequencial, apoiado por três a oito capturas reais de fontes primárias. Em vez de apenas publicar a conclusão, mostra o caminho até ela: hipóteses, documentos, testes, números, erros e decisões. O corpo costuma ter de 1.200 a 3.000 palavras, sem teto quando o material sustenta a extensão.
 

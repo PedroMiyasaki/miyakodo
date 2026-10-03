@@ -1,14 +1,14 @@
 ---
 name: hyperframes-registry
-description: Search, install, and wire registry blocks and components into HyperFrames compositions. Use BEFORE hand-building any named visual — whenever a brief, a user, or a storyboard names a look, effect, treatment, or transition such as CRT scanlines, glitch, chromatic aberration, film grain, a shimmer sweep, a chart, a code or terminal window, a map, or a confetti burst — because roughly 400 hosted items already cover many of them and the search ranks all of them with nothing installed, no project, and no account. Also use when running hyperframes add or hyperframes catalog, installing one item or every block matching a tag, wiring an installed item into index.html, or working with hyperframes.json. Covers discovery, install locations, block sub-composition wiring, component snippet merging, and authoring a new block or component to contribute upstream (idea → scaffold → validate → PR).
+description: Search, install, and wire registry blocks and components into HyperFrames compositions. Use BEFORE hand-building any named visual - whenever a brief, a user, or a storyboard names a look, effect, treatment, or transition such as CRT scanlines, glitch, chromatic aberration, film grain, a shimmer sweep, a chart, a code or terminal window, a map, or a confetti burst - because roughly 400 hosted items already cover many of them and the search ranks all of them with nothing installed, no project, and no account. Also use when running hyperframes add or hyperframes catalog, installing one item or every block matching a tag, wiring an installed item into index.html, or working with hyperframes.json. Covers discovery, install locations, block sub-composition wiring, component snippet merging, and authoring a new block or component to contribute upstream (idea → scaffold → validate → PR).
 ---
 
 # HyperFrames Registry
 
 The registry provides reusable blocks and components installable via `hyperframes add <name>`.
 
-- **Blocks** — standalone sub-compositions (own dimensions, duration, timeline). Included via `data-composition-src` in a host composition.
-- **Components** — effect snippets (no own dimensions). Pasted directly into a host composition's HTML.
+- **Blocks** - standalone sub-compositions (own dimensions, duration, timeline). Included via `data-composition-src` in a host composition.
+- **Components** - effect snippets (no own dimensions). Pasted directly into a host composition's HTML.
 
 ## Quick reference
 
@@ -21,7 +21,7 @@ hyperframes add data-chart --json       # machine-readable output
 hyperframes add data-chart --no-clipboard  # skip clipboard (CI/headless)
 ```
 
-After install, the CLI prints which files were written and a snippet to paste into your host composition. The snippet is a starting point — you'll need to add `data-composition-id` (must match the block's internal composition ID), `data-start`, and `data-track-index` attributes when wiring blocks.
+After install, the CLI prints which files were written and a snippet to paste into your host composition. The snippet is a starting point - you'll need to add `data-composition-id` (must match the block's internal composition ID), `data-start`, and `data-track-index` attributes when wiring blocks.
 
 The positional value is resolved as an exact item name first. If no item matches and the value is a tag, the command installs every block with that tag. Registry dependencies are installed before the requested item. `hyperframes add` works only for blocks and components; for examples, use `hyperframes init <dir> --example <name>` instead.
 
@@ -46,7 +46,7 @@ See [install-locations.md](./references/install-locations.md) for full details.
 
 ## Wiring blocks
 
-Blocks are standalone compositions — include them via `data-composition-src` in your host `index.html`:
+Blocks are standalone compositions - include them via `data-composition-src` in your host `index.html`:
 
 ```html
 <div
@@ -62,18 +62,18 @@ Blocks are standalone compositions — include them via `data-composition-src` i
 
 Key attributes:
 
-- `data-composition-src` — path to the block HTML file
-- `data-composition-id` — must match the block's internal ID
-- `data-start` — when the block appears in the host timeline (seconds)
-- `data-duration` — how long the block plays
-- `data-width` / `data-height` — block canvas dimensions
-- `data-track-index` — layer ordering (higher = in front)
+- `data-composition-src` - path to the block HTML file
+- `data-composition-id` - must match the block's internal ID
+- `data-start` - when the block appears in the host timeline (seconds)
+- `data-duration` - how long the block plays
+- `data-width` / `data-height` - block canvas dimensions
+- `data-track-index` - layer ordering (higher = in front)
 
 See [wiring-blocks.md](./references/wiring-blocks.md) for full details.
 
 ## Wiring components
 
-Components are snippets — paste their HTML into your composition's markup, their CSS into your style block, and their JS into your script (if any):
+Components are snippets - paste their HTML into your composition's markup, their CSS into your style block, and their JS into your script (if any):
 
 1. Read the installed file (e.g., `compositions/components/grain-overlay.html`)
 2. Copy the HTML elements into your composition's `<div data-composition-id="...">`
@@ -120,7 +120,7 @@ When the search comes back and nothing in it does the job, say so before you han
 npx hyperframes feedback --search-miss "<the query you ran>" --wanted "<the move you needed>" --tier on-device
 ```
 
-`catalog --query` prints this line for you, pre-filled, and `--json` carries it as `report_gap` — so it is already in hand at the moment you decide nothing fits.
+`catalog --query` prints this line for you, pre-filled, and `--json` carries it as `report_gap` - so it is already in hand at the moment you decide nothing fits.
 
 **Report whenever nothing in the results does the job, on either tier.** Do not wait for the on-device tier to have answered: it needs a consented 33 MB download, so an agent run is on `words` unless it explicitly opted in, and gating on `on-device` would silence almost every report. The `--tier` value rides along so a vocabulary miss stays distinguishable from a meaning miss when these are read. Describe the effect you wanted, not the item name you imagined: what comes back is a list of moves worth building, and a report naming a non-existent item teaches nothing. This is the only path that sends a query anywhere, which is exactly why it is a separate deliberate command rather than something the search does on its own. It carries no rating and never lands in the rating metric.
 
@@ -142,4 +142,4 @@ See [discovery.md](./references/discovery.md) for details on filtering by type a
 
 ## Contributing a new block or component
 
-To author a NEW registry item (caption style, VFX block, transition, lower third, or a reusable component) and ship it as an upstream PR — not install an existing one — follow the full idea → scaffold → build → validate → preview → ship workflow in [contributing.md](./references/contributing.md). Copy-paste starter templates (caption / VFX / component / `registry-item.json`) are in [templates.md](./references/templates.md).
+To author a NEW registry item (caption style, VFX block, transition, lower third, or a reusable component) and ship it as an upstream PR - not install an existing one - follow the full idea → scaffold → build → validate → preview → ship workflow in [contributing.md](./references/contributing.md). Copy-paste starter templates (caption / VFX / component / `registry-item.json`) are in [templates.md](./references/templates.md).

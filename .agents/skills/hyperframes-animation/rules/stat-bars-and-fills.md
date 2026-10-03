@@ -1,6 +1,6 @@
 ---
 name: stat-bars-and-fills
-description: Data-viz primitives that pair a number with a graphic — growth bars (CSS scaleY stagger), a progress fill (bar or ring), and a partial star-rating wipe. Seek-safe, deterministic.
+description: Data-viz primitives that pair a number with a graphic - growth bars (CSS scaleY stagger), a progress fill (bar or ring), and a partial star-rating wipe. Seek-safe, deterministic.
 metadata:
   tags: data, stats, chart, bars, progress, ring, stars, rating, infographic, number
 ---
@@ -9,18 +9,18 @@ metadata:
 
 The graphics that give a stat **visual weight** beside its number: a small bar chart, a progress bar/ring filling to a percentage, or a star row filling to a fractional rating. Pair these with [counting-dynamic-scale.md](counting-dynamic-scale.md) (the number) for a complete stat scene.
 
-**Layout blueprint — pick ONE and hold it across all stats:**
+**Layout blueprint - pick ONE and hold it across all stats:**
 
-- **Single-focus** — one centered frame, the number is the hero, a ring or bar sits under/around it. Cleanest for a sequential reveal (stat 1 → stat 2 → stat 3 in the same frame).
-- **Split-frame** — big number on the left, paired graphic on the right. Better when stats are shown together or each needs a distinct visual.
+- **Single-focus** - one centered frame, the number is the hero, a ring or bar sits under/around it. Cleanest for a sequential reveal (stat 1 → stat 2 → stat 3 in the same frame).
+- **Split-frame** - big number on the left, paired graphic on the right. Better when stats are shown together or each needs a distinct visual.
 
-Don't mix blueprints between stats in one piece — that reads as inconsistent.
+Don't mix blueprints between stats in one piece - that reads as inconsistent.
 
 ## Recipe
 
-### 1 — Growth Bars (CSS `scaleY` stagger)
+### 1 - Growth Bars (CSS `scaleY` stagger)
 
-Bars grow from the baseline with a stagger; the last bar is the accent. Heights are authored in CSS (inline height per bar); GSAP only reveals `scaleY: 0 → 1` — never animate `height`.
+Bars grow from the baseline with a stagger; the last bar is the accent. Heights are authored in CSS (inline height per bar); GSAP only reveals `scaleY: 0 → 1` - never animate `height`.
 
 ```css
 .bars {
@@ -44,9 +44,9 @@ Bars grow from the baseline with a stagger; the last bar is the accent. Heights 
 tl.to(".bar", { scaleY: 1, duration: 0.7, ease: "power3.out", stagger: 0.08 }, 0.3);
 ```
 
-### 2 — Progress Fill
+### 2 - Progress Fill
 
-**Bar form** — `scaleX` from a left origin:
+**Bar form** - `scaleX` from a left origin:
 
 ```css
 .track {
@@ -56,7 +56,7 @@ tl.to(".bar", { scaleY: 1, duration: 0.7, ease: "power3.out", stagger: 0.08 }, 0
   border-radius: 8px;
   overflow: hidden;
 }
-/* width:100% is REQUIRED — an absolutely-positioned fill with no width is 0px, and scaleX of 0 is
+/* width:100% is REQUIRED - an absolutely-positioned fill with no width is 0px, and scaleX of 0 is
    still 0 → the bar renders invisible (automated gates may miss a zero-width scaled element). */
 .fill {
   width: 100%;
@@ -72,7 +72,7 @@ const PCT = 0.92; // 92%
 tl.to(".fill", { scaleX: PCT, duration: 1.0, ease: "power2.out" }, 0.3);
 ```
 
-**Ring form** — measured stroke draw (mechanics in [svg-path-draw.md](svg-path-draw.md)):
+**Ring form** - measured stroke draw (mechanics in [svg-path-draw.md](svg-path-draw.md)):
 
 ```js
 const ring = document.querySelector("#ring");
@@ -83,7 +83,7 @@ ring.style.strokeDashoffset = LEN; // empty
 tl.to(ring, { strokeDashoffset: LEN * (1 - 0.92), duration: 1.1, ease: "power2.out" }, 0.3);
 ```
 
-### 3 — Star-Rating Fill (fractional)
+### 3 - Star-Rating Fill (fractional)
 
 A gold star row revealed left-to-right to a fractional value (e.g. 4.6 / 5) via a clip wipe over a gold layer sitting on a gray layer.
 
@@ -133,13 +133,13 @@ tl.to(
 
 ## Critical Constraints
 
-- **`scaleY` / `scaleX` / `clipPath`, never `height`/`width` tweens** — author each bar's final height in CSS and scale from 0.
-- **`transform-origin`** must be `bottom` (bars grow up) / `left` (fills grow right) — the default center origin scales from the middle and looks wrong.
-- **`.fill` needs `width: 100%`** — a zero-width fill scaled by any factor is still invisible, and automated gates may miss it.
-- **Measure, don't hard-code** — ring length via `getTotalLength()`; a hard-coded circumference breaks if the radius changes.
-- **Match the number's timing** — the fill and the count-up peak together (same start + ease) so the stat resolves as one beat, not two; a paired counter's `onUpdate` must be O(1) (see [counting-dynamic-scale.md](counting-dynamic-scale.md)).
-- **One accent hue, consistent blueprint** — see `hyperframes-creative/references/data-in-motion.md`.
+- **`scaleY` / `scaleX` / `clipPath`, never `height`/`width` tweens** - author each bar's final height in CSS and scale from 0.
+- **`transform-origin`** must be `bottom` (bars grow up) / `left` (fills grow right) - the default center origin scales from the middle and looks wrong.
+- **`.fill` needs `width: 100%`** - a zero-width fill scaled by any factor is still invisible, and automated gates may miss it.
+- **Measure, don't hard-code** - ring length via `getTotalLength()`; a hard-coded circumference breaks if the radius changes.
+- **Match the number's timing** - the fill and the count-up peak together (same start + ease) so the stat resolves as one beat, not two; a paired counter's `onUpdate` must be O(1) (see [counting-dynamic-scale.md](counting-dynamic-scale.md)).
+- **One accent hue, consistent blueprint** - see `hyperframes-creative/references/data-in-motion.md`.
 
 ## See also
 
-`counting-dynamic-scale` (the number beside the graphic — same ease/duration) · `svg-path-draw` (progress-ring draw mechanics) · `hyperframes-creative/references/data-in-motion.md` (stat layout + visual weight).
+`counting-dynamic-scale` (the number beside the graphic - same ease/duration) · `svg-path-draw` (progress-ring draw mechanics) · `hyperframes-creative/references/data-in-motion.md` (stat layout + visual weight).

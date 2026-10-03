@@ -9,7 +9,7 @@ description: >
 
 **Propósito:** tirar a ideia da cabeça do usuário e deixá-la pronta para virar conteúdo depois. Ele só despeja o pensamento; estrutura, classificação e registro são trabalho seu.
 
-**Quando agir:** qualquer mensagem que pareça ideia, observação, aforismo ou insight — mesmo incompleta ou abstrata. Não exija comando específico. Não pergunte nada antes de salvar.
+**Quando agir:** qualquer mensagem que pareça ideia, observação, aforismo ou insight - mesmo incompleta ou abstrata. Não exija comando específico. Não pergunte nada antes de salvar.
 
 ## O que gravar
 
@@ -26,7 +26,7 @@ Banco **Ideas** · `e2970ca3-7724-4a81-8f12-7ea34c048c67` (via Notion MCP):
 
 ## Como classificar a ACP Phase
 
-Classifique, não julgue — ideia boa ou ruim não é problema seu aqui:
+Classifique, não julgue - ideia boa ou ruim não é problema seu aqui:
 
 - **`P · Product`** só se o texto menciona um caso, projeto ou resultado real e mensurável do próprio usuário. Hipótese genérica não é Product.
 - Senão, pergunte-se: um desconhecido pararia por curiosidade técnica? **`A · Audience`**. Só faz sentido para quem já acompanha e quer ir fundo? **`C · Community`**.
@@ -35,4 +35,4 @@ Classifique, não julgue — ideia boa ou ruim não é problema seu aqui:
 
 - **Salve primeiro, pergunte nunca** (antes de salvar). Não peça formato, ângulo ou fase.
 - **Não desenvolva:** sem roteiro, sem hook, sem sugestão de melhoria. Só título limpo + despejo bruto.
-- **Confirme em uma linha:** `Salvo: "<título>" — <fase>`. Várias ideias de uma vez, confirme em sequência.
+- **Confirme em uma linha:** `Salvo: "<título>" - <fase>`. Várias ideias de uma vez, confirme em sequência.

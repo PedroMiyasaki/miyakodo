@@ -1,6 +1,6 @@
 # Determinism, Animation Runtime, and Layout
 
-HyperFrames seeks compositions frame-by-frame. Every frame must be reproducible from its time value alone — same input time → same pixels. Three contracts enforce this: the **animation runtime contract**, the **determinism rules**, and the **layout contract**.
+HyperFrames seeks compositions frame-by-frame. Every frame must be reproducible from its time value alone - same input time → same pixels. Three contracts enforce this: the **animation runtime contract**, the **determinism rules**, and the **layout contract**.
 
 ## Animation Runtime Contract
 
@@ -25,13 +25,13 @@ Rendered frames must be reproducible from the requested time. Do **not** use any
 - Unseeded `Math.random()`. Use a seeded PRNG if random-looking placement is needed.
 - Render-time network fetches for required assets. Inline or pre-bundle them.
 - Hover, scroll, pointer, or focus state. The renderer has no input events.
-- Infinite loops such as `repeat: -1`. Compute a finite count: `repeat: Math.max(0, Math.floor(duration / cycleDuration) - 1)` — **`floor`, not `ceil`** (`ceil` overshoots `data-duration` and trips the `gsap_repeat_ceil_overshoot` lint; `max(0, …)` avoids a negative repeat = infinite).
+- Infinite loops such as `repeat: -1`. Compute a finite count: `repeat: Math.max(0, Math.floor(duration / cycleDuration) - 1)` - **`floor`, not `ceil`** (`ceil` overshoots `data-duration` and trips the `gsap_repeat_ceil_overshoot` lint; `max(0, …)` avoids a negative repeat = infinite).
 
 Also avoid:
 
 - Tweening `display`, raw `visibility`, or `autoAlpha` **on a clip element**: HyperFrames timing owns a clip's visibility, and `lint` rejects it (`gsap_animates_clip_element`). Fade with `opacity`, or tween a child wrapper. Do not tween `class="clip"`.
 - There is no fixed allowlist of animatable properties. `lint` enforces a **denylist**, so `filter`, `clipPath`, `strokeDashoffset`, `width`, `height` and similar are all legitimate targets. Prefer transforms and opacity where you have the choice, for performance rather than correctness. The per-runtime detail lives in `hyperframes-animation/adapters/`.
-- Animating the same property on the same element from multiple timelines at the same time — GSAP's overwrite behavior is order-dependent and can flip between renders.
+- Animating the same property on the same element from multiple timelines at the same time - GSAP's overwrite behavior is order-dependent and can flip between renders.
 
 ## Layout Contract
 
@@ -49,5 +49,5 @@ Build the visible end-state in static HTML and CSS first, then animate from/to t
   - `font` is a CSS font shorthand string, e.g. `"700 90px Inter"`.
   - `clearCache` and `setLocale` are deliberately not exposed: they mutate state shared across compositions, which would make a render depend on what ran before it.
 - **Do not** use `<br>` in body text. Forced breaks ignore the actual rendered font width and produce an extra break when the line already wraps naturally, causing overlap. Let text wrap via `max-width`. Exception: short display titles where each word is deliberately on its own line.
-- **Transformed elements must be block-level + sized.** `transform`/`scaleX`/`scaleY` is a no-op on an inline `<span>`, and scaling an auto-width (0px) element shows nothing → invisible bars/fills. Give them `display: block`/`inline-block`/flex-item **and** a real `width`/`height` (e.g. `width: 100%` inside a sized parent). _(Silent — automated gates may miss it.)_
-- **Absolutely-positioned decoratives that pulse or overshoot** (`yoyo` scale, `back.out`) need clearance at their **peak** size and must not straddle an `overflow: hidden` edge — else they overlap a neighbor or get clipped. Position for the largest frame, not the resting one. _(silent.)_
+- **Transformed elements must be block-level + sized.** `transform`/`scaleX`/`scaleY` is a no-op on an inline `<span>`, and scaling an auto-width (0px) element shows nothing → invisible bars/fills. Give them `display: block`/`inline-block`/flex-item **and** a real `width`/`height` (e.g. `width: 100%` inside a sized parent). _(Silent - automated gates may miss it.)_
+- **Absolutely-positioned decoratives that pulse or overshoot** (`yoyo` scale, `back.out`) need clearance at their **peak** size and must not straddle an `overflow: hidden` edge - else they overlap a neighbor or get clipped. Position for the largest frame, not the resting one. _(silent.)_

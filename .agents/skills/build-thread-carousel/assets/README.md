@@ -1,4 +1,4 @@
-# assets/ — arquétipos do carrossel de IG derivado de thread (skill build-thread-carousel)
+# assets/ - arquétipos do carrossel de IG derivado de thread (skill build-thread-carousel)
 
 Pasta de referência executável dos arquétipos do carrossel de Instagram **derivado de uma thread** (skill `build-thread-carousel`). Cada arquétipo é um arquivo HTML completo e independente: abra no navegador e ele renderiza um slide de demonstração com placeholders.
 

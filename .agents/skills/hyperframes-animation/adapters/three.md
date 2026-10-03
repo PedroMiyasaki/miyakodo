@@ -14,7 +14,7 @@ HyperFrames supports Three.js through its `three` runtime adapter. The adapter d
 - Listen for the `hf-seek` event and render exactly that time.
 - Load models, textures, and HDRIs before render-critical seeking. Do not fetch them at seek time.
 - Avoid `requestAnimationFrame` or `renderer.setAnimationLoop` as the source of truth for render-critical motion.
-- **Always set `data-duration="<seconds>"` on the root `[data-composition-id]` element.** Unlike CSS/WAAPI/Lottie, the `three` adapter has no duration auto-inference — it only forwards time via `hf-seek`/`__hfThreeTime`, it doesn't inspect your scene for an `AnimationClip`/`AnimationMixer` length. Without `data-duration` (and no GSAP timeline), the render engine has no way to know how long to capture and fails with "Composition has zero duration". `npx hyperframes lint` errors on this (`root_composition_missing_duration_source`).
+- **Always set `data-duration="<seconds>"` on the root `[data-composition-id]` element.** Unlike CSS/WAAPI/Lottie, the `three` adapter has no duration auto-inference - it only forwards time via `hf-seek`/`__hfThreeTime`, it doesn't inspect your scene for an `AnimationClip`/`AnimationMixer` length. Without `data-duration` (and no GSAP timeline), the render engine has no way to know how long to capture and fails with "Composition has zero duration". `npx hyperframes lint` errors on this (`root_composition_missing_duration_source`).
 
 The adapter sets `window.__hfThreeTime` and dispatches `new CustomEvent("hf-seek", { detail: { time } })` on each seek.
 
@@ -66,7 +66,7 @@ The adapter sets `window.__hfThreeTime` and dispatches `new CustomEvent("hf-seek
 
 ## Loading Addons (`GLTFLoader`, `OrbitControls`, etc.)
 
-For anything under `three/addons/`, use an importmap so bare specifiers resolve. The HyperFrames lint recognizes both this form and the inline `+esm` import above — pick whichever your composition needs.
+For anything under `three/addons/`, use an importmap so bare specifiers resolve. The HyperFrames lint recognizes both this form and the inline `+esm` import above - pick whichever your composition needs.
 
 ```html
 <script type="importmap">
@@ -89,7 +89,7 @@ Pin the `three` version in both entries to the same value. Mixing versions acros
 
 ## Heavy Setup (Large Meshes, Shader Compiles)
 
-The runtime already waits for textures/models queued through Three's `DefaultLoadingManager` before publishing render-ready. It has no visibility into CPU-bound work you do yourself after assets load — building a large procedural mesh, compiling shaders, warming a pipeline. That work can leave the canvas blank for seconds after the runtime and player already say "ready".
+The runtime already waits for textures/models queued through Three's `DefaultLoadingManager` before publishing render-ready. It has no visibility into CPU-bound work you do yourself after assets load - building a large procedural mesh, compiling shaders, warming a pipeline. That work can leave the canvas blank for seconds after the runtime and player already say "ready".
 
 If your setup does this kind of work, register a promise on `window.__hf.buildReady` (declared-compute hold: runtime waits, player shows its loading state instead of a blank frame):
 
@@ -99,7 +99,7 @@ window.__hf.buildReady = window.__hf.buildReady || {};
 window.__hf.buildReady["<your-piece-name>"] = buildScene(); // resolves once the scene is actually drawable
 ```
 
-Register it synchronously, in the same script block that starts the build — same timing as `DefaultLoadingManager`, so the runtime's first readiness check already sees it. Only do this for setup an adapter cannot see; render-critical seeking still comes from `hf-seek`, not this hold. The key must be unique within the composition — a second registration under the same key silently replaces the first, dropping its hold.
+Register it synchronously, in the same script block that starts the build - same timing as `DefaultLoadingManager`, so the runtime's first readiness check already sees it. Only do this for setup an adapter cannot see; render-critical seeking still comes from `hf-seek`, not this hold. The key must be unique within the composition - a second registration under the same key silently replaces the first, dropping its hold.
 
 ## AnimationMixer Pattern
 

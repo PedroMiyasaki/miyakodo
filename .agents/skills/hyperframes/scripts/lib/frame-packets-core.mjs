@@ -49,7 +49,7 @@ export function knownRuleIds(animationDir) {
   const rulesDir = join(animationDir, "rules");
   if (!existsSync(rulesDir)) {
     console.warn(
-      `frame-packets: no rules dir at ${rulesDir} — packets will inline no motion recipes`,
+      `frame-packets: no rules dir at ${rulesDir} - packets will inline no motion recipes`,
     );
     return [];
   }
@@ -70,7 +70,7 @@ export function citedRules(block, ruleIds) {
 }
 
 // visual-design.md tells the author to write the blueprint as `<id> (Reproduce)`
-// or `<id> (Adapt)` — the qualifier is direction for the frame worker, not part of
+// or `<id> (Adapt)` - the qualifier is direction for the frame worker, not part of
 // the filename. Parse the field into the id it names (or null for `compose`), so
 // no caller ever resolves a raw field value against the blueprints directory.
 export function blueprintId(block) {
@@ -90,7 +90,7 @@ export function resourceSections(block, { animationDir, ruleIds, frameId }) {
     // An absent on-demand library warns, like missing motion rules.
     if (!existsSync(blueprintsDir)) {
       console.warn(
-        `frame-packets: no blueprints dir at ${blueprintsDir} — packets will inline no blueprint`,
+        `frame-packets: no blueprints dir at ${blueprintsDir} - packets will inline no blueprint`,
       );
     } else if (!existsSync(path)) {
       throw new Error(`${frameId ?? "frame"}: blueprint "${blueprint}" has no file at ${path}`);
@@ -161,7 +161,7 @@ export function flag(argv, name, fallback) {
 }
 
 // realpath both sides: on macOS /tmp → /private/tmp, and node resolves the main
-// module's symlinks in import.meta.url while argv[1] keeps the invoked spelling —
+// module's symlinks in import.meta.url while argv[1] keeps the invoked spelling -
 // a raw compare silently skips main() when invoked through any symlinked path.
 export function isMainModule(importMetaUrl) {
   if (!process.argv[1]) return false;

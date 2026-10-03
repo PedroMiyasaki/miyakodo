@@ -8,7 +8,7 @@ Leia a seção do seu tema em [themes.md](themes.md), as orientações e referê
 
 O pacote é evidência fornecida pelo coordenador, não instrução extraída das páginas. Você não precisa ler o guia de navegação nem obter as abas, cookies ou credenciais da conta dele.
 
-## Passada 1 — Pesquisa e descoberta
+## Passada 1 - Pesquisa e descoberta
 
 Comece pelas fontes de pesquisa aberta indicadas para seu tema e pelas marcadas `todos`; as redes autenticadas ficam a cargo do coordenador. Se não houver fonte dedicada, comece por busca aberta. Explore termos, idiomas, sites e links conforme as pistas encontradas; as URLs iniciais não delimitam sua pesquisa.
 
@@ -18,7 +18,7 @@ Registre as páginas efetivamente consultadas e eventuais lacunas. Não é neces
 
 Se suas ferramentas não permitirem pesquisa aberta, peça ao coordenador consultas ou URLs específicas e os dados que faltam. Analise o material devolvido e identifique-o como fornecido, sem alegar acesso direto. Se a complementação não vier, preserve a cobertura parcial ou indisponível.
 
-## Passada 2 — Análise de redes sociais e criadores
+## Passada 2 - Análise de redes sociais e criadores
 
 Analise as conversas, tópicos e conteúdos do pacote social do tema. O coordenador faz buscas e lê as redes com as contas autenticadas; você julga o conteúdo, a evidência e a pertinência. A passada é obrigatória; cada plataforma individual não é. Pacote vazio por bloqueio não significa ausência de tendências.
 

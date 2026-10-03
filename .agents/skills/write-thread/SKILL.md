@@ -144,15 +144,15 @@ Regras de conteúdo para as threads de desenvolvimento:
 Para cada thread, entregue:
 
 ```
-THREAD 1 — HOOK  (N chars)
+THREAD 1 - HOOK  (N chars)
 [conteúdo da thread]
 
-THREAD 2 — [função]  (N chars)
+THREAD 2 - [função]  (N chars)
 [conteúdo da thread]
 
 ...
 
-THREAD N — CLOSE  (N chars)
+THREAD N - CLOSE  (N chars)
 [conteúdo da thread]
 ```
 

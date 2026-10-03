@@ -1,17 +1,17 @@
 ---
 name: avatar-cloud-network
-description: Avatars distributed on an elliptical ring connected by SVG dashed lines to a center hub — social proof "community" reveal with staggered entry.
+description: Avatars distributed on an elliptical ring connected by SVG dashed lines to a center hub - social proof "community" reveal with staggered entry.
 metadata:
   tags: avatar, cloud, network, social-proof, ellipse, connection, stagger
 ---
 
 # Avatar Cloud Network
 
-Avatars on an elliptical ring around a central hub (logo / counter), with SVG dashed lines drawing outward from the hub to each avatar — "community" / social proof. Distinct from [orbit-3d-entry.md](orbit-3d-entry.md) (continuous orbit): this settles into a static composed formation.
+Avatars on an elliptical ring around a central hub (logo / counter), with SVG dashed lines drawing outward from the hub to each avatar - "community" / social proof. Distinct from [orbit-3d-entry.md](orbit-3d-entry.md) (continuous orbit): this settles into a static composed formation.
 
 ## How It Works
 
-Three layers: SVG lines (z-index 1, behind), avatars (z-index 2), hub (z-index 5 — lines terminate AT its edge, never pass through). Avatar positions and lines are built once at setup from ONE shared center; the timeline then runs hub fade → avatar cascade → outward line draw → breathing dwell. Drawing FROM the center is the narrative: "the hub connects to its community."
+Three layers: SVG lines (z-index 1, behind), avatars (z-index 2), hub (z-index 5 - lines terminate AT its edge, never pass through). Avatar positions and lines are built once at setup from ONE shared center; the timeline then runs hub fade → avatar cascade → outward line draw → breathing dwell. Drawing FROM the center is the narrative: "the hub connects to its community."
 
 ## Recipe
 
@@ -50,7 +50,7 @@ Three layers: SVG lines (z-index 1, behind), avatars (z-index 2), hub (z-index 5
 ```
 
 ```js
-// CENTER_X/Y must equal the hub's RENDERED center exactly — every avatar
+// CENTER_X/Y must equal the hub's RENDERED center exactly - every avatar
 // position and line endpoint derives from it. For a place-items:center hub on
 // a 1920×1080 canvas: (W/2, H × CENTER_Y_FACTOR).
 const C = { x: CENTER_X, y: CENTER_Y };
@@ -78,7 +78,7 @@ for (let i = 0; i < AVATAR_COUNT; i++) {
     "stroke-dasharray": "6 8",
   };
   Object.entries(attrs).forEach(([k, v]) => line.setAttribute(k, String(v)));
-  const len = Math.hypot(x - C.x, y - C.y); // straight line — Math.hypot, not getTotalLength()
+  const len = Math.hypot(x - C.x, y - C.y); // straight line - Math.hypot, not getTotalLength()
   line.style.strokeDashoffset = String(len);
   svg.appendChild(line);
 }
@@ -101,18 +101,18 @@ svg.querySelectorAll("line").forEach((line, i) => {
   );
 });
 
-// Climax dwell — out-of-phase breathing holds the eye on the formed network:
+// Climax dwell - out-of-phase breathing holds the eye on the formed network:
 // one phase proxy (0 → 2π·BREATH_CYCLES, ease "none"); onUpdate scales avatar i by
-// 1 + sin(p + (i/n)·2π) · BREATH_AMP — sine-wave-loop's multiplicative onUpdate form.
+// 1 + sin(p + (i/n)·2π) · BREATH_AMP - sine-wave-loop's multiplicative onUpdate form.
 // Keep the -50% centering in the same transform write.
 ```
 
 ## Variations
 
 - **Size variety**: vary avatar sizes by a small index-keyed array so the ring doesn't read rigidly repetitive.
-- **Solid lines**: drop the dash + draw; lines fade in via opacity — more corporate, less networky.
+- **Solid lines**: drop the dash + draw; lines fade in via opacity - more corporate, less networky.
 - **Multi-orbit**: inner ring (fewer, larger) connected to the hub; outer ring is an unconnected "halo."
-- **Glyph avatars**: flags / emoji / icons instead of faces — reads "global community" or role spread.
+- **Glyph avatars**: flags / emoji / icons instead of faces - reads "global community" or role spread.
 
 ## Values
 
@@ -125,7 +125,7 @@ svg.querySelectorAll("line").forEach((line, i) => {
 | AVATAR_AT      | ≥ 0.6 × HUB_DUR              | hub established before satellites arrive                         |
 | AVATAR_DUR     | 0.4–0.7s                     | AVATAR_BOUNCE 1.4–1.8, slightly firmer than hub                  |
 | AVATAR_STAGGER | 0.06–0.10s                   | cascade reads "joining"; simultaneous reads "already there"      |
-| LINES_AT       | overlaps last avatar settle  | start ~0.1–0.2s before it — draw reads as consequence of landing |
+| LINES_AT       | overlaps last avatar settle  | start ~0.1–0.2s before it - draw reads as consequence of landing |
 | LINE_DUR       | 0.4–0.7s                     | LINE_STAGGER 0.02–0.05s = a wave outward                         |
 | BREATH_CYCLES  | 1.0–2.0 over the remaining s | under 1 = single sigh; over 2 = anxious. BREATH_AMP 0.02–0.06    |
 
@@ -133,12 +133,12 @@ Tokens: dark `{bgColor}` so the cloud reads as a constellation; translucent acce
 
 ## Critical Constraints
 
-- **CENTER_X/Y must match the hub's actual rendered center** — when composed with another scene (e.g. a recentered logo), bake them from the same source as the hub's final position, or lines visibly miss the hub.
-- **Hub z-index above lines** — lines terminate at the hub edge, never cross it.
+- **CENTER_X/Y must match the hub's actual rendered center** - when composed with another scene (e.g. a recentered logo), bake them from the same source as the hub's final position, or lines visibly miss the hub.
+- **Hub z-index above lines** - lines terminate at the hub edge, never cross it.
 - **Lines draw outward** (dashoffset len → 0), starting after avatars are mostly settled.
-- **`RADIUS_X > RADIUS_Y`** — a horizontal ellipse reads as perspective; a circle reads flat.
+- **`RADIUS_X > RADIUS_Y`** - a horizontal ellipse reads as perspective; a circle reads flat.
 - **Climax dwell ≥ 1s** after lines complete so the formed network is readable.
-- Straight lines: `Math.hypot` for length — `getTotalLength()` not needed.
+- Straight lines: `Math.hypot` for length - `getTotalLength()` not needed.
 
 ## See also
 

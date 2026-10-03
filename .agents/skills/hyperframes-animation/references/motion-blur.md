@@ -1,4 +1,4 @@
-# Motion blur — shutter smear on any animated element
+# Motion blur - shutter smear on any animated element
 
 ## Read this part before you blur anything
 

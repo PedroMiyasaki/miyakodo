@@ -8,12 +8,12 @@ Há **uma cópia** no disco; os outros caminhos são espelhos para cada ferramen
 
 | Caminho | Papel |
 |---|---|
-| `AGENTS.md` | **Canônico.** Instruções do repo — edite sempre aqui. |
+| `AGENTS.md` | **Canônico.** Instruções do repo - edite sempre aqui. |
 | `CLAUDE.md` | Link local → `AGENTS.md` (não versionado). |
 | `.agents/skills/` | **Única** árvore de skills no git. |
 | `.claude/skills/`, `.cursor/skills/` | Links locais → `.agents/skills/` (não versionados). |
 
-**Skills:** quando o usuário pedir criar, mudar ou refinar uma skill (`SKILL.md`, `assets/`, exemplos, scripts da skill), o trabalho é **sempre** em `.agents/skills/<nome-da-skill>/`. Não duplique em `.claude/skills` nem `.cursor/skills`. Se o arquivo apareceu aberto via `.claude/...` ou `.cursor/...`, é o **mesmo** arquivo — use o path `.agents/skills/...` ao salvar e no commit.
+**Skills:** quando o usuário pedir criar, mudar ou refinar uma skill (`SKILL.md`, `assets/`, exemplos, scripts da skill), o trabalho é **sempre** em `.agents/skills/<nome-da-skill>/`. Não duplique em `.claude/skills` nem `.cursor/skills`. Se o arquivo apareceu aberto via `.claude/...` ou `.cursor/...`, é o **mesmo** arquivo - use o path `.agents/skills/...` ao salvar e no commit.
 
 **Setup após clone:** `scripts/link-skills.cmd` (Windows) ou `scripts/link-skills.sh` (macOS/Linux) recria os links de skills e `CLAUDE.md`.
 

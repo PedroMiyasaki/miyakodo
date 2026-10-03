@@ -259,7 +259,7 @@ Salve a captura como `posts/linkedin/<slug>/image.png`: na raiz da pasta, ao lad
 Depois acrescente uma linha ao rodapé de metadados do `posts/linkedin/<slug>/sketch/v<N>.md` final (o rodapé que já carrega a contagem de caracteres e a ACP, não o corpo publicável), para o arquivo de texto apontar para a imagem dele:
 
 ```
-Imagem: posts/linkedin/<slug>/image.png — <URL de origem>
+Imagem: posts/linkedin/<slug>/image.png - <URL de origem>
 ```
 
 O rodapé fica em `sketch/v<N>.md`, então ele vai junto para o `final.md` quando essa cópia for feita no Passo 8.

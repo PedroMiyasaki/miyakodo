@@ -205,7 +205,7 @@ Quando o usuário fechar nome, handle e avatar de vez, grave os valores nos 2 ar
 
 ---
 
-## Busca de imagem — sites preferidos
+## Busca de imagem - sites preferidos
 
 Em ordem de preferência:
 

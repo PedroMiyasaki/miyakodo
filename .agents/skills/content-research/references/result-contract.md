@@ -2,7 +2,7 @@
 
 Lido pelos dois papéis. Os campos textuais são em português. O coordenador fornece evidências sociais; o pesquisador devolve candidatos e cobertura, sem precisar acessar a sessão autenticada.
 
-## Entrada — pacote social do coordenador
+## Entrada - pacote social do coordenador
 
 Um pacote por tema, enviado no despacho. Pode conter zero itens, acompanhado do motivo. É material da rodada, não uma nova lista de fontes fixas.
 
@@ -30,7 +30,7 @@ items:
 
 O pacote não pré-aprova candidatos. O pesquisador avalia a suficiência do conteúdo, a recência e a relevância. Para pesquisa aberta feita pelo coordenador a pedido do pesquisador, envie os mesmos dados pertinentes, identificando a origem como pesquisa, não coleta social.
 
-## Saída — seleção do pesquisador
+## Saída - seleção do pesquisador
 
 O pesquisador entrega um objeto YAML por tema. O coordenador usa-o para conferir cobertura, evidência, deduplicação e registro, sem carregar as instruções de análise.
 

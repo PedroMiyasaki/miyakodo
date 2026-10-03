@@ -1,6 +1,6 @@
 ---
 name: waterfall-entry
-description: Staggered ARRIVAL cascade — words/elements whip in from below (one consistent direction), each starting before the previous settles, an accelerating wave that resolves into a composed layout. Title cards, segment openers, list/feature intros. Opacity is BINARY 0→1 via tl.set — never fade an arrival.
+description: Staggered ARRIVAL cascade - words/elements whip in from below (one consistent direction), each starting before the previous settles, an accelerating wave that resolves into a composed layout. Title cards, segment openers, list/feature intros. Opacity is BINARY 0→1 via tl.set - never fade an arrival.
 metadata:
   tags: entrance, cascade, stagger, kinetic-text, title-card, segment-opener, arrival, waterfall, whip
 ---
@@ -8,23 +8,23 @@ metadata:
 # Waterfall Entry
 
 Staggered ARRIVAL cascade: words/elements whip in from below (one consistent direction),
-each starting before the previous settles — an accelerating wave that resolves into a
+each starting before the previous settles - an accelerating wave that resolves into a
 composed layout. Title cards, segment openers, list/feature intros.
 
 **This is an in-scene arrival, not a seam.** Its seam sibling is the waterfall CUT
 (`cut-the-curve` doctrine skill, `seams/waterfall-cut.md`); do not mix their rules:
 
-|               | Entry (this rule — arrival)                   | Waterfall Cut (seam)                                      |
+|               | Entry (this rule - arrival)                   | Waterfall Cut (seam)                                      |
 | ------------- | --------------------------------------------- | --------------------------------------------------------- |
-| Opacity       | BINARY 0→1 via `tl.set` at entry — never fade | ignites at 0.35 mid-path — the fade IS the velocity trick |
+| Opacity       | BINARY 0→1 via `tl.set` at entry - never fade | ignites at 0.35 mid-path - the fade IS the velocity trick |
 | Axis default  | Y, from below                                 | X, riding the current                                     |
 | Outgoing side | none                                          | words ramp out on mirrored power4.in                      |
 
 ## Choreography
 
-- **Overlap, don't queue** — next element starts within ±2 frames of the previous
+- **Overlap, don't queue** - next element starts within ±2 frames of the previous
   settling; gaps SHRINK across the cascade; the last element snaps.
-- **Velocity varies by weight** — heavy/anchor elements travel further and longer;
+- **Velocity varies by weight** - heavy/anchor elements travel further and longer;
   light words/punctuation snap in tight:
 
 | Parameter | Anchor/heavy | Normal word | Light/punctuation |
@@ -36,7 +36,7 @@ composed layout. Title cards, segment openers, list/feature intros.
 - Ease `power4.out` (`expo.out` for extra snap); never `.inOut` on an entry.
 - One direction per cascade.
 - Split the FINAL word into fragments to extend the climax; fragments travel further.
-- Post-settle, the group usually slides to make room for the next beat — that's
+- Post-settle, the group usually slides to make room for the next beat - that's
   [nudge-curve.md](nudge-curve.md).
 
 ## JS
@@ -76,6 +76,6 @@ tl.to("#dot", { y: 0, duration: 0.12, ease: "power4.out" }, t5);
 
 | Don't                                                  | Instead                                                                           |
 | ------------------------------------------------------ | --------------------------------------------------------------------------------- |
-| Queued entries (each waits for the previous to settle) | Overlap ±1–2 frames — the cascade is a wave, not a queue                          |
+| Queued entries (each waits for the previous to settle) | Overlap ±1–2 frames - the cascade is a wave, not a queue                          |
 | Same offset/duration for every cascade element         | Vary by weight: anchors travel further, punctuation snaps                         |
-| Gradual opacity fade on an arrival                     | Binary 0→1 via `tl.set` — fading fights the snap (seam cuts fade; arrivals don't) |
+| Gradual opacity fade on an arrival                     | Binary 0→1 via `tl.set` - fading fights the snap (seam cuts fade; arrivals don't) |

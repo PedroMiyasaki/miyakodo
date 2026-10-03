@@ -61,7 +61,7 @@ test(
   },
 );
 
-// (a) env override wins — no ancestor lookup, exact version echoed back.
+// (a) env override wins - no ancestor lookup, exact version echoed back.
 test("hyperframesPackageSpec: env override wins", async () => {
   const prev = process.env[ENV];
   process.env[ENV] = "9.9.9";

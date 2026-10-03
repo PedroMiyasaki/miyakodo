@@ -6,6 +6,6 @@
 
 ## Interview
 
-- The one question is the routing confirmation itself — "do you want this as a HyperFrames slideshow?" — asked during triage (it survives every mode: wrong routing is a quality problem). The deck contract owns everything after.
-- **Run-shape:** neither — the deliverable is a navigable deck, not a rendered video.
+- The one question is the routing confirmation itself - "do you want this as a HyperFrames slideshow?" - asked during triage (it survives every mode: wrong routing is a quality problem). The deck contract owns everything after.
+- **Run-shape:** neither - the deliverable is a navigable deck, not a rendered video.
 - **Front-door capability offer:** skip it. After route confirmation, the deck workflow owns all remaining choices.

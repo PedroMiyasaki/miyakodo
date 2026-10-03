@@ -15,7 +15,7 @@ Declare variables on the `<html>` element with `data-composition-variables`. Eac
 ></html>
 ```
 
-**Prefer declarative bindings — no script needed** for direct substitution:
+**Prefer declarative bindings - no script needed** for direct substitution:
 
 ```html
 <img class="clip" data-start="0" data-duration="5" data-var-src="heroImage" src="fallback.jpg" />
@@ -29,9 +29,9 @@ Declare variables on the `<html>` element with `data-composition-variables`. Eac
 
 - `data-var-src="id"` substitutes the element's `src` (URL string or image `{url}`); the authored `src` is the fallback.
 - `data-var-text="id"` substitutes the element's own text; element children (nested clips, animated spans) are preserved.
-- Every scalar variable is applied automatically as a `--{id}` CSS custom property on the composition root, so `var(--id)` CSS responds to overrides — no `setProperty` boilerplate.
+- Every scalar variable is applied automatically as a `--{id}` CSS custom property on the composition root, so `var(--id)` CSS responds to overrides - no `setProperty` boilerplate.
 - Bindings resolve identically in preview and render, and per-instance for sub-compositions.
-- Caveat: media with audio should keep a real fallback `src` — render audio extraction reads the authored attribute (lint: `media_variable_src_no_fallback`).
+- Caveat: media with audio should keep a real fallback `src` - render audio extraction reads the authored attribute (lint: `media_variable_src_no_fallback`).
 
 For logic beyond direct substitution (loops, conditionals, derived values), read values once during initialization:
 
@@ -43,16 +43,16 @@ document.getElementById("title").textContent = title;
 ### Variable Rules
 
 - Supported types and their extra options (consumed by Studio's editing UI):
-  - `string` — optional `placeholder`, `maxLength`
-  - `number` — optional `min`, `max`, `step`, `unit`
-  - `color` — none
-  - `boolean` — none
-  - `enum` — **required** `options: [{ "value": "...", "label": "..." }, ...]`
+  - `string` - optional `placeholder`, `maxLength`
+  - `number` - optional `min`, `max`, `step`, `unit`
+  - `color` - none
+  - `boolean` - none
+  - `enum` - **required** `options: [{ "value": "...", "label": "..." }, ...]`
 - Always provide useful `default` values so preview works without CLI overrides.
 - Use `data-variable-values='{"title":"Pro"}'` on sub-composition hosts for per-instance overrides.
 - Use `npx hyperframes render --variables '{"title":"Q4 Report"}'` or `--variables-file` for render-time overrides.
 - Add `--strict-variables` in CI: turns undeclared keys, type mismatches, and enum values not in `options` into errors instead of warnings.
-- Read values once during init, not on every animation tick — variables don't change mid-render.
+- Read values once during init, not on every animation tick - variables don't change mid-render.
 - Media color grading can use exact variable references inside `data-color-grading` JSON. Use `$gradingPreset` or `${gradingIntensity}` as the whole field value; the runtime resolves it from the current composition's variables before applying shader adjustments, finishing details, blur/pixelate effects, and custom LUTs.
 
 ### Two JSON Shapes (Easy to Confuse)
@@ -64,7 +64,7 @@ document.getElementById("title").textContent = title;
 
 **`<video>`/`<audio>` work at any nesting depth, including inside a sub-composition `<template>` or a wrapper `<div>`.** The runtime discovers media with a flat `document.querySelectorAll("video, audio")`, resolves each element's host composition via `element.closest("[data-composition-id]")`, and rebases its local `data-start` by the accumulated absolute start of every ancestor composition. A host at `2` with child media at `2` therefore starts that media at root time `4`, consistently in preview, snapshot, extraction, and render. Legacy projects that deliberately authored a media start in root time must mark that element with `data-hf-media-start-basis="global"`; never infer the basis from overlapping numbers. New compositions should always use scene-local `data-start`. If a panel renders blank after a render, capture a per-frame `snapshot` and treat it as render-blocking.
 
-The one real constraint is about **timelines, not media placement**: a sub-composition timeline **cannot reach or animate host elements** — neither `document.querySelector("#host-id")` nor a gsap selector string (`tl.to("#host-id", …)`) resolves across the boundary; a sub-comp timeline only drives its own subtree. So if a media element lives at the host root, **its per-scene motion (scale/opacity/morph/tilt/breathing) must be authored on the MAIN timeline in `index.html`, at GLOBAL time** (scene-local time + the scene slot's `data-start`). Keeping the media inside the scene sub-comp instead lets that sub-comp's own timeline animate it with scene-local time. For 3D tilt without a perspective parent, use gsap `transformPerspective` on the element. See `composition-patterns.md` archetype B.
+The one real constraint is about **timelines, not media placement**: a sub-composition timeline **cannot reach or animate host elements** - neither `document.querySelector("#host-id")` nor a gsap selector string (`tl.to("#host-id", …)`) resolves across the boundary; a sub-comp timeline only drives its own subtree. So if a media element lives at the host root, **its per-scene motion (scale/opacity/morph/tilt/breathing) must be authored on the MAIN timeline in `index.html`, at GLOBAL time** (scene-local time + the scene slot's `data-start`). Keeping the media inside the scene sub-comp instead lets that sub-comp's own timeline animate it with scene-local time. For 3D tilt without a perspective parent, use gsap `transformPerspective` on the element. See `composition-patterns.md` archetype B.
 
 Video elements must be muted and inline. Audio must be a separate `<audio>` element, even when it uses the same source file.
 
@@ -99,7 +99,7 @@ Video elements must be muted and inline. Audio must be a separate `<audio>` elem
 - **Sub-compositions are exempt and work.** A `<video>`/`<audio>` inside a sub-composition renders identically to one at the host root, because a composition host propagates its offset. Only plain timed wrappers (a `<section data-start>` around a `<video data-start>`) break.
 - **Never** add `crossorigin` to `<video>`/`<audio>`. `lint` rejects it unconditionally (`media_crossorigin_breaks_preview`, error) because a media host without `Access-Control-Allow-Origin` then fails silently in preview while renders still work, hiding the bug. There is no suppression, so this holds even for the canvas/WebGL/WebAudio readback case.
 - **Every `<audio>` needs an `id`.** The mixer selects `audio[id][src]`, so an id-less `<audio>` is never mixed and the render is **silent**. `lint` catches it as `media_missing_id`.
-- Audio always lives on a separate `<audio>` element — even if its source file is the same as a `<video>`. The `<video>` is muted; the `<audio>` carries sound.
+- Audio always lives on a separate `<audio>` element - even if its source file is the same as a `<video>`. The `<video>` is muted; the `<audio>` carries sound.
 - For volume fades and ducking, use the `data-automation` volume lane; the exact form is in `creator-editing-recipes.md`. `data-volume` is the static baseline. A timeline `volume` tween is ignored when a lane is present.
 
 For media duration: `<video>` and `<audio>` can omit `data-duration` if the media's intrinsic length is known and you want the full clip. Otherwise provide `data-duration` explicitly.

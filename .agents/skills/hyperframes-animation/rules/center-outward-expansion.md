@@ -7,7 +7,7 @@ metadata:
 
 # Center-Outward Expansion
 
-Elements begin at one shared center point and radiate outward to their final positions — the entry beat itself, or motion driven by another animation's progress (a counting number, a beat). Flat 2D cousin of [depth-scatter-assemble.md](depth-scatter-assemble.md) (per-element 3D cloud): here every element shares the SAME origin.
+Elements begin at one shared center point and radiate outward to their final positions - the entry beat itself, or motion driven by another animation's progress (a counting number, a beat). Flat 2D cousin of [depth-scatter-assemble.md](depth-scatter-assemble.md) (per-element 3D cloud): here every element shares the SAME origin.
 
 ## How It Works
 
@@ -60,8 +60,8 @@ document.querySelectorAll(".burst-item").forEach((el, i) => {
 
 ## Variations
 
-- **Synced to a driver (chord)**: when the burst shadows a counter / beat, drop the stagger and drive all items from ONE 0→1 proxy tween with the driver's exact duration AND ease; `onUpdate` writes `translate(-50%,-50%) translate(targetX*p, targetY*p)` per item — the two read as one beat.
-- **Partially-spread start**: with 6+ items the full cluster piles up — start from `{ x: targetX * START_PROGRESS, ... }`.
+- **Synced to a driver (chord)**: when the burst shadows a counter / beat, drop the stagger and drive all items from ONE 0→1 proxy tween with the driver's exact duration AND ease; `onUpdate` writes `translate(-50%,-50%) translate(targetX*p, targetY*p)` per item - the two read as one beat.
+- **Partially-spread start**: with 6+ items the full cluster piles up - start from `{ x: targetX * START_PROGRESS, ... }`.
 - **Idle micro-float**: hand off to [sine-wave-loop.md](sine-wave-loop.md) after landing instead of freezing.
 
 ## Values
@@ -77,10 +77,10 @@ document.querySelectorAll(".burst-item").forEach((el, i) => {
 
 ## Critical Constraints
 
-- **Tween `x`/`y` over the baked `xPercent/yPercent: -50`** — mutating `left`/`top` fights the centering and causes pixel jitter.
-- **Out-easing only** — `in` easings read as items being sucked back mid-air.
-- **No other absolute-positioned siblings inside `.burst-wrap`** — they'd steal the centered baseline.
-- **❗ The burst IS the beat** — don't park a "real headline" label below it (the eye snaps to the label and ignores the burst). If a label is needed, reveal it post-burst in the same stack.
+- **Tween `x`/`y` over the baked `xPercent/yPercent: -50`** - mutating `left`/`top` fights the centering and causes pixel jitter.
+- **Out-easing only** - `in` easings read as items being sucked back mid-air.
+- **No other absolute-positioned siblings inside `.burst-wrap`** - they'd steal the centered baseline.
+- **❗ The burst IS the beat** - don't park a "real headline" label below it (the eye snaps to the label and ignores the burst). If a label is needed, reveal it post-burst in the same stack.
 - Synced variant: identical duration + ease as the driver, or the chord falls apart.
 
 ## See also

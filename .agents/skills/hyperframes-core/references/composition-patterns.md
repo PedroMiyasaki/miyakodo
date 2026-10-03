@@ -11,7 +11,7 @@ How to architect a project: the `index.html` orchestrator at scale, and the comm
 | Timeline registration | One timeline keyed at the root's `data-composition-id`  | Root timeline (often near-empty) + one timeline per sub-comp, each keyed by its `id` |
 | Routing entry         | `references/minimal-composition.md`                     | `references/sub-compositions.md`                                                     |
 
-Both architectures use the same runtime contract — `data-*` attributes + `window.__timelines[id]`. The choice is structural, not behavioral.
+Both architectures use the same runtime contract - `data-*` attributes + `window.__timelines[id]`. The choice is structural, not behavioral.
 
 ## Modular Orchestrator Pattern
 
@@ -49,7 +49,7 @@ When using sub-compositions, `index.html` should be **thin**. Its job is to decl
       data-height="1080"
       data-duration="30"
     >
-      <!-- Sequential scenes — each one a sub-composition slot. -->
+      <!-- Sequential scenes - each one a sub-composition slot. -->
       <div
         id="el-intro"
         data-composition-id="intro"
@@ -77,7 +77,7 @@ When using sub-compositions, `index.html` should be **thin**. Its job is to decl
         data-track-index="1"
       ></div>
 
-      <!-- Continuous audio at the root — survives scene cuts. -->
+      <!-- Continuous audio at the root - survives scene cuts. -->
       <audio
         id="el-bgm"
         src="assets/bgm.mp3"
@@ -106,7 +106,7 @@ Key properties of this layout:
 
 ### A. Content scene (default)
 
-The sub-comp contains the scene's full DOM, scoped CSS, and timeline. This is the standard pattern in `sub-compositions.md` — most scenes are this.
+The sub-comp contains the scene's full DOM, scoped CSS, and timeline. This is the standard pattern in `sub-compositions.md` - most scenes are this.
 
 ### B. Host media + main-timeline driver (one pattern for `<video>`/`<audio>`)
 
@@ -149,7 +149,7 @@ The reason to reach for it: a sub-comp timeline **cannot** drive host elements (
   ); // = slot data-start (+ any scene-local offset)
 </script>
 
-<!-- compositions/final-anim.html — frame/shell only, no <video>, no host-element animation -->
+<!-- compositions/final-anim.html - frame/shell only, no <video>, no host-element animation -->
 <template>
   <div
     data-composition-id="final-anim"
@@ -169,13 +169,13 @@ The reason to reach for it: a sub-comp timeline **cannot** drive host elements (
 
 Caveats:
 
-- In this pattern the media is a host-root child, static in `index.html`, so the main timeline's selector resolves it. (Media nested in a sub-comp is also driven fine; it just can't be reached by the main timeline's selectors — drive it from the sub-comp's own timeline.)
+- In this pattern the media is a host-root child, static in `index.html`, so the main timeline's selector resolves it. (Media nested in a sub-comp is also driven fine; it just can't be reached by the main timeline's selectors - drive it from the sub-comp's own timeline.)
 - Clip lifecycle owns the media element's visibility across its `[data-start, data-start+data-duration]` window. The main-timeline opacity/scale tweens compose with it fine; for an opacity reveal/crossfade prefer a host **wrapper** so you are not fighting the lifecycle on the media element itself.
-- Two media elements sharing the same `src` + `data-start` trigger `duplicate_media_discovery_risk` (benign — both still render).
+- Two media elements sharing the same `src` + `data-start` trigger `duplicate_media_discovery_risk` (benign - both still render).
 
 ### C. Multi-scene merge
 
-When several beat-level scenes share continuous state — a chat thread that grows, a persistent headline word that carries across the cut, a single canvas with internal phase changes — collapse them into one sub-comp and use **internal phase divs** rather than multiple sub-comp slots.
+When several beat-level scenes share continuous state - a chat thread that grows, a persistent headline word that carries across the cut, a single canvas with internal phase changes - collapse them into one sub-comp and use **internal phase divs** rather than multiple sub-comp slots.
 
 ```html
 <!-- compositions/act2-merged.html -->
@@ -203,11 +203,11 @@ When several beat-level scenes share continuous state — a chat thread that gro
 </template>
 ```
 
-Reach for this over multiple sequential slots when scenes share DOM, share a canvas, or need to cross-fade with persistent elements (a headline that survives the cut between phases). Each phase is just a div inside the same sub-comp — the parent timeline never has to know about the internal phase boundaries.
+Reach for this over multiple sequential slots when scenes share DOM, share a canvas, or need to cross-fade with persistent elements (a headline that survives the cut between phases). Each phase is just a div inside the same sub-comp - the parent timeline never has to know about the internal phase boundaries.
 
 ### D. Audio at root, reactive visual inside
 
-Audio always lives at the host (`index.html`) as a root-level `<audio>` so playback survives scene cuts. A sub-comp that visualizes audio should read a **pre-baked** frequency curve at init, then sample the baked curve from its timeline — the visual must still be a deterministic function of `tl.time()`, not of `audio.currentTime`. See `determinism-rules.md` and `hyperframes-creative` for the authoring pattern.
+Audio always lives at the host (`index.html`) as a root-level `<audio>` so playback survives scene cuts. A sub-comp that visualizes audio should read a **pre-baked** frequency curve at init, then sample the baked curve from its timeline - the visual must still be a deterministic function of `tl.time()`, not of `audio.currentTime`. See `determinism-rules.md` and `hyperframes-creative` for the authoring pattern.
 
 ## Naming Conventions
 
@@ -221,4 +221,4 @@ Audio always lives at the host (`index.html`) as a root-level `<audio>` so playb
 | Element ids inside a sub-comp       | prefix with the scene id                    | `#act0-bell`, `#b1-tape`                   |
 | Audio at root                       | `data-track-index` well above visual tracks | `10` while visuals use `1`                 |
 
-The `-template` suffix on `<template>` is conventional but not required — the runtime extracts contents from whichever `<template>` is in `<body>`, regardless of id. The prefix on inner element ids is the only safeguard against id collisions when multiple sub-comps are mounted into the same host page at once.
+The `-template` suffix on `<template>` is conventional but not required - the runtime extracts contents from whichever `<template>` is in `<body>`, regardless of id. The prefix on inner element ids is the only safeguard against id collisions when multiple sub-comps are mounted into the same host page at once.

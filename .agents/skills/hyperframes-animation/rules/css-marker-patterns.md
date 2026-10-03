@@ -1,12 +1,12 @@
 # CSS Patterns for Marker Highlighting
 
-Pure CSS + GSAP implementations of all five MarkerHighlight.js drawing modes — no external library dependency, full timeline control. Snippets show mechanism DOM only, inside a standard scene clip (hyperframes-core); assume `tl` exists.
+Pure CSS + GSAP implementations of all five MarkerHighlight.js drawing modes - no external library dependency, full timeline control. Snippets show mechanism DOM only, inside a standard scene clip (hyperframes-core); assume `tl` exists.
 
 Shared scaffold for every mode: the wrap is `position: relative; display: inline`; the text copy is `position: relative` and z-indexed **above** the accent (below it for sketchout, where the lines cross the text).
 
 ## 1. Highlight Mode
 
-Yellow marker sweep behind text — the most common mode.
+Yellow marker sweep behind text - the most common mode.
 
 ```html
 <span class="mh-highlight-wrap">
@@ -36,7 +36,7 @@ tl.to("#hl-1", { scaleX: 1, duration: 0.5, ease: "power2.out" }, 0.6);
 
 ## 2. Circle Mode
 
-Hand-drawn ellipse around text — `border-radius: 50%` plus a slight rotation for organic feel.
+Hand-drawn ellipse around text - `border-radius: 50%` plus a slight rotation for organic feel.
 
 ```html
 <span class="mh-circle-wrap">
@@ -65,7 +65,7 @@ tl.to("#circle-1", { scale: 1, rotation: -3, duration: 0.6, ease: "back.out(1.7)
 
 ## 3. Burst Mode
 
-Radiating lines from text center — each line a positioned span rotated to its angle. Use ~12 lines at 30° steps and **vary `--len` (40–80px)**; equal lengths look mechanical.
+Radiating lines from text center - each line a positioned span rotated to its angle. Use ~12 lines at 30° steps and **vary `--len` (40–80px)**; equal lengths look mechanical.
 
 ```html
 <span class="mh-burst-wrap">
@@ -152,7 +152,7 @@ Path tuning: the `Q` control points alternate y between 0 and 24 for a natural w
 
 ## 5. Sketchout Mode
 
-Cross-hatch over de-emphasized text — two angled lines create a "crossed out" effect.
+Cross-hatch over de-emphasized text - two angled lines create a "crossed out" effect.
 
 ```html
 <span class="mh-sketchout-wrap">
@@ -169,7 +169,7 @@ Cross-hatch over de-emphasized text — two angled lines create a "crossed out" 
   position: absolute;
   inset: 0 -4px;
   overflow: hidden;
-  z-index: 1; /* text at z-index: 0 — the lines cross OVER it */
+  z-index: 1; /* text at z-index: 0 - the lines cross OVER it */
 }
 .mh-sketchout-line {
   position: absolute;
@@ -197,7 +197,7 @@ tl.to("#sketchout-1 .mh-sketchout-bwd", { scaleX: 1, duration: 0.3, ease: "power
 
 ## Combining Modes in Captions
 
-Cycle modes across caption groups for visual variety — every 2-3 groups for high energy, 3-4 for medium, 4-5 for low:
+Cycle modes across caption groups for visual variety - every 2-3 groups for high energy, 3-4 for medium, 4-5 for low:
 
 ```js
 const MODES = ["highlight", "circle", "burst", "scribble"];

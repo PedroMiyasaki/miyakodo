@@ -4,7 +4,7 @@ Video frames are not web pages. Use these rules for design-led compositions whil
 
 ## The Design Spec Is Brand, Not Layout
 
-The design spec (`frame.md` or `design.md`) defines what the brand looks like: colors, fonts, personality, constraints. It does NOT define how to compose a video frame. Use brand colors at video-appropriate intensity — not at web-UI opacity.
+The design spec (`frame.md` or `design.md`) defines what the brand looks like: colors, fonts, personality, constraints. It does NOT define how to compose a video frame. Use brand colors at video-appropriate intensity - not at web-UI opacity.
 
 **Strict from the design spec:** hex values (including background color), font families, weight relationships, Do's and Don'ts. If the user chose a light canvas, use a light canvas. If they chose dark, use dark. Do not override their palette.
 
@@ -16,9 +16,9 @@ Choose density from the message and format. A brand or sizzle frame often needs 
 
 For a scene that should feel layered, plan these roles:
 
-- **Background treatment** — radial glow, oversized ghost type, color panel, grain, grid, or an intentionally flat field justified by the concept.
-- **Midground content** — the actual message. Cards, stats, code blocks, images.
-- **Foreground accents** — dividers, labels, data bars, registration marks, monospace metadata. The details that make it feel produced, not generated.
+- **Background treatment** - radial glow, oversized ghost type, color panel, grain, grid, or an intentionally flat field justified by the concept.
+- **Midground content** - the actual message. Cards, stats, code blocks, images.
+- **Foreground accents** - dividers, labels, data bars, registration marks, monospace metadata. The details that make it feel produced, not generated.
 
 For produced marketing frames, roughly 6–10 visual roles can be a useful starting point, not a contract. Add decoration only when it reinforces hierarchy, motion, or the concept. Decorative treatment must not become new user-facing content, new scenes, or unrequested claims.
 
@@ -26,8 +26,8 @@ For produced marketing frames, roughly 6–10 visual roles can be a useful start
 
 Muted is fine. Flat is not. Every scene should have at least one color that pulls the eye.
 
-- Brand accent should be VISIBLE — not a 5% opacity glow lost in compression. 15-25% for atmospheric, full saturation for focal elements.
-- **Light canvases work differently than dark.** On dark: accent glows pop naturally. On light: use bolder borders (2px+ solid), stronger structural elements (rules, dividers), and full-saturation accent hits. Light backgrounds need texture (subtle grain, patterns) to avoid the "blank slide" feel. Don't switch to dark — make light cinematic.
+- Brand accent should be VISIBLE - not a 5% opacity glow lost in compression. 15-25% for atmospheric, full saturation for focal elements.
+- **Light canvases work differently than dark.** On dark: accent glows pop naturally. On light: use bolder borders (2px+ solid), stronger structural elements (rules, dividers), and full-saturation accent hits. Light backgrounds need texture (subtle grain, patterns) to avoid the "blank slide" feel. Don't switch to dark - make light cinematic.
 - **No full-screen linear gradients on dark backgrounds.** They band visibly under H.264 compression. Use a radial gradient, a solid fill, or solid + localized glow instead.
 - Tint neutrals toward the brand hue. Dead gray reads as undesigned.
 
@@ -51,7 +51,7 @@ If you're writing a font-size under 24px in a video composition, justify it. If 
 Subtle reads as static at 30fps. Err toward more movement than feels safe.
 
 - Every decorative element should have ambient motion: breathe, drift, pulse, orbit. Static decoratives feel dead.
-- Vary motion per scene — don't repeat the same ambient pattern.
+- Vary motion per scene - don't repeat the same ambient pattern.
 - Scene entrances should use 3+ different eases and directions. If every element enters from `y: 30, opacity: 0`, the scene has no choreography.
 
 ## Frame Composition

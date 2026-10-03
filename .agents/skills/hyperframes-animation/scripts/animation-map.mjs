@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// animation-map.mjs — HyperFrames animation map for agents
+// animation-map.mjs - HyperFrames animation map for agents
 //
 // Reads every GSAP timeline registered in window.__timelines, enumerates
 // tweens, samples bboxes at N points per tween, computes flags and
@@ -10,7 +10,7 @@
 //     [--frames N] [--out <dir>] [--min-duration S] [--width W] [--height H] [--fps N]
 //
 // Env:
-//   HYPERFRAMES_SKILL_PKG_VERSION — pin the @hyperframes/producer version used
+//   HYPERFRAMES_SKILL_PKG_VERSION - pin the @hyperframes/producer version used
 //     when bootstrapping (global skill installs cannot infer it; falls back to
 //     @latest with a warning otherwise).
 
@@ -70,7 +70,7 @@ try {
   // Canonical transient-init retry/cleanup (mirrors the render pipeline's
   // probeStage): a valid modular project's sub-composition timelines register
   // asynchronously, so the first attempt can time out as transient
-  // "zero duration / Runtime ready: false" — retry once with a fresh browser
+  // "zero duration / Runtime ready: false" - retry once with a fresh browser
   // instead of false-failing the project.
   session = await initializeSessionWithRetry(
     packages["@hyperframes/producer"],
@@ -147,7 +147,7 @@ try {
   // tw.selector they would collapse every driver in the composition into one
   // "(onUpdate driver)" pseudo-element with null geometry, and let three same-duration
   // drivers read as a stagger no element performs. Density, dead zones and the timeline
-  // still count them — those are per-SPAN, which is what a driver does have.
+  // still count them - those are per-SPAN, which is what a driver does have.
   const elementTweens = report.tweens.filter((tw) => tw.driver !== "onUpdate");
   report.staggers = detectStaggers(elementTweens);
   report.elements = buildElementLifecycles(elementTweens);
@@ -235,7 +235,7 @@ async function enumerateTweens(session) {
       // proof of work by itself (a repaint loop need not animate a property), but a parent's
       // is not: a bare `tl.to({}, { duration: D })` spacer inside a driven timeline advances
       // the playhead without altering any value, so counting it would mask a genuine dead
-      // zone — the exact false positive the tween-local rule was careful to avoid.
+      // zone - the exact false positive the tween-local rule was careful to avoid.
       const isProxyDriver =
         targets.length === 0 &&
         (typeof vars.onUpdate === "function" || (parentDriven && props.length > 0));
@@ -272,7 +272,7 @@ function describeTween(tw, props, bboxes, flags) {
   } else {
     // An onUpdate driver: the span and props are known, the affected element is not.
     parts.push(
-      `an onUpdate driver animates ${props.join("+")} over ${dur}s (${tw.ease}) — ` +
+      `an onUpdate driver animates ${props.join("+")} over ${dur}s (${tw.ease}) - ` +
         `motion is applied in JS, so no element geometry was measured`,
     );
   }
@@ -341,7 +341,7 @@ function computeFlags(tw, bboxes, { width, height }) {
   const dur = tw.end - tw.start;
 
   // No samples at all (an onUpdate driver has no element to measure) is not evidence of
-  // a degenerate or invisible box — `[].every()` is vacuously true, so guard the
+  // a degenerate or invisible box - `[].every()` is vacuously true, so guard the
   // geometry-derived flags. The pacing flags below read only start/end and still apply.
   if (bboxes.length && bboxes.every((b) => b.w === 0 || b.h === 0)) flags.push("degenerate");
 

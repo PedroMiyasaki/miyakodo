@@ -7,5 +7,5 @@
 ## Interview
 
 - **Must-haves:** which clip (the input file).
-- **Deferred (announce):** its render-strategy questions — aspect ratio, layout, style group, card count — stay at its Step 7, where the recommendations come from the probed footage and transcript. Say they're coming.
+- **Deferred (announce):** its render-strategy questions - aspect ratio, layout, style group, card count - stay at its Step 7, where the recommendations come from the probed footage and transcript. Say they're coming.
 - **Run-shape:** neither.

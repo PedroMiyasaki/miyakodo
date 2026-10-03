@@ -19,7 +19,7 @@ body{background:#555;display:flex;flex-direction:column;align-items:center;gap:4
   color:var(--ink);
   display:flex;flex-direction:column;
 }
-/* paper grain — currentColor so it survives inversion */
+/* paper grain - currentColor so it survives inversion */
 .board::after{
   content:"";position:absolute;inset:0;pointer-events:none;z-index:9;
   background-image:radial-gradient(currentColor .5px,transparent .6px);
@@ -74,7 +74,7 @@ body{background:#555;display:flex;flex-direction:column;align-items:center;gap:4
 }
 
 /* =========================================================
-   ROUTE A — MASTHEAD
+   ROUTE A - MASTHEAD
    name + rules + descriptor slot. Set, not drawn.
    ========================================================= */
 .mast{display:inline-block;text-align:center}
@@ -100,7 +100,7 @@ body{background:#555;display:flex;flex-direction:column;align-items:center;gap:4
 .mast.xs .desc{display:none}
 
 /* =========================================================
-   ROUTE B — MISREGISTER
+   ROUTE B - MISREGISTER
    two print passes: halftone screen + key plate, out of register.
    ========================================================= */
 .misreg{position:relative;display:inline-block}
@@ -135,7 +135,7 @@ body{background:#555;display:flex;flex-direction:column;align-items:center;gap:4
 .misreg.flat .key{filter:none}
 
 /* =========================================================
-   ROUTE C — STAMP
+   ROUTE C - STAMP
    name knocked out of an inked block. The block is the avatar.
    ========================================================= */
 .stamp{
@@ -150,7 +150,7 @@ body{background:#555;display:flex;flex-direction:column;align-items:center;gap:4
 .stamp.s .name{font-size:38px}
 .stamp.xs{padding:.26em .3em .3em}
 .stamp.xs .name{font-size:16px}
-/* the monogram cut of the same block — the avatar asset */
+/* the monogram cut of the same block - the avatar asset */
 .badge{
   display:grid;place-items:center;
   background:var(--paper);color:var(--ink);
@@ -191,7 +191,7 @@ body{background:#555;display:flex;flex-direction:column;align-items:center;gap:4
       <div class="wm" style="font-size:52px;margin-top:14px">Masthead</div>
     </div>
     <div class="logic">A newspaper doesn't have a logo, it has a masthead. The mark is
-      name + rule + descriptor slot — a structure you set, not a picture you paste.</div>
+      name + rule + descriptor slot - a structure you set, not a picture you paste.</div>
   </div>
 
   <div class="stage">
@@ -199,7 +199,7 @@ body{background:#555;display:flex;flex-direction:column;align-items:center;gap:4
       <div class="rule-top"></div>
       <div class="wm name">Pedro Miyasaki</div>
       <div class="rule-bot"></div>
-      <div class="desc">Applied AI — notes from production</div>
+      <div class="desc">Applied AI - notes from production</div>
     </div>
   </div>
 
@@ -211,13 +211,13 @@ body{background:#555;display:flex;flex-direction:column;align-items:center;gap:4
           <div class="rule-top"></div>
           <div class="wm name">Pedro Miyasaki</div>
           <div class="rule-bot"></div>
-          <div class="desc">Applied AI — notes from production</div>
+          <div class="desc">Applied AI - notes from production</div>
         </div>
       </div>
     </div>
     <div class="divider"></div>
     <div class="col">
-      <div class="lab">Small — descriptor drops</div>
+      <div class="lab">Small - descriptor drops</div>
       <div class="slot">
         <div class="mast xs">
           <div class="rule-top"></div>
@@ -269,7 +269,7 @@ body{background:#555;display:flex;flex-direction:column;align-items:center;gap:4
     </div>
     <div class="divider"></div>
     <div class="col">
-      <div class="lab">Small — single pass fallback</div>
+      <div class="lab">Small - single pass fallback</div>
       <div class="slot">
         <div class="misreg xs">
           <span class="wm pass key">Pedro Miyasaki</span>

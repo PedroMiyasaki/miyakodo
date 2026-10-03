@@ -25,7 +25,7 @@ Obs!!! Isso parece complicado, mas não precisa ser: a estratégia deve ser otim
 
 ## Substack
 
-[ ] Estruturar o Substack no LinkedIn e no Instagram da mesma maneira que o @jonascastromp4 (link na bio, story — apenas copiar)
+[ ] Estruturar o Substack no LinkedIn e no Instagram da mesma maneira que o @jonascastromp4 (link na bio, story - apenas copiar)
 
 ## Calendário
 

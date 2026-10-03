@@ -7,11 +7,11 @@ metadata:
 
 # Split Tilt Cards
 
-Two cards side-by-side with opposing `rotateY` (left `+TILT`, right `−TILT`) — a symmetric "book-open" 3D split for comparisons, before/after, feature pairs. Each card slides in from its own side (reinforcing "they came from their own worlds and met here"), then the pair idles in counter-phase.
+Two cards side-by-side with opposing `rotateY` (left `+TILT`, right `−TILT`) - a symmetric "book-open" 3D split for comparisons, before/after, feature pairs. Each card slides in from its own side (reinforcing "they came from their own worlds and met here"), then the pair idles in counter-phase.
 
 ## How It Works
 
-`perspective` on the scene root (REQUIRED — without it `rotateY` flattens to a 2D layout) and `transform-style: preserve-3d` on the stage and both cards. Entry starts each card off-axis with `TILT + TILT_OVERSHOOT`, settling to `TILT` — a pivot-into-place. Idle is a gentle counter-phase y-bob (the two yoyo tweens run in opposite directions); copy fades up during the cards' settle, not after.
+`perspective` on the scene root (REQUIRED - without it `rotateY` flattens to a 2D layout) and `transform-style: preserve-3d` on the stage and both cards. Entry starts each card off-axis with `TILT + TILT_OVERSHOOT`, settling to `TILT` - a pivot-into-place. Idle is a gentle counter-phase y-bob (the two yoyo tweens run in opposite directions); copy fades up during the cards' settle, not after.
 
 ## Recipe
 
@@ -53,7 +53,7 @@ Two cards side-by-side with opposing `rotateY` (left `+TILT`, right `−TILT`) �
 ```
 
 ```js
-// Entry — from outside, opposing tilts settle with a small pivot
+// Entry - from outside, opposing tilts settle with a small pivot
 tl.fromTo(
   ".card-left",
   { x: -ENTRY_SLIDE_DIST, rotateY: TILT + TILT_OVERSHOOT, opacity: 0 },
@@ -67,7 +67,7 @@ tl.fromTo(
   RIGHT_AT,
 );
 
-// Counter-phase idle bob — opposite signs = alive; synchronized = conveyor belt
+// Counter-phase idle bob - opposite signs = alive; synchronized = conveyor belt
 tl.to(
   ".card-left",
   { y: -FLOAT_AMP, duration: FLOAT_DURATION / 2, ease: "sine.inOut", yoyo: true, repeat: 1 },
@@ -89,8 +89,8 @@ tl.from(
 
 ## Variations
 
-- **Badges / floating labels**: position them on the PARENT, never inside a card — inside they inherit the `rotateY` and tilt off-axis.
-- **3+ cards**: center card stays flat (`rotateY: 0`), outer two tilt inward — "old way / nothing / our way."
+- **Badges / floating labels**: position them on the PARENT, never inside a card - inside they inherit the `rotateY` and tilt off-axis.
+- **3+ cards**: center card stays flat (`rotateY: 0`), outer two tilt inward - "old way / nothing / our way."
 - **Zoom-through**: a separate camera tween scaling `.split-stage` reads as the viewer crossing the gap between the tilted pair.
 
 ## Values
@@ -112,11 +112,11 @@ tl.from(
 ## Critical Constraints
 
 - **`perspective` on the scene root is REQUIRED**; `preserve-3d` on the stage AND each card.
-- **Shadow direction matches tilt** — left card faces right → shadow falls right (and mirrored). Wrong sign reads as broken 3D.
-- **Counter-phase idle** — the two bobs run with opposite signs at the same position.
+- **Shadow direction matches tilt** - left card faces right → shadow falls right (and mirrored). Wrong sign reads as broken 3D.
+- **Counter-phase idle** - the two bobs run with opposite signs at the same position.
 - **Badges outside the card divs** (they'd inherit the rotation).
-- **Body copy ≤ 2 lines per card** — tilted long paragraphs collapse into perspective blur.
-- **Symmetric weight** — same width, same vertical center, similar line counts; asymmetry breaks the comparison metaphor.
+- **Body copy ≤ 2 lines per card** - tilted long paragraphs collapse into perspective blur.
+- **Symmetric weight** - same width, same vertical center, similar line counts; asymmetry breaks the comparison metaphor.
 
 ## See also
 

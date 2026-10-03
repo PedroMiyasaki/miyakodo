@@ -67,7 +67,7 @@ Material perecível é bem-vindo aqui, e muitas vezes é o melhor assunto dispon
 
 ## Referências obrigatórias
 
-**A voz, em toda rodada:** escreva como o usuário fala e pensa — posição primeiro, autor exposto, opinião com referente concreto. Sem jargão sem tradução, sem inflação.
+**A voz, em toda rodada:** escreva como o usuário fala e pensa - posição primeiro, autor exposto, opinião com referente concreto. Sem jargão sem tradução, sem inflação.
 
 **O que já existe sobre esta tese, quando existe:**
 
@@ -144,7 +144,7 @@ Toda espinha abaixo é **sequencial**: é uma coisa acontecendo depois da outra,
 
 ---
 
-**1 · A investigação** — *alguma coisa quebrou e você descobriu por quê*
+**1 · A investigação** - *alguma coisa quebrou e você descobriu por quê*
 
 1. Uma cena concreta, datada, com um número dentro. Não uma tese.
 2. A primeira leitura errada, e por que ela era razoável: é aqui que o leitor se reconhece.
@@ -159,7 +159,7 @@ Use quando você viu algo falhar de perto o bastante para reconstruir.
 
 ---
 
-**2 · A reconstrução** — *isto é o que aconteceu de fato* · **a espinha de notícia**
+**2 · A reconstrução** - *isto é o que aconteceu de fato* · **a espinha de notícia**
 
 1. O que foi anunciado, em uma frase, sem adjetivo.
 2. O que a cobertura disse que aquilo significava. **Imagem: a manchete, o gráfico do post de anúncio.**
@@ -173,7 +173,7 @@ Use quando alguma coisa aconteceu esta semana. **Exige fontes primárias.** Sem 
 
 ---
 
-**3 · O teste** — *você rodou, e foi isto que aconteceu*
+**3 · O teste** - *você rodou, e foi isto que aconteceu*
 
 1. A pergunta que você queria responder, e por que ela importa para quem faz esse trabalho.
 2. O setup, com as limitações admitidas logo de cara. **Imagem: o ambiente, a config, o prompt.**
@@ -186,7 +186,7 @@ Use quando você tem acesso à coisa e consegue rodar de verdade.
 
 ---
 
-**4 · A decisão** — *A ou B, e o que custou*
+**4 · A decisão** - *A ou B, e o que custou*
 
 1. O que estava em jogo, e o prazo que forçou a escolha.
 2. As opções, com honestidade, com o preço de cada uma. **Imagens: a comparação, a documentação, os preços.**
@@ -211,9 +211,9 @@ Escreva uma linha por seção dizendo o que acontece nela. Se duas seções vizi
 
 Antes de abrir o navegador, escreva a shot list como tabela em `posts/substack/<slug>/sketch/shotlist.md`:
 
-| # | Âncora — a frase depois da qual ela entra | O que precisa mostrar | Onde capturar | Status |
+| # | Âncora - a frase depois da qual ela entra | O que precisa mostrar | Onde capturar | Status |
 |---|---|---|---|---|
-| cover | — | o mecanismo de que o artigo trata | arXiv fig. 2 | planejada |
+| cover | - | o mecanismo de que o artigo trata | arXiv fig. 2 | planejada |
 | 01 | "o custo triplicou sem o tráfego se mexer" | a curva de custo, com o eixo log visível | a página de status do provedor | planejada |
 
 Regras para a lista:
@@ -264,7 +264,7 @@ Escreva seguindo o outline, e **prepare o terreno para cada imagem**. As duas ou
 Marque a posição das imagens inline enquanto escreve:
 
 ```
-![01 — <caption placeholder>](01.png)
+![01 - <caption placeholder>](01.png)
 ```
 
 O Substack renderiza markdown, que é o oposto da restrição do LinkedIn. Use, e use para o que o LinkedIn não conseguia segurar:
@@ -304,7 +304,7 @@ A pergunta tem que merecer:
 # <título>
 ### <subtítulo>
 
-<o artigo, com os marcadores ![NN — caption](NN.png) no lugar>
+<o artigo, com os marcadores ![NN - caption](NN.png) no lugar>
 ```
 
 Depois, um rodapé de metadados: não é texto publicável, é o registro da peça, e vai junto para o `final.md`:
@@ -401,7 +401,7 @@ Agora o artigo e as imagens existem. É neste passo que uma peça boa vira uma p
 Toda imagem ganha uma legenda com dois trabalhos:
 
 1. **O que olhar**, em uma oração. Não uma descrição da imagem, uma direção. "O eixo Y é log; a queda entre 8k e 32k tokens é a parte que o gráfico do anúncio deixa de fora."
-2. **A fonte, com link.** "— [OpenAI, GPT-5 model card, p.14](url)"
+2. **A fonte, com link.** "- [OpenAI, GPT-5 model card, p.14](url)"
 
 Legenda que só nomeia a imagem ("Figura 2: a arquitetura") é espaço jogado fora. Se a imagem precisa creditar a figura de um paper, credite aqui; o Substack tem o espaço que o LinkedIn não tem.
 
@@ -443,7 +443,7 @@ Tudo mora em `posts/substack/<slug>/`. `sketch/` é material de trabalho; a raiz
 ## Passo 10 · Entregar
 
 > "Artigo pronto: [título], [N] palavras, [N] imagens. Está tudo em `posts/substack/<slug>/`.
-> Para publicar: cole o `final.md` no editor do Substack, depois arraste cada PNG para cima do marcador `![NN — …]` dele e cole a legenda embaixo. Defina `cover.png` como capa do post."
+> Para publicar: cole o `final.md` no editor do Substack, depois arraste cada PNG para cima do marcador `![NN - …]` dele e cole a legenda embaixo. Defina `cover.png` como capa do post."
 
 ---
 

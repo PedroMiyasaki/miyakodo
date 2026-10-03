@@ -3,14 +3,14 @@
 All three go on the `<audio>` / `<video>` element itself, JSON-encoded, so a
 composition carries its whole mix in the HTML with nothing to load beside it.
 `data-fx-chain` and `data-automation` also go on an `<hf-audio-group>` bus,
-where they mean the same thing over the summed members — with one difference
+where they mean the same thing over the summed members - with one difference
 worth knowing: a group's automation runs on COMPOSITION time, since a bus has no
 `data-start` of its own. `data-fx-carve` is clip-only; a bus has no carve.
 Nothing static validates them: preview plays an unreadable chain dry to stay
 workable, and the render refuses the whole mix rather than shipping a dry track
 that sounds plausible and is wrong.
 
-## `data-fx-chain` — the effects
+## `data-fx-chain` - the effects
 
 ```json
 {
@@ -41,13 +41,13 @@ that sounds plausible and is wrong.
 **Write these attributes double-quoted, with the JSON's own quotes as `&quot;`.**
 The browser reads them through `getAttribute` and does not care, but
 `scripts/carve.mjs` finds them with a `name="..."` regex, so a single-quoted
-attribute is invisible to it — the carve reports no existing chain and quietly
+attribute is invisible to it - the carve reports no existing chain and quietly
 overwrites work it could not see. `&` becomes `&amp;`; nothing else needs
 escaping.
 
 - **Order is signal order.** Each node processes what the one before produced.
 - `type` is an effect id from the registry. `params` are in the units a person
-  thinks in — dB, ms, Hz — and out-of-range values are clamped on read, so a
+  thinks in - dB, ms, Hz - and out-of-range values are clamped on read, so a
   chain that parses is always safe to realise.
 - `id` is a stable handle. Automation addresses nodes by id, never by position,
   so reordering the chain cannot re-point a lane at a different effect. A node
@@ -55,17 +55,17 @@ escaping.
   unique string works; Studio hands out the first free `n1`, `n2`, … so matching
   that convention keeps a hand-written chain and an edited one looking alike.
 - `label` is what the rack calls this node, replacing the effect's own name.
-  Write one whenever the node is doing a named job — a chain with two `peaking`
+  Write one whenever the node is doing a named job - a chain with two `peaking`
   nodes otherwise shows the same row twice and the author cannot tell which is
   the mud cut and which is the clarity lift. Presets and jobs always set it; a
   hand-written node should too. See `presets.md` for the names they use.
-- `enabled: false` is bypass — the node stays in the chain, out of the signal
+- `enabled: false` is bypass - the node stays in the chain, out of the signal
   path. Absent means enabled.
 - `fromCarve: true` marks a node the carve analysis generated. Re-running the
   carve replaces exactly these and leaves hand-built effects alone. **Do not set
   it by hand**: a node tagged this way will be deleted by the next carve.
 
-## `data-automation` — the envelopes
+## `data-automation` - the envelopes
 
 ```json
 {
@@ -100,7 +100,7 @@ escaping.
 - `curve` (-1..1) bends the segment _leaving_ a point: positive holds low then
   rises late. `viaX`/`viaY` name an interior point the segment passes through
   (progress 0..1, value travelled 0..1) and supersede `curve` when both are
-  present — that is what the timeline writes when a bend is dragged.
+  present - that is what the timeline writes when a bend is dragged.
 - 512 points per lane, maximum.
 - A lane whose node is gone is pruned on read rather than erroring.
 
@@ -110,7 +110,7 @@ cannot move: worklet processor options, a WaveShaper curve and a convolution
 impulse are all set wholesale. `fx-registry.md` marks each parameter; the four
 worklet effects (`compressor`, `limiter`, `gate`, `bitcrush`) have none at all.
 
-## `data-fx-carve` — the carve's settings
+## `data-fx-carve` - the carve's settings
 
 ```json
 { "enabled": true, "sources": ["narration", "interview-guest"], "strength": 0.35 }
@@ -126,7 +126,7 @@ worklet effects (`compressor`, `limiter`, `gate`, `bitcrush`) have none at all.
   attribute, switching it off would read as never-configured and the default would
   put it back. `enabled: false` keeps the settings and stops the carve.
 
-This attribute is not read at playback — the chain and lanes it produced are what
+This attribute is not read at playback - the chain and lanes it produced are what
 play. It exists so the settings can be read back and re-derived rather than
 guessed from the filters, which is what makes changing strength on an existing
 carve possible.
@@ -135,4 +135,4 @@ Older projects may carry the six mechanism numbers (`maxCutDb`, `bands`, `q`,
 `intelligibilityBias`, `duckDb`, `headroomDb`) instead of `strength`. They still
 load: the depth maps back onto a strength and everything else is re-derived. A
 stored carve with no `enabled` reads as on, and a single `source` reads as a one-voice
-`sources` list. A stored `dynamic` is ignored — every carve follows the speech now.
+`sources` list. A stored `dynamic` is ignored - every carve follows the speech now.

@@ -1,6 +1,6 @@
 # Minimal Composition
 
-The smallest renderable HyperFrames composition — a standalone (top-level) root with one clip and one tween:
+The smallest renderable HyperFrames composition - a standalone (top-level) root with one clip and one tween:
 
 ```html
 <!doctype html>
@@ -66,4 +66,4 @@ What the runtime actually requires:
 
 Everything else in the skeleton is ordinary HTML and CSS: the `#root` box, `.clip` positioning, and fonts are yours to choose.
 
-This pattern is **standalone** (top-level `index.html`) — no `<template>` wrapper around the root. For sub-compositions (files loaded by `data-composition-src`), see `sub-compositions.md`.
+This pattern is **standalone** (top-level `index.html`) - no `<template>` wrapper around the root. For sub-compositions (files loaded by `data-composition-src`), see `sub-compositions.md`.

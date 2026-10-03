@@ -5,11 +5,11 @@ description: Agent Media OS, the single skill for every media need in a HyperFra
 
 # media-use
 
-The media OS for HyperFrames: resolve · generate · operate · remember — every media type, one skill, zero context noise.
+The media OS for HyperFrames: resolve · generate · operate · remember - every media type, one skill, zero context noise.
 
 First run: install and sign in to the `heygen` CLI (the free-usage path), then verify with `npx hyperframes media-use resolve --doctor`. Setup and providers: `references/setup-providers.md`.
 
-## Resolve — the one verb
+## Resolve - the one verb
 
 ```bash
 npx hyperframes media-use resolve --type <type> --intent "<description>" --project <dir>
@@ -28,7 +28,7 @@ Returns one line: `resolved <id> → <path> (<type>, <metadata>)`. All search no
 | `grade` | measured correction candidate; broad polish/stylization follows Media Treatments |
 | `lut`   | user-provided or explicitly chosen reusable validated `.cube` file               |
 
-Before resolving fresh, list reusable candidates with `--candidates` and judge fit yourself — reuse rules, all flags, ingest (`--from`), and adopt are in `references/resolve.md`.
+Before resolving fresh, list reusable candidates with `--candidates` and judge fit yourself - reuse rules, all flags, ingest (`--from`), and adopt are in `references/resolve.md`.
 
 ## Treat broad visual feedback as media intent
 
@@ -63,9 +63,9 @@ Do not recreate supported vignette, grain, blur, pixelate, color, or treatment
 effects with CSS/SVG overlays; that bypasses Studio controls and the canonical
 preview/render shader path.
 
-## Be proactive — run a media opportunity pass
+## Be proactive - run a media opportunity pass
 
-The human usually can't tell which media would lift the piece. You can. When you build or review a composition, do **one** grounded scan and then **ask once** — don't silently add, and don't nag per asset.
+The human usually can't tell which media would lift the piece. You can. When you build or review a composition, do **one** grounded scan and then **ask once** - don't silently add, and don't nag per asset.
 
 Surface an opportunity only when a concrete signal is present:
 
@@ -73,16 +73,16 @@ Surface an opportunity only when a concrete signal is present:
 | -------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
 | On-screen text / a script with no voiceover              | TTS voiceover (audio engine)                                                                           |
 | Emoji or a `<div>` styled as an icon                     | resolve real `icon`s                                                                                   |
-| Image that is a placeholder, tiny, or upscaled-looking   | a better `image` (and/or upscale — see `references/operations.md`)                                     |
+| Image that is a placeholder, tiny, or upscaled-looking   | a better `image` (and/or upscale - see `references/operations.md`)                                     |
 | Hard scene cuts / transitions with no sound              | transition `sfx`                                                                                       |
 | A piece over ~10s with no music bed                      | `bgm`                                                                                                  |
 | Footage that reads under/over-exposed or color-cast      | a corrective grade (inspect it with `hyperframes media-treatment --selector '#hero' --analyze --json`) |
 | Photographic media that feels visually flat or off-topic | one specific source-appropriate preset or custom treatment, with the intended target named             |
 | A meaningful media entrance/reveal that feels static     | one supported seek-safe treatment animation; preserve color unless the request also justifies a preset |
 
-Rules that keep this a help, not nagware: **grounded, not generic** (no signal → no suggestion); **opinionated + concrete** (propose the specific fix with defaults chosen — the human approves **all / some / none**); **once per project** (one consolidated ask; respect "leave it"); **surface, never silently mutate** (color grades especially: propose and preview — a gray-world "correction" ruins an intentional sunset or neon look).
+Rules that keep this a help, not nagware: **grounded, not generic** (no signal → no suggestion); **opinionated + concrete** (propose the specific fix with defaults chosen - the human approves **all / some / none**); **once per project** (one consolidated ask; respect "leave it"); **surface, never silently mutate** (color grades especially: propose and preview - a gray-world "correction" ruins an intentional sunset or neon look).
 
-## Where to look — read only the file your task needs
+## Where to look - read only the file your task needs
 
 | Task                                                                      | Read                             |
 | ------------------------------------------------------------------------- | -------------------------------- |

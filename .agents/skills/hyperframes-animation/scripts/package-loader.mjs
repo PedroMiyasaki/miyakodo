@@ -1,11 +1,11 @@
-// package-loader — bootstrap optional helper packages only when missing, with
+// package-loader - bootstrap optional helper packages only when missing, with
 // defense-in-depth so a malicious or typo'd dependency can't run on install:
-//   • specs are version-pinned (assertPinnedPackageSpecs) — no floating "latest"
-//   • install runs `npm install --ignore-scripts` — package lifecycle scripts
+//   • specs are version-pinned (assertPinnedPackageSpecs) - no floating "latest"
+//   • install runs `npm install --ignore-scripts` - package lifecycle scripts
 //     never execute
-//   • `--no-save` into a throwaway tmp dir — the host project is left untouched
+//   • `--no-save` into a throwaway tmp dir - the host project is left untouched
 //   • requires an interactive y/N (or an explicit $HYPERFRAMES_SKILL_BOOTSTRAP_DEPS=1)
-//   • npm is spawned with an argv array (no shell) — never a built command string
+//   • npm is spawned with an argv array (no shell) - never a built command string
 // The `installLine` strings below are DISPLAY ONLY (shown in the prompt / error
 // text); they are never handed to a shell or executed.
 import { spawnSync } from "node:child_process";
@@ -107,7 +107,7 @@ const FALLBACK_TRANSIENT_PATTERNS = [
  * `producer` is the imported @hyperframes/producer namespace;
  * `createSession` is a factory returning a fresh (uninitialized) session.
  * Non-transient init failures (e.g. the "Runtime ready: true" zero-duration
- * fast-fail — a genuine authoring bug) still throw on the first attempt.
+ * fast-fail - a genuine authoring bug) still throw on the first attempt.
  */
 export async function initializeSessionWithRetry(producer, createSession, options = {}) {
   const maxAttempts = options.maxAttempts ?? 2;

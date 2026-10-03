@@ -195,8 +195,8 @@ listar e começa a significar alguma coisa:
 
 *Comentário com palavra-chave*: uma palavra, entre aspas, com uma recompensa dita maior que o que
 acabou de ser entregue:
-> "Comment **'Select'** — if you want the full system for how to make content that gets you customers."
-> "Comment **'REDDIT'** — and I'll share the full breakdown."
+> "Comment **'Select'** - if you want the full system for how to make content that gets you customers."
+> "Comment **'REDDIT'** - and I'll share the full breakdown."
 
 *Pergunta com resposta pronta*: sem trabalho cognitivo nenhum:
 > "Se você pudesse roubar só um desses hábitos este mês, qual seria?"
@@ -277,7 +277,7 @@ uv run python scripts/render_html_to_pngs.py \
 
 ## Proibido
 
-Foto de stock. Degradê. Emoji. Biblioteca de ícones. Travessão (—). Card com sombra + borda no
+Foto de stock. Degradê. Emoji. Biblioteca de ícones. Travessão (-). Card com sombra + borda no
 accent. Ênfase misturada (negrito + cor + sublinhado + caixa na mesma frase). Uma terceira família
 tipográfica. Mais de uma cor de accent. Slide decorativo sem frase: todo slide do corpus, os 51,
 carrega uma. Encher a lista para bater um número de slides. Headline com ressalva: a ressalva mora

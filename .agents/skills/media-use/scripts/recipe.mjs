@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Recipes CLI — the heavyweight tier of HyperFrames user memory.
+ * Recipes CLI - the heavyweight tier of HyperFrames user memory.
  *
  *   node recipe.mjs freeze --hyperframes . --name <n> [--workflow <w>] [--blocks a,b,c]
  *     Freeze the current approved run as a named recipe: frame.md + the
@@ -19,7 +19,7 @@
  *     frame.md over the project's, and print the brief values + skeleton path.
  *
  * When recipes are offered/consumed is the review loop's and the intent
- * layer's business — see hyperframes/references/review-loop.md § 4 and
+ * layer's business - see hyperframes/references/review-loop.md § 4 and
  * the intent layer's recipe check (hyperframes SKILL.md § 4).
  */
 import { parseArgs } from "node:util";
@@ -63,9 +63,9 @@ try {
         `froze recipe ${frozen.slug} (v${frozen.version}, ${frozen.workflow}) → ${frozen.dir}`,
       );
       if (frozen.workflowOverridden)
-        console.log(`  (BRIEF.md says "${frozen.workflow}" — the --workflow flag was ignored)`);
+        console.log(`  (BRIEF.md says "${frozen.workflow}" - the --workflow flag was ignored)`);
       if (!frozen.briefSkeleton)
-        console.log("  (no BRIEF.md in the project — brief skeleton skipped)");
+        console.log("  (no BRIEF.md in the project - brief skeleton skipped)");
     }
   } else if (verb === "list") {
     const list = listRecipes({ projectDir: args.hyperframes, workflow: args.workflow });

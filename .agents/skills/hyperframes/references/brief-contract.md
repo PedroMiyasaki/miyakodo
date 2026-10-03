@@ -95,7 +95,7 @@ Follow these invariants:
 
 1. Ask only unanswered fields that materially affect the output.
 2. Ask one field per message and wait for its answer before asking the next field.
-3. Put the recommended option first and attach a short reason. A numbered choice list is allowed, but every option in that list must answer the same field. Option lists fit factual fields (destination, length, language), where they scaffold recall; a creative field (message, angle, tone) the request has not already shaped takes an anchored open question — a list there steers the answer instead of collecting it.
+3. Put the recommended option first and attach a short reason. A numbered choice list is allowed, but every option in that list must answer the same field. Option lists fit factual fields (destination, length, language), where they scaffold recall; a creative field (message, angle, tone) the request has not already shaped takes an anchored open question - a list there steers the answer instead of collecting it.
 4. Skip a question when the current request already answers it. Inference alone is not an answer.
 5. Ask `storyboard` and then `flow` last, only for routes that support them.
 6. Announce deferred questions before hand-off; do not surprise the user later.

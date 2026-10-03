@@ -7,7 +7,7 @@ metadata:
 
 # SVG Icon Enrichment
 
-Treats an SVG icon as a composition of animated PARTS, not an opaque image. Each meaningful internal element (a clock hand, scissor blade, recording dot, data line) gets its own micro-animation, targeted by id. Distinct from [svg-path-draw](svg-path-draw.md) (which animates the OUTLINE drawing) — enrichment animates INTERNAL PARTS, ideally after the outline has drawn.
+Treats an SVG icon as a composition of animated PARTS, not an opaque image. Each meaningful internal element (a clock hand, scissor blade, recording dot, data line) gets its own micro-animation, targeted by id. Distinct from [svg-path-draw](svg-path-draw.md) (which animates the OUTLINE drawing) - enrichment animates INTERNAL PARTS, ideally after the outline has drawn.
 
 Four signature patterns:
 
@@ -20,14 +20,14 @@ Four signature patterns:
 
 ## ❗ The transform-center gotcha
 
-**For rotation around an explicit point inside an SVG, use the SVG `transform` ATTRIBUTE, not CSS transform**: `el.setAttribute("transform", `rotate(${deg} ${cx} ${cy})`)`. The CSS combination `transform: rotate(...)` + `transform-origin: 60px 60px` + `transform-box: fill-box` interprets the origin in the element's OWN **bbox-local** coordinates, NOT viewBox coordinates. For a thin `<line>` (whose bbox is the line's narrow envelope), `60 60` bbox-local is a point OUTSIDE the line — the hand flies along an off-center arc instead of rotating in place. Same trap for small inner shapes (a dot circle whose bbox is the small circle, not the full viewBox).
+**For rotation around an explicit point inside an SVG, use the SVG `transform` ATTRIBUTE, not CSS transform**: `el.setAttribute("transform", `rotate(${deg} ${cx} ${cy})`)`. The CSS combination `transform: rotate(...)` + `transform-origin: 60px 60px` + `transform-box: fill-box` interprets the origin in the element's OWN **bbox-local** coordinates, NOT viewBox coordinates. For a thin `<line>` (whose bbox is the line's narrow envelope), `60 60` bbox-local is a point OUTSIDE the line - the hand flies along an off-center arc instead of rotating in place. Same trap for small inner shapes (a dot circle whose bbox is the small circle, not the full viewBox).
 
-**Scaling around a center point**: same attribute route — `el.setAttribute("transform", `translate(${cx} ${cy}) scale(${s}) translate(-${cx} -${cy})`)`.
+**Scaling around a center point**: same attribute route - `el.setAttribute("transform", `translate(${cx} ${cy}) scale(${s}) translate(-${cx} -${cy})`)`.
 
 ## Recipe
 
 ```html
-<!-- inside a standard scene clip — named children are the animation targets -->
+<!-- inside a standard scene clip - named children are the animation targets -->
 <svg class="icon-svg" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
   <circle cx="60" cy="60" r="50" fill="none" stroke="{accentColor}" stroke-width="6" />
   <line
@@ -56,7 +56,7 @@ Four signature patterns:
 ```
 
 ```js
-// Pattern 1 — Rotation. Proxy tween → SVG transform attribute (explicit center, see gotcha).
+// Pattern 1 - Rotation. Proxy tween → SVG transform attribute (explicit center, see gotcha).
 const hand = document.getElementById("hand-min");
 const minState = { deg: 0 };
 tl.to(
@@ -71,7 +71,7 @@ tl.to(
 );
 // second hand: same shape with SEC_REVOLUTIONS (visibly faster).
 
-// Pattern 3 — Pulse. One phase proxy drives dot + ring, ring offset by π/2.
+// Pattern 3 - Pulse. One phase proxy drives dot + ring, ring offset by π/2.
 const dot = document.getElementById("rec-dot");
 const ring = document.getElementById("rec-ring");
 const pulse = { p: 0 };
@@ -94,7 +94,7 @@ tl.to(
   0,
 );
 
-// Pattern 4 — Dash flow. Linear offset tween on a dashed stroke.
+// Pattern 4 - Dash flow. Linear offset tween on a dashed stroke.
 const flowState = { offset: 0 };
 tl.to(
   flowState,
@@ -112,8 +112,8 @@ tl.to(
 
 ## Variations
 
-- **Stroke draw → enrichment chain** — draw the outline first via [svg-path-draw](svg-path-draw.md) (phase 1, `0 → OUTLINE_DUR`), then start enrichment at `OUTLINE_DUR`: the icon "wakes up" after assembly.
-- **Per-icon entry stagger** — for a row of icons, each icon's enrichment starts as it fades in, not synchronized.
+- **Stroke draw → enrichment chain** - draw the outline first via [svg-path-draw](svg-path-draw.md) (phase 1, `0 → OUTLINE_DUR`), then start enrichment at `OUTLINE_DUR`: the icon "wakes up" after assembly.
+- **Per-icon entry stagger** - for a row of icons, each icon's enrichment starts as it fades in, not synchronized.
 
 ## Values
 
@@ -129,12 +129,12 @@ tl.to(
 
 ## Critical Constraints
 
-- **The transform-center gotcha above** — SVG `transform` attribute for any rotation/scale around an explicit interior point; never CSS `transform-origin` + `transform-box: fill-box` on thin lines or small inner shapes.
-- **No `requestAnimationFrame`** — like CSS animation, it desyncs from HF's frame-by-frame seek; continuous motion lives inside the timeline as linear proxy tweens.
-- **Amplitudes subtle** — icons are decorative, not headlines; calibrate rotation speed against composition length, not absolute time.
-- **Phase-offset the parts** — minute vs second hand at different speeds, ring lagging dot by π/2. Pure sync looks mechanical.
+- **The transform-center gotcha above** - SVG `transform` attribute for any rotation/scale around an explicit interior point; never CSS `transform-origin` + `transform-box: fill-box` on thin lines or small inner shapes.
+- **No `requestAnimationFrame`** - like CSS animation, it desyncs from HF's frame-by-frame seek; continuous motion lives inside the timeline as linear proxy tweens.
+- **Amplitudes subtle** - icons are decorative, not headlines; calibrate rotation speed against composition length, not absolute time.
+- **Phase-offset the parts** - minute vs second hand at different speeds, ring lagging dot by π/2. Pure sync looks mechanical.
 - **`stroke-linecap: round`** on flowing/dashed lines for clean dash edges.
-- **Climax dwell ≥1s** — if the enrichment is the headline beat, the composition continues ≥1s after the most dramatic moment.
+- **Climax dwell ≥1s** - if the enrichment is the headline beat, the composition continues ≥1s after the most dramatic moment.
 
 ## See also
 

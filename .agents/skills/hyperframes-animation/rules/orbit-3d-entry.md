@@ -7,11 +7,11 @@ metadata:
 
 # Orbit with 3D Entry
 
-Elements flip in from 3D space (`rotateX` + `rotateY` + negative `z`) then settle into a continuous elliptical orbit around a center label. Distinct from one-shot reveals — the orbit keeps running, driven by a 0→1 progress tween INSIDE the timeline (never rAF).
+Elements flip in from 3D space (`rotateX` + `rotateY` + negative `z`) then settle into a continuous elliptical orbit around a center label. Distinct from one-shot reveals - the orbit keeps running, driven by a 0→1 progress tween INSIDE the timeline (never rAF).
 
 ## How It Works
 
-Per element, two phases: (1) a `back.out` flip from a hidden 3D orientation to flat — **in place at its orbital starting position** (see Critical Constraints); (2) a continuous orbit where `onUpdate` computes `x/y` from `cos/sin(initialAngle + p·2π)` on the ellipse. The stage needs `perspective` on the scene root and `preserve-3d` on stage + items, or the flip flattens to a 2D scale.
+Per element, two phases: (1) a `back.out` flip from a hidden 3D orientation to flat - **in place at its orbital starting position** (see Critical Constraints); (2) a continuous orbit where `onUpdate` computes `x/y` from `cos/sin(initialAngle + p·2π)` on the ellipse. The stage needs `perspective` on the scene root and `preserve-3d` on stage + items, or the flip flattens to a 2D scale.
 
 ## Recipe
 
@@ -60,7 +60,7 @@ items.forEach((el, i) => {
   const startX = Math.cos(a0) * RADIUS_X;
   const startY = Math.sin(a0) * RADIUS_Y;
 
-  // 1) Park at the orbital position, hidden — BEFORE any tween fires
+  // 1) Park at the orbital position, hidden - BEFORE any tween fires
   gsap.set(el, {
     xPercent: -50,
     yPercent: -50,
@@ -73,7 +73,7 @@ items.forEach((el, i) => {
     scale: SCALE_FROM,
   });
 
-  // 2) Flip in IN PLACE — rotation/opacity/scale only, never translate
+  // 2) Flip in IN PLACE - rotation/opacity/scale only, never translate
   tl.to(
     el,
     {
@@ -88,7 +88,7 @@ items.forEach((el, i) => {
     i * STAGGER,
   );
 
-  // 3) Continuous orbit — each item gets its OWN progress tween (own initialAngle)
+  // 3) Continuous orbit - each item gets its OWN progress tween (own initialAngle)
   const orbit = { p: 0 };
   tl.to(
     orbit,
@@ -100,7 +100,7 @@ items.forEach((el, i) => {
         const a = a0 + orbit.p * Math.PI * 2;
         const x = Math.cos(a) * RADIUS_X;
         const y = Math.sin(a) * RADIUS_Y;
-        // capped z-index band [1, 50] — see center-label clearance below
+        // capped z-index band [1, 50] - see center-label clearance below
         el.style.zIndex = String(1 + Math.round(((y + RADIUS_Y) / (2 * RADIUS_Y)) * 49));
         el.style.transform = `translate(-50%, -50%) translate(${x}px, ${y}px)`;
       },
@@ -118,15 +118,15 @@ tl.from(
 
 ## Variations
 
-- **Collapse to center**: a final 1→0 driver multiplies both radii (and item scale) in `onUpdate` — the ring condenses into the center element; pairs with a CTA "click" igniting the collapse.
-- **Tilted orbit plane**: `rotateX(25deg)` on `.orbit-stage` — items visibly arc through the plane.
+- **Collapse to center**: a final 1→0 driver multiplies both radii (and item scale) in `onUpdate` - the ring condenses into the center element; pairs with a CTA "click" igniting the collapse.
+- **Tilted orbit plane**: `rotateX(25deg)` on `.orbit-stage` - items visibly arc through the plane.
 
 ## Values
 
 | token                   | range                         | notes                                                               |
 | ----------------------- | ----------------------------- | ------------------------------------------------------------------- |
 | RADIUS_X                | 300–900px                     | must also clear the center label horizontally (see below)           |
-| Y_TO_X_RATIO            | 0.4–0.7                       | keep < 1 — a tilted ring, not a frontal halo                        |
+| Y_TO_X_RATIO            | 0.4–0.7                       | keep < 1 - a tilted ring, not a frontal halo                        |
 | ORBIT_DURATION          | 4–25s per revolution          | ≥ time on screen, or the tween ends and items freeze                |
 | ENTRY_DUR               | 0.4–0.8s                      |                                                                     |
 | STAGGER                 | 0.06–0.12s                    | below reads "popcorn", above reads plodding                         |
@@ -138,10 +138,10 @@ tl.from(
 
 ## Critical Constraints
 
-- **❗ Entry must flip IN PLACE at the orbital position, NOT at center** — `gsap.set` each item at `(cos(a0)·RADIUS_X, sin(a0)·RADIUS_Y)` with `opacity: 0` BEFORE adding tweens, then phase 1 animates only rotation/opacity/scale. A fromTo that keeps `x/y: 0` flips at the stage center, collides with the center label, then teleports to the orbit when phase 2 starts.
-- **❗ Center-label clearance** — `z-index` alone is unreliable inside `preserve-3d` (paint order follows actual Z): push the label forward with `translateZ(220px)` + `z-index: 9999`, cap item z-index to `[1, 50]`, AND size the ring so items clear the label horizontally at every angle: `RADIUS_X × min|cos(θ)| ≥ L_w + I_w + breathing_room` (label/item half-widths; for 6 items the worst case is `cos(30°) ≈ 0.866`). A heavier wordmark needs a wider ring.
-- **Each item gets its OWN orbit tween** — a shared `targets: ".orbit-item"` tween can't carry per-item `initialAngle`.
-- **The center element is the headline** — the orbit is ornament; if it dominates, grow the center or fade the items down.
+- **❗ Entry must flip IN PLACE at the orbital position, NOT at center** - `gsap.set` each item at `(cos(a0)·RADIUS_X, sin(a0)·RADIUS_Y)` with `opacity: 0` BEFORE adding tweens, then phase 1 animates only rotation/opacity/scale. A fromTo that keeps `x/y: 0` flips at the stage center, collides with the center label, then teleports to the orbit when phase 2 starts.
+- **❗ Center-label clearance** - `z-index` alone is unreliable inside `preserve-3d` (paint order follows actual Z): push the label forward with `translateZ(220px)` + `z-index: 9999`, cap item z-index to `[1, 50]`, AND size the ring so items clear the label horizontally at every angle: `RADIUS_X × min|cos(θ)| ≥ L_w + I_w + breathing_room` (label/item half-widths; for 6 items the worst case is `cos(30°) ≈ 0.866`). A heavier wordmark needs a wider ring.
+- **Each item gets its OWN orbit tween** - a shared `targets: ".orbit-item"` tween can't carry per-item `initialAngle`.
+- **The center element is the headline** - the orbit is ornament; if it dominates, grow the center or fade the items down.
 
 ## See also
 

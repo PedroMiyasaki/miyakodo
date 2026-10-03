@@ -22,7 +22,7 @@ Não faça perguntas antes de salvar.
 ## Passo 1 · Pegar as observações
 
 Elas costumam vir junto com a invocação ("/registrar-aprendizado o teleprompter estava longe demais").
-Se a invocação vier sem nada, pergunte uma vez: *"O que deu errado nessa sessão?"* — e siga.
+Se a invocação vier sem nada, pergunte uma vez: *"O que deu errado nessa sessão?"* - e siga.
 
 ## Passo 2 · Calcular o sábado da sessão
 

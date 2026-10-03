@@ -142,21 +142,21 @@ isso sozinho não for um artigo coerente, as headlines são rótulos. Reescreva.
 **Formato de saída:**
 
 ```
-SLIDE 1 — COVER
+SLIDE 1 - COVER
 Headline: [a unidade + o ganho]
 Sub: [opcional, 1 linha]
 
-SLIDE 2 — [função]
+SLIDE 2 - [função]
 Headline: [a conclusão, frase completa]
 Body: [o apoio]
 Proof: [número / artefato / coisa com nome / cena, se tiver]
 
 ...
 
-SLIDE N-1 — REFRAME
+SLIDE N-1 - REFRAME
 Headline: [a que a lista chega no fim]
 
-SLIDE N — CTA
+SLIDE N - CTA
 Headline: [o pedido]
 Action: [a palavra, ou a pergunta]
 ```

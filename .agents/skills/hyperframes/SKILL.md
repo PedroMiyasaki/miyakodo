@@ -14,7 +14,7 @@ description: >
 
 # HyperFrames entry point
 
-HyperFrames **renders video from HTML** — a composition is an HTML file whose DOM declares timing with `data-*` attributes, whose animation runtime is seekable, and whose media playback is owned by the framework. The full authoring contract lives in `/hyperframes-core`; read it before writing composition HTML. Brief, storyboard, review, production, dispatch, and frame-worker contracts live in this skill's `references/`.
+HyperFrames **renders video from HTML** - a composition is an HTML file whose DOM declares timing with `data-*` attributes, whose animation runtime is seekable, and whose media playback is owned by the framework. The full authoring contract lives in `/hyperframes-core`; read it before writing composition HTML. Brief, storyboard, review, production, dispatch, and frame-worker contracts live in this skill's `references/`.
 
 ## 1. Start from project state
 
@@ -27,7 +27,7 @@ Apply the first matching row; do not evaluate lower state rows:
 | Specific edit to an existing project                                                                                          | Make the edit. Do not run the intent layer. To know what is on a project's timeline (tracks, clips, starts, ends, what plays), run `npx hyperframes timeline [--json]` instead of reading `index.html` and every sub-composition file. |
 | `BRIEF.md` exists                                                                                                             | Read `workflow` and `flow`. Execute that workflow; `flow: companion` always executes in `/general-video`. Ask no brief questions.                                                                                                      |
 | No brief, but `hyperframes.json` or `STORYBOARD.md` exists                                                                    | Resume from project files and recorded preferences. Infer the owning workflow from existing artifacts. If it cannot be determined uniquely, ask one routing-only question; do not run the intent interview.                            |
-| Fresh creation                                                                                                                | Run the intent layer — `references/intent-interview.md` — then route once using § 2's table.                                                                                                                                           |
+| Fresh creation                                                                                                                | Run the intent layer - `references/intent-interview.md` - then route once using § 2's table.                                                                                                                                           |
 
 <!-- history (trial): remove this block together with the command -->
 
@@ -35,7 +35,7 @@ When you edit an existing project, bracket your edits with project history (`/hy
 
 <!-- /history (trial) -->
 
-If a fresh request does not identify the subject or input, ask what the video is about before routing. Check preferences and recipes before asking anything (`references/intent-interview.md`, step 1). A `figma.com` input or a named recipe changes intake, not routing — the interview's "Adapt orthogonal inputs" section handles both.
+If a fresh request does not identify the subject or input, ask what the video is about before routing. Check preferences and recipes before asking anything (`references/intent-interview.md`, step 1). A `figma.com` input or a named recipe changes intake, not routing - the interview's "Adapt orthogonal inputs" section handles both.
 
 ### Keep the project's CLI current
 
@@ -45,7 +45,7 @@ A scaffolded project pins `hyperframes@<version>` in its `package.json` scripts 
 npx hyperframes@latest upgrade --project . --check
 ```
 
-The probe is read-only and reports the pin against the latest release; keep the explicit `.` — on older CLI releases a bare `--project` followed by another flag consumes that flag as its directory value. When it reports the project behind — or any CLI output already shows it (the stderr notice `This project pins hyperframes@… (latest …)`, or `_meta.updateAvailable: true` in a `--json` result from a pinned script) — apply with `npx hyperframes@latest upgrade --project .`, then verify with `npx hyperframes check`. A passing check confirms the project's compositions still validate on the new version — not that rendered output is frame-identical to the old pin — so a successful bump is never silent: name the old and new version in the run's summary. A project with no composition yet needs no verification. If the check fails, revert the `package.json` change, continue on the pinned version, and report which version the project stays on and why. Act on the signal rather than relaying it to the user; never leave a bumped pin unverified.
+The probe is read-only and reports the pin against the latest release; keep the explicit `.` - on older CLI releases a bare `--project` followed by another flag consumes that flag as its directory value. When it reports the project behind - or any CLI output already shows it (the stderr notice `This project pins hyperframes@… (latest …)`, or `_meta.updateAvailable: true` in a `--json` result from a pinned script) - apply with `npx hyperframes@latest upgrade --project .`, then verify with `npx hyperframes check`. A passing check confirms the project's compositions still validate on the new version - not that rendered output is frame-identical to the old pin - so a successful bump is never silent: name the old and new version in the run's summary. A project with no composition yet needs no verification. If the check fails, revert the `package.json` change, continue on the pinned version, and report which version the project stays on and why. Act on the signal rather than relaying it to the user; never leave a bumped pin unverified.
 
 ## 2. Route fresh creation
 
@@ -64,7 +64,7 @@ Use the first matching row. Match the requested **deliverable**, not a word or f
 | 9        | Explain a topic, article, or notes with invented visuals and no product or site capture                            | `/faceless-explainer`      |
 | 10       | Any other custom video or composition                                                                              | `/general-video`           |
 
-Before finalizing the route, read `references/routes/<workflow>.md` — one small file per route: the canonical input/output/trigger contract (available before lazy-installed workflow skills are present) plus that route's interview entry. If the candidate does not satisfy its contract, continue routing instead of forcing the match. Read only the matched route's file.
+Before finalizing the route, read `references/routes/<workflow>.md` - one small file per route: the canonical input/output/trigger contract (available before lazy-installed workflow skills are present) plus that route's interview entry. If the candidate does not satisfy its contract, continue routing instead of forcing the match. Read only the matched route's file.
 
 ### Resolve common ambiguities
 
@@ -77,7 +77,7 @@ Before finalizing the route, read `references/routes/<workflow>.md` — one smal
 
 ## 3. Route once, then leave
 
-For fresh creation the intent layer (`references/intent-interview.md`) runs the full conversation — memory, triage, pitch round, must-haves, run-shape, hand-off — and **ends by writing `BRIEF.md`. The brief is the only routing artifact the workflow reads**; nothing later re-opens this skill or the interview. Answer every later "what did the route require?" from `BRIEF.md`.
+For fresh creation the intent layer (`references/intent-interview.md`) runs the full conversation - memory, triage, pitch round, must-haves, run-shape, hand-off - and **ends by writing `BRIEF.md`. The brief is the only routing artifact the workflow reads**; nothing later re-opens this skill or the interview. Answer every later "what did the route require?" from `BRIEF.md`.
 
 ## 4. Install and enter the workflow
 
@@ -87,7 +87,7 @@ Before reading the selected workflow, install or refresh it and the core domain 
 npx hyperframes skills update <workflow-name>
 ```
 
-Use the bare name without `/`. If the command fails, surface the error; do not reconstruct the workflow from memory. Everything else about installation — the core-vs-lazy split, what `init` refreshes, diagnosis, CI opt-out, and the no-CLI fallback — lives in `references/skill-lifecycle.md`.
+Use the bare name without `/`. If the command fails, surface the error; do not reconstruct the workflow from memory. Everything else about installation - the core-vs-lazy split, what `init` refreshes, diagnosis, CI opt-out, and the no-CLI fallback - lives in `references/skill-lifecycle.md`.
 
 ## 5. Load domain skills on demand
 
@@ -101,7 +101,7 @@ Use the bare name without `/`. If the command fails, surface the error; do not r
 | Voiceover carve, audio effect chains, automation envelopes, or one chain/fader across several tracks (submix bus)                           | `/hyperframes-audio`     |
 | Init, lint, check, snapshots, compare, batch render, Studio, render, publish, or diagnostics                                                | `/hyperframes-cli`       |
 | Registry blocks and components                                                                                                              | `/hyperframes-registry`  |
-| A named look, effect, treatment, or transition — CRT scanlines, glitch, film grain, shimmer sweep, confetti burst — BEFORE hand-building it | `/hyperframes-registry`  |
+| A named look, effect, treatment, or transition - CRT scanlines, glitch, film grain, shimmer sweep, confetti burst - BEFORE hand-building it | `/hyperframes-registry`  |
 | Figma assets, tokens, components, or storyboard frames as reconstructed motion                                                              | `/figma`                 |
 
 Creator edit phrases are cross-domain requests. Load every skill named in the matching row:
@@ -111,7 +111,7 @@ Creator edit phrases are cross-domain requests. Load every skill named in the ma
 | “cut this footage”, hard cut, trim, splice, reorder, or use a source range                                         | `/general-video` + `/hyperframes-core`; core owns `data-start`, `data-duration`, `data-media-start`, and track layout.                                                            |
 | zoom in here, punch-in / punch-out, smooth multi-state zoom or reframe, Ken Burns, or camera move                  | `/general-video` + `/hyperframes-core` + `/hyperframes-keyframes`; animate the inner visual/crop wrapper, not the timed clip.                                                     |
 | match cut or whip pan camera transition                                                                            | `/general-video` + `/hyperframes-animation` + `/hyperframes-keyframes` + `/hyperframes-registry`; search/install a transition primitive before hand-authoring.                    |
-| fade, crossfade, track gain/volume, automation, duck/carve, audio effects, or one effect across several tracks     | `/general-video` + `/hyperframes-core` + `/hyperframes-audio`; core places clips, audio mixes placed tracks — including a submix bus over a group of them.                        |
+| fade, crossfade, track gain/volume, automation, duck/carve, audio effects, or one effect across several tracks     | `/general-video` + `/hyperframes-core` + `/hyperframes-audio`; core places clips, audio mixes placed tracks - including a submix bus over a group of them.                        |
 | picture and sound edits that combine cuts with camera motion or mixing                                             | `/general-video` + `/hyperframes-core` + `/hyperframes-keyframes` when there is visual motion + `/hyperframes-audio` when sound is faded, mixed, ducked, automated, or processed. |
 | lay out a project so it reads well in Studio: caption track, tracks per element kind, sub-compositions, safe zones | `/hyperframes-studio` + `/hyperframes-core`; studio owns the layout conventions, core owns each edit.                                                                             |
 | source or generate media, or preprocess an unsupported mid-source freeze                                           | `/media-use`; sourcing/generation/preprocessing only, never placed-track mixing.                                                                                                  |
