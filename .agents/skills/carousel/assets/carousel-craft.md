@@ -177,8 +177,7 @@ antes" vira marcação para um colega. Ninguém marca alguém numa abstração.
 
 **Faça a ressalva às claras.** O `okaashish` escreve "**I did not verify, though**" e "**Not
 verified**" direto nos slides. A honestidade dá autoridade: soa como alguém que foi mesmo até a
-fonte, não como alguém vendendo a conclusão. Isso bate com `base.md` § 6: nomeie a fonte,
-dê a data, ou derrube a afirmação.
+fonte, não como alguém vendendo a conclusão. Nomeie a fonte, dê a data, ou derrube a afirmação.
 
 ---
 
@@ -321,7 +320,7 @@ Nunca corte: a capa, a virada, o CTA, nem o slide que carrega a prova mais forte
 - [ ] Afirmação não verificada está marcada como não verificada
 - [ ] O penúltimo slide faz a virada da peça
 - [ ] Último slide: uma palavra para comentar, ou uma pergunta com resposta óbvia
-- [ ] Passa em `docs/voice/base.md`
+- [ ] Sem inflação nem jargão sem tradução; soa como o usuário falando
 
 **Design**
 - [ ] Todos os slots de identidade preenchidos e declarados uma vez

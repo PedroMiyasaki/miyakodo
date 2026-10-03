@@ -67,14 +67,7 @@ Material perecível é bem-vindo aqui, e muitas vezes é o melhor assunto dispon
 
 ## Referências obrigatórias
 
-**A voz, em toda rodada:**
-
-| Documento | Por quê |
-|---|---|
-| `docs/voice/base.md` | A voz base de toda peça, em todo formato. Piso inegociável. |
-| `docs/voice/layers/sincere-senior.md` | O registro: engenheiro sênior, posição primeiro, o autor exposto. Layer padrão para artigos do Substack, assim como para posts de LinkedIn. Onde ela discorda da base no registro, a layer ganha; as regras anti-slop da base continuam valendo. |
-
-Se o usuário nomear outra layer, leia ela também em `docs/voice/layers/` e deixe ela ganhar das duas.
+**A voz, em toda rodada:** escreva como o usuário fala e pensa — posição primeiro, autor exposto, opinião com referente concreto. Sem jargão sem tradução, sem inflação.
 
 **O que já existe sobre esta tese, quando existe:**
 
@@ -139,7 +132,7 @@ Se o "cortado por tempo" for magro, o assunto é magro. Diga isso e proponha out
 
 ## Passo 3 · Calibração de voz
 
-Leia os dois documentos de voz e as fontes de calibração em **Referências obrigatórias**. Os documentos declaram as regras; os exemplos mostram como essas regras ficam numa página.
+Leia as fontes de calibração em **Referências obrigatórias**: os exemplos mostram como a voz fica numa página.
 
 ## Passo 4 · Planejar: espinha, depois outline, depois shot list
 
@@ -281,9 +274,9 @@ O Substack renderiza markdown, que é o oposto da restrição do LinkedIn. Use, 
 - Tabelas, quando duas coisas ficam no mesmo eixo e a comparação é o ponto
 - Blockquote para uma linha de log real, trecho de trace, mensagem de erro ou fonte citada
 - Links inline, **pelo menos três verificáveis**: o paper, o repositório, a página da documentação, o benchmark
-- `**negrito**` com parcimônia, conforme `base.md` § 5, *Negrito*: para um termo sendo definido, não para uma frase de que você gostou
+- `**negrito**` com parcimônia: para um termo sendo definido, não para uma frase de que você gostou
 
-As regras de parágrafo de `base.md` § 5 e § 7 valem e importam mais neste tamanho: de três a seis frases ligadas por conectivos reais, o parágrafo de uma frase só guardado como beat raro. A rolagem de uma frase por linha é artefato de feed; num email, soa como alguém sem nada para dizer.
+Parágrafos desenvolvem uma ideia em algumas frases ligadas por conectivos reais; o parágrafo de uma frase só é beat raro. A rolagem de uma frase por linha é artefato de feed; num email, soa como alguém sem nada para dizer.
 
 **Antecipe uma objeção real e responda.** Neste tamanho, um leitor que discorda tem tempo de montar o contra-argumento. Chegue antes, formule com justiça e diga o que mudaria a sua opinião.
 

@@ -38,16 +38,14 @@ Leia antes de escrever qualquer post de LinkedIn:
 
 `examples/` guarda dois posts reais de LinkedIn que funcionaram: `assinatura_cc.md` e `hype_ia.md`. **O assunto deles é irrelevante** e nenhum dos dois é sobre a ideia que você está escrevendo. Eles estão ali para uma coisa só: calibrar como um post de LinkedIn humano, com autoridade e compartilhável fica na página. Leia os dois.
 
-O que eles mostram em conjunto, e onde cada regra está escrita hoje:
+O que eles mostram em conjunto:
 
-| O que os exemplos fazem | Escrito em |
-|---|---|
-| Parágrafos de 3 a 6 frases encadeadas, parágrafo de uma frase usado como beat raro | `base.md` § 5, *Densidade de parágrafo* |
-| Frases dentro do parágrafo ligadas por conectivos de verdade | `base.md` § 7 |
-| Repetição usada como figura audível que cresce e para | `base.md` § 5, *Repetição deliberada* |
-| Um nome próprio ou um número a cada duas ou três frases | `sincere-senior.md`, *Concretude* |
-| A decisão, o preço ou o dado próprio do autor em jogo | `sincere-senior.md`, *Skin in the game* |
-| Sem hashtag, sem CTA de engajamento | Passo 5 abaixo |
+- Parágrafos de algumas frases encadeadas, parágrafo de uma frase usado como beat raro
+- Frases dentro do parágrafo ligadas por conectivos de verdade
+- Repetição usada como figura audível que cresce e para
+- Um nome próprio ou um número a cada duas ou três frases
+- A decisão, o preço ou o dado próprio do autor em jogo
+- Sem hashtag, sem CTA de engajamento (Passo 5 abaixo)
 
 ---
 
@@ -95,13 +93,9 @@ Defina também a ACP Phase.
 
 ### Passo 3 · Calibração de voz
 
-A voz mora em `docs/voice/`. Leia `docs/voice/base.md`: é a voz base de toda peça, em todo formato.
+Escreva como o usuário fala e pensa: posição primeiro, autor exposto, opinião com referente concreto. Sem jargão sem tradução, sem inflação.
 
-Depois leia `docs/voice/layers/sincere-senior.md`. É a **layer padrão de todo post de LinkedIn**: o registro de engenheiro sênior, o formato do argumento e as regras de honestidade que fazem o post soar como o usuário. Leia em toda rodada, sem que peçam. Onde ela discorda da base em registro, a layer ganha. As regras anti-slop da base continuam valendo.
-
-Se o usuário nomear outra layer, leia essa também em `docs/voice/layers/`: ela ganha das outras duas.
-
-Depois leia os posts em `examples/`. Os dois documentos de voz enunciam as regras. Os exemplos são o que as regras produzem numa página, e a distância entre ler uma regra sobre densidade de parágrafo e ver uma aplicada é a maior parte da calibração. Ignore o assunto deles.
+Depois leia os posts em `examples/`. Os exemplos são a calibração: a distância entre ler uma regra sobre densidade de parágrafo e ver uma aplicada é a maior parte do trabalho. Ignore o assunto deles.
 
 Não existe documento de audiência nem de pilar: se a peça precisar de um leitor-alvo ou de um ângulo, pergunte ao usuário.
 
@@ -122,13 +116,13 @@ Se a ideia cabe bem num post curto, não estique. Se a ideia precisa de um desen
 
 #### Formatação nativa do LinkedIn
 
-O LinkedIn renderiza quebra de linha como espaço visual, e a tentação é usar esse espaço em toda frase. Não use. **Aqui, parágrafo é unidade de pensamento, não unidade de exibição.** A maioria tem de três a seis frases que desenvolvem uma ideia, ligadas por conectivos de verdade, conforme `base.md` § 5 e § 7. O parágrafo de uma frase é um beat: funciona porque é raro, e dois ou três deles num post é o teto.
+O LinkedIn renderiza quebra de linha como espaço visual, e a tentação é usar esse espaço em toda frase. Não use. **Aqui, parágrafo é unidade de pensamento, não unidade de exibição.** A maioria tem de três a seis frases que desenvolvem uma ideia, ligadas por conectivos de verdade. O parágrafo de uma frase é um beat: funciona porque é raro, e dois ou três deles num post é o teto.
 
 O defeito que isso substitui é específico e é o mais comum do formato: frases corretas empilhadas uma por linha, todas com o mesmo peso, nada construindo, nenhum sinal de qual ideia sustenta o resto. Lê como feed de teleprompter. Os dois posts em `examples/` evitam isso, inclusive o que é pura polêmica.
 
 Varie o tamanho dos parágrafos de propósito. Um que tem seis frases, depois um que tem duas, depois um fragmento: isso é a cara de gente escrevendo.
 
-**Uma lista curta com hífen é permitida** quando os itens são de fato paralelos e curtos (três famílias de solver, três motivos). Um dos posts de referência usa uma. O que fica de fora é a lista de cabeçalho inline que `base.md` § 5 proíbe, `- **Velocidade:** o sistema é mais rápido`: decoração fingindo ser estrutura.
+**Uma lista curta com hífen é permitida** quando os itens são de fato paralelos e curtos (três famílias de solver, três motivos). Um dos posts de referência usa uma. O que fica de fora é a lista de cabeçalho inline, `- **Velocidade:** o sistema é mais rápido`: decoração fingindo ser estrutura.
 
 **Sem markdown**: o LinkedIn não renderiza `**negrito**`, `_itálico_` nem `# headings`. Use quebras de linha e estrutura verbal para criar hierarquia visual. Símbolos funcionais (→, •) são aceitáveis como marcadores de lista. Emojis decorativos (🚀, 🔥, 💡) são proibidos.
 

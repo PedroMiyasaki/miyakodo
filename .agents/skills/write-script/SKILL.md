@@ -49,8 +49,7 @@ Se o usuário nomear outro público para a peça, siga o público que ele nomeou
 
 | Fonte                                                                              | O que procurar                                                                                                                                |
 | ---------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Ideas** · `e2970ca3-7724-4a81-8f12-7ea34c048c67` (ID do data source, via Notion) | A ideia de origem do roteiro                                                                                                                  |
-| `docs/voice/base.md`                                                               | A voz base de toda peça. Se o usuário nomear uma layer, leia também `docs/voice/layers/<layer>.md`: ela ganha da base onde as duas discordam. |
+| **Ideas** · `e2970ca3-7724-4a81-8f12-7ea34c048c67` (ID do data source, via Notion) | A ideia de origem do roteiro |
 
 
 Não existe documento de audiência nem de pilar. O espectador do Reel está definido acima. Se a peça pedir outro leitor, ou um ângulo que você não consegue achar, pergunte ao usuário.
@@ -87,7 +86,7 @@ Abra a linha correspondente no banco Ideas e leia tudo que estiver disponível: 
 
 ### Passo 3 · Calibrar a voz
 
-Leia `docs/voice/base.md` antes de escrever, e a layer que o usuário nomear, se nomear. Roteiro de Reel é fala transcrita: é o registro mais solto que a base aceita. Leia também a seção **Calibração**, no fim desta skill: ela mostra um roteiro aprovado e as correções reais que o usuário fez em primeiras versões.
+Roteiro de Reel é fala transcrita: escreva como o usuário fala — direto, sem inflação, sem jargão sem tradução. Leia também a seção **Calibração**, no fim desta skill: ela mostra um roteiro aprovado e as correções reais que o usuário fez em primeiras versões.
 
 ### Passo 4 · Planejar antes de escrever
 
@@ -120,7 +119,7 @@ Responda por escrito, em uma ou duas linhas cada:
   - Tem um mecanismo concreto, e não "a IA está mudando tudo".
   - Diz algo que o espectador não tiraria sozinho da notícia.
   - Traz um segundo exemplo, ou uma consequência com nome.
-  - Não sobrevive à troca de assunto: se ela serviria igual para qualquer outra notícia de IA, é genérica (`base.md`, o teste de ler em voz alta).
+  - Não sobrevive à troca de assunto: se ela serviria igual para qualquer outra notícia de IA, é genérica (teste de ler em voz alta).
    Quando existe sacada, ela vira o último degrau do roteiro, e a recompensa responde a pergunta do vídeo no nível dela.
 
 **O título da ideia é o assunto. O gancho nasce da pergunta do vídeo (item 3).**
@@ -228,7 +227,7 @@ Todo roteiro tem estes blocos, nesta ordem. Cada um tem um trabalho na curva de 
 
 Regras da espinha:
 
-- **Todo** `[DEGRAU]` **vem logo depois de uma** `[VIRADA]`**.** A virada é uma mudança de direção ("mas", "só que", "aí"), uma consequência ("então", "por isso") ou uma pergunta direta, sempre com referente concreto: "Só que a Nvidia avisou que a margem vai cair" abre um degrau, "E foi aí que tudo mudou" não abre nada (frase de guru, `base.md` § 8). Se a ligação natural entre dois degraus é "e também", o segundo é item de lista: junte os dois. A regra é dos criadores de South Park, e é ela que separa história de lista de fatos.
+- **Todo** `[DEGRAU]` **vem logo depois de uma** `[VIRADA]`**.** A virada é uma mudança de direção ("mas", "só que", "aí"), uma consequência ("então", "por isso") ou uma pergunta direta, sempre com referente concreto: "Só que a Nvidia avisou que a margem vai cair" abre um degrau, "E foi aí que tudo mudou" não abre nada (frase de guru: soa como aforismo mas não diz nada concreto). Se a ligação natural entre dois degraus é "e também", o segundo é item de lista: junte os dois. A regra é dos criadores de South Park, e é ela que separa história de lista de fatos.
 - **As viradas variam de forma:** uma é "mas", outra é pergunta, outra é "então". Três "só que" seguidos viram tique.
 - **Todo degrau carrega pelo menos um fato conferível:** um número traduzido, um nome, uma data, uma cena real. Explicação sem fato vira aula genérica, e é o fato que faz o engenheiro confiar e o curioso contar para alguém.
 - **Todo tópico acrescenta algo:** um fato, um porquê, uma analogia, um exemplo ou uma prova na tela. Tópico que repete o anterior sai.
@@ -269,7 +268,7 @@ O tamanho é o que a pergunta do vídeo precisa para ser respondida com clareza.
 
 #### A recompensa
 
-A recompensa responde a pergunta do vídeo no nível da sacada, quando ela existe, ou no nível da notícia, quando não existe. Ela precisa de referente: tente dizer a mesma coisa com outras palavras, e se não der, é frase de efeito (`base.md` § 8). Use uma destas quatro formas:
+A recompensa responde a pergunta do vídeo no nível da sacada, quando ela existe, ou no nível da notícia, quando não existe. Ela precisa de referente: tente dizer a mesma coisa com outras palavras, e se não der, é frase de efeito. Use uma destas quatro formas:
 
 - **Um teste de bolso,** que o espectador aplica na própria vida: "Caro, em texto, e conferível. Quem bate nos três está na fila."
 - **A revelação que fecha o gancho,** o número ou o fato que responde a pergunta: "A Sequoia entrou com cinco milhões e meio em 2024. Em maio a Enter valia um bilhão e duzentos."
@@ -540,7 +539,7 @@ Confira antes de apresentar. Se algum item falhar, conserte antes.
 - [ ] Um CTA só, escolhido pela recompensa, e o roteiro acaba nele.
 - [ ] A leitura fria rodou (no máximo duas vezes), e o que ela apontou foi consertado sem tirar o material mais forte.
 - [ ] Todo fato que não veio da ideia foi levado ao usuário nos pontos para conferir antes de gravar.
-- [ ] As frases literais passam em `docs/voice/base.md` e soam como o usuário falando.
+- [ ] As frases literais soam como o usuário falando.
 - [ ] Negrito em no máximo três lugares, só em bloco literal.
 - [ ] O rodapé tem a linha de gravação e, quando houver, as fontes dos inserts.
 

@@ -87,7 +87,7 @@ Defina também a ACP Phase.
 
 ### Passo 3 · Calibração de voz
 
-A voz mora em `docs/voice/`. Leia `docs/voice/base.md`: é a voz base de toda peça, em todo formato, e o padrão sempre que o usuário não nomeou uma layer. Se o usuário nomear uma layer, leia ela também em `docs/voice/layers/`: a layer ganha da base onde as duas discordam. Ainda não existe nenhuma layer, então hoje a base é a voz inteira.
+Escreva como o usuário fala: direto, sem inflação, sem jargão sem tradução. Se a peça pedir um leitor-alvo ou um ângulo, pergunte ao usuário.
 
 Não existe documento de audiência nem de pilar: se a peça precisar de um leitor-alvo ou de um ângulo, pergunte ao usuário.
 

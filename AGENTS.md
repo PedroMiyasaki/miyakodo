@@ -25,7 +25,7 @@ Na prática, isso quer dizer que não existe build, não existe suíte de testes
 
 **Estado atual: o repositório está em transição.** A marca antiga foi removida (documentos de estratégia, sistema visual e logos foram embora) e a direção nova, uma marca pessoal, ainda está sendo montada.
 
-Já reconstruído: a voz base (`docs/voice/base.md`), a cadência de fim de semana (`content-routines/default/`) e o sistema visual (`design/identity.md`). Ausência deliberada, não pendência: não existe documento de audiência nem documento de pilares de conteúdo. Os dois foram cortados para simplificar o processo. Se uma peça precisa de um leitor-alvo ou de um ângulo, pergunte ao usuário.
+Já reconstruído: a cadência de fim de semana (`content-routines/default/`) e o sistema visual (`design/identity.md`). Ausência deliberada, não pendência: não existe documento de audiência, de pilares de conteúdo nem de voz. Se uma peça precisa de um leitor-alvo ou de um ângulo, pergunte ao usuário.
 
 **Idioma.** O repositório trabalha em português do Brasil: skills, docs, este arquivo e a conversa. As peças publicadas (roteiro, carrossel, thread, post de LinkedIn, artigo de Substack) saem em português do Brasil. O schema do Notion (nomes de propriedades e valores) fica em inglês: o banco de ideias é um só.
 
@@ -43,7 +43,7 @@ Toda skill de produção de conteúdo carrega o mesmo passo de fechamento padron
 
 As skills são invocadas por comandos naturais em português (por exemplo "escreve o roteiro da última ideia", "faz um carrossel", "escreve um post pro LinkedIn"), **não** por slash commands. Leia `.agents/skills/<skill-name>/SKILL.md` (ver **Links locais** acima). Claude Code pode invocar pela ferramenta Skill.
 
-`writing-feedback` é a meta-skill: no fim de uma sessão de produção o usuário invoca ela para consolidar toda correção de tom e de escrita feita na conversa em regras permanentes na pasta de voz, `docs/voice/base.md` por padrão, ou uma layer nomeada em `docs/voice/layers/`.
+`writing-feedback` é a meta-skill: no fim de uma sessão de produção o usuário invoca ela para consolidar as correções de tom e de escrita feitas na conversa. (Os docs de voz foram removidos; a skill está pendente de redefinição.)
 
 ## Rotinas de conteúdo
 
@@ -61,11 +61,9 @@ Saída por semana: **5 reels (Instagram) + 3 posts técnicos de LinkedIn + 1 art
 
 **Ao editar esses arquivos, mantenha a divisão:** os dois arquivos de dia são checklists trabalhados de cima para baixo com as mãos ocupadas, então o raciocínio fica no README e só as decisões tomadas na hora ficam inline.
 
-## Calibração de voz
+## Voz
 
-A voz base de toda peça, em todo formato, é `docs/voice/base.md`. Leia antes de escrever. As layers que empilham por cima moram em `docs/voice/layers/`. Quando uma layer se aplica, ela ganha da base naquela peça.
-
-Deliberadamente **não existe documento de audiência nem documento de pilares de conteúdo**. Os dois foram cortados para simplificar o processo. Se uma peça precisa de um leitor-alvo ou de um ângulo, pergunte ao usuário. Não reconstrua um perfil de audiência a partir de conteúdo antigo.
+Deliberadamente **não existe documento de voz, de audiência nem de pilares de conteúdo**. Os três foram cortados para simplificar o processo e devolver heurística aos agentes: escreva como o usuário fala e pensa, sem tentar encaixar a peça num molde. Se uma peça precisa de um leitor-alvo ou de um ângulo, pergunte ao usuário. Não reconstrua um perfil de audiência a partir de conteúdo antigo.
 
 ## MCP do Notion: IDs críticos
 

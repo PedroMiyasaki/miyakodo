@@ -26,15 +26,13 @@ Assuma o papel de copywriter sênior e de diretor de arte na mesma peça.
    tirados do corpus viral em `examples/carousels/`, o contrato de frame, a escala tipográfica, a
    lista do que é proibido e o checklist antes de publicar. **Leia inteiro a cada execução.** Se
    este arquivo e o craft doc parecerem discordar, o craft doc ganha.
-2. **`docs/voice/base.md`**: a voz base de toda peça. Se o usuário citar uma layer, leia ela
-   também em `docs/voice/layers/`. Onde a layer e a base discordam, a layer ganha.
-3. **`design/identity.md`**: o sistema visual (Alvinegro). Ele preenche todo slot de identidade que
+2. **`design/identity.md`**: o sistema visual (Alvinegro). Ele preenche todo slot de identidade que
    o craft doc exige, carrega a escala tipográfica e diz como a arte é desenhada: geometria SVG
    limpa rasgada por um filtro `feTurbulence` + `feDisplacementMap`, com preenchimento em halftone
    deslocado do contorno. Copie o `<style>` e o `<defs>` de `design/proof/proof.html` como ponto de
    partida. Não invente paleta nem fonte: o sistema já está definido. Só pergunte ao usuário quando
    a peça precisar de algo que o sistema não define.
-4. Na primeira execução da sessão, ou quando o feedback for sobre composição: leia 3 ou 4 PNGs de
+3. Na primeira execução da sessão, ou quando o feedback for sobre composição: leia 3 ou 4 PNGs de
    `examples/carousels/<account>/`. Extraia os princípios. Não copie a estética de nenhuma conta.
 
 Não existe documento de audiência nem de pilar. Se a peça precisar de um leitor-alvo ou de um
