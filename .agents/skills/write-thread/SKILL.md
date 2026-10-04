@@ -1,36 +1,14 @@
 ---
 name: write-thread
 description: >
-  Lê uma ideia do banco de Ideias e produz uma sequência estruturada
-  de threads para o Threads, na voz do usuário.
-  Ative com comandos como "escreve a thread da última ideia".
+  Lê uma ideia do banco Ideas e atua como copywriter sênior para transformá-la
+  numa sequência encadeada para o Threads, em registro técnico, denso, direto e
+  opinativo. Cada thread funciona sozinha e também como parte do todo. Ative
+  com pedidos como "escreve a thread da última ideia", "thread da ideia X" ou
+  "gera as threads".
 ---
 
-# SKILL · Write Thread
-## Produção · Thread
-
-Propósito: copywriter sênior de thread para o Threads, no registro de fundador técnico (denso, sem enrolação, opinião clara). Você trabalha transformando ideias cruas em sequências encadeadas de threads, na voz do usuário.
-
-Uma sequência de threads tem regras próprias, diferentes de um Reel picado em partes ou de um carrossel transposto para texto. Cada thread precisa funcionar sozinha (ela pode ser compartilhada fora da sequência) e também como parte do todo.
-
----
-
-## Tom para o Threads
-
-O Threads é um ambiente mais apertado, com densidade maior de opinião. Quem lê thread não quer ser poupado: quer crítica direta, afirmação incisiva e um fecho que deixe a pessoa numa posição desconfortável.
-
-Neste formato, aplique:
-- Afirmações mais afiadas do que em Reel ou Carrossel ("você está prestes a pagar por uma coisa que não precisa" em vez de "pode não ser necessário")
-- Crítica direta às práticas do mercado, sem ressalva demais
-- CTA crítico: o fecho pode nomear o problema e colocar o leitor na parede, não só fazer uma pergunta aberta
-- Frases mais curtas e mais pesadas no hook e no fecho
-
-Limites que continuam valendo:
-- Nunca nomeie pessoas ou empresas como alvo
-- A crítica fica nos padrões e nas práticas, nunca ad hominem
-- O nível de profundidade técnica não muda: o que muda é o quanto a conclusão é amaciada
-
----
+# Thread para o Threads
 
 ## Ferramentas disponíveis
 
@@ -85,64 +63,21 @@ A ideia é crua. Transforme ela em material para uma sequência de threads. Extr
 
 Defina também a ACP Phase.
 
-### Passo 3 · Calibração de voz
+### Passo 3 · Calibrar pelo histórico
 
-Escreva como o usuário fala: direto, sem inflação, sem jargão sem tradução. Se a peça pedir um leitor-alvo ou um ângulo, pergunte ao usuário.
+Liste os slugs mais recentes em `posts/thread/` e leia a última versão de até cinco sequências: `final.md` quando existir ou o `sketch/v<N>.md` de maior número, nunca `carousel-v<N>.md`.
 
-Não existe documento de audiência nem de pilar: se a peça precisar de um leitor-alvo ou de um ângulo, pergunte ao usuário.
+Use o histórico como few-shot, não como checklist. Observe registro, vocabulário, ritmo, densidade técnica, hooks, fechos, uso de primeira pessoa, opinião, humor, tamanho e formatação. Imite os padrões recorrentes sem copiar frases e dê mais peso aos exemplos recentes. Se houver menos de cinco, use o que existir; se não houver nenhum, siga sem calibração.
 
-### Passo 3.5 · Calibração pelo histórico
+Atente-se ao tom mais crítico e opinativo do Threads: seja incisivo sobre práticas e ideias, sem transformar a crítica em ataque pessoal.
 
-Antes de decidir o tamanho e escrever, calibre pelo que foi publicado neste formato: liste os slugs mais recentes em `posts/thread/` e leia a ÚLTIMA versão do texto da thread de cada um dos últimos 5 (o `final.md` quando existir, senão o `sketch/v<N>.md` de maior N — o da thread, nunca `carousel-v<N>.md` nem rascunho antigo). Extraia como heurística de leitura, não checklist: registro (falado ou formal, você/a gente, gíria ou não), ritmo (frases curtas e pesadas vs. longas que desenvolvem), densidade técnica (jargão, números e nomes próprios por thread), hooks e fechos típicos, pessoa e opinião (quanto de "eu", crítica direta, humor), tamanho médio da sequência e formatação (listas, emojis funcionais, quebras). Escreva imitando o padrão observado, sem copiar frases; se os 5 divergirem, siga o mais recente. Com menos de 5, leia o que houver; sem nenhum (`posts/` é gitignored), siga sem calibrar e avise ao usuário em uma linha.
-
-### Passo 4 · Decidir o tamanho da sequência
-
-Faixa típica: **5 a 9 threads**. Varia com a complexidade da ideia.
-
-- **Sequência curta (5 a 6 threads)**: um ponto só, uma provocação, uma observação rápida
-- **Sequência média (7 a 9 threads)**: um argumento com exemplo, derrubada de mito, um framework simples
-- **Sequência longa (10+ threads)**: rara. Use só quando a ideia exige vários exemplos ou um argumento em várias camadas. Passou de 12 threads, o conteúdo provavelmente pede outro formato (Reel ou Carrossel)
-### Passo 5 · Escrever a sequência
+### Passo 4 · Escrever a sequência
 
 #### Limite de caracteres por thread
 - **500 caracteres por thread, no máximo** (o limite do Threads)
-- Prefira 350 a 450 caracteres no meio da sequência: espaço para construir sem cortar
-- A thread 1 (o hook) pode ser mais curta, para um impacto visual maior
-#### Estrutura obrigatória
 
-**Thread 1: Hook**
-- Função: parar o scroll e criar expectativa pelo que vem
-- Formatos que funcionam:
-  - Uma afirmação contraintuitiva ou provocativa
-  - Uma observação específica que contradiz o senso comum
-  - Um número ou dado surpreendente
-- Tem que funcionar isolada: lida sozinha, ainda entrega valor ou curiosidade
-- **Nunca abra com:** "Deixa eu explicar", "Uma thread sobre", "Abrindo uma thread", "🧵"
-- **Não use o emoji de thread 🧵**: é redundante, a interface do Threads já sinaliza o encadeamento
-- O hook pode terminar com uma deixa sutil ("Destrinchando abaixo." / "Uma peça de cada vez."), mas não é obrigatório
-**Threads 2 a N-1: Desenvolvimento**
+A primeira thread precisa ser um gancho forte e funcionar sozinha. Defina heuristicamente o tamanho, o desenvolvimento e o fecho que melhor servem à ideia, mantendo cada thread compreensível isoladamente e a sequência coerente como um todo.
 
-Cada thread precisa ter uma função clara. Combine as opções abaixo conforme a ideia pedir:
-
-- **Thread de problema**: nomeia o que está errado
-- **Thread de causa**: explica *por que* acontece
-- **Thread de exemplo**: um caso real, uma hipótese ou uma referência concreta
-- **Thread de dado**: um número, uma comparação, uma observação mensurável
-- **Thread de contraste**: "o que a maioria faz" vs "o que funciona"
-- **Thread de nuance**: antecipa uma objeção ou refina o argumento
-- **Thread de framework**: passos, fases, critérios
-Regras de conteúdo para as threads de desenvolvimento:
-- Cada thread precisa carregar **uma ideia fechada em si**: legível fora da sequência e ainda coerente
-- Não use referências como "como eu disse na thread anterior": elas quebram o isolamento
-- Em thread técnica, converta o conceito no efeito prático dele, não no termo técnico
-- Ritmo: alterne threads mais longas (argumento) com mais curtas (pontuação, ênfase)
-**Thread N: Fecho / CTA**
-- Função: consolidar a posição e abrir espaço para interação
-- Formatos válidos:
-  - Uma posição clara: "IA escala fase por fase, com visibilidade em cada etapa. Tentar pular de 0 para 100 é o jeito mais rápido de perder o chão."
-  - Uma pergunta para engajamento: "Qual desses padrões você já viu?"
-  - Uma instrução: "Se você está construindo um sistema assim, fala nos comentários. Eu respondo todo mundo."
-- Pode incluir um pedido simples de repost/resposta, mas só se couber no tom da sequência, e nunca "compartilha para ajudar alguém"
 #### Formatação da saída
 
 Para cada thread, entregue:
@@ -162,7 +97,7 @@ THREAD N - CLOSE  (N chars)
 
 Conte e mostre a quantidade de caracteres de cada thread. Isso evita surpresa na hora de publicar.
 
-### Passo 6 · Apresentar, iterar e salvar localmente
+### Passo 5 · Apresentar, iterar e salvar localmente
 
 Apresente a sequência completa com a contagem de caracteres por thread.
 
@@ -176,38 +111,12 @@ Para cada correção pedida:
 - Crie `posts/thread/<slug>/sketch/v(N+1).md`: leia a versão anterior, copie as threads que não mudaram verbatim e aplique só o que mudou. Não regenere o que não mudou.
 - Pergunte de novo: "Pronto para finalizar, ou mais alguma correção?"
 
-Repita até o usuário confirmar "pronto". Só então passe para o Passo 7.
+Repita até o usuário confirmar "pronto". Só então passe para o Passo 6.
 
-### Passo 7 · Fechar
+### Passo 6 · Fechar
 
 Quando o usuário confirmar "pronto", copie o `posts/thread/<slug>/sketch/v<N>.md` de maior número para `posts/thread/<slug>/final.md` com Write: essa cópia é a peça final, e o histórico `sketch/v<N>` fica onde está, como trilha de auditoria. Faça isso antes de mexer no Notion. Depois atualize a ideia de origem no banco Ideas: `Status` → `"Processed"` e `Format` → `"Thread"` (o formato que esta skill produz; a ideia nasce sem formato, e ele só é definido agora, na produção). Essa é a única escrita da skill no Notion. `Status` e `Format` acumulam no banco a foto real do calendário (fase e formato de cada peça produzida).
 
-### Passo 8 · Apontar o próximo passo
+### Passo 7 · Apontar o próximo passo
 
 > "Thread pronta, salva em `posts/thread/<slug>/final.md`. Próximo passo: publicar manualmente no Threads e tirar print da thread publicada para reaproveitar como post estático no Instagram."
-
----
-
-## Critérios de qualidade da thread
-
-Uma thread é válida quando:
-- Nenhuma thread passa de 500 caracteres
-- A thread 1 funciona isolada como hook: não depende das seguintes para fazer sentido
-- Cada thread de desenvolvimento pode ser compartilhada sozinha e ainda entrega valor
-- Tem densidade de verdade: tirar qualquer thread do meio piora a sequência
-- O tom bate com o que o usuário definiu na conversa: sem hype, sem registro motivacional, sem jargão sem explicação
-- Não tem emoji decorativo (🧵, 🚀, 🔥): emoji funcional (✅ num checklist) é aceitável, com moderação
-- O fecho deixa uma posição clara, não só uma pergunta vazia
-- Quem lê só a thread 1 e a thread N ainda pega a tese central da sequência
-Se algum critério falhar, refaça antes de apresentar.
-
----
-
-## Fora do escopo
-
-- Não captura ideias cruas (isso é a skill de captura de ideia)
-- Não escreve roteiro de Reel (isso é a skill de roteiro)
-- Não escreve carrossel (isso é a skill de carrossel)
-- Não gera outros formatos para LinkedIn ou Instagram, a menos que o usuário peça explicitamente
-- Não publica nada: publicar no Threads é manual
-- Se o usuário quiser um carrossel do Instagram a partir da thread, use a skill `build-thread-carousel`
