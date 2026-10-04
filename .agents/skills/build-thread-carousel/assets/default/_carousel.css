@@ -3,8 +3,8 @@
    Self-sufficient stylesheet: every value (color, typography) inline.
 
    Specific to carousels originating from an X thread (skill
-   build-thread-carousel). It keeps the X LAYOUT (circular avatar +
-   bold name + verified badge + bio) and the content VERTICALLY
+   build-thread-carousel). It keeps the X LAYOUT (bold name +
+   verified badge + bio) and the content VERTICALLY
    CENTERED - it is the layout, not the color, that makes it look
    like a tweet.
 
@@ -32,7 +32,7 @@
   /* Pure black + neutral grays (chroma 0). */
   --tw-ink:  oklch(0 0 0);      /* text */
   --tw-mute: oklch(0.55 0 0);   /* neutral gray for handle/meta */
-  --tw-rule: oklch(0.88 0 0);   /* avatar/media placeholder */
+  --tw-rule: oklch(0.88 0 0);   /* media placeholder */
 
   /* Accent - links, code chip, quote. */
   --seal:      oklch(0.48 0.10 28);
@@ -73,20 +73,7 @@ body.carrossel-preview {
    ============================================================ */
 
 .slide .profile-row {
-  display: grid;
-  grid-template-columns: 76px 1fr;
-  column-gap: 18px;
-  align-items: center;
   margin-bottom: 40px;
-}
-
-.slide .avatar {
-  width: 76px;
-  height: 76px;
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: center;
-  background: var(--tw-rule);
 }
 
 .slide .identity { min-width: 0; }

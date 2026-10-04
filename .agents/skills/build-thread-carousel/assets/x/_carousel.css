@@ -20,7 +20,7 @@
   --reel-bg:   oklch(0.06 0 0);   /* near black */
   --reel-ink:  oklch(0.95 0 0);   /* near white */
   --reel-mute: oklch(0.60 0 0);   /* gray for bio/handle */
-  --reel-rule: oklch(0.20 0 0);   /* avatar/media placeholder */
+  --reel-rule: oklch(0.20 0 0);   /* media placeholder */
 
   --seal:      oklch(0.68 0.12 28);  /* more vibrant accent on dark */
   --seal-soft: oklch(0.18 0.05 28);  /* inline code bg */
@@ -55,20 +55,7 @@ body.carrossel-preview {
    ============================================================ */
 
 .slide .profile-row {
-  display: grid;
-  grid-template-columns: 76px 1fr;
-  column-gap: 18px;
-  align-items: center;
   margin-bottom: 40px;
-}
-
-.slide .avatar {
-  width: 76px;
-  height: 76px;
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: center;
-  background: var(--reel-rule);
 }
 
 .slide .identity { min-width: 0; }

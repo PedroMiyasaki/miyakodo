@@ -102,7 +102,7 @@ A arte é gerada, não buscada: geometria SVG limpa rasgada por um filtro `feTur
 
 As duas skills de carrossel continuam funcionando, com assets próprios, que moram ao lado delas e não em `design/`:
 
-- `build-thread-carousel` usa arquétipos em `.agents/skills/build-thread-carousel/assets/` (`hook-display`, `body-paragraph` e `_carousel.css`, nos modes `default` e `x`). O CSS é autocontido: valores inline, sem import externo. Nome, handle e avatar são placeholders: pergunte ao usuário antes de renderizar.
+- `build-thread-carousel` usa arquétipos em `.agents/skills/build-thread-carousel/assets/` (`hook-display`, `body-paragraph` e `_carousel.css`, nos modes `default` e `x`). O CSS é autocontido: valores inline, sem import externo. A identidade já está fixa nos arquétipos: Pedro Miyasaki, `@pedro.miyasaki.ia`, sem avatar.
 - `carousel` mantém o padrão de craft em `.agents/skills/carousel/assets/carousel-craft.md`: slots de identidade, cinco princípios extraídos por engenharia reversa de `examples/carousels/`, contrato de frame, escala tipográfica e checklist de pré-publicação. Ele cobre copy e design juntos e sobrevive a uma troca de identidade: o sistema visual encaixa na tabela de slots (`GROUND / INK / ACCENT / DISPLAY / BODY / MARK / ART / TEXTURE`) em vez de ser escrito no doc. **`design/identity.md` preenche esses slots. É isso que liga a identidade à produção.**
 
 ## Template de print do Twitter (legado)
