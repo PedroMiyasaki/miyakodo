@@ -1,7 +1,6 @@
 # Identidade visual - Alvinegro
 
-O sistema visual de todo entregável que tem layout próprio. Preenche os slots de identidade que o
-craft doc do carrossel (`.agents/skills/carousel/assets/carousel-craft.md`, §0) exige.
+O sistema visual de todo entregável que tem layout próprio.
 
 Prova do sistema renderizada: `design/proof/` (HTML + PNGs). Copie o `<style>` e o `<defs>` de lá
 como ponto de partida de qualquer peça nova.
@@ -26,9 +25,8 @@ Duas famílias, dois valores, nenhum terceiro de nada. Estritamente preto e bran
 halftone é o que produz todo tom intermediário, igual à impressão de jornal.
 
 **A inversão é o único acento, e significa uma coisa só: a moldura da peça.** A capa e o CTA são
-pretos, tudo entre os dois é branco. Nada mais inverte. Isso cumpre a regra do craft doc de "um
-acento, um significado constante" sem gastar cor, e faz da capa um retângulo preto num feed de
-retângulos brancos.
+pretos, tudo entre os dois é branco. Nada mais inverte. Assim, o acento mantém um significado
+constante sem gastar cor, e a capa vira um retângulo preto num feed de retângulos brancos.
 
 **Escala tipográfica** (canvas de 1080×1350, margem de 88px):
 

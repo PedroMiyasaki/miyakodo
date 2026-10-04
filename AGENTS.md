@@ -33,13 +33,13 @@ Já reconstruído: o sistema visual (`design/identity.md`). Ausência deliberada
 
 A razão de ser deste repositório é produzir conteúdo bom com pouco atrito. Quando o usuário pede um post, um roteiro, uma thread, um carrossel ou a captura de uma ideia, invoque a skill correspondente e entregue o melhor rascunho possível, em vez de forçar o pedido por um processo rígido.
 
-O fluxo é direto, sem etapa de brief no meio: a ideia é capturada no banco **Ideas** → uma skill de conteúdo (`write-script`, `carousel`, `write-thread`, `build-linkedin`, `write-substack`) lê a ideia, escreve e refina o rascunho localmente em `posts/<type>/<slug>/sketch/` por quantas iterações forem necessárias → quando o usuário confirma "pronto", a versão final é copiada para `posts/<type>/<slug>/final.md`. Não existe banco intermediário de publicação: a peça mora localmente, e a única escrita de volta no Notion acontece no "pronto" (`Status` → `Processed`, mais o `Format` que foi produzido).
+O fluxo é direto, sem etapa de brief no meio: a ideia é capturada no banco **Ideas** → uma skill de conteúdo (`write-script`, `carousel`, `write-thread`, `build-linkedin`, `write-substack`) lê a ideia e refina a peça localmente em `posts/<type>/<slug>/sketch/` por quantas iterações forem necessárias → quando o usuário confirma "pronto", a versão aprovada é publicada na raiz do slug. Peças de texto viram `final.md`; o carrossel publica os PNGs aprovados. Não existe banco intermediário de publicação: a peça mora localmente, e a única escrita de volta no Notion acontece no "pronto" (`Status` → `Processed`, mais o `Format` que foi produzido).
 
 Toda skill de produção de conteúdo carrega o mesmo passo de fechamento padronizado: **registrar `Status` → `Processed` e o `Format` da peça** no "pronto". São esses dois campos que acumulam a foto real do calendário no banco: normalmente uma ideia nasce sem formato, e o formato é decidido durante a produção. **Exceção na captura:** links de Reels do Instagram entram como `Pending`, com `Format` → `Reel` e canal Instagram (na propriedade de canal existente ou em `Notes`), conforme `registrar-ideia`. O fechamento da produção continua obrigatório. Essa lista de skills não é fechada: ao criar uma skill de produção nova, copie o passo de fechamento de uma existente.
 
 **`write-substack` é a única exceção documentada, e só no caminho de reuso.** O artigo reescreve uma tese cuja ideia já foi fechada pelo Reel, e uma ideia carrega um único `Format`. Escrever `Substack` por cima apagaria o formato primário e corromperia a foto do calendário que o banco acumula, então o caminho de reuso não escreve nada no Notion. Rodando sozinha numa ideia `Pending` nova, a skill fecha a ideia normalmente com `Format` → `Substack`. Não "conserte" o caminho de reuso para ficar igual às outras skills.
 
-**`carousel` é a exceção à divisão escrever-depois-montar.** Ela produz copy *e* arte numa skill só, porque num carrossel os dois são uma entrega só: a headline é a âncora visual, um template travado só se sustenta se a copy tem uma forma que se repete, e mexer na copy costuma ser a correção certa para um problema visual. O padrão de craft dela mora em `.agents/skills/carousel/assets/carousel-craft.md`, extraído por engenharia reversa do corpus viral em `examples/carousels/`, e governa as duas metades. Threads mantêm a divisão (`write-thread` → `build-thread-carousel`), porque uma thread sai como texto e o carrossel é um derivado opcional.
+**`carousel` é a exceção à divisão escrever-depois-montar.** Copy e composição nascem juntas no HTML e a primeira versão apresentada já é renderizada. Cada rodada ocupa uma pasta `sketch/v<N>/` completa. Threads mantêm a divisão (`write-thread` → `build-thread-carousel`), porque uma thread sai como texto e o carrossel é um derivado opcional.
 
 As skills são invocadas por comandos naturais em português (por exemplo "escreve o roteiro da última ideia", "faz um carrossel", "escreve um post pro LinkedIn"), **não** por slash commands. Leia `.agents/skills/<skill-name>/SKILL.md` (ver **Links locais** acima). Claude Code pode invocar pela ferramenta Skill.
 
@@ -67,26 +67,28 @@ O Notion tem dois papéis. É a **fonte de leitura** das skills de produção (`
 
 ## Convenção de rascunho local
 
-As skills de produção (script, carousel, thread, linkedin, substack) seguem um protocolo estrito de rascunho:
+As skills textuais de produção (script, thread, linkedin, substack) seguem um protocolo estrito de rascunho:
 
 1. Slug = título → minúsculas, sem acento, hífen no lugar de espaço e pontuação.
-2. O primeiro rascunho é salvo em `posts/<type>/<slug>/sketch/v1.md` no momento em que é apresentado, onde `<type>` é `script`, `carousel`, `thread`, `linkedin` ou `substack`, conforme a skill que produziu.
+2. O primeiro rascunho é salvo em `posts/<type>/<slug>/sketch/v1.md` no momento em que é apresentado, onde `<type>` é `script`, `thread`, `linkedin` ou `substack`, conforme a skill que produziu.
 3. Toda correção do usuário cria `posts/<type>/<slug>/sketch/v(N+1).md` na mesma pasta. Leia v(N), copie os blocos que não mudaram **verbatim** e aplique só o diff. Nunca regenere conteúdo que não mudou.
 4. Quando o usuário confirma "pronto" explicitamente, o `sketch/v<N>.md` de número mais alto é copiado para `posts/<type>/<slug>/final.md`. Essa cópia é a peça publicável, e o histórico `sketch/v<N>` fica onde está como trilha de auditoria. A skill então atualiza a ideia de origem no Notion (`Status` → `Processed` e o `Format` da peça, e nada do conteúdo sobe).
 
 Esse versionamento é deliberado: os arquivos locais são a trilha de auditoria e a fonte única da peça. A publicação é manual, feita pelo usuário na plataforma de destino a partir do arquivo final.
 
-**Tudo de uma peça mora em `posts/<type>/<slug>/`, assets visuais incluídos.** A pasta tem dois níveis. `sketch/` é o material de trabalho (`v<N>.md`, as composições HTML, imagens de origem que o usuário solta lá) e a raiz do slug guarda só o que é publicado, nada mais:
+**Exceção visual:** `carousel` não cria rascunho de copy em Markdown. Cada iteração fica em `posts/carousel/<slug>/sketch/v<N>/`, com `carousel.html` e todos os PNGs daquela versão. No "pronto", apenas os PNGs aprovados são copiados para a raiz do slug; não existe `final.md`.
+
+**Tudo de uma peça mora em `posts/<type>/<slug>/`, assets visuais incluídos.** `sketch/` guarda o material de trabalho e a raiz do slug guarda só o que é publicado:
 
 | Tipo | Raiz do slug | `sketch/` |
 |---|---|---|
 | `script` | `final.md`, `reels.mp4`, `caption.md`, `cover.png` | `v<N>.md`, `cover.html` |
-| `carousel` | `final.md` (copy dos slides + legenda do post), `01.png` … `10.png` | `v<N>.md`, `carousel.html` |
+| `carousel` | PNGs da versão aprovada | `v<N>/carousel.html` + PNGs da versão |
 | `thread` | `final.md` (o texto da thread), `01.png` … `10.png` quando `build-thread-carousel` roda | `v<N>.md`, `carousel-v<N>.md` (a reescrita da copy para slide), `carousel.html`, `images/` |
 | `linkedin` | `final.md`, `image.png` (URL de origem registrada no rodapé do `final.md`) | `v<N>.md` |
 | `substack` | `final.md` (título + subtítulo + artigo com marcadores de imagem inline + rodapé de metadados), `cover.png`, `01.png` … `NN.png` | `v<N>.md`, `shotlist.md` |
 
-Os PNGs renderizados ficam soltos na raiz do slug, sem subpasta `render/` nem `editorial/`, e a composição HTML é um intermediário de build, então fica em `sketch/`. `output/` sumiu por completo: toda skill escreve em `posts/<type>/<slug>/`. Um Reel não é um objeto próprio. Ele é a entrega do roteiro, então o vídeo, a legenda do post e a capa caem na pasta do próprio roteiro.
+Os PNGs publicados ficam soltos na raiz do slug, sem subpasta `render/` nem `editorial/`, e as composições HTML ficam em `sketch/`. `output/` sumiu por completo: toda skill escreve em `posts/<type>/<slug>/`. Um Reel não é um objeto próprio. Ele é a entrega do roteiro, então o vídeo, a legenda do post e a capa caem na pasta do próprio roteiro.
 
 ## Vídeo: Reels
 
@@ -100,10 +102,10 @@ O brand book completo é `design/brandbook/book.html` (17 páginas, renderizadas
 
 A arte é gerada, não buscada: geometria SVG limpa rasgada por um filtro `feTurbulence` + `feDisplacementMap` na hora do render, com preenchimento de pontos de halftone deslocado do contorno. O vocabulário de desenho é deliberadamente geométrico (caixas, setas, fluxos, gráficos, terminais). Assunto figurativo está fora do alcance dessa técnica e pertence a `design/art/`, como arquivo escaneado de verdade.
 
-As duas skills de carrossel continuam funcionando, com assets próprios, que moram ao lado delas e não em `design/`:
+As duas skills de carrossel usam o mesmo sistema visual por caminhos diferentes:
 
 - `build-thread-carousel` usa arquétipos em `.agents/skills/build-thread-carousel/assets/` (`hook-display`, `body-paragraph` e `_carousel.css`, nos modes `default` e `x`). O CSS é autocontido: valores inline, sem import externo. A identidade já está fixa nos arquétipos: Pedro Miyasaki, `@pedro.miyasaki.ia`, sem avatar.
-- `carousel` mantém o padrão de craft em `.agents/skills/carousel/assets/carousel-craft.md`: slots de identidade, cinco princípios extraídos por engenharia reversa de `examples/carousels/`, contrato de frame, escala tipográfica e checklist de pré-publicação. Ele cobre copy e design juntos e sobrevive a uma troca de identidade: o sistema visual encaixa na tabela de slots (`GROUND / INK / ACCENT / DISPLAY / BODY / MARK / ART / TEXTURE`) em vez de ser escrito no doc. **`design/identity.md` preenche esses slots. É isso que liga a identidade à produção.**
+- `carousel` cria cada versão diretamente em HTML a partir de `design/identity.md` e `design/proof/proof.html`, renderiza dentro da própria pasta de versão e itera sobre o resultado visual.
 
 ## Template de print do Twitter (legado)
 
