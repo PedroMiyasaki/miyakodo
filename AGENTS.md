@@ -1,4 +1,4 @@
-# AGENTS.md
+# [AGENTS.md](http://AGENTS.md)
 
 ## O repositório
 
@@ -7,8 +7,6 @@ Este repositório é o sistema de produção de conteúdo de Pedro Miyasaki. Ele
 O fluxo começa no banco **Ideas**, no Notion. Uma skill lê a ideia, produz o formato pedido e salva as iterações localmente em `posts/`. O usuário revisa a peça até dizer "pronto"; só então a versão aprovada vira a entrega final e o estado da ideia é atualizado no Notion. A publicação na plataforma de destino é manual.
 
 Este não é um projeto de software tradicional. Não há aplicação para executar nem suíte de testes como etapa padrão. Scripts existem apenas para tarefas mecânicas, como renderização e manutenção de links. A prioridade é reduzir o atrito da produção sem transformar preferências acumuladas em regras rígidas. Cada skill deve preservar espaço para julgamento, linguagem e estrutura adequados ao formato e à ideia.
-
-O conteúdo publicado é escrito em português do Brasil. Nomes de propriedades e valores do Notion permanecem no idioma definido pelo schema do banco.
 
 ## Estrutura de pastas
 

@@ -1,7 +1,9 @@
-# TODO.md
+# [TODO.md](http://TODO.md)
 
 Este documento organiza os todos de médio prazo, atividades a fazer **além** da atividade principal de produção de conteúdo.
 Essas atividades muito provavelmente vão ser feitas no fim de semana, fora da rotina principal de conteúdo.
+
+## Refatorar as skills simplificando-as e deixando espaços para heurísticas, além de retirar lixo
 
 ## Backlog
 
@@ -21,13 +23,15 @@ Obs!!! Isso parece complicado, mas não precisa ser: a estratégia deve ser otim
 
 ### Conhecimento
 
-[ ] Se for assistir a apenas um vídeo sobre marca pessoal, que seja este: https://www.youtube.com/watch?v=lRe3iKyAXQA
+[ ] Se for assistir a apenas um vídeo sobre marca pessoal, que seja este: [https://www.youtube.com/watch?v=lRe3iKyAXQA](https://www.youtube.com/watch?v=lRe3iKyAXQA)
 
 ## Substack
 
 [ ] Estruturar o Substack no LinkedIn e no Instagram da mesma maneira que o @jonascastromp4 (link na bio, story - apenas copiar)
 
 ## Calendário
+
+
 
 ### Definir caminho do conteúdo
 
