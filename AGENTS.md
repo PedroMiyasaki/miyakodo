@@ -2,9 +2,13 @@
 
 ## O repositório
 
-Este repositório organiza a produção de conteúdo de Pedro Miyasaki. As ideias vêm do Notion e são transformadas por skills em roteiros de Reel, carrosséis, threads, posts de LinkedIn, artigos de Substack e seus assets.
+Este repositório é o sistema de produção de conteúdo de Pedro Miyasaki. Ele reúne as skills que transformam ideias em roteiros de Reel, carrosséis, threads, posts de LinkedIn e artigos de Substack, além dos arquivos de trabalho e assets de cada peça.
 
-Não é uma aplicação de software. O objetivo é produzir, revisar e guardar conteúdo com pouco atrito, deixando decisões de linguagem e estrutura para a skill de cada formato.
+O fluxo começa no banco **Ideas**, no Notion. Uma skill lê a ideia, produz o formato pedido e salva as iterações localmente em `posts/`. O usuário revisa a peça até dizer "pronto"; só então a versão aprovada vira a entrega final e o estado da ideia é atualizado no Notion. A publicação na plataforma de destino é manual.
+
+Este não é um projeto de software tradicional. Não há aplicação para executar nem suíte de testes como etapa padrão. Scripts existem apenas para tarefas mecânicas, como renderização e manutenção de links. A prioridade é reduzir o atrito da produção sem transformar preferências acumuladas em regras rígidas. Cada skill deve preservar espaço para julgamento, linguagem e estrutura adequados ao formato e à ideia.
+
+O conteúdo publicado é escrito em português do Brasil. Nomes de propriedades e valores do Notion permanecem no idioma definido pelo schema do banco.
 
 ## Estrutura de pastas
 
@@ -16,6 +20,7 @@ Não é uma aplicação de software. O objetivo é produzir, revisar e guardar c
 │   └── skills -> .agents/skills
 ├── .cursor/
 │   └── skills -> .agents/skills
+├── CLAUDE.md -> AGENTS.md  # espelho local destas instruções
 ├── posts/                  # peças produzidas, organizadas por formato e slug
 │   ├── script/
 │   ├── carousel/
@@ -36,23 +41,31 @@ Não é uma aplicação de software. O objetivo é produzir, revisar e guardar c
 
 Edite skills somente em `.agents/skills/`. As pastas `.claude/skills` e `.cursor/skills` são links simbólicos para a mesma árvore.
 
-Cada skill define seu próprio fluxo e sua convenção dentro de `posts/<formato>/<slug>/`. Consulte o `SKILL.md` correspondente antes de produzir ou alterar uma peça.
+`AGENTS.md` também é canônico. `CLAUDE.md` aponta para ele e não deve receber uma cópia independente.
+
+Dentro de `posts/`, cada peça mora em `posts/<formato>/<slug>/`. Em geral, `sketch/` guarda as versões de trabalho e a raiz do slug guarda somente os arquivos aprovados para publicação. Os detalhes variam entre formatos, então consulte o `SKILL.md` correspondente antes de produzir, revisar ou finalizar uma peça.
+
+`design/` é a fonte do sistema visual. `examples/` oferece material de referência, não templates obrigatórios. `scripts/` automatiza trabalho mecânico e não deve concentrar decisões editoriais.
 
 ## Voz
 
-Esta seção reúne os poucos pontos que considero válidos para qualquer produção de conteúdo. Eles são propositalmente curtos para evitar overfitting sem apagar as nuances necessárias de cada canal e tipo de conteúdo.
+Esta não é uma definição completa da voz do usuário. Ela reúne apenas os poucos princípios que considero válidos em qualquer produção de conteúdo. Os pontos são propositalmente curtos: regras globais demais fazem os canais soarem iguais e induzem overfitting. As nuances de ritmo, densidade, estrutura e posicionamento devem vir da ideia, da skill do formato e da calibração pelos conteúdos recentes.
 
-- Nunca utilizar em dash.
-- Nunca utilizar emojis.
-- Atentar-se ao "LLM tone", especialmente ao problema inglês para português: modelos tendem a escrever em português apenas traduzindo estruturas do inglês, o que gera vícios de linguagem.
-  - `VICIOS.md` (placeholder por enquanto).
+- **Nunca utilizar em dash.** Reestruture a frase com ponto, vírgula, dois-pontos ou parênteses. O hífen continua válido quando sua função gramatical exigir.
+- **Nunca utilizar emojis.** Não use emojis em títulos, corpo, listas, CTAs ou como decoração visual.
+- **Evitar "LLM tone".** Escreva diretamente em português do Brasil, em vez de montar a frase em inglês e traduzi-la. Modelos tendem a transportar sintaxe, ritmo e fórmulas retóricas do inglês para o português, produzindo um texto correto, mas artificial. Leia a frase como fala e prefira construções que um brasileiro usaria naturalmente.
+  - `VICIOS.md` será o inventário desses padrões. Por enquanto, é apenas um placeholder.
 
 ## Ferramentas globais
 
 ### Notion
 
-O MCP do Notion é a fonte das ideias e o local de atualização do estado delas. O banco canônico é **Ideas**, data source `e2970ca3-7724-4a81-8f12-7ea34c048c67`. Cada skill explica quando deve apenas ler e quando pode escrever.
+O MCP do Notion conecta o repositório ao banco de ideias. O banco canônico é **Ideas**, data source `e2970ca3-7724-4a81-8f12-7ea34c048c67`.
+
+Skills de produção usam o Notion para localizar e ler a ideia de origem. A escrita normalmente acontece apenas no fechamento, para registrar o status e o formato produzidos. O conteúdo da peça permanece nos arquivos locais. Siga sempre a regra da skill ativa, especialmente quando ela definir uma exceção.
 
 ### Google Chrome
 
-A automação de navegador via MCP permite operar o Google Chrome para pesquisar, abrir páginas, interagir com sites, inspecionar conteúdo e capturar imagens quando a tarefa exigir.
+A automação de navegador via MCP permite operar o Google Chrome como uma ferramenta de trabalho. Use-a quando a tarefa exigir pesquisa na web, interação com páginas, inspeção de conteúdo ao vivo, verificação visual ou captura de imagens.
+
+Antes de agir numa página, confira o estado atual da aba. Depois de uma interação importante, verifique o resultado em vez de presumir que ela funcionou. Captchas, logins, permissões e confirmações sensíveis devem ser deixados para o usuário.
