@@ -1,0 +1,4 @@
+interface:
+  display_name: "Responder comentários"
+  short_description: "Comentários do Instagram com checagem de seguidores"
+  default_prompt: "Use $responder-comentarios para explicar o atendimento pelo Worker. Não abra o Instagram no navegador."
