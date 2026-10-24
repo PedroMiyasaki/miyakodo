@@ -1,0 +1,23 @@
+{
+  "name": "manychat-lite-cloudflare",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "check": "tsc --noEmit && wrangler deploy --dry-run",
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev",
+    "test": "node --disable-warning=ExperimentalWarning --test tests/*.test.mjs",
+    "test:runtime": "node tests/token-runtime.mjs",
+    "build-respostas": "node scripts/build-respostas.mjs",
+    "types": "wrangler types"
+  },
+  "devDependencies": {
+    "@types/node": "^26.0.1",
+    "esbuild": "^0.28.1",
+    "miniflare": "^4.20260625.0",
+    "typescript": "latest",
+    "wrangler": "latest"
+  }
+}

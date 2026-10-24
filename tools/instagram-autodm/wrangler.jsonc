@@ -1,0 +1,35 @@
+{
+	"$schema": "./node_modules/wrangler/config-schema.json",
+	"name": "instagram-autodm",
+	"main": "src/index.ts",
+	"compatibility_date": "2026-06-30",
+	"compatibility_flags": [
+		"nodejs_compat"
+	],
+	// */5 is the comment backup poll. It returns immediately unless COMMENT_POLL_ENABLED is "true".
+	// 06:00 UTC renews the Instagram token. Renewal is skipped while DRY_RUN is "true".
+	"triggers": {
+		"crons": ["*/5 * * * *", "0 6 * * *"]
+	},
+	"observability": {
+		"enabled": true,
+		"head_sampling_rate": 1
+	},
+	"vars": {
+		"GRAPH_API_BASE": "https://graph.instagram.com/v25.0",
+		"KEYWORD": "",
+		"PRIVATE_REPLY_TEXT": "",
+		"DRY_RUN": "true",
+		"OWNER_IG_USERNAME": "pedro.miyasaki.ia",
+		"COMMENT_POLL_ENABLED": "false",
+		"FOLLOWER_RECHECK_MS": "4000"
+	},
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_name": "instagram-autodm",
+			"database_id": "REPLACE_WITH_D1_DATABASE_ID",
+			"migrations_dir": "./migrations"
+		}
+	]
+}
