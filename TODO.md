@@ -1,58 +1,71 @@
 # [TODO.md](http://TODO.md)
 
-Este arquivo organiza as atividades gerais. Tudo que eu estiver fazendo ou vou fazer precisa estar registrado aqui.
+Este arquivo organiza as atividades gerais, separadas entre Pedro e Sofia. Tudo que estiver sendo feito ou for ser feito precisa estar registrado aqui.
 
-## Imediatas
+## Pedro
+
+### Imediatas
 
 Imediatas organiza o que está sendo feito agora, ou as próximas da lista. Pelo [MEMORANDO.MD](MEMORANDO.MD), sempre há dois subtítulos: Conteúdo e Outros.
 
-### Conteúdo
+#### Conteúdo
 
-[ ] Semana que vem (1 nov e 2 nov): executar a rotina de conteúdo em `rotinas/gravacao-viral/` (domingo e segunda)
+[ ] Semana que vem (28 nov e 29 nov): executar a rotina de conteúdo em `rotinas/gravacao-viral/` (sábado e domingo)
 
-### Outros
+#### Outros
 
-#### Fazer ementa do primeiro curso/webinar
+##### Fazer ementa do primeiro curso/webinar
 
-[ ] Pesquisar mercado la fora, achar algum curso vencedor  
-[ ] Fazer ementa similar, mas com a minha cara  
+[x] Pesquisar mercado la fora, achar algum curso vencedor  
+[x] Fazer ementa similar, mas com a minha cara  
+[ ] Fazer as artes para o webinar
+[ ] Simular o webinar usando as artes feitas
+[ ] Iterar e ajustar qualquer detalhe nas artes, ementa, pauta e etc.
+[ ] Fazer o produto com um roadmap de noventa dias, do zero até o primeiro projeto de AI adotado e rodando
 [ ] Deixar curso pronto  
 [ ] Simular webinar  
-[ ] Expor no portfólio de ofertas com acesso temporário + aulas gravadas
+[ ] Expor no portfólio de ofertas o acesso à pré-inscrição do webinar
 
-#### Identidade Miyakodo em `design/`
+##### Identidade Miyakodo em `design/`
 
 A identidade Miyakodo está em `design/`.
 
 [ ] Expor meu portfólio com o uso da identidade visual
 
-#### Depois do cardápio de ofertas -> Expor "miyakodo, educação e treinamento em AI"
+##### Depois do cardápio de ofertas -> Expor "miyakodo, educação e treinamento em AI"
 
 [ ] Linkedn
 [ ] Instagram
 
-## Backlog
+### Backlog
 
 Backlog organiza atividades para o futuro.
 
-### "Estratégia de 1 Reels -> 5 posts"
+#### "Estratégia de 1 Reels -> 5 posts"
 
 [ ] Setar estratégia de como fazer isso
 
-### Conhecimento
+#### Conhecimento
 
 [ ] Assistir guia de marca pessoal (https://www.youtube.com/watch?v=lRe3iKyAXQA)
 
-### Substack
+#### Substack
 
 [ ] Excluir substack, excluir referências ao substack, não tenho tempo pra isso, nunca terei;
 
-### Linkedn
+#### Linkedn
 
 - [ ] Definir rotina de produção de conteúdo no linkedn junto com a rotina existente
 
-### Definir caminho do conteúdo com mais clareza
+#### Definir caminho do conteúdo com mais clareza
 
 [ ] Após 31/12/2026 (término da faculdade): pagar mentoria ou curso que me ajude a descobrir o caminho desta esteira de conteúdo; não vou conseguir fazer tudo sozinho, preciso de alguém mais sábio que eu para me ajudar a achar esse caminho
     * Qual caminho? Speaker? Empresa de serviço? Educação? Uma mistura? Qual se sustenta com o emprego principal e caminho seguro inatingível?
         * Com base nisso: quais plataformas em pt-br e quais em inglês?
+
+## Sofia
+
+[ ] Fazer as artes do webinar que estão na página [Ementa](https://app.notion.com/p/Ementa-41fffe7442fd80738d88d30e68641a3b), usando a identidade visual em `design/`
+[ ] Fazer o perfil do Instagram da Miyakodo, usando a identidade visual em `design/`
+[ ] Fazer o perfil do LinkedIn da empresa Miyakodo, usando a identidade visual em `design/`, colocar o Pedro como owner e associar o perfil dele como fundador da escola
+[ ] Registrar uma rotina semanal de produção de conteúdo, fechando com o Pedro, para o Instagram da empresa e para o LinkedIn
