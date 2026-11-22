@@ -1,0 +1,14 @@
+{
+  "duration": 8.4,
+  "assertions": [
+    {
+      "kind": "appearsBy",
+      "selector": "#k2-card",
+      "bySec": 0.5
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": "#k2-card"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+<template>
+  <style>
+    @font-face {
+      font-family: "Inter";
+      src: url("node_modules/@fontsource-variable/inter/files/inter-latin-wght-normal.woff2") format("woff2");
+      font-style: normal;
+      font-weight: 100 900;
+    }
+
+    #root {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      font-family: "Inter", sans-serif;
+      pointer-events: none;
+    }
+
+    #speed-hint-scene {
+      position: absolute;
+      inset: 0;
+    }
+
+    #speed-hint-inner {
+      position: absolute;
+      top: 1704px;
+      left: 112px;
+      padding: 9px 12px 7px;
+      border: 4px solid #FFFFFF;
+      background: #0A0A0A;
+      box-shadow: 6px 6px 0 rgba(10, 10, 10, 0.8);
+      color: #FFFFFF;
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      line-height: 1;
+      text-transform: uppercase;
+      white-space: nowrap;
+      transform-origin: 0% 70%;
+      will-change: transform;
+    }
+  </style>
+
+  <div data-hf-id="hf-bzut" id="root" data-composition-id="speed-hint" data-width="1080" data-height="1920" data-duration="3.4">
+    <section data-hf-id="hf-oi7b" id="speed-hint-scene" class="clip" data-start="0" data-duration="3.4" data-track-index="0">
+      <div data-hf-id="hf-iok6" id="speed-hint-inner">Segure para 2x</div>
+    </section>
+  </div>
+
+  <script>
+    const timeline = gsap.timeline({ paused: true });
+
+    timeline.fromTo(
+      "#speed-hint-inner",
+      { opacity: 0, scale: 0.86, y: 12 },
+      { opacity: 1, scale: 1, y: 0, duration: 0.34, ease: "power3.out" },
+      0.12
+    );
+    timeline.to(
+      "#speed-hint-inner",
+      { opacity: 0, duration: 0.22, ease: "power1.in" },
+      3.05
+    );
+
+    window.__timelines["speed-hint"] = timeline;
+  </script>
+</template>

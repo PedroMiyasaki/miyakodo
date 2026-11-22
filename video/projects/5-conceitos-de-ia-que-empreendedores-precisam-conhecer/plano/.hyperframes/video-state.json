@@ -1,0 +1,853 @@
+{
+  "version": 1,
+  "historyId": "5dc56123-e4b8-4a2d-9b68-f08917a0f9ca",
+  "currentRevision": "d0ff3083-b955-4332-ab6e-8467e862a18a",
+  "pendingChanges": false,
+  "files": {
+    "AGENTS.md": {
+      "hash": "1d4f0c8ca2507b94fd7c9df709fff01416adbd51a0f922b9d6ed2f40129147d5",
+      "content": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\1d\\1d4f0c8ca2507b94fd7c9df709fff01416adbd51a0f922b9d6ed2f40129147d5"
+    },
+    "CLAUDE.md": {
+      "hash": "1d4f0c8ca2507b94fd7c9df709fff01416adbd51a0f922b9d6ed2f40129147d5",
+      "content": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\1d\\1d4f0c8ca2507b94fd7c9df709fff01416adbd51a0f922b9d6ed2f40129147d5"
+    },
+    "hyperframes.json": {
+      "hash": "53dbce1e19aa713cbb12ee0bc4d206143b45ab15e6ffbfcaa8f69572d4d24d50",
+      "content": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\53\\53dbce1e19aa713cbb12ee0bc4d206143b45ab15e6ffbfcaa8f69572d4d24d50"
+    },
+    "index.html": {
+      "hash": "3b264e109b97f8232809e452a256b38358160751d94a6e218cd65c8faace2303",
+      "content": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\3b\\3b264e109b97f8232809e452a256b38358160751d94a6e218cd65c8faace2303"
+    },
+    "meta.json": {
+      "hash": "e38da28c800c239b76d687caa4db010d1f9a7ec3dbf90cedab5502c06c7e2b60",
+      "content": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\e3\\e38da28c800c239b76d687caa4db010d1f9a7ec3dbf90cedab5502c06c7e2b60"
+    },
+    "package.json": {
+      "hash": "b4c34ad9ac333ea94ae48566ce70b76d9b317f880aa7f0fce8b59d3ef01370d5",
+      "content": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\b4\\b4c34ad9ac333ea94ae48566ce70b76d9b317f880aa7f0fce8b59d3ef01370d5"
+    },
+    "assets/fonts/bricolage-grotesque-latin-wght-normal.woff2": {
+      "hash": "a97804dc9fbe5fc972a08018c5eda4dab7ef2346f64c57e61419d05e6de4ea1c",
+      "content": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\a9\\a97804dc9fbe5fc972a08018c5eda4dab7ef2346f64c57e61419d05e6de4ea1c"
+    },
+    "assets/fonts/Bricolage-LICENSE.txt": {
+      "hash": "923f4ddf0fd39f9b7794ab0df7332f3d95dc43e8ad7ec2289d6d9e8491177f51",
+      "content": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\92\\923f4ddf0fd39f9b7794ab0df7332f3d95dc43e8ad7ec2289d6d9e8491177f51"
+    },
+    "assets/fonts/inter-latin-wght-normal.woff2": {
+      "hash": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62",
+      "content": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\31\\3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62"
+    },
+    "assets/fonts/Inter-LICENSE.txt": {
+      "hash": "3b0a5fca3d17942cde889069889dedbbbd075e9b599968c82a95f4d944e9b345",
+      "content": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\3b\\3b0a5fca3d17942cde889069889dedbbbd075e9b599968c82a95f4d944e9b345"
+    },
+    "assets/gancho-frame.png": {
+      "hash": "0c409b2a5c84a5a58abf66440c6265ff4632bd9b7528d06feabec7fb3863c704",
+      "content": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\0c\\0c409b2a5c84a5a58abf66440c6265ff4632bd9b7528d06feabec7fb3863c704"
+    },
+    "01-gancho.png": {
+      "hash": "3743b809a4fbf9bc8c04d73a49cf817508df614d14cccf78eb0d5fa04d357ac0",
+      "content": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\37\\3743b809a4fbf9bc8c04d73a49cf817508df614d14cccf78eb0d5fa04d357ac0"
+    },
+    "02-arquiteturas.png": {
+      "hash": "62b45ae18c0d651435acfd72a07f0cf54f955d4d4759deaa945c5dd88afccba2",
+      "content": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\62\\62b45ae18c0d651435acfd72a07f0cf54f955d4d4759deaa945c5dd88afccba2"
+    },
+    "03-contexto.png": {
+      "hash": "b168765d0bc9513b0a556ec604187196aa2ff83b8cffdee315e46f2323f93ef6",
+      "content": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\b1\\b168765d0bc9513b0a556ec604187196aa2ff83b8cffdee315e46f2323f93ef6"
+    },
+    "04-dependencias.png": {
+      "hash": "591bb0c20b221588f1c349a70620b3285927407d52471d35df779696c614720c",
+      "content": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\59\\591bb0c20b221588f1c349a70620b3285927407d52471d35df779696c614720c"
+    },
+    "05-ai-ops.png": {
+      "hash": "1b09f44391cf4360a78ec4de88b0db0546206dc42b6b20a2ad37f353ca3ecd7f",
+      "content": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\1b\\1b09f44391cf4360a78ec4de88b0db0546206dc42b6b20a2ad37f353ca3ecd7f"
+    },
+    "06-evals.png": {
+      "hash": "8b3eeeddfaf574e26f65bc7227955b139a92ee16b7275853f59eca3a94b43f67",
+      "content": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\8b\\8b3eeeddfaf574e26f65bc7227955b139a92ee16b7275853f59eca3a94b43f67"
+    },
+    "07-cta.png": {
+      "hash": "155d984363aeeae6fbeeff25e28effe3554d54afdf5fd1acafd3cb9be7d82224",
+      "content": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\15\\155d984363aeeae6fbeeff25e28effe3554d54afdf5fd1acafd3cb9be7d82224"
+    },
+    "capturas/contact-sheet.jpg": {
+      "hash": "656436d7203795454bf4e904c172158c2df819a02726b9be8a7c34aef4426e31",
+      "content": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\65\\656436d7203795454bf4e904c172158c2df819a02726b9be8a7c34aef4426e31"
+    },
+    "capturas/frame-00-at-2s.png": {
+      "hash": "d1f2cd0de9de68589e68e42cd4223af954d00ef987d820cd7912245d06373f61",
+      "content": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\d1\\d1f2cd0de9de68589e68e42cd4223af954d00ef987d820cd7912245d06373f61"
+    },
+    "capturas/frame-01-at-8.5s.png": {
+      "hash": "5042e7e3c602df2fbd665394bac0b68c287371202e82ccb5deca61cf03b876de",
+      "content": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\50\\5042e7e3c602df2fbd665394bac0b68c287371202e82ccb5deca61cf03b876de"
+    },
+    "capturas/frame-02-at-14.5s.png": {
+      "hash": "bb742223a19bccddc9853d44f83625d61fa25640a320a4400a936f790ffaa27a",
+      "content": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\bb\\bb742223a19bccddc9853d44f83625d61fa25640a320a4400a936f790ffaa27a"
+    },
+    "capturas/frame-03-at-19.5s.png": {
+      "hash": "81eca6b71c904d7eaf7750650627d066709a444bb5219093e8e5fbcf1cbf9668",
+      "content": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\81\\81eca6b71c904d7eaf7750650627d066709a444bb5219093e8e5fbcf1cbf9668"
+    },
+    "capturas/frame-04-at-24.5s.png": {
+      "hash": "507c3d0f9bbc235d2f43815f2d868d420c535750ace761fa556208794d31207f",
+      "content": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\50\\507c3d0f9bbc235d2f43815f2d868d420c535750ace761fa556208794d31207f"
+    },
+    "capturas/frame-05-at-30s.png": {
+      "hash": "402e546807f829a78a6b17a600439aacfbc99056ddbb9df27af03e09e9daac8f",
+      "content": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\40\\402e546807f829a78a6b17a600439aacfbc99056ddbb9df27af03e09e9daac8f"
+    },
+    "capturas/frame-06-at-35s.png": {
+      "hash": "018d87db2848c6766afbf7a35ea5fcfc48766742ee39934617476ee8f3294216",
+      "content": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\01\\018d87db2848c6766afbf7a35ea5fcfc48766742ee39934617476ee8f3294216"
+    },
+    "sequencia.png": {
+      "hash": "ee32cc3c4a8f97f1869dd27d7557bc1ee9fc37f2e892b57ed6587b8357ff21e8",
+      "content": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\ee\\ee32cc3c4a8f97f1869dd27d7557bc1ee9fc37f2e892b57ed6587b8357ff21e8"
+    }
+  },
+  "revisions": {
+    "525a235b-f4ea-4567-b0ae-807f64040e02": {
+      "actor": {
+        "kind": "agent",
+        "name": "cursor"
+      },
+      "label": "Banners e capturas do plano visual",
+      "startedAt": 1792267700652,
+      "endedAt": 1792267890599.8838,
+      "files": {
+        "assets/fonts/bricolage-grotesque-latin-wght-normal.woff2": {
+          "before": null,
+          "after": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\a9\\a97804dc9fbe5fc972a08018c5eda4dab7ef2346f64c57e61419d05e6de4ea1c"
+        },
+        "assets/fonts/Bricolage-LICENSE.txt": {
+          "before": null,
+          "after": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\92\\923f4ddf0fd39f9b7794ab0df7332f3d95dc43e8ad7ec2289d6d9e8491177f51"
+        },
+        "assets/fonts/inter-latin-wght-normal.woff2": {
+          "before": null,
+          "after": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\31\\3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62"
+        },
+        "assets/fonts/Inter-LICENSE.txt": {
+          "before": null,
+          "after": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\3b\\3b0a5fca3d17942cde889069889dedbbbd075e9b599968c82a95f4d944e9b345"
+        },
+        "assets/gancho-frame.png": {
+          "before": null,
+          "after": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\d7\\d7032e072800754cf30276caac32ef3386b80e3aa99cb161a65844fa8fc87b8f"
+        },
+        "index.html": {
+          "before": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\a6\\a6242f7bf0be6c08906a91dc6ff199e95967d7e158f4eb79b5166f1e90be3d59",
+          "after": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\18\\18d3d4a37247181d0e8e3767d1644aa9ab49bb7402731ac4d5444659ba258269"
+        }
+      }
+    },
+    "50705714-746f-4bc6-97dd-62b51967fc06": {
+      "actor": {
+        "kind": "agent",
+        "name": "cursor"
+      },
+      "label": "Banners e capturas do plano visual",
+      "startedAt": 1792267700652,
+      "endedAt": 1792268013337.864,
+      "files": {
+        "01-gancho.png": {
+          "before": null,
+          "after": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\0f\\0f38c8fa42bdf2973f439bfac5d59e46d854cb0380ed8d86634b499be008bb12"
+        },
+        "02-arquiteturas.png": {
+          "before": null,
+          "after": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\c0\\c025c3f73970bd2be845f1f5e977e9a019c10312bd1b8b4a1bd3bface597c748"
+        },
+        "03-contexto.png": {
+          "before": null,
+          "after": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\bb\\bbcee6a94ac8cbb3e55e001241e577b8f963524fcb883f7d16abe34496efe615"
+        },
+        "04-dependencias.png": {
+          "before": null,
+          "after": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\a0\\a042f74a6140713a45da9755b2d373b4762eef580ccc20f1180876a55e03d32a"
+        },
+        "05-ai-ops.png": {
+          "before": null,
+          "after": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\b4\\b40a7dff39029e9f5a00732a8ba19f9f6ac8ff07372a0c301d1829c46fa14703"
+        },
+        "06-evals.png": {
+          "before": null,
+          "after": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\7b\\7b84e9fd180711d698f63c7a76b67d74c6849fd8dcf958395d7e61312ce40025"
+        },
+        "07-cta.png": {
+          "before": null,
+          "after": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\15\\155d984363aeeae6fbeeff25e28effe3554d54afdf5fd1acafd3cb9be7d82224"
+        },
+        "assets/gancho-frame.png": {
+          "before": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\d7\\d7032e072800754cf30276caac32ef3386b80e3aa99cb161a65844fa8fc87b8f",
+          "after": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\0c\\0c409b2a5c84a5a58abf66440c6265ff4632bd9b7528d06feabec7fb3863c704"
+        },
+        "capturas/contact-sheet.jpg": {
+          "before": null,
+          "after": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\9b\\9b1ae91abf8b57d510644a95c4d9f07a9b5608b64ecd52cea901d7e363009971"
+        },
+        "capturas/frame-00-at-2s.png": {
+          "before": null,
+          "after": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\94\\94db16956ddadd54632ef7bef6eb15ead2814c9db767ce5ac2a9407904bc4a94"
+        },
+        "capturas/frame-01-at-8.5s.png": {
+          "before": null,
+          "after": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\78\\7892b7ad4a1aee4e99f467376ae6c4ff00c3589390b42f30f76dfef3b972b268"
+        },
+        "capturas/frame-02-at-14.5s.png": {
+          "before": null,
+          "after": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\9b\\9b143e278087324ab36f0b505e2f63ad550388e89b4ba2873d5c1aae631faffe"
+        },
+        "capturas/frame-03-at-19.5s.png": {
+          "before": null,
+          "after": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\63\\6345f3b0982094df7a6f254365cf7754791e3794759da1b693ff8ff965704a84"
+        },
+        "capturas/frame-04-at-24.5s.png": {
+          "before": null,
+          "after": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\46\\468b519289a90c7fbabeff15fd12832b12443708426b5261b77ffd426c34c9a5"
+        },
+        "capturas/frame-05-at-30s.png": {
+          "before": null,
+          "after": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\53\\53bd8d5c3d57f8d34a3b3b1457e09d7b84127e4703b0289ad66bf48ba4676318"
+        },
+        "capturas/frame-06-at-35s.png": {
+          "before": null,
+          "after": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\01\\018d87db2848c6766afbf7a35ea5fcfc48766742ee39934617476ee8f3294216"
+        },
+        "index.html": {
+          "before": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\18\\18d3d4a37247181d0e8e3767d1644aa9ab49bb7402731ac4d5444659ba258269",
+          "after": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\41\\412a8f696909107a346636603f2d66f3fa64e4dbb6ee83d7831662c35618d564"
+        },
+        "sequencia.png": {
+          "before": null,
+          "after": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\d6\\d6f00098d98389b7ba959c2f58df0d23b53b3a073f479ab849d83081bc35940c"
+        }
+      }
+    },
+    "c9d67f36-243d-4879-a43c-76772fe0670c": {
+      "actor": {
+        "kind": "agent",
+        "name": "cursor"
+      },
+      "label": "Banners e capturas do plano visual",
+      "startedAt": 1792267700652,
+      "endedAt": 1792268030679.2117,
+      "files": {
+        "01-gancho.png": {
+          "before": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\0f\\0f38c8fa42bdf2973f439bfac5d59e46d854cb0380ed8d86634b499be008bb12",
+          "after": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\37\\3743b809a4fbf9bc8c04d73a49cf817508df614d14cccf78eb0d5fa04d357ac0"
+        },
+        "02-arquiteturas.png": {
+          "before": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\c0\\c025c3f73970bd2be845f1f5e977e9a019c10312bd1b8b4a1bd3bface597c748",
+          "after": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\6d\\6d45b8efada049d0b2eea3df178bf23470cf9458cc5f2c83fb1b640e718a2970"
+        },
+        "04-dependencias.png": {
+          "before": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\a0\\a042f74a6140713a45da9755b2d373b4762eef580ccc20f1180876a55e03d32a",
+          "after": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\09\\092fbc87bff8dced10e452bbd117a1d543f9862c2e24b1313fe343f1b2c24869"
+        },
+        "05-ai-ops.png": {
+          "before": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\b4\\b40a7dff39029e9f5a00732a8ba19f9f6ac8ff07372a0c301d1829c46fa14703",
+          "after": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\a0\\a06e8c1bc967a62d0a876dd4e25f2283d6522db3437cd2f6dbc0d78eae281d11"
+        },
+        "capturas/contact-sheet.jpg": {
+          "before": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\9b\\9b1ae91abf8b57d510644a95c4d9f07a9b5608b64ecd52cea901d7e363009971",
+          "after": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\09\\090bedd8b89d460bb2e7d3c10db45f0c53dc2cd6bcd33f8cc0b602ea8076768f"
+        },
+        "capturas/frame-00-at-2s.png": {
+          "before": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\94\\94db16956ddadd54632ef7bef6eb15ead2814c9db767ce5ac2a9407904bc4a94",
+          "after": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\d1\\d1f2cd0de9de68589e68e42cd4223af954d00ef987d820cd7912245d06373f61"
+        },
+        "capturas/frame-01-at-8.5s.png": {
+          "before": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\78\\7892b7ad4a1aee4e99f467376ae6c4ff00c3589390b42f30f76dfef3b972b268",
+          "after": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\63\\63a70b19923329d5aa29661c0394a5104462a463988a6ffa63bb5755583735fe"
+        },
+        "capturas/frame-03-at-19.5s.png": {
+          "before": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\63\\6345f3b0982094df7a6f254365cf7754791e3794759da1b693ff8ff965704a84",
+          "after": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\d8\\d8aae1042d85e5229f526daf2342481d8cf392e69a27b78e5271420552a52b26"
+        },
+        "capturas/frame-04-at-24.5s.png": {
+          "before": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\46\\468b519289a90c7fbabeff15fd12832b12443708426b5261b77ffd426c34c9a5",
+          "after": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\17\\17cf0abe1e5e48f99bd0849e9f30fa10bb9cdbbc7107eb083d3dfdfb7bc799dc"
+        },
+        "sequencia.png": {
+          "before": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\d6\\d6f00098d98389b7ba959c2f58df0d23b53b3a073f479ab849d83081bc35940c",
+          "after": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\e4\\e43521b48c73014a329450ddf9459d8a6f7519303f63870314c08646986d9d80"
+        }
+      }
+    },
+    "32d12def-4bd9-4cda-8eb3-24f3c83c8fdd": {
+      "actor": {
+        "kind": "agent",
+        "name": "cursor"
+      },
+      "label": "Diagramas como imagens brancas independentes",
+      "startedAt": 1792268658286,
+      "endedAt": 1792268750750.6318,
+      "files": {
+        "index.html": {
+          "before": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\41\\412a8f696909107a346636603f2d66f3fa64e4dbb6ee83d7831662c35618d564",
+          "after": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\36\\369a2f9192d328dd48fda8d3beda25ec68f88879b1a0d8a2ef0b276864f38674"
+        }
+      }
+    },
+    "c36389ff-c828-4c47-aa63-5613e867ee38": {
+      "actor": {
+        "kind": "agent",
+        "name": "cursor"
+      },
+      "label": "Diagramas como imagens brancas independentes",
+      "startedAt": 1792268658286,
+      "endedAt": 1792269054214.038,
+      "files": {
+        "02-arquiteturas.png": {
+          "before": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\6d\\6d45b8efada049d0b2eea3df178bf23470cf9458cc5f2c83fb1b640e718a2970",
+          "after": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\b1\\b1715ec07c397764fc48811513ea973c0e0eef5bcaaae4b34988964679ae7e89"
+        },
+        "03-contexto.png": {
+          "before": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\bb\\bbcee6a94ac8cbb3e55e001241e577b8f963524fcb883f7d16abe34496efe615",
+          "after": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\ff\\ff8b0ea70abee05089e924616fca923257c299b98aaf90f93932fc6dc3b4105f"
+        },
+        "04-dependencias.png": {
+          "before": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\09\\092fbc87bff8dced10e452bbd117a1d543f9862c2e24b1313fe343f1b2c24869",
+          "after": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\1a\\1a8dd8fb64afb68c6a41dffccc7cf60d186ab4736875466fc99fd41b3cba3254"
+        },
+        "05-ai-ops.png": {
+          "before": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\a0\\a06e8c1bc967a62d0a876dd4e25f2283d6522db3437cd2f6dbc0d78eae281d11",
+          "after": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\00\\00320bac20f2ff87ce3942849b5d2071f3a5ba7e982c5804dc181a7a1e3bce25"
+        },
+        "06-evals.png": {
+          "before": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\7b\\7b84e9fd180711d698f63c7a76b67d74c6849fd8dcf958395d7e61312ce40025",
+          "after": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\40\\401c07a9eed89357fe599df02a97e26e6aa41acd4983fa276a34f59f0f19f97d"
+        },
+        "capturas/contact-sheet.jpg": {
+          "before": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\09\\090bedd8b89d460bb2e7d3c10db45f0c53dc2cd6bcd33f8cc0b602ea8076768f",
+          "after": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\a1\\a1b9c26df4d83dd8d7e35de0f2d08eaf46175da39da70965376177653639197e"
+        },
+        "capturas/frame-01-at-8.5s.png": {
+          "before": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\63\\63a70b19923329d5aa29661c0394a5104462a463988a6ffa63bb5755583735fe",
+          "after": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\dd\\ddd79bdb3da579998d28ab9480190cc11ee6524d437b21ecefa6978ddbbb5124"
+        },
+        "capturas/frame-02-at-14.5s.png": {
+          "before": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\9b\\9b143e278087324ab36f0b505e2f63ad550388e89b4ba2873d5c1aae631faffe",
+          "after": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\d1\\d1d19fd8d1e4dae17ee9ba1b73379b6ceaf0fbf1a934e90775782268d2c2bfe8"
+        },
+        "capturas/frame-03-at-19.5s.png": {
+          "before": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\d8\\d8aae1042d85e5229f526daf2342481d8cf392e69a27b78e5271420552a52b26",
+          "after": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\7e\\7ef644fabe3557b8b3df639b33f2adcb3c834d5582b51b3bec24028c761d46ac"
+        },
+        "capturas/frame-04-at-24.5s.png": {
+          "before": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\17\\17cf0abe1e5e48f99bd0849e9f30fa10bb9cdbbc7107eb083d3dfdfb7bc799dc",
+          "after": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\72\\72660192b2b133b3288a5d1000f73503825dee0c074e69b5fed841fae2514a95"
+        },
+        "capturas/frame-05-at-30s.png": {
+          "before": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\53\\53bd8d5c3d57f8d34a3b3b1457e09d7b84127e4703b0289ad66bf48ba4676318",
+          "after": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\4d\\4d17550ca1e53d11bb40209a265d77e6b17cf318a5dbd86b424cd66228e76768"
+        },
+        "sequencia.png": {
+          "before": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\e4\\e43521b48c73014a329450ddf9459d8a6f7519303f63870314c08646986d9d80",
+          "after": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\3f\\3f0af37bfd8fa5c19c39f7990699bf0d82e8ec28747bfa2727caa92ca8407e72"
+        }
+      }
+    },
+    "57468617-b06e-4881-b98e-edbe325ac685": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1792270135316,
+      "endedAt": 1792270135317,
+      "files": {
+        "index.html": {
+          "before": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\36\\369a2f9192d328dd48fda8d3beda25ec68f88879b1a0d8a2ef0b276864f38674",
+          "after": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\44\\44c10936f52ee0dba292caadc488f2dc1c79efe5e5a0516316c1e8897cbd8655"
+        }
+      }
+    },
+    "350f2162-7f9f-41ce-bad6-4699b6b57cf3": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1792271317357,
+      "endedAt": 1792271317408,
+      "files": {
+        "02-arquiteturas.png": {
+          "before": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\b1\\b1715ec07c397764fc48811513ea973c0e0eef5bcaaae4b34988964679ae7e89",
+          "after": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\3c\\3cc54294addca5dfe406190e3567a58f61fd2c6090b524a6e04006efb75fdfcc"
+        },
+        "03-contexto.png": {
+          "before": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\ff\\ff8b0ea70abee05089e924616fca923257c299b98aaf90f93932fc6dc3b4105f",
+          "after": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\c9\\c9e5162782b3611b1afaf4f17e17b4d704b73cc3dd16f09a7384e7b29041e262"
+        },
+        "04-dependencias.png": {
+          "before": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\1a\\1a8dd8fb64afb68c6a41dffccc7cf60d186ab4736875466fc99fd41b3cba3254",
+          "after": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\fb\\fb8e7a7b5e665dbeabc347112948f6fb724e128d5b1d6aa15492bf319a49f8a0"
+        },
+        "05-ai-ops.png": {
+          "before": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\00\\00320bac20f2ff87ce3942849b5d2071f3a5ba7e982c5804dc181a7a1e3bce25",
+          "after": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\71\\7115cf1d3ad75ab695b7f53e31f847d454b698a8e8cc8426a6193ff33ee5052f"
+        },
+        "06-evals.png": {
+          "before": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\40\\401c07a9eed89357fe599df02a97e26e6aa41acd4983fa276a34f59f0f19f97d",
+          "after": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\56\\5650a35baded6a5e18e781db3f29cf56c345a34859b6a200db5278568b59e7ea"
+        },
+        "capturas/contact-sheet.jpg": {
+          "before": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\a1\\a1b9c26df4d83dd8d7e35de0f2d08eaf46175da39da70965376177653639197e",
+          "after": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\d6\\d62be961b8efb9b02f1a45ce46b4252dde086b6edce0e97e12ce4366abb42003"
+        },
+        "capturas/frame-01-at-8.5s.png": {
+          "before": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\dd\\ddd79bdb3da579998d28ab9480190cc11ee6524d437b21ecefa6978ddbbb5124",
+          "after": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\00\\0049985fbc2017252687810de3712406443739c3bfad35a62411f9f9ae874c8b"
+        },
+        "capturas/frame-02-at-14.5s.png": {
+          "before": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\d1\\d1d19fd8d1e4dae17ee9ba1b73379b6ceaf0fbf1a934e90775782268d2c2bfe8",
+          "after": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\ea\\eaf9c25de8e7df4536ced4bfba8590eea981f059f303968c803317adbc96a77e"
+        },
+        "capturas/frame-03-at-19.5s.png": {
+          "before": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\7e\\7ef644fabe3557b8b3df639b33f2adcb3c834d5582b51b3bec24028c761d46ac",
+          "after": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\5d\\5dc76379433d3a1ed1e3b29c7b7cf5f72e2dbdd78548faab8e50e7aa61928e88"
+        },
+        "capturas/frame-04-at-24.5s.png": {
+          "before": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\72\\72660192b2b133b3288a5d1000f73503825dee0c074e69b5fed841fae2514a95",
+          "after": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\d2\\d205e3c60548321f49d84e8ba6f52dfac6b5cb07c6faa40c1251a67f56555a12"
+        },
+        "capturas/frame-05-at-30s.png": {
+          "before": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\4d\\4d17550ca1e53d11bb40209a265d77e6b17cf318a5dbd86b424cd66228e76768",
+          "after": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\61\\6180a65e7855a9a43bc3853ce36063840a768fd46562fb0227ea966b34e6d3bc"
+        },
+        "index.html": {
+          "before": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\44\\44c10936f52ee0dba292caadc488f2dc1c79efe5e5a0516316c1e8897cbd8655",
+          "after": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\3b\\3b264e109b97f8232809e452a256b38358160751d94a6e218cd65c8faace2303"
+        },
+        "sequencia.png": {
+          "before": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\3f\\3f0af37bfd8fa5c19c39f7990699bf0d82e8ec28747bfa2727caa92ca8407e72",
+          "after": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\3a\\3a8bae3f29a9a023b47949e08ff5614cc06e6e0262273726f28abf4da16bab1e"
+        }
+      }
+    },
+    "d0ff3083-b955-4332-ab6e-8467e862a18a": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1792271330019,
+      "endedAt": 1792271330062,
+      "files": {
+        "02-arquiteturas.png": {
+          "before": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\3c\\3cc54294addca5dfe406190e3567a58f61fd2c6090b524a6e04006efb75fdfcc",
+          "after": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\62\\62b45ae18c0d651435acfd72a07f0cf54f955d4d4759deaa945c5dd88afccba2"
+        },
+        "03-contexto.png": {
+          "before": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\c9\\c9e5162782b3611b1afaf4f17e17b4d704b73cc3dd16f09a7384e7b29041e262",
+          "after": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\b1\\b168765d0bc9513b0a556ec604187196aa2ff83b8cffdee315e46f2323f93ef6"
+        },
+        "04-dependencias.png": {
+          "before": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\fb\\fb8e7a7b5e665dbeabc347112948f6fb724e128d5b1d6aa15492bf319a49f8a0",
+          "after": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\59\\591bb0c20b221588f1c349a70620b3285927407d52471d35df779696c614720c"
+        },
+        "05-ai-ops.png": {
+          "before": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\71\\7115cf1d3ad75ab695b7f53e31f847d454b698a8e8cc8426a6193ff33ee5052f",
+          "after": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\1b\\1b09f44391cf4360a78ec4de88b0db0546206dc42b6b20a2ad37f353ca3ecd7f"
+        },
+        "06-evals.png": {
+          "before": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\56\\5650a35baded6a5e18e781db3f29cf56c345a34859b6a200db5278568b59e7ea",
+          "after": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\8b\\8b3eeeddfaf574e26f65bc7227955b139a92ee16b7275853f59eca3a94b43f67"
+        },
+        "capturas/contact-sheet.jpg": {
+          "before": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\d6\\d62be961b8efb9b02f1a45ce46b4252dde086b6edce0e97e12ce4366abb42003",
+          "after": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\65\\656436d7203795454bf4e904c172158c2df819a02726b9be8a7c34aef4426e31"
+        },
+        "capturas/frame-01-at-8.5s.png": {
+          "before": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\00\\0049985fbc2017252687810de3712406443739c3bfad35a62411f9f9ae874c8b",
+          "after": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\50\\5042e7e3c602df2fbd665394bac0b68c287371202e82ccb5deca61cf03b876de"
+        },
+        "capturas/frame-02-at-14.5s.png": {
+          "before": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\ea\\eaf9c25de8e7df4536ced4bfba8590eea981f059f303968c803317adbc96a77e",
+          "after": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\bb\\bb742223a19bccddc9853d44f83625d61fa25640a320a4400a936f790ffaa27a"
+        },
+        "capturas/frame-03-at-19.5s.png": {
+          "before": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\5d\\5dc76379433d3a1ed1e3b29c7b7cf5f72e2dbdd78548faab8e50e7aa61928e88",
+          "after": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\81\\81eca6b71c904d7eaf7750650627d066709a444bb5219093e8e5fbcf1cbf9668"
+        },
+        "capturas/frame-04-at-24.5s.png": {
+          "before": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\d2\\d205e3c60548321f49d84e8ba6f52dfac6b5cb07c6faa40c1251a67f56555a12",
+          "after": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\50\\507c3d0f9bbc235d2f43815f2d868d420c535750ace761fa556208794d31207f"
+        },
+        "capturas/frame-05-at-30s.png": {
+          "before": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\61\\6180a65e7855a9a43bc3853ce36063840a768fd46562fb0227ea966b34e6d3bc",
+          "after": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\40\\402e546807f829a78a6b17a600439aacfbc99056ddbb9df27af03e09e9daac8f"
+        },
+        "sequencia.png": {
+          "before": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\3a\\3a8bae3f29a9a023b47949e08ff5614cc06e6e0262273726f28abf4da16bab1e",
+          "after": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\5dc56123-e4b8-4a2d-9b68-f08917a0f9ca\\blobs\\ee\\ee32cc3c4a8f97f1869dd27d7557bc1ee9fc37f2e892b57ed6587b8357ff21e8"
+        }
+      }
+    }
+  },
+  "checks": {
+    "latest": {
+      "revision": "d0ff3083-b955-4332-ab6e-8467e862a18a",
+      "id": "1e00ed9f-b549-4977-85c2-6a2d2b52840b"
+    },
+    "revisions": {
+      "525a235b-f4ea-4567-b0ae-807f64040e02": [
+        {
+          "id": "870f4249-e5a0-4dc0-bd07-a296ac372288",
+          "scope": "project",
+          "report": "c:\\Users\\Pedro Miyasaki\\Desktop\\all\\pedro-miyasaki\\video\\projects\\5-conceitos-de-ia-que-empreendedores-precisam-conhecer\\plano\\.hyperframes\\artifacts\\checks\\870f4249-e5a0-4dc0-bd07-a296ac372288.json",
+          "metadata": {
+            "ok": true,
+            "browserSkipped": false,
+            "options": {
+              "samples": 9,
+              "at": [
+                2,
+                8.5,
+                14.5,
+                19.5,
+                24.5,
+                30,
+                35
+              ],
+              "atTransitions": false,
+              "maxIssues": 80,
+              "collapseStatic": true,
+              "tolerance": 2,
+              "timeout": 3000,
+              "contrast": true,
+              "strict": false,
+              "snapshots": false,
+              "browserGpuMode": "auto"
+            }
+          },
+          "createdAt": 1792267904300,
+          "contentHash": "8a9bea9fe2f1d7ec71a1405529e7d0c4e6ac2b2cba9cae3c455d426ac9054ab5",
+          "revision": "525a235b-f4ea-4567-b0ae-807f64040e02",
+          "inputFingerprint": "fb5436fdadabd50411f2912d95e471e4ccbe08b3c8345db3d4659ab5aace97c8",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        }
+      ],
+      "50705714-746f-4bc6-97dd-62b51967fc06": [
+        {
+          "id": "55ffe418-d1a3-4ef1-8b71-7231b77863a4",
+          "scope": "project",
+          "report": "c:\\Users\\Pedro Miyasaki\\Desktop\\all\\pedro-miyasaki\\video\\projects\\5-conceitos-de-ia-que-empreendedores-precisam-conhecer\\plano\\.hyperframes\\artifacts\\checks\\55ffe418-d1a3-4ef1-8b71-7231b77863a4.json",
+          "metadata": {
+            "ok": true,
+            "browserSkipped": false,
+            "options": {
+              "samples": 9,
+              "at": [
+                2,
+                8.5,
+                14.5,
+                19.5,
+                24.5,
+                30,
+                35
+              ],
+              "atTransitions": false,
+              "maxIssues": 80,
+              "collapseStatic": true,
+              "tolerance": 2,
+              "timeout": 3000,
+              "contrast": true,
+              "strict": false,
+              "snapshots": false,
+              "browserGpuMode": "auto"
+            }
+          },
+          "createdAt": 1792268024026,
+          "contentHash": "70c72d8dc487de0d01e4979101c203bf35638fd9c5e36e3ea3db37f342f7de10",
+          "revision": "50705714-746f-4bc6-97dd-62b51967fc06",
+          "inputFingerprint": "8b609f17233f4cab51798ec2dfee79d824a8c1fee5bf4492f8471ff16696a40b",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        }
+      ],
+      "32d12def-4bd9-4cda-8eb3-24f3c83c8fdd": [
+        {
+          "id": "3f4d5971-58af-46a9-bf10-5f6e5949e8da",
+          "scope": "project",
+          "report": "c:\\Users\\Pedro Miyasaki\\Desktop\\all\\pedro-miyasaki\\video\\projects\\5-conceitos-de-ia-que-empreendedores-precisam-conhecer\\plano\\.hyperframes\\artifacts\\checks\\3f4d5971-58af-46a9-bf10-5f6e5949e8da.json",
+          "metadata": {
+            "ok": true,
+            "browserSkipped": false,
+            "options": {
+              "samples": 9,
+              "at": [
+                8.5,
+                14.5,
+                19.5,
+                24.5,
+                30
+              ],
+              "atTransitions": false,
+              "maxIssues": 80,
+              "collapseStatic": true,
+              "tolerance": 2,
+              "timeout": 3000,
+              "contrast": true,
+              "strict": false,
+              "snapshots": false,
+              "browserGpuMode": "auto"
+            }
+          },
+          "createdAt": 1792268809509,
+          "contentHash": "73d86ee6168fbcb84e335c78863deabaf3aaa5298ad43c807fb8b8c567ae997a",
+          "revision": "32d12def-4bd9-4cda-8eb3-24f3c83c8fdd",
+          "inputFingerprint": "1e44ccff03a91ce650b849b26b0f3ca2893ed7c2c2881214a3712fdcecce727e",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        }
+      ],
+      "57468617-b06e-4881-b98e-edbe325ac685": [
+        {
+          "id": "aaae5480-7ddb-407c-8e24-486c0622c8ba",
+          "scope": "project",
+          "report": "c:\\Users\\Pedro Miyasaki\\Desktop\\all\\pedro-miyasaki\\video\\projects\\5-conceitos-de-ia-que-empreendedores-precisam-conhecer\\plano\\.hyperframes\\artifacts\\checks\\aaae5480-7ddb-407c-8e24-486c0622c8ba.json",
+          "metadata": {
+            "ok": true,
+            "browserSkipped": false,
+            "options": {
+              "samples": 9,
+              "atTransitions": false,
+              "maxIssues": 80,
+              "collapseStatic": true,
+              "tolerance": 2,
+              "timeout": 3000,
+              "contrast": true,
+              "strict": false,
+              "snapshots": false,
+              "browserGpuMode": "auto"
+            }
+          },
+          "createdAt": 1792270147937,
+          "contentHash": "758fc646f0794fcfd2fef3c6f161d15eb69305d5d472703027ffb7adc6694f63",
+          "revision": "57468617-b06e-4881-b98e-edbe325ac685",
+          "inputFingerprint": "f5e4e0862cfeb16ad999734140579d829ca4850e3676193bfe5221f89ddf6cc5",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        }
+      ],
+      "d0ff3083-b955-4332-ab6e-8467e862a18a": [
+        {
+          "id": "e8cbfb28-84ae-45f1-ad1b-9e76e6624726",
+          "scope": "project",
+          "report": "C:\\Users\\Pedro Miyasaki\\Desktop\\all\\pedro-miyasaki\\video\\projects\\5-conceitos-de-ia-que-empreendedores-precisam-conhecer\\plano\\.hyperframes\\artifacts\\checks\\e8cbfb28-84ae-45f1-ad1b-9e76e6624726.json",
+          "metadata": {
+            "ok": true,
+            "browserSkipped": false,
+            "options": {
+              "samples": 9,
+              "atTransitions": false,
+              "maxIssues": 80,
+              "collapseStatic": true,
+              "tolerance": 2,
+              "timeout": 3000,
+              "contrast": true,
+              "strict": false,
+              "snapshots": false,
+              "browserGpuMode": "auto"
+            }
+          },
+          "createdAt": 1792271338799,
+          "contentHash": "ffe6588e49b50280ad049ada115e9a16985e65a1cb60535e5f5cbef675e4353a",
+          "revision": "d0ff3083-b955-4332-ab6e-8467e862a18a",
+          "inputFingerprint": "5edf2c06552f5c2a31472820045a70f400c78dc8e5bca88877964e279e1c9133",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "id": "1e00ed9f-b549-4977-85c2-6a2d2b52840b",
+          "scope": "project",
+          "report": "c:\\Users\\Pedro Miyasaki\\Desktop\\all\\pedro-miyasaki\\video\\projects\\5-conceitos-de-ia-que-empreendedores-precisam-conhecer\\plano\\.hyperframes\\artifacts\\checks\\1e00ed9f-b549-4977-85c2-6a2d2b52840b.json",
+          "metadata": {
+            "ok": true,
+            "browserSkipped": false,
+            "options": {
+              "samples": 9,
+              "atTransitions": false,
+              "maxIssues": 80,
+              "collapseStatic": true,
+              "tolerance": 2,
+              "timeout": 3000,
+              "contrast": true,
+              "strict": false,
+              "snapshots": false,
+              "browserGpuMode": "auto"
+            }
+          },
+          "createdAt": 1792271432583,
+          "contentHash": "b30b904f517aaba8e437948e1f012d71eee0e14314eadd610aa45215eb6501f7",
+          "revision": "d0ff3083-b955-4332-ab6e-8467e862a18a",
+          "inputFingerprint": "5edf2c06552f5c2a31472820045a70f400c78dc8e5bca88877964e279e1c9133",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        }
+      ]
+    },
+    "unversioned": []
+  },
+  "snapshots": {
+    "latest": {
+      "revision": null,
+      "id": "4d8fa5eb-ce17-483f-9cfe-a9b949f7dec6-6"
+    },
+    "revisions": {},
+    "unversioned": [
+      {
+        "scope": "full",
+        "id": "4d8fa5eb-ce17-483f-9cfe-a9b949f7dec6-0",
+        "image": "C:\\Users\\Pedro Miyasaki\\Desktop\\all\\pedro-miyasaki\\video\\projects\\5-conceitos-de-ia-que-empreendedores-precisam-conhecer\\plano\\capturas\\frame-00-at-2s.png",
+        "time": 2,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1792271325238,
+        "contentHash": "d1f2cd0de9de68589e68e42cd4223af954d00ef987d820cd7912245d06373f61",
+        "revision": null,
+        "inputFingerprint": "fff67e684b37e2e9aec93a58d5ee0ec87808a8c0f386fee627330069a40793a6",
+        "inputScope": "local-project-files",
+        "attribution": "inputs-changed"
+      },
+      {
+        "scope": "full",
+        "id": "4d8fa5eb-ce17-483f-9cfe-a9b949f7dec6-1",
+        "image": "C:\\Users\\Pedro Miyasaki\\Desktop\\all\\pedro-miyasaki\\video\\projects\\5-conceitos-de-ia-que-empreendedores-precisam-conhecer\\plano\\capturas\\frame-01-at-8.5s.png",
+        "time": 8.5,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1792271325238,
+        "contentHash": "5042e7e3c602df2fbd665394bac0b68c287371202e82ccb5deca61cf03b876de",
+        "revision": null,
+        "inputFingerprint": "fff67e684b37e2e9aec93a58d5ee0ec87808a8c0f386fee627330069a40793a6",
+        "inputScope": "local-project-files",
+        "attribution": "inputs-changed"
+      },
+      {
+        "scope": "full",
+        "id": "4d8fa5eb-ce17-483f-9cfe-a9b949f7dec6-2",
+        "image": "C:\\Users\\Pedro Miyasaki\\Desktop\\all\\pedro-miyasaki\\video\\projects\\5-conceitos-de-ia-que-empreendedores-precisam-conhecer\\plano\\capturas\\frame-02-at-14.5s.png",
+        "time": 14.5,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1792271325239,
+        "contentHash": "bb742223a19bccddc9853d44f83625d61fa25640a320a4400a936f790ffaa27a",
+        "revision": null,
+        "inputFingerprint": "fff67e684b37e2e9aec93a58d5ee0ec87808a8c0f386fee627330069a40793a6",
+        "inputScope": "local-project-files",
+        "attribution": "inputs-changed"
+      },
+      {
+        "scope": "full",
+        "id": "4d8fa5eb-ce17-483f-9cfe-a9b949f7dec6-3",
+        "image": "C:\\Users\\Pedro Miyasaki\\Desktop\\all\\pedro-miyasaki\\video\\projects\\5-conceitos-de-ia-que-empreendedores-precisam-conhecer\\plano\\capturas\\frame-03-at-19.5s.png",
+        "time": 19.5,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1792271325239,
+        "contentHash": "81eca6b71c904d7eaf7750650627d066709a444bb5219093e8e5fbcf1cbf9668",
+        "revision": null,
+        "inputFingerprint": "fff67e684b37e2e9aec93a58d5ee0ec87808a8c0f386fee627330069a40793a6",
+        "inputScope": "local-project-files",
+        "attribution": "inputs-changed"
+      },
+      {
+        "scope": "full",
+        "id": "4d8fa5eb-ce17-483f-9cfe-a9b949f7dec6-4",
+        "image": "C:\\Users\\Pedro Miyasaki\\Desktop\\all\\pedro-miyasaki\\video\\projects\\5-conceitos-de-ia-que-empreendedores-precisam-conhecer\\plano\\capturas\\frame-04-at-24.5s.png",
+        "time": 24.5,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1792271325239,
+        "contentHash": "507c3d0f9bbc235d2f43815f2d868d420c535750ace761fa556208794d31207f",
+        "revision": null,
+        "inputFingerprint": "fff67e684b37e2e9aec93a58d5ee0ec87808a8c0f386fee627330069a40793a6",
+        "inputScope": "local-project-files",
+        "attribution": "inputs-changed"
+      },
+      {
+        "scope": "full",
+        "id": "4d8fa5eb-ce17-483f-9cfe-a9b949f7dec6-5",
+        "image": "C:\\Users\\Pedro Miyasaki\\Desktop\\all\\pedro-miyasaki\\video\\projects\\5-conceitos-de-ia-que-empreendedores-precisam-conhecer\\plano\\capturas\\frame-05-at-30s.png",
+        "time": 30,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1792271325239,
+        "contentHash": "402e546807f829a78a6b17a600439aacfbc99056ddbb9df27af03e09e9daac8f",
+        "revision": null,
+        "inputFingerprint": "fff67e684b37e2e9aec93a58d5ee0ec87808a8c0f386fee627330069a40793a6",
+        "inputScope": "local-project-files",
+        "attribution": "inputs-changed"
+      },
+      {
+        "scope": "full",
+        "id": "4d8fa5eb-ce17-483f-9cfe-a9b949f7dec6-6",
+        "image": "C:\\Users\\Pedro Miyasaki\\Desktop\\all\\pedro-miyasaki\\video\\projects\\5-conceitos-de-ia-que-empreendedores-precisam-conhecer\\plano\\capturas\\frame-06-at-35s.png",
+        "time": 35,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1792271325239,
+        "contentHash": "018d87db2848c6766afbf7a35ea5fcfc48766742ee39934617476ee8f3294216",
+        "revision": null,
+        "inputFingerprint": "fff67e684b37e2e9aec93a58d5ee0ec87808a8c0f386fee627330069a40793a6",
+        "inputScope": "local-project-files",
+        "attribution": "inputs-changed"
+      }
+    ]
+  }
+}

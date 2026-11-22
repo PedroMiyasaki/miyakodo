@@ -1,0 +1,1031 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Storyboard | Evals Reel</title>
+    <style>
+      @import url("./node_modules/@fontsource-variable/bricolage-grotesque/index.css");
+      @import url("./node_modules/@fontsource-variable/inter/index.css");
+      @import url("./node_modules/@fontsource-variable/newsreader/wght-italic.css");
+
+      :root {
+        color: #0a0a0a;
+        background: #f0efeb;
+        font-family: "Inter Variable", Arial, sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        padding: 40px;
+      }
+
+      header {
+        max-width: 1180px;
+        margin: 0 auto 32px;
+        border-bottom: 3px solid #0a0a0a;
+        padding-bottom: 24px;
+      }
+
+      h1 {
+        margin: 0;
+        font-family: "Bricolage Grotesque Variable", Arial, sans-serif;
+        font-size: clamp(42px, 7vw, 88px);
+        font-weight: 800;
+        line-height: 0.88;
+        letter-spacing: -0.065em;
+        text-transform: uppercase;
+      }
+
+      .deck {
+        max-width: 760px;
+        margin: 20px 0 0;
+        font-family: "Newsreader Variable", Georgia, serif;
+        font-size: 22px;
+        font-style: italic;
+        line-height: 1.25;
+      }
+
+      .meta {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-top: 18px;
+      }
+
+      .meta span {
+        border: 2px solid #0a0a0a;
+        background: #fff;
+        padding: 7px 10px 5px;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      main {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 28px;
+        max-width: 1180px;
+        margin: 0 auto;
+      }
+
+      .panel {
+        min-width: 0;
+      }
+
+      .panel-head {
+        display: grid;
+        grid-template-columns: 38px 1fr auto;
+        gap: 10px;
+        align-items: end;
+        border-bottom: 2px solid #0a0a0a;
+        margin-bottom: 10px;
+        padding-bottom: 7px;
+      }
+
+      .panel-number {
+        font-family: "Bricolage Grotesque Variable", Arial, sans-serif;
+        font-size: 30px;
+        font-weight: 800;
+        line-height: 0.8;
+      }
+
+      .panel-title {
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .panel-time {
+        font-size: 10px;
+        font-weight: 700;
+      }
+
+      .artboard {
+        position: relative;
+        width: min(100%, 300px);
+        aspect-ratio: 9 / 16;
+        overflow: hidden;
+        margin: 0 auto;
+        border: 3px solid #0a0a0a;
+        background: #fff;
+        isolation: isolate;
+      }
+
+      .footage {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -3;
+      }
+
+      .artboard::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 20;
+        pointer-events: none;
+        opacity: 0.08;
+        background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='3' cy='4' r='.7' fill='%23000'/%3E%3Ccircle cx='15' cy='10' r='.55' fill='%23000'/%3E%3Ccircle cx='8' cy='19' r='.45' fill='%23000'/%3E%3C/svg%3E");
+      }
+
+      .handle {
+        position: absolute;
+        top: 13px;
+        left: 14px;
+        z-index: 9;
+        padding: 4px 6px 3px;
+        color: #fff;
+        background: #0a0a0a;
+        font-size: 7px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .caption {
+        position: absolute;
+        z-index: 15;
+        left: 18px;
+        right: 18px;
+        bottom: 40px;
+        color: #fff;
+        font-size: 13px;
+        font-weight: 650;
+        line-height: 1.15;
+        text-align: center;
+        text-wrap: balance;
+        text-shadow:
+          0 2px 0 #0a0a0a,
+          1px 0 0 #0a0a0a,
+          -1px 0 0 #0a0a0a;
+      }
+
+      .word {
+        font-family: "Bricolage Grotesque Variable", Arial, sans-serif;
+        font-weight: 800;
+        letter-spacing: -0.055em;
+        line-height: 0.85;
+        text-transform: uppercase;
+      }
+
+      .paper {
+        background: #fff;
+        border: 2px solid #0a0a0a;
+        box-shadow: 5px 5px 0 #0a0a0a;
+        color: #0a0a0a;
+      }
+
+      .ink {
+        background: #0a0a0a;
+        color: #fff;
+      }
+
+      .rough-rule {
+        height: 3px;
+        background: #0a0a0a;
+        transform: rotate(-1.5deg);
+      }
+
+      .note {
+        margin: 10px auto 0;
+        max-width: 300px;
+        font-size: 11px;
+        line-height: 1.35;
+      }
+
+      .note strong {
+        font-weight: 800;
+      }
+
+      .f01 .stamp {
+        position: absolute;
+        z-index: 8;
+        top: 174px;
+        left: -18px;
+        width: 340px;
+        padding: 16px 0 11px;
+        transform: rotate(-4deg);
+        border-top: 5px solid #0a0a0a;
+        border-bottom: 5px solid #0a0a0a;
+        background: #fff;
+        font-size: 76px;
+        text-align: center;
+      }
+
+      .f01 .pause {
+        position: absolute;
+        right: 18px;
+        top: 285px;
+        z-index: 9;
+        width: 58px;
+        height: 13px;
+        border-top: 3px solid #fff;
+        border-bottom: 3px solid #fff;
+      }
+
+      .f02 .pair {
+        position: absolute;
+        top: 87px;
+        left: 14px;
+        right: 14px;
+        z-index: 7;
+        display: grid;
+        grid-template-columns: 1fr 22px 1fr;
+        align-items: center;
+        gap: 5px;
+      }
+
+      .f02 .pair span {
+        padding: 10px 4px 7px;
+        border: 2px solid #0a0a0a;
+        font-size: 18px;
+        text-align: center;
+      }
+
+      .f02 .plus {
+        font-family: "Bricolage Grotesque Variable", Arial, sans-serif;
+        font-size: 27px;
+        font-weight: 800;
+        text-align: center;
+      }
+
+      .f02 .invite {
+        position: absolute;
+        top: 157px;
+        right: 12px;
+        z-index: 8;
+        padding: 7px 8px 5px;
+        transform: rotate(2deg);
+        font-size: 10px;
+        font-weight: 800;
+        text-transform: uppercase;
+      }
+
+      .f03 .contract-title {
+        position: absolute;
+        top: 72px;
+        left: 13px;
+        z-index: 8;
+        padding: 8px 9px 5px;
+        font-size: 28px;
+      }
+
+      .contract {
+        position: absolute;
+        z-index: 7;
+        width: 80px;
+        height: 107px;
+        padding: 10px 8px;
+        border: 2px solid #0a0a0a;
+        background: #fff;
+        box-shadow: 4px 4px 0 #0a0a0a;
+      }
+
+      .contract::before,
+      .contract::after {
+        content: "";
+        display: block;
+        height: 3px;
+        margin-bottom: 7px;
+        background: #0a0a0a;
+        box-shadow:
+          0 10px 0 #0a0a0a,
+          0 20px 0 #0a0a0a,
+          0 30px 0 #0a0a0a;
+      }
+
+      .f03 .c1 {
+        top: 121px;
+        right: 17px;
+        transform: rotate(7deg);
+      }
+
+      .f03 .c2 {
+        top: 142px;
+        right: 53px;
+        transform: rotate(-4deg);
+      }
+
+      .f03 .critical {
+        position: absolute;
+        z-index: 9;
+        top: 243px;
+        right: 12px;
+        padding: 7px 8px 5px;
+        border-bottom: 4px solid #0a0a0a;
+        background: #fff;
+        font-size: 10px;
+        font-weight: 800;
+        text-transform: uppercase;
+      }
+
+      .f04 .flow {
+        position: absolute;
+        z-index: 8;
+        top: 78px;
+        left: 11px;
+        right: 11px;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+
+      .f04 .flow-box {
+        flex: 1;
+        min-width: 0;
+        padding: 9px 2px 7px;
+        border: 2px solid #0a0a0a;
+        background: #fff;
+        font-size: 12px;
+        text-align: center;
+      }
+
+      .f04 .arrow {
+        color: #fff;
+        font-size: 16px;
+        font-weight: 900;
+        text-shadow: 1px 1px 0 #0a0a0a;
+      }
+
+      .f04 .hope {
+        position: absolute;
+        top: 139px;
+        right: 16px;
+        z-index: 8;
+        padding: 8px 9px 5px;
+        transform: rotate(-3deg);
+        font-family: "Newsreader Variable", Georgia, serif;
+        font-size: 19px;
+        font-style: italic;
+      }
+
+      .f05 .split {
+        position: absolute;
+        z-index: 7;
+        top: 76px;
+        left: 0;
+        right: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        border-top: 3px solid #0a0a0a;
+        border-bottom: 3px solid #0a0a0a;
+      }
+
+      .f05 .error {
+        min-height: 112px;
+        padding: 13px 10px 8px;
+        background: #fff;
+      }
+
+      .f05 .error + .error {
+        border-left: 3px solid #0a0a0a;
+        background: #0a0a0a;
+        color: #fff;
+      }
+
+      .f05 .error b {
+        display: block;
+        font-family: "Bricolage Grotesque Variable", Arial, sans-serif;
+        font-size: 22px;
+        font-weight: 800;
+        line-height: 0.9;
+        letter-spacing: -0.05em;
+        text-transform: uppercase;
+      }
+
+      .f05 .error small {
+        display: block;
+        margin-top: 12px;
+        font-size: 8px;
+        font-weight: 800;
+        line-height: 1.2;
+        text-transform: uppercase;
+      }
+
+      .f06 .regression {
+        position: absolute;
+        z-index: 8;
+        top: 69px;
+        left: 12px;
+        right: 12px;
+        padding: 12px;
+      }
+
+      .f06 .regression-title {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+        align-items: end;
+      }
+
+      .f06 .regression-title b {
+        font-size: 24px;
+      }
+
+      .f06 .cases {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 5px;
+        margin-top: 10px;
+      }
+
+      .f06 .case {
+        display: grid;
+        height: 34px;
+        place-items: center;
+        border: 2px solid #0a0a0a;
+        font-family: "Bricolage Grotesque Variable", Arial, sans-serif;
+        font-size: 21px;
+        font-weight: 800;
+      }
+
+      .f06 .case.ok {
+        background: #0a0a0a;
+        color: #fff;
+      }
+
+      .f07 .dataset {
+        position: absolute;
+        z-index: 8;
+        top: 64px;
+        left: 12px;
+        right: 12px;
+        padding: 12px;
+      }
+
+      .f07 .dataset-head {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 8px;
+      }
+
+      .f07 .fifty {
+        font-size: 62px;
+      }
+
+      .f07 .dataset-name {
+        padding-bottom: 6px;
+        font-size: 11px;
+        font-weight: 800;
+        line-height: 1.05;
+        text-align: right;
+        text-transform: uppercase;
+      }
+
+      .f07 .matrix {
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        gap: 3px;
+        margin-top: 8px;
+      }
+
+      .f07 .matrix i {
+        display: block;
+        aspect-ratio: 1;
+        border: 1px solid #0a0a0a;
+        background: #fff;
+      }
+
+      .f07 .matrix i:nth-child(3n) {
+        background: #0a0a0a;
+      }
+
+      .f07 .gabarito {
+        margin-top: 10px;
+        padding: 8px 6px 5px;
+        font-size: 15px;
+        text-align: center;
+      }
+
+      .f08 .rerun {
+        position: absolute;
+        z-index: 8;
+        top: 72px;
+        left: 13px;
+        right: 13px;
+      }
+
+      .f08 .changes {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        gap: 5px;
+        align-items: center;
+      }
+
+      .f08 .changes span {
+        padding: 9px 4px 6px;
+        border: 2px solid #0a0a0a;
+        background: #fff;
+        font-size: 12px;
+        text-align: center;
+      }
+
+      .f08 .anchor {
+        margin-top: 9px;
+        padding: 12px 8px 9px;
+        border: 3px solid #fff;
+        outline: 3px solid #0a0a0a;
+        font-size: 29px;
+        text-align: center;
+      }
+
+      .f08 .stable {
+        margin: 9px auto 0;
+        width: max-content;
+        padding: 7px 8px 4px;
+        font-size: 12px;
+      }
+
+      .f09 .metric {
+        position: absolute;
+        z-index: 8;
+        top: 78px;
+        left: 13px;
+        right: 13px;
+        padding: 12px 12px 13px;
+      }
+
+      .f09 .metric h3 {
+        margin: 0;
+        font-size: 28px;
+      }
+
+      .f09 .rail {
+        position: relative;
+        height: 8px;
+        margin: 22px 3px 10px;
+        background: #0a0a0a;
+      }
+
+      .f09 .rail::before,
+      .f09 .rail::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        width: 18px;
+        height: 18px;
+        transform: translateY(-50%);
+        border: 3px solid #0a0a0a;
+        background: #fff;
+      }
+
+      .f09 .rail::before {
+        left: 19%;
+      }
+
+      .f09 .rail::after {
+        right: 3%;
+        background: #0a0a0a;
+      }
+
+      .f09 .labels {
+        display: flex;
+        justify-content: space-between;
+        font-size: 8px;
+        font-weight: 800;
+        text-transform: uppercase;
+      }
+
+      .f09 .direction {
+        margin-top: 12px;
+        padding-top: 8px;
+        border-top: 2px solid #0a0a0a;
+        font-size: 17px;
+        text-align: right;
+      }
+
+      .f10 .stations {
+        position: absolute;
+        z-index: 8;
+        top: 68px;
+        left: 12px;
+        right: 12px;
+        display: grid;
+        grid-template-columns: 1fr 28px 1fr;
+        gap: 4px;
+        align-items: center;
+      }
+
+      .f10 .station {
+        padding: 13px 5px 10px;
+        border: 2px solid #0a0a0a;
+        background: #fff;
+        font-size: 13px;
+        text-align: center;
+      }
+
+      .f10 .station.ink {
+        background: #0a0a0a;
+        color: #fff;
+      }
+
+      .f10 .station-arrow {
+        color: #fff;
+        font-size: 24px;
+        font-weight: 900;
+        text-align: center;
+        text-shadow: 1px 1px 0 #0a0a0a;
+      }
+
+      .f10 .broken {
+        position: absolute;
+        z-index: 9;
+        top: 139px;
+        right: 16px;
+        padding: 11px 10px 8px;
+        transform: rotate(3deg);
+        border: 3px solid #0a0a0a;
+        background: #0a0a0a;
+        color: #fff;
+        font-size: 20px;
+      }
+
+      .f10 .broken small {
+        display: block;
+        margin-top: 3px;
+        font-family: "Inter Variable", Arial, sans-serif;
+        font-size: 8px;
+        font-weight: 800;
+        letter-spacing: 0.06em;
+      }
+
+      .f11 .outcome {
+        position: absolute;
+        z-index: 8;
+        top: 70px;
+        left: 0;
+        right: 0;
+      }
+
+      .f11 .crossed {
+        width: max-content;
+        margin: 0 0 5px 15px;
+        padding: 5px 7px 3px;
+        font-size: 16px;
+        text-decoration: line-through 3px;
+      }
+
+      .f11 .direction-word {
+        margin-top: 10px;
+        padding: 15px 8px 10px;
+        border-top: 5px solid #fff;
+        border-bottom: 5px solid #fff;
+        outline: 3px solid #0a0a0a;
+        font-size: 53px;
+        text-align: center;
+      }
+
+      .f12 {
+        background: #0a0a0a;
+        color: #fff;
+      }
+
+      .f12 .anthropic {
+        position: absolute;
+        top: 57px;
+        left: 19px;
+        right: 19px;
+        padding-bottom: 9px;
+        border-bottom: 3px solid #fff;
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .f12 .cta {
+        position: absolute;
+        top: 127px;
+        left: 17px;
+        right: 17px;
+        font-size: 55px;
+      }
+
+      .f12 .cta span {
+        display: block;
+        color: #0a0a0a;
+        background: #fff;
+        padding: 7px 7px 3px;
+        transform: rotate(-2deg);
+      }
+
+      .f12 .link-note {
+        position: absolute;
+        left: 20px;
+        right: 20px;
+        bottom: 104px;
+        font-family: "Newsreader Variable", Georgia, serif;
+        font-size: 19px;
+        font-style: italic;
+        line-height: 1.1;
+      }
+
+      .f12 .final-handle {
+        position: absolute;
+        left: 20px;
+        bottom: 34px;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      @media (max-width: 680px) {
+        body {
+          padding: 24px 16px;
+        }
+
+        main {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Evals Reel</h1>
+      <p class="deck">
+        A gravação permanece como superfície principal. Papel, tinta e tipografia entram apenas para
+        tornar visíveis os conceitos que a fala apresenta.
+      </p>
+      <div class="meta">
+        <span>Instagram Reel</span>
+        <span>1080 × 1920</span>
+        <span>≈ 3min22s</span>
+        <span>Alvinegro</span>
+        <span>12 frames</span>
+      </div>
+    </header>
+
+    <main>
+      <article class="panel">
+        <div class="panel-head">
+          <span class="panel-number">01</span>
+          <span class="panel-title">Nome</span>
+          <span class="panel-time">00:00</span>
+        </div>
+        <div class="artboard f01">
+          <img class="footage" src="./storyboard-stills/01.jpg" alt="" />
+          <span class="handle">@pedro.miyasaki.ia</span>
+          <div class="stamp word">Evals</div>
+          <div class="pause"></div>
+          <div class="caption">você precisa conhecer um negócio chamado evals</div>
+        </div>
+        <p class="note"><strong>Beat:</strong> o carimbo toma a tela e devolve para a pausa do gancho.</p>
+      </article>
+
+      <article class="panel">
+        <div class="panel-head">
+          <span class="panel-number">02</span>
+          <span class="panel-title">Técnico e negócio</span>
+          <span class="panel-time">00:06</span>
+        </div>
+        <div class="artboard f02">
+          <img class="footage" src="./storyboard-stills/02.jpg" alt="" />
+          <span class="handle">@pedro.miyasaki.ia</span>
+          <div class="pair">
+            <span class="word paper">Técnico</span>
+            <b class="plus">+</b>
+            <span class="word ink">Negócio</span>
+          </div>
+          <span class="invite paper">mesmo sem ser técnico</span>
+          <div class="caption">eles tocam muito na área de negócios</div>
+        </div>
+        <p class="note"><strong>Beat:</strong> os dois públicos se encontram sem tirar a fala do centro.</p>
+      </article>
+
+      <article class="panel">
+        <div class="panel-head">
+          <span class="panel-number">03</span>
+          <span class="panel-title">Contratos</span>
+          <span class="panel-time">00:20</span>
+        </div>
+        <div class="artboard f03">
+          <img class="footage" src="./storyboard-stills/03.jpg" alt="" />
+          <span class="handle">@pedro.miyasaki.ia</span>
+          <div class="contract-title word ink">Contratos</div>
+          <div class="contract c1"></div>
+          <div class="contract c2"></div>
+          <div class="critical">cláusula crítica</div>
+          <div class="caption">um sistema que lê todos esses contratos</div>
+        </div>
+        <p class="note"><strong>Beat:</strong> papéis acumulam e uma única cláusula recebe o sublinhado.</p>
+      </article>
+
+      <article class="panel">
+        <div class="panel-head">
+          <span class="panel-number">04</span>
+          <span class="panel-title">Sem evals</span>
+          <span class="panel-time">00:35</span>
+        </div>
+        <div class="artboard f04">
+          <img class="footage" src="./storyboard-stills/04.jpg" alt="" />
+          <span class="handle">@pedro.miyasaki.ia</span>
+          <div class="flow">
+            <div class="flow-box word">Prompt</div>
+            <div class="arrow">→</div>
+            <div class="flow-box word">Contrato</div>
+            <div class="arrow">→</div>
+            <div class="flow-box word">Resposta?</div>
+          </div>
+          <div class="hope paper">e torcer...</div>
+          <div class="caption">você ia escrever um prompt e seguir sua vida</div>
+        </div>
+        <p class="note"><strong>Beat:</strong> o processo fecha com uma resposta que continua sem validação.</p>
+      </article>
+
+      <article class="panel">
+        <div class="panel-head">
+          <span class="panel-number">05</span>
+          <span class="panel-title">Dois erros</span>
+          <span class="panel-time">00:51</span>
+        </div>
+        <div class="artboard f05">
+          <img class="footage" src="./storyboard-stills/05.jpg" alt="" />
+          <span class="handle">@pedro.miyasaki.ia</span>
+          <div class="split">
+            <div class="error">
+              <b>Cláusulas demais</b>
+              <small>jurídico refaz o trabalho</small>
+            </div>
+            <div class="error">
+              <b>Cláusulas de menos</b>
+              <small>o risco passa despercebido</small>
+            </div>
+          </div>
+          <div class="caption">ou pode acontecer o problema contrário</div>
+        </div>
+        <p class="note"><strong>Beat:</strong> falsos positivos e falsos negativos aparecem lado a lado.</p>
+      </article>
+
+      <article class="panel">
+        <div class="panel-head">
+          <span class="panel-number">06</span>
+          <span class="panel-title">Regressão</span>
+          <span class="panel-time">01:16</span>
+        </div>
+        <div class="artboard f06">
+          <img class="footage" src="./storyboard-stills/06.jpg" alt="" />
+          <span class="handle">@pedro.miyasaki.ia</span>
+          <div class="regression paper">
+            <div class="regression-title">
+              <b class="word">Arrumou 1</b>
+              <b class="word">Quebrou 4?</b>
+            </div>
+            <div class="cases">
+              <span class="case ok">✓</span>
+              <span class="case">×</span>
+              <span class="case">×</span>
+              <span class="case">×</span>
+              <span class="case">×</span>
+            </div>
+          </div>
+          <div class="caption">e não está quebrando todos os outros casos?</div>
+        </div>
+        <p class="note"><strong>Hold:</strong> a pergunta congela antes da entrada dos evals.</p>
+      </article>
+
+      <article class="panel">
+        <div class="panel-head">
+          <span class="panel-number">07</span>
+          <span class="panel-title">O gabarito</span>
+          <span class="panel-time">01:33</span>
+        </div>
+        <div class="artboard f07">
+          <img class="footage" src="./storyboard-stills/07.jpg" alt="" />
+          <span class="handle">@pedro.miyasaki.ia</span>
+          <div class="dataset paper">
+            <div class="dataset-head">
+              <strong class="fifty word">50</strong>
+              <span class="dataset-name">contratos<br />já analisados</span>
+            </div>
+            <div class="matrix">
+              <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+              <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+              <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+              <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+              <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+            </div>
+            <div class="gabarito word ink">Gabarito</div>
+          </div>
+          <div class="caption">um dataset de evals com a resposta correta</div>
+        </div>
+        <p class="note"><strong>Beat:</strong> cinquenta casos individuais se tornam um teste repetível.</p>
+      </article>
+
+      <article class="panel">
+        <div class="panel-head">
+          <span class="panel-number">08</span>
+          <span class="panel-title">Rodar de novo</span>
+          <span class="panel-time">01:58</span>
+        </div>
+        <div class="artboard f08">
+          <img class="footage" src="./storyboard-stills/08.jpg" alt="" />
+          <span class="handle">@pedro.miyasaki.ia</span>
+          <div class="rerun">
+            <div class="changes">
+              <span class="word">Prompt</span>
+              <b>+</b>
+              <span class="word">Tools</span>
+            </div>
+            <div class="anchor word ink">50 casos</div>
+            <div class="stable word paper">✓ Estável</div>
+          </div>
+          <div class="caption">rodar esse dataset de evals de novo</div>
+        </div>
+        <p class="note"><strong>Beat:</strong> as mudanças passam pelo mesmo conjunto fixo de contratos.</p>
+      </article>
+
+      <article class="panel">
+        <div class="panel-head">
+          <span class="panel-number">09</span>
+          <span class="panel-title">Métrica e direção</span>
+          <span class="panel-time">02:15</span>
+        </div>
+        <div class="artboard f09">
+          <img class="footage" src="./storyboard-stills/09.jpg" alt="" />
+          <span class="handle">@pedro.miyasaki.ia</span>
+          <div class="metric paper">
+            <h3 class="word">Métrica objetiva</h3>
+            <div class="rail"></div>
+            <div class="labels">
+              <span>nota anterior</span>
+              <span>nota mais alta</span>
+            </div>
+            <div class="direction word">Direção →</div>
+          </div>
+          <div class="caption">você sabe se o produto está ficando melhor ou pior</div>
+        </div>
+        <p class="note"><strong>Beat:</strong> sem números inventados, a leitura avança para uma nota melhor.</p>
+      </article>
+
+      <article class="panel">
+        <div class="panel-head">
+          <span class="panel-number">10</span>
+          <span class="panel-title">Regra testada</span>
+          <span class="panel-time">02:31</span>
+        </div>
+        <div class="artboard f10">
+          <img class="footage" src="./storyboard-stills/10.jpg" alt="" />
+          <span class="handle">@pedro.miyasaki.ia</span>
+          <div class="stations">
+            <div class="station word">Jurídico</div>
+            <div class="station-arrow">→</div>
+            <div class="station word ink">Dev</div>
+          </div>
+          <div class="broken word">
+            Caso XYZ ×
+            <small>a regra quebrou aqui</small>
+          </div>
+          <div class="caption">essa regra é essa mesmo?</div>
+        </div>
+        <p class="note"><strong>Beat:</strong> uma regra abstrata encontra o caso concreto que ela quebra.</p>
+      </article>
+
+      <article class="panel">
+        <div class="panel-head">
+          <span class="panel-number">11</span>
+          <span class="panel-title">Direção</span>
+          <span class="panel-time">02:55</span>
+        </div>
+        <div class="artboard f11">
+          <img class="footage" src="./storyboard-stills/11.jpg" alt="" />
+          <span class="handle">@pedro.miyasaki.ia</span>
+          <div class="outcome">
+            <div class="crossed word paper">Subjetivo</div>
+            <div class="crossed word paper">Reativo</div>
+            <div class="direction-word word ink">Direção</div>
+          </div>
+          <div class="caption">uma direção para onde o produto pode evoluir</div>
+        </div>
+        <p class="note"><strong>Payoff:</strong> duas posições frágeis dão lugar a uma palavra final.</p>
+      </article>
+
+      <article class="panel">
+        <div class="panel-head">
+          <span class="panel-number">12</span>
+          <span class="panel-title">Guia</span>
+          <span class="panel-time">03:07</span>
+        </div>
+        <div class="artboard f12">
+          <div class="anthropic">Material oficial da Anthropic</div>
+          <div class="cta word">Comenta <span>Evals</span></div>
+          <div class="link-note">e eu te mando o link desse material</div>
+          <div class="final-handle">@pedro.miyasaki.ia</div>
+        </div>
+        <p class="note"><strong>Final:</strong> o pedido ocupa a tela e segura por dois segundos.</p>
+      </article>
+    </main>
+  </body>
+</html>

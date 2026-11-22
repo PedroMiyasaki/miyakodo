@@ -22,3 +22,13 @@ reference.txt
 .claude/skills
 .cursor/skills
 CLAUDE.md
+
+# Midia pesada (GitHub recusa arquivos acima de 100 MB; saidas e brutos ficam so no PC)
+video/outputs/
+videos/
+video/hooks/originais/
+**/.tools/
+**/.media/
+*.bin
+.env
+.dev.vars

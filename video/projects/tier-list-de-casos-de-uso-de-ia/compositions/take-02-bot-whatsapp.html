@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <style>
+        @font-face {
+          font-family: "Inter";
+          src: url("assets/fonts/inter-latin-wght-normal.woff2") format("woff2");
+          font-weight: 100 900;
+          font-style: normal;
+        }
+        #take-02-bot-whatsapp {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+          background: #0a0a0a;
+          font-family: Inter, system-ui, sans-serif;
+        }
+        #take-02-bot-whatsapp .arte {
+          position: absolute;
+          inset: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+        }
+        #take-02-bot-whatsapp .legenda {
+          position: absolute;
+          left: 64px;
+          right: 64px;
+          top: 1328px;
+          margin: 0;
+          text-align: center;
+          color: #ffffff;
+          font-family: Inter, system-ui, sans-serif;
+          font-weight: 500;
+          font-size: 40px;
+          line-height: 1.16;
+        }
+        #take-02-bot-whatsapp .legenda-titulo {
+          display: block;
+          margin-bottom: 6px;
+          font-weight: 700;
+        }
+        #take-02-bot-whatsapp .legenda-item {
+          display: block;
+        }
+      </style>
+      <div id="take-02-bot-whatsapp" data-composition-id="take-02-bot-whatsapp" data-width="1080" data-height="1920" data-duration="3">
+        <img class="arte" src="assets/banners/1.png" alt="Bot de atendimento no WhatsApp, nota 3 de 10" />
+        <div class="legenda">
+          <span class="legenda-titulo">*Atendimento*</span>
+          <span class="legenda-item">• Muito profissional ruim fazendo</span>
+          <span class="legenda-item">• Difícil fazer bem</span>
+          <span class="legenda-item">• Não compensa para muitas empresas</span>
+        </div>
+      </div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        window.__timelines["take-02-bot-whatsapp"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

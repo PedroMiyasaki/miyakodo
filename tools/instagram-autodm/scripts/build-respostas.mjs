@@ -1,6 +1,5 @@
 import { spawnSync } from "node:child_process";
-import { mkdir, readFile, rm, writeFile } from "node:fs/promises";
-import { tmpdir } from "node:os";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { loadRespostas } from "./parse-respostas.mjs";
@@ -190,14 +189,38 @@ async function readRemoteRules() {
   return results;
 }
 
+function remoteStatements(sql) {
+  const statements = [];
+  let current = "";
+  let quoted = false;
+  for (let i = 0; i < sql.length; i++) {
+    const char = sql[i];
+    if (char === "'") {
+      if (quoted && sql[i + 1] === "'") {
+        current += "''";
+        i++;
+        continue;
+      }
+      quoted = !quoted;
+    }
+    if (char === ";" && !quoted) {
+      const statement = current.trim();
+      if (statement && !/^(BEGIN|COMMIT)$/i.test(statement)) statements.push(statement);
+      current = "";
+      continue;
+    }
+    current += char;
+  }
+  const tail = current.trim();
+  if (tail && !/^(BEGIN|COMMIT)$/i.test(tail)) statements.push(tail);
+  return statements;
+}
+
 async function applyRemote(sql) {
   const name = await databaseName();
-  const file = path.join(tmpdir(), `instagram-autodm-${process.pid}.sql`);
-  await writeFile(file, sql);
-  try {
-    wrangler(["d1", "execute", name, "--remote", "--file", file]);
-  } finally {
-    await rm(file, { force: true });
+  // D1 rejects explicit BEGIN/COMMIT. Each statement is its own remote call.
+  for (const statement of remoteStatements(sql)) {
+    wrangler(["d1", "execute", name, "--remote", "--command", statement]);
   }
 }
 

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <style>
+        @font-face {
+          font-family: "Inter";
+          src: url("assets/fonts/inter-latin-wght-normal.woff2") format("woff2");
+          font-weight: 100 900;
+          font-style: normal;
+        }
+        #take-04-ligacoes-reunioes {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+          background: #0a0a0a;
+          font-family: Inter, system-ui, sans-serif;
+        }
+        #take-04-ligacoes-reunioes .arte {
+          position: absolute;
+          inset: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+        }
+        #take-04-ligacoes-reunioes .legenda {
+          position: absolute;
+          left: 88px;
+          right: 88px;
+          top: 1400px;
+          margin: 0;
+          text-align: center;
+          color: #ffffff;
+          font-family: Inter, system-ui, sans-serif;
+          font-weight: 600;
+          font-size: 46px;
+          line-height: 1.3;
+        }
+      </style>
+      <div id="take-04-ligacoes-reunioes" data-composition-id="take-04-ligacoes-reunioes" data-width="1080" data-height="1920" data-duration="3">
+        <img class="arte" src="assets/banners/3.png" alt="IA para analisar ligações e reuniões de vendas, nota 5 de 10" />
+        <p class="legenda">Comercial: funciona, mas o retorno não é tão alto.</p>
+      </div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        window.__timelines["take-04-ligacoes-reunioes"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

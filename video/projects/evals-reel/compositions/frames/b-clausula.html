@@ -1,0 +1,97 @@
+<template>
+  <style>
+    @font-face {
+      font-family: "Bricolage Grotesque";
+      src: url("node_modules/@fontsource-variable/bricolage-grotesque/files/bricolage-grotesque-latin-wght-normal.woff2") format("woff2");
+      font-weight: 200 800;
+    }
+    #root {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #0A0A0A;
+      color: #FFFFFF;
+      font-family: "Bricolage Grotesque", sans-serif;
+    }
+    #root > * { position: absolute; }
+    #root::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 4;
+      opacity: 0.14;
+      background-image: radial-gradient(#FFFFFF 0.6px, transparent 0.7px);
+      background-size: 4px 4px;
+    }
+    .label {
+      position: absolute;
+      font-weight: 800;
+      letter-spacing: -0.05em;
+      line-height: 0.9;
+    }
+    .off { opacity: 0; }
+    .sheet {
+      position: absolute;
+      border: 7px solid #FFFFFF;
+      background: #0A0A0A;
+      box-sizing: border-box;
+    }
+    .fold {
+      position: absolute;
+      top: -1px;
+      right: -1px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 42px 42px 0;
+      border-color: transparent #FFFFFF transparent transparent;
+    }
+    .rule {
+      height: 8px;
+      margin: 22px 22px 0;
+      background: #FFFFFF;
+      transform-origin: left center;
+      transform: scaleX(0);
+    }
+    .rule.short { width: 58%; }
+    .draw {
+      transform-origin: left center;
+      transform: scaleX(0);
+    }
+    svg .ink {
+      fill: none;
+      stroke: #FFFFFF;
+      stroke-width: 7;
+      stroke-linecap: square;
+      stroke-linejoin: miter;
+    }
+    #contract { left: 120px; top: 280px; width: 520px; height: 700px; }
+    #contract .rule { height: 12px; margin-top: 36px; }
+    #hot { position: absolute; left: 168px; top: 468px; width: 400px; height: 26px; background: #FFFFFF; }
+    #ring { position: absolute; left: 148px; top: 440px; }
+    #link { position: absolute; left: 660px; top: 456px; }
+    #tag { left: 700px; top: 300px; font-size: 64px; padding: 14px 18px 10px; background: #FFFFFF; color: #0A0A0A; }
+  </style>
+  <div data-hf-id="hf-3ddd" id="root" data-composition-id="b-clausula" data-width="1080" data-height="1920" data-duration="4.3">
+    <div data-hf-id="hf-p8v2" id="contract" class="sheet off"><div data-hf-id="hf-s4n9" class="fold"></div><div data-hf-id="hf-a46i" class="rule"></div><div data-hf-id="hf-e4dw" class="rule short"></div><div data-hf-id="hf-ya9a" class="rule"></div><div data-hf-id="hf-yokb" class="rule"></div><div data-hf-id="hf-fydo" class="rule short"></div><div data-hf-id="hf-z2vc" class="rule"></div><div data-hf-id="hf-ergl" class="rule short"></div></div>
+    <div data-hf-id="hf-jp5c" id="hot" class="draw off"></div>
+    <svg data-hf-id="hf-yrzq" id="ring" class="off" width="460" height="90" viewBox="0 0 460 90"><rect data-hf-id="hf-knzs" class="ink" id="ring-path" x="8" y="8" width="444" height="74" stroke-dasharray="1040" stroke-dashoffset="1040" /></svg>
+    <svg data-hf-id="hf-ad9m" id="link" class="off" width="280" height="40" viewBox="0 0 280 40"><line data-hf-id="hf-op5e" class="ink" x1="0" y1="20" x2="250" y2="20" /><polyline data-hf-id="hf-twac" class="ink" points="230,4 262,20 230,36" /></svg>
+    <div data-hf-id="hf-4890" id="tag" class="label off">CRÍTICA</div>
+  </div>
+  <script>
+    const timeline = gsap.timeline({ paused: true });
+    const byId = (name) => document.getElementById(name);
+    timeline.fromTo(byId("contract"), { opacity: 0, y: 40, rotation: -2 }, { opacity: 1, y: 0, rotation: -1, duration: 0.45, ease: "power3.out" }, 0.1);
+    timeline.fromTo("#contract .rule", { scaleX: 0 }, { scaleX: 1, duration: 0.25, stagger: 0.08, ease: "power2.out" }, 0.45);
+    timeline.fromTo(byId("hot"), { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.35, ease: "power2.out" }, 1.7);
+    timeline.fromTo(byId("ring"), { opacity: 0 }, { opacity: 1, duration: 0.1 }, 2.1);
+    timeline.fromTo("#ring-path", { strokeDashoffset: 1040 }, { strokeDashoffset: 0, duration: 0.45, ease: "power2.out" }, 2.1);
+    timeline.fromTo(byId("link"), { opacity: 0 }, { opacity: 1, duration: 0.15 }, 2.55);
+    timeline.fromTo(byId("tag"), { opacity: 0, scale: 1.4, rotation: 8 }, { opacity: 1, scale: 1, rotation: -2, duration: 0.35, ease: "back.out(1.7)" }, 2.9);
+    window.__timelines = window.__timelines || {};
+    window.__timelines["b-clausula"] = timeline;
+  </script>
+</template>

@@ -1,0 +1,15 @@
+<template>
+  <style>
+    @font-face { font-family: "Bricolage Grotesque"; src: url("node_modules/@fontsource-variable/bricolage-grotesque/files/bricolage-grotesque-latin-wght-normal.woff2") format("woff2"); font-weight: 200 800; }
+    #root { position: relative; width: 100%; height: 100%; font-family: "Bricolage Grotesque", sans-serif; pointer-events: none; }
+    #comment-word { position: absolute; left: 270px; top: 150px; width: 540px; height: 180px; border: 6px solid #FFFFFF; background: #0A0A0A; color: #FFFFFF; box-sizing: border-box; display: flex; align-items: center; justify-content: center; font-size: 104px; font-weight: 800; line-height: 1; opacity: 0; }
+  </style>
+  <div data-hf-id="hf-kqdu" id="root" data-composition-id="comment-evals" data-width="1080" data-height="1920" data-duration="2.33">
+    <div data-hf-id="hf-1de6" id="comment-word">"EVALS"</div>
+  </div>
+  <script>
+    const timeline = gsap.timeline({ paused: true });
+    timeline.fromTo("#comment-word", { opacity: 0, scale: .9, y: 10 }, { opacity: 1, scale: 1, y: 0, duration: .25, ease: "power3.out" }, .02);
+    window.__timelines["comment-evals"] = timeline;
+  </script>
+</template>

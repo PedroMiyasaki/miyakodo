@@ -1,0 +1,123 @@
+<mxfile>
+  <diagram id="padrao-01" name="Especialista aumentado com IA">
+    <mxGraphModel dx="1280" dy="860" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1280" pageHeight="860" math="0" shadow="0" background="#ffffff">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Cabecalho -->
+        <mxCell id="title" value="Padrão 1: Especialista aumentado com IA" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Helvetica;fontSize=26;fontStyle=1;fontColor=#1e1e1e;" vertex="1" parent="1">
+          <mxGeometry x="40" y="20" width="1200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="Dados organizados, skills governadas e IA como copiloto para acelerar entregas com validação humana" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Helvetica;fontSize=15;fontColor=#555555;" vertex="1" parent="1">
+          <mxGeometry x="40" y="62" width="1200" height="28" as="geometry" />
+        </mxCell>
+
+        <!-- Container principal (declarado antes das caixas internas para ficar ao fundo) -->
+        <mxCell id="env_container" value="&lt;b&gt;AMBIENTE DO ESPECIALISTA&lt;/b&gt;&lt;div style=&quot;font-size: 11px; font-weight: normal; color: #166534; margin-top: 2px;&quot;&gt;Máquina local / Harness pronto (ou assinatura Enterprise)&lt;/div&gt;" style="rounded=1;arcSize=6;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=13;fontStyle=1;fillColor=#ebfbee;strokeColor=#22c55e;strokeWidth=2;fontColor=#15803d;verticalAlign=top;align=center;spacingTop=10;spacingLeft=10;spacingRight=10;" vertex="1" parent="1">
+          <mxGeometry x="600" y="125" width="430" height="250" as="geometry" />
+        </mxCell>
+
+        <!-- Camada de dados e entrada -->
+        <mxCell id="fontes" value="&lt;b style=&quot;font-size: 13px;&quot;&gt;FONTES BRUTAS&lt;/b&gt;&lt;div style=&quot;font-size: 11px; color: #334155; margin-top: 6px;&quot;&gt;ERPs, planilhas, PDFs,&lt;br&gt;e-mails e sistemas&lt;/div&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fontFamily=Helvetica;spacing=8;fillColor=#a5d8ff;strokeColor=#4a9eed;strokeWidth=2;fontColor=#1e1e1e;" vertex="1" parent="1">
+          <mxGeometry x="30" y="135" width="170" height="90" as="geometry" />
+        </mxCell>
+
+        <mxCell id="preproc" value="&lt;b style=&quot;font-size: 12px;&quot;&gt;PRÉ-PROCESSAMENTO&lt;/b&gt;&lt;div style=&quot;font-size: 11px; color: #334155; margin-top: 6px;&quot;&gt;Coleta, limpa, estrutura&lt;br&gt;e padroniza os dados&lt;/div&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fontFamily=Helvetica;spacing=8;fillColor=#a5d8ff;strokeColor=#4a9eed;strokeWidth=2;fontColor=#1e1e1e;" vertex="1" parent="1">
+          <mxGeometry x="30" y="265" width="170" height="90" as="geometry" />
+        </mxCell>
+
+        <mxCell id="dados" value="&lt;b style=&quot;font-size: 12.5px;&quot;&gt;CAMADA CENTRALIZADA&lt;br&gt;DE DADOS&lt;/b&gt;&lt;div style=&quot;font-size: 11px; color: #1e293b; margin-top: 10px;&quot;&gt;RAG / base vetorial&lt;br&gt;&lt;b&gt;ou&lt;/b&gt;&lt;br&gt;Pastas compartilháveis&lt;br&gt;(OneDrive / SharePoint)&lt;/div&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fontFamily=Helvetica;spacing=8;fillColor=#a5d8ff;strokeColor=#4a9eed;strokeWidth=2;fontColor=#1e1e1e;" vertex="1" parent="1">
+          <mxGeometry x="228" y="195" width="182" height="160" as="geometry" />
+        </mxCell>
+
+        <!-- Conector MCP -->
+        <mxCell id="mcp" value="&lt;b style=&quot;font-size: 14px;&quot;&gt;MCP&lt;/b&gt;&lt;div style=&quot;font-size: 11px; color: #1e293b; margin-top: 8px;&quot;&gt;MCP interno (RAG)&lt;br&gt;&lt;b&gt;ou&lt;/b&gt;&lt;br&gt;MCP nativo / Tools&lt;br&gt;(pastas)&lt;/div&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fontFamily=Helvetica;spacing=8;fillColor=#c3fae8;strokeColor=#06b6d4;strokeWidth=2;fontColor=#1e1e1e;" vertex="1" parent="1">
+          <mxGeometry x="438" y="210" width="134" height="130" as="geometry" />
+        </mxCell>
+
+        <!-- Caixas internas do ambiente do especialista -->
+        <mxCell id="ia" value="&lt;b style=&quot;font-size: 14px;&quot;&gt;IA (COPILOTO)&lt;/b&gt;&lt;div style=&quot;font-size: 11px; font-weight: bold; color: #5b21b6; margin-top: 4px;&quot;&gt;Claude, Codex, Cursor&lt;/div&gt;&lt;div style=&quot;font-size: 11px; color: #1e293b; margin-top: 10px;&quot;&gt;Agente assistido: lê dados,&lt;br&gt;aplica skills e gera&lt;br&gt;rascunhos e análises&lt;/div&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fontFamily=Helvetica;spacing=8;fillColor=#d0bfff;strokeColor=#8b5cf6;strokeWidth=2;fontColor=#1e1e1e;" vertex="1" parent="1">
+          <mxGeometry x="618" y="195" width="168" height="160" as="geometry" />
+        </mxCell>
+
+        <mxCell id="especialista" value="&lt;b style=&quot;font-size: 14px;&quot;&gt;ESPECIALISTA&lt;/b&gt;&lt;div style=&quot;font-size: 11px; font-weight: bold; color: #b45309; margin-top: 4px;&quot;&gt;Human-in-the-loop&lt;/div&gt;&lt;div style=&quot;font-size: 11px; color: #1e293b; margin-top: 10px;&quot;&gt;Direciona o caso, julga&lt;br&gt;exceções, revisa e&lt;br&gt;aprova a entrega&lt;/div&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fontFamily=Helvetica;spacing=8;fillColor=#fff3bf;strokeColor=#f59e0b;strokeWidth=3;fontColor=#1e1e1e;" vertex="1" parent="1">
+          <mxGeometry x="844" y="195" width="168" height="160" as="geometry" />
+        </mxCell>
+
+        <!-- Saida aprovada -->
+        <mxCell id="saida" value="&lt;b style=&quot;font-size: 12.5px;&quot;&gt;SAÍDA(S) APROVADA(S)&lt;/b&gt;&lt;div style=&quot;font-size: 11px; color: #1e293b; margin-top: 10px;&quot;&gt;1 ou vários tipos de entrega&lt;br&gt;(relatório, parecer, análise)&lt;/div&gt;&lt;div style=&quot;font-size: 11px; color: #166534; margin-top: 10px;&quot;&gt;&lt;b&gt;Saída estruturada&lt;/b&gt; quando&lt;br&gt;integra sistemas (ERP, CRM)&lt;/div&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fontFamily=Helvetica;spacing=8;fillColor=#b2f2bb;strokeColor=#22c55e;strokeWidth=2;fontColor=#1e1e1e;" vertex="1" parent="1">
+          <mxGeometry x="1062" y="185" width="188" height="180" as="geometry" />
+        </mxCell>
+
+        <!-- Governanca e repositorio de skills -->
+        <mxCell id="validadores" value="&lt;b style=&quot;font-size: 12.5px;&quot;&gt;ESPECIALISTAS DE VALIDAÇÃO&lt;/b&gt;&lt;div style=&quot;font-size: 11px; font-weight: bold; color: #b45309; margin-top: 4px;&quot;&gt;Human-in-the-loop de governança&lt;/div&gt;&lt;div style=&quot;font-size: 11px; color: #1e293b; margin-top: 8px;&quot;&gt;Escrevem, versionam e testam skills&lt;br&gt;com Evals em casos reais&lt;/div&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fontFamily=Helvetica;spacing=8;fillColor=#fff3bf;strokeColor=#f59e0b;strokeWidth=3;fontColor=#1e1e1e;" vertex="1" parent="1">
+          <mxGeometry x="228" y="455" width="240" height="120" as="geometry" />
+        </mxCell>
+
+        <mxCell id="skills" value="&lt;b style=&quot;font-size: 14px;&quot;&gt;REPOSITÓRIO CENTRALIZADO DE SKILLS&lt;/b&gt;&lt;div style=&quot;font-size: 12px; color: #1e293b; margin-top: 8px;&quot;&gt;Regras de negócio, métodos, critérios e resources oficiais&lt;/div&gt;&lt;div style=&quot;font-size: 11px; color: #334155; margin-top: 6px;&quot;&gt;Pasta governada (SharePoint / OneDrive), GitHub ou solução interna&lt;/div&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fontFamily=Helvetica;spacing=8;fillColor=#c3fae8;strokeColor=#06b6d4;strokeWidth=2;fontColor=#1e1e1e;" vertex="1" parent="1">
+          <mxGeometry x="600" y="455" width="430" height="120" as="geometry" />
+        </mxCell>
+
+        <!-- Conexoes do fluxo principal -->
+        <mxCell id="e_fontes_preproc" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#1e1e1e;strokeWidth=2;endArrow=classic;endFill=1;fontSize=13;fontColor=#15803d;labelBackgroundColor=#ffffff;fontFamily=Helvetica;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="fontes" target="preproc">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e_preproc_dados" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#1e1e1e;strokeWidth=2;endArrow=classic;endFill=1;fontSize=13;fontColor=#15803d;labelBackgroundColor=#ffffff;fontFamily=Helvetica;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.71875;entryDx=0;entryDy=0;" edge="1" parent="1" source="preproc" target="dados">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e_dados_mcp" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#1e1e1e;strokeWidth=2;endArrow=classic;endFill=1;fontSize=13;fontColor=#15803d;labelBackgroundColor=#ffffff;fontFamily=Helvetica;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="dados" target="mcp">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e_mcp_ia" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#1e1e1e;strokeWidth=2;endArrow=classic;endFill=1;fontSize=13;fontColor=#15803d;labelBackgroundColor=#ffffff;fontFamily=Helvetica;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="mcp" target="ia">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e_ia_esp" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#1e1e1e;strokeWidth=2;startArrow=classic;startFill=1;endArrow=classic;endFill=1;fontSize=13;fontColor=#15803d;labelBackgroundColor=#ffffff;fontFamily=Helvetica;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="ia" target="especialista">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e_esp_saida" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#1e1e1e;strokeWidth=2;endArrow=classic;endFill=1;fontSize=13;fontColor=#15803d;labelBackgroundColor=#ffffff;fontFamily=Helvetica;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="especialista" target="saida">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Conexoes de governanca e skills -->
+        <mxCell id="e_val_skills" value="escrevem e&lt;br&gt;validam" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#1e1e1e;strokeWidth=2;endArrow=classic;endFill=1;fontSize=13;fontStyle=1;fontColor=#15803d;labelBackgroundColor=#ffffff;fontFamily=Helvetica;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="validadores" target="skills">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e_skills_ia" value="IA usa" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#1e1e1e;strokeWidth=2;endArrow=classic;endFill=1;fontSize=13;fontStyle=1;fontColor=#15803d;labelBackgroundColor=#ffffff;fontFamily=Helvetica;exitX=0.2372;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="skills" target="ia">
+          <mxGeometry x="-0.2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="e_esp_skills" value="aciona e opera" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#1e1e1e;strokeWidth=2;endArrow=classic;endFill=1;fontSize=13;fontStyle=1;fontColor=#15803d;labelBackgroundColor=#ffffff;fontFamily=Helvetica;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.7628;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="especialista" target="skills">
+          <mxGeometry x="0.2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Faixa inferior: ganhos-chave -->
+        <mxCell id="bottom_title" value="Por que esse padrão vence substituir o especialista:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Helvetica;fontSize=16;fontStyle=1;fontColor=#1e1e1e;" vertex="1" parent="1">
+          <mxGeometry x="40" y="632" width="700" height="28" as="geometry" />
+        </mxCell>
+
+        <mxCell id="card_1" value="&lt;b style=&quot;font-size: 14px;&quot;&gt;1. Multiplica a capacidade sem perder controle&lt;/b&gt;&lt;div style=&quot;font-size: 12px; color: #1e293b; margin-top: 8px;&quot;&gt;A IA lê dados, cruza contexto e gera rascunhos em minutos; o especialista foca em julgar exceções e assinar a entrega.&lt;/div&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fontFamily=Helvetica;spacing=12;align=left;verticalAlign=middle;fillColor=#b2f2bb;strokeColor=#22c55e;strokeWidth=2;fontColor=#1e1e1e;" vertex="1" parent="1">
+          <mxGeometry x="40" y="672" width="380" height="118" as="geometry" />
+        </mxCell>
+
+        <mxCell id="card_2" value="&lt;b style=&quot;font-size: 14px;&quot;&gt;2. O método vira ativo governado em skills&lt;/b&gt;&lt;div style=&quot;font-size: 12px; color: #1e293b; margin-top: 8px;&quot;&gt;O conhecimento do time sai de prompts soltos e vai para um repositório centralizado, versionado e validado em casos reais.&lt;/div&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fontFamily=Helvetica;spacing=12;align=left;verticalAlign=middle;fillColor=#b2f2bb;strokeColor=#22c55e;strokeWidth=2;fontColor=#1e1e1e;" vertex="1" parent="1">
+          <mxGeometry x="450" y="672" width="380" height="118" as="geometry" />
+        </mxCell>
+
+        <mxCell id="card_3" value="&lt;b style=&quot;font-size: 14px;&quot;&gt;3. Adoção rápida e ajuste sem depender da TI&lt;/b&gt;&lt;div style=&quot;font-size: 12px; color: #1e293b; margin-top: 8px;&quot;&gt;Começa em harness pronto conectado aos dados; quando uma política muda, validadores ajustam a skill sem projeto de software.&lt;/div&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fontFamily=Helvetica;spacing=12;align=left;verticalAlign=middle;fillColor=#b2f2bb;strokeColor=#22c55e;strokeWidth=2;fontColor=#1e1e1e;" vertex="1" parent="1">
+          <mxGeometry x="860" y="672" width="380" height="118" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

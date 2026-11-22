@@ -1,0 +1,105 @@
+<template>
+  <style>
+    @font-face {
+      font-family: "Bricolage Grotesque";
+      src: url("node_modules/@fontsource-variable/bricolage-grotesque/files/bricolage-grotesque-latin-wght-normal.woff2") format("woff2");
+      font-weight: 200 800;
+    }
+    #root {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #0A0A0A;
+      color: #FFFFFF;
+      font-family: "Bricolage Grotesque", sans-serif;
+    }
+    #root > * { position: absolute; }
+    #root::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 4;
+      opacity: 0.14;
+      background-image: radial-gradient(#FFFFFF 0.6px, transparent 0.7px);
+      background-size: 4px 4px;
+    }
+    .label {
+      position: absolute;
+      font-weight: 800;
+      letter-spacing: -0.05em;
+      line-height: 0.9;
+    }
+    .off { opacity: 0; }
+    .sheet {
+      position: absolute;
+      border: 7px solid #FFFFFF;
+      background: #0A0A0A;
+      box-sizing: border-box;
+    }
+    .fold {
+      position: absolute;
+      top: -1px;
+      right: -1px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 42px 42px 0;
+      border-color: transparent #FFFFFF transparent transparent;
+    }
+    .rule {
+      height: 8px;
+      margin: 22px 22px 0;
+      background: #FFFFFF;
+      transform-origin: left center;
+      transform: scaleX(0);
+    }
+    .rule.short { width: 58%; }
+    .draw {
+      transform-origin: left center;
+      transform: scaleX(0);
+    }
+    svg .ink {
+      fill: none;
+      stroke: #FFFFFF;
+      stroke-width: 7;
+      stroke-linecap: square;
+      stroke-linejoin: miter;
+    }
+    #j-title { left: 72px; top: 200px; width: 936px; font-size: 72px; }
+ .j-config { position: absolute; top: 410px; width: 390px; height: 136px; border: 5px solid #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 48px; font-weight: 800; box-sizing: border-box; }
+ #j-prompt { left: 100px; } #j-tools { left: 590px; }
+ #j-loop { position: absolute; left: 430px; top: 625px; }
+ #j-rerun { left: 72px; top: 890px; width: 936px; text-align: center; font-size: 60px; }
+ #j-table { position: absolute; left: 130px; top: 1030px; width: 820px; }
+ .j-row { display: grid; grid-template-columns: 240px 290px 290px; height: 72px; align-items: center; border-bottom: 3px solid #FFFFFF; font-size: 40px; font-weight: 800; text-align: center; }
+ .j-row.j-head { height: 64px; font-size: 40px; }
+ .j-answer { opacity: 0; color: #5BD6A2; font-size: 52px; }
+ #j-stable { left: 130px; top: 1450px; width: 820px; text-align: center; font-size: 52px; color: #5BD6A2; }
+  </style>
+  <div data-hf-id="hf-qck6" id="root" data-composition-id="j-muda" data-width="1080" data-height="1920" data-duration="14.6">
+    <div data-hf-id="hf-ckga" id="j-title" class="label off">MUDOU O SISTEMA?</div>
+    <div data-hf-id="hf-kmm3" id="j-prompt" class="j-config off">PROMPT</div><div data-hf-id="hf-zdu3" id="j-tools" class="j-config off">TOOLS</div>
+    <svg data-hf-id="hf-r9jx" id="j-loop" class="off" width="220" height="220" viewBox="0 0 220 220"><path data-hf-id="hf-g5av" class="ink" id="j-loop-path" d="M110 30 A80 80 0 1 1 42 68" stroke-dasharray="470" stroke-dashoffset="470" /><polygon data-hf-id="hf-1t6o" fill="#FFFFFF" points="19,84 42,68 40,106" /></svg>
+    <div data-hf-id="hf-r94e" id="j-rerun" class="label off">RODAR EVALS DE NOVO</div>
+    <div data-hf-id="hf-arey" id="j-table" class="off"><div data-hf-id="hf-tdg6" class="j-row j-head"><span data-hf-id="hf-lrkn">CASO</span><span data-hf-id="hf-z218">GABARITO</span><span data-hf-id="hf-l4nh">AGENTE</span></div><div data-hf-id="hf-lqrx" class="j-row"><span data-hf-id="hf-p81i">01</span><span data-hf-id="hf-ls52">✓</span><span data-hf-id="hf-w3hl" id="j-answer1" class="j-answer">✓</span></div><div data-hf-id="hf-upz5" class="j-row"><span data-hf-id="hf-pmcj">02</span><span data-hf-id="hf-wobe">✓</span><span data-hf-id="hf-yn8o" id="j-answer2" class="j-answer">✓</span></div><div data-hf-id="hf-vww8" class="j-row"><span data-hf-id="hf-q0nk">03</span><span data-hf-id="hf-x2mf">✓</span><span data-hf-id="hf-jqbv" id="j-answer3" class="j-answer">✓</span></div><div data-hf-id="hf-vil7" class="j-row"><span data-hf-id="hf-n8id">04</span><span data-hf-id="hf-xgxg">✓</span><span data-hf-id="hf-kamy" id="j-answer4" class="j-answer">✓</span></div></div>
+    <div data-hf-id="hf-j87d" id="j-stable" class="label off">MESMAS RESPOSTAS. ESTÁVEL.</div>
+  </div>
+  <script>
+    const timeline = gsap.timeline({ paused: true });
+    const byId = (name) => document.getElementById(name);
+    timeline.fromTo('#j-title, #j-prompt', { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: .35, stagger: .12 }, .1);
+    timeline.to('#j-prompt', { backgroundColor: '#FFFFFF', color: '#0A0A0A', duration: .25 }, .9);
+    timeline.fromTo('#j-tools', { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: .35 }, 2.0);
+    timeline.to('#j-tools', { backgroundColor: '#FFFFFF', color: '#0A0A0A', duration: .25 }, 2.8);
+    timeline.fromTo('#j-loop', { opacity: 0 }, { opacity: 1, duration: .2 }, 4.05);
+    timeline.fromTo('#j-loop-path', { strokeDashoffset: 470 }, { strokeDashoffset: 0, duration: 1.15, ease: 'power1.inOut' }, 4.15);
+    timeline.fromTo('#j-rerun', { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: .35 }, 5.25);
+    timeline.fromTo('#j-table', { opacity: 0 }, { opacity: 1, duration: .35 }, 6.0);
+    timeline.fromTo('.j-answer', { opacity: 0, scale: .6 }, { opacity: 1, scale: 1, duration: .3, stagger: .65, ease: 'power3.out' }, 7.0);
+    timeline.fromTo('#j-stable', { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: .35 }, 10.4);
+    window.__timelines = window.__timelines || {};
+    window.__timelines["j-muda"] = timeline;
+  </script>
+</template>

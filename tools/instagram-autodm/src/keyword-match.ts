@@ -19,7 +19,7 @@ export function keywordMatch(text: string, keyword: string): KeywordMatch {
     "link", "links", "info", "dm", "dms", "here", "now", "yes", "yeah", "yep", "ok", "okay",
     "hi", "hey", "hello", "thanks", "thank", "thx", "ty", "copy", "version",
   ]);
-  const words = (value: string) => value.normalize("NFKC").toLowerCase()
+  const words = (value: string) => value.normalize("NFKC").normalize("NFD").replace(/\p{M}/gu, "").toLowerCase()
     .replace(/@[\p{L}\p{N}._]+/gu, " ")
     .split(/[^\p{L}\p{N}_]+/u)
     .filter(Boolean);
@@ -39,10 +39,10 @@ export function isBasicallyKeyword(text: string, keyword: string): boolean {
 }
 
 /**
- * Markdown automations use this stricter rule: after case folding, the comment
- * is only the keyword. Spaces and punctuation at the edges are ignored, so
- * "EVALS!" matches evals and "quero evals" does not. The dashboard tester keeps
- * keywordMatch above.
+ * Markdown automations use this stricter rule: after case and accent folding, the
+ * comment is only the keyword. Spaces and punctuation at the edges are ignored, so
+ * "EVALS!" matches evals, "Padrão" matches padrao, and "quero evals" does not.
+ * The dashboard tester keeps keywordMatch above.
  */
 export function isStrictKeyword(text: string, keyword: string): boolean {
   const key = strictToken(keyword);
@@ -53,5 +53,6 @@ export function isStrictKeyword(text: string, keyword: string): boolean {
 }
 
 function strictToken(value: string): string {
-  return value.normalize("NFKC").trim().replace(/^[^\p{L}\p{N}_]+|[^\p{L}\p{N}_]+$/gu, "").toLowerCase();
+  return value.normalize("NFKC").normalize("NFD").replace(/\p{M}/gu, "").trim()
+    .replace(/^[^\p{L}\p{N}_]+|[^\p{L}\p{N}_]+$/gu, "").toLowerCase();
 }

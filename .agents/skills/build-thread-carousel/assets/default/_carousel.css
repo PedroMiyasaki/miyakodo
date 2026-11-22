@@ -1,20 +1,30 @@
 /* ============================================================
-   Thread-derived IG carousel - shared chrome (default mode)
-   Self-sufficient stylesheet: every value (color, typography) inline.
+   Carrossel de IG derivado de thread. Chrome compartilhado
+   (modo default).
 
-   Specific to carousels originating from an X thread (skill
-   build-thread-carousel). It keeps the X LAYOUT (bold name +
-   verified badge + bio) and the content VERTICALLY
-   CENTERED - it is the layout, not the color, that makes it look
-   like a tweet.
+   Marca: Miyakodo. A regra é design/identity.md. Este arquivo
+   embute os hex e as famílias de lá para o render não depender
+   de outro stylesheet. Se um valor divergir, vale identity.md.
 
-   Light, neutral palette: pure black, chroma-0 grays, off-white
-   bg, Inter. The ONLY X-native trait left is the #1d9bf0 blue of
-   the verified badge, kept on purpose because a recolored check
-   reads as a fake seal.
+   Famílias: Instrument Serif nos títulos, Poppins no corpo.
+   Arquivos canônicos: design/fontes/instrument-serif.zip e
+   design/fontes/poppins.zip. O @import entrega as mesmas
+   famílias ao navegador. Não copiar as fontes para fora de
+   design/fontes/. Instrument Serif na entrega tem Regular e
+   Italic, sem negrito.
+
+   Logo do cabeçalho:
+   design/logo/png/horizontal/MIYAKODO_HORIZONTAL2.png
+   (dark brown #280e03). O número não é a mesma cor no PNG e no
+   PDF. A tabela está em design/identity.md.
+
+   O layout (cabeçalho de perfil, conteúdo centralizado na
+   vertical, slot de imagem) é a mecânica do formato.
+   Também na paleta, sem papel neste chrome claro: verde #1a3010,
+   apoio #c1c167, apoio #d39ca7. Os quatro de apoio não têm nome.
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Poppins:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 :root {
   --slide-w: 1080px;
@@ -22,31 +32,21 @@
   --slide-pad-x: 80px;
   --slide-pad-y: 80px;
 
-  /* Inter for the body, mono for technical terms.
-     Falls back to system fonts if the webfont fails to load in the render. */
-  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
-               Roboto, Helvetica, Arial, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular,
-               "SF Mono", Menlo, monospace;
+  --font-serif: "Instrument Serif", "Times New Roman", Times, serif;
+  --font-sans: "Poppins", sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
 
-  /* Pure black + neutral grays (chroma 0). */
-  --tw-ink:  oklch(0 0 0);      /* text */
-  --tw-mute: oklch(0.55 0 0);   /* neutral gray for handle/meta */
-  --tw-rule: oklch(0.88 0 0);   /* media placeholder */
-
-  /* Accent - links, code chip, quote. */
-  --seal:      oklch(0.48 0.10 28);
-  --seal-soft: oklch(0.92 0.03 28);
-
-  /* X verified badge - the only blue left, signals "tweet". */
-  --tw-blue: #1d9bf0;
-
-  /* Slide bg - neutral off-white, no warm cast. */
-  --slide-bg: oklch(0.96 0 0);
+  /* Papéis deste chrome. Paleta completa em design/identity.md. */
+  --slide-bg: #f6f4ee; /* off-white */
+  --ink: #280e03;       /* dark brown */
+  --mute: #aba199;      /* cinza */
+  --accent: #db3c05;    /* apoio */
+  --chip: #b6cadb;      /* apoio */
+  --media-bg: #aba199;  /* cinza */
 }
 
 body.carrossel-preview {
-  background: oklch(0.55 0 0);   /* neutral gray for the browser preview */
+  background: #aba199; /* cinza, só a prévia no navegador */
   padding: 40px 0;
   min-height: 100vh;
 }
@@ -62,14 +62,13 @@ body.carrossel-preview {
   flex-direction: column;
   justify-content: center;   /* everything vertically centered */
   padding: var(--slide-pad-y) var(--slide-pad-x);
-  color: var(--tw-ink);
+  color: var(--ink);
   font-family: var(--font-sans);
 }
 
 /* ============================================================
-   X-style profile header. Appears on EVERY slide. Far more compact
-   than before - now it only "identifies the origin", the content is
-   the focus.
+   Profile header. Appears on EVERY slide. Compact: it identifies
+   the post, the content is the focus.
    ============================================================ */
 
 .slide .profile-row {
@@ -81,26 +80,26 @@ body.carrossel-preview {
 .slide .name-line {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
+}
+
+.slide .logo {
+  height: 48px;
+  width: auto;
+  display: block;
+  flex-shrink: 0;
 }
 
 .slide .display-name {
-  color: var(--tw-ink);
+  color: var(--ink);
   font-size: 32px;
   font-weight: 700;
   line-height: 1.1;
   letter-spacing: -0.01em;
 }
 
-.slide .verified {
-  width: 26px;
-  height: 26px;
-  flex-shrink: 0;
-  transform: translateY(1px);
-}
-
 .slide .bio {
-  color: var(--tw-mute);
+  color: var(--mute);
   font-size: 22px;
   font-weight: 400;
   line-height: 1.25;
@@ -114,25 +113,26 @@ body.carrossel-preview {
    ============================================================ */
 
 .slide .tweet-text {
-  color: var(--tw-ink);
+  color: var(--ink);
   margin: 0;
 }
 
 .slide .tweet-text strong, .slide .tweet-text b { font-weight: 700; }
 .slide .tweet-text em, .slide .tweet-text i { font-style: italic; }
-.slide .tweet-text a { color: var(--seal); text-decoration: none; }
+.slide .tweet-text a { color: var(--accent); text-decoration: none; }
 .slide .tweet-text code {
   font-family: var(--font-mono);
   font-size: 0.92em;
-  background: var(--seal-soft);
+  color: #280e03;
+  background: var(--chip);
   padding: 2px 8px;
   border-radius: 4px;
 }
 .slide .tweet-text blockquote {
   margin: 0.4em 0;
   padding-left: 16px;
-  border-left: 3px solid var(--seal);
-  color: var(--tw-mute);
+  border-left: 3px solid var(--accent);
+  color: var(--mute);
 }
 .slide .tweet-text ul, .slide .tweet-text ol { margin: 0.4em 0; padding-left: 1.4em; }
 .slide .tweet-text li { margin: 0.18em 0; }
@@ -149,7 +149,7 @@ body.carrossel-preview {
   height: 360px;
   border-radius: 18px;
   overflow: hidden;
-  background: var(--tw-rule);
+  background: var(--media-bg);
 }
 
 .slide .tweet-media img {

@@ -1,0 +1,104 @@
+<template>
+  <style>
+    @font-face {
+      font-family: "Bricolage Grotesque";
+      src: url("node_modules/@fontsource-variable/bricolage-grotesque/files/bricolage-grotesque-latin-wght-normal.woff2") format("woff2");
+      font-weight: 200 800;
+    }
+    #root {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #0A0A0A;
+      color: #FFFFFF;
+      font-family: "Bricolage Grotesque", sans-serif;
+    }
+    #root > * { position: absolute; }
+    #root::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 4;
+      opacity: 0.14;
+      background-image: radial-gradient(#FFFFFF 0.6px, transparent 0.7px);
+      background-size: 4px 4px;
+    }
+    .label {
+      position: absolute;
+      font-weight: 800;
+      letter-spacing: -0.05em;
+      line-height: 0.9;
+    }
+    .off { opacity: 0; }
+    .sheet {
+      position: absolute;
+      border: 7px solid #FFFFFF;
+      background: #0A0A0A;
+      box-sizing: border-box;
+    }
+    .fold {
+      position: absolute;
+      top: -1px;
+      right: -1px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 42px 42px 0;
+      border-color: transparent #FFFFFF transparent transparent;
+    }
+    .rule {
+      height: 8px;
+      margin: 22px 22px 0;
+      background: #FFFFFF;
+      transform-origin: left center;
+      transform: scaleX(0);
+    }
+    .rule.short { width: 58%; }
+    .draw {
+      transform-origin: left center;
+      transform: scaleX(0);
+    }
+    svg .ink {
+      fill: none;
+      stroke: #FFFFFF;
+      stroke-width: 7;
+      stroke-linecap: square;
+      stroke-linejoin: miter;
+    }
+    #m-title { left: 72px; top: 200px; width: 936px; font-size: 64px; }
+ .m-before { position: absolute; top: 420px; width: 420px; height: 170px; border: 5px solid #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 52px; font-weight: 800; box-sizing: border-box; }
+ #m-subjective { left: 72px; } #m-reactive { left: 588px; }
+ #m-converge { position: absolute; left: 280px; top: 620px; }
+ #m-evals { left: 380px; top: 830px; width: 320px; height: 140px; background: #FFFFFF; color: #0A0A0A; display: flex; align-items: center; justify-content: center; font-size: 64px; font-weight: 800; }
+ #m-route { position: absolute; left: 130px; top: 1090px; }
+ .m-pass { position: absolute; width: 76px; height: 76px; border: 5px solid #5BD6A2; background: #0A0A0A; color: #5BD6A2; display: flex; align-items: center; justify-content: center; font-size: 48px; font-weight: 800; box-sizing: border-box; }
+ #m-pass0 { left: 175px; top: 1180px; } #m-pass1 { left: 405px; top: 1130px; } #m-pass2 { left: 635px; top: 1080px; }
+ #m-direction { left: 72px; top: 1330px; width: 936px; text-align: center; font-size: 80px; }
+ #m-method { left: 72px; top: 1450px; width: 936px; text-align: center; font-size: 44px; }
+  </style>
+  <div data-hf-id="hf-bzc7" id="root" data-composition-id="m-sub" data-width="1080" data-height="1920" data-duration="8.2">
+    <div data-hf-id="hf-1a4n" id="m-title" class="label off">DE REAGIR A EVOLUIR</div>
+    <div data-hf-id="hf-baj5" id="m-subjective" class="m-before off">SUBJETIVO</div><div data-hf-id="hf-1gov" id="m-reactive" class="m-before off">REATIVO</div>
+    <svg data-hf-id="hf-0s3d" id="m-converge" class="off" width="520" height="174" viewBox="0 0 520 174"><path data-hf-id="hf-dpml" class="ink" d="M0 0 L260 115 L520 0 M260 115 V160 M240 142 L260 166 L280 142" /></svg>
+    <div data-hf-id="hf-zmzd" id="m-evals" class="label off">EVALS</div>
+    <svg data-hf-id="hf-ctj9" id="m-route" class="off" width="820" height="220" viewBox="0 0 820 220"><path data-hf-id="hf-mabf" class="ink" id="m-road" d="M80 130 L310 80 L540 30 L770 30" stroke-dasharray="760" stroke-dashoffset="760" /><polyline data-hf-id="hf-nzf0" class="ink" points="738,8 775,30 738,52" /></svg>
+    <div data-hf-id="hf-drm8" id="m-pass0" class="m-pass off">✓</div><div data-hf-id="hf-xv5f" id="m-pass1" class="m-pass off">✓</div><div data-hf-id="hf-timu" id="m-pass2" class="m-pass off">✓</div>
+    <div data-hf-id="hf-2vz9" id="m-direction" class="label off">DIREÇÃO PARA EVOLUIR</div><div data-hf-id="hf-gios" id="m-method" class="label off">TESTAR. MEDIR. MELHORAR.</div>
+  </div>
+  <script>
+    const timeline = gsap.timeline({ paused: true });
+    const byId = (name) => document.getElementById(name);
+    timeline.fromTo('#m-title, #m-subjective', { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: .35, stagger: .1 }, .1);
+    timeline.fromTo('#m-reactive', { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: .35 }, 2.9);
+    timeline.fromTo('#m-converge', { opacity: 0 }, { opacity: 1, duration: .25 }, 3.45);
+    timeline.fromTo('#m-evals', { opacity: 0, scale: .8 }, { opacity: 1, scale: 1, duration: .35, ease: 'power3.out' }, 3.9);
+    timeline.fromTo('#m-route', { opacity: 0 }, { opacity: 1, duration: .2 }, 4.45);
+    timeline.fromTo('#m-road', { strokeDashoffset: 760 }, { strokeDashoffset: 0, duration: 1.5, ease: 'power1.inOut' }, 4.5);
+    timeline.fromTo('.m-pass', { opacity: 0 }, { opacity: 1, duration: .2, stagger: .45 }, 4.65);
+    timeline.fromTo('#m-direction, #m-method', { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: .3, stagger: .2 }, 6.1);
+    window.__timelines = window.__timelines || {};
+    window.__timelines["m-sub"] = timeline;
+  </script>
+</template>

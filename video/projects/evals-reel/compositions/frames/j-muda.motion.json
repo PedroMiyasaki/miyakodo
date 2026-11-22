@@ -1,0 +1,14 @@
+{
+  "duration": 14.6,
+  "assertions": [
+    {
+      "kind": "appearsBy",
+      "selector": "#j-prompt",
+      "bySec": 0.7
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": "#j-prompt"
+    }
+  ]
+}

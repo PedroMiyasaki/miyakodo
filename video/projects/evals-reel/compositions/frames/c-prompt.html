@@ -1,0 +1,106 @@
+<template>
+  <style>
+    @font-face {
+      font-family: "Bricolage Grotesque";
+      src: url("node_modules/@fontsource-variable/bricolage-grotesque/files/bricolage-grotesque-latin-wght-normal.woff2") format("woff2");
+      font-weight: 200 800;
+    }
+    #root {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #0A0A0A;
+      color: #FFFFFF;
+      font-family: "Bricolage Grotesque", sans-serif;
+    }
+    #root > * { position: absolute; }
+    #root::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 4;
+      opacity: 0.14;
+      background-image: radial-gradient(#FFFFFF 0.6px, transparent 0.7px);
+      background-size: 4px 4px;
+    }
+    .label {
+      position: absolute;
+      font-weight: 800;
+      letter-spacing: -0.05em;
+      line-height: 0.9;
+    }
+    .off { opacity: 0; }
+    .sheet {
+      position: absolute;
+      border: 7px solid #FFFFFF;
+      background: #0A0A0A;
+      box-sizing: border-box;
+    }
+    .fold {
+      position: absolute;
+      top: -1px;
+      right: -1px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 42px 42px 0;
+      border-color: transparent #FFFFFF transparent transparent;
+    }
+    .rule {
+      height: 8px;
+      margin: 22px 22px 0;
+      background: #FFFFFF;
+      transform-origin: left center;
+      transform: scaleX(0);
+    }
+    .rule.short { width: 58%; }
+    .draw {
+      transform-origin: left center;
+      transform: scaleX(0);
+    }
+    svg .ink {
+      fill: none;
+      stroke: #FFFFFF;
+      stroke-width: 7;
+      stroke-linecap: square;
+      stroke-linejoin: miter;
+    }
+    #c-title { left: 72px; top: 240px; font-size: 72px; }
+ #c-agent { left: 72px; top: 600px; width: 320px; height: 470px; padding: 28px 24px; border: 6px solid #FFFFFF; box-sizing: border-box; }
+ #c-agent-name { font-size: 50px; font-weight: 800; }
+ #c-prompt { position: absolute; left: 20px; right: 20px; top: 134px; height: 280px; border: 3px solid #FFFFFF; padding: 22px 18px; box-sizing: border-box; }
+ #c-prompt b { font-size: 40px; } .c-copy { height: 9px; margin-top: 24px; background: #FFFFFF; transform-origin: left center; }
+ .c-copy:nth-last-child(2) { width: 75%; }
+ #c-contract { left: 494px; top: 680px; width: 190px; height: 300px; padding: 22px 18px; border: 6px solid #FFFFFF; box-sizing: border-box; }
+ #c-contract-name { left: 450px; top: 600px; width: 280px; font-size: 40px; text-align: center; }
+ #c-out { left: 804px; top: 680px; width: 204px; height: 300px; padding: 20px; border: 6px solid #FFFFFF; box-sizing: border-box; }
+ #c-out-name { left: 752px; top: 550px; width: 280px; font-size: 40px; line-height: 1.1; }
+ .c-red { height: 9px; margin-top: 26px; background: #FF6B6B; transform-origin: left center; opacity: 0; }
+ #c-arrow1 { left: 407px; top: 800px; } #c-arrow2 { left: 706px; top: 800px; }
+ .c-arrow { position: absolute; }
+  </style>
+  <div data-hf-id="hf-v1h8" id="root" data-composition-id="c-prompt" data-width="1080" data-height="1920" data-duration="12.84">
+    <div data-hf-id="hf-13fn" id="c-title" class="label off">DO PROMPT À RESPOSTA</div>
+    <div data-hf-id="hf-6qtg" id="c-agent" class="off"><div data-hf-id="hf-i44w" id="c-agent-name">AGENTE</div><div data-hf-id="hf-7t8n" id="c-prompt" class="off"><b data-hf-id="hf-8p3v">PROMPT</b><div data-hf-id="hf-9opv" class="c-copy"></div><div data-hf-id="hf-wm03" class="c-copy"></div><div data-hf-id="hf-w7p2" class="c-copy"></div><div data-hf-id="hf-vte1" class="c-copy"></div></div></div>
+    <svg data-hf-id="hf-cao1" id="c-arrow1" class="c-arrow off" width="68" height="50" viewBox="0 0 68 50"><path data-hf-id="hf-xbxy" class="ink" d="M0 25 H58 M40 7 L60 25 L40 43" /></svg>
+    <div data-hf-id="hf-47rj" id="c-contract-name" class="label off">CONTRATO</div><div data-hf-id="hf-tlpf" id="c-contract" class="off"><div data-hf-id="hf-vf30" class="c-copy"></div><div data-hf-id="hf-v0rz" class="c-copy"></div><div data-hf-id="hf-umgy" class="c-copy"></div><div data-hf-id="hf-u85x" class="c-copy"></div><div data-hf-id="hf-ttuw" class="c-copy"></div></div>
+    <svg data-hf-id="hf-d54c" id="c-arrow2" class="c-arrow off" width="76" height="50" viewBox="0 0 76 50"><path data-hf-id="hf-pr0l" class="ink" d="M0 25 H66 M46 7 L68 25 L46 43" /></svg>
+    <div data-hf-id="hf-yf6k" id="c-out-name" class="label off">CLÁUSULAS IMPORTANTES</div><div data-hf-id="hf-curv" id="c-out" class="off"><div data-hf-id="hf-4cw1" class="c-red"></div><div data-hf-id="hf-jt5h" class="c-red"></div><div data-hf-id="hf-l02k" class="c-red"></div><div data-hf-id="hf-klrj" class="c-red"></div><div data-hf-id="hf-lsom" class="c-red"></div></div>
+  </div>
+  <script>
+    const timeline = gsap.timeline({ paused: true });
+    const byId = (name) => document.getElementById(name);
+    timeline.fromTo('#c-title, #c-agent', { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: .4, stagger: .12 }, .1);
+    timeline.fromTo('#c-prompt', { opacity: 0 }, { opacity: 1, duration: .3 }, 1.05);
+    timeline.fromTo('#c-prompt .c-copy', { scaleX: 0 }, { scaleX: 1, duration: .3, stagger: .32 }, 1.45);
+    timeline.fromTo('#c-arrow1', { opacity: 0 }, { opacity: 1, duration: .3 }, 6.5);
+    timeline.fromTo('#c-contract, #c-contract-name', { opacity: 0, x: 18 }, { opacity: 1, x: 0, duration: .35 }, 7.05);
+    timeline.fromTo('#c-arrow2', { opacity: 0 }, { opacity: 1, duration: .3 }, 9.0);
+    timeline.fromTo('#c-out, #c-out-name', { opacity: 0 }, { opacity: 1, duration: .35 }, 9.4);
+    timeline.fromTo('.c-red', { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: .25, stagger: .2, ease: 'power2.out' }, 9.75);
+    window.__timelines = window.__timelines || {};
+    window.__timelines["c-prompt"] = timeline;
+  </script>
+</template>

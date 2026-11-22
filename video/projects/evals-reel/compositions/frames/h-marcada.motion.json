@@ -1,0 +1,14 @@
+{
+  "duration": 6,
+  "assertions": [
+    {
+      "kind": "appearsBy",
+      "selector": "#h-doc0",
+      "bySec": 0.7
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": "#h-doc0"
+    }
+  ]
+}

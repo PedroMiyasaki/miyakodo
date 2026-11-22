@@ -1,0 +1,63 @@
+{
+  "duration": 161.939393939,
+  "ratings": [
+    {
+      "id": "rating-whatsapp",
+      "start": 1.866666666,
+      "duration": 6
+    },
+    {
+      "id": "rating-conteudo",
+      "start": 39.43030303,
+      "duration": 6
+    },
+    {
+      "id": "rating-reunioes",
+      "start": 66.572727273,
+      "duration": 6
+    },
+    {
+      "id": "rating-rag",
+      "start": 78.945454545,
+      "duration": 6
+    },
+    {
+      "id": "rating-especialistas",
+      "start": 112.933333333,
+      "duration": 6
+    }
+  ],
+  "voices": [
+    {
+      "id": "whatsapp",
+      "start": 0.139393939,
+      "end": 1.593939394,
+      "pedroStarts": 1.757575757
+    },
+    {
+      "id": "conteudo",
+      "start": 37.084848485,
+      "end": 39.066666666,
+      "pedroStarts": 39.23030303
+    },
+    {
+      "id": "reunioes",
+      "start": 64.136363636,
+      "end": 66.281818182,
+      "pedroStarts": 66.445454545
+    },
+    {
+      "id": "rag",
+      "start": 76.687878788,
+      "end": 78.942424243,
+      "pedroStarts": 79.106060606
+    },
+    {
+      "id": "especialistas",
+      "start": 110.133333333,
+      "end": 112.006060605,
+      "pedroStarts": 112.169696969
+    }
+  ],
+  "playbackRate": 1.1
+}

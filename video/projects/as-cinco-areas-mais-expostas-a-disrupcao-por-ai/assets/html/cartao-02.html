@@ -1,0 +1,29 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><style>@font-face{font-family:"Bricolage Grotesque";src:url("../fonts/bricolage-grotesque-latin-wght-normal.woff2") format("woff2");font-weight:200 800;font-style:normal}@font-face{font-family:"Inter";src:url("../fonts/inter-latin-wght-normal.woff2") format("woff2");font-weight:100 900;font-style:normal}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#555}
+.grao::after{content:"";position:absolute;inset:0;z-index:9;pointer-events:none;background-image:radial-gradient(currentColor .5px,transparent .6px);background-size:4px 4px;opacity:.05}
+
+.cartao{position:relative;width:960px;height:1090px;overflow:hidden;background:#FFFFFF;color:#0A0A0A;font-family:"Inter",system-ui,sans-serif;box-shadow:inset 0 0 0 4px #0A0A0A}
+.cartao::after{content:"";position:absolute;inset:0;z-index:9;pointer-events:none;background-image:radial-gradient(currentColor .5px,transparent .6px);background-size:4px 4px;opacity:.05}
+.grosso{position:absolute;left:28px;top:40px;width:904px;height:9px;background:#0A0A0A}
+.fino{position:absolute;left:28px;top:66px;width:904px;height:3px;background:#0A0A0A}
+.chapeu{position:absolute;left:28px;top:94px;font-weight:500;font-size:24px;line-height:1;letter-spacing:.18em;text-transform:uppercase}
+.titulo{position:absolute;left:28px;top:140px;width:904px;font-family:"Bricolage Grotesque",system-ui,sans-serif;font-weight:800;font-size:80px;line-height:.94;letter-spacing:-.025em;text-wrap:balance}
+.figura{position:absolute;left:28px;top:330px;width:904px;height:700px}
+.figura svg{display:block;width:904px;height:700px;overflow:visible}
+</style></head><body><svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<filter id="rough" x="-25%" y="-25%" width="150%" height="150%">
+  <feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="3" seed="11" result="n"/>
+  <feDisplacementMap in="SourceGraphic" in2="n" scale="7" xChannelSelector="R" yChannelSelector="G"/>
+</filter>
+<filter id="rough2" x="-25%" y="-25%" width="150%" height="150%">
+  <feTurbulence type="fractalNoise" baseFrequency="0.022" numOctaves="3" seed="4" result="n"/>
+  <feDisplacementMap in="SourceGraphic" in2="n" scale="6" xChannelSelector="R" yChannelSelector="G"/>
+</filter>
+<pattern id="ht-dark" width="11" height="11" patternUnits="userSpaceOnUse">
+  <circle cx="5.5" cy="5.5" r="2.1" fill="#0A0A0A"/>
+</pattern>
+<marker id="seta" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="40" markerHeight="40" markerUnits="userSpaceOnUse" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="#0A0A0A"/>
+</marker>
+</defs></svg><section class="cartao" id="alvo"><div class="grosso"></div><div class="fino"></div><div class="chapeu">Fig. 02</div><h1 class="titulo">Contabilidade e auditoria</h1><div class="figura"><svg viewBox="0 0 904 700" fill="none" aria-hidden="true"><rect x="82" y="35" width="740" height="140" stroke="#0A0A0A" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none" filter="url(#rough)"/><text x="452.0" y="97" font-family="Inter, sans-serif" font-weight="600" font-size="30" fill="#0A0A0A" text-anchor="middle">Documentos de vários clientes</text><path d="M452 185 L452 245" stroke="#0A0A0A" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none" marker-end="url(#seta)"/><rect x="82" y="260" width="740" height="140" fill="url(#ht-dark)" filter="url(#rough2)" transform="translate(-9,7)"/><rect x="82" y="260" width="740" height="140" stroke="#0A0A0A" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none" filter="url(#rough)"/><text x="452.0" y="322" font-family="Inter, sans-serif" font-weight="600" font-size="30" fill="#0A0A0A" text-anchor="middle">IA processa rotinas</text><text x="452.0" y="360" font-family="Inter, sans-serif" font-weight="600" font-size="30" fill="#0A0A0A" text-anchor="middle">e sinaliza divergências</text><path d="M452 410 L452 470" stroke="#0A0A0A" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none" marker-end="url(#seta)"/><rect x="82" y="485" width="740" height="140" stroke="#0A0A0A" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none" filter="url(#rough)"/><text x="452.0" y="547" font-family="Inter, sans-serif" font-weight="600" font-size="30" fill="#0A0A0A" text-anchor="middle">Equipe revisa exceções</text><text x="452.0" y="585" font-family="Inter, sans-serif" font-weight="600" font-size="30" fill="#0A0A0A" text-anchor="middle">e atende mais clientes</text></svg></div></section></body></html>

@@ -1,0 +1,339 @@
+{
+  "sourceStart": 0.18,
+  "sourceEnd": 209.36,
+  "duration": 202.18,
+  "removed": 7,
+  "cutIntervals": [
+    {
+      "from": 19.71,
+      "to": 19.99,
+      "originalGap": 0.46,
+      "keptGap": 0.18,
+      "label": "pause"
+    },
+    {
+      "from": 35.31,
+      "to": 36.03,
+      "originalGap": 0.9,
+      "keptGap": 0.18,
+      "label": "pause"
+    },
+    {
+      "from": 51.79,
+      "to": 52.23,
+      "originalGap": 0.62,
+      "keptGap": 0.18,
+      "label": "pause"
+    },
+    {
+      "from": 67.61,
+      "to": 68.11,
+      "originalGap": 0.68,
+      "keptGap": 0.18,
+      "label": "pause"
+    },
+    {
+      "from": 86.87,
+      "to": 87.31,
+      "originalGap": 0.62,
+      "keptGap": 0.18,
+      "label": "pause"
+    },
+    {
+      "from": 92.33,
+      "to": 92.63,
+      "originalGap": 0.92,
+      "keptGap": 0.62,
+      "label": "evals-reveal"
+    },
+    {
+      "from": 104.79,
+      "to": 105.23,
+      "originalGap": 0.62,
+      "keptGap": 0.18,
+      "label": "pause"
+    },
+    {
+      "from": 121.39,
+      "to": 121.85,
+      "originalGap": 0.64,
+      "keptGap": 0.18,
+      "label": "pause"
+    },
+    {
+      "from": 127.65,
+      "to": 127.99,
+      "originalGap": 0.52,
+      "keptGap": 0.18,
+      "label": "pause"
+    },
+    {
+      "from": 138.75,
+      "to": 139.43,
+      "originalGap": 0.86,
+      "keptGap": 0.18,
+      "label": "pause"
+    },
+    {
+      "from": 146.73,
+      "to": 147.07,
+      "originalGap": 0.52,
+      "keptGap": 0.18,
+      "label": "pause"
+    },
+    {
+      "from": 156.25,
+      "to": 156.89,
+      "originalGap": 0.82,
+      "keptGap": 0.18,
+      "label": "pause"
+    },
+    {
+      "from": 160.95,
+      "to": 161.13,
+      "originalGap": 0.36,
+      "keptGap": 0.18,
+      "label": "pause"
+    },
+    {
+      "from": 180.49,
+      "to": 180.89,
+      "originalGap": 0.58,
+      "keptGap": 0.18,
+      "label": "pause"
+    },
+    {
+      "from": 192.85,
+      "to": 193.35,
+      "originalGap": 0.68,
+      "keptGap": 0.18,
+      "label": "pause"
+    },
+    {
+      "from": 203.49,
+      "to": 203.83,
+      "originalGap": 0.52,
+      "keptGap": 0.18,
+      "label": "pause"
+    }
+  ],
+  "segments": [
+    {
+      "sourceStart": 0.18,
+      "sourceEnd": 19.71,
+      "start": 0,
+      "duration": 19.53,
+      "end": 19.53
+    },
+    {
+      "sourceStart": 19.99,
+      "sourceEnd": 35.31,
+      "start": 19.53,
+      "duration": 15.32,
+      "end": 34.85
+    },
+    {
+      "sourceStart": 36.03,
+      "sourceEnd": 51.79,
+      "start": 34.85,
+      "duration": 15.76,
+      "end": 50.61
+    },
+    {
+      "sourceStart": 52.23,
+      "sourceEnd": 67.61,
+      "start": 50.61,
+      "duration": 15.38,
+      "end": 65.99
+    },
+    {
+      "sourceStart": 68.11,
+      "sourceEnd": 86.87,
+      "start": 65.99,
+      "duration": 18.76,
+      "end": 84.75
+    },
+    {
+      "sourceStart": 87.31,
+      "sourceEnd": 92.33,
+      "start": 84.75,
+      "duration": 5.02,
+      "end": 89.77
+    },
+    {
+      "sourceStart": 92.63,
+      "sourceEnd": 104.79,
+      "start": 89.77,
+      "duration": 12.16,
+      "end": 101.93
+    },
+    {
+      "sourceStart": 105.23,
+      "sourceEnd": 121.39,
+      "start": 101.93,
+      "duration": 16.16,
+      "end": 118.09
+    },
+    {
+      "sourceStart": 121.85,
+      "sourceEnd": 127.65,
+      "start": 118.09,
+      "duration": 5.8,
+      "end": 123.89
+    },
+    {
+      "sourceStart": 127.99,
+      "sourceEnd": 138.75,
+      "start": 123.89,
+      "duration": 10.76,
+      "end": 134.65
+    },
+    {
+      "sourceStart": 139.43,
+      "sourceEnd": 146.73,
+      "start": 134.65,
+      "duration": 7.3,
+      "end": 141.95
+    },
+    {
+      "sourceStart": 147.07,
+      "sourceEnd": 156.25,
+      "start": 141.95,
+      "duration": 9.18,
+      "end": 151.13
+    },
+    {
+      "sourceStart": 156.89,
+      "sourceEnd": 160.95,
+      "start": 151.13,
+      "duration": 4.06,
+      "end": 155.19
+    },
+    {
+      "sourceStart": 161.13,
+      "sourceEnd": 180.49,
+      "start": 155.19,
+      "duration": 19.36,
+      "end": 174.55
+    },
+    {
+      "sourceStart": 180.89,
+      "sourceEnd": 192.85,
+      "start": 174.55,
+      "duration": 11.96,
+      "end": 186.51
+    },
+    {
+      "sourceStart": 193.35,
+      "sourceEnd": 203.49,
+      "start": 186.51,
+      "duration": 10.14,
+      "end": 196.65
+    },
+    {
+      "sourceStart": 203.83,
+      "sourceEnd": 209.36,
+      "start": 196.65,
+      "duration": 5.53,
+      "end": 202.18
+    }
+  ],
+  "chapters": [
+    {
+      "id": "01-nome",
+      "sourceStart": 0.18,
+      "sourceEnd": 6.3,
+      "start": 0,
+      "end": 6.12,
+      "duration": 6.12
+    },
+    {
+      "id": "02-tecnico-negocio",
+      "sourceStart": 6.3,
+      "sourceEnd": 20.08,
+      "start": 6.12,
+      "end": 19.62,
+      "duration": 13.5
+    },
+    {
+      "id": "03-contratos",
+      "sourceStart": 20.08,
+      "sourceEnd": 36.12,
+      "start": 19.62,
+      "end": 34.94,
+      "duration": 15.32
+    },
+    {
+      "id": "04-sem-evals",
+      "sourceStart": 36.12,
+      "sourceEnd": 52.32,
+      "start": 34.94,
+      "end": 50.7,
+      "duration": 15.76
+    },
+    {
+      "id": "05-dois-erros",
+      "sourceStart": 52.32,
+      "sourceEnd": 77.85,
+      "start": 50.7,
+      "end": 75.73,
+      "duration": 25.03
+    },
+    {
+      "id": "06-regressao",
+      "sourceStart": 77.85,
+      "sourceEnd": 96.2,
+      "start": 75.73,
+      "end": 93.34,
+      "duration": 17.61
+    },
+    {
+      "id": "07-gabarito",
+      "sourceStart": 96.2,
+      "sourceEnd": 121.94,
+      "start": 93.34,
+      "end": 118.18,
+      "duration": 24.84
+    },
+    {
+      "id": "08-rodar-de-novo",
+      "sourceStart": 121.94,
+      "sourceEnd": 139.52,
+      "start": 118.18,
+      "end": 134.74,
+      "duration": 16.56
+    },
+    {
+      "id": "09-metrica-direcao",
+      "sourceStart": 139.52,
+      "sourceEnd": 156.98,
+      "start": 134.74,
+      "end": 151.22,
+      "duration": 16.48
+    },
+    {
+      "id": "10-regra-testada",
+      "sourceStart": 156.98,
+      "sourceEnd": 180.98,
+      "start": 151.22,
+      "end": 174.64,
+      "duration": 23.42
+    },
+    {
+      "id": "11-direcao",
+      "sourceStart": 180.98,
+      "sourceEnd": 193.44,
+      "start": 174.64,
+      "end": 186.6,
+      "duration": 11.96
+    },
+    {
+      "id": "12-guia",
+      "sourceStart": 193.44,
+      "sourceEnd": 209.36,
+      "start": 186.6,
+      "end": 202.18,
+      "duration": 15.58
+    }
+  ]
+}

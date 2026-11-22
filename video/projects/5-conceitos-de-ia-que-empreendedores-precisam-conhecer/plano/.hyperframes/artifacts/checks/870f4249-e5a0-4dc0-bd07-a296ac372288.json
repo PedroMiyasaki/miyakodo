@@ -1,0 +1,588 @@
+{
+  "ok": true,
+  "strict": false,
+  "browserSkipped": false,
+  "lint": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 8,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "timeline_track_too_dense",
+        "severity": "warning",
+        "message": "Track 0 has 7 timed elements in this HTML file. Smaller sub-compositions keep timelines easier to read, iterate on, and diff.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "c:\\Users\\Pedro Miyasaki\\Desktop\\all\\pedro-miyasaki\\video\\projects\\5-conceitos-de-ia-que-empreendedores-precisam-conhecer\\plano\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move coherent scene groups into separate .html files under compositions/ and mount them from the parent with data-composition-src so the timeline stays easier to inspect, revise, and validate."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<section id=\"gancho\"> is a timeline element that contains nested <img id=\"gancho-foto\">. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#gancho",
+        "dataAttributes": {},
+        "sourceFile": "c:\\Users\\Pedro Miyasaki\\Desktop\\all\\pedro-miyasaki\\video\\projects\\5-conceitos-de-ia-que-empreendedores-precisam-conhecer\\plano\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <section id=\"gancho\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<section id=\"arquiteturas\"> is a timeline element that contains nested <header>. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#arquiteturas",
+        "dataAttributes": {},
+        "sourceFile": "c:\\Users\\Pedro Miyasaki\\Desktop\\all\\pedro-miyasaki\\video\\projects\\5-conceitos-de-ia-que-empreendedores-precisam-conhecer\\plano\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <section id=\"arquiteturas\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<section id=\"contexto\"> is a timeline element that contains nested <header>. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#contexto",
+        "dataAttributes": {},
+        "sourceFile": "c:\\Users\\Pedro Miyasaki\\Desktop\\all\\pedro-miyasaki\\video\\projects\\5-conceitos-de-ia-que-empreendedores-precisam-conhecer\\plano\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <section id=\"contexto\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<section id=\"dependencias\"> is a timeline element that contains nested <header>. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#dependencias",
+        "dataAttributes": {},
+        "sourceFile": "c:\\Users\\Pedro Miyasaki\\Desktop\\all\\pedro-miyasaki\\video\\projects\\5-conceitos-de-ia-que-empreendedores-precisam-conhecer\\plano\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <section id=\"dependencias\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<section id=\"ai-ops\"> is a timeline element that contains nested <header>. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#ai-ops",
+        "dataAttributes": {},
+        "sourceFile": "c:\\Users\\Pedro Miyasaki\\Desktop\\all\\pedro-miyasaki\\video\\projects\\5-conceitos-de-ia-que-empreendedores-precisam-conhecer\\plano\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <section id=\"ai-ops\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<section id=\"evals\"> is a timeline element that contains nested <header>. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#evals",
+        "dataAttributes": {},
+        "sourceFile": "c:\\Users\\Pedro Miyasaki\\Desktop\\all\\pedro-miyasaki\\video\\projects\\5-conceitos-de-ia-que-empreendedores-precisam-conhecer\\plano\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <section id=\"evals\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      },
+      {
+        "code": "nested_structure_needs_subcomposition",
+        "severity": "warning",
+        "message": "<section id=\"cta\"> is a timeline element that contains nested <div>. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+        "selector": "#cta",
+        "dataAttributes": {},
+        "sourceFile": "c:\\Users\\Pedro Miyasaki\\Desktop\\all\\pedro-miyasaki\\video\\projects\\5-conceitos-de-ia-que-empreendedores-precisam-conhecer\\plano\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move <section id=\"cta\"> and its contents into a sub-composition file and mount it with data-composition-src."
+      }
+    ],
+    "filesScanned": 1
+  },
+  "runtime": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": []
+  },
+  "layout": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 11,
+    "findings": [
+      {
+        "code": "connector_detached",
+        "severity": "info",
+        "time": 8.5,
+        "selector": "g.art-stroke > path:nth-of-type(7)",
+        "message": "Connector path endpoints render 94px from the nearest anchorable element — a marked shaft that meets no node.",
+        "rect": {
+          "left": 325,
+          "top": 1303,
+          "right": 490,
+          "bottom": 1356,
+          "width": 165,
+          "height": 53
+        },
+        "containerSelector": "#arquiteturas > div:nth-of-type(2) > svg:nth-of-type(1)",
+        "fixHint": "Measure the settled node boxes and write `d` in the SVG's user space (invert getScreenCTM), or grow a layout-owned shaft from the source node.",
+        "dataAttributes": {
+          "data-hf-svg-reference-aliases": "[{\"name\":\"marker-end\",\"localName\":\"marker-end\",\"namespaceURI\":null,\"before\":\"url(#arrow)\",\"after\":\"url(#arrow)\"}]"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 325,
+          "y": 1303,
+          "width": 165,
+          "height": 53
+        },
+        "firstSeen": 8.5,
+        "lastSeen": 8.5,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          8.5
+        ]
+      },
+      {
+        "code": "connector_orphan",
+        "severity": "info",
+        "time": 8.5,
+        "selector": "g.art-stroke > path:nth-of-type(5)",
+        "message": "Connector shaft is visible while both endpoints are not on stage.",
+        "rect": {
+          "left": 325,
+          "top": 1064,
+          "right": 500,
+          "bottom": 1064,
+          "width": 175,
+          "height": 0
+        },
+        "containerSelector": "#arquiteturas > div:nth-of-type(2) > svg:nth-of-type(1)",
+        "fixHint": "Show the shaft only after both ends are on, and hide it with the earlier exit. Do not give the line its own clock.",
+        "dataAttributes": {
+          "data-hf-svg-reference-aliases": "[{\"name\":\"marker-end\",\"localName\":\"marker-end\",\"namespaceURI\":null,\"before\":\"url(#arrow)\",\"after\":\"url(#arrow)\"}]"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 325,
+          "y": 1064,
+          "width": 175,
+          "height": 0
+        },
+        "firstSeen": 8.5,
+        "lastSeen": 8.5,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          8.5
+        ]
+      },
+      {
+        "code": "connector_orphan",
+        "severity": "info",
+        "time": 8.5,
+        "selector": "g.art-stroke > path:nth-of-type(6)",
+        "message": "Connector shaft is visible while both endpoints are not on stage.",
+        "rect": {
+          "left": 195,
+          "top": 1117,
+          "right": 715,
+          "bottom": 1121,
+          "width": 520,
+          "height": 4
+        },
+        "containerSelector": "#arquiteturas > div:nth-of-type(2) > svg:nth-of-type(1)",
+        "fixHint": "Show the shaft only after both ends are on, and hide it with the earlier exit. Do not give the line its own clock.",
+        "dataAttributes": {
+          "data-hf-svg-reference-aliases": "[{\"name\":\"marker-end\",\"localName\":\"marker-end\",\"namespaceURI\":null,\"before\":\"url(#arrow)\",\"after\":\"url(#arrow)\"}]"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 195,
+          "y": 1117,
+          "width": 520,
+          "height": 4
+        },
+        "firstSeen": 8.5,
+        "lastSeen": 8.5,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          8.5
+        ]
+      },
+      {
+        "code": "connector_orphan",
+        "severity": "info",
+        "time": 14.5,
+        "selector": "#contexto > div:nth-of-type(2) > svg:nth-of-type(1) > g:nth-of-type(2) > path:nth-of-type(1)",
+        "message": "Connector shaft is visible while both endpoints are not on stage.",
+        "rect": {
+          "left": 270,
+          "top": 885,
+          "right": 495,
+          "bottom": 985,
+          "width": 225,
+          "height": 100
+        },
+        "containerSelector": "#contexto > div:nth-of-type(2) > svg:nth-of-type(1)",
+        "fixHint": "Show the shaft only after both ends are on, and hide it with the earlier exit. Do not give the line its own clock.",
+        "dataAttributes": {
+          "data-hf-svg-reference-aliases": "[{\"name\":\"marker-end\",\"localName\":\"marker-end\",\"namespaceURI\":null,\"before\":\"url(#arrow)\",\"after\":\"url(#arrow)\"}]"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 270,
+          "y": 885,
+          "width": 225,
+          "height": 100
+        },
+        "firstSeen": 14.5,
+        "lastSeen": 14.5,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          14.5
+        ]
+      },
+      {
+        "code": "connector_orphan",
+        "severity": "info",
+        "time": 19.5,
+        "selector": "#dependencias > div:nth-of-type(2) > svg:nth-of-type(1) > g:nth-of-type(2) > path:nth-of-type(1)",
+        "message": "Connector shaft is visible while both endpoints are not on stage.",
+        "rect": {
+          "left": 565,
+          "top": 715,
+          "right": 660,
+          "bottom": 890,
+          "width": 95,
+          "height": 175
+        },
+        "containerSelector": "#dependencias > div:nth-of-type(2) > svg:nth-of-type(1)",
+        "fixHint": "Show the shaft only after both ends are on, and hide it with the earlier exit. Do not give the line its own clock.",
+        "dataAttributes": {
+          "data-hf-svg-reference-aliases": "[{\"name\":\"marker-end\",\"localName\":\"marker-end\",\"namespaceURI\":null,\"before\":\"url(#arrow)\",\"after\":\"url(#arrow)\"}]"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 565,
+          "y": 715,
+          "width": 95,
+          "height": 175
+        },
+        "firstSeen": 19.5,
+        "lastSeen": 19.5,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          19.5
+        ]
+      },
+      {
+        "code": "connector_orphan",
+        "severity": "info",
+        "time": 19.5,
+        "selector": "#dependencias > div:nth-of-type(2) > svg:nth-of-type(1) > g:nth-of-type(2) > path:nth-of-type(2)",
+        "message": "Connector shaft is visible while its endpoint div.cta-copy > h2:nth-of-type(1) is not on stage.",
+        "rect": {
+          "left": 180,
+          "top": 960,
+          "right": 795,
+          "bottom": 1220,
+          "width": 615,
+          "height": 260
+        },
+        "containerSelector": "#dependencias > div:nth-of-type(2) > svg:nth-of-type(1)",
+        "fixHint": "Show the shaft only after both ends are on, and hide it with the earlier exit. Do not give the line its own clock.",
+        "dataAttributes": {
+          "data-hf-svg-reference-aliases": "[{\"name\":\"marker-end\",\"localName\":\"marker-end\",\"namespaceURI\":null,\"before\":\"url(#arrow)\",\"after\":\"url(#arrow)\"}]"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 180,
+          "y": 960,
+          "width": 615,
+          "height": 260
+        },
+        "firstSeen": 19.5,
+        "lastSeen": 19.5,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          19.5
+        ]
+      },
+      {
+        "code": "connector_detached",
+        "severity": "info",
+        "time": 24.5,
+        "selector": "#ai-ops > div:nth-of-type(2) > svg:nth-of-type(1) > g:nth-of-type(2) > path:nth-of-type(4)",
+        "message": "Connector path endpoints render 98px from the nearest anchorable element — a marked shaft that meets no node.",
+        "rect": {
+          "left": 212,
+          "top": 1230,
+          "right": 815,
+          "bottom": 1352,
+          "width": 603,
+          "height": 122
+        },
+        "containerSelector": "#ai-ops > div:nth-of-type(2) > svg:nth-of-type(1)",
+        "fixHint": "Measure the settled node boxes and write `d` in the SVG's user space (invert getScreenCTM), or grow a layout-owned shaft from the source node.",
+        "dataAttributes": {
+          "data-hf-svg-reference-aliases": "[{\"name\":\"marker-end\",\"localName\":\"marker-end\",\"namespaceURI\":null,\"before\":\"url(#arrow)\",\"after\":\"url(#arrow)\"}]"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 212,
+          "y": 1230,
+          "width": 603,
+          "height": 122
+        },
+        "firstSeen": 24.5,
+        "lastSeen": 24.5,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          24.5
+        ]
+      },
+      {
+        "code": "connector_orphan",
+        "severity": "info",
+        "time": 24.5,
+        "selector": "#ai-ops > div:nth-of-type(2) > svg:nth-of-type(1) > g:nth-of-type(2) > path:nth-of-type(1)",
+        "message": "Connector shaft is visible while both endpoints are not on stage.",
+        "rect": {
+          "left": 257,
+          "top": 730,
+          "right": 495,
+          "bottom": 830,
+          "width": 238,
+          "height": 100
+        },
+        "containerSelector": "#ai-ops > div:nth-of-type(2) > svg:nth-of-type(1)",
+        "fixHint": "Show the shaft only after both ends are on, and hide it with the earlier exit. Do not give the line its own clock.",
+        "dataAttributes": {
+          "data-hf-svg-reference-aliases": "[{\"name\":\"marker-end\",\"localName\":\"marker-end\",\"namespaceURI\":null,\"before\":\"url(#arrow)\",\"after\":\"url(#arrow)\"}]"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 257,
+          "y": 730,
+          "width": 238,
+          "height": 100
+        },
+        "firstSeen": 24.5,
+        "lastSeen": 24.5,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          24.5
+        ]
+      },
+      {
+        "code": "connector_detached",
+        "severity": "info",
+        "time": 30,
+        "selector": "#evals > div:nth-of-type(2) > svg:nth-of-type(1) > g:nth-of-type(2) > path:nth-of-type(2)",
+        "message": "Connector path endpoints render 215px from the nearest anchorable element — a marked shaft that meets no node.",
+        "rect": {
+          "left": 257,
+          "top": 1140,
+          "right": 495,
+          "bottom": 1235,
+          "width": 238,
+          "height": 95
+        },
+        "containerSelector": "#evals > div:nth-of-type(2) > svg:nth-of-type(1)",
+        "fixHint": "Measure the settled node boxes and write `d` in the SVG's user space (invert getScreenCTM), or grow a layout-owned shaft from the source node.",
+        "dataAttributes": {
+          "data-hf-svg-reference-aliases": "[{\"name\":\"marker-end\",\"localName\":\"marker-end\",\"namespaceURI\":null,\"before\":\"url(#arrow)\",\"after\":\"url(#arrow)\"}]"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 257,
+          "y": 1140,
+          "width": 238,
+          "height": 95
+        },
+        "firstSeen": 30,
+        "lastSeen": 30,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          30
+        ]
+      },
+      {
+        "code": "connector_orphan",
+        "severity": "info",
+        "time": 30,
+        "selector": "#evals > div:nth-of-type(2) > svg:nth-of-type(1) > g:nth-of-type(2) > path:nth-of-type(1)",
+        "message": "Connector shaft is visible while both endpoints are not on stage.",
+        "rect": {
+          "left": 495,
+          "top": 785,
+          "right": 732,
+          "bottom": 885,
+          "width": 237,
+          "height": 100
+        },
+        "containerSelector": "#evals > div:nth-of-type(2) > svg:nth-of-type(1)",
+        "fixHint": "Show the shaft only after both ends are on, and hide it with the earlier exit. Do not give the line its own clock.",
+        "dataAttributes": {
+          "data-hf-svg-reference-aliases": "[{\"name\":\"marker-end\",\"localName\":\"marker-end\",\"namespaceURI\":null,\"before\":\"url(#arrow)\",\"after\":\"url(#arrow)\"}]"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 495,
+          "y": 785,
+          "width": 237,
+          "height": 100
+        },
+        "firstSeen": 30,
+        "lastSeen": 30,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          30
+        ]
+      },
+      {
+        "code": "connector_orphan",
+        "severity": "info",
+        "time": 30,
+        "selector": "#evals > div:nth-of-type(2) > svg:nth-of-type(1) > g:nth-of-type(2) > path:nth-of-type(2)",
+        "message": "Connector shaft is visible while its endpoint div.cta-copy > p:nth-of-type(2) is not on stage.",
+        "rect": {
+          "left": 257,
+          "top": 1140,
+          "right": 495,
+          "bottom": 1235,
+          "width": 238,
+          "height": 95
+        },
+        "containerSelector": "#evals > div:nth-of-type(2) > svg:nth-of-type(1)",
+        "fixHint": "Show the shaft only after both ends are on, and hide it with the earlier exit. Do not give the line its own clock.",
+        "dataAttributes": {
+          "data-hf-svg-reference-aliases": "[{\"name\":\"marker-end\",\"localName\":\"marker-end\",\"namespaceURI\":null,\"before\":\"url(#arrow)\",\"after\":\"url(#arrow)\"}]"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 257,
+          "y": 1140,
+          "width": 238,
+          "height": 95
+        },
+        "firstSeen": 30,
+        "lastSeen": 30,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          30
+        ]
+      }
+    ],
+    "duration": 37,
+    "samples": [
+      2,
+      8.5,
+      14.5,
+      19.5,
+      24.5,
+      30,
+      35
+    ],
+    "transitionSamples": [],
+    "transitionSamplesDropped": 0,
+    "tolerance": 2,
+    "totalIssueCount": 11,
+    "truncated": false
+  },
+  "motion": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": false,
+    "samples": 0
+  },
+  "contrast": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": true,
+    "samples": [
+      2,
+      8.5,
+      19.5,
+      24.5,
+      35
+    ],
+    "checked": 43,
+    "passed": 43
+  },
+  "hdr": {
+    "autoPromotion": {
+      "triggeringAsset": "assets/gancho-frame.png",
+      "output": {
+        "colorSpace": "BT.2020",
+        "codec": "HEVC Main10"
+      }
+    },
+    "inspection": "available"
+  },
+  "snapshots": {
+    "enabled": false,
+    "files": [],
+    "times": [],
+    "findingFiles": []
+  }
+}

@@ -3,11 +3,11 @@ name: build-thread-carousel
 description: >
   Monta um carrossel de Instagram a partir de uma thread já escrita (em
   posts/thread/<slug>/sketch/v<N>.md), gerando um carousel.html em
-  posts/thread/<slug>/sketch/ com estética editorial de X-cosplay
-  (cabeçalho com nome + selo azul de verificado, conteúdo
-  centralizado na vertical, slot de imagem opcional). Tem dois modos
-  visuais: default (claro, paleta neutra) e X (dark mode, clone fiel
-  do X, usado também como imagem de fundo de Reel).
+  posts/thread/<slug>/sketch/ com a identidade Miyakodo
+  (design/identity.md). O slide mantém cabeçalho de perfil (logo,
+  nome e handle), conteúdo centralizado na vertical e slot de imagem
+  opcional. Tem dois modos visuais: default (fundo off-white) e X
+  (fundo dark brown, também usado como imagem de fundo de Reel).
   Renderiza cada slide como PNG via Playwright. Ative com comandos
   como "monta o carrossel da thread <slug>", "renderiza os PNGs de
   <slug>", "monta o carrossel em modo X de <slug>", "gera as stills
@@ -18,9 +18,11 @@ description: >
 # SKILL · Montar carrossel de thread
 ## Montar carrossel de thread
 
-Objetivo: montar o carrossel de IG a partir de uma thread já escrita. Cada slide reproduz um cabeçalho editorial inspirado no X, com a identidade fixa de Pedro Miyasaki e o conteúdo **centralizado na vertical**. Slot de imagem opcional embaixo do texto, para preencher slides curtos.
+Objetivo: montar o carrossel de IG a partir de uma thread já escrita. Cada slide traz o cabeçalho de perfil (logo Miyakodo, nome e handle) e o conteúdo **centralizado na vertical**. Slot de imagem opcional embaixo do texto, para preencher slides curtos.
 
-A skill tem **dois modos visuais**: mesmo conteúdo, mesma estrutura, arte diferente. Veja a seção "Modos" abaixo para escolher qual usar e como ativar cada um.
+A marca é a Miyakodo. Leia `design/identity.md` antes de gerar. Logos em `design/logo/`, fontes em `design/fontes/`, mascote e textura em `design/mascote-e-textura/`, guia em `design/apresentacao-idv-pedro-miyakodo.pdf`. A cor do logo horizontal e a expressão do mascote seguem as tabelas desse arquivo. O número do arquivo não indica a mesma cor, nem a mesma expressão, no PNG e no PDF.
+
+A skill tem **dois modos visuais**: mesmo conteúdo, mesma estrutura, fundo claro ou escuro. Veja a seção "Modos" abaixo para escolher qual usar e como ativar cada um.
 
 ---
 
@@ -28,13 +30,13 @@ A skill tem **dois modos visuais**: mesmo conteúdo, mesma estrutura, arte difer
 
 | | **default** | **X** |
 |---|---|---|
-| Quando usar | Carrossel para o feed do IG | Imagens de fundo para um Reel (uma sequência de stills), ou quando o pedido é explicitamente um clone do X/Twitter |
-| Paleta | Clara e neutra: fundo off-white, texto preto puro, acento vermelho-tijolo `--seal` | Dark mode nativo do X: fundo quase preto (`oklch(0.06)`), texto quase branco |
+| Quando usar | Carrossel para o feed do IG | Imagens de fundo para um Reel (uma sequência de stills), ou quando o pedido pede o modo escuro |
+| Paleta | Miyakodo clara: fundo off-white `#f6f4ee`, texto dark brown `#280e03`. Títulos em Instrument Serif, corpo em Poppins. Acento `#db3c05` | Miyakodo escura: fundo dark brown `#280e03`, texto off-white `#f6f4ee`. Mesmas famílias. Logo off-white |
 | Arquétipos | `assets/default/` | `assets/x/` |
 | Dimensões do slide | 1080×1350 (4:5), iguais nos dois modos | |
 | Output | `posts/thread/<slug>/sketch/carousel.html` + `sketch/carousel-v<N>.md` + PNGs soltos em `posts/thread/<slug>/`. **Mesma convenção nos dois modos**, não separe por modo | |
 
-Ativar o modo X: comandos que mencionem "modo X", "estilo X", "dark mode", ou os comandos legados da skill aposentada `gerar-prints-reel` ("gera as stills do reel da thread `<slug>`", "faz as stills de `<slug>`", "usa a skill gerar-prints-reel no post `<slug>`"). Qualquer outro comando ativa o modo default.
+Ativar o modo X: comandos que mencionem "modo X", "estilo X", "dark mode", ou os comandos legados da skill aposentada `gerar-prints-reel` ("gera as stills do reel da thread `<slug>`", "faz as stills de `<slug>`", "usa a skill gerar-prints-reel no post `<slug>`"). Qualquer outro comando ativa o modo default. O modo X é a variante escura da Miyakodo (fundo dark brown). Os comandos continuam os mesmos.
 
 O resto deste protocolo é **idêntico nos dois modos**, exceto onde estiver marcado: a única diferença real é qual subpasta de `assets/` importar.
 
@@ -42,16 +44,24 @@ O resto deste protocolo é **idêntico nos dois modos**, exceto onde estiver mar
 
 ## Leitura obrigatória antes de gerar
 
+Leia `design/identity.md` primeiro. Cor, família, logo e mascote saem dele.
+
 Os arquétipos ficam em `assets/`, empacotados com esta skill (caminho relativo a este SKILL.md), organizados por modo:
 
-1. `assets/README.md`: documenta a exceção do X-cosplay, os dois modos e quando usar cada arquétipo
-2. `assets/<mode>/_carousel.css`: chrome compartilhado do modo escolhido (cabeçalho do X, centralização vertical, slot de mídia, render de markdown)
+1. `assets/README.md`: marca Miyakodo, os dois modos e quando usar cada arquétipo
+2. `assets/<mode>/_carousel.css`: chrome do modo (cabeçalho, centralização vertical, slot de mídia, render de markdown). Hex e famílias já estão no arquivo, tirados de `identity.md`
 3. `assets/<mode>/hook-display.html`: arquétipo do primeiro slide, no modo escolhido
 4. `assets/<mode>/body-paragraph.html`: arquétipo dos demais slides, no modo escolhido
 
 Onde `<mode>` é `default` ou `x`, conforme a seção "Modos" acima.
 
-Cada `_carousel.css` é autossuficiente: cor e tipografia já estão embutidas nele, não tem stylesheet externo para carregar.
+No modo default o logo é `design/logo/png/horizontal/MIYAKODO_HORIZONTAL2.png` (dark brown `#280e03`). No modo X é `design/logo/png/horizontal/MIYAKODO_HORIZONTAL3.png` (off-white `#f6f4ee`). Confira a tabela de `identity.md` antes de trocar o arquivo.
+
+Títulos: Instrument Serif, em `design/fontes/instrument-serif.zip` (Regular e Italic, sem negrito). Corpo: Poppins, em `design/fontes/poppins.zip`. Não copie as fontes para fora de `design/fontes/`. O CSS carrega as mesmas famílias por `@import` para o navegador renderizar.
+
+Mascote e textura ficam em `design/mascote-e-textura/`. Use a tabela de expressões de `identity.md` (o índice do PNG só coincide com o do PDF no corpo agachado). Eles entram quando a composição pedir. Não crie arquétipo novo para isso.
+
+Cada `_carousel.css` é autossuficiente para o render: não tem outro stylesheet da marca para carregar. Se um valor divergir, vale `design/identity.md`.
 
 ---
 
@@ -99,8 +109,8 @@ O carrossel **pode ser mais formatado e mais longo que a thread original**: o IG
 
 ### 4. Mapear cada tweet para um arquétipo
 
-- T1 → `slide-hook` (o primeiro parágrafo vira uma **headline em negrito de 40px**, o resto em body regular de 30px).
-- T2 até T(N) → `slide-body` (texto regular de 30px com markdown).
+- T1 → `slide-hook` (o primeiro parágrafo vira headline em Instrument Serif, 40px, peso regular; o resto em Poppins, 30px).
+- T2 até T(N) → `slide-body` (Poppins, 30px, com markdown).
 
 Não crie arquétipo novo sem aprovação.
 
@@ -150,10 +160,10 @@ Depois da aprovação:
   - `../../../../.agents/skills/build-thread-carousel/assets/<mode>/_carousel.css`
 - Inclua um `<style>` no `<head>` copiando, dos arquétipos do modo escolhido, os blocos das classes `.slide-hook` e `.slide-body`.
 - Cada tweet vira `<section class="slide slide-<archetype>" data-slide="NN">`, com:
-  - o `<header class="profile-row">` dos arquétipos, já com a identidade fixa
+  - o `<header class="profile-row">` dos arquétipos, com logo Miyakodo, nome Pedro Miyasaki e handle `@pedro.miyasaki.ia`. No HTML gerado, o `src` do logo é relativo a `posts/thread/<slug>/sketch/`: `../../../../design/logo/png/horizontal/MIYAKODO_HORIZONTAL2.png` no default e `../../../../design/logo/png/horizontal/MIYAKODO_HORIZONTAL3.png` no modo X. Nos arquétipos o caminho é `../../../../../design/...`, um nível a mais
   - `<div class="tweet-text">` com o markdown já convertido em HTML inline (`**` → `<strong>`, `*` → `<em>`, `` ` `` → `<code>`, `>` → `<blockquote>`)
   - `<div class="tweet-media"><img src="images/<file>" alt="..."></div>` **só se** o slide tem imagem associada. As imagens ficam em `sketch/images/`, irmã do HTML, então a referência é só a pasta e o nome do arquivo, sem nenhum `../`. `<file>` é o nome real do arquivo: `0N.jpg` quando a skill baixou, ou `0N`/`N` em qualquer extensão (`.png`/`.jpg`/`.jpeg`/`.webp`) se foi imagem manual
-- `<body class="carrossel-preview">` para dar um fundo neutro (ou escuro, no modo X) quando abrir no navegador.
+- `<body class="carrossel-preview">` para a prévia no navegador. O fundo da prévia é cinza `#aba199`. A cor do slide é que muda entre os modos.
 
 ### 8. Apresentar o HTML para o usuário revisar
 

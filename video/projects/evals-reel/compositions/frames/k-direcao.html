@@ -1,0 +1,91 @@
+<template>
+  <style>
+    @font-face {
+      font-family: "Bricolage Grotesque";
+      src: url("node_modules/@fontsource-variable/bricolage-grotesque/files/bricolage-grotesque-latin-wght-normal.woff2") format("woff2");
+      font-weight: 200 800;
+    }
+    #root {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #0A0A0A;
+      color: #FFFFFF;
+      font-family: "Bricolage Grotesque", sans-serif;
+    }
+    #root > * { position: absolute; }
+    #root::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 4;
+      opacity: 0.14;
+      background-image: radial-gradient(#FFFFFF 0.6px, transparent 0.7px);
+      background-size: 4px 4px;
+    }
+    .label {
+      position: absolute;
+      font-weight: 800;
+      letter-spacing: -0.05em;
+      line-height: 0.9;
+    }
+    .off { opacity: 0; }
+    .sheet {
+      position: absolute;
+      border: 7px solid #FFFFFF;
+      background: #0A0A0A;
+      box-sizing: border-box;
+    }
+    .fold {
+      position: absolute;
+      top: -1px;
+      right: -1px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 42px 42px 0;
+      border-color: transparent #FFFFFF transparent transparent;
+    }
+    .rule {
+      height: 8px;
+      margin: 22px 22px 0;
+      background: #FFFFFF;
+      transform-origin: left center;
+      transform: scaleX(0);
+    }
+    .rule.short { width: 58%; }
+    .draw {
+      transform-origin: left center;
+      transform: scaleX(0);
+    }
+    svg .ink {
+      fill: none;
+      stroke: #FFFFFF;
+      stroke-width: 7;
+      stroke-linecap: square;
+      stroke-linejoin: miter;
+    }
+    #k2-card { left: 250px; top: 680px; width: 580px; height: 190px; border: 6px solid #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 64px; font-weight: 800; box-sizing: border-box; }
+ #k2-chart { position: absolute; left: 110px; top: 620px; }
+ #k2-higher { left: 110px; top: 1340px; width: 860px; text-align: center; font-size: 52px; }
+  </style>
+  <div data-hf-id="hf-vvaa" id="root" data-composition-id="k-direcao" data-width="1080" data-height="1920" data-duration="8.4">
+    <div data-hf-id="hf-avt0" id="k2-card" class="off">2. Direção</div>
+    <svg data-hf-id="hf-ixqk" id="k2-chart" class="off" width="860" height="640" viewBox="0 0 860 640"><path data-hf-id="hf-u2na" class="ink" d="M70 30 V570 H820" /><polyline data-hf-id="hf-orr3" class="ink" id="k2-trend" points="110,510 330,390 550,270 760,100" stroke-dasharray="840" stroke-dashoffset="840" /><circle data-hf-id="hf-458r" id="k2-p0" class="off" cx="110" cy="510" r="13" fill="#FFFFFF" /><circle data-hf-id="hf-om0y" id="k2-p1" class="off" cx="330" cy="390" r="13" fill="#FFFFFF" /><circle data-hf-id="hf-mciq" id="k2-p2" class="off" cx="550" cy="270" r="13" fill="#FFFFFF" /><circle data-hf-id="hf-ibms" id="k2-p3" class="off" cx="760" cy="100" r="13" fill="#FFFFFF" /></svg>
+    <div data-hf-id="hf-t88y" id="k2-higher" class="label off">NOTAS CADA VEZ MAIS ALTAS</div>
+  </div>
+  <script>
+    const timeline = gsap.timeline({ paused: true });
+    const byId = (name) => document.getElementById(name);
+    timeline.fromTo('#k2-card', { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: .35, ease: 'power3.out' }, .1);
+    timeline.to('#k2-card', { y: -340, duration: .65, ease: 'power2.inOut' }, 2.25);
+    timeline.fromTo('#k2-chart', { opacity: 0 }, { opacity: 1, duration: .3 }, 3.05);
+    timeline.fromTo('#k2-trend', { strokeDashoffset: 840 }, { strokeDashoffset: 0, duration: 2.0, ease: 'power1.inOut' }, 4.35);
+    timeline.fromTo('#k2-p0, #k2-p1, #k2-p2, #k2-p3', { opacity: 0 }, { opacity: 1, duration: .2, stagger: .6 }, 4.5);
+    timeline.fromTo('#k2-higher', { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: .35 }, 6.4);
+    window.__timelines = window.__timelines || {};
+    window.__timelines["k-direcao"] = timeline;
+  </script>
+</template>

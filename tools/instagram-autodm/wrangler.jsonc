@@ -19,16 +19,16 @@
 		"GRAPH_API_BASE": "https://graph.instagram.com/v25.0",
 		"KEYWORD": "",
 		"PRIVATE_REPLY_TEXT": "",
-		"DRY_RUN": "true",
+		"DRY_RUN": "false",
 		"OWNER_IG_USERNAME": "pedro.miyasaki.ia",
-		"COMMENT_POLL_ENABLED": "false",
+		"COMMENT_POLL_ENABLED": "true",
 		"FOLLOWER_RECHECK_MS": "4000"
 	},
 	"d1_databases": [
 		{
 			"binding": "DB",
 			"database_name": "instagram-autodm",
-			"database_id": "REPLACE_WITH_D1_DATABASE_ID",
+			"database_id": "0bb7752f-b57f-4e2b-b6ae-4b2acc9e6c45",
 			"migrations_dir": "./migrations"
 		}
 	]

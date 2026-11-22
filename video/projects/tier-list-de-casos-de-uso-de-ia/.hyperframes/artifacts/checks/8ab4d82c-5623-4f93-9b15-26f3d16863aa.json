@@ -1,0 +1,98 @@
+{
+  "ok": true,
+  "strict": false,
+  "browserSkipped": false,
+  "lint": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "filesScanned": 8
+  },
+  "runtime": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": []
+  },
+  "layout": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "duration": 25,
+    "samples": [
+      1.389,
+      4.167,
+      6.944,
+      9.722,
+      12.5,
+      15.278,
+      18.056,
+      20.833,
+      23.611
+    ],
+    "transitionSamples": [],
+    "transitionSamplesDropped": 0,
+    "tolerance": 2,
+    "totalIssueCount": 0,
+    "truncated": false
+  },
+  "motion": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": false,
+    "samples": 0
+  },
+  "contrast": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": true,
+    "samples": [
+      1.389,
+      6.944,
+      12.5,
+      18.056,
+      23.611
+    ],
+    "checked": 4,
+    "passed": 4
+  },
+  "hdr": {
+    "autoPromotion": {
+      "triggeringAsset": "assets/gancho.mp4",
+      "output": {
+        "colorSpace": "BT.2020",
+        "codec": "HEVC Main10"
+      }
+    },
+    "inspection": "available"
+  },
+  "snapshots": {
+    "enabled": true,
+    "files": [
+      ".hyperframes\\artifacts\\snapshots\\840b198d-584d-47e0-9079-bc75f572dff9\\frame-00-at-1.4s.png",
+      ".hyperframes\\artifacts\\snapshots\\840b198d-584d-47e0-9079-bc75f572dff9\\frame-01-at-6.9s.png",
+      ".hyperframes\\artifacts\\snapshots\\840b198d-584d-47e0-9079-bc75f572dff9\\frame-02-at-12.5s.png",
+      ".hyperframes\\artifacts\\snapshots\\840b198d-584d-47e0-9079-bc75f572dff9\\frame-03-at-18.1s.png",
+      ".hyperframes\\artifacts\\snapshots\\840b198d-584d-47e0-9079-bc75f572dff9\\frame-04-at-23.6s.png"
+    ],
+    "times": [
+      1.389,
+      6.944,
+      12.5,
+      18.056,
+      23.611
+    ],
+    "findingFiles": []
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "duration": 7.9,
+  "assertions": [
+    {
+      "kind": "appearsBy",
+      "selector": "#g-agent",
+      "bySec": 0.6
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": "#g-agent"
+    }
+  ]
+}

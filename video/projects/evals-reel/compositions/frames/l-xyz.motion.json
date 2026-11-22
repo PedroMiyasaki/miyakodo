@@ -1,0 +1,14 @@
+{
+  "duration": 4.2,
+  "assertions": [
+    {
+      "kind": "appearsBy",
+      "selector": "#l-rule",
+      "bySec": 0.6
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": "#l-rule"
+    }
+  ]
+}

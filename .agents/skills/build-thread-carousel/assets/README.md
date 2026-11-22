@@ -1,31 +1,38 @@
 # assets/ - arquétipos do carrossel de IG derivado de thread (skill build-thread-carousel)
 
-Pasta dos arquétipos do carrossel de Instagram **derivado de uma thread** (skill `build-thread-carousel`). Cada arquétipo é um arquivo HTML completo e independente: abra no navegador e ele renderiza um slide de demonstração.
+Pasta dos arquétipos do carrossel de Instagram derivado de uma thread (skill `build-thread-carousel`). Cada arquétipo é um arquivo HTML completo e independente: abra no navegador e ele renderiza um slide de demonstração.
 
-A skill tem dois modos, cada um com sua subpasta de arquétipos, com a mesma estrutura de arquivos (`_carousel.css`, `hook-display.html`, `body-paragraph.html`) e conteúdo diferente:
+A marca é a Miyakodo. Antes de produzir, leia `design/identity.md`. Ele é a fonte canônica de cor, tipografia, logo, mascote e textura. Os CSS embutem os valores registrados lá. Se divergir, vale o `identity.md`.
 
-- **`default/`**: o modo padrão. Layout X-cosplay em paleta clara e neutra. Documentado abaixo.
-- **`x/`**: o modo X. Dark mode, clone fiel do Twitter/X (herdado da skill aposentada `gerar-prints-reel`, usada historicamente para gerar imagem de fundo de Reel).
+- Logos: `design/logo/`. No modo default, o PNG horizontal dark brown é `design/logo/png/horizontal/MIYAKODO_HORIZONTAL2.png` (`#280e03`). No modo X, o PNG horizontal off-white é `design/logo/png/horizontal/MIYAKODO_HORIZONTAL3.png` (`#f6f4ee`). O número não é a mesma cor no PNG e no PDF. Use a tabela de `identity.md`.
+- Fontes: `design/fontes/instrument-serif.zip` (títulos, Instrument Serif, Regular e Italic) e `design/fontes/poppins.zip` (corpo, Poppins). Não copie as fontes para fora de `design/fontes/`.
+- Mascote Carlos e textura: `design/mascote-e-textura/`. O índice do PNG não coincide com o do PDF, salvo o corpo agachado. A tabela de expressões está em `identity.md`. Entram na composição quando a peça pedir. Não são cabeçalho obrigatório.
+- Guia: `design/apresentacao-idv-pedro-miyakodo.pdf`.
+
+A skill tem dois modos, cada um com sua subpasta de arquétipos, com a mesma estrutura de arquivos (`_carousel.css`, `hook-display.html`, `body-paragraph.html`):
+
+- **`default/`**: carrossel para o feed. Fundo off-white `#f6f4ee`, texto dark brown `#280e03`.
+- **`x/`**: variante escura. Fundo dark brown `#280e03`, texto off-white `#f6f4ee`. Também serve de still para Reel. A pasta continua se chamando `x` porque os comandos da skill usam esse nome.
 
 Qual usar em cada caso está no `SKILL.md` da skill, seção "Modos".
 
-## Layout X-cosplay, paleta clara (modo default)
+## Layout do modo default
 
-Estes arquétipos usam um **layout X-cosplay editorial** em paleta clara e neutra:
+O cabeçalho traz o logo Miyakodo, o nome Pedro Miyasaki e o handle `@pedro.miyasaki.ia`. O conteúdo fica centralizado na vertical.
 
-- Cabeçalho compacto com nome, selo azul `#1d9bf0` de verificado e handle
-- Fundo neutro `oklch(0.96 0 0)` (off-white sem tom quente)
-- Texto em preto puro `oklch(0 0 0)`, cinzas neutros (chroma 0)
-- Inter no body (via `@import` do Google Fonts), JetBrains Mono em `code`, com fallback para as fontes do sistema
-- Acento vermelho-tijolo `--seal` nos links, no chip de `code` e na borda da citação
-- Conteúdo centralizado na vertical no slide: pouco texto flutua no meio com bastante ar, muito texto ocupa mais
+- Fundo off-white `#f6f4ee`
+- Texto dark brown `#280e03`, meta em cinza `#aba199`
+- Títulos em Instrument Serif, peso regular (a entrega não tem negrito). Corpo em Poppins
+- Acento `#db3c05` (apoio) em link e borda de citação. Chip de `code` em `#b6cadb` (apoio), com texto dark brown
+- `code` usa a mono do sistema. `identity.md` não registra uma família mono
+- Pouco texto flutua no meio com bastante ar, muito texto ocupa mais
 
-O **único traço nativo do X que ficou** é o azul `#1d9bf0` do selo de verificado: um check recolorido pareceria selo falso. O stylesheet é autossuficiente: todos os valores estão inline nele. Não generalize estes arquétipos para outros contextos.
+O stylesheet é autossuficiente: os valores usados no chrome estão nele, tirados de `design/identity.md`. O `@import` carrega Instrument Serif e Poppins para o navegador. Os arquivos canônicos continuam nos zips de `design/fontes/`.
 
 ## O sistema (dentro de cada subpasta)
 
 - **`_carousel.css`**: o chrome compartilhado. Dimensões 1080×1350, `.slide` como coluna flex centralizada, `.profile-row`, `.tweet-text` com render de markdown inline e slot opcional `.tweet-media`. Mudou aqui, mudou em todo carrossel daquele modo.
-- **`hook-display.html`**: o primeiro slide. O primeiro parágrafo vira uma headline maior em negrito (40px), o resto body regular (30px). Tudo centralizado na vertical.
+- **`hook-display.html`**: o primeiro slide. O primeiro parágrafo vira headline em Instrument Serif, 40px, peso regular. O resto fica em Poppins, 30px. Tudo centralizado na vertical.
 - **`body-paragraph.html`**: os slides do meio e o último. Tweet-text a 30px com parágrafos. Aceita markdown e marcadores `→ `.
 
 ## Qual usar quando

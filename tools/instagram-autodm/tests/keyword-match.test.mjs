@@ -51,13 +51,19 @@ test("the matcher accepts short requests and rejects conversation", () => {
 });
 
 test("markdown rules match only the keyword itself", () => {
-  const { isStrictKeyword } = matcher.module;
-  const yes = [["EVALS!", "evals"], ["  especialista. ", "especialista"], ["#evals", "evals"], ["evals 🙏", "evals"]];
-  for (const [text, keyword] of yes) assert.equal(isStrictKeyword(text, keyword), true, text);
+  const { isStrictKeyword, keywordMatch } = matcher.module;
+  const yes = [
+    ["EVALS!", "evals"], ["  especialista. ", "especialista"], ["#evals", "evals"], ["evals 🙏", "evals"],
+    ["Padrão", "padrao"], ["PADRAO", "padrao"], ["padrão!", "padrao"], ["padrao", "padrão"],
+  ];
+  for (const [text, keyword] of yes) assert.equal(isStrictKeyword(text, keyword), true, `${text} / ${keyword}`);
   const no = ["quero evals", "evals por favor", "evals evals", ""];
   for (const text of no) assert.equal(isStrictKeyword(text, "evals"), false, text);
   assert.equal(isStrictKeyword("Guidelines", "guide"), false);
   assert.equal(isStrictKeyword("especialista", "evals"), false);
+  assert.equal(isStrictKeyword("quero padrão", "padrao"), false);
+  assert.equal(isStrictKeyword("padrões", "padrao"), false);
+  assert.equal(keywordMatch("Padrão", "padrao").match, true);
 });
 
 test("comments trigger only when they are basically just the keyword", async (t) => {

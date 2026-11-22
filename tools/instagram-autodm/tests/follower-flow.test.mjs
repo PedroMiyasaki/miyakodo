@@ -107,7 +107,7 @@ test("a decisão espera uma segunda checagem antes de negar", async () => {
   assert.equal(await decideFollower(async () => true, async () => { throw new Error("não deveria esperar"); }), "follower");
 });
 
-test("comentário de uma palavra pede o material e só então entrega para quem segue", async (t) => {
+test("comentário de uma palavra entrega o texto do arquivo para quem já segue", async (t) => {
   const { h, rule, ruleId } = await install(t);
   profiles(h, [true]);
   await h.webhook(comment("c-owner", "EVALS!", MEDIA, "pedro.miyasaki.ia", "17895550000000002"));
@@ -117,20 +117,9 @@ test("comentário de uma palavra pede o material e só então entrega para quem 
   assert.equal(h.query("SELECT status FROM comment_events WHERE comment_id = 'c-owner'").status, "ignored_owner");
   assert.equal(h.query("SELECT status FROM comment_events WHERE comment_id = 'c-phrase'").status, "ignored_no_keyword");
   assert.equal(h.query("SELECT status FROM comment_events WHERE comment_id = 'c-other'").status, "ignored_no_keyword");
-  assert.equal(h.query("SELECT status FROM comment_events WHERE comment_id = 'c-yes'").status, "prompted");
   assert.equal(messagePosts(h).length, 1);
-  assert.equal(publicReplies(h).length, 0);
-  const button = messagePosts(h)[0].body;
-  assert.equal(button.recipient.comment_id, "c-yes");
-  assert.equal(button.message.attachment.payload.text, "Toque no botão para receber o material.");
-  assert.equal(button.message.attachment.payload.buttons[0].title, "Quero o material");
-  assert.equal(button.message.attachment.payload.buttons[0].payload, `GATE:v1:${ruleId}:c-yes:material`);
-  assert.equal(JSON.stringify(button).includes("anthropic.com"), false);
-
-  await h.webhook(postback(ruleId, "c-yes"));
-  assert.equal(messagePosts(h).length, 2);
-  assert.equal(messagePosts(h)[1].body.recipient.id, AUTHOR);
-  assert.equal(messagePosts(h)[1].body.message.text, rule.replyText);
+  assert.equal(messagePosts(h)[0].body.recipient.comment_id, "c-yes");
+  assert.equal(messagePosts(h)[0].body.message.text, rule.replyText);
   assert.equal(publicReplies(h).length, 1);
   assert.equal(publicReplies(h)[0].url.searchParams.get("message"), rule.publicReplyText);
   assert.equal(h.query("SELECT status FROM material_deliveries WHERE rule_id = ?", ruleId).status, "delivered");
@@ -144,24 +133,27 @@ test("comentário de uma palavra pede o material e só então entrega para quem 
 
 test("quem não segue recebe o pedido e o botão Já segui, sem o material", async (t) => {
   const { h, rule, ruleId } = await install(t);
-  profiles(h, [false, false]);
+  profiles(h, [false, false, true]);
   await h.webhook(comment("c-no", "evals"));
-  await h.webhook(postback(ruleId, "c-no"));
   assert.equal(publicReplies(h).length, 0);
-  assert.equal(messagePosts(h).length, 2);
-  const follow = messagePosts(h)[1].body.message.attachment.payload;
+  assert.equal(messagePosts(h).length, 1);
+  const follow = messagePosts(h)[0].body.message.attachment.payload;
   assert.equal(follow.text, rule.followPromptText);
   assert.equal(follow.buttons[0].title, "Já segui");
   assert.equal(follow.buttons[0].payload, `GATE:v1:${ruleId}:c-no:followed`);
-  assert.equal(JSON.stringify(messagePosts(h)[1].body).includes(rule.link), false);
+  assert.equal(JSON.stringify(messagePosts(h)[0].body).includes(rule.link), false);
   assert.equal(h.query("SELECT status FROM material_deliveries WHERE comment_id = 'c-no'").status, "awaiting_follow");
+
+  await h.webhook(postback(ruleId, "c-no", AUTHOR, "followed"));
+  assert.equal(messagePosts(h).at(-1).body.message.text, rule.replyText);
+  assert.equal(publicReplies(h).length, 1);
+  assert.equal(h.query("SELECT status FROM material_deliveries WHERE comment_id = 'c-no'").status, "delivered");
 });
 
 test("uma checagem negativa seguida de positiva entrega o material", async (t) => {
-  const { h, rule, ruleId } = await install(t);
+  const { h, rule } = await install(t);
   profiles(h, [false, true]);
   await h.webhook(comment("c-lag", "evals"));
-  await h.webhook(postback(ruleId, "c-lag"));
   const lookups = h.calls.filter((call) => call.method === "GET" && call.url.pathname.endsWith(`/${AUTHOR}`));
   assert.equal(lookups.length, 2);
   assert.equal(messagePosts(h).at(-1).body.message.text, rule.replyText);
@@ -171,7 +163,7 @@ test("uma checagem negativa seguida de positiva entrega o material", async (t) =
 
 test("falha da API não trata a pessoa como quem não segue", async (t) => {
   const { h, rule, ruleId } = await install(t);
-  profiles(h, [null, null]);
+  profiles(h, [null, null, null, null]);
   await h.webhook(comment("c-unknown", "evals"));
   await h.webhook(postback(ruleId, "c-unknown"));
   assert.equal(publicReplies(h).length, 0);

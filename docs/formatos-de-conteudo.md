@@ -63,8 +63,8 @@ A skill `build-thread-carousel` grava a reescrita e o HTML em `posts/thread/<slu
 
 ### Modos atuais
 
-- **Default:** layout editorial inspirado no X, com paleta clara e neutra.
-- **X:** dark mode que reproduz mais fielmente a aparência do Twitter/X.
+- **Default:** Miyakodo clara, com fundo off-white `#f6f4ee` e texto dark brown `#280e03`. A marca visual é a Miyakodo, em `design/identity.md` e nas subpastas `design/logo/`, `design/fontes/` e `design/mascote-e-textura/`.
+- **X:** variante escura da Miyakodo, com fundo dark brown `#280e03` e texto off-white `#f6f4ee`. A marca visual é a Miyakodo, em `design/identity.md` e nas subpastas `design/logo/`, `design/fontes/` e `design/mascote-e-textura/`.
 
 Os dois modos mantêm o mesmo conteúdo, estrutura e proporção 4:5; muda apenas o tratamento visual.
 

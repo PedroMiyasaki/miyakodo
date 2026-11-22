@@ -55,13 +55,22 @@ Imite os padrões recorrentes sem copiar frases ou layouts. Dê mais peso aos tr
 
 ### 3. Criar a versão visual
 
-Leia `design/identity.md` e use `design/proof/proof.html` como base técnica. A identidade é fixa; as decisões narrativas e de composição pertencem à peça.
+Leia `design/identity.md` antes de compor. Ele é a regra da identidade Miyakodo e a fonte canônica de cor, tipografia, logo, mascote e textura. Se a peça precisar de um hex ou de uma família, use só o que esse arquivo registra.
+
+A base técnica são os assets em `design/`:
+
+- `design/logo/`: logo horizontal e vertical, PNG e PDF. A cor de cada arquivo está na tabela de `identity.md`. O número do logo horizontal não é a mesma cor no PNG e no PDF.
+- `design/fontes/`: `instrument-serif.zip` (títulos, Instrument Serif, Regular e Italic) e `poppins.zip` (corpo, Poppins). Não copie as fontes para fora dessa pasta.
+- `design/mascote-e-textura/`: mascote Carlos e `textura.pdf`. O número do mascote também diverge entre PNG e PDF. Use a tabela de `identity.md`.
+- `design/apresentacao-idv-pedro-miyakodo.pdf`: guia visual.
+
+A identidade é fixa. Narrativa e composição pertencem à peça. Hierarquia e tamanho de tipo saem da peça e do histórico recente.
 
 Crie diretamente `posts/carousel/<slug>/sketch/v<N>/carousel.html`, onde N é o próximo número disponível. O arquivo deve ser autossuficiente e conter todos os slides como `<section class="slide">`.
 
 Resolva a copy dentro da composição. Decida livremente o número de slides, o ritmo, a estrutura, os arquétipos e a densidade que melhor servem à ideia. Preserve coerência entre os slides sem forçar todos a terem a mesma composição.
 
-Cada slide deve medir 1080x1350. Não apresente uma etapa separada de copy, plano visual ou aprovação de template.
+Cada slide deve medir 1080x1350, o formato 4:5 do carrossel de Instagram. Não apresente uma etapa separada de copy, plano visual ou aprovação de template.
 
 ### 4. Renderizar e revisar
 

@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
-import { readFile } from "node:fs/promises";
+import { mkdir, mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
+import { tmpdir } from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import test from "node:test";
@@ -79,8 +80,50 @@ Me segue.
   const heavy = parseRespostasMarkdown(base.replace("Olá", long), "longa.md");
   assert.match(heavy.errors.join("\n"), /1000/);
 
+  const accented = parseRespostasMarkdown(base.replace("Palavra-chave: evals", "Palavra-chave: Padrão"), "acento.md");
+  assert.deepEqual(accented.errors, []);
+  assert.equal(accented.drafts[0].keyword, "Padrão");
+  assert.equal(accented.drafts[0].sourceKey, "Abc123:padrao");
+
+  const sameSound = parseRespostasMarkdown(base.replace("- Palavra-chave: evals\n", "- Palavra-chave: padrao\n- Palavra-chave: Padrão\n"), "acento-repetido.md");
+  assert.match(sameSound.errors.join("\n"), /repetida/);
+
   const open = parseRespostasMarkdown(base.replace("Somente seguidores: sim", "Somente seguidores: não").replace("## Pedido para seguir\n\nMe segue.\n", ""), "aberta.md");
   assert.deepEqual(open.errors, []);
   assert.equal(open.drafts[0].followersOnly, false);
   assert.equal(open.drafts[0].followPromptText, null);
+});
+
+test("palavras que só diferem por acento não coexistem em arquivos ativos", async () => {
+  const root = await mkdtemp(path.join(tmpdir(), "respostas-"));
+  const piece = (slug) => path.join(root, "posts", slug);
+  await mkdir(piece("a"), { recursive: true });
+  await mkdir(piece("b"), { recursive: true });
+  const body = (word, code) => `# Respostas
+
+- Código do post: ${code}
+- Palavra-chave: ${word}
+- Somente seguidores: sim
+
+## Mensagem no direct
+
+Oi
+
+## Resposta no comentário
+
+Enviei.
+
+## Pedido para seguir
+
+Segue.
+`;
+  await writeFile(path.join(piece("a"), "respostas-comentarios.md"), body("padrao", "Aaa111"));
+  await writeFile(path.join(piece("b"), "respostas-comentarios.md"), body("Padrão", "Bbb222"));
+  try {
+    const loaded = await loadRespostas(root);
+    assert.match(loaded.errors.join("\n"), /Padrão/);
+    assert.equal(loaded.drafts.length, 0);
+  } finally {
+    await rm(root, { recursive: true, force: true });
+  }
 });

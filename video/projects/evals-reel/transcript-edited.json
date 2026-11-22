@@ -1,0 +1,10381 @@
+{
+  "duration": 202.18,
+  "words": [
+    {
+      "id": "w0",
+      "text": "Se",
+      "start": 0.14,
+      "end": 0.22
+    },
+    {
+      "id": "w1",
+      "text": "você",
+      "start": 0.22,
+      "end": 0.24
+    },
+    {
+      "id": "w2",
+      "text": "está",
+      "start": 0.24,
+      "end": 0.8
+    },
+    {
+      "id": "w3",
+      "text": "desenvolvendo",
+      "start": 0.8,
+      "end": 1.37
+    },
+    {
+      "id": "w4",
+      "text": "qualquer",
+      "start": 1.37,
+      "end": 1.91
+    },
+    {
+      "id": "w5",
+      "text": "use",
+      "start": 1.91,
+      "end": 2.19
+    },
+    {
+      "id": "w6",
+      "text": "case",
+      "start": 2.19,
+      "end": 2.38
+    },
+    {
+      "id": "w7",
+      "text": "com",
+      "start": 2.38,
+      "end": 2.62
+    },
+    {
+      "id": "w8",
+      "text": "IA,",
+      "start": 2.62,
+      "end": 2.94
+    },
+    {
+      "id": "w9",
+      "text": "você",
+      "start": 2.94,
+      "end": 3.13
+    },
+    {
+      "id": "w10",
+      "text": "precisa",
+      "start": 3.13,
+      "end": 3.53
+    },
+    {
+      "id": "w11",
+      "text": "conhecer",
+      "start": 3.53,
+      "end": 3.99
+    },
+    {
+      "id": "w12",
+      "text": "um",
+      "start": 3.99,
+      "end": 4.14
+    },
+    {
+      "id": "w13",
+      "text": "negócio",
+      "start": 4.14,
+      "end": 4.52
+    },
+    {
+      "id": "w14",
+      "text": "chamado",
+      "start": 4.52,
+      "end": 5.02
+    },
+    {
+      "id": "w15",
+      "text": "evals.",
+      "start": 5.02,
+      "end": 5.6
+    },
+    {
+      "id": "w16",
+      "text": "Apesar",
+      "start": 6.12,
+      "end": 6.12
+    },
+    {
+      "id": "w17",
+      "text": "dos",
+      "start": 6.12,
+      "end": 6.19
+    },
+    {
+      "id": "w18",
+      "text": "evals",
+      "start": 6.19,
+      "end": 6.35
+    },
+    {
+      "id": "w19",
+      "text": "serem",
+      "start": 6.35,
+      "end": 6.73
+    },
+    {
+      "id": "w20",
+      "text": "um",
+      "start": 6.73,
+      "end": 6.8
+    },
+    {
+      "id": "w21",
+      "text": "assunto",
+      "start": 6.8,
+      "end": 7.15
+    },
+    {
+      "id": "w22",
+      "text": "técnico",
+      "start": 7.15,
+      "end": 7.48
+    },
+    {
+      "id": "w23",
+      "text": "na",
+      "start": 7.48,
+      "end": 7.59
+    },
+    {
+      "id": "w24",
+      "text": "área",
+      "start": 7.59,
+      "end": 7.89
+    },
+    {
+      "id": "w25",
+      "text": "de",
+      "start": 7.89,
+      "end": 7.92
+    },
+    {
+      "id": "w26",
+      "text": "inteligência",
+      "start": 7.92,
+      "end": 8.6
+    },
+    {
+      "id": "w27",
+      "text": "artificial,",
+      "start": 8.6,
+      "end": 9.3
+    },
+    {
+      "id": "w28",
+      "text": "eles",
+      "start": 9.3,
+      "end": 9.55
+    },
+    {
+      "id": "w29",
+      "text": "tocam",
+      "start": 9.55,
+      "end": 9.85
+    },
+    {
+      "id": "w30",
+      "text": "muito",
+      "start": 9.85,
+      "end": 10.16
+    },
+    {
+      "id": "w31",
+      "text": "na",
+      "start": 10.16,
+      "end": 10.28
+    },
+    {
+      "id": "w32",
+      "text": "área",
+      "start": 10.28,
+      "end": 10.53
+    },
+    {
+      "id": "w33",
+      "text": "de",
+      "start": 10.53,
+      "end": 10.65
+    },
+    {
+      "id": "w34",
+      "text": "negócios.",
+      "start": 10.65,
+      "end": 11.38
+    },
+    {
+      "id": "w35",
+      "text": "Então,",
+      "start": 11.56,
+      "end": 11.78
+    },
+    {
+      "id": "w36",
+      "text": "se",
+      "start": 11.78,
+      "end": 11.89
+    },
+    {
+      "id": "w37",
+      "text": "você",
+      "start": 11.89,
+      "end": 12.17
+    },
+    {
+      "id": "w38",
+      "text": "é",
+      "start": 12.17,
+      "end": 12.22
+    },
+    {
+      "id": "w39",
+      "text": "uma",
+      "start": 12.22,
+      "end": 12.34
+    },
+    {
+      "id": "w40",
+      "text": "pessoa",
+      "start": 12.34,
+      "end": 12.68
+    },
+    {
+      "id": "w41",
+      "text": "que",
+      "start": 12.68,
+      "end": 12.85
+    },
+    {
+      "id": "w42",
+      "text": "é",
+      "start": 12.85,
+      "end": 12.9
+    },
+    {
+      "id": "w43",
+      "text": "não",
+      "start": 12.9,
+      "end": 13.07
+    },
+    {
+      "id": "w44",
+      "text": "técnica,",
+      "start": 13.07,
+      "end": 13.61
+    },
+    {
+      "id": "w45",
+      "text": "eu",
+      "start": 13.61,
+      "end": 13.69
+    },
+    {
+      "id": "w46",
+      "text": "ficaria",
+      "start": 13.69,
+      "end": 14.09
+    },
+    {
+      "id": "w47",
+      "text": "nesse",
+      "start": 14.09,
+      "end": 14.38
+    },
+    {
+      "id": "w48",
+      "text": "vídeo",
+      "start": 14.38,
+      "end": 14.67
+    },
+    {
+      "id": "w49",
+      "text": "aqui",
+      "start": 14.67,
+      "end": 14.92
+    },
+    {
+      "id": "w50",
+      "text": "para",
+      "start": 14.92,
+      "end": 15.13
+    },
+    {
+      "id": "w51",
+      "text": "você",
+      "start": 15.13,
+      "end": 15.36
+    },
+    {
+      "id": "w52",
+      "text": "entender",
+      "start": 15.36,
+      "end": 15.92
+    },
+    {
+      "id": "w53",
+      "text": "como",
+      "start": 15.92,
+      "end": 16.24
+    },
+    {
+      "id": "w54",
+      "text": "evals",
+      "start": 16.24,
+      "end": 16.62
+    },
+    {
+      "id": "w55",
+      "text": "são",
+      "start": 16.62,
+      "end": 16.86
+    },
+    {
+      "id": "w56",
+      "text": "importantes",
+      "start": 16.86,
+      "end": 17.83
+    },
+    {
+      "id": "w57",
+      "text": "em",
+      "start": 17.83,
+      "end": 17.92
+    },
+    {
+      "id": "w58",
+      "text": "qualquer",
+      "start": 17.92,
+      "end": 18.13
+    },
+    {
+      "id": "w59",
+      "text": "produto",
+      "start": 18.13,
+      "end": 18.39
+    },
+    {
+      "id": "w60",
+      "text": "de",
+      "start": 18.39,
+      "end": 18.46
+    },
+    {
+      "id": "w61",
+      "text": "inteligência",
+      "start": 18.46,
+      "end": 18.91
+    },
+    {
+      "id": "w62",
+      "text": "artificial.",
+      "start": 18.91,
+      "end": 19.44
+    },
+    {
+      "id": "w63",
+      "text": "Por",
+      "start": 19.62,
+      "end": 19.67
+    },
+    {
+      "id": "w64",
+      "text": "exemplo,",
+      "start": 19.67,
+      "end": 19.77
+    },
+    {
+      "id": "w65",
+      "text": "não",
+      "start": 19.77,
+      "end": 19.92
+    },
+    {
+      "id": "w66",
+      "text": "ficar",
+      "start": 19.92,
+      "end": 20.28
+    },
+    {
+      "id": "w67",
+      "text": "muito",
+      "start": 20.28,
+      "end": 20.42
+    },
+    {
+      "id": "w68",
+      "text": "subjetivo,",
+      "start": 20.42,
+      "end": 20.97
+    },
+    {
+      "id": "w69",
+      "text": "vamos",
+      "start": 20.97,
+      "end": 21.22
+    },
+    {
+      "id": "w70",
+      "text": "imaginar",
+      "start": 21.22,
+      "end": 21.67
+    },
+    {
+      "id": "w71",
+      "text": "que",
+      "start": 21.67,
+      "end": 21.78
+    },
+    {
+      "id": "w72",
+      "text": "você",
+      "start": 21.78,
+      "end": 21.98
+    },
+    {
+      "id": "w73",
+      "text": "tem",
+      "start": 21.98,
+      "end": 22.13
+    },
+    {
+      "id": "w74",
+      "text": "uma",
+      "start": 22.13,
+      "end": 22.28
+    },
+    {
+      "id": "w75",
+      "text": "empresa",
+      "start": 22.28,
+      "end": 22.64
+    },
+    {
+      "id": "w76",
+      "text": "e",
+      "start": 22.64,
+      "end": 22.69
+    },
+    {
+      "id": "w77",
+      "text": "você",
+      "start": 22.69,
+      "end": 22.89
+    },
+    {
+      "id": "w78",
+      "text": "tem",
+      "start": 22.89,
+      "end": 23.04
+    },
+    {
+      "id": "w79",
+      "text": "vários",
+      "start": 23.04,
+      "end": 23.35
+    },
+    {
+      "id": "w80",
+      "text": "fornecedores,",
+      "start": 23.35,
+      "end": 24.18
+    },
+    {
+      "id": "w81",
+      "text": "cada",
+      "start": 24.18,
+      "end": 24.38
+    },
+    {
+      "id": "w82",
+      "text": "um",
+      "start": 24.38,
+      "end": 24.49
+    },
+    {
+      "id": "w83",
+      "text": "com",
+      "start": 24.49,
+      "end": 24.65
+    },
+    {
+      "id": "w84",
+      "text": "um",
+      "start": 24.65,
+      "end": 24.75
+    },
+    {
+      "id": "w85",
+      "text": "contrato",
+      "start": 24.75,
+      "end": 25.17
+    },
+    {
+      "id": "w86",
+      "text": "diferente,",
+      "start": 25.17,
+      "end": 25.68
+    },
+    {
+      "id": "w87",
+      "text": "e",
+      "start": 25.73,
+      "end": 25.78
+    },
+    {
+      "id": "w88",
+      "text": "você",
+      "start": 25.78,
+      "end": 25.94
+    },
+    {
+      "id": "w89",
+      "text": "quer",
+      "start": 25.94,
+      "end": 26.34
+    },
+    {
+      "id": "w90",
+      "text": "fazer",
+      "start": 26.34,
+      "end": 26.42
+    },
+    {
+      "id": "w91",
+      "text": "um",
+      "start": 26.42,
+      "end": 26.52
+    },
+    {
+      "id": "w92",
+      "text": "produto",
+      "start": 26.52,
+      "end": 26.9
+    },
+    {
+      "id": "w93",
+      "text": "de",
+      "start": 26.9,
+      "end": 27
+    },
+    {
+      "id": "w94",
+      "text": "IA",
+      "start": 27,
+      "end": 27.1
+    },
+    {
+      "id": "w95",
+      "text": "aí",
+      "start": 27.1,
+      "end": 27.2
+    },
+    {
+      "id": "w96",
+      "text": "que",
+      "start": 27.2,
+      "end": 27.41
+    },
+    {
+      "id": "w97",
+      "text": "lê",
+      "start": 27.41,
+      "end": 27.46
+    },
+    {
+      "id": "w98",
+      "text": "os",
+      "start": 27.46,
+      "end": 27.56
+    },
+    {
+      "id": "w99",
+      "text": "contratos",
+      "start": 27.56,
+      "end": 28.04
+    },
+    {
+      "id": "w100",
+      "text": "dos",
+      "start": 28.04,
+      "end": 28.2
+    },
+    {
+      "id": "w101",
+      "text": "fornecedores",
+      "start": 28.2,
+      "end": 28.83
+    },
+    {
+      "id": "w102",
+      "text": "e",
+      "start": 28.83,
+      "end": 28.88
+    },
+    {
+      "id": "w103",
+      "text": "meio",
+      "start": 28.88,
+      "end": 29.09
+    },
+    {
+      "id": "w104",
+      "text": "que",
+      "start": 29.09,
+      "end": 29.25
+    },
+    {
+      "id": "w105",
+      "text": "aponta",
+      "start": 29.25,
+      "end": 29.56
+    },
+    {
+      "id": "w106",
+      "text": "quais",
+      "start": 29.56,
+      "end": 29.83
+    },
+    {
+      "id": "w107",
+      "text": "são",
+      "start": 29.83,
+      "end": 29.99
+    },
+    {
+      "id": "w108",
+      "text": "as",
+      "start": 29.99,
+      "end": 30.09
+    },
+    {
+      "id": "w109",
+      "text": "cláusulas",
+      "start": 30.09,
+      "end": 30.55
+    },
+    {
+      "id": "w110",
+      "text": "mais",
+      "start": 30.55,
+      "end": 30.75
+    },
+    {
+      "id": "w111",
+      "text": "importantes",
+      "start": 30.75,
+      "end": 31.72
+    },
+    {
+      "id": "w112",
+      "text": "que",
+      "start": 31.72,
+      "end": 31.72
+    },
+    {
+      "id": "w113",
+      "text": "você",
+      "start": 31.72,
+      "end": 32.04
+    },
+    {
+      "id": "w114",
+      "text": "tem",
+      "start": 32.04,
+      "end": 32.05
+    },
+    {
+      "id": "w115",
+      "text": "que",
+      "start": 32.05,
+      "end": 32.19
+    },
+    {
+      "id": "w116",
+      "text": "considerar",
+      "start": 32.19,
+      "end": 32.68
+    },
+    {
+      "id": "w117",
+      "text": "e",
+      "start": 32.68,
+      "end": 32.73
+    },
+    {
+      "id": "w118",
+      "text": "as",
+      "start": 32.73,
+      "end": 32.83
+    },
+    {
+      "id": "w119",
+      "text": "coisas",
+      "start": 32.83,
+      "end": 33.14
+    },
+    {
+      "id": "w120",
+      "text": "mais",
+      "start": 33.14,
+      "end": 33.35
+    },
+    {
+      "id": "w121",
+      "text": "críticas",
+      "start": 33.35,
+      "end": 33.77
+    },
+    {
+      "id": "w122",
+      "text": "para",
+      "start": 33.77,
+      "end": 33.98
+    },
+    {
+      "id": "w123",
+      "text": "a",
+      "start": 33.98,
+      "end": 34.09
+    },
+    {
+      "id": "w124",
+      "text": "sua",
+      "start": 34.09,
+      "end": 34.19
+    },
+    {
+      "id": "w125",
+      "text": "empresa.",
+      "start": 34.19,
+      "end": 34.76
+    },
+    {
+      "id": "w126",
+      "text": "Num",
+      "start": 34.94,
+      "end": 34.94
+    },
+    {
+      "id": "w127",
+      "text": "mundo",
+      "start": 34.94,
+      "end": 34.94
+    },
+    {
+      "id": "w128",
+      "text": "onde",
+      "start": 34.94,
+      "end": 34.94
+    },
+    {
+      "id": "w129",
+      "text": "os",
+      "start": 34.94,
+      "end": 34.97
+    },
+    {
+      "id": "w130",
+      "text": "evals",
+      "start": 34.97,
+      "end": 35.13
+    },
+    {
+      "id": "w131",
+      "text": "não",
+      "start": 35.13,
+      "end": 35.58
+    },
+    {
+      "id": "w132",
+      "text": "existissem,",
+      "start": 35.58,
+      "end": 35.98
+    },
+    {
+      "id": "w133",
+      "text": "você",
+      "start": 35.98,
+      "end": 36.21
+    },
+    {
+      "id": "w134",
+      "text": "ia",
+      "start": 36.21,
+      "end": 36.33
+    },
+    {
+      "id": "w135",
+      "text": "simplesmente",
+      "start": 36.33,
+      "end": 37.04
+    },
+    {
+      "id": "w136",
+      "text": "escrever",
+      "start": 37.04,
+      "end": 37.51
+    },
+    {
+      "id": "w137",
+      "text": "um",
+      "start": 37.51,
+      "end": 37.63
+    },
+    {
+      "id": "w138",
+      "text": "prompt",
+      "start": 37.63,
+      "end": 37.98
+    },
+    {
+      "id": "w139",
+      "text": "ali",
+      "start": 37.98,
+      "end": 38.15
+    },
+    {
+      "id": "w140",
+      "text": "que",
+      "start": 38.15,
+      "end": 38.32
+    },
+    {
+      "id": "w141",
+      "text": "explicasse",
+      "start": 38.32,
+      "end": 38.94
+    },
+    {
+      "id": "w142",
+      "text": "para",
+      "start": 38.94,
+      "end": 39.13
+    },
+    {
+      "id": "w143",
+      "text": "o",
+      "start": 39.13,
+      "end": 39.19
+    },
+    {
+      "id": "w144",
+      "text": "agente",
+      "start": 39.19,
+      "end": 39.48
+    },
+    {
+      "id": "w145",
+      "text": "como",
+      "start": 39.48,
+      "end": 39.7
+    },
+    {
+      "id": "w146",
+      "text": "que",
+      "start": 39.7,
+      "end": 39.88
+    },
+    {
+      "id": "w147",
+      "text": "ele",
+      "start": 39.88,
+      "end": 40.05
+    },
+    {
+      "id": "w148",
+      "text": "vai",
+      "start": 40.05,
+      "end": 40.22
+    },
+    {
+      "id": "w149",
+      "text": "achar",
+      "start": 40.22,
+      "end": 40.49
+    },
+    {
+      "id": "w150",
+      "text": "essas",
+      "start": 40.49,
+      "end": 40.91
+    },
+    {
+      "id": "w151",
+      "text": "cláusulas",
+      "start": 40.91,
+      "end": 41.31
+    },
+    {
+      "id": "w152",
+      "text": "importantes",
+      "start": 41.31,
+      "end": 41.95
+    },
+    {
+      "id": "w153",
+      "text": "do",
+      "start": 41.95,
+      "end": 42.07
+    },
+    {
+      "id": "w154",
+      "text": "contrato,",
+      "start": 42.07,
+      "end": 42.96
+    },
+    {
+      "id": "w155",
+      "text": "você",
+      "start": 43.12,
+      "end": 43.22
+    },
+    {
+      "id": "w156",
+      "text": "ia",
+      "start": 43.22,
+      "end": 43.29
+    },
+    {
+      "id": "w157",
+      "text": "jogar",
+      "start": 43.29,
+      "end": 43.76
+    },
+    {
+      "id": "w158",
+      "text": "esse",
+      "start": 43.76,
+      "end": 43.8
+    },
+    {
+      "id": "w159",
+      "text": "contrato",
+      "start": 43.8,
+      "end": 44.23
+    },
+    {
+      "id": "w160",
+      "text": "para",
+      "start": 44.23,
+      "end": 44.45
+    },
+    {
+      "id": "w161",
+      "text": "o",
+      "start": 44.45,
+      "end": 44.5
+    },
+    {
+      "id": "w162",
+      "text": "agente",
+      "start": 44.5,
+      "end": 44.89
+    },
+    {
+      "id": "w163",
+      "text": "ou",
+      "start": 44.89,
+      "end": 44.89
+    },
+    {
+      "id": "w164",
+      "text": "o",
+      "start": 44.89,
+      "end": 44.94
+    },
+    {
+      "id": "w165",
+      "text": "agente",
+      "start": 44.94,
+      "end": 45.22
+    },
+    {
+      "id": "w166",
+      "text": "ia",
+      "start": 45.22,
+      "end": 45.33
+    },
+    {
+      "id": "w167",
+      "text": "dar",
+      "start": 45.33,
+      "end": 45.49
+    },
+    {
+      "id": "w168",
+      "text": "ali",
+      "start": 45.49,
+      "end": 45.65
+    },
+    {
+      "id": "w169",
+      "text": "a",
+      "start": 45.65,
+      "end": 45.7
+    },
+    {
+      "id": "w170",
+      "text": "resposta",
+      "start": 45.7,
+      "end": 46.14
+    },
+    {
+      "id": "w171",
+      "text": "dizendo,",
+      "start": 46.14,
+      "end": 46.72
+    },
+    {
+      "id": "w172",
+      "text": "ah,",
+      "start": 46.72,
+      "end": 46.92
+    },
+    {
+      "id": "w173",
+      "text": "essas",
+      "start": 46.92,
+      "end": 47.17
+    },
+    {
+      "id": "w174",
+      "text": "aqui",
+      "start": 47.17,
+      "end": 47.37
+    },
+    {
+      "id": "w175",
+      "text": "são",
+      "start": 47.37,
+      "end": 47.52
+    },
+    {
+      "id": "w176",
+      "text": "as",
+      "start": 47.52,
+      "end": 47.62
+    },
+    {
+      "id": "w177",
+      "text": "cláusulas",
+      "start": 47.62,
+      "end": 48.07
+    },
+    {
+      "id": "w178",
+      "text": "mais",
+      "start": 48.07,
+      "end": 48.27
+    },
+    {
+      "id": "w179",
+      "text": "importantes",
+      "start": 48.27,
+      "end": 48.82
+    },
+    {
+      "id": "w180",
+      "text": "e",
+      "start": 48.82,
+      "end": 48.87
+    },
+    {
+      "id": "w181",
+      "text": "aí",
+      "start": 48.87,
+      "end": 49.27
+    },
+    {
+      "id": "w182",
+      "text": "beleza,",
+      "start": 49.27,
+      "end": 49.48
+    },
+    {
+      "id": "w183",
+      "text": "você",
+      "start": 49.48,
+      "end": 49.59
+    },
+    {
+      "id": "w184",
+      "text": "ia",
+      "start": 49.59,
+      "end": 49.67
+    },
+    {
+      "id": "w185",
+      "text": "seguir",
+      "start": 49.67,
+      "end": 49.97
+    },
+    {
+      "id": "w186",
+      "text": "sua",
+      "start": 49.97,
+      "end": 50.12
+    },
+    {
+      "id": "w187",
+      "text": "vida.",
+      "start": 50.12,
+      "end": 50.52
+    },
+    {
+      "id": "w188",
+      "text": "Só",
+      "start": 50.7,
+      "end": 50.72
+    },
+    {
+      "id": "w189",
+      "text": "que",
+      "start": 50.72,
+      "end": 50.9
+    },
+    {
+      "id": "w190",
+      "text": "o",
+      "start": 50.9,
+      "end": 51.26
+    },
+    {
+      "id": "w191",
+      "text": "problema",
+      "start": 51.26,
+      "end": 51.44
+    },
+    {
+      "id": "w192",
+      "text": "é,",
+      "start": 51.44,
+      "end": 51.63
+    },
+    {
+      "id": "w193",
+      "text": "talvez",
+      "start": 51.63,
+      "end": 51.98
+    },
+    {
+      "id": "w194",
+      "text": "essa",
+      "start": 51.98,
+      "end": 52.22
+    },
+    {
+      "id": "w195",
+      "text": "aplicação",
+      "start": 52.22,
+      "end": 52.76
+    },
+    {
+      "id": "w196",
+      "text": "de",
+      "start": 52.76,
+      "end": 52.88
+    },
+    {
+      "id": "w197",
+      "text": "inteligência",
+      "start": 52.88,
+      "end": 53.6
+    },
+    {
+      "id": "w198",
+      "text": "artificial",
+      "start": 53.6,
+      "end": 54.2
+    },
+    {
+      "id": "w199",
+      "text": "que",
+      "start": 54.2,
+      "end": 54.38
+    },
+    {
+      "id": "w200",
+      "text": "você",
+      "start": 54.38,
+      "end": 54.62
+    },
+    {
+      "id": "w201",
+      "text": "fez",
+      "start": 54.62,
+      "end": 54.8
+    },
+    {
+      "id": "w202",
+      "text": "apontasse",
+      "start": 54.8,
+      "end": 55.33
+    },
+    {
+      "id": "w203",
+      "text": "cláusulas",
+      "start": 55.33,
+      "end": 55.87
+    },
+    {
+      "id": "w204",
+      "text": "demais",
+      "start": 55.87,
+      "end": 56.21
+    },
+    {
+      "id": "w205",
+      "text": "que",
+      "start": 56.21,
+      "end": 56.48
+    },
+    {
+      "id": "w206",
+      "text": "o",
+      "start": 56.48,
+      "end": 56.66
+    },
+    {
+      "id": "w207",
+      "text": "seu",
+      "start": 56.66,
+      "end": 56.9
+    },
+    {
+      "id": "w208",
+      "text": "time",
+      "start": 56.9,
+      "end": 56.96
+    },
+    {
+      "id": "w209",
+      "text": "jurídico",
+      "start": 56.96,
+      "end": 57.38
+    },
+    {
+      "id": "w210",
+      "text": "não",
+      "start": 57.38,
+      "end": 57.56
+    },
+    {
+      "id": "w211",
+      "text": "considera",
+      "start": 57.56,
+      "end": 58.1
+    },
+    {
+      "id": "w212",
+      "text": "importantes",
+      "start": 58.1,
+      "end": 58.82
+    },
+    {
+      "id": "w213",
+      "text": "e",
+      "start": 58.82,
+      "end": 58.86
+    },
+    {
+      "id": "w214",
+      "text": "aí",
+      "start": 58.86,
+      "end": 59.01
+    },
+    {
+      "id": "w215",
+      "text": "na",
+      "start": 59.01,
+      "end": 59.1
+    },
+    {
+      "id": "w216",
+      "text": "prática",
+      "start": 59.1,
+      "end": 59.53
+    },
+    {
+      "id": "w217",
+      "text": "ele",
+      "start": 59.53,
+      "end": 59.7
+    },
+    {
+      "id": "w218",
+      "text": "vai",
+      "start": 59.7,
+      "end": 59.99
+    },
+    {
+      "id": "w219",
+      "text": "fazer",
+      "start": 59.99,
+      "end": 60.2
+    },
+    {
+      "id": "w220",
+      "text": "um",
+      "start": 60.2,
+      "end": 60.32
+    },
+    {
+      "id": "w221",
+      "text": "trabalho",
+      "start": 60.32,
+      "end": 60.88
+    },
+    {
+      "id": "w222",
+      "text": "tão",
+      "start": 60.88,
+      "end": 61.14
+    },
+    {
+      "id": "w223",
+      "text": "excessivo",
+      "start": 61.14,
+      "end": 61.92
+    },
+    {
+      "id": "w224",
+      "text": "que",
+      "start": 61.92,
+      "end": 62.04
+    },
+    {
+      "id": "w225",
+      "text": "o",
+      "start": 62.04,
+      "end": 62.08
+    },
+    {
+      "id": "w226",
+      "text": "seu",
+      "start": 62.08,
+      "end": 62.2
+    },
+    {
+      "id": "w227",
+      "text": "time",
+      "start": 62.2,
+      "end": 62.39
+    },
+    {
+      "id": "w228",
+      "text": "jurídico",
+      "start": 62.39,
+      "end": 62.69
+    },
+    {
+      "id": "w229",
+      "text": "vai",
+      "start": 62.69,
+      "end": 62.81
+    },
+    {
+      "id": "w230",
+      "text": "ter",
+      "start": 62.81,
+      "end": 62.93
+    },
+    {
+      "id": "w231",
+      "text": "que",
+      "start": 62.93,
+      "end": 63.05
+    },
+    {
+      "id": "w232",
+      "text": "refazer",
+      "start": 63.05,
+      "end": 63.34
+    },
+    {
+      "id": "w233",
+      "text": "toda",
+      "start": 63.34,
+      "end": 63.54
+    },
+    {
+      "id": "w234",
+      "text": "a",
+      "start": 63.54,
+      "end": 63.56
+    },
+    {
+      "id": "w235",
+      "text": "análise",
+      "start": 63.56,
+      "end": 63.92
+    },
+    {
+      "id": "w236",
+      "text": "e",
+      "start": 63.92,
+      "end": 63.97
+    },
+    {
+      "id": "w237",
+      "text": "aí",
+      "start": 63.97,
+      "end": 64.07
+    },
+    {
+      "id": "w238",
+      "text": "o",
+      "start": 64.07,
+      "end": 64.14
+    },
+    {
+      "id": "w239",
+      "text": "teu",
+      "start": 64.14,
+      "end": 64.36
+    },
+    {
+      "id": "w240",
+      "text": "time",
+      "start": 64.36,
+      "end": 64.5
+    },
+    {
+      "id": "w241",
+      "text": "não",
+      "start": 64.5,
+      "end": 64.65
+    },
+    {
+      "id": "w242",
+      "text": "vai",
+      "start": 64.65,
+      "end": 64.87
+    },
+    {
+      "id": "w243",
+      "text": "ganhar",
+      "start": 64.87,
+      "end": 65.13
+    },
+    {
+      "id": "w244",
+      "text": "nenhum",
+      "start": 65.13,
+      "end": 65.45
+    },
+    {
+      "id": "w245",
+      "text": "tempo.",
+      "start": 65.45,
+      "end": 65.9
+    },
+    {
+      "id": "w246",
+      "text": "Ou",
+      "start": 66.08,
+      "end": 66.08
+    },
+    {
+      "id": "w247",
+      "text": "pode",
+      "start": 66.08,
+      "end": 66.16
+    },
+    {
+      "id": "w248",
+      "text": "acontecer",
+      "start": 66.16,
+      "end": 66.18
+    },
+    {
+      "id": "w249",
+      "text": "o",
+      "start": 66.18,
+      "end": 66.21
+    },
+    {
+      "id": "w250",
+      "text": "problema",
+      "start": 66.21,
+      "end": 66.74
+    },
+    {
+      "id": "w251",
+      "text": "contrário",
+      "start": 66.74,
+      "end": 67.11
+    },
+    {
+      "id": "w252",
+      "text": "dele",
+      "start": 67.11,
+      "end": 67.27
+    },
+    {
+      "id": "w253",
+      "text": "não",
+      "start": 67.27,
+      "end": 67.42
+    },
+    {
+      "id": "w254",
+      "text": "apontar",
+      "start": 67.42,
+      "end": 67.85
+    },
+    {
+      "id": "w255",
+      "text": "cláusulas",
+      "start": 67.85,
+      "end": 68.22
+    },
+    {
+      "id": "w256",
+      "text": "que",
+      "start": 68.22,
+      "end": 68.37
+    },
+    {
+      "id": "w257",
+      "text": "o",
+      "start": 68.37,
+      "end": 68.42
+    },
+    {
+      "id": "w258",
+      "text": "seu",
+      "start": 68.42,
+      "end": 68.59
+    },
+    {
+      "id": "w259",
+      "text": "time",
+      "start": 68.59,
+      "end": 68.77
+    },
+    {
+      "id": "w260",
+      "text": "jurídico",
+      "start": 68.77,
+      "end": 69.17
+    },
+    {
+      "id": "w261",
+      "text": "considera",
+      "start": 69.17,
+      "end": 69.63
+    },
+    {
+      "id": "w262",
+      "text": "importante",
+      "start": 69.63,
+      "end": 70.14
+    },
+    {
+      "id": "w263",
+      "text": "e",
+      "start": 70.14,
+      "end": 70.19
+    },
+    {
+      "id": "w264",
+      "text": "aí",
+      "start": 70.19,
+      "end": 70.31
+    },
+    {
+      "id": "w265",
+      "text": "nesse",
+      "start": 70.31,
+      "end": 70.54
+    },
+    {
+      "id": "w266",
+      "text": "cenário",
+      "start": 70.54,
+      "end": 70.89
+    },
+    {
+      "id": "w267",
+      "text": "o",
+      "start": 70.89,
+      "end": 70.94
+    },
+    {
+      "id": "w268",
+      "text": "time",
+      "start": 70.94,
+      "end": 71.14
+    },
+    {
+      "id": "w269",
+      "text": "jurídico",
+      "start": 71.14,
+      "end": 71.54
+    },
+    {
+      "id": "w270",
+      "text": "também",
+      "start": 71.54,
+      "end": 71.84
+    },
+    {
+      "id": "w271",
+      "text": "vai",
+      "start": 71.84,
+      "end": 72.19
+    },
+    {
+      "id": "w272",
+      "text": "estar",
+      "start": 72.19,
+      "end": 72.44
+    },
+    {
+      "id": "w273",
+      "text": "perdendo",
+      "start": 72.44,
+      "end": 72.64
+    },
+    {
+      "id": "w274",
+      "text": "tempo",
+      "start": 72.64,
+      "end": 72.89
+    },
+    {
+      "id": "w275",
+      "text": "porque",
+      "start": 72.89,
+      "end": 73.19
+    },
+    {
+      "id": "w276",
+      "text": "ele",
+      "start": 73.19,
+      "end": 73.34
+    },
+    {
+      "id": "w277",
+      "text": "vai",
+      "start": 73.34,
+      "end": 73.49
+    },
+    {
+      "id": "w278",
+      "text": "estar",
+      "start": 73.49,
+      "end": 73.74
+    },
+    {
+      "id": "w279",
+      "text": "tendo",
+      "start": 73.74,
+      "end": 73.99
+    },
+    {
+      "id": "w280",
+      "text": "que",
+      "start": 73.99,
+      "end": 74.14
+    },
+    {
+      "id": "w281",
+      "text": "refazer",
+      "start": 74.14,
+      "end": 74.49
+    },
+    {
+      "id": "w282",
+      "text": "o",
+      "start": 74.49,
+      "end": 74.54
+    },
+    {
+      "id": "w283",
+      "text": "trabalho",
+      "start": 74.54,
+      "end": 74.95
+    },
+    {
+      "id": "w284",
+      "text": "também.",
+      "start": 74.95,
+      "end": 75.68
+    },
+    {
+      "id": "w285",
+      "text": "E",
+      "start": 75.73,
+      "end": 75.78
+    },
+    {
+      "id": "w286",
+      "text": "mesmo",
+      "start": 75.78,
+      "end": 76.02
+    },
+    {
+      "id": "w287",
+      "text": "que",
+      "start": 76.02,
+      "end": 76.19
+    },
+    {
+      "id": "w288",
+      "text": "o",
+      "start": 76.19,
+      "end": 76.34
+    },
+    {
+      "id": "w289",
+      "text": "teu",
+      "start": 76.34,
+      "end": 76.41
+    },
+    {
+      "id": "w290",
+      "text": "time",
+      "start": 76.41,
+      "end": 76.64
+    },
+    {
+      "id": "w291",
+      "text": "jurídico",
+      "start": 76.64,
+      "end": 77.09
+    },
+    {
+      "id": "w292",
+      "text": "te",
+      "start": 77.09,
+      "end": 77.2
+    },
+    {
+      "id": "w293",
+      "text": "aponte",
+      "start": 77.2,
+      "end": 77.54
+    },
+    {
+      "id": "w294",
+      "text": "ali,",
+      "start": 77.54,
+      "end": 77.82
+    },
+    {
+      "id": "w295",
+      "text": "olha,",
+      "start": 77.82,
+      "end": 78.16
+    },
+    {
+      "id": "w296",
+      "text": "para",
+      "start": 78.16,
+      "end": 78.48
+    },
+    {
+      "id": "w297",
+      "text": "esse",
+      "start": 78.48,
+      "end": 78.62
+    },
+    {
+      "id": "w298",
+      "text": "caso",
+      "start": 78.62,
+      "end": 78.85
+    },
+    {
+      "id": "w299",
+      "text": "aqui",
+      "start": 78.85,
+      "end": 79.08
+    },
+    {
+      "id": "w300",
+      "text": "eu",
+      "start": 79.08,
+      "end": 79.19
+    },
+    {
+      "id": "w301",
+      "text": "quero",
+      "start": 79.19,
+      "end": 79.48
+    },
+    {
+      "id": "w302",
+      "text": "que",
+      "start": 79.48,
+      "end": 79.68
+    },
+    {
+      "id": "w303",
+      "text": "você",
+      "start": 79.68,
+      "end": 79.88
+    },
+    {
+      "id": "w304",
+      "text": "corrija",
+      "start": 79.88,
+      "end": 80.28
+    },
+    {
+      "id": "w305",
+      "text": "isso",
+      "start": 80.28,
+      "end": 80.51
+    },
+    {
+      "id": "w306",
+      "text": "e",
+      "start": 80.51,
+      "end": 80.56
+    },
+    {
+      "id": "w307",
+      "text": "isso",
+      "start": 80.56,
+      "end": 80.79
+    },
+    {
+      "id": "w308",
+      "text": "e",
+      "start": 80.79,
+      "end": 80.84
+    },
+    {
+      "id": "w309",
+      "text": "isso",
+      "start": 80.84,
+      "end": 81.07
+    },
+    {
+      "id": "w310",
+      "text": "e",
+      "start": 81.07,
+      "end": 81.12
+    },
+    {
+      "id": "w311",
+      "text": "aí",
+      "start": 81.12,
+      "end": 81.23
+    },
+    {
+      "id": "w312",
+      "text": "você",
+      "start": 81.23,
+      "end": 81.46
+    },
+    {
+      "id": "w313",
+      "text": "vai",
+      "start": 81.46,
+      "end": 81.7
+    },
+    {
+      "id": "w314",
+      "text": "lá",
+      "start": 81.7,
+      "end": 81.74
+    },
+    {
+      "id": "w315",
+      "text": "e",
+      "start": 81.74,
+      "end": 81.96
+    },
+    {
+      "id": "w316",
+      "text": "muda",
+      "start": 81.96,
+      "end": 82.04
+    },
+    {
+      "id": "w317",
+      "text": "o",
+      "start": 82.04,
+      "end": 82.06
+    },
+    {
+      "id": "w318",
+      "text": "prompt",
+      "start": 82.06,
+      "end": 82.4
+    },
+    {
+      "id": "w319",
+      "text": "do",
+      "start": 82.4,
+      "end": 82.51
+    },
+    {
+      "id": "w320",
+      "text": "agente",
+      "start": 82.51,
+      "end": 82.85
+    },
+    {
+      "id": "w321",
+      "text": "que",
+      "start": 82.85,
+      "end": 83.02
+    },
+    {
+      "id": "w322",
+      "text": "está",
+      "start": 83.02,
+      "end": 83.25
+    },
+    {
+      "id": "w323",
+      "text": "fazendo",
+      "start": 83.25,
+      "end": 83.72
+    },
+    {
+      "id": "w324",
+      "text": "essa",
+      "start": 83.72,
+      "end": 83.9
+    },
+    {
+      "id": "w325",
+      "text": "análise,",
+      "start": 83.9,
+      "end": 84.66
+    },
+    {
+      "id": "w326",
+      "text": "quem",
+      "start": 84.84,
+      "end": 84.84
+    },
+    {
+      "id": "w327",
+      "text": "garante",
+      "start": 84.84,
+      "end": 84.92
+    },
+    {
+      "id": "w328",
+      "text": "que",
+      "start": 84.92,
+      "end": 84.94
+    },
+    {
+      "id": "w329",
+      "text": "você",
+      "start": 84.94,
+      "end": 85.12
+    },
+    {
+      "id": "w330",
+      "text": "está",
+      "start": 85.12,
+      "end": 85.5
+    },
+    {
+      "id": "w331",
+      "text": "ajustando",
+      "start": 85.5,
+      "end": 85.78
+    },
+    {
+      "id": "w332",
+      "text": "esse",
+      "start": 85.78,
+      "end": 85.98
+    },
+    {
+      "id": "w333",
+      "text": "caso",
+      "start": 85.98,
+      "end": 86.18
+    },
+    {
+      "id": "w334",
+      "text": "e",
+      "start": 86.18,
+      "end": 86.23
+    },
+    {
+      "id": "w335",
+      "text": "não",
+      "start": 86.23,
+      "end": 86.37
+    },
+    {
+      "id": "w336",
+      "text": "está",
+      "start": 86.37,
+      "end": 86.61
+    },
+    {
+      "id": "w337",
+      "text": "quebrando",
+      "start": 86.61,
+      "end": 87.04
+    },
+    {
+      "id": "w338",
+      "text": "todos",
+      "start": 87.04,
+      "end": 87.32
+    },
+    {
+      "id": "w339",
+      "text": "os",
+      "start": 87.32,
+      "end": 87.4
+    },
+    {
+      "id": "w340",
+      "text": "outros",
+      "start": 87.4,
+      "end": 87.71
+    },
+    {
+      "id": "w341",
+      "text": "casos",
+      "start": 87.71,
+      "end": 87.97
+    },
+    {
+      "id": "w342",
+      "text": "que",
+      "start": 87.97,
+      "end": 88.12
+    },
+    {
+      "id": "w343",
+      "text": "já",
+      "start": 88.12,
+      "end": 88.22
+    },
+    {
+      "id": "w344",
+      "text": "estavam",
+      "start": 88.22,
+      "end": 88.58
+    },
+    {
+      "id": "w345",
+      "text": "funcionando?",
+      "start": 88.58,
+      "end": 89.46
+    },
+    {
+      "id": "w346",
+      "text": "E",
+      "start": 90.08,
+      "end": 90.08
+    },
+    {
+      "id": "w347",
+      "text": "é",
+      "start": 90.08,
+      "end": 90.08
+    },
+    {
+      "id": "w348",
+      "text": "justamente",
+      "start": 90.08,
+      "end": 90.18
+    },
+    {
+      "id": "w349",
+      "text": "para",
+      "start": 90.18,
+      "end": 90.72
+    },
+    {
+      "id": "w350",
+      "text": "resolver",
+      "start": 90.72,
+      "end": 90.76
+    },
+    {
+      "id": "w351",
+      "text": "esse",
+      "start": 90.76,
+      "end": 91.03
+    },
+    {
+      "id": "w352",
+      "text": "tipo",
+      "start": 91.03,
+      "end": 91.3
+    },
+    {
+      "id": "w353",
+      "text": "de",
+      "start": 91.3,
+      "end": 91.43
+    },
+    {
+      "id": "w354",
+      "text": "coisas",
+      "start": 91.43,
+      "end": 91.85
+    },
+    {
+      "id": "w355",
+      "text": "que",
+      "start": 91.85,
+      "end": 92.13
+    },
+    {
+      "id": "w356",
+      "text": "os",
+      "start": 92.13,
+      "end": 92.16
+    },
+    {
+      "id": "w357",
+      "text": "evals",
+      "start": 92.16,
+      "end": 92.48
+    },
+    {
+      "id": "w358",
+      "text": "existem.",
+      "start": 92.48,
+      "end": 93.24
+    },
+    {
+      "id": "w359",
+      "text": "Os",
+      "start": 93.34,
+      "end": 93.38
+    },
+    {
+      "id": "w360",
+      "text": "evals",
+      "start": 93.38,
+      "end": 93.9
+    },
+    {
+      "id": "w361",
+      "text": "meio",
+      "start": 93.9,
+      "end": 94.02
+    },
+    {
+      "id": "w362",
+      "text": "que",
+      "start": 94.02,
+      "end": 94.27
+    },
+    {
+      "id": "w363",
+      "text": "vão",
+      "start": 94.27,
+      "end": 94.46
+    },
+    {
+      "id": "w364",
+      "text": "ser",
+      "start": 94.46,
+      "end": 94.69
+    },
+    {
+      "id": "w365",
+      "text": "um",
+      "start": 94.69,
+      "end": 94.82
+    },
+    {
+      "id": "w366",
+      "text": "dataset",
+      "start": 94.82,
+      "end": 95.34
+    },
+    {
+      "id": "w367",
+      "text": "com",
+      "start": 95.34,
+      "end": 95.56
+    },
+    {
+      "id": "w368",
+      "text": "a",
+      "start": 95.56,
+      "end": 95.63
+    },
+    {
+      "id": "w369",
+      "text": "resposta",
+      "start": 95.63,
+      "end": 96.22
+    },
+    {
+      "id": "w370",
+      "text": "marcada",
+      "start": 96.22,
+      "end": 96.74
+    },
+    {
+      "id": "w371",
+      "text": "de",
+      "start": 96.74,
+      "end": 96.87
+    },
+    {
+      "id": "w372",
+      "text": "quais",
+      "start": 96.87,
+      "end": 97.24
+    },
+    {
+      "id": "w373",
+      "text": "são",
+      "start": 97.24,
+      "end": 97.46
+    },
+    {
+      "id": "w374",
+      "text": "as",
+      "start": 97.46,
+      "end": 97.6
+    },
+    {
+      "id": "w375",
+      "text": "cláusulas",
+      "start": 97.6,
+      "end": 98.24
+    },
+    {
+      "id": "w376",
+      "text": "que",
+      "start": 98.24,
+      "end": 98.52
+    },
+    {
+      "id": "w377",
+      "text": "o",
+      "start": 98.52,
+      "end": 98.53
+    },
+    {
+      "id": "w378",
+      "text": "seu",
+      "start": 98.53,
+      "end": 98.75
+    },
+    {
+      "id": "w379",
+      "text": "agente",
+      "start": 98.75,
+      "end": 99.55
+    },
+    {
+      "id": "w380",
+      "text": "deveria",
+      "start": 99.55,
+      "end": 99.71
+    },
+    {
+      "id": "w381",
+      "text": "analisar",
+      "start": 99.71,
+      "end": 100.26
+    },
+    {
+      "id": "w382",
+      "text": "e",
+      "start": 100.26,
+      "end": 100.33
+    },
+    {
+      "id": "w383",
+      "text": "deveria",
+      "start": 100.33,
+      "end": 100.84
+    },
+    {
+      "id": "w384",
+      "text": "apontar.",
+      "start": 100.84,
+      "end": 101.84
+    },
+    {
+      "id": "w385",
+      "text": "Então",
+      "start": 102.02,
+      "end": 102.02
+    },
+    {
+      "id": "w386",
+      "text": "você",
+      "start": 102.02,
+      "end": 102.12
+    },
+    {
+      "id": "w387",
+      "text": "pegaria",
+      "start": 102.12,
+      "end": 102.36
+    },
+    {
+      "id": "w388",
+      "text": "ali,",
+      "start": 102.36,
+      "end": 102.69
+    },
+    {
+      "id": "w389",
+      "text": "por",
+      "start": 102.69,
+      "end": 102.84
+    },
+    {
+      "id": "w390",
+      "text": "exemplo,",
+      "start": 102.84,
+      "end": 103.38
+    },
+    {
+      "id": "w391",
+      "text": "50",
+      "start": 103.38,
+      "end": 103.79
+    },
+    {
+      "id": "w392",
+      "text": "contratos",
+      "start": 103.79,
+      "end": 104.28
+    },
+    {
+      "id": "w393",
+      "text": "do",
+      "start": 104.28,
+      "end": 104.4
+    },
+    {
+      "id": "w394",
+      "text": "seu",
+      "start": 104.4,
+      "end": 104.58
+    },
+    {
+      "id": "w395",
+      "text": "setor",
+      "start": 104.58,
+      "end": 104.88
+    },
+    {
+      "id": "w396",
+      "text": "jurídico",
+      "start": 104.88,
+      "end": 105.38
+    },
+    {
+      "id": "w397",
+      "text": "que",
+      "start": 105.38,
+      "end": 105.54
+    },
+    {
+      "id": "w398",
+      "text": "eles",
+      "start": 105.54,
+      "end": 105.78
+    },
+    {
+      "id": "w399",
+      "text": "sabem",
+      "start": 105.78,
+      "end": 106.08
+    },
+    {
+      "id": "w400",
+      "text": "a",
+      "start": 106.08,
+      "end": 106.14
+    },
+    {
+      "id": "w401",
+      "text": "resposta,",
+      "start": 106.14,
+      "end": 106.75
+    },
+    {
+      "id": "w402",
+      "text": "que",
+      "start": 106.75,
+      "end": 106.92
+    },
+    {
+      "id": "w403",
+      "text": "eles",
+      "start": 106.92,
+      "end": 107.16
+    },
+    {
+      "id": "w404",
+      "text": "sabem",
+      "start": 107.16,
+      "end": 107.46
+    },
+    {
+      "id": "w405",
+      "text": "quais",
+      "start": 107.46,
+      "end": 107.76
+    },
+    {
+      "id": "w406",
+      "text": "são",
+      "start": 107.76,
+      "end": 108.06
+    },
+    {
+      "id": "w407",
+      "text": "as",
+      "start": 108.06,
+      "end": 108.06
+    },
+    {
+      "id": "w408",
+      "text": "cláusulas",
+      "start": 108.06,
+      "end": 108.6
+    },
+    {
+      "id": "w409",
+      "text": "mais",
+      "start": 108.6,
+      "end": 108.84
+    },
+    {
+      "id": "w410",
+      "text": "relevantes",
+      "start": 108.84,
+      "end": 109.44
+    },
+    {
+      "id": "w411",
+      "text": "ali",
+      "start": 109.44,
+      "end": 109.63
+    },
+    {
+      "id": "w412",
+      "text": "e",
+      "start": 109.63,
+      "end": 109.7
+    },
+    {
+      "id": "w413",
+      "text": "você",
+      "start": 109.7,
+      "end": 109.95
+    },
+    {
+      "id": "w414",
+      "text": "montaria",
+      "start": 109.95,
+      "end": 110.45
+    },
+    {
+      "id": "w415",
+      "text": "um",
+      "start": 110.45,
+      "end": 110.57
+    },
+    {
+      "id": "w416",
+      "text": "dataset",
+      "start": 110.57,
+      "end": 111.01
+    },
+    {
+      "id": "w417",
+      "text": "de",
+      "start": 111.01,
+      "end": 111.12
+    },
+    {
+      "id": "w418",
+      "text": "evals",
+      "start": 111.12,
+      "end": 111.43
+    },
+    {
+      "id": "w419",
+      "text": "com",
+      "start": 111.43,
+      "end": 111.62
+    },
+    {
+      "id": "w420",
+      "text": "aquilo",
+      "start": 111.62,
+      "end": 112.1
+    },
+    {
+      "id": "w421",
+      "text": "ali.",
+      "start": 112.1,
+      "end": 112.46
+    },
+    {
+      "id": "w422",
+      "text": "Ou",
+      "start": 112.68,
+      "end": 112.69
+    },
+    {
+      "id": "w423",
+      "text": "seja,",
+      "start": 112.69,
+      "end": 113.23
+    },
+    {
+      "id": "w424",
+      "text": "você",
+      "start": 113.23,
+      "end": 113.26
+    },
+    {
+      "id": "w425",
+      "text": "mostraria",
+      "start": 113.26,
+      "end": 113.78
+    },
+    {
+      "id": "w426",
+      "text": "para",
+      "start": 113.78,
+      "end": 114.01
+    },
+    {
+      "id": "w427",
+      "text": "o",
+      "start": 114.01,
+      "end": 114.06
+    },
+    {
+      "id": "w428",
+      "text": "seu",
+      "start": 114.06,
+      "end": 114.34
+    },
+    {
+      "id": "w429",
+      "text": "agente,",
+      "start": 114.34,
+      "end": 114.68
+    },
+    {
+      "id": "w430",
+      "text": "olha,",
+      "start": 114.68,
+      "end": 115.06
+    },
+    {
+      "id": "w431",
+      "text": "nesses",
+      "start": 115.06,
+      "end": 115.38
+    },
+    {
+      "id": "w432",
+      "text": "50",
+      "start": 115.38,
+      "end": 115.71
+    },
+    {
+      "id": "w433",
+      "text": "casos",
+      "start": 115.71,
+      "end": 116
+    },
+    {
+      "id": "w434",
+      "text": "aqui,",
+      "start": 116,
+      "end": 116.34
+    },
+    {
+      "id": "w435",
+      "text": "a",
+      "start": 116.34,
+      "end": 116.39
+    },
+    {
+      "id": "w436",
+      "text": "resposta",
+      "start": 116.39,
+      "end": 116.86
+    },
+    {
+      "id": "w437",
+      "text": "certa",
+      "start": 116.86,
+      "end": 117.15
+    },
+    {
+      "id": "w438",
+      "text": "é",
+      "start": 117.15,
+      "end": 117.2
+    },
+    {
+      "id": "w439",
+      "text": "essa",
+      "start": 117.2,
+      "end": 117.43
+    },
+    {
+      "id": "w440",
+      "text": "aqui.",
+      "start": 117.43,
+      "end": 118
+    },
+    {
+      "id": "w441",
+      "text": "E",
+      "start": 118.18,
+      "end": 118.18
+    },
+    {
+      "id": "w442",
+      "text": "aí",
+      "start": 118.18,
+      "end": 118.18
+    },
+    {
+      "id": "w443",
+      "text": "toda",
+      "start": 118.18,
+      "end": 118.18
+    },
+    {
+      "id": "w444",
+      "text": "vez",
+      "start": 118.18,
+      "end": 118.28
+    },
+    {
+      "id": "w445",
+      "text": "que",
+      "start": 118.28,
+      "end": 118.37
+    },
+    {
+      "id": "w446",
+      "text": "você",
+      "start": 118.37,
+      "end": 118.63
+    },
+    {
+      "id": "w447",
+      "text": "fizesse",
+      "start": 118.63,
+      "end": 119.08
+    },
+    {
+      "id": "w448",
+      "text": "uma",
+      "start": 119.08,
+      "end": 119.27
+    },
+    {
+      "id": "w449",
+      "text": "mudança",
+      "start": 119.27,
+      "end": 119.71
+    },
+    {
+      "id": "w450",
+      "text": "no",
+      "start": 119.71,
+      "end": 119.95
+    },
+    {
+      "id": "w451",
+      "text": "prompt",
+      "start": 119.95,
+      "end": 120.24
+    },
+    {
+      "id": "w452",
+      "text": "de",
+      "start": 120.24,
+      "end": 120.37
+    },
+    {
+      "id": "w453",
+      "text": "sistema",
+      "start": 120.37,
+      "end": 120.81
+    },
+    {
+      "id": "w454",
+      "text": "desse",
+      "start": 120.81,
+      "end": 121.14
+    },
+    {
+      "id": "w455",
+      "text": "agente",
+      "start": 121.14,
+      "end": 121.54
+    },
+    {
+      "id": "w456",
+      "text": "ou",
+      "start": 121.54,
+      "end": 121.68
+    },
+    {
+      "id": "w457",
+      "text": "nas",
+      "start": 121.68,
+      "end": 121.85
+    },
+    {
+      "id": "w458",
+      "text": "tools",
+      "start": 121.85,
+      "end": 122.18
+    },
+    {
+      "id": "w459",
+      "text": "que",
+      "start": 122.18,
+      "end": 122.36
+    },
+    {
+      "id": "w460",
+      "text": "ele",
+      "start": 122.36,
+      "end": 122.55
+    },
+    {
+      "id": "w461",
+      "text": "usa",
+      "start": 122.55,
+      "end": 122.74
+    },
+    {
+      "id": "w462",
+      "text": "ali",
+      "start": 122.74,
+      "end": 122.92
+    },
+    {
+      "id": "w463",
+      "text": "em",
+      "start": 122.92,
+      "end": 123.06
+    },
+    {
+      "id": "w464",
+      "text": "produção,",
+      "start": 123.06,
+      "end": 123.8
+    },
+    {
+      "id": "w465",
+      "text": "você",
+      "start": 123.98,
+      "end": 124.03
+    },
+    {
+      "id": "w466",
+      "text": "teria",
+      "start": 124.03,
+      "end": 124.08
+    },
+    {
+      "id": "w467",
+      "text": "que",
+      "start": 124.08,
+      "end": 124.22
+    },
+    {
+      "id": "w468",
+      "text": "ser",
+      "start": 124.22,
+      "end": 124.64
+    },
+    {
+      "id": "w469",
+      "text": "obrigado",
+      "start": 124.64,
+      "end": 124.92
+    },
+    {
+      "id": "w470",
+      "text": "a",
+      "start": 124.92,
+      "end": 125.01
+    },
+    {
+      "id": "w471",
+      "text": "rodar",
+      "start": 125.01,
+      "end": 125.29
+    },
+    {
+      "id": "w472",
+      "text": "esse",
+      "start": 125.29,
+      "end": 125.53
+    },
+    {
+      "id": "w473",
+      "text": "dataset",
+      "start": 125.53,
+      "end": 126.03
+    },
+    {
+      "id": "w474",
+      "text": "de",
+      "start": 126.03,
+      "end": 126.11
+    },
+    {
+      "id": "w475",
+      "text": "evals",
+      "start": 126.11,
+      "end": 126.46
+    },
+    {
+      "id": "w476",
+      "text": "de",
+      "start": 126.46,
+      "end": 126.53
+    },
+    {
+      "id": "w477",
+      "text": "novo",
+      "start": 126.53,
+      "end": 126.78
+    },
+    {
+      "id": "w478",
+      "text": "e",
+      "start": 126.78,
+      "end": 126.84
+    },
+    {
+      "id": "w479",
+      "text": "ver",
+      "start": 126.84,
+      "end": 127.03
+    },
+    {
+      "id": "w480",
+      "text": "se",
+      "start": 127.03,
+      "end": 127.15
+    },
+    {
+      "id": "w481",
+      "text": "o",
+      "start": 127.15,
+      "end": 127.21
+    },
+    {
+      "id": "w482",
+      "text": "seu",
+      "start": 127.21,
+      "end": 127.4
+    },
+    {
+      "id": "w483",
+      "text": "agente",
+      "start": 127.4,
+      "end": 127.77
+    },
+    {
+      "id": "w484",
+      "text": "ainda",
+      "start": 127.77,
+      "end": 128.09
+    },
+    {
+      "id": "w485",
+      "text": "está",
+      "start": 128.09,
+      "end": 128.34
+    },
+    {
+      "id": "w486",
+      "text": "estável.",
+      "start": 128.34,
+      "end": 129.16
+    },
+    {
+      "id": "w487",
+      "text": "Ou",
+      "start": 129.16,
+      "end": 129.29
+    },
+    {
+      "id": "w488",
+      "text": "seja,",
+      "start": 129.29,
+      "end": 129.81
+    },
+    {
+      "id": "w489",
+      "text": "se",
+      "start": 129.81,
+      "end": 129.83
+    },
+    {
+      "id": "w490",
+      "text": "ele",
+      "start": 129.83,
+      "end": 130.02
+    },
+    {
+      "id": "w491",
+      "text": "ainda",
+      "start": 130.02,
+      "end": 130.36
+    },
+    {
+      "id": "w492",
+      "text": "está",
+      "start": 130.36,
+      "end": 130.63
+    },
+    {
+      "id": "w493",
+      "text": "tirando",
+      "start": 130.63,
+      "end": 131.16
+    },
+    {
+      "id": "w494",
+      "text": "a",
+      "start": 131.16,
+      "end": 131.21
+    },
+    {
+      "id": "w495",
+      "text": "mesma",
+      "start": 131.21,
+      "end": 131.5
+    },
+    {
+      "id": "w496",
+      "text": "resposta",
+      "start": 131.5,
+      "end": 132.04
+    },
+    {
+      "id": "w497",
+      "text": "que",
+      "start": 132.04,
+      "end": 132.24
+    },
+    {
+      "id": "w498",
+      "text": "a",
+      "start": 132.24,
+      "end": 132.3
+    },
+    {
+      "id": "w499",
+      "text": "resposta",
+      "start": 132.3,
+      "end": 132.84
+    },
+    {
+      "id": "w500",
+      "text": "certa",
+      "start": 132.84,
+      "end": 133.18
+    },
+    {
+      "id": "w501",
+      "text": "igual",
+      "start": 133.18,
+      "end": 133.52
+    },
+    {
+      "id": "w502",
+      "text": "da",
+      "start": 133.52,
+      "end": 133.65
+    },
+    {
+      "id": "w503",
+      "text": "última",
+      "start": 133.65,
+      "end": 134.05
+    },
+    {
+      "id": "w504",
+      "text": "vez.",
+      "start": 134.05,
+      "end": 134.56
+    },
+    {
+      "id": "w505",
+      "text": "Quando",
+      "start": 134.74,
+      "end": 134.89
+    },
+    {
+      "id": "w506",
+      "text": "você",
+      "start": 134.89,
+      "end": 135.06
+    },
+    {
+      "id": "w507",
+      "text": "tem",
+      "start": 135.06,
+      "end": 135.3
+    },
+    {
+      "id": "w508",
+      "text": "isso,",
+      "start": 135.3,
+      "end": 135.44
+    },
+    {
+      "id": "w509",
+      "text": "perceba",
+      "start": 135.44,
+      "end": 135.73
+    },
+    {
+      "id": "w510",
+      "text": "que",
+      "start": 135.73,
+      "end": 135.86
+    },
+    {
+      "id": "w511",
+      "text": "vai",
+      "start": 135.86,
+      "end": 135.99
+    },
+    {
+      "id": "w512",
+      "text": "acontecer",
+      "start": 135.99,
+      "end": 136.41
+    },
+    {
+      "id": "w513",
+      "text": "duas",
+      "start": 136.41,
+      "end": 136.54
+    },
+    {
+      "id": "w514",
+      "text": "coisas.",
+      "start": 136.54,
+      "end": 136.98
+    },
+    {
+      "id": "w515",
+      "text": "Primeiro,",
+      "start": 137.12,
+      "end": 137.76
+    },
+    {
+      "id": "w516",
+      "text": "você",
+      "start": 137.76,
+      "end": 137.79
+    },
+    {
+      "id": "w517",
+      "text": "vai",
+      "start": 137.79,
+      "end": 137.93
+    },
+    {
+      "id": "w518",
+      "text": "ter",
+      "start": 137.93,
+      "end": 138.15
+    },
+    {
+      "id": "w519",
+      "text": "uma",
+      "start": 138.15,
+      "end": 138.27
+    },
+    {
+      "id": "w520",
+      "text": "métrica",
+      "start": 138.27,
+      "end": 138.65
+    },
+    {
+      "id": "w521",
+      "text": "objetiva",
+      "start": 138.65,
+      "end": 139.17
+    },
+    {
+      "id": "w522",
+      "text": "de",
+      "start": 139.17,
+      "end": 139.22
+    },
+    {
+      "id": "w523",
+      "text": "se",
+      "start": 139.22,
+      "end": 139.33
+    },
+    {
+      "id": "w524",
+      "text": "o",
+      "start": 139.33,
+      "end": 139.38
+    },
+    {
+      "id": "w525",
+      "text": "agente",
+      "start": 139.38,
+      "end": 139.71
+    },
+    {
+      "id": "w526",
+      "text": "de",
+      "start": 139.71,
+      "end": 139.82
+    },
+    {
+      "id": "w527",
+      "text": "fato",
+      "start": 139.82,
+      "end": 140.04
+    },
+    {
+      "id": "w528",
+      "text": "está",
+      "start": 140.04,
+      "end": 140.26
+    },
+    {
+      "id": "w529",
+      "text": "funcionando",
+      "start": 140.26,
+      "end": 140.88
+    },
+    {
+      "id": "w530",
+      "text": "no",
+      "start": 140.88,
+      "end": 140.99
+    },
+    {
+      "id": "w531",
+      "text": "seu",
+      "start": 140.99,
+      "end": 141.16
+    },
+    {
+      "id": "w532",
+      "text": "sistema.",
+      "start": 141.16,
+      "end": 141.86
+    },
+    {
+      "id": "w533",
+      "text": "E",
+      "start": 142.04,
+      "end": 142.04
+    },
+    {
+      "id": "w534",
+      "text": "segundo,",
+      "start": 142.04,
+      "end": 142.14
+    },
+    {
+      "id": "w535",
+      "text": "você",
+      "start": 142.14,
+      "end": 142.34
+    },
+    {
+      "id": "w536",
+      "text": "vai",
+      "start": 142.34,
+      "end": 142.68
+    },
+    {
+      "id": "w537",
+      "text": "ter",
+      "start": 142.68,
+      "end": 142.7
+    },
+    {
+      "id": "w538",
+      "text": "de",
+      "start": 142.7,
+      "end": 142.82
+    },
+    {
+      "id": "w539",
+      "text": "fato",
+      "start": 142.82,
+      "end": 143.07
+    },
+    {
+      "id": "w540",
+      "text": "uma",
+      "start": 143.07,
+      "end": 143.24
+    },
+    {
+      "id": "w541",
+      "text": "direção",
+      "start": 143.24,
+      "end": 143.65
+    },
+    {
+      "id": "w542",
+      "text": "para",
+      "start": 143.65,
+      "end": 143.89
+    },
+    {
+      "id": "w543",
+      "text": "onde",
+      "start": 143.89,
+      "end": 144.13
+    },
+    {
+      "id": "w544",
+      "text": "você",
+      "start": 144.13,
+      "end": 144.37
+    },
+    {
+      "id": "w545",
+      "text": "quer",
+      "start": 144.37,
+      "end": 144.61
+    },
+    {
+      "id": "w546",
+      "text": "ir.",
+      "start": 144.61,
+      "end": 144.94
+    },
+    {
+      "id": "w547",
+      "text": "Então",
+      "start": 145.1,
+      "end": 145.21
+    },
+    {
+      "id": "w548",
+      "text": "toda",
+      "start": 145.21,
+      "end": 145.74
+    },
+    {
+      "id": "w549",
+      "text": "melhoria",
+      "start": 145.74,
+      "end": 145.84
+    },
+    {
+      "id": "w550",
+      "text": "que",
+      "start": 145.84,
+      "end": 146
+    },
+    {
+      "id": "w551",
+      "text": "vocês",
+      "start": 146,
+      "end": 146.27
+    },
+    {
+      "id": "w552",
+      "text": "fizerem",
+      "start": 146.27,
+      "end": 146.63
+    },
+    {
+      "id": "w553",
+      "text": "no",
+      "start": 146.63,
+      "end": 146.87
+    },
+    {
+      "id": "w554",
+      "text": "sistema",
+      "start": 146.87,
+      "end": 147.15
+    },
+    {
+      "id": "w555",
+      "text": "vai",
+      "start": 147.15,
+      "end": 147.29
+    },
+    {
+      "id": "w556",
+      "text": "ter",
+      "start": 147.29,
+      "end": 147.45
+    },
+    {
+      "id": "w557",
+      "text": "que",
+      "start": 147.45,
+      "end": 147.61
+    },
+    {
+      "id": "w558",
+      "text": "fazer",
+      "start": 147.61,
+      "end": 147.9
+    },
+    {
+      "id": "w559",
+      "text": "o",
+      "start": 147.9,
+      "end": 147.93
+    },
+    {
+      "id": "w560",
+      "text": "dataset",
+      "start": 147.93,
+      "end": 148.31
+    },
+    {
+      "id": "w561",
+      "text": "de",
+      "start": 148.31,
+      "end": 148.43
+    },
+    {
+      "id": "w562",
+      "text": "evals",
+      "start": 148.43,
+      "end": 148.68
+    },
+    {
+      "id": "w563",
+      "text": "passar",
+      "start": 148.68,
+      "end": 149
+    },
+    {
+      "id": "w564",
+      "text": "com",
+      "start": 149,
+      "end": 149.16
+    },
+    {
+      "id": "w565",
+      "text": "uma",
+      "start": 149.16,
+      "end": 149.33
+    },
+    {
+      "id": "w566",
+      "text": "nota",
+      "start": 149.33,
+      "end": 149.53
+    },
+    {
+      "id": "w567",
+      "text": "mais",
+      "start": 149.53,
+      "end": 149.74
+    },
+    {
+      "id": "w568",
+      "text": "alta",
+      "start": 149.74,
+      "end": 149.95
+    },
+    {
+      "id": "w569",
+      "text": "do",
+      "start": 149.95,
+      "end": 150.06
+    },
+    {
+      "id": "w570",
+      "text": "que",
+      "start": 150.06,
+      "end": 150.22
+    },
+    {
+      "id": "w571",
+      "text": "a",
+      "start": 150.22,
+      "end": 150.27
+    },
+    {
+      "id": "w572",
+      "text": "anterior.",
+      "start": 150.27,
+      "end": 151.04
+    },
+    {
+      "id": "w573",
+      "text": "E",
+      "start": 151.22,
+      "end": 151.22
+    },
+    {
+      "id": "w574",
+      "text": "isso",
+      "start": 151.22,
+      "end": 151.22
+    },
+    {
+      "id": "w575",
+      "text": "também",
+      "start": 151.22,
+      "end": 151.28
+    },
+    {
+      "id": "w576",
+      "text": "impede",
+      "start": 151.28,
+      "end": 151.47
+    },
+    {
+      "id": "w577",
+      "text": "que",
+      "start": 151.47,
+      "end": 151.66
+    },
+    {
+      "id": "w578",
+      "text": "o",
+      "start": 151.66,
+      "end": 151.88
+    },
+    {
+      "id": "w579",
+      "text": "teu",
+      "start": 151.88,
+      "end": 151.91
+    },
+    {
+      "id": "w580",
+      "text": "time",
+      "start": 151.91,
+      "end": 152.16
+    },
+    {
+      "id": "w581",
+      "text": "jurídico",
+      "start": 152.16,
+      "end": 152.67
+    },
+    {
+      "id": "w582",
+      "text": "tenha",
+      "start": 152.67,
+      "end": 152.99
+    },
+    {
+      "id": "w583",
+      "text": "uma",
+      "start": 152.99,
+      "end": 153.27
+    },
+    {
+      "id": "w584",
+      "text": "regra",
+      "start": 153.27,
+      "end": 153.48
+    },
+    {
+      "id": "w585",
+      "text": "que",
+      "start": 153.48,
+      "end": 153.7
+    },
+    {
+      "id": "w586",
+      "text": "seja",
+      "start": 153.7,
+      "end": 153.92
+    },
+    {
+      "id": "w587",
+      "text": "muito",
+      "start": 153.92,
+      "end": 154.24
+    },
+    {
+      "id": "w588",
+      "text": "subjetiva.",
+      "start": 154.24,
+      "end": 155.1
+    },
+    {
+      "id": "w589",
+      "text": "Porque",
+      "start": 155.28,
+      "end": 155.29
+    },
+    {
+      "id": "w590",
+      "text": "se",
+      "start": 155.29,
+      "end": 155.38
+    },
+    {
+      "id": "w591",
+      "text": "eles",
+      "start": 155.38,
+      "end": 155.47
+    },
+    {
+      "id": "w592",
+      "text": "mudarem",
+      "start": 155.47,
+      "end": 155.93
+    },
+    {
+      "id": "w593",
+      "text": "uma",
+      "start": 155.93,
+      "end": 155.95
+    },
+    {
+      "id": "w594",
+      "text": "coisa",
+      "start": 155.95,
+      "end": 156.16
+    },
+    {
+      "id": "w595",
+      "text": "de",
+      "start": 156.16,
+      "end": 156.25
+    },
+    {
+      "id": "w596",
+      "text": "um",
+      "start": 156.25,
+      "end": 156.34
+    },
+    {
+      "id": "w597",
+      "text": "lado",
+      "start": 156.34,
+      "end": 156.52
+    },
+    {
+      "id": "w598",
+      "text": "e",
+      "start": 156.52,
+      "end": 156.56
+    },
+    {
+      "id": "w599",
+      "text": "eles",
+      "start": 156.56,
+      "end": 156.74
+    },
+    {
+      "id": "w600",
+      "text": "quebrarem",
+      "start": 156.74,
+      "end": 157.16
+    },
+    {
+      "id": "w601",
+      "text": "todos",
+      "start": 157.16,
+      "end": 157.39
+    },
+    {
+      "id": "w602",
+      "text": "os",
+      "start": 157.39,
+      "end": 157.48
+    },
+    {
+      "id": "w603",
+      "text": "outros",
+      "start": 157.48,
+      "end": 157.76
+    },
+    {
+      "id": "w604",
+      "text": "casos",
+      "start": 157.76,
+      "end": 158.08
+    },
+    {
+      "id": "w605",
+      "text": "que",
+      "start": 158.08,
+      "end": 158.13
+    },
+    {
+      "id": "w606",
+      "text": "já",
+      "start": 158.13,
+      "end": 158.22
+    },
+    {
+      "id": "w607",
+      "text": "estão",
+      "start": 158.22,
+      "end": 158.45
+    },
+    {
+      "id": "w608",
+      "text": "funcionando,",
+      "start": 158.45,
+      "end": 159.18
+    },
+    {
+      "id": "w609",
+      "text": "o",
+      "start": 159.24,
+      "end": 159.28
+    },
+    {
+      "id": "w610",
+      "text": "teu",
+      "start": 159.28,
+      "end": 159.42
+    },
+    {
+      "id": "w611",
+      "text": "time",
+      "start": 159.42,
+      "end": 159.65
+    },
+    {
+      "id": "w612",
+      "text": "de",
+      "start": 159.65,
+      "end": 159.86
+    },
+    {
+      "id": "w613",
+      "text": "desenvolvimento",
+      "start": 159.86,
+      "end": 160.65
+    },
+    {
+      "id": "w614",
+      "text": "do",
+      "start": 160.65,
+      "end": 160.77
+    },
+    {
+      "id": "w615",
+      "text": "teu",
+      "start": 160.77,
+      "end": 160.95
+    },
+    {
+      "id": "w616",
+      "text": "produto",
+      "start": 160.95,
+      "end": 161.36
+    },
+    {
+      "id": "w617",
+      "text": "de",
+      "start": 161.36,
+      "end": 161.48
+    },
+    {
+      "id": "w618",
+      "text": "IA",
+      "start": 161.48,
+      "end": 161.59
+    },
+    {
+      "id": "w619",
+      "text": "vai",
+      "start": 161.59,
+      "end": 161.78
+    },
+    {
+      "id": "w620",
+      "text": "poder",
+      "start": 161.78,
+      "end": 162.07
+    },
+    {
+      "id": "w621",
+      "text": "ir",
+      "start": 162.07,
+      "end": 162.19
+    },
+    {
+      "id": "w622",
+      "text": "no",
+      "start": 162.19,
+      "end": 162.31
+    },
+    {
+      "id": "w623",
+      "text": "time",
+      "start": 162.31,
+      "end": 162.54
+    },
+    {
+      "id": "w624",
+      "text": "jurídico",
+      "start": 162.54,
+      "end": 163
+    },
+    {
+      "id": "w625",
+      "text": "e",
+      "start": 163,
+      "end": 163.06
+    },
+    {
+      "id": "w626",
+      "text": "falar",
+      "start": 163.06,
+      "end": 163.44
+    },
+    {
+      "id": "w627",
+      "text": "Escuta,",
+      "start": 163.44,
+      "end": 164.1
+    },
+    {
+      "id": "w628",
+      "text": "essa",
+      "start": 164.1,
+      "end": 164.16
+    },
+    {
+      "id": "w629",
+      "text": "regra",
+      "start": 164.16,
+      "end": 164.47
+    },
+    {
+      "id": "w630",
+      "text": "é",
+      "start": 164.47,
+      "end": 164.52
+    },
+    {
+      "id": "w631",
+      "text": "essa",
+      "start": 164.52,
+      "end": 164.76
+    },
+    {
+      "id": "w632",
+      "text": "mesmo?",
+      "start": 164.76,
+      "end": 165.28
+    },
+    {
+      "id": "w633",
+      "text": "Porque",
+      "start": 165.4,
+      "end": 165.64
+    },
+    {
+      "id": "w634",
+      "text": "isso",
+      "start": 165.64,
+      "end": 166.04
+    },
+    {
+      "id": "w635",
+      "text": "que",
+      "start": 166.04,
+      "end": 166.08
+    },
+    {
+      "id": "w636",
+      "text": "vocês",
+      "start": 166.08,
+      "end": 166.36
+    },
+    {
+      "id": "w637",
+      "text": "estão",
+      "start": 166.36,
+      "end": 166.66
+    },
+    {
+      "id": "w638",
+      "text": "fazendo",
+      "start": 166.66,
+      "end": 167.17
+    },
+    {
+      "id": "w639",
+      "text": "está",
+      "start": 167.17,
+      "end": 167.45
+    },
+    {
+      "id": "w640",
+      "text": "quebrando",
+      "start": 167.45,
+      "end": 167.88
+    },
+    {
+      "id": "w641",
+      "text": "o",
+      "start": 167.88,
+      "end": 167.93
+    },
+    {
+      "id": "w642",
+      "text": "caso",
+      "start": 167.93,
+      "end": 168.2
+    },
+    {
+      "id": "w643",
+      "text": "XYZ.",
+      "start": 168.2,
+      "end": 168.6
+    },
+    {
+      "id": "w644",
+      "text": "E",
+      "start": 168.78,
+      "end": 168.78
+    },
+    {
+      "id": "w645",
+      "text": "aí",
+      "start": 168.78,
+      "end": 168.88
+    },
+    {
+      "id": "w646",
+      "text": "talvez",
+      "start": 168.88,
+      "end": 169.12
+    },
+    {
+      "id": "w647",
+      "text": "você",
+      "start": 169.12,
+      "end": 169.44
+    },
+    {
+      "id": "w648",
+      "text": "vai",
+      "start": 169.44,
+      "end": 169.52
+    },
+    {
+      "id": "w649",
+      "text": "perceber",
+      "start": 169.52,
+      "end": 169.99
+    },
+    {
+      "id": "w650",
+      "text": "que",
+      "start": 169.99,
+      "end": 170.16
+    },
+    {
+      "id": "w651",
+      "text": "essa",
+      "start": 170.16,
+      "end": 170.39
+    },
+    {
+      "id": "w652",
+      "text": "regra",
+      "start": 170.39,
+      "end": 170.67
+    },
+    {
+      "id": "w653",
+      "text": "não",
+      "start": 170.67,
+      "end": 170.84
+    },
+    {
+      "id": "w654",
+      "text": "é",
+      "start": 170.84,
+      "end": 170.9
+    },
+    {
+      "id": "w655",
+      "text": "a",
+      "start": 170.9,
+      "end": 170.96
+    },
+    {
+      "id": "w656",
+      "text": "correta.",
+      "start": 170.96,
+      "end": 171.46
+    },
+    {
+      "id": "w657",
+      "text": "E",
+      "start": 171.78,
+      "end": 171.78
+    },
+    {
+      "id": "w658",
+      "text": "que",
+      "start": 171.78,
+      "end": 171.78
+    },
+    {
+      "id": "w659",
+      "text": "o",
+      "start": 171.78,
+      "end": 171.82
+    },
+    {
+      "id": "w660",
+      "text": "teu",
+      "start": 171.82,
+      "end": 171.88
+    },
+    {
+      "id": "w661",
+      "text": "time",
+      "start": 171.88,
+      "end": 172
+    },
+    {
+      "id": "w662",
+      "text": "jurídico",
+      "start": 172,
+      "end": 172.45
+    },
+    {
+      "id": "w663",
+      "text": "poderia",
+      "start": 172.45,
+      "end": 172.69
+    },
+    {
+      "id": "w664",
+      "text": "ter",
+      "start": 172.69,
+      "end": 172.83
+    },
+    {
+      "id": "w665",
+      "text": "escrito",
+      "start": 172.83,
+      "end": 173.15
+    },
+    {
+      "id": "w666",
+      "text": "ela",
+      "start": 173.15,
+      "end": 173.29
+    },
+    {
+      "id": "w667",
+      "text": "de",
+      "start": 173.29,
+      "end": 173.38
+    },
+    {
+      "id": "w668",
+      "text": "uma",
+      "start": 173.38,
+      "end": 173.55
+    },
+    {
+      "id": "w669",
+      "text": "maneira",
+      "start": 173.55,
+      "end": 173.84
+    },
+    {
+      "id": "w670",
+      "text": "diferente.",
+      "start": 173.84,
+      "end": 174.46
+    },
+    {
+      "id": "w671",
+      "text": "Essa",
+      "start": 174.64,
+      "end": 174.64
+    },
+    {
+      "id": "w672",
+      "text": "é",
+      "start": 174.64,
+      "end": 174.64
+    },
+    {
+      "id": "w673",
+      "text": "o",
+      "start": 174.64,
+      "end": 174.74
+    },
+    {
+      "id": "w674",
+      "text": "tamanho",
+      "start": 174.74,
+      "end": 174.95
+    },
+    {
+      "id": "w675",
+      "text": "da",
+      "start": 174.95,
+      "end": 175.3
+    },
+    {
+      "id": "w676",
+      "text": "importância",
+      "start": 175.3,
+      "end": 175.83
+    },
+    {
+      "id": "w677",
+      "text": "de",
+      "start": 175.83,
+      "end": 175.96
+    },
+    {
+      "id": "w678",
+      "text": "você",
+      "start": 175.96,
+      "end": 176.23
+    },
+    {
+      "id": "w679",
+      "text": "ter",
+      "start": 176.23,
+      "end": 176.43
+    },
+    {
+      "id": "w680",
+      "text": "evals.",
+      "start": 176.43,
+      "end": 177.06
+    },
+    {
+      "id": "w681",
+      "text": "O",
+      "start": 177.14,
+      "end": 177.24
+    },
+    {
+      "id": "w682",
+      "text": "teu",
+      "start": 177.24,
+      "end": 177.31
+    },
+    {
+      "id": "w683",
+      "text": "time",
+      "start": 177.31,
+      "end": 177.8
+    },
+    {
+      "id": "w684",
+      "text": "passa",
+      "start": 177.8,
+      "end": 177.88
+    },
+    {
+      "id": "w685",
+      "text": "de",
+      "start": 177.88,
+      "end": 178
+    },
+    {
+      "id": "w686",
+      "text": "ter",
+      "start": 178,
+      "end": 178.19
+    },
+    {
+      "id": "w687",
+      "text": "uma",
+      "start": 178.19,
+      "end": 178.38
+    },
+    {
+      "id": "w688",
+      "text": "posição",
+      "start": 178.38,
+      "end": 178.91
+    },
+    {
+      "id": "w689",
+      "text": "subjetiva",
+      "start": 178.91,
+      "end": 179.4
+    },
+    {
+      "id": "w690",
+      "text": "e",
+      "start": 179.4,
+      "end": 179.46
+    },
+    {
+      "id": "w691",
+      "text": "de",
+      "start": 179.46,
+      "end": 179.62
+    },
+    {
+      "id": "w692",
+      "text": "poder",
+      "start": 179.62,
+      "end": 179.94
+    },
+    {
+      "id": "w693",
+      "text": "cometer",
+      "start": 179.94,
+      "end": 180.34
+    },
+    {
+      "id": "w694",
+      "text": "erros",
+      "start": 180.34,
+      "end": 180.65
+    },
+    {
+      "id": "w695",
+      "text": "o",
+      "start": 180.65,
+      "end": 180.71
+    },
+    {
+      "id": "w696",
+      "text": "tempo",
+      "start": 180.71,
+      "end": 181.03
+    },
+    {
+      "id": "w697",
+      "text": "todo",
+      "start": 181.03,
+      "end": 181.4
+    },
+    {
+      "id": "w698",
+      "text": "e",
+      "start": 181.4,
+      "end": 181.46
+    },
+    {
+      "id": "w699",
+      "text": "ser",
+      "start": 181.46,
+      "end": 181.64
+    },
+    {
+      "id": "w700",
+      "text": "super",
+      "start": 181.64,
+      "end": 181.94
+    },
+    {
+      "id": "w701",
+      "text": "reativo",
+      "start": 181.94,
+      "end": 182.36
+    },
+    {
+      "id": "w702",
+      "text": "para",
+      "start": 182.54,
+      "end": 182.64
+    },
+    {
+      "id": "w703",
+      "text": "de",
+      "start": 182.64,
+      "end": 182.67
+    },
+    {
+      "id": "w704",
+      "text": "fato",
+      "start": 182.67,
+      "end": 182.88
+    },
+    {
+      "id": "w705",
+      "text": "ter",
+      "start": 182.88,
+      "end": 183.18
+    },
+    {
+      "id": "w706",
+      "text": "uma",
+      "start": 183.18,
+      "end": 183.21
+    },
+    {
+      "id": "w707",
+      "text": "direção",
+      "start": 183.21,
+      "end": 183.57
+    },
+    {
+      "id": "w708",
+      "text": "para",
+      "start": 183.57,
+      "end": 183.75
+    },
+    {
+      "id": "w709",
+      "text": "onde",
+      "start": 183.75,
+      "end": 183.96
+    },
+    {
+      "id": "w710",
+      "text": "o",
+      "start": 183.96,
+      "end": 184.01
+    },
+    {
+      "id": "w711",
+      "text": "produto",
+      "start": 184.01,
+      "end": 184.37
+    },
+    {
+      "id": "w712",
+      "text": "de",
+      "start": 184.37,
+      "end": 184.59
+    },
+    {
+      "id": "w713",
+      "text": "inteligência",
+      "start": 184.59,
+      "end": 185.09
+    },
+    {
+      "id": "w714",
+      "text": "artificial",
+      "start": 185.09,
+      "end": 185.61
+    },
+    {
+      "id": "w715",
+      "text": "pode",
+      "start": 185.61,
+      "end": 185.82
+    },
+    {
+      "id": "w716",
+      "text": "evoluir.",
+      "start": 185.82,
+      "end": 186.42
+    },
+    {
+      "id": "w717",
+      "text": "Esse",
+      "start": 186.6,
+      "end": 186.71
+    },
+    {
+      "id": "w718",
+      "text": "assunto",
+      "start": 186.71,
+      "end": 187.11
+    },
+    {
+      "id": "w719",
+      "text": "é",
+      "start": 187.11,
+      "end": 187.16
+    },
+    {
+      "id": "w720",
+      "text": "gigantesco,",
+      "start": 187.16,
+      "end": 187.72
+    },
+    {
+      "id": "w721",
+      "text": "tem",
+      "start": 187.72,
+      "end": 187.87
+    },
+    {
+      "id": "w722",
+      "text": "muita",
+      "start": 187.87,
+      "end": 188.27
+    },
+    {
+      "id": "w723",
+      "text": "coisa",
+      "start": 188.27,
+      "end": 188.39
+    },
+    {
+      "id": "w724",
+      "text": "acontecendo",
+      "start": 188.39,
+      "end": 188.98
+    },
+    {
+      "id": "w725",
+      "text": "no",
+      "start": 188.98,
+      "end": 189.06
+    },
+    {
+      "id": "w726",
+      "text": "Vale",
+      "start": 189.06,
+      "end": 189.3
+    },
+    {
+      "id": "w727",
+      "text": "do",
+      "start": 189.3,
+      "end": 189.36
+    },
+    {
+      "id": "w728",
+      "text": "Silício",
+      "start": 189.36,
+      "end": 189.79
+    },
+    {
+      "id": "w729",
+      "text": "em",
+      "start": 189.79,
+      "end": 189.9
+    },
+    {
+      "id": "w730",
+      "text": "volta",
+      "start": 189.9,
+      "end": 190.16
+    },
+    {
+      "id": "w731",
+      "text": "desse",
+      "start": 190.16,
+      "end": 190.38
+    },
+    {
+      "id": "w732",
+      "text": "assunto",
+      "start": 190.38,
+      "end": 190.66
+    },
+    {
+      "id": "w733",
+      "text": "nesse",
+      "start": 190.66,
+      "end": 190.86
+    },
+    {
+      "id": "w734",
+      "text": "exato",
+      "start": 190.86,
+      "end": 191.11
+    },
+    {
+      "id": "w735",
+      "text": "momento.",
+      "start": 191.11,
+      "end": 191.52
+    },
+    {
+      "id": "w736",
+      "text": "Mas",
+      "start": 191.7,
+      "end": 191.8
+    },
+    {
+      "id": "w737",
+      "text": "sinceramente",
+      "start": 191.8,
+      "end": 192.37
+    },
+    {
+      "id": "w738",
+      "text": "a",
+      "start": 192.37,
+      "end": 192.42
+    },
+    {
+      "id": "w739",
+      "text": "Anthropic",
+      "start": 192.42,
+      "end": 192.87
+    },
+    {
+      "id": "w740",
+      "text": "tem",
+      "start": 192.87,
+      "end": 193.04
+    },
+    {
+      "id": "w741",
+      "text": "o",
+      "start": 193.04,
+      "end": 193.09
+    },
+    {
+      "id": "w742",
+      "text": "que",
+      "start": 193.09,
+      "end": 193.25
+    },
+    {
+      "id": "w743",
+      "text": "eu",
+      "start": 193.25,
+      "end": 193.47
+    },
+    {
+      "id": "w744",
+      "text": "considero",
+      "start": 193.47,
+      "end": 193.87
+    },
+    {
+      "id": "w745",
+      "text": "um",
+      "start": 193.87,
+      "end": 193.98
+    },
+    {
+      "id": "w746",
+      "text": "dos",
+      "start": 193.98,
+      "end": 194.18
+    },
+    {
+      "id": "w747",
+      "text": "melhores",
+      "start": 194.18,
+      "end": 194.6
+    },
+    {
+      "id": "w748",
+      "text": "materiais",
+      "start": 194.6,
+      "end": 195.11
+    },
+    {
+      "id": "w749",
+      "text": "a",
+      "start": 195.11,
+      "end": 195.2
+    },
+    {
+      "id": "w750",
+      "text": "respeito",
+      "start": 195.2,
+      "end": 195.61
+    },
+    {
+      "id": "w751",
+      "text": "desse",
+      "start": 195.61,
+      "end": 195.89
+    },
+    {
+      "id": "w752",
+      "text": "assunto.",
+      "start": 195.89,
+      "end": 196.56
+    },
+    {
+      "id": "w753",
+      "text": "Então",
+      "start": 196.74,
+      "end": 196.74
+    },
+    {
+      "id": "w754",
+      "text": "se",
+      "start": 196.74,
+      "end": 196.84
+    },
+    {
+      "id": "w755",
+      "text": "você",
+      "start": 196.84,
+      "end": 196.88
+    },
+    {
+      "id": "w756",
+      "text": "quiser",
+      "start": 196.88,
+      "end": 197.39
+    },
+    {
+      "id": "w757",
+      "text": "ver",
+      "start": 197.39,
+      "end": 197.42
+    },
+    {
+      "id": "w758",
+      "text": "esse",
+      "start": 197.42,
+      "end": 197.66
+    },
+    {
+      "id": "w759",
+      "text": "material",
+      "start": 197.66,
+      "end": 198.14
+    },
+    {
+      "id": "w760",
+      "text": "oficial",
+      "start": 198.14,
+      "end": 198.56
+    },
+    {
+      "id": "w761",
+      "text": "da",
+      "start": 198.56,
+      "end": 198.79
+    },
+    {
+      "id": "w762",
+      "text": "Anthropic,",
+      "start": 198.79,
+      "end": 199.3
+    },
+    {
+      "id": "w763",
+      "text": "comenta",
+      "start": 199.3,
+      "end": 199.6
+    },
+    {
+      "id": "w764",
+      "text": "aqui",
+      "start": 199.6,
+      "end": 199.77
+    },
+    {
+      "id": "w765",
+      "text": "embaixo",
+      "start": 199.77,
+      "end": 200.1
+    },
+    {
+      "id": "w766",
+      "text": "evals",
+      "start": 200.1,
+      "end": 200.54
+    },
+    {
+      "id": "w767",
+      "text": "que",
+      "start": 200.54,
+      "end": 200.64
+    },
+    {
+      "id": "w768",
+      "text": "eu",
+      "start": 200.64,
+      "end": 200.74
+    },
+    {
+      "id": "w769",
+      "text": "vou",
+      "start": 200.74,
+      "end": 200.81
+    },
+    {
+      "id": "w770",
+      "text": "mandar",
+      "start": 200.81,
+      "end": 201.02
+    },
+    {
+      "id": "w771",
+      "text": "o",
+      "start": 201.02,
+      "end": 201.05
+    },
+    {
+      "id": "w772",
+      "text": "link",
+      "start": 201.05,
+      "end": 201.19
+    },
+    {
+      "id": "w773",
+      "text": "desse",
+      "start": 201.19,
+      "end": 201.36
+    },
+    {
+      "id": "w774",
+      "text": "material",
+      "start": 201.36,
+      "end": 201.64
+    },
+    {
+      "id": "w775",
+      "text": "para",
+      "start": 201.64,
+      "end": 201.78
+    },
+    {
+      "id": "w776",
+      "text": "você.",
+      "start": 201.78,
+      "end": 202.06
+    }
+  ],
+  "captions": [
+    {
+      "start": 0.14,
+      "end": 1.91,
+      "words": [
+        {
+          "id": "w0",
+          "text": "Se",
+          "start": 0.14,
+          "end": 0.22
+        },
+        {
+          "id": "w1",
+          "text": "você",
+          "start": 0.22,
+          "end": 0.24
+        },
+        {
+          "id": "w2",
+          "text": "está",
+          "start": 0.24,
+          "end": 0.8
+        },
+        {
+          "id": "w3",
+          "text": "desenvolvendo",
+          "start": 0.8,
+          "end": 1.37
+        },
+        {
+          "id": "w4",
+          "text": "qualquer",
+          "start": 1.37,
+          "end": 1.91
+        }
+      ],
+      "text": "Se você está desenvolvendo qualquer"
+    },
+    {
+      "start": 1.91,
+      "end": 3.53,
+      "words": [
+        {
+          "id": "w5",
+          "text": "use",
+          "start": 1.91,
+          "end": 2.19
+        },
+        {
+          "id": "w6",
+          "text": "case",
+          "start": 2.19,
+          "end": 2.38
+        },
+        {
+          "id": "w7",
+          "text": "com",
+          "start": 2.38,
+          "end": 2.62
+        },
+        {
+          "id": "w8",
+          "text": "IA,",
+          "start": 2.62,
+          "end": 2.94
+        },
+        {
+          "id": "w9",
+          "text": "você",
+          "start": 2.94,
+          "end": 3.13
+        },
+        {
+          "id": "w10",
+          "text": "precisa",
+          "start": 3.13,
+          "end": 3.53
+        }
+      ],
+      "text": "use case com IA, você precisa"
+    },
+    {
+      "start": 3.53,
+      "end": 5.6,
+      "words": [
+        {
+          "id": "w11",
+          "text": "conhecer",
+          "start": 3.53,
+          "end": 3.99
+        },
+        {
+          "id": "w12",
+          "text": "um",
+          "start": 3.99,
+          "end": 4.14
+        },
+        {
+          "id": "w13",
+          "text": "negócio",
+          "start": 4.14,
+          "end": 4.52
+        },
+        {
+          "id": "w14",
+          "text": "chamado",
+          "start": 4.52,
+          "end": 5.02
+        },
+        {
+          "id": "w15",
+          "text": "evals.",
+          "start": 5.02,
+          "end": 5.6
+        }
+      ],
+      "text": "conhecer um negócio chamado evals."
+    },
+    {
+      "start": 6.12,
+      "end": 7.15,
+      "words": [
+        {
+          "id": "w16",
+          "text": "Apesar",
+          "start": 6.12,
+          "end": 6.12
+        },
+        {
+          "id": "w17",
+          "text": "dos",
+          "start": 6.12,
+          "end": 6.19
+        },
+        {
+          "id": "w18",
+          "text": "evals",
+          "start": 6.19,
+          "end": 6.35
+        },
+        {
+          "id": "w19",
+          "text": "serem",
+          "start": 6.35,
+          "end": 6.73
+        },
+        {
+          "id": "w20",
+          "text": "um",
+          "start": 6.73,
+          "end": 6.8
+        },
+        {
+          "id": "w21",
+          "text": "assunto",
+          "start": 6.8,
+          "end": 7.15
+        }
+      ],
+      "text": "Apesar dos evals serem um assunto"
+    },
+    {
+      "start": 7.15,
+      "end": 8.6,
+      "words": [
+        {
+          "id": "w22",
+          "text": "técnico",
+          "start": 7.15,
+          "end": 7.48
+        },
+        {
+          "id": "w23",
+          "text": "na",
+          "start": 7.48,
+          "end": 7.59
+        },
+        {
+          "id": "w24",
+          "text": "área",
+          "start": 7.59,
+          "end": 7.89
+        },
+        {
+          "id": "w25",
+          "text": "de",
+          "start": 7.89,
+          "end": 7.92
+        },
+        {
+          "id": "w26",
+          "text": "inteligência",
+          "start": 7.92,
+          "end": 8.6
+        }
+      ],
+      "text": "técnico na área de inteligência"
+    },
+    {
+      "start": 8.6,
+      "end": 10.53,
+      "words": [
+        {
+          "id": "w27",
+          "text": "artificial,",
+          "start": 8.6,
+          "end": 9.3
+        },
+        {
+          "id": "w28",
+          "text": "eles",
+          "start": 9.3,
+          "end": 9.55
+        },
+        {
+          "id": "w29",
+          "text": "tocam",
+          "start": 9.55,
+          "end": 9.85
+        },
+        {
+          "id": "w30",
+          "text": "muito",
+          "start": 9.85,
+          "end": 10.16
+        },
+        {
+          "id": "w31",
+          "text": "na",
+          "start": 10.16,
+          "end": 10.28
+        },
+        {
+          "id": "w32",
+          "text": "área",
+          "start": 10.28,
+          "end": 10.53
+        }
+      ],
+      "text": "artificial, eles tocam muito na área"
+    },
+    {
+      "start": 10.53,
+      "end": 11.38,
+      "words": [
+        {
+          "id": "w33",
+          "text": "de",
+          "start": 10.53,
+          "end": 10.65
+        },
+        {
+          "id": "w34",
+          "text": "negócios.",
+          "start": 10.65,
+          "end": 11.38
+        }
+      ],
+      "text": "de negócios."
+    },
+    {
+      "start": 11.56,
+      "end": 12.68,
+      "words": [
+        {
+          "id": "w35",
+          "text": "Então,",
+          "start": 11.56,
+          "end": 11.78
+        },
+        {
+          "id": "w36",
+          "text": "se",
+          "start": 11.78,
+          "end": 11.89
+        },
+        {
+          "id": "w37",
+          "text": "você",
+          "start": 11.89,
+          "end": 12.17
+        },
+        {
+          "id": "w38",
+          "text": "é",
+          "start": 12.17,
+          "end": 12.22
+        },
+        {
+          "id": "w39",
+          "text": "uma",
+          "start": 12.22,
+          "end": 12.34
+        },
+        {
+          "id": "w40",
+          "text": "pessoa",
+          "start": 12.34,
+          "end": 12.68
+        }
+      ],
+      "text": "Então, se você é uma pessoa"
+    },
+    {
+      "start": 12.68,
+      "end": 14.09,
+      "words": [
+        {
+          "id": "w41",
+          "text": "que",
+          "start": 12.68,
+          "end": 12.85
+        },
+        {
+          "id": "w42",
+          "text": "é",
+          "start": 12.85,
+          "end": 12.9
+        },
+        {
+          "id": "w43",
+          "text": "não",
+          "start": 12.9,
+          "end": 13.07
+        },
+        {
+          "id": "w44",
+          "text": "técnica,",
+          "start": 13.07,
+          "end": 13.61
+        },
+        {
+          "id": "w45",
+          "text": "eu",
+          "start": 13.61,
+          "end": 13.69
+        },
+        {
+          "id": "w46",
+          "text": "ficaria",
+          "start": 13.69,
+          "end": 14.09
+        }
+      ],
+      "text": "que é não técnica, eu ficaria"
+    },
+    {
+      "start": 14.09,
+      "end": 15.92,
+      "words": [
+        {
+          "id": "w47",
+          "text": "nesse",
+          "start": 14.09,
+          "end": 14.38
+        },
+        {
+          "id": "w48",
+          "text": "vídeo",
+          "start": 14.38,
+          "end": 14.67
+        },
+        {
+          "id": "w49",
+          "text": "aqui",
+          "start": 14.67,
+          "end": 14.92
+        },
+        {
+          "id": "w50",
+          "text": "para",
+          "start": 14.92,
+          "end": 15.13
+        },
+        {
+          "id": "w51",
+          "text": "você",
+          "start": 15.13,
+          "end": 15.36
+        },
+        {
+          "id": "w52",
+          "text": "entender",
+          "start": 15.36,
+          "end": 15.92
+        }
+      ],
+      "text": "nesse vídeo aqui para você entender"
+    },
+    {
+      "start": 15.92,
+      "end": 17.92,
+      "words": [
+        {
+          "id": "w53",
+          "text": "como",
+          "start": 15.92,
+          "end": 16.24
+        },
+        {
+          "id": "w54",
+          "text": "evals",
+          "start": 16.24,
+          "end": 16.62
+        },
+        {
+          "id": "w55",
+          "text": "são",
+          "start": 16.62,
+          "end": 16.86
+        },
+        {
+          "id": "w56",
+          "text": "importantes",
+          "start": 16.86,
+          "end": 17.83
+        },
+        {
+          "id": "w57",
+          "text": "em",
+          "start": 17.83,
+          "end": 17.92
+        }
+      ],
+      "text": "como evals são importantes em"
+    },
+    {
+      "start": 17.92,
+      "end": 18.91,
+      "words": [
+        {
+          "id": "w58",
+          "text": "qualquer",
+          "start": 17.92,
+          "end": 18.13
+        },
+        {
+          "id": "w59",
+          "text": "produto",
+          "start": 18.13,
+          "end": 18.39
+        },
+        {
+          "id": "w60",
+          "text": "de",
+          "start": 18.39,
+          "end": 18.46
+        },
+        {
+          "id": "w61",
+          "text": "inteligência",
+          "start": 18.46,
+          "end": 18.91
+        }
+      ],
+      "text": "qualquer produto de inteligência"
+    },
+    {
+      "start": 18.91,
+      "end": 19.44,
+      "words": [
+        {
+          "id": "w62",
+          "text": "artificial.",
+          "start": 18.91,
+          "end": 19.44
+        }
+      ],
+      "text": "artificial."
+    },
+    {
+      "start": 19.62,
+      "end": 20.42,
+      "words": [
+        {
+          "id": "w63",
+          "text": "Por",
+          "start": 19.62,
+          "end": 19.67
+        },
+        {
+          "id": "w64",
+          "text": "exemplo,",
+          "start": 19.67,
+          "end": 19.77
+        },
+        {
+          "id": "w65",
+          "text": "não",
+          "start": 19.77,
+          "end": 19.92
+        },
+        {
+          "id": "w66",
+          "text": "ficar",
+          "start": 19.92,
+          "end": 20.28
+        },
+        {
+          "id": "w67",
+          "text": "muito",
+          "start": 20.28,
+          "end": 20.42
+        }
+      ],
+      "text": "Por exemplo, não ficar muito"
+    },
+    {
+      "start": 20.42,
+      "end": 21.98,
+      "words": [
+        {
+          "id": "w68",
+          "text": "subjetivo,",
+          "start": 20.42,
+          "end": 20.97
+        },
+        {
+          "id": "w69",
+          "text": "vamos",
+          "start": 20.97,
+          "end": 21.22
+        },
+        {
+          "id": "w70",
+          "text": "imaginar",
+          "start": 21.22,
+          "end": 21.67
+        },
+        {
+          "id": "w71",
+          "text": "que",
+          "start": 21.67,
+          "end": 21.78
+        },
+        {
+          "id": "w72",
+          "text": "você",
+          "start": 21.78,
+          "end": 21.98
+        }
+      ],
+      "text": "subjetivo, vamos imaginar que você"
+    },
+    {
+      "start": 21.98,
+      "end": 23.04,
+      "words": [
+        {
+          "id": "w73",
+          "text": "tem",
+          "start": 21.98,
+          "end": 22.13
+        },
+        {
+          "id": "w74",
+          "text": "uma",
+          "start": 22.13,
+          "end": 22.28
+        },
+        {
+          "id": "w75",
+          "text": "empresa",
+          "start": 22.28,
+          "end": 22.64
+        },
+        {
+          "id": "w76",
+          "text": "e",
+          "start": 22.64,
+          "end": 22.69
+        },
+        {
+          "id": "w77",
+          "text": "você",
+          "start": 22.69,
+          "end": 22.89
+        },
+        {
+          "id": "w78",
+          "text": "tem",
+          "start": 22.89,
+          "end": 23.04
+        }
+      ],
+      "text": "tem uma empresa e você tem"
+    },
+    {
+      "start": 23.04,
+      "end": 24.75,
+      "words": [
+        {
+          "id": "w79",
+          "text": "vários",
+          "start": 23.04,
+          "end": 23.35
+        },
+        {
+          "id": "w80",
+          "text": "fornecedores,",
+          "start": 23.35,
+          "end": 24.18
+        },
+        {
+          "id": "w81",
+          "text": "cada",
+          "start": 24.18,
+          "end": 24.38
+        },
+        {
+          "id": "w82",
+          "text": "um",
+          "start": 24.38,
+          "end": 24.49
+        },
+        {
+          "id": "w83",
+          "text": "com",
+          "start": 24.49,
+          "end": 24.65
+        },
+        {
+          "id": "w84",
+          "text": "um",
+          "start": 24.65,
+          "end": 24.75
+        }
+      ],
+      "text": "vários fornecedores, cada um com um"
+    },
+    {
+      "start": 24.75,
+      "end": 26.34,
+      "words": [
+        {
+          "id": "w85",
+          "text": "contrato",
+          "start": 24.75,
+          "end": 25.17
+        },
+        {
+          "id": "w86",
+          "text": "diferente,",
+          "start": 25.17,
+          "end": 25.68
+        },
+        {
+          "id": "w87",
+          "text": "e",
+          "start": 25.73,
+          "end": 25.78
+        },
+        {
+          "id": "w88",
+          "text": "você",
+          "start": 25.78,
+          "end": 25.94
+        },
+        {
+          "id": "w89",
+          "text": "quer",
+          "start": 25.94,
+          "end": 26.34
+        }
+      ],
+      "text": "contrato diferente, e você quer"
+    },
+    {
+      "start": 26.34,
+      "end": 27.2,
+      "words": [
+        {
+          "id": "w90",
+          "text": "fazer",
+          "start": 26.34,
+          "end": 26.42
+        },
+        {
+          "id": "w91",
+          "text": "um",
+          "start": 26.42,
+          "end": 26.52
+        },
+        {
+          "id": "w92",
+          "text": "produto",
+          "start": 26.52,
+          "end": 26.9
+        },
+        {
+          "id": "w93",
+          "text": "de",
+          "start": 26.9,
+          "end": 27
+        },
+        {
+          "id": "w94",
+          "text": "IA",
+          "start": 27,
+          "end": 27.1
+        },
+        {
+          "id": "w95",
+          "text": "aí",
+          "start": 27.1,
+          "end": 27.2
+        }
+      ],
+      "text": "fazer um produto de IA aí"
+    },
+    {
+      "start": 27.2,
+      "end": 28.83,
+      "words": [
+        {
+          "id": "w96",
+          "text": "que",
+          "start": 27.2,
+          "end": 27.41
+        },
+        {
+          "id": "w97",
+          "text": "lê",
+          "start": 27.41,
+          "end": 27.46
+        },
+        {
+          "id": "w98",
+          "text": "os",
+          "start": 27.46,
+          "end": 27.56
+        },
+        {
+          "id": "w99",
+          "text": "contratos",
+          "start": 27.56,
+          "end": 28.04
+        },
+        {
+          "id": "w100",
+          "text": "dos",
+          "start": 28.04,
+          "end": 28.2
+        },
+        {
+          "id": "w101",
+          "text": "fornecedores",
+          "start": 28.2,
+          "end": 28.83
+        }
+      ],
+      "text": "que lê os contratos dos fornecedores"
+    },
+    {
+      "start": 28.83,
+      "end": 29.99,
+      "words": [
+        {
+          "id": "w102",
+          "text": "e",
+          "start": 28.83,
+          "end": 28.88
+        },
+        {
+          "id": "w103",
+          "text": "meio",
+          "start": 28.88,
+          "end": 29.09
+        },
+        {
+          "id": "w104",
+          "text": "que",
+          "start": 29.09,
+          "end": 29.25
+        },
+        {
+          "id": "w105",
+          "text": "aponta",
+          "start": 29.25,
+          "end": 29.56
+        },
+        {
+          "id": "w106",
+          "text": "quais",
+          "start": 29.56,
+          "end": 29.83
+        },
+        {
+          "id": "w107",
+          "text": "são",
+          "start": 29.83,
+          "end": 29.99
+        }
+      ],
+      "text": "e meio que aponta quais são"
+    },
+    {
+      "start": 29.99,
+      "end": 31.72,
+      "words": [
+        {
+          "id": "w108",
+          "text": "as",
+          "start": 29.99,
+          "end": 30.09
+        },
+        {
+          "id": "w109",
+          "text": "cláusulas",
+          "start": 30.09,
+          "end": 30.55
+        },
+        {
+          "id": "w110",
+          "text": "mais",
+          "start": 30.55,
+          "end": 30.75
+        },
+        {
+          "id": "w111",
+          "text": "importantes",
+          "start": 30.75,
+          "end": 31.72
+        },
+        {
+          "id": "w112",
+          "text": "que",
+          "start": 31.72,
+          "end": 31.72
+        }
+      ],
+      "text": "as cláusulas mais importantes que"
+    },
+    {
+      "start": 31.72,
+      "end": 32.83,
+      "words": [
+        {
+          "id": "w113",
+          "text": "você",
+          "start": 31.72,
+          "end": 32.04
+        },
+        {
+          "id": "w114",
+          "text": "tem",
+          "start": 32.04,
+          "end": 32.05
+        },
+        {
+          "id": "w115",
+          "text": "que",
+          "start": 32.05,
+          "end": 32.19
+        },
+        {
+          "id": "w116",
+          "text": "considerar",
+          "start": 32.19,
+          "end": 32.68
+        },
+        {
+          "id": "w117",
+          "text": "e",
+          "start": 32.68,
+          "end": 32.73
+        },
+        {
+          "id": "w118",
+          "text": "as",
+          "start": 32.73,
+          "end": 32.83
+        }
+      ],
+      "text": "você tem que considerar e as"
+    },
+    {
+      "start": 32.83,
+      "end": 34.19,
+      "words": [
+        {
+          "id": "w119",
+          "text": "coisas",
+          "start": 32.83,
+          "end": 33.14
+        },
+        {
+          "id": "w120",
+          "text": "mais",
+          "start": 33.14,
+          "end": 33.35
+        },
+        {
+          "id": "w121",
+          "text": "críticas",
+          "start": 33.35,
+          "end": 33.77
+        },
+        {
+          "id": "w122",
+          "text": "para",
+          "start": 33.77,
+          "end": 33.98
+        },
+        {
+          "id": "w123",
+          "text": "a",
+          "start": 33.98,
+          "end": 34.09
+        },
+        {
+          "id": "w124",
+          "text": "sua",
+          "start": 34.09,
+          "end": 34.19
+        }
+      ],
+      "text": "coisas mais críticas para a sua"
+    },
+    {
+      "start": 34.19,
+      "end": 34.76,
+      "words": [
+        {
+          "id": "w125",
+          "text": "empresa.",
+          "start": 34.19,
+          "end": 34.76
+        }
+      ],
+      "text": "empresa."
+    },
+    {
+      "start": 34.94,
+      "end": 35.58,
+      "words": [
+        {
+          "id": "w126",
+          "text": "Num",
+          "start": 34.94,
+          "end": 34.94
+        },
+        {
+          "id": "w127",
+          "text": "mundo",
+          "start": 34.94,
+          "end": 34.94
+        },
+        {
+          "id": "w128",
+          "text": "onde",
+          "start": 34.94,
+          "end": 34.94
+        },
+        {
+          "id": "w129",
+          "text": "os",
+          "start": 34.94,
+          "end": 34.97
+        },
+        {
+          "id": "w130",
+          "text": "evals",
+          "start": 34.97,
+          "end": 35.13
+        },
+        {
+          "id": "w131",
+          "text": "não",
+          "start": 35.13,
+          "end": 35.58
+        }
+      ],
+      "text": "Num mundo onde os evals não"
+    },
+    {
+      "start": 35.58,
+      "end": 37.04,
+      "words": [
+        {
+          "id": "w132",
+          "text": "existissem,",
+          "start": 35.58,
+          "end": 35.98
+        },
+        {
+          "id": "w133",
+          "text": "você",
+          "start": 35.98,
+          "end": 36.21
+        },
+        {
+          "id": "w134",
+          "text": "ia",
+          "start": 36.21,
+          "end": 36.33
+        },
+        {
+          "id": "w135",
+          "text": "simplesmente",
+          "start": 36.33,
+          "end": 37.04
+        }
+      ],
+      "text": "existissem, você ia simplesmente"
+    },
+    {
+      "start": 37.04,
+      "end": 38.32,
+      "words": [
+        {
+          "id": "w136",
+          "text": "escrever",
+          "start": 37.04,
+          "end": 37.51
+        },
+        {
+          "id": "w137",
+          "text": "um",
+          "start": 37.51,
+          "end": 37.63
+        },
+        {
+          "id": "w138",
+          "text": "prompt",
+          "start": 37.63,
+          "end": 37.98
+        },
+        {
+          "id": "w139",
+          "text": "ali",
+          "start": 37.98,
+          "end": 38.15
+        },
+        {
+          "id": "w140",
+          "text": "que",
+          "start": 38.15,
+          "end": 38.32
+        }
+      ],
+      "text": "escrever um prompt ali que"
+    },
+    {
+      "start": 38.32,
+      "end": 39.88,
+      "words": [
+        {
+          "id": "w141",
+          "text": "explicasse",
+          "start": 38.32,
+          "end": 38.94
+        },
+        {
+          "id": "w142",
+          "text": "para",
+          "start": 38.94,
+          "end": 39.13
+        },
+        {
+          "id": "w143",
+          "text": "o",
+          "start": 39.13,
+          "end": 39.19
+        },
+        {
+          "id": "w144",
+          "text": "agente",
+          "start": 39.19,
+          "end": 39.48
+        },
+        {
+          "id": "w145",
+          "text": "como",
+          "start": 39.48,
+          "end": 39.7
+        },
+        {
+          "id": "w146",
+          "text": "que",
+          "start": 39.7,
+          "end": 39.88
+        }
+      ],
+      "text": "explicasse para o agente como que"
+    },
+    {
+      "start": 39.88,
+      "end": 41.31,
+      "words": [
+        {
+          "id": "w147",
+          "text": "ele",
+          "start": 39.88,
+          "end": 40.05
+        },
+        {
+          "id": "w148",
+          "text": "vai",
+          "start": 40.05,
+          "end": 40.22
+        },
+        {
+          "id": "w149",
+          "text": "achar",
+          "start": 40.22,
+          "end": 40.49
+        },
+        {
+          "id": "w150",
+          "text": "essas",
+          "start": 40.49,
+          "end": 40.91
+        },
+        {
+          "id": "w151",
+          "text": "cláusulas",
+          "start": 40.91,
+          "end": 41.31
+        }
+      ],
+      "text": "ele vai achar essas cláusulas"
+    },
+    {
+      "start": 41.31,
+      "end": 43.29,
+      "words": [
+        {
+          "id": "w152",
+          "text": "importantes",
+          "start": 41.31,
+          "end": 41.95
+        },
+        {
+          "id": "w153",
+          "text": "do",
+          "start": 41.95,
+          "end": 42.07
+        },
+        {
+          "id": "w154",
+          "text": "contrato,",
+          "start": 42.07,
+          "end": 42.96
+        },
+        {
+          "id": "w155",
+          "text": "você",
+          "start": 43.12,
+          "end": 43.22
+        },
+        {
+          "id": "w156",
+          "text": "ia",
+          "start": 43.22,
+          "end": 43.29
+        }
+      ],
+      "text": "importantes do contrato, você ia"
+    },
+    {
+      "start": 43.29,
+      "end": 44.89,
+      "words": [
+        {
+          "id": "w157",
+          "text": "jogar",
+          "start": 43.29,
+          "end": 43.76
+        },
+        {
+          "id": "w158",
+          "text": "esse",
+          "start": 43.76,
+          "end": 43.8
+        },
+        {
+          "id": "w159",
+          "text": "contrato",
+          "start": 43.8,
+          "end": 44.23
+        },
+        {
+          "id": "w160",
+          "text": "para",
+          "start": 44.23,
+          "end": 44.45
+        },
+        {
+          "id": "w161",
+          "text": "o",
+          "start": 44.45,
+          "end": 44.5
+        },
+        {
+          "id": "w162",
+          "text": "agente",
+          "start": 44.5,
+          "end": 44.89
+        }
+      ],
+      "text": "jogar esse contrato para o agente"
+    },
+    {
+      "start": 44.89,
+      "end": 45.65,
+      "words": [
+        {
+          "id": "w163",
+          "text": "ou",
+          "start": 44.89,
+          "end": 44.89
+        },
+        {
+          "id": "w164",
+          "text": "o",
+          "start": 44.89,
+          "end": 44.94
+        },
+        {
+          "id": "w165",
+          "text": "agente",
+          "start": 44.94,
+          "end": 45.22
+        },
+        {
+          "id": "w166",
+          "text": "ia",
+          "start": 45.22,
+          "end": 45.33
+        },
+        {
+          "id": "w167",
+          "text": "dar",
+          "start": 45.33,
+          "end": 45.49
+        },
+        {
+          "id": "w168",
+          "text": "ali",
+          "start": 45.49,
+          "end": 45.65
+        }
+      ],
+      "text": "ou o agente ia dar ali"
+    },
+    {
+      "start": 45.65,
+      "end": 47.37,
+      "words": [
+        {
+          "id": "w169",
+          "text": "a",
+          "start": 45.65,
+          "end": 45.7
+        },
+        {
+          "id": "w170",
+          "text": "resposta",
+          "start": 45.7,
+          "end": 46.14
+        },
+        {
+          "id": "w171",
+          "text": "dizendo,",
+          "start": 46.14,
+          "end": 46.72
+        },
+        {
+          "id": "w172",
+          "text": "ah,",
+          "start": 46.72,
+          "end": 46.92
+        },
+        {
+          "id": "w173",
+          "text": "essas",
+          "start": 46.92,
+          "end": 47.17
+        },
+        {
+          "id": "w174",
+          "text": "aqui",
+          "start": 47.17,
+          "end": 47.37
+        }
+      ],
+      "text": "a resposta dizendo, ah, essas aqui"
+    },
+    {
+      "start": 47.37,
+      "end": 48.87,
+      "words": [
+        {
+          "id": "w175",
+          "text": "são",
+          "start": 47.37,
+          "end": 47.52
+        },
+        {
+          "id": "w176",
+          "text": "as",
+          "start": 47.52,
+          "end": 47.62
+        },
+        {
+          "id": "w177",
+          "text": "cláusulas",
+          "start": 47.62,
+          "end": 48.07
+        },
+        {
+          "id": "w178",
+          "text": "mais",
+          "start": 48.07,
+          "end": 48.27
+        },
+        {
+          "id": "w179",
+          "text": "importantes",
+          "start": 48.27,
+          "end": 48.82
+        },
+        {
+          "id": "w180",
+          "text": "e",
+          "start": 48.82,
+          "end": 48.87
+        }
+      ],
+      "text": "são as cláusulas mais importantes e"
+    },
+    {
+      "start": 48.87,
+      "end": 50.12,
+      "words": [
+        {
+          "id": "w181",
+          "text": "aí",
+          "start": 48.87,
+          "end": 49.27
+        },
+        {
+          "id": "w182",
+          "text": "beleza,",
+          "start": 49.27,
+          "end": 49.48
+        },
+        {
+          "id": "w183",
+          "text": "você",
+          "start": 49.48,
+          "end": 49.59
+        },
+        {
+          "id": "w184",
+          "text": "ia",
+          "start": 49.59,
+          "end": 49.67
+        },
+        {
+          "id": "w185",
+          "text": "seguir",
+          "start": 49.67,
+          "end": 49.97
+        },
+        {
+          "id": "w186",
+          "text": "sua",
+          "start": 49.97,
+          "end": 50.12
+        }
+      ],
+      "text": "aí beleza, você ia seguir sua"
+    },
+    {
+      "start": 50.12,
+      "end": 50.52,
+      "words": [
+        {
+          "id": "w187",
+          "text": "vida.",
+          "start": 50.12,
+          "end": 50.52
+        }
+      ],
+      "text": "vida."
+    },
+    {
+      "start": 50.7,
+      "end": 51.98,
+      "words": [
+        {
+          "id": "w188",
+          "text": "Só",
+          "start": 50.7,
+          "end": 50.72
+        },
+        {
+          "id": "w189",
+          "text": "que",
+          "start": 50.72,
+          "end": 50.9
+        },
+        {
+          "id": "w190",
+          "text": "o",
+          "start": 50.9,
+          "end": 51.26
+        },
+        {
+          "id": "w191",
+          "text": "problema",
+          "start": 51.26,
+          "end": 51.44
+        },
+        {
+          "id": "w192",
+          "text": "é,",
+          "start": 51.44,
+          "end": 51.63
+        },
+        {
+          "id": "w193",
+          "text": "talvez",
+          "start": 51.63,
+          "end": 51.98
+        }
+      ],
+      "text": "Só que o problema é, talvez"
+    },
+    {
+      "start": 51.98,
+      "end": 53.6,
+      "words": [
+        {
+          "id": "w194",
+          "text": "essa",
+          "start": 51.98,
+          "end": 52.22
+        },
+        {
+          "id": "w195",
+          "text": "aplicação",
+          "start": 52.22,
+          "end": 52.76
+        },
+        {
+          "id": "w196",
+          "text": "de",
+          "start": 52.76,
+          "end": 52.88
+        },
+        {
+          "id": "w197",
+          "text": "inteligência",
+          "start": 52.88,
+          "end": 53.6
+        }
+      ],
+      "text": "essa aplicação de inteligência"
+    },
+    {
+      "start": 53.6,
+      "end": 55.33,
+      "words": [
+        {
+          "id": "w198",
+          "text": "artificial",
+          "start": 53.6,
+          "end": 54.2
+        },
+        {
+          "id": "w199",
+          "text": "que",
+          "start": 54.2,
+          "end": 54.38
+        },
+        {
+          "id": "w200",
+          "text": "você",
+          "start": 54.38,
+          "end": 54.62
+        },
+        {
+          "id": "w201",
+          "text": "fez",
+          "start": 54.62,
+          "end": 54.8
+        },
+        {
+          "id": "w202",
+          "text": "apontasse",
+          "start": 54.8,
+          "end": 55.33
+        }
+      ],
+      "text": "artificial que você fez apontasse"
+    },
+    {
+      "start": 55.33,
+      "end": 56.96,
+      "words": [
+        {
+          "id": "w203",
+          "text": "cláusulas",
+          "start": 55.33,
+          "end": 55.87
+        },
+        {
+          "id": "w204",
+          "text": "demais",
+          "start": 55.87,
+          "end": 56.21
+        },
+        {
+          "id": "w205",
+          "text": "que",
+          "start": 56.21,
+          "end": 56.48
+        },
+        {
+          "id": "w206",
+          "text": "o",
+          "start": 56.48,
+          "end": 56.66
+        },
+        {
+          "id": "w207",
+          "text": "seu",
+          "start": 56.66,
+          "end": 56.9
+        },
+        {
+          "id": "w208",
+          "text": "time",
+          "start": 56.9,
+          "end": 56.96
+        }
+      ],
+      "text": "cláusulas demais que o seu time"
+    },
+    {
+      "start": 56.96,
+      "end": 58.86,
+      "words": [
+        {
+          "id": "w209",
+          "text": "jurídico",
+          "start": 56.96,
+          "end": 57.38
+        },
+        {
+          "id": "w210",
+          "text": "não",
+          "start": 57.38,
+          "end": 57.56
+        },
+        {
+          "id": "w211",
+          "text": "considera",
+          "start": 57.56,
+          "end": 58.1
+        },
+        {
+          "id": "w212",
+          "text": "importantes",
+          "start": 58.1,
+          "end": 58.82
+        },
+        {
+          "id": "w213",
+          "text": "e",
+          "start": 58.82,
+          "end": 58.86
+        }
+      ],
+      "text": "jurídico não considera importantes e"
+    },
+    {
+      "start": 58.86,
+      "end": 60.2,
+      "words": [
+        {
+          "id": "w214",
+          "text": "aí",
+          "start": 58.86,
+          "end": 59.01
+        },
+        {
+          "id": "w215",
+          "text": "na",
+          "start": 59.01,
+          "end": 59.1
+        },
+        {
+          "id": "w216",
+          "text": "prática",
+          "start": 59.1,
+          "end": 59.53
+        },
+        {
+          "id": "w217",
+          "text": "ele",
+          "start": 59.53,
+          "end": 59.7
+        },
+        {
+          "id": "w218",
+          "text": "vai",
+          "start": 59.7,
+          "end": 59.99
+        },
+        {
+          "id": "w219",
+          "text": "fazer",
+          "start": 59.99,
+          "end": 60.2
+        }
+      ],
+      "text": "aí na prática ele vai fazer"
+    },
+    {
+      "start": 60.2,
+      "end": 62.08,
+      "words": [
+        {
+          "id": "w220",
+          "text": "um",
+          "start": 60.2,
+          "end": 60.32
+        },
+        {
+          "id": "w221",
+          "text": "trabalho",
+          "start": 60.32,
+          "end": 60.88
+        },
+        {
+          "id": "w222",
+          "text": "tão",
+          "start": 60.88,
+          "end": 61.14
+        },
+        {
+          "id": "w223",
+          "text": "excessivo",
+          "start": 61.14,
+          "end": 61.92
+        },
+        {
+          "id": "w224",
+          "text": "que",
+          "start": 61.92,
+          "end": 62.04
+        },
+        {
+          "id": "w225",
+          "text": "o",
+          "start": 62.04,
+          "end": 62.08
+        }
+      ],
+      "text": "um trabalho tão excessivo que o"
+    },
+    {
+      "start": 62.08,
+      "end": 63.05,
+      "words": [
+        {
+          "id": "w226",
+          "text": "seu",
+          "start": 62.08,
+          "end": 62.2
+        },
+        {
+          "id": "w227",
+          "text": "time",
+          "start": 62.2,
+          "end": 62.39
+        },
+        {
+          "id": "w228",
+          "text": "jurídico",
+          "start": 62.39,
+          "end": 62.69
+        },
+        {
+          "id": "w229",
+          "text": "vai",
+          "start": 62.69,
+          "end": 62.81
+        },
+        {
+          "id": "w230",
+          "text": "ter",
+          "start": 62.81,
+          "end": 62.93
+        },
+        {
+          "id": "w231",
+          "text": "que",
+          "start": 62.93,
+          "end": 63.05
+        }
+      ],
+      "text": "seu time jurídico vai ter que"
+    },
+    {
+      "start": 63.05,
+      "end": 64.07,
+      "words": [
+        {
+          "id": "w232",
+          "text": "refazer",
+          "start": 63.05,
+          "end": 63.34
+        },
+        {
+          "id": "w233",
+          "text": "toda",
+          "start": 63.34,
+          "end": 63.54
+        },
+        {
+          "id": "w234",
+          "text": "a",
+          "start": 63.54,
+          "end": 63.56
+        },
+        {
+          "id": "w235",
+          "text": "análise",
+          "start": 63.56,
+          "end": 63.92
+        },
+        {
+          "id": "w236",
+          "text": "e",
+          "start": 63.92,
+          "end": 63.97
+        },
+        {
+          "id": "w237",
+          "text": "aí",
+          "start": 63.97,
+          "end": 64.07
+        }
+      ],
+      "text": "refazer toda a análise e aí"
+    },
+    {
+      "start": 64.07,
+      "end": 65.13,
+      "words": [
+        {
+          "id": "w238",
+          "text": "o",
+          "start": 64.07,
+          "end": 64.14
+        },
+        {
+          "id": "w239",
+          "text": "teu",
+          "start": 64.14,
+          "end": 64.36
+        },
+        {
+          "id": "w240",
+          "text": "time",
+          "start": 64.36,
+          "end": 64.5
+        },
+        {
+          "id": "w241",
+          "text": "não",
+          "start": 64.5,
+          "end": 64.65
+        },
+        {
+          "id": "w242",
+          "text": "vai",
+          "start": 64.65,
+          "end": 64.87
+        },
+        {
+          "id": "w243",
+          "text": "ganhar",
+          "start": 64.87,
+          "end": 65.13
+        }
+      ],
+      "text": "o teu time não vai ganhar"
+    },
+    {
+      "start": 65.13,
+      "end": 65.9,
+      "words": [
+        {
+          "id": "w244",
+          "text": "nenhum",
+          "start": 65.13,
+          "end": 65.45
+        },
+        {
+          "id": "w245",
+          "text": "tempo.",
+          "start": 65.45,
+          "end": 65.9
+        }
+      ],
+      "text": "nenhum tempo."
+    },
+    {
+      "start": 66.08,
+      "end": 66.74,
+      "words": [
+        {
+          "id": "w246",
+          "text": "Ou",
+          "start": 66.08,
+          "end": 66.08
+        },
+        {
+          "id": "w247",
+          "text": "pode",
+          "start": 66.08,
+          "end": 66.16
+        },
+        {
+          "id": "w248",
+          "text": "acontecer",
+          "start": 66.16,
+          "end": 66.18
+        },
+        {
+          "id": "w249",
+          "text": "o",
+          "start": 66.18,
+          "end": 66.21
+        },
+        {
+          "id": "w250",
+          "text": "problema",
+          "start": 66.21,
+          "end": 66.74
+        }
+      ],
+      "text": "Ou pode acontecer o problema"
+    },
+    {
+      "start": 66.74,
+      "end": 68.22,
+      "words": [
+        {
+          "id": "w251",
+          "text": "contrário",
+          "start": 66.74,
+          "end": 67.11
+        },
+        {
+          "id": "w252",
+          "text": "dele",
+          "start": 67.11,
+          "end": 67.27
+        },
+        {
+          "id": "w253",
+          "text": "não",
+          "start": 67.27,
+          "end": 67.42
+        },
+        {
+          "id": "w254",
+          "text": "apontar",
+          "start": 67.42,
+          "end": 67.85
+        },
+        {
+          "id": "w255",
+          "text": "cláusulas",
+          "start": 67.85,
+          "end": 68.22
+        }
+      ],
+      "text": "contrário dele não apontar cláusulas"
+    },
+    {
+      "start": 68.22,
+      "end": 69.63,
+      "words": [
+        {
+          "id": "w256",
+          "text": "que",
+          "start": 68.22,
+          "end": 68.37
+        },
+        {
+          "id": "w257",
+          "text": "o",
+          "start": 68.37,
+          "end": 68.42
+        },
+        {
+          "id": "w258",
+          "text": "seu",
+          "start": 68.42,
+          "end": 68.59
+        },
+        {
+          "id": "w259",
+          "text": "time",
+          "start": 68.59,
+          "end": 68.77
+        },
+        {
+          "id": "w260",
+          "text": "jurídico",
+          "start": 68.77,
+          "end": 69.17
+        },
+        {
+          "id": "w261",
+          "text": "considera",
+          "start": 69.17,
+          "end": 69.63
+        }
+      ],
+      "text": "que o seu time jurídico considera"
+    },
+    {
+      "start": 69.63,
+      "end": 70.94,
+      "words": [
+        {
+          "id": "w262",
+          "text": "importante",
+          "start": 69.63,
+          "end": 70.14
+        },
+        {
+          "id": "w263",
+          "text": "e",
+          "start": 70.14,
+          "end": 70.19
+        },
+        {
+          "id": "w264",
+          "text": "aí",
+          "start": 70.19,
+          "end": 70.31
+        },
+        {
+          "id": "w265",
+          "text": "nesse",
+          "start": 70.31,
+          "end": 70.54
+        },
+        {
+          "id": "w266",
+          "text": "cenário",
+          "start": 70.54,
+          "end": 70.89
+        },
+        {
+          "id": "w267",
+          "text": "o",
+          "start": 70.89,
+          "end": 70.94
+        }
+      ],
+      "text": "importante e aí nesse cenário o"
+    },
+    {
+      "start": 70.94,
+      "end": 72.44,
+      "words": [
+        {
+          "id": "w268",
+          "text": "time",
+          "start": 70.94,
+          "end": 71.14
+        },
+        {
+          "id": "w269",
+          "text": "jurídico",
+          "start": 71.14,
+          "end": 71.54
+        },
+        {
+          "id": "w270",
+          "text": "também",
+          "start": 71.54,
+          "end": 71.84
+        },
+        {
+          "id": "w271",
+          "text": "vai",
+          "start": 71.84,
+          "end": 72.19
+        },
+        {
+          "id": "w272",
+          "text": "estar",
+          "start": 72.19,
+          "end": 72.44
+        }
+      ],
+      "text": "time jurídico também vai estar"
+    },
+    {
+      "start": 72.44,
+      "end": 73.74,
+      "words": [
+        {
+          "id": "w273",
+          "text": "perdendo",
+          "start": 72.44,
+          "end": 72.64
+        },
+        {
+          "id": "w274",
+          "text": "tempo",
+          "start": 72.64,
+          "end": 72.89
+        },
+        {
+          "id": "w275",
+          "text": "porque",
+          "start": 72.89,
+          "end": 73.19
+        },
+        {
+          "id": "w276",
+          "text": "ele",
+          "start": 73.19,
+          "end": 73.34
+        },
+        {
+          "id": "w277",
+          "text": "vai",
+          "start": 73.34,
+          "end": 73.49
+        },
+        {
+          "id": "w278",
+          "text": "estar",
+          "start": 73.49,
+          "end": 73.74
+        }
+      ],
+      "text": "perdendo tempo porque ele vai estar"
+    },
+    {
+      "start": 73.74,
+      "end": 75.68,
+      "words": [
+        {
+          "id": "w279",
+          "text": "tendo",
+          "start": 73.74,
+          "end": 73.99
+        },
+        {
+          "id": "w280",
+          "text": "que",
+          "start": 73.99,
+          "end": 74.14
+        },
+        {
+          "id": "w281",
+          "text": "refazer",
+          "start": 74.14,
+          "end": 74.49
+        },
+        {
+          "id": "w282",
+          "text": "o",
+          "start": 74.49,
+          "end": 74.54
+        },
+        {
+          "id": "w283",
+          "text": "trabalho",
+          "start": 74.54,
+          "end": 74.95
+        },
+        {
+          "id": "w284",
+          "text": "também.",
+          "start": 74.95,
+          "end": 75.68
+        }
+      ],
+      "text": "tendo que refazer o trabalho também."
+    },
+    {
+      "start": 75.73,
+      "end": 76.64,
+      "words": [
+        {
+          "id": "w285",
+          "text": "E",
+          "start": 75.73,
+          "end": 75.78
+        },
+        {
+          "id": "w286",
+          "text": "mesmo",
+          "start": 75.78,
+          "end": 76.02
+        },
+        {
+          "id": "w287",
+          "text": "que",
+          "start": 76.02,
+          "end": 76.19
+        },
+        {
+          "id": "w288",
+          "text": "o",
+          "start": 76.19,
+          "end": 76.34
+        },
+        {
+          "id": "w289",
+          "text": "teu",
+          "start": 76.34,
+          "end": 76.41
+        },
+        {
+          "id": "w290",
+          "text": "time",
+          "start": 76.41,
+          "end": 76.64
+        }
+      ],
+      "text": "E mesmo que o teu time"
+    },
+    {
+      "start": 76.64,
+      "end": 78.48,
+      "words": [
+        {
+          "id": "w291",
+          "text": "jurídico",
+          "start": 76.64,
+          "end": 77.09
+        },
+        {
+          "id": "w292",
+          "text": "te",
+          "start": 77.09,
+          "end": 77.2
+        },
+        {
+          "id": "w293",
+          "text": "aponte",
+          "start": 77.2,
+          "end": 77.54
+        },
+        {
+          "id": "w294",
+          "text": "ali,",
+          "start": 77.54,
+          "end": 77.82
+        },
+        {
+          "id": "w295",
+          "text": "olha,",
+          "start": 77.82,
+          "end": 78.16
+        },
+        {
+          "id": "w296",
+          "text": "para",
+          "start": 78.16,
+          "end": 78.48
+        }
+      ],
+      "text": "jurídico te aponte ali, olha, para"
+    },
+    {
+      "start": 78.48,
+      "end": 79.68,
+      "words": [
+        {
+          "id": "w297",
+          "text": "esse",
+          "start": 78.48,
+          "end": 78.62
+        },
+        {
+          "id": "w298",
+          "text": "caso",
+          "start": 78.62,
+          "end": 78.85
+        },
+        {
+          "id": "w299",
+          "text": "aqui",
+          "start": 78.85,
+          "end": 79.08
+        },
+        {
+          "id": "w300",
+          "text": "eu",
+          "start": 79.08,
+          "end": 79.19
+        },
+        {
+          "id": "w301",
+          "text": "quero",
+          "start": 79.19,
+          "end": 79.48
+        },
+        {
+          "id": "w302",
+          "text": "que",
+          "start": 79.48,
+          "end": 79.68
+        }
+      ],
+      "text": "esse caso aqui eu quero que"
+    },
+    {
+      "start": 79.68,
+      "end": 80.84,
+      "words": [
+        {
+          "id": "w303",
+          "text": "você",
+          "start": 79.68,
+          "end": 79.88
+        },
+        {
+          "id": "w304",
+          "text": "corrija",
+          "start": 79.88,
+          "end": 80.28
+        },
+        {
+          "id": "w305",
+          "text": "isso",
+          "start": 80.28,
+          "end": 80.51
+        },
+        {
+          "id": "w306",
+          "text": "e",
+          "start": 80.51,
+          "end": 80.56
+        },
+        {
+          "id": "w307",
+          "text": "isso",
+          "start": 80.56,
+          "end": 80.79
+        },
+        {
+          "id": "w308",
+          "text": "e",
+          "start": 80.79,
+          "end": 80.84
+        }
+      ],
+      "text": "você corrija isso e isso e"
+    },
+    {
+      "start": 80.84,
+      "end": 81.74,
+      "words": [
+        {
+          "id": "w309",
+          "text": "isso",
+          "start": 80.84,
+          "end": 81.07
+        },
+        {
+          "id": "w310",
+          "text": "e",
+          "start": 81.07,
+          "end": 81.12
+        },
+        {
+          "id": "w311",
+          "text": "aí",
+          "start": 81.12,
+          "end": 81.23
+        },
+        {
+          "id": "w312",
+          "text": "você",
+          "start": 81.23,
+          "end": 81.46
+        },
+        {
+          "id": "w313",
+          "text": "vai",
+          "start": 81.46,
+          "end": 81.7
+        },
+        {
+          "id": "w314",
+          "text": "lá",
+          "start": 81.7,
+          "end": 81.74
+        }
+      ],
+      "text": "isso e aí você vai lá"
+    },
+    {
+      "start": 81.74,
+      "end": 82.85,
+      "words": [
+        {
+          "id": "w315",
+          "text": "e",
+          "start": 81.74,
+          "end": 81.96
+        },
+        {
+          "id": "w316",
+          "text": "muda",
+          "start": 81.96,
+          "end": 82.04
+        },
+        {
+          "id": "w317",
+          "text": "o",
+          "start": 82.04,
+          "end": 82.06
+        },
+        {
+          "id": "w318",
+          "text": "prompt",
+          "start": 82.06,
+          "end": 82.4
+        },
+        {
+          "id": "w319",
+          "text": "do",
+          "start": 82.4,
+          "end": 82.51
+        },
+        {
+          "id": "w320",
+          "text": "agente",
+          "start": 82.51,
+          "end": 82.85
+        }
+      ],
+      "text": "e muda o prompt do agente"
+    },
+    {
+      "start": 82.85,
+      "end": 84.84,
+      "words": [
+        {
+          "id": "w321",
+          "text": "que",
+          "start": 82.85,
+          "end": 83.02
+        },
+        {
+          "id": "w322",
+          "text": "está",
+          "start": 83.02,
+          "end": 83.25
+        },
+        {
+          "id": "w323",
+          "text": "fazendo",
+          "start": 83.25,
+          "end": 83.72
+        },
+        {
+          "id": "w324",
+          "text": "essa",
+          "start": 83.72,
+          "end": 83.9
+        },
+        {
+          "id": "w325",
+          "text": "análise,",
+          "start": 83.9,
+          "end": 84.66
+        },
+        {
+          "id": "w326",
+          "text": "quem",
+          "start": 84.84,
+          "end": 84.84
+        }
+      ],
+      "text": "que está fazendo essa análise, quem"
+    },
+    {
+      "start": 84.84,
+      "end": 85.98,
+      "words": [
+        {
+          "id": "w327",
+          "text": "garante",
+          "start": 84.84,
+          "end": 84.92
+        },
+        {
+          "id": "w328",
+          "text": "que",
+          "start": 84.92,
+          "end": 84.94
+        },
+        {
+          "id": "w329",
+          "text": "você",
+          "start": 84.94,
+          "end": 85.12
+        },
+        {
+          "id": "w330",
+          "text": "está",
+          "start": 85.12,
+          "end": 85.5
+        },
+        {
+          "id": "w331",
+          "text": "ajustando",
+          "start": 85.5,
+          "end": 85.78
+        },
+        {
+          "id": "w332",
+          "text": "esse",
+          "start": 85.78,
+          "end": 85.98
+        }
+      ],
+      "text": "garante que você está ajustando esse"
+    },
+    {
+      "start": 85.98,
+      "end": 87.32,
+      "words": [
+        {
+          "id": "w333",
+          "text": "caso",
+          "start": 85.98,
+          "end": 86.18
+        },
+        {
+          "id": "w334",
+          "text": "e",
+          "start": 86.18,
+          "end": 86.23
+        },
+        {
+          "id": "w335",
+          "text": "não",
+          "start": 86.23,
+          "end": 86.37
+        },
+        {
+          "id": "w336",
+          "text": "está",
+          "start": 86.37,
+          "end": 86.61
+        },
+        {
+          "id": "w337",
+          "text": "quebrando",
+          "start": 86.61,
+          "end": 87.04
+        },
+        {
+          "id": "w338",
+          "text": "todos",
+          "start": 87.04,
+          "end": 87.32
+        }
+      ],
+      "text": "caso e não está quebrando todos"
+    },
+    {
+      "start": 87.32,
+      "end": 88.58,
+      "words": [
+        {
+          "id": "w339",
+          "text": "os",
+          "start": 87.32,
+          "end": 87.4
+        },
+        {
+          "id": "w340",
+          "text": "outros",
+          "start": 87.4,
+          "end": 87.71
+        },
+        {
+          "id": "w341",
+          "text": "casos",
+          "start": 87.71,
+          "end": 87.97
+        },
+        {
+          "id": "w342",
+          "text": "que",
+          "start": 87.97,
+          "end": 88.12
+        },
+        {
+          "id": "w343",
+          "text": "já",
+          "start": 88.12,
+          "end": 88.22
+        },
+        {
+          "id": "w344",
+          "text": "estavam",
+          "start": 88.22,
+          "end": 88.58
+        }
+      ],
+      "text": "os outros casos que já estavam"
+    },
+    {
+      "start": 88.58,
+      "end": 89.46,
+      "words": [
+        {
+          "id": "w345",
+          "text": "funcionando?",
+          "start": 88.58,
+          "end": 89.46
+        }
+      ],
+      "text": "funcionando?"
+    },
+    {
+      "start": 90.08,
+      "end": 91.03,
+      "words": [
+        {
+          "id": "w346",
+          "text": "E",
+          "start": 90.08,
+          "end": 90.08
+        },
+        {
+          "id": "w347",
+          "text": "é",
+          "start": 90.08,
+          "end": 90.08
+        },
+        {
+          "id": "w348",
+          "text": "justamente",
+          "start": 90.08,
+          "end": 90.18
+        },
+        {
+          "id": "w349",
+          "text": "para",
+          "start": 90.18,
+          "end": 90.72
+        },
+        {
+          "id": "w350",
+          "text": "resolver",
+          "start": 90.72,
+          "end": 90.76
+        },
+        {
+          "id": "w351",
+          "text": "esse",
+          "start": 90.76,
+          "end": 91.03
+        }
+      ],
+      "text": "E é justamente para resolver esse"
+    },
+    {
+      "start": 91.03,
+      "end": 92.48,
+      "words": [
+        {
+          "id": "w352",
+          "text": "tipo",
+          "start": 91.03,
+          "end": 91.3
+        },
+        {
+          "id": "w353",
+          "text": "de",
+          "start": 91.3,
+          "end": 91.43
+        },
+        {
+          "id": "w354",
+          "text": "coisas",
+          "start": 91.43,
+          "end": 91.85
+        },
+        {
+          "id": "w355",
+          "text": "que",
+          "start": 91.85,
+          "end": 92.13
+        },
+        {
+          "id": "w356",
+          "text": "os",
+          "start": 92.13,
+          "end": 92.16
+        },
+        {
+          "id": "w357",
+          "text": "evals",
+          "start": 92.16,
+          "end": 92.48
+        }
+      ],
+      "text": "tipo de coisas que os evals"
+    },
+    {
+      "start": 92.48,
+      "end": 93.24,
+      "words": [
+        {
+          "id": "w358",
+          "text": "existem.",
+          "start": 92.48,
+          "end": 93.24
+        }
+      ],
+      "text": "existem."
+    },
+    {
+      "start": 93.34,
+      "end": 94.69,
+      "words": [
+        {
+          "id": "w359",
+          "text": "Os",
+          "start": 93.34,
+          "end": 93.38
+        },
+        {
+          "id": "w360",
+          "text": "evals",
+          "start": 93.38,
+          "end": 93.9
+        },
+        {
+          "id": "w361",
+          "text": "meio",
+          "start": 93.9,
+          "end": 94.02
+        },
+        {
+          "id": "w362",
+          "text": "que",
+          "start": 94.02,
+          "end": 94.27
+        },
+        {
+          "id": "w363",
+          "text": "vão",
+          "start": 94.27,
+          "end": 94.46
+        },
+        {
+          "id": "w364",
+          "text": "ser",
+          "start": 94.46,
+          "end": 94.69
+        }
+      ],
+      "text": "Os evals meio que vão ser"
+    },
+    {
+      "start": 94.69,
+      "end": 96.74,
+      "words": [
+        {
+          "id": "w365",
+          "text": "um",
+          "start": 94.69,
+          "end": 94.82
+        },
+        {
+          "id": "w366",
+          "text": "dataset",
+          "start": 94.82,
+          "end": 95.34
+        },
+        {
+          "id": "w367",
+          "text": "com",
+          "start": 95.34,
+          "end": 95.56
+        },
+        {
+          "id": "w368",
+          "text": "a",
+          "start": 95.56,
+          "end": 95.63
+        },
+        {
+          "id": "w369",
+          "text": "resposta",
+          "start": 95.63,
+          "end": 96.22
+        },
+        {
+          "id": "w370",
+          "text": "marcada",
+          "start": 96.22,
+          "end": 96.74
+        }
+      ],
+      "text": "um dataset com a resposta marcada"
+    },
+    {
+      "start": 96.74,
+      "end": 98.52,
+      "words": [
+        {
+          "id": "w371",
+          "text": "de",
+          "start": 96.74,
+          "end": 96.87
+        },
+        {
+          "id": "w372",
+          "text": "quais",
+          "start": 96.87,
+          "end": 97.24
+        },
+        {
+          "id": "w373",
+          "text": "são",
+          "start": 97.24,
+          "end": 97.46
+        },
+        {
+          "id": "w374",
+          "text": "as",
+          "start": 97.46,
+          "end": 97.6
+        },
+        {
+          "id": "w375",
+          "text": "cláusulas",
+          "start": 97.6,
+          "end": 98.24
+        },
+        {
+          "id": "w376",
+          "text": "que",
+          "start": 98.24,
+          "end": 98.52
+        }
+      ],
+      "text": "de quais são as cláusulas que"
+    },
+    {
+      "start": 98.52,
+      "end": 100.33,
+      "words": [
+        {
+          "id": "w377",
+          "text": "o",
+          "start": 98.52,
+          "end": 98.53
+        },
+        {
+          "id": "w378",
+          "text": "seu",
+          "start": 98.53,
+          "end": 98.75
+        },
+        {
+          "id": "w379",
+          "text": "agente",
+          "start": 98.75,
+          "end": 99.55
+        },
+        {
+          "id": "w380",
+          "text": "deveria",
+          "start": 99.55,
+          "end": 99.71
+        },
+        {
+          "id": "w381",
+          "text": "analisar",
+          "start": 99.71,
+          "end": 100.26
+        },
+        {
+          "id": "w382",
+          "text": "e",
+          "start": 100.26,
+          "end": 100.33
+        }
+      ],
+      "text": "o seu agente deveria analisar e"
+    },
+    {
+      "start": 100.33,
+      "end": 101.84,
+      "words": [
+        {
+          "id": "w383",
+          "text": "deveria",
+          "start": 100.33,
+          "end": 100.84
+        },
+        {
+          "id": "w384",
+          "text": "apontar.",
+          "start": 100.84,
+          "end": 101.84
+        }
+      ],
+      "text": "deveria apontar."
+    },
+    {
+      "start": 102.02,
+      "end": 103.38,
+      "words": [
+        {
+          "id": "w385",
+          "text": "Então",
+          "start": 102.02,
+          "end": 102.02
+        },
+        {
+          "id": "w386",
+          "text": "você",
+          "start": 102.02,
+          "end": 102.12
+        },
+        {
+          "id": "w387",
+          "text": "pegaria",
+          "start": 102.12,
+          "end": 102.36
+        },
+        {
+          "id": "w388",
+          "text": "ali,",
+          "start": 102.36,
+          "end": 102.69
+        },
+        {
+          "id": "w389",
+          "text": "por",
+          "start": 102.69,
+          "end": 102.84
+        },
+        {
+          "id": "w390",
+          "text": "exemplo,",
+          "start": 102.84,
+          "end": 103.38
+        }
+      ],
+      "text": "Então você pegaria ali, por exemplo,"
+    },
+    {
+      "start": 103.38,
+      "end": 105.38,
+      "words": [
+        {
+          "id": "w391",
+          "text": "50",
+          "start": 103.38,
+          "end": 103.79
+        },
+        {
+          "id": "w392",
+          "text": "contratos",
+          "start": 103.79,
+          "end": 104.28
+        },
+        {
+          "id": "w393",
+          "text": "do",
+          "start": 104.28,
+          "end": 104.4
+        },
+        {
+          "id": "w394",
+          "text": "seu",
+          "start": 104.4,
+          "end": 104.58
+        },
+        {
+          "id": "w395",
+          "text": "setor",
+          "start": 104.58,
+          "end": 104.88
+        },
+        {
+          "id": "w396",
+          "text": "jurídico",
+          "start": 104.88,
+          "end": 105.38
+        }
+      ],
+      "text": "50 contratos do seu setor jurídico"
+    },
+    {
+      "start": 105.38,
+      "end": 106.92,
+      "words": [
+        {
+          "id": "w397",
+          "text": "que",
+          "start": 105.38,
+          "end": 105.54
+        },
+        {
+          "id": "w398",
+          "text": "eles",
+          "start": 105.54,
+          "end": 105.78
+        },
+        {
+          "id": "w399",
+          "text": "sabem",
+          "start": 105.78,
+          "end": 106.08
+        },
+        {
+          "id": "w400",
+          "text": "a",
+          "start": 106.08,
+          "end": 106.14
+        },
+        {
+          "id": "w401",
+          "text": "resposta,",
+          "start": 106.14,
+          "end": 106.75
+        },
+        {
+          "id": "w402",
+          "text": "que",
+          "start": 106.75,
+          "end": 106.92
+        }
+      ],
+      "text": "que eles sabem a resposta, que"
+    },
+    {
+      "start": 106.92,
+      "end": 108.6,
+      "words": [
+        {
+          "id": "w403",
+          "text": "eles",
+          "start": 106.92,
+          "end": 107.16
+        },
+        {
+          "id": "w404",
+          "text": "sabem",
+          "start": 107.16,
+          "end": 107.46
+        },
+        {
+          "id": "w405",
+          "text": "quais",
+          "start": 107.46,
+          "end": 107.76
+        },
+        {
+          "id": "w406",
+          "text": "são",
+          "start": 107.76,
+          "end": 108.06
+        },
+        {
+          "id": "w407",
+          "text": "as",
+          "start": 108.06,
+          "end": 108.06
+        },
+        {
+          "id": "w408",
+          "text": "cláusulas",
+          "start": 108.06,
+          "end": 108.6
+        }
+      ],
+      "text": "eles sabem quais são as cláusulas"
+    },
+    {
+      "start": 108.6,
+      "end": 110.45,
+      "words": [
+        {
+          "id": "w409",
+          "text": "mais",
+          "start": 108.6,
+          "end": 108.84
+        },
+        {
+          "id": "w410",
+          "text": "relevantes",
+          "start": 108.84,
+          "end": 109.44
+        },
+        {
+          "id": "w411",
+          "text": "ali",
+          "start": 109.44,
+          "end": 109.63
+        },
+        {
+          "id": "w412",
+          "text": "e",
+          "start": 109.63,
+          "end": 109.7
+        },
+        {
+          "id": "w413",
+          "text": "você",
+          "start": 109.7,
+          "end": 109.95
+        },
+        {
+          "id": "w414",
+          "text": "montaria",
+          "start": 109.95,
+          "end": 110.45
+        }
+      ],
+      "text": "mais relevantes ali e você montaria"
+    },
+    {
+      "start": 110.45,
+      "end": 112.1,
+      "words": [
+        {
+          "id": "w415",
+          "text": "um",
+          "start": 110.45,
+          "end": 110.57
+        },
+        {
+          "id": "w416",
+          "text": "dataset",
+          "start": 110.57,
+          "end": 111.01
+        },
+        {
+          "id": "w417",
+          "text": "de",
+          "start": 111.01,
+          "end": 111.12
+        },
+        {
+          "id": "w418",
+          "text": "evals",
+          "start": 111.12,
+          "end": 111.43
+        },
+        {
+          "id": "w419",
+          "text": "com",
+          "start": 111.43,
+          "end": 111.62
+        },
+        {
+          "id": "w420",
+          "text": "aquilo",
+          "start": 111.62,
+          "end": 112.1
+        }
+      ],
+      "text": "um dataset de evals com aquilo"
+    },
+    {
+      "start": 112.1,
+      "end": 112.46,
+      "words": [
+        {
+          "id": "w421",
+          "text": "ali.",
+          "start": 112.1,
+          "end": 112.46
+        }
+      ],
+      "text": "ali."
+    },
+    {
+      "start": 112.68,
+      "end": 114.06,
+      "words": [
+        {
+          "id": "w422",
+          "text": "Ou",
+          "start": 112.68,
+          "end": 112.69
+        },
+        {
+          "id": "w423",
+          "text": "seja,",
+          "start": 112.69,
+          "end": 113.23
+        },
+        {
+          "id": "w424",
+          "text": "você",
+          "start": 113.23,
+          "end": 113.26
+        },
+        {
+          "id": "w425",
+          "text": "mostraria",
+          "start": 113.26,
+          "end": 113.78
+        },
+        {
+          "id": "w426",
+          "text": "para",
+          "start": 113.78,
+          "end": 114.01
+        },
+        {
+          "id": "w427",
+          "text": "o",
+          "start": 114.01,
+          "end": 114.06
+        }
+      ],
+      "text": "Ou seja, você mostraria para o"
+    },
+    {
+      "start": 114.06,
+      "end": 116,
+      "words": [
+        {
+          "id": "w428",
+          "text": "seu",
+          "start": 114.06,
+          "end": 114.34
+        },
+        {
+          "id": "w429",
+          "text": "agente,",
+          "start": 114.34,
+          "end": 114.68
+        },
+        {
+          "id": "w430",
+          "text": "olha,",
+          "start": 114.68,
+          "end": 115.06
+        },
+        {
+          "id": "w431",
+          "text": "nesses",
+          "start": 115.06,
+          "end": 115.38
+        },
+        {
+          "id": "w432",
+          "text": "50",
+          "start": 115.38,
+          "end": 115.71
+        },
+        {
+          "id": "w433",
+          "text": "casos",
+          "start": 115.71,
+          "end": 116
+        }
+      ],
+      "text": "seu agente, olha, nesses 50 casos"
+    },
+    {
+      "start": 116,
+      "end": 117.43,
+      "words": [
+        {
+          "id": "w434",
+          "text": "aqui,",
+          "start": 116,
+          "end": 116.34
+        },
+        {
+          "id": "w435",
+          "text": "a",
+          "start": 116.34,
+          "end": 116.39
+        },
+        {
+          "id": "w436",
+          "text": "resposta",
+          "start": 116.39,
+          "end": 116.86
+        },
+        {
+          "id": "w437",
+          "text": "certa",
+          "start": 116.86,
+          "end": 117.15
+        },
+        {
+          "id": "w438",
+          "text": "é",
+          "start": 117.15,
+          "end": 117.2
+        },
+        {
+          "id": "w439",
+          "text": "essa",
+          "start": 117.2,
+          "end": 117.43
+        }
+      ],
+      "text": "aqui, a resposta certa é essa"
+    },
+    {
+      "start": 117.43,
+      "end": 118,
+      "words": [
+        {
+          "id": "w440",
+          "text": "aqui.",
+          "start": 117.43,
+          "end": 118
+        }
+      ],
+      "text": "aqui."
+    },
+    {
+      "start": 118.18,
+      "end": 118.63,
+      "words": [
+        {
+          "id": "w441",
+          "text": "E",
+          "start": 118.18,
+          "end": 118.18
+        },
+        {
+          "id": "w442",
+          "text": "aí",
+          "start": 118.18,
+          "end": 118.18
+        },
+        {
+          "id": "w443",
+          "text": "toda",
+          "start": 118.18,
+          "end": 118.18
+        },
+        {
+          "id": "w444",
+          "text": "vez",
+          "start": 118.18,
+          "end": 118.28
+        },
+        {
+          "id": "w445",
+          "text": "que",
+          "start": 118.28,
+          "end": 118.37
+        },
+        {
+          "id": "w446",
+          "text": "você",
+          "start": 118.37,
+          "end": 118.63
+        }
+      ],
+      "text": "E aí toda vez que você"
+    },
+    {
+      "start": 118.63,
+      "end": 120.37,
+      "words": [
+        {
+          "id": "w447",
+          "text": "fizesse",
+          "start": 118.63,
+          "end": 119.08
+        },
+        {
+          "id": "w448",
+          "text": "uma",
+          "start": 119.08,
+          "end": 119.27
+        },
+        {
+          "id": "w449",
+          "text": "mudança",
+          "start": 119.27,
+          "end": 119.71
+        },
+        {
+          "id": "w450",
+          "text": "no",
+          "start": 119.71,
+          "end": 119.95
+        },
+        {
+          "id": "w451",
+          "text": "prompt",
+          "start": 119.95,
+          "end": 120.24
+        },
+        {
+          "id": "w452",
+          "text": "de",
+          "start": 120.24,
+          "end": 120.37
+        }
+      ],
+      "text": "fizesse uma mudança no prompt de"
+    },
+    {
+      "start": 120.37,
+      "end": 122.18,
+      "words": [
+        {
+          "id": "w453",
+          "text": "sistema",
+          "start": 120.37,
+          "end": 120.81
+        },
+        {
+          "id": "w454",
+          "text": "desse",
+          "start": 120.81,
+          "end": 121.14
+        },
+        {
+          "id": "w455",
+          "text": "agente",
+          "start": 121.14,
+          "end": 121.54
+        },
+        {
+          "id": "w456",
+          "text": "ou",
+          "start": 121.54,
+          "end": 121.68
+        },
+        {
+          "id": "w457",
+          "text": "nas",
+          "start": 121.68,
+          "end": 121.85
+        },
+        {
+          "id": "w458",
+          "text": "tools",
+          "start": 121.85,
+          "end": 122.18
+        }
+      ],
+      "text": "sistema desse agente ou nas tools"
+    },
+    {
+      "start": 122.18,
+      "end": 123.8,
+      "words": [
+        {
+          "id": "w459",
+          "text": "que",
+          "start": 122.18,
+          "end": 122.36
+        },
+        {
+          "id": "w460",
+          "text": "ele",
+          "start": 122.36,
+          "end": 122.55
+        },
+        {
+          "id": "w461",
+          "text": "usa",
+          "start": 122.55,
+          "end": 122.74
+        },
+        {
+          "id": "w462",
+          "text": "ali",
+          "start": 122.74,
+          "end": 122.92
+        },
+        {
+          "id": "w463",
+          "text": "em",
+          "start": 122.92,
+          "end": 123.06
+        },
+        {
+          "id": "w464",
+          "text": "produção,",
+          "start": 123.06,
+          "end": 123.8
+        }
+      ],
+      "text": "que ele usa ali em produção,"
+    },
+    {
+      "start": 123.98,
+      "end": 125.01,
+      "words": [
+        {
+          "id": "w465",
+          "text": "você",
+          "start": 123.98,
+          "end": 124.03
+        },
+        {
+          "id": "w466",
+          "text": "teria",
+          "start": 124.03,
+          "end": 124.08
+        },
+        {
+          "id": "w467",
+          "text": "que",
+          "start": 124.08,
+          "end": 124.22
+        },
+        {
+          "id": "w468",
+          "text": "ser",
+          "start": 124.22,
+          "end": 124.64
+        },
+        {
+          "id": "w469",
+          "text": "obrigado",
+          "start": 124.64,
+          "end": 124.92
+        },
+        {
+          "id": "w470",
+          "text": "a",
+          "start": 124.92,
+          "end": 125.01
+        }
+      ],
+      "text": "você teria que ser obrigado a"
+    },
+    {
+      "start": 125.01,
+      "end": 126.53,
+      "words": [
+        {
+          "id": "w471",
+          "text": "rodar",
+          "start": 125.01,
+          "end": 125.29
+        },
+        {
+          "id": "w472",
+          "text": "esse",
+          "start": 125.29,
+          "end": 125.53
+        },
+        {
+          "id": "w473",
+          "text": "dataset",
+          "start": 125.53,
+          "end": 126.03
+        },
+        {
+          "id": "w474",
+          "text": "de",
+          "start": 126.03,
+          "end": 126.11
+        },
+        {
+          "id": "w475",
+          "text": "evals",
+          "start": 126.11,
+          "end": 126.46
+        },
+        {
+          "id": "w476",
+          "text": "de",
+          "start": 126.46,
+          "end": 126.53
+        }
+      ],
+      "text": "rodar esse dataset de evals de"
+    },
+    {
+      "start": 126.53,
+      "end": 127.4,
+      "words": [
+        {
+          "id": "w477",
+          "text": "novo",
+          "start": 126.53,
+          "end": 126.78
+        },
+        {
+          "id": "w478",
+          "text": "e",
+          "start": 126.78,
+          "end": 126.84
+        },
+        {
+          "id": "w479",
+          "text": "ver",
+          "start": 126.84,
+          "end": 127.03
+        },
+        {
+          "id": "w480",
+          "text": "se",
+          "start": 127.03,
+          "end": 127.15
+        },
+        {
+          "id": "w481",
+          "text": "o",
+          "start": 127.15,
+          "end": 127.21
+        },
+        {
+          "id": "w482",
+          "text": "seu",
+          "start": 127.21,
+          "end": 127.4
+        }
+      ],
+      "text": "novo e ver se o seu"
+    },
+    {
+      "start": 127.4,
+      "end": 129.16,
+      "words": [
+        {
+          "id": "w483",
+          "text": "agente",
+          "start": 127.4,
+          "end": 127.77
+        },
+        {
+          "id": "w484",
+          "text": "ainda",
+          "start": 127.77,
+          "end": 128.09
+        },
+        {
+          "id": "w485",
+          "text": "está",
+          "start": 128.09,
+          "end": 128.34
+        },
+        {
+          "id": "w486",
+          "text": "estável.",
+          "start": 128.34,
+          "end": 129.16
+        }
+      ],
+      "text": "agente ainda está estável."
+    },
+    {
+      "start": 129.16,
+      "end": 130.63,
+      "words": [
+        {
+          "id": "w487",
+          "text": "Ou",
+          "start": 129.16,
+          "end": 129.29
+        },
+        {
+          "id": "w488",
+          "text": "seja,",
+          "start": 129.29,
+          "end": 129.81
+        },
+        {
+          "id": "w489",
+          "text": "se",
+          "start": 129.81,
+          "end": 129.83
+        },
+        {
+          "id": "w490",
+          "text": "ele",
+          "start": 129.83,
+          "end": 130.02
+        },
+        {
+          "id": "w491",
+          "text": "ainda",
+          "start": 130.02,
+          "end": 130.36
+        },
+        {
+          "id": "w492",
+          "text": "está",
+          "start": 130.36,
+          "end": 130.63
+        }
+      ],
+      "text": "Ou seja, se ele ainda está"
+    },
+    {
+      "start": 130.63,
+      "end": 132.3,
+      "words": [
+        {
+          "id": "w493",
+          "text": "tirando",
+          "start": 130.63,
+          "end": 131.16
+        },
+        {
+          "id": "w494",
+          "text": "a",
+          "start": 131.16,
+          "end": 131.21
+        },
+        {
+          "id": "w495",
+          "text": "mesma",
+          "start": 131.21,
+          "end": 131.5
+        },
+        {
+          "id": "w496",
+          "text": "resposta",
+          "start": 131.5,
+          "end": 132.04
+        },
+        {
+          "id": "w497",
+          "text": "que",
+          "start": 132.04,
+          "end": 132.24
+        },
+        {
+          "id": "w498",
+          "text": "a",
+          "start": 132.24,
+          "end": 132.3
+        }
+      ],
+      "text": "tirando a mesma resposta que a"
+    },
+    {
+      "start": 132.3,
+      "end": 134.56,
+      "words": [
+        {
+          "id": "w499",
+          "text": "resposta",
+          "start": 132.3,
+          "end": 132.84
+        },
+        {
+          "id": "w500",
+          "text": "certa",
+          "start": 132.84,
+          "end": 133.18
+        },
+        {
+          "id": "w501",
+          "text": "igual",
+          "start": 133.18,
+          "end": 133.52
+        },
+        {
+          "id": "w502",
+          "text": "da",
+          "start": 133.52,
+          "end": 133.65
+        },
+        {
+          "id": "w503",
+          "text": "última",
+          "start": 133.65,
+          "end": 134.05
+        },
+        {
+          "id": "w504",
+          "text": "vez.",
+          "start": 134.05,
+          "end": 134.56
+        }
+      ],
+      "text": "resposta certa igual da última vez."
+    },
+    {
+      "start": 134.74,
+      "end": 135.86,
+      "words": [
+        {
+          "id": "w505",
+          "text": "Quando",
+          "start": 134.74,
+          "end": 134.89
+        },
+        {
+          "id": "w506",
+          "text": "você",
+          "start": 134.89,
+          "end": 135.06
+        },
+        {
+          "id": "w507",
+          "text": "tem",
+          "start": 135.06,
+          "end": 135.3
+        },
+        {
+          "id": "w508",
+          "text": "isso,",
+          "start": 135.3,
+          "end": 135.44
+        },
+        {
+          "id": "w509",
+          "text": "perceba",
+          "start": 135.44,
+          "end": 135.73
+        },
+        {
+          "id": "w510",
+          "text": "que",
+          "start": 135.73,
+          "end": 135.86
+        }
+      ],
+      "text": "Quando você tem isso, perceba que"
+    },
+    {
+      "start": 135.86,
+      "end": 136.98,
+      "words": [
+        {
+          "id": "w511",
+          "text": "vai",
+          "start": 135.86,
+          "end": 135.99
+        },
+        {
+          "id": "w512",
+          "text": "acontecer",
+          "start": 135.99,
+          "end": 136.41
+        },
+        {
+          "id": "w513",
+          "text": "duas",
+          "start": 136.41,
+          "end": 136.54
+        },
+        {
+          "id": "w514",
+          "text": "coisas.",
+          "start": 136.54,
+          "end": 136.98
+        }
+      ],
+      "text": "vai acontecer duas coisas."
+    },
+    {
+      "start": 137.12,
+      "end": 138.65,
+      "words": [
+        {
+          "id": "w515",
+          "text": "Primeiro,",
+          "start": 137.12,
+          "end": 137.76
+        },
+        {
+          "id": "w516",
+          "text": "você",
+          "start": 137.76,
+          "end": 137.79
+        },
+        {
+          "id": "w517",
+          "text": "vai",
+          "start": 137.79,
+          "end": 137.93
+        },
+        {
+          "id": "w518",
+          "text": "ter",
+          "start": 137.93,
+          "end": 138.15
+        },
+        {
+          "id": "w519",
+          "text": "uma",
+          "start": 138.15,
+          "end": 138.27
+        },
+        {
+          "id": "w520",
+          "text": "métrica",
+          "start": 138.27,
+          "end": 138.65
+        }
+      ],
+      "text": "Primeiro, você vai ter uma métrica"
+    },
+    {
+      "start": 138.65,
+      "end": 139.82,
+      "words": [
+        {
+          "id": "w521",
+          "text": "objetiva",
+          "start": 138.65,
+          "end": 139.17
+        },
+        {
+          "id": "w522",
+          "text": "de",
+          "start": 139.17,
+          "end": 139.22
+        },
+        {
+          "id": "w523",
+          "text": "se",
+          "start": 139.22,
+          "end": 139.33
+        },
+        {
+          "id": "w524",
+          "text": "o",
+          "start": 139.33,
+          "end": 139.38
+        },
+        {
+          "id": "w525",
+          "text": "agente",
+          "start": 139.38,
+          "end": 139.71
+        },
+        {
+          "id": "w526",
+          "text": "de",
+          "start": 139.71,
+          "end": 139.82
+        }
+      ],
+      "text": "objetiva de se o agente de"
+    },
+    {
+      "start": 139.82,
+      "end": 141.16,
+      "words": [
+        {
+          "id": "w527",
+          "text": "fato",
+          "start": 139.82,
+          "end": 140.04
+        },
+        {
+          "id": "w528",
+          "text": "está",
+          "start": 140.04,
+          "end": 140.26
+        },
+        {
+          "id": "w529",
+          "text": "funcionando",
+          "start": 140.26,
+          "end": 140.88
+        },
+        {
+          "id": "w530",
+          "text": "no",
+          "start": 140.88,
+          "end": 140.99
+        },
+        {
+          "id": "w531",
+          "text": "seu",
+          "start": 140.99,
+          "end": 141.16
+        }
+      ],
+      "text": "fato está funcionando no seu"
+    },
+    {
+      "start": 141.16,
+      "end": 141.86,
+      "words": [
+        {
+          "id": "w532",
+          "text": "sistema.",
+          "start": 141.16,
+          "end": 141.86
+        }
+      ],
+      "text": "sistema."
+    },
+    {
+      "start": 142.04,
+      "end": 142.82,
+      "words": [
+        {
+          "id": "w533",
+          "text": "E",
+          "start": 142.04,
+          "end": 142.04
+        },
+        {
+          "id": "w534",
+          "text": "segundo,",
+          "start": 142.04,
+          "end": 142.14
+        },
+        {
+          "id": "w535",
+          "text": "você",
+          "start": 142.14,
+          "end": 142.34
+        },
+        {
+          "id": "w536",
+          "text": "vai",
+          "start": 142.34,
+          "end": 142.68
+        },
+        {
+          "id": "w537",
+          "text": "ter",
+          "start": 142.68,
+          "end": 142.7
+        },
+        {
+          "id": "w538",
+          "text": "de",
+          "start": 142.7,
+          "end": 142.82
+        }
+      ],
+      "text": "E segundo, você vai ter de"
+    },
+    {
+      "start": 142.82,
+      "end": 144.37,
+      "words": [
+        {
+          "id": "w539",
+          "text": "fato",
+          "start": 142.82,
+          "end": 143.07
+        },
+        {
+          "id": "w540",
+          "text": "uma",
+          "start": 143.07,
+          "end": 143.24
+        },
+        {
+          "id": "w541",
+          "text": "direção",
+          "start": 143.24,
+          "end": 143.65
+        },
+        {
+          "id": "w542",
+          "text": "para",
+          "start": 143.65,
+          "end": 143.89
+        },
+        {
+          "id": "w543",
+          "text": "onde",
+          "start": 143.89,
+          "end": 144.13
+        },
+        {
+          "id": "w544",
+          "text": "você",
+          "start": 144.13,
+          "end": 144.37
+        }
+      ],
+      "text": "fato uma direção para onde você"
+    },
+    {
+      "start": 144.37,
+      "end": 144.94,
+      "words": [
+        {
+          "id": "w545",
+          "text": "quer",
+          "start": 144.37,
+          "end": 144.61
+        },
+        {
+          "id": "w546",
+          "text": "ir.",
+          "start": 144.61,
+          "end": 144.94
+        }
+      ],
+      "text": "quer ir."
+    },
+    {
+      "start": 145.1,
+      "end": 146.27,
+      "words": [
+        {
+          "id": "w547",
+          "text": "Então",
+          "start": 145.1,
+          "end": 145.21
+        },
+        {
+          "id": "w548",
+          "text": "toda",
+          "start": 145.21,
+          "end": 145.74
+        },
+        {
+          "id": "w549",
+          "text": "melhoria",
+          "start": 145.74,
+          "end": 145.84
+        },
+        {
+          "id": "w550",
+          "text": "que",
+          "start": 145.84,
+          "end": 146
+        },
+        {
+          "id": "w551",
+          "text": "vocês",
+          "start": 146,
+          "end": 146.27
+        }
+      ],
+      "text": "Então toda melhoria que vocês"
+    },
+    {
+      "start": 146.27,
+      "end": 147.61,
+      "words": [
+        {
+          "id": "w552",
+          "text": "fizerem",
+          "start": 146.27,
+          "end": 146.63
+        },
+        {
+          "id": "w553",
+          "text": "no",
+          "start": 146.63,
+          "end": 146.87
+        },
+        {
+          "id": "w554",
+          "text": "sistema",
+          "start": 146.87,
+          "end": 147.15
+        },
+        {
+          "id": "w555",
+          "text": "vai",
+          "start": 147.15,
+          "end": 147.29
+        },
+        {
+          "id": "w556",
+          "text": "ter",
+          "start": 147.29,
+          "end": 147.45
+        },
+        {
+          "id": "w557",
+          "text": "que",
+          "start": 147.45,
+          "end": 147.61
+        }
+      ],
+      "text": "fizerem no sistema vai ter que"
+    },
+    {
+      "start": 147.61,
+      "end": 149,
+      "words": [
+        {
+          "id": "w558",
+          "text": "fazer",
+          "start": 147.61,
+          "end": 147.9
+        },
+        {
+          "id": "w559",
+          "text": "o",
+          "start": 147.9,
+          "end": 147.93
+        },
+        {
+          "id": "w560",
+          "text": "dataset",
+          "start": 147.93,
+          "end": 148.31
+        },
+        {
+          "id": "w561",
+          "text": "de",
+          "start": 148.31,
+          "end": 148.43
+        },
+        {
+          "id": "w562",
+          "text": "evals",
+          "start": 148.43,
+          "end": 148.68
+        },
+        {
+          "id": "w563",
+          "text": "passar",
+          "start": 148.68,
+          "end": 149
+        }
+      ],
+      "text": "fazer o dataset de evals passar"
+    },
+    {
+      "start": 149,
+      "end": 150.06,
+      "words": [
+        {
+          "id": "w564",
+          "text": "com",
+          "start": 149,
+          "end": 149.16
+        },
+        {
+          "id": "w565",
+          "text": "uma",
+          "start": 149.16,
+          "end": 149.33
+        },
+        {
+          "id": "w566",
+          "text": "nota",
+          "start": 149.33,
+          "end": 149.53
+        },
+        {
+          "id": "w567",
+          "text": "mais",
+          "start": 149.53,
+          "end": 149.74
+        },
+        {
+          "id": "w568",
+          "text": "alta",
+          "start": 149.74,
+          "end": 149.95
+        },
+        {
+          "id": "w569",
+          "text": "do",
+          "start": 149.95,
+          "end": 150.06
+        }
+      ],
+      "text": "com uma nota mais alta do"
+    },
+    {
+      "start": 150.06,
+      "end": 151.04,
+      "words": [
+        {
+          "id": "w570",
+          "text": "que",
+          "start": 150.06,
+          "end": 150.22
+        },
+        {
+          "id": "w571",
+          "text": "a",
+          "start": 150.22,
+          "end": 150.27
+        },
+        {
+          "id": "w572",
+          "text": "anterior.",
+          "start": 150.27,
+          "end": 151.04
+        }
+      ],
+      "text": "que a anterior."
+    },
+    {
+      "start": 151.22,
+      "end": 151.88,
+      "words": [
+        {
+          "id": "w573",
+          "text": "E",
+          "start": 151.22,
+          "end": 151.22
+        },
+        {
+          "id": "w574",
+          "text": "isso",
+          "start": 151.22,
+          "end": 151.22
+        },
+        {
+          "id": "w575",
+          "text": "também",
+          "start": 151.22,
+          "end": 151.28
+        },
+        {
+          "id": "w576",
+          "text": "impede",
+          "start": 151.28,
+          "end": 151.47
+        },
+        {
+          "id": "w577",
+          "text": "que",
+          "start": 151.47,
+          "end": 151.66
+        },
+        {
+          "id": "w578",
+          "text": "o",
+          "start": 151.66,
+          "end": 151.88
+        }
+      ],
+      "text": "E isso também impede que o"
+    },
+    {
+      "start": 151.88,
+      "end": 153.48,
+      "words": [
+        {
+          "id": "w579",
+          "text": "teu",
+          "start": 151.88,
+          "end": 151.91
+        },
+        {
+          "id": "w580",
+          "text": "time",
+          "start": 151.91,
+          "end": 152.16
+        },
+        {
+          "id": "w581",
+          "text": "jurídico",
+          "start": 152.16,
+          "end": 152.67
+        },
+        {
+          "id": "w582",
+          "text": "tenha",
+          "start": 152.67,
+          "end": 152.99
+        },
+        {
+          "id": "w583",
+          "text": "uma",
+          "start": 152.99,
+          "end": 153.27
+        },
+        {
+          "id": "w584",
+          "text": "regra",
+          "start": 153.27,
+          "end": 153.48
+        }
+      ],
+      "text": "teu time jurídico tenha uma regra"
+    },
+    {
+      "start": 153.48,
+      "end": 155.1,
+      "words": [
+        {
+          "id": "w585",
+          "text": "que",
+          "start": 153.48,
+          "end": 153.7
+        },
+        {
+          "id": "w586",
+          "text": "seja",
+          "start": 153.7,
+          "end": 153.92
+        },
+        {
+          "id": "w587",
+          "text": "muito",
+          "start": 153.92,
+          "end": 154.24
+        },
+        {
+          "id": "w588",
+          "text": "subjetiva.",
+          "start": 154.24,
+          "end": 155.1
+        }
+      ],
+      "text": "que seja muito subjetiva."
+    },
+    {
+      "start": 155.28,
+      "end": 156.16,
+      "words": [
+        {
+          "id": "w589",
+          "text": "Porque",
+          "start": 155.28,
+          "end": 155.29
+        },
+        {
+          "id": "w590",
+          "text": "se",
+          "start": 155.29,
+          "end": 155.38
+        },
+        {
+          "id": "w591",
+          "text": "eles",
+          "start": 155.38,
+          "end": 155.47
+        },
+        {
+          "id": "w592",
+          "text": "mudarem",
+          "start": 155.47,
+          "end": 155.93
+        },
+        {
+          "id": "w593",
+          "text": "uma",
+          "start": 155.93,
+          "end": 155.95
+        },
+        {
+          "id": "w594",
+          "text": "coisa",
+          "start": 155.95,
+          "end": 156.16
+        }
+      ],
+      "text": "Porque se eles mudarem uma coisa"
+    },
+    {
+      "start": 156.16,
+      "end": 157.16,
+      "words": [
+        {
+          "id": "w595",
+          "text": "de",
+          "start": 156.16,
+          "end": 156.25
+        },
+        {
+          "id": "w596",
+          "text": "um",
+          "start": 156.25,
+          "end": 156.34
+        },
+        {
+          "id": "w597",
+          "text": "lado",
+          "start": 156.34,
+          "end": 156.52
+        },
+        {
+          "id": "w598",
+          "text": "e",
+          "start": 156.52,
+          "end": 156.56
+        },
+        {
+          "id": "w599",
+          "text": "eles",
+          "start": 156.56,
+          "end": 156.74
+        },
+        {
+          "id": "w600",
+          "text": "quebrarem",
+          "start": 156.74,
+          "end": 157.16
+        }
+      ],
+      "text": "de um lado e eles quebrarem"
+    },
+    {
+      "start": 157.16,
+      "end": 158.22,
+      "words": [
+        {
+          "id": "w601",
+          "text": "todos",
+          "start": 157.16,
+          "end": 157.39
+        },
+        {
+          "id": "w602",
+          "text": "os",
+          "start": 157.39,
+          "end": 157.48
+        },
+        {
+          "id": "w603",
+          "text": "outros",
+          "start": 157.48,
+          "end": 157.76
+        },
+        {
+          "id": "w604",
+          "text": "casos",
+          "start": 157.76,
+          "end": 158.08
+        },
+        {
+          "id": "w605",
+          "text": "que",
+          "start": 158.08,
+          "end": 158.13
+        },
+        {
+          "id": "w606",
+          "text": "já",
+          "start": 158.13,
+          "end": 158.22
+        }
+      ],
+      "text": "todos os outros casos que já"
+    },
+    {
+      "start": 158.22,
+      "end": 159.86,
+      "words": [
+        {
+          "id": "w607",
+          "text": "estão",
+          "start": 158.22,
+          "end": 158.45
+        },
+        {
+          "id": "w608",
+          "text": "funcionando,",
+          "start": 158.45,
+          "end": 159.18
+        },
+        {
+          "id": "w609",
+          "text": "o",
+          "start": 159.24,
+          "end": 159.28
+        },
+        {
+          "id": "w610",
+          "text": "teu",
+          "start": 159.28,
+          "end": 159.42
+        },
+        {
+          "id": "w611",
+          "text": "time",
+          "start": 159.42,
+          "end": 159.65
+        },
+        {
+          "id": "w612",
+          "text": "de",
+          "start": 159.65,
+          "end": 159.86
+        }
+      ],
+      "text": "estão funcionando, o teu time de"
+    },
+    {
+      "start": 159.86,
+      "end": 161.59,
+      "words": [
+        {
+          "id": "w613",
+          "text": "desenvolvimento",
+          "start": 159.86,
+          "end": 160.65
+        },
+        {
+          "id": "w614",
+          "text": "do",
+          "start": 160.65,
+          "end": 160.77
+        },
+        {
+          "id": "w615",
+          "text": "teu",
+          "start": 160.77,
+          "end": 160.95
+        },
+        {
+          "id": "w616",
+          "text": "produto",
+          "start": 160.95,
+          "end": 161.36
+        },
+        {
+          "id": "w617",
+          "text": "de",
+          "start": 161.36,
+          "end": 161.48
+        },
+        {
+          "id": "w618",
+          "text": "IA",
+          "start": 161.48,
+          "end": 161.59
+        }
+      ],
+      "text": "desenvolvimento do teu produto de IA"
+    },
+    {
+      "start": 161.59,
+      "end": 163,
+      "words": [
+        {
+          "id": "w619",
+          "text": "vai",
+          "start": 161.59,
+          "end": 161.78
+        },
+        {
+          "id": "w620",
+          "text": "poder",
+          "start": 161.78,
+          "end": 162.07
+        },
+        {
+          "id": "w621",
+          "text": "ir",
+          "start": 162.07,
+          "end": 162.19
+        },
+        {
+          "id": "w622",
+          "text": "no",
+          "start": 162.19,
+          "end": 162.31
+        },
+        {
+          "id": "w623",
+          "text": "time",
+          "start": 162.31,
+          "end": 162.54
+        },
+        {
+          "id": "w624",
+          "text": "jurídico",
+          "start": 162.54,
+          "end": 163
+        }
+      ],
+      "text": "vai poder ir no time jurídico"
+    },
+    {
+      "start": 163,
+      "end": 164.52,
+      "words": [
+        {
+          "id": "w625",
+          "text": "e",
+          "start": 163,
+          "end": 163.06
+        },
+        {
+          "id": "w626",
+          "text": "falar",
+          "start": 163.06,
+          "end": 163.44
+        },
+        {
+          "id": "w627",
+          "text": "Escuta,",
+          "start": 163.44,
+          "end": 164.1
+        },
+        {
+          "id": "w628",
+          "text": "essa",
+          "start": 164.1,
+          "end": 164.16
+        },
+        {
+          "id": "w629",
+          "text": "regra",
+          "start": 164.16,
+          "end": 164.47
+        },
+        {
+          "id": "w630",
+          "text": "é",
+          "start": 164.47,
+          "end": 164.52
+        }
+      ],
+      "text": "e falar Escuta, essa regra é"
+    },
+    {
+      "start": 164.52,
+      "end": 165.28,
+      "words": [
+        {
+          "id": "w631",
+          "text": "essa",
+          "start": 164.52,
+          "end": 164.76
+        },
+        {
+          "id": "w632",
+          "text": "mesmo?",
+          "start": 164.76,
+          "end": 165.28
+        }
+      ],
+      "text": "essa mesmo?"
+    },
+    {
+      "start": 165.4,
+      "end": 167.17,
+      "words": [
+        {
+          "id": "w633",
+          "text": "Porque",
+          "start": 165.4,
+          "end": 165.64
+        },
+        {
+          "id": "w634",
+          "text": "isso",
+          "start": 165.64,
+          "end": 166.04
+        },
+        {
+          "id": "w635",
+          "text": "que",
+          "start": 166.04,
+          "end": 166.08
+        },
+        {
+          "id": "w636",
+          "text": "vocês",
+          "start": 166.08,
+          "end": 166.36
+        },
+        {
+          "id": "w637",
+          "text": "estão",
+          "start": 166.36,
+          "end": 166.66
+        },
+        {
+          "id": "w638",
+          "text": "fazendo",
+          "start": 166.66,
+          "end": 167.17
+        }
+      ],
+      "text": "Porque isso que vocês estão fazendo"
+    },
+    {
+      "start": 167.17,
+      "end": 168.6,
+      "words": [
+        {
+          "id": "w639",
+          "text": "está",
+          "start": 167.17,
+          "end": 167.45
+        },
+        {
+          "id": "w640",
+          "text": "quebrando",
+          "start": 167.45,
+          "end": 167.88
+        },
+        {
+          "id": "w641",
+          "text": "o",
+          "start": 167.88,
+          "end": 167.93
+        },
+        {
+          "id": "w642",
+          "text": "caso",
+          "start": 167.93,
+          "end": 168.2
+        },
+        {
+          "id": "w643",
+          "text": "XYZ.",
+          "start": 168.2,
+          "end": 168.6
+        }
+      ],
+      "text": "está quebrando o caso XYZ."
+    },
+    {
+      "start": 168.78,
+      "end": 169.99,
+      "words": [
+        {
+          "id": "w644",
+          "text": "E",
+          "start": 168.78,
+          "end": 168.78
+        },
+        {
+          "id": "w645",
+          "text": "aí",
+          "start": 168.78,
+          "end": 168.88
+        },
+        {
+          "id": "w646",
+          "text": "talvez",
+          "start": 168.88,
+          "end": 169.12
+        },
+        {
+          "id": "w647",
+          "text": "você",
+          "start": 169.12,
+          "end": 169.44
+        },
+        {
+          "id": "w648",
+          "text": "vai",
+          "start": 169.44,
+          "end": 169.52
+        },
+        {
+          "id": "w649",
+          "text": "perceber",
+          "start": 169.52,
+          "end": 169.99
+        }
+      ],
+      "text": "E aí talvez você vai perceber"
+    },
+    {
+      "start": 169.99,
+      "end": 170.96,
+      "words": [
+        {
+          "id": "w650",
+          "text": "que",
+          "start": 169.99,
+          "end": 170.16
+        },
+        {
+          "id": "w651",
+          "text": "essa",
+          "start": 170.16,
+          "end": 170.39
+        },
+        {
+          "id": "w652",
+          "text": "regra",
+          "start": 170.39,
+          "end": 170.67
+        },
+        {
+          "id": "w653",
+          "text": "não",
+          "start": 170.67,
+          "end": 170.84
+        },
+        {
+          "id": "w654",
+          "text": "é",
+          "start": 170.84,
+          "end": 170.9
+        },
+        {
+          "id": "w655",
+          "text": "a",
+          "start": 170.9,
+          "end": 170.96
+        }
+      ],
+      "text": "que essa regra não é a"
+    },
+    {
+      "start": 170.96,
+      "end": 171.46,
+      "words": [
+        {
+          "id": "w656",
+          "text": "correta.",
+          "start": 170.96,
+          "end": 171.46
+        }
+      ],
+      "text": "correta."
+    },
+    {
+      "start": 171.78,
+      "end": 172.45,
+      "words": [
+        {
+          "id": "w657",
+          "text": "E",
+          "start": 171.78,
+          "end": 171.78
+        },
+        {
+          "id": "w658",
+          "text": "que",
+          "start": 171.78,
+          "end": 171.78
+        },
+        {
+          "id": "w659",
+          "text": "o",
+          "start": 171.78,
+          "end": 171.82
+        },
+        {
+          "id": "w660",
+          "text": "teu",
+          "start": 171.82,
+          "end": 171.88
+        },
+        {
+          "id": "w661",
+          "text": "time",
+          "start": 171.88,
+          "end": 172
+        },
+        {
+          "id": "w662",
+          "text": "jurídico",
+          "start": 172,
+          "end": 172.45
+        }
+      ],
+      "text": "E que o teu time jurídico"
+    },
+    {
+      "start": 172.45,
+      "end": 173.55,
+      "words": [
+        {
+          "id": "w663",
+          "text": "poderia",
+          "start": 172.45,
+          "end": 172.69
+        },
+        {
+          "id": "w664",
+          "text": "ter",
+          "start": 172.69,
+          "end": 172.83
+        },
+        {
+          "id": "w665",
+          "text": "escrito",
+          "start": 172.83,
+          "end": 173.15
+        },
+        {
+          "id": "w666",
+          "text": "ela",
+          "start": 173.15,
+          "end": 173.29
+        },
+        {
+          "id": "w667",
+          "text": "de",
+          "start": 173.29,
+          "end": 173.38
+        },
+        {
+          "id": "w668",
+          "text": "uma",
+          "start": 173.38,
+          "end": 173.55
+        }
+      ],
+      "text": "poderia ter escrito ela de uma"
+    },
+    {
+      "start": 173.55,
+      "end": 174.46,
+      "words": [
+        {
+          "id": "w669",
+          "text": "maneira",
+          "start": 173.55,
+          "end": 173.84
+        },
+        {
+          "id": "w670",
+          "text": "diferente.",
+          "start": 173.84,
+          "end": 174.46
+        }
+      ],
+      "text": "maneira diferente."
+    },
+    {
+      "start": 174.64,
+      "end": 175.83,
+      "words": [
+        {
+          "id": "w671",
+          "text": "Essa",
+          "start": 174.64,
+          "end": 174.64
+        },
+        {
+          "id": "w672",
+          "text": "é",
+          "start": 174.64,
+          "end": 174.64
+        },
+        {
+          "id": "w673",
+          "text": "o",
+          "start": 174.64,
+          "end": 174.74
+        },
+        {
+          "id": "w674",
+          "text": "tamanho",
+          "start": 174.74,
+          "end": 174.95
+        },
+        {
+          "id": "w675",
+          "text": "da",
+          "start": 174.95,
+          "end": 175.3
+        },
+        {
+          "id": "w676",
+          "text": "importância",
+          "start": 175.3,
+          "end": 175.83
+        }
+      ],
+      "text": "Essa é o tamanho da importância"
+    },
+    {
+      "start": 175.83,
+      "end": 177.06,
+      "words": [
+        {
+          "id": "w677",
+          "text": "de",
+          "start": 175.83,
+          "end": 175.96
+        },
+        {
+          "id": "w678",
+          "text": "você",
+          "start": 175.96,
+          "end": 176.23
+        },
+        {
+          "id": "w679",
+          "text": "ter",
+          "start": 176.23,
+          "end": 176.43
+        },
+        {
+          "id": "w680",
+          "text": "evals.",
+          "start": 176.43,
+          "end": 177.06
+        }
+      ],
+      "text": "de você ter evals."
+    },
+    {
+      "start": 177.14,
+      "end": 178.19,
+      "words": [
+        {
+          "id": "w681",
+          "text": "O",
+          "start": 177.14,
+          "end": 177.24
+        },
+        {
+          "id": "w682",
+          "text": "teu",
+          "start": 177.24,
+          "end": 177.31
+        },
+        {
+          "id": "w683",
+          "text": "time",
+          "start": 177.31,
+          "end": 177.8
+        },
+        {
+          "id": "w684",
+          "text": "passa",
+          "start": 177.8,
+          "end": 177.88
+        },
+        {
+          "id": "w685",
+          "text": "de",
+          "start": 177.88,
+          "end": 178
+        },
+        {
+          "id": "w686",
+          "text": "ter",
+          "start": 178,
+          "end": 178.19
+        }
+      ],
+      "text": "O teu time passa de ter"
+    },
+    {
+      "start": 178.19,
+      "end": 179.94,
+      "words": [
+        {
+          "id": "w687",
+          "text": "uma",
+          "start": 178.19,
+          "end": 178.38
+        },
+        {
+          "id": "w688",
+          "text": "posição",
+          "start": 178.38,
+          "end": 178.91
+        },
+        {
+          "id": "w689",
+          "text": "subjetiva",
+          "start": 178.91,
+          "end": 179.4
+        },
+        {
+          "id": "w690",
+          "text": "e",
+          "start": 179.4,
+          "end": 179.46
+        },
+        {
+          "id": "w691",
+          "text": "de",
+          "start": 179.46,
+          "end": 179.62
+        },
+        {
+          "id": "w692",
+          "text": "poder",
+          "start": 179.62,
+          "end": 179.94
+        }
+      ],
+      "text": "uma posição subjetiva e de poder"
+    },
+    {
+      "start": 179.94,
+      "end": 181.46,
+      "words": [
+        {
+          "id": "w693",
+          "text": "cometer",
+          "start": 179.94,
+          "end": 180.34
+        },
+        {
+          "id": "w694",
+          "text": "erros",
+          "start": 180.34,
+          "end": 180.65
+        },
+        {
+          "id": "w695",
+          "text": "o",
+          "start": 180.65,
+          "end": 180.71
+        },
+        {
+          "id": "w696",
+          "text": "tempo",
+          "start": 180.71,
+          "end": 181.03
+        },
+        {
+          "id": "w697",
+          "text": "todo",
+          "start": 181.03,
+          "end": 181.4
+        },
+        {
+          "id": "w698",
+          "text": "e",
+          "start": 181.4,
+          "end": 181.46
+        }
+      ],
+      "text": "cometer erros o tempo todo e"
+    },
+    {
+      "start": 181.46,
+      "end": 182.88,
+      "words": [
+        {
+          "id": "w699",
+          "text": "ser",
+          "start": 181.46,
+          "end": 181.64
+        },
+        {
+          "id": "w700",
+          "text": "super",
+          "start": 181.64,
+          "end": 181.94
+        },
+        {
+          "id": "w701",
+          "text": "reativo",
+          "start": 181.94,
+          "end": 182.36
+        },
+        {
+          "id": "w702",
+          "text": "para",
+          "start": 182.54,
+          "end": 182.64
+        },
+        {
+          "id": "w703",
+          "text": "de",
+          "start": 182.64,
+          "end": 182.67
+        },
+        {
+          "id": "w704",
+          "text": "fato",
+          "start": 182.67,
+          "end": 182.88
+        }
+      ],
+      "text": "ser super reativo para de fato"
+    },
+    {
+      "start": 182.88,
+      "end": 184.01,
+      "words": [
+        {
+          "id": "w705",
+          "text": "ter",
+          "start": 182.88,
+          "end": 183.18
+        },
+        {
+          "id": "w706",
+          "text": "uma",
+          "start": 183.18,
+          "end": 183.21
+        },
+        {
+          "id": "w707",
+          "text": "direção",
+          "start": 183.21,
+          "end": 183.57
+        },
+        {
+          "id": "w708",
+          "text": "para",
+          "start": 183.57,
+          "end": 183.75
+        },
+        {
+          "id": "w709",
+          "text": "onde",
+          "start": 183.75,
+          "end": 183.96
+        },
+        {
+          "id": "w710",
+          "text": "o",
+          "start": 183.96,
+          "end": 184.01
+        }
+      ],
+      "text": "ter uma direção para onde o"
+    },
+    {
+      "start": 184.01,
+      "end": 185.61,
+      "words": [
+        {
+          "id": "w711",
+          "text": "produto",
+          "start": 184.01,
+          "end": 184.37
+        },
+        {
+          "id": "w712",
+          "text": "de",
+          "start": 184.37,
+          "end": 184.59
+        },
+        {
+          "id": "w713",
+          "text": "inteligência",
+          "start": 184.59,
+          "end": 185.09
+        },
+        {
+          "id": "w714",
+          "text": "artificial",
+          "start": 185.09,
+          "end": 185.61
+        }
+      ],
+      "text": "produto de inteligência artificial"
+    },
+    {
+      "start": 185.61,
+      "end": 186.42,
+      "words": [
+        {
+          "id": "w715",
+          "text": "pode",
+          "start": 185.61,
+          "end": 185.82
+        },
+        {
+          "id": "w716",
+          "text": "evoluir.",
+          "start": 185.82,
+          "end": 186.42
+        }
+      ],
+      "text": "pode evoluir."
+    },
+    {
+      "start": 186.6,
+      "end": 188.27,
+      "words": [
+        {
+          "id": "w717",
+          "text": "Esse",
+          "start": 186.6,
+          "end": 186.71
+        },
+        {
+          "id": "w718",
+          "text": "assunto",
+          "start": 186.71,
+          "end": 187.11
+        },
+        {
+          "id": "w719",
+          "text": "é",
+          "start": 187.11,
+          "end": 187.16
+        },
+        {
+          "id": "w720",
+          "text": "gigantesco,",
+          "start": 187.16,
+          "end": 187.72
+        },
+        {
+          "id": "w721",
+          "text": "tem",
+          "start": 187.72,
+          "end": 187.87
+        },
+        {
+          "id": "w722",
+          "text": "muita",
+          "start": 187.87,
+          "end": 188.27
+        }
+      ],
+      "text": "Esse assunto é gigantesco, tem muita"
+    },
+    {
+      "start": 188.27,
+      "end": 189.79,
+      "words": [
+        {
+          "id": "w723",
+          "text": "coisa",
+          "start": 188.27,
+          "end": 188.39
+        },
+        {
+          "id": "w724",
+          "text": "acontecendo",
+          "start": 188.39,
+          "end": 188.98
+        },
+        {
+          "id": "w725",
+          "text": "no",
+          "start": 188.98,
+          "end": 189.06
+        },
+        {
+          "id": "w726",
+          "text": "Vale",
+          "start": 189.06,
+          "end": 189.3
+        },
+        {
+          "id": "w727",
+          "text": "do",
+          "start": 189.3,
+          "end": 189.36
+        },
+        {
+          "id": "w728",
+          "text": "Silício",
+          "start": 189.36,
+          "end": 189.79
+        }
+      ],
+      "text": "coisa acontecendo no Vale do Silício"
+    },
+    {
+      "start": 189.79,
+      "end": 191.11,
+      "words": [
+        {
+          "id": "w729",
+          "text": "em",
+          "start": 189.79,
+          "end": 189.9
+        },
+        {
+          "id": "w730",
+          "text": "volta",
+          "start": 189.9,
+          "end": 190.16
+        },
+        {
+          "id": "w731",
+          "text": "desse",
+          "start": 190.16,
+          "end": 190.38
+        },
+        {
+          "id": "w732",
+          "text": "assunto",
+          "start": 190.38,
+          "end": 190.66
+        },
+        {
+          "id": "w733",
+          "text": "nesse",
+          "start": 190.66,
+          "end": 190.86
+        },
+        {
+          "id": "w734",
+          "text": "exato",
+          "start": 190.86,
+          "end": 191.11
+        }
+      ],
+      "text": "em volta desse assunto nesse exato"
+    },
+    {
+      "start": 191.11,
+      "end": 191.52,
+      "words": [
+        {
+          "id": "w735",
+          "text": "momento.",
+          "start": 191.11,
+          "end": 191.52
+        }
+      ],
+      "text": "momento."
+    },
+    {
+      "start": 191.7,
+      "end": 193.09,
+      "words": [
+        {
+          "id": "w736",
+          "text": "Mas",
+          "start": 191.7,
+          "end": 191.8
+        },
+        {
+          "id": "w737",
+          "text": "sinceramente",
+          "start": 191.8,
+          "end": 192.37
+        },
+        {
+          "id": "w738",
+          "text": "a",
+          "start": 192.37,
+          "end": 192.42
+        },
+        {
+          "id": "w739",
+          "text": "Anthropic",
+          "start": 192.42,
+          "end": 192.87
+        },
+        {
+          "id": "w740",
+          "text": "tem",
+          "start": 192.87,
+          "end": 193.04
+        },
+        {
+          "id": "w741",
+          "text": "o",
+          "start": 193.04,
+          "end": 193.09
+        }
+      ],
+      "text": "Mas sinceramente a Anthropic tem o"
+    },
+    {
+      "start": 193.09,
+      "end": 194.6,
+      "words": [
+        {
+          "id": "w742",
+          "text": "que",
+          "start": 193.09,
+          "end": 193.25
+        },
+        {
+          "id": "w743",
+          "text": "eu",
+          "start": 193.25,
+          "end": 193.47
+        },
+        {
+          "id": "w744",
+          "text": "considero",
+          "start": 193.47,
+          "end": 193.87
+        },
+        {
+          "id": "w745",
+          "text": "um",
+          "start": 193.87,
+          "end": 193.98
+        },
+        {
+          "id": "w746",
+          "text": "dos",
+          "start": 193.98,
+          "end": 194.18
+        },
+        {
+          "id": "w747",
+          "text": "melhores",
+          "start": 194.18,
+          "end": 194.6
+        }
+      ],
+      "text": "que eu considero um dos melhores"
+    },
+    {
+      "start": 194.6,
+      "end": 196.56,
+      "words": [
+        {
+          "id": "w748",
+          "text": "materiais",
+          "start": 194.6,
+          "end": 195.11
+        },
+        {
+          "id": "w749",
+          "text": "a",
+          "start": 195.11,
+          "end": 195.2
+        },
+        {
+          "id": "w750",
+          "text": "respeito",
+          "start": 195.2,
+          "end": 195.61
+        },
+        {
+          "id": "w751",
+          "text": "desse",
+          "start": 195.61,
+          "end": 195.89
+        },
+        {
+          "id": "w752",
+          "text": "assunto.",
+          "start": 195.89,
+          "end": 196.56
+        }
+      ],
+      "text": "materiais a respeito desse assunto."
+    },
+    {
+      "start": 196.74,
+      "end": 197.66,
+      "words": [
+        {
+          "id": "w753",
+          "text": "Então",
+          "start": 196.74,
+          "end": 196.74
+        },
+        {
+          "id": "w754",
+          "text": "se",
+          "start": 196.74,
+          "end": 196.84
+        },
+        {
+          "id": "w755",
+          "text": "você",
+          "start": 196.84,
+          "end": 196.88
+        },
+        {
+          "id": "w756",
+          "text": "quiser",
+          "start": 196.88,
+          "end": 197.39
+        },
+        {
+          "id": "w757",
+          "text": "ver",
+          "start": 197.39,
+          "end": 197.42
+        },
+        {
+          "id": "w758",
+          "text": "esse",
+          "start": 197.42,
+          "end": 197.66
+        }
+      ],
+      "text": "Então se você quiser ver esse"
+    },
+    {
+      "start": 197.66,
+      "end": 199.3,
+      "words": [
+        {
+          "id": "w759",
+          "text": "material",
+          "start": 197.66,
+          "end": 198.14
+        },
+        {
+          "id": "w760",
+          "text": "oficial",
+          "start": 198.14,
+          "end": 198.56
+        },
+        {
+          "id": "w761",
+          "text": "da",
+          "start": 198.56,
+          "end": 198.79
+        },
+        {
+          "id": "w762",
+          "text": "Anthropic,",
+          "start": 198.79,
+          "end": 199.3
+        }
+      ],
+      "text": "material oficial da Anthropic,"
+    },
+    {
+      "start": 199.3,
+      "end": 200.74,
+      "words": [
+        {
+          "id": "w763",
+          "text": "comenta",
+          "start": 199.3,
+          "end": 199.6
+        },
+        {
+          "id": "w764",
+          "text": "aqui",
+          "start": 199.6,
+          "end": 199.77
+        },
+        {
+          "id": "w765",
+          "text": "embaixo",
+          "start": 199.77,
+          "end": 200.1
+        },
+        {
+          "id": "w766",
+          "text": "evals",
+          "start": 200.1,
+          "end": 200.54
+        },
+        {
+          "id": "w767",
+          "text": "que",
+          "start": 200.54,
+          "end": 200.64
+        },
+        {
+          "id": "w768",
+          "text": "eu",
+          "start": 200.64,
+          "end": 200.74
+        }
+      ],
+      "text": "comenta aqui embaixo evals que eu"
+    },
+    {
+      "start": 200.74,
+      "end": 201.64,
+      "words": [
+        {
+          "id": "w769",
+          "text": "vou",
+          "start": 200.74,
+          "end": 200.81
+        },
+        {
+          "id": "w770",
+          "text": "mandar",
+          "start": 200.81,
+          "end": 201.02
+        },
+        {
+          "id": "w771",
+          "text": "o",
+          "start": 201.02,
+          "end": 201.05
+        },
+        {
+          "id": "w772",
+          "text": "link",
+          "start": 201.05,
+          "end": 201.19
+        },
+        {
+          "id": "w773",
+          "text": "desse",
+          "start": 201.19,
+          "end": 201.36
+        },
+        {
+          "id": "w774",
+          "text": "material",
+          "start": 201.36,
+          "end": 201.64
+        }
+      ],
+      "text": "vou mandar o link desse material"
+    },
+    {
+      "start": 201.64,
+      "end": 202.06,
+      "words": [
+        {
+          "id": "w775",
+          "text": "para",
+          "start": 201.64,
+          "end": 201.78
+        },
+        {
+          "id": "w776",
+          "text": "você.",
+          "start": 201.78,
+          "end": 202.06
+        }
+      ],
+      "text": "para você."
+    }
+  ]
+}

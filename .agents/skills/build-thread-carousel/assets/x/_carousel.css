@@ -1,34 +1,49 @@
 /* ============================================================
-   Thread-derived Reel stills (X mode)
-   Self-sufficient stylesheet: dark mode, fixed 1080×1350 (4:5),
-   a faithful X clone.
+   Carrossel de IG derivado de thread. Chrome do modo X.
+
+   Variante escura da Miyakodo, também usada como still de Reel.
+   Fundo dark brown, texto off-white. A regra é design/identity.md.
+   Se um valor divergir, vale identity.md.
+
+   Famílias: Instrument Serif nos títulos, Poppins no corpo.
+   Arquivos canônicos: design/fontes/instrument-serif.zip e
+   design/fontes/poppins.zip. O @import entrega as mesmas
+   famílias ao navegador. Não copiar as fontes para fora de
+   design/fontes/. Instrument Serif na entrega tem Regular e
+   Italic, sem negrito.
+
+   Logo do cabeçalho:
+   design/logo/png/horizontal/MIYAKODO_HORIZONTAL3.png
+   (off-white #f6f4ee). O número não é a mesma cor no PNG e no
+   PDF. A tabela está em design/identity.md.
+
+   Slide 1080×1350 (4:5). Também na paleta, sem papel neste
+   chrome: apoio #c1c167, apoio #d39ca7. Os quatro de apoio não
+   têm nome.
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Poppins:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 :root {
   --slide-w:     1080px;
   --slide-pad-x: 80px;
   --slide-pad-y: 72px;
 
-  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
-               Roboto, Helvetica, Arial, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular,
-               "SF Mono", Menlo, monospace;
+  --font-serif: "Instrument Serif", "Times New Roman", Times, serif;
+  --font-sans: "Poppins", sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
 
-  /* Dark mode */
-  --reel-bg:   oklch(0.06 0 0);   /* near black */
-  --reel-ink:  oklch(0.95 0 0);   /* near white */
-  --reel-mute: oklch(0.60 0 0);   /* gray for bio/handle */
-  --reel-rule: oklch(0.20 0 0);   /* media placeholder */
-
-  --seal:      oklch(0.68 0.12 28);  /* more vibrant accent on dark */
-  --seal-soft: oklch(0.18 0.05 28);  /* inline code bg */
-  --tw-blue:   #1d9bf0;
+  /* Papéis deste chrome. Paleta completa em design/identity.md. */
+  --slide-bg: #280e03; /* dark brown */
+  --ink: #f6f4ee;       /* off-white */
+  --mute: #aba199;      /* cinza */
+  --accent: #db3c05;    /* apoio */
+  --chip: #b6cadb;      /* apoio */
+  --media-bg: #1a3010;  /* verde */
 }
 
 body.carrossel-preview {
-  background: oklch(0.12 0 0);
+  background: #aba199; /* cinza, só a prévia no navegador */
   padding: 40px 0;
   min-height: 100vh;
 }
@@ -37,7 +52,7 @@ body.carrossel-preview {
   box-sizing: border-box;
   width: var(--slide-w);
   height: 1350px;
-  background: var(--reel-bg);
+  background: var(--slide-bg);
   margin: 0 auto 40px;
   overflow: hidden;
   position: relative;
@@ -45,12 +60,12 @@ body.carrossel-preview {
   flex-direction: column;
   justify-content: center;
   padding: var(--slide-pad-y) var(--slide-pad-x);
-  color: var(--reel-ink);
+  color: var(--ink);
   font-family: var(--font-sans);
 }
 
 /* ============================================================
-   Profile header - structurally identical to the carousel,
+   Profile header. Same structure as the default mode,
    dark palette.
    ============================================================ */
 
@@ -63,26 +78,26 @@ body.carrossel-preview {
 .slide .name-line {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
+}
+
+.slide .logo {
+  height: 48px;
+  width: auto;
+  display: block;
+  flex-shrink: 0;
 }
 
 .slide .display-name {
-  color: var(--reel-ink);
+  color: var(--ink);
   font-size: 32px;
   font-weight: 700;
   line-height: 1.1;
   letter-spacing: -0.01em;
 }
 
-.slide .verified {
-  width: 26px;
-  height: 26px;
-  flex-shrink: 0;
-  transform: translateY(1px);
-}
-
 .slide .bio {
-  color: var(--reel-mute);
+  color: var(--mute);
   font-size: 22px;
   font-weight: 400;
   line-height: 1.25;
@@ -90,29 +105,30 @@ body.carrossel-preview {
 }
 
 /* ============================================================
-   Tweet text - dark mode.
+   Tweet text.
    ============================================================ */
 
 .slide .tweet-text {
-  color: var(--reel-ink);
+  color: var(--ink);
   margin: 0;
 }
 
 .slide .tweet-text strong, .slide .tweet-text b { font-weight: 700; }
 .slide .tweet-text em, .slide .tweet-text i    { font-style: italic; }
-.slide .tweet-text a { color: var(--seal); text-decoration: none; }
+.slide .tweet-text a { color: var(--accent); text-decoration: none; }
 .slide .tweet-text code {
   font-family: var(--font-mono);
   font-size: 0.92em;
-  background: var(--seal-soft);
+  color: #280e03;
+  background: var(--chip);
   padding: 2px 8px;
   border-radius: 4px;
 }
 .slide .tweet-text blockquote {
   margin: 0.4em 0;
   padding-left: 16px;
-  border-left: 3px solid var(--seal);
-  color: var(--reel-mute);
+  border-left: 3px solid var(--accent);
+  color: var(--mute);
 }
 .slide .tweet-text ul, .slide .tweet-text ol { margin: 0.4em 0; padding-left: 1.4em; }
 .slide .tweet-text li { margin: 0.18em 0; }
@@ -127,7 +143,7 @@ body.carrossel-preview {
   height: 360px;
   border-radius: 18px;
   overflow: hidden;
-  background: var(--reel-rule);
+  background: var(--media-bg);
 }
 
 .slide .tweet-media img {

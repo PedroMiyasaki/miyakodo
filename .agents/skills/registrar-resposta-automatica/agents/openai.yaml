@@ -1,0 +1,4 @@
+interface:
+  display_name: "Registrar resposta automática"
+  short_description: "Registra a resposta no markdown no formato da automação"
+  default_prompt: "Use $registrar-resposta-automatica para registrar as respostas do post no formato exigido do respostas-comentarios.md."

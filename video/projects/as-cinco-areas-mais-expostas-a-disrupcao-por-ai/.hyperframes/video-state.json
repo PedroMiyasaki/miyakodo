@@ -1,0 +1,323 @@
+{
+  "version": 1,
+  "historyId": "97277466-0755-49c9-92bc-dea8b2fe63de",
+  "currentRevision": "0b318513-b0cc-40b5-b62c-698b713999cb",
+  "pendingChanges": false,
+  "files": {
+    "assets/__pycache__/figuras.cpython-314.pyc": {
+      "hash": "4fc9d13e2d5710a1736a90f68fb4e42903b783cdd208a7285f27d6f2ec83b5ff",
+      "content": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\97277466-0755-49c9-92bc-dea8b2fe63de\\blobs\\4f\\4fc9d13e2d5710a1736a90f68fb4e42903b783cdd208a7285f27d6f2ec83b5ff"
+    },
+    "assets/card-01.png": {
+      "hash": "7f068314cbcf1294fbbcfcf8bb7fe39696fa6ea13ffde3f23b202c72471f7b2b",
+      "content": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\97277466-0755-49c9-92bc-dea8b2fe63de\\blobs\\7f\\7f068314cbcf1294fbbcfcf8bb7fe39696fa6ea13ffde3f23b202c72471f7b2b"
+    },
+    "assets/card-02.png": {
+      "hash": "c3af3a16cedfca88183e051c89b8f0dacb02a10c3de97ff901e151032b3dae0b",
+      "content": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\97277466-0755-49c9-92bc-dea8b2fe63de\\blobs\\c3\\c3af3a16cedfca88183e051c89b8f0dacb02a10c3de97ff901e151032b3dae0b"
+    },
+    "assets/card-03.png": {
+      "hash": "1ba3bb8f6fc0818765c0309bd82a35d4f8538375bd352acf1cb68dcc35462a53",
+      "content": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\97277466-0755-49c9-92bc-dea8b2fe63de\\blobs\\1b\\1ba3bb8f6fc0818765c0309bd82a35d4f8538375bd352acf1cb68dcc35462a53"
+    },
+    "assets/card-04.png": {
+      "hash": "b95f5118e51455b8115a15c2b4729c77e695b815cddb977e8702786ccec9f7a2",
+      "content": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\97277466-0755-49c9-92bc-dea8b2fe63de\\blobs\\b9\\b95f5118e51455b8115a15c2b4729c77e695b815cddb977e8702786ccec9f7a2"
+    },
+    "assets/card-05.png": {
+      "hash": "2285a09cc811a76b3985af8fe68398ef49b9b1a80915c1fa415480286d66022c",
+      "content": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\97277466-0755-49c9-92bc-dea8b2fe63de\\blobs\\22\\2285a09cc811a76b3985af8fe68398ef49b9b1a80915c1fa415480286d66022c"
+    },
+    "assets/figuras.py": {
+      "hash": "be286b538d09a371c682b526376c2691bddb2387fe5e4622aba5cd35583acc3a",
+      "content": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\97277466-0755-49c9-92bc-dea8b2fe63de\\blobs\\be\\be286b538d09a371c682b526376c2691bddb2387fe5e4622aba5cd35583acc3a"
+    },
+    "assets/fonts/Bricolage-LICENSE.txt": {
+      "hash": "923f4ddf0fd39f9b7794ab0df7332f3d95dc43e8ad7ec2289d6d9e8491177f51",
+      "content": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\97277466-0755-49c9-92bc-dea8b2fe63de\\blobs\\92\\923f4ddf0fd39f9b7794ab0df7332f3d95dc43e8ad7ec2289d6d9e8491177f51"
+    },
+    "assets/fonts/Inter-LICENSE.txt": {
+      "hash": "3b0a5fca3d17942cde889069889dedbbbd075e9b599968c82a95f4d944e9b345",
+      "content": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\97277466-0755-49c9-92bc-dea8b2fe63de\\blobs\\3b\\3b0a5fca3d17942cde889069889dedbbbd075e9b599968c82a95f4d944e9b345"
+    },
+    "assets/fonts/bricolage-grotesque-latin-wght-normal.woff2": {
+      "hash": "a97804dc9fbe5fc972a08018c5eda4dab7ef2346f64c57e61419d05e6de4ea1c",
+      "content": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\97277466-0755-49c9-92bc-dea8b2fe63de\\blobs\\a9\\a97804dc9fbe5fc972a08018c5eda4dab7ef2346f64c57e61419d05e6de4ea1c"
+    },
+    "assets/fonts/inter-latin-wght-normal.woff2": {
+      "hash": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62",
+      "content": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\97277466-0755-49c9-92bc-dea8b2fe63de\\blobs\\31\\3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62"
+    },
+    "assets/gerar_banners.py": {
+      "hash": "e5f49802e8e87983c6b10ebbba1b7517dc22574a2d0364660295e0895943b3b3",
+      "content": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\97277466-0755-49c9-92bc-dea8b2fe63de\\blobs\\e5\\e5f49802e8e87983c6b10ebbba1b7517dc22574a2d0364660295e0895943b3b3"
+    },
+    "assets/html/cartao-01.html": {
+      "hash": "d675a4c9301c6bfd16d69b4cf0c657866c2fe150470f625be511c3fcab67668d",
+      "content": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\97277466-0755-49c9-92bc-dea8b2fe63de\\blobs\\d6\\d675a4c9301c6bfd16d69b4cf0c657866c2fe150470f625be511c3fcab67668d"
+    },
+    "assets/html/cartao-02.html": {
+      "hash": "c9839f635d3676e18208a9ece5a9c6824f4def3d443143d9b4dd8cf0daa82a66",
+      "content": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\97277466-0755-49c9-92bc-dea8b2fe63de\\blobs\\c9\\c9839f635d3676e18208a9ece5a9c6824f4def3d443143d9b4dd8cf0daa82a66"
+    },
+    "assets/html/cartao-03.html": {
+      "hash": "f6d330d76dbb6300e4dabd81f7d9e4eac6424d586f985d17a3ef70dfd196de73",
+      "content": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\97277466-0755-49c9-92bc-dea8b2fe63de\\blobs\\f6\\f6d330d76dbb6300e4dabd81f7d9e4eac6424d586f985d17a3ef70dfd196de73"
+    },
+    "assets/html/cartao-04.html": {
+      "hash": "f36166359e9edd952b2c0f1a5c95c2699ca57a6e767ed2a36d0cfd49910a38cf",
+      "content": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\97277466-0755-49c9-92bc-dea8b2fe63de\\blobs\\f3\\f36166359e9edd952b2c0f1a5c95c2699ca57a6e767ed2a36d0cfd49910a38cf"
+    },
+    "assets/html/cartao-05.html": {
+      "hash": "aa1464875c778f42ed79f9fa2235200e47a0c1d8d7ad334e334b6d209ac7cb6f",
+      "content": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\97277466-0755-49c9-92bc-dea8b2fe63de\\blobs\\aa\\aa1464875c778f42ed79f9fa2235200e47a0c1d8d7ad334e334b6d209ac7cb6f"
+    },
+    "assets/html/sequencia.html": {
+      "hash": "c82f2f45d9a67d41c08138e5e688c8c5fa2d55b002a4e847909248adc1fce0c1",
+      "content": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\97277466-0755-49c9-92bc-dea8b2fe63de\\blobs\\c8\\c82f2f45d9a67d41c08138e5e688c8c5fa2d55b002a4e847909248adc1fce0c1"
+    },
+    "assets/html/take-01.html": {
+      "hash": "dc8b5151c2bb6f1b0318a615c32f0caadce67a4debfb6e28ebb1041cfd777523",
+      "content": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\97277466-0755-49c9-92bc-dea8b2fe63de\\blobs\\dc\\dc8b5151c2bb6f1b0318a615c32f0caadce67a4debfb6e28ebb1041cfd777523"
+    },
+    "assets/html/take-02.html": {
+      "hash": "52f29a74ff822ecca8bcd85ed4c9713306610a2ba831eec636ca8a4095509917",
+      "content": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\97277466-0755-49c9-92bc-dea8b2fe63de\\blobs\\52\\52f29a74ff822ecca8bcd85ed4c9713306610a2ba831eec636ca8a4095509917"
+    },
+    "assets/html/take-03.html": {
+      "hash": "c9f46fd93352a5e1ece89fe3d47c1360b07a3d77c25b505cdad87fd461e4fd3d",
+      "content": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\97277466-0755-49c9-92bc-dea8b2fe63de\\blobs\\c9\\c9f46fd93352a5e1ece89fe3d47c1360b07a3d77c25b505cdad87fd461e4fd3d"
+    },
+    "assets/html/take-04.html": {
+      "hash": "82cb35d3276a1c88e39634325840670aa9a63519c448d959a22988f018a51e89",
+      "content": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\97277466-0755-49c9-92bc-dea8b2fe63de\\blobs\\82\\82cb35d3276a1c88e39634325840670aa9a63519c448d959a22988f018a51e89"
+    },
+    "assets/html/take-05.html": {
+      "hash": "b1b510fdcbd05413d03781a29f90faafd070f93c360c75de59415434314c89b3",
+      "content": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\97277466-0755-49c9-92bc-dea8b2fe63de\\blobs\\b1\\b1b510fdcbd05413d03781a29f90faafd070f93c360c75de59415434314c89b3"
+    },
+    "assets/html/take-06.html": {
+      "hash": "327f7b5ba03d581bfa9769cc3bbc14ed9aaed114ce3692c1468350f0c5eca88b",
+      "content": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\97277466-0755-49c9-92bc-dea8b2fe63de\\blobs\\32\\327f7b5ba03d581bfa9769cc3bbc14ed9aaed114ce3692c1468350f0c5eca88b"
+    },
+    "assets/html/take-07.html": {
+      "hash": "8d51459adf91e51f2f064e794ce54ad9b078b4e0186079a1f3d5e2d6a63220ab",
+      "content": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\97277466-0755-49c9-92bc-dea8b2fe63de\\blobs\\8d\\8d51459adf91e51f2f064e794ce54ad9b078b4e0186079a1f3d5e2d6a63220ab"
+    },
+    "index.html": {
+      "hash": "20a1ad7b31712f848701f71c05a01a076d57a10f8957bb5225ce4977bb49b44f",
+      "content": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\97277466-0755-49c9-92bc-dea8b2fe63de\\blobs\\20\\20a1ad7b31712f848701f71c05a01a076d57a10f8957bb5225ce4977bb49b44f"
+    },
+    "plano/sequencia.png": {
+      "hash": "740761551649b49306a48b39f121f31a2b0a8a8dd61aadfbc8ee761236c2bc6b",
+      "content": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\97277466-0755-49c9-92bc-dea8b2fe63de\\blobs\\74\\740761551649b49306a48b39f121f31a2b0a8a8dd61aadfbc8ee761236c2bc6b"
+    },
+    "plano/take-02.png": {
+      "hash": "b98ff2840b9b14fd4e1386d1047afc08508d0a5b950c1a1969021059b7aeda0f",
+      "content": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\97277466-0755-49c9-92bc-dea8b2fe63de\\blobs\\b9\\b98ff2840b9b14fd4e1386d1047afc08508d0a5b950c1a1969021059b7aeda0f"
+    },
+    "plano/take-03.png": {
+      "hash": "235c57e2d51b23dcdf05ba4a1b65e39f70bf1e82e66c6b757d04e52409111756",
+      "content": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\97277466-0755-49c9-92bc-dea8b2fe63de\\blobs\\23\\235c57e2d51b23dcdf05ba4a1b65e39f70bf1e82e66c6b757d04e52409111756"
+    },
+    "plano/take-04.png": {
+      "hash": "07f17a9200cf3b5161d66202b0e173a921294784170db2e4debfb2c93f4a84dd",
+      "content": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\97277466-0755-49c9-92bc-dea8b2fe63de\\blobs\\07\\07f17a9200cf3b5161d66202b0e173a921294784170db2e4debfb2c93f4a84dd"
+    },
+    "plano/take-05.png": {
+      "hash": "e4d6916a0bbfc00ca3ffbee35ef3650faa593053e491fbb84e275bde30009433",
+      "content": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\97277466-0755-49c9-92bc-dea8b2fe63de\\blobs\\e4\\e4d6916a0bbfc00ca3ffbee35ef3650faa593053e491fbb84e275bde30009433"
+    },
+    "plano/take-06.png": {
+      "hash": "17b26c6d06f12a9d1ec4bf4a51d91755a6a30e611372fdcafea8211c303b78ea",
+      "content": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\97277466-0755-49c9-92bc-dea8b2fe63de\\blobs\\17\\17b26c6d06f12a9d1ec4bf4a51d91755a6a30e611372fdcafea8211c303b78ea"
+    },
+    "plano/take-07.png": {
+      "hash": "b8e226e24ad28c915043a5fe1b2aeb6628fa9f3e1d9a81dde262ab98ab3eb306",
+      "content": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\97277466-0755-49c9-92bc-dea8b2fe63de\\blobs\\b8\\b8e226e24ad28c915043a5fe1b2aeb6628fa9f3e1d9a81dde262ab98ab3eb306"
+    },
+    "plano.md": {
+      "hash": "30804ce3f27f08d786541a6febc64afc60602e6334aff3ba3817639d6e37abf9",
+      "content": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\97277466-0755-49c9-92bc-dea8b2fe63de\\blobs\\30\\30804ce3f27f08d786541a6febc64afc60602e6334aff3ba3817639d6e37abf9"
+    },
+    "assets/gancho-sdr.mp4": {
+      "hash": "ef93a0e632917ede842060eb1d4ccba5965e6a70cc8f6fc7b1c1b93adde0a0cd",
+      "content": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\97277466-0755-49c9-92bc-dea8b2fe63de\\blobs\\ef\\ef93a0e632917ede842060eb1d4ccba5965e6a70cc8f6fc7b1c1b93adde0a0cd"
+    },
+    "plano/gancho-frame.png": {
+      "hash": "92b0542bea8c7c7eb80532c6633fa3f87f44d6e2ccc21d63d6518c20a7041da6",
+      "content": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\97277466-0755-49c9-92bc-dea8b2fe63de\\blobs\\92\\92b0542bea8c7c7eb80532c6633fa3f87f44d6e2ccc21d63d6518c20a7041da6"
+    },
+    "plano/take-01.png": {
+      "hash": "4a9b40e8bd6b1095f273d390e39aaee59f95b3a81bd1c56180f2d0e8aa627c7b",
+      "content": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\97277466-0755-49c9-92bc-dea8b2fe63de\\blobs\\4a\\4a9b40e8bd6b1095f273d390e39aaee59f95b3a81bd1c56180f2d0e8aa627c7b"
+    }
+  },
+  "revisions": {
+    "0b318513-b0cc-40b5-b62c-698b713999cb": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1792343612782,
+      "endedAt": 1792343612783,
+      "files": {
+        "plano.md": {
+          "before": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\97277466-0755-49c9-92bc-dea8b2fe63de\\blobs\\3e\\3e6278323d1bbdf55c77c80a429976521935dc0eda4eb30269b615559a53bc4a",
+          "after": "C:\\Users\\Pedro Miyasaki\\.cache\\hyperframes\\history\\97277466-0755-49c9-92bc-dea8b2fe63de\\blobs\\30\\30804ce3f27f08d786541a6febc64afc60602e6334aff3ba3817639d6e37abf9"
+        }
+      }
+    }
+  },
+  "checks": {
+    "latest": {
+      "revision": null,
+      "id": "57630ae7-2128-4308-9452-308f62cd52b8"
+    },
+    "revisions": {},
+    "unversioned": [
+      {
+        "id": "57630ae7-2128-4308-9452-308f62cd52b8",
+        "scope": "project",
+        "report": "c:\\Users\\Pedro Miyasaki\\Desktop\\all\\pedro-miyasaki\\video\\projects\\as-cinco-areas-mais-expostas-a-disrupcao-por-ai\\.hyperframes\\artifacts\\checks\\57630ae7-2128-4308-9452-308f62cd52b8.json",
+        "metadata": {
+          "ok": true,
+          "browserSkipped": false,
+          "options": {
+            "samples": 9,
+            "at": [
+              2.5,
+              6.75,
+              10.25,
+              13.75,
+              17.25,
+              20.75,
+              25
+            ],
+            "atTransitions": false,
+            "maxIssues": 80,
+            "collapseStatic": true,
+            "tolerance": 2,
+            "timeout": 3000,
+            "contrast": true,
+            "strict": false,
+            "snapshots": true,
+            "browserGpuMode": "auto"
+          }
+        },
+        "createdAt": 1792343592400,
+        "contentHash": "d7fc9d3f1d79e882cc08e69d7b6d26f54b83ab57f60c7fa6b8c57eab64b5cff7",
+        "revision": null,
+        "inputFingerprint": "f22aa9d3de9cfec95a2b6f5e1701b9d76f9d4e9225386d1926ed4626efcab044",
+        "inputScope": "local-project-files",
+        "attribution": "inputs-changed"
+      }
+    ]
+  },
+  "snapshots": {
+    "latest": {
+      "revision": null,
+      "id": "57630ae7-2128-4308-9452-308f62cd52b8-4"
+    },
+    "revisions": {},
+    "unversioned": [
+      {
+        "id": "57630ae7-2128-4308-9452-308f62cd52b8-0",
+        "scope": "full",
+        "image": "c:\\Users\\Pedro Miyasaki\\Desktop\\all\\pedro-miyasaki\\video\\projects\\as-cinco-areas-mais-expostas-a-disrupcao-por-ai\\.hyperframes\\artifacts\\snapshots\\d6e67e71-8d65-4f27-8d49-a0b6d30c36a5\\frame-00-at-2.5s.png",
+        "time": 2.5,
+        "metadata": {
+          "checkId": "57630ae7-2128-4308-9452-308f62cd52b8",
+          "width": 1080,
+          "height": 1920
+        },
+        "createdAt": 1792343592400,
+        "contentHash": "1e3c451e81acefb6f9c570a9c73b1645e8c20fcc61dab651e2c70201f5a55be0",
+        "revision": null,
+        "inputFingerprint": "f22aa9d3de9cfec95a2b6f5e1701b9d76f9d4e9225386d1926ed4626efcab044",
+        "inputScope": "local-project-files",
+        "attribution": "inputs-changed"
+      },
+      {
+        "id": "57630ae7-2128-4308-9452-308f62cd52b8-1",
+        "scope": "full",
+        "image": "c:\\Users\\Pedro Miyasaki\\Desktop\\all\\pedro-miyasaki\\video\\projects\\as-cinco-areas-mais-expostas-a-disrupcao-por-ai\\.hyperframes\\artifacts\\snapshots\\d6e67e71-8d65-4f27-8d49-a0b6d30c36a5\\frame-01-at-6.8s.png",
+        "time": 6.75,
+        "metadata": {
+          "checkId": "57630ae7-2128-4308-9452-308f62cd52b8",
+          "width": 1080,
+          "height": 1920
+        },
+        "createdAt": 1792343592400,
+        "contentHash": "b98ff2840b9b14fd4e1386d1047afc08508d0a5b950c1a1969021059b7aeda0f",
+        "revision": null,
+        "inputFingerprint": "f22aa9d3de9cfec95a2b6f5e1701b9d76f9d4e9225386d1926ed4626efcab044",
+        "inputScope": "local-project-files",
+        "attribution": "inputs-changed"
+      },
+      {
+        "id": "57630ae7-2128-4308-9452-308f62cd52b8-2",
+        "scope": "full",
+        "image": "c:\\Users\\Pedro Miyasaki\\Desktop\\all\\pedro-miyasaki\\video\\projects\\as-cinco-areas-mais-expostas-a-disrupcao-por-ai\\.hyperframes\\artifacts\\snapshots\\d6e67e71-8d65-4f27-8d49-a0b6d30c36a5\\frame-02-at-13.8s.png",
+        "time": 13.75,
+        "metadata": {
+          "checkId": "57630ae7-2128-4308-9452-308f62cd52b8",
+          "width": 1080,
+          "height": 1920
+        },
+        "createdAt": 1792343592400,
+        "contentHash": "07f17a9200cf3b5161d66202b0e173a921294784170db2e4debfb2c93f4a84dd",
+        "revision": null,
+        "inputFingerprint": "f22aa9d3de9cfec95a2b6f5e1701b9d76f9d4e9225386d1926ed4626efcab044",
+        "inputScope": "local-project-files",
+        "attribution": "inputs-changed"
+      },
+      {
+        "id": "57630ae7-2128-4308-9452-308f62cd52b8-3",
+        "scope": "full",
+        "image": "c:\\Users\\Pedro Miyasaki\\Desktop\\all\\pedro-miyasaki\\video\\projects\\as-cinco-areas-mais-expostas-a-disrupcao-por-ai\\.hyperframes\\artifacts\\snapshots\\d6e67e71-8d65-4f27-8d49-a0b6d30c36a5\\frame-03-at-17.3s.png",
+        "time": 17.25,
+        "metadata": {
+          "checkId": "57630ae7-2128-4308-9452-308f62cd52b8",
+          "width": 1080,
+          "height": 1920
+        },
+        "createdAt": 1792343592400,
+        "contentHash": "e4d6916a0bbfc00ca3ffbee35ef3650faa593053e491fbb84e275bde30009433",
+        "revision": null,
+        "inputFingerprint": "f22aa9d3de9cfec95a2b6f5e1701b9d76f9d4e9225386d1926ed4626efcab044",
+        "inputScope": "local-project-files",
+        "attribution": "inputs-changed"
+      },
+      {
+        "id": "57630ae7-2128-4308-9452-308f62cd52b8-4",
+        "scope": "full",
+        "image": "c:\\Users\\Pedro Miyasaki\\Desktop\\all\\pedro-miyasaki\\video\\projects\\as-cinco-areas-mais-expostas-a-disrupcao-por-ai\\.hyperframes\\artifacts\\snapshots\\d6e67e71-8d65-4f27-8d49-a0b6d30c36a5\\frame-04-at-25.0s.png",
+        "time": 25,
+        "metadata": {
+          "checkId": "57630ae7-2128-4308-9452-308f62cd52b8",
+          "width": 1080,
+          "height": 1920
+        },
+        "createdAt": 1792343592400,
+        "contentHash": "b8e226e24ad28c915043a5fe1b2aeb6628fa9f3e1d9a81dde262ab98ab3eb306",
+        "revision": null,
+        "inputFingerprint": "f22aa9d3de9cfec95a2b6f5e1701b9d76f9d4e9225386d1926ed4626efcab044",
+        "inputScope": "local-project-files",
+        "attribution": "inputs-changed"
+      }
+    ]
+  },
+  "renders": {
+    "latest": {
+      "id": "546aeeb9-746f-4d38-a8fa-863e8851b60e",
+      "completedAt": 1792343664884,
+      "output": "c:\\Users\\Pedro Miyasaki\\Desktop\\all\\pedro-miyasaki\\video\\outputs\\as-cinco-areas-mais-expostas-a-disrupcao-por-ai.mp4",
+      "status": "completed",
+      "revision": null
+    },
+    "retainedRevisions": []
+  },
+  "pendingArtifactCleanup": []
+}

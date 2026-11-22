@@ -1,0 +1,99 @@
+<template>
+  <style>
+    @font-face {
+      font-family: "Bricolage Grotesque";
+      src: url("node_modules/@fontsource-variable/bricolage-grotesque/files/bricolage-grotesque-latin-wght-normal.woff2") format("woff2");
+      font-weight: 200 800;
+    }
+    #root {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #0A0A0A;
+      color: #FFFFFF;
+      font-family: "Bricolage Grotesque", sans-serif;
+    }
+    #root > * { position: absolute; }
+    #root::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 4;
+      opacity: 0.14;
+      background-image: radial-gradient(#FFFFFF 0.6px, transparent 0.7px);
+      background-size: 4px 4px;
+    }
+    .label {
+      position: absolute;
+      font-weight: 800;
+      letter-spacing: -0.05em;
+      line-height: 0.9;
+    }
+    .off { opacity: 0; }
+    .sheet {
+      position: absolute;
+      border: 7px solid #FFFFFF;
+      background: #0A0A0A;
+      box-sizing: border-box;
+    }
+    .fold {
+      position: absolute;
+      top: -1px;
+      right: -1px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 42px 42px 0;
+      border-color: transparent #FFFFFF transparent transparent;
+    }
+    .rule {
+      height: 8px;
+      margin: 22px 22px 0;
+      background: #FFFFFF;
+      transform-origin: left center;
+      transform: scaleX(0);
+    }
+    .rule.short { width: 58%; }
+    .draw {
+      transform-origin: left center;
+      transform: scaleX(0);
+    }
+    svg .ink {
+      fill: none;
+      stroke: #FFFFFF;
+      stroke-width: 7;
+      stroke-linecap: square;
+      stroke-linejoin: miter;
+    }
+    #l-title { left: 72px; top: 200px; width: 936px; font-size: 72px; }
+ #l-rule { left: 220px; top: 400px; width: 640px; height: 170px; border: 6px solid #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 52px; font-weight: 800; box-sizing: border-box; }
+ #l-branch { position: absolute; left: 185px; top: 620px; }
+ .l-case { position: absolute; top: 840px; width: 190px; height: 280px; padding: 26px 18px; border: 6px solid #FFFFFF; box-sizing: border-box; }
+ #l-x { left: 112px; } #l-y { left: 434px; } #l-z { left: 756px; }
+ .l-case b { font-size: 44px; } .l-copy { height: 8px; margin-top: 24px; background: #FFFFFF; } .l-copy:last-child { width: 70%; }
+ .l-broken { position: absolute; top: 910px; width: 70px; font-size: 104px; color: #FF6B6B; font-weight: 800; line-height: 1; }
+ #l-bad-x { left: 318px; } #l-bad-y { left: 640px; } #l-bad-z { left: 962px; }
+ #l-label { left: 112px; top: 1250px; width: 856px; font-size: 60px; text-align: center; color: #FF6B6B; }
+  </style>
+  <div data-hf-id="hf-j8m9" id="root" data-composition-id="l-xyz" data-width="1080" data-height="1920" data-duration="4.2">
+    <div data-hf-id="hf-ccg8" id="l-title" class="label off">ESSA REGRA ESTÁ CERTA?</div><div data-hf-id="hf-l6gk" id="l-rule" class="off">REGRA DE NEGÓCIO</div>
+    <svg data-hf-id="hf-drvl" id="l-branch" class="off" width="688" height="174" viewBox="0 0 688 174"><path data-hf-id="hf-enbn" class="ink" d="M344 0 V50 M22 50 H666 M22 50 V150 M344 50 V150 M666 50 V150 M2 138 L22 158 L42 138 M324 138 L344 158 L364 138 M646 138 L666 158 L686 138" /></svg>
+    <div data-hf-id="hf-p95b" id="l-x" class="l-case off"><b data-hf-id="hf-8t6r">CASO X</b><div data-hf-id="hf-os3y" class="l-copy"></div><div data-hf-id="hf-4bpu" class="l-copy"></div><div data-hf-id="hf-4q0v" class="l-copy"></div></div><div data-hf-id="hf-37kh" id="l-bad-x" class="l-broken off">×</div>
+    <div data-hf-id="hf-lb1a" id="l-y" class="l-case off"><b data-hf-id="hf-97hs">CASO Y</b><div data-hf-id="hf-54bw" class="l-copy"></div><div data-hf-id="hf-5imx" class="l-copy"></div><div data-hf-id="hf-5wxy" class="l-copy"></div></div><div data-hf-id="hf-8sja" id="l-bad-y" class="l-broken off">×</div>
+    <div data-hf-id="hf-hcx9" id="l-z" class="l-case off"><b data-hf-id="hf-80kp">CASO Z</b><div data-hf-id="hf-6b8z" class="l-copy"></div><div data-hf-id="hf-6pk0" class="l-copy"></div><div data-hf-id="hf-0qyl" class="l-copy"></div></div><div data-hf-id="hf-xntf" id="l-bad-z" class="l-broken off">×</div>
+    <div data-hf-id="hf-6ci9" id="l-label" class="label off">QUEBROU X, Y E Z</div>
+  </div>
+  <script>
+    const timeline = gsap.timeline({ paused: true });
+    const byId = (name) => document.getElementById(name);
+    timeline.fromTo('#l-title, #l-rule', { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: .35, stagger: .1 }, .1);
+    timeline.fromTo('#l-branch', { opacity: 0 }, { opacity: 1, duration: .25 }, .75);
+    timeline.fromTo('.l-case', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: .3, stagger: .3 }, 1.15);
+    timeline.fromTo('.l-broken', { opacity: 0, scale: .6 }, { opacity: 1, scale: 1, duration: .25, stagger: .3, ease: 'power3.out' }, 1.6);
+    timeline.fromTo('#l-label', { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: .3 }, 2.65);
+    window.__timelines = window.__timelines || {};
+    window.__timelines["l-xyz"] = timeline;
+  </script>
+</template>

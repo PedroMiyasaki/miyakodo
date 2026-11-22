@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="pt-BR" data-resolution="portrait">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080, height=1920">
+<title>5 conceitos de IA · montagem final</title>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+<style>
+@font-face{font-family:Inter;src:url('assets/fonts/inter-latin-wght-normal.woff2') format('woff2');font-weight:100 900;font-style:normal}
+@font-face{font-family:'Bricolage Grotesque';src:url('assets/fonts/bricolage-grotesque-latin-wght-normal.woff2') format('woff2');font-weight:100 900;font-style:normal}
+:root{--paper:#FFFFFF;--ink:#0A0A0A;--display:'Bricolage Grotesque',sans-serif;--body:Inter,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:var(--ink);color:var(--paper);font-family:var(--body)}
+#root{position:relative;width:100%;height:100%;overflow:hidden}
+.clip{position:absolute;inset:0;background:var(--ink);color:var(--paper);overflow:hidden}
+.clip::after{content:'';position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(currentColor .5px,transparent .6px);background-size:4px 4px;opacity:.05}
+.heading{position:absolute;left:80px;right:124px;top:260px;display:flex;align-items:baseline;gap:26px}
+.number,.title{font:800 78px/.98 var(--display);letter-spacing:-.025em}
+.number{flex:0 0 76px}
+.title{flex:1;text-wrap:balance}
+.subtitle{display:block;font:400 36px/1.32 var(--body);letter-spacing:0;margin-top:22px}
+.diagram{position:absolute;left:80px;top:570px;width:920px;height:876px;padding:32px;background:var(--paper)}
+.diagram svg{display:block;width:100%;height:100%;overflow:visible}
+.sh rect{fill:url(#ht-dark);filter:url(#rough2);transform:translate(-9px,7px)}
+.ln{fill:none;stroke:var(--ink);stroke-width:7;stroke-linecap:round;stroke-linejoin:round;filter:url(#rough)}
+svg text{fill:var(--ink);font:500 36px var(--body);paint-order:stroke;stroke:var(--paper);stroke-width:8px;stroke-linejoin:round}
+svg text.big{font:800 56px var(--display);letter-spacing:-.025em}
+.legend{position:absolute;left:80px;right:124px;top:1476px;font:400 36px/1.32 var(--body);text-wrap:balance;max-width:840px}
+.hook-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:var(--ink)}
+.overlay{background:transparent}
+.overlay::after{content:none}
+.hook-copy{position:absolute;left:80px;right:124px;top:340px;padding:36px 30px;background:var(--ink);color:var(--paper)}
+.hook-copy h1{font:800 88px/.98 var(--display);letter-spacing:-.025em;text-wrap:balance}
+.hook-copy p{font:500 40px/1.25 var(--body);margin-top:32px}
+.cta-copy{position:absolute;inset:0 120px 0 80px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:44px;text-align:center}
+.cta-copy p{font:400 46px/1.32 var(--body);max-width:840px;text-wrap:balance}
+.cta-copy h2{font:800 118px/.94 var(--display);letter-spacing:-.025em;white-space:nowrap}
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="lista-5-conceitos-ia" data-start="0" data-width="1080" data-height="1920" data-duration="37">
+<svg width="0" height="0" aria-hidden="true" style="position:absolute"><defs>
+<filter id="rough" x="-25%" y="-25%" width="150%" height="150%"><feTurbulence type="fractalNoise" baseFrequency=".018" numOctaves="3" seed="11" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="7" xChannelSelector="R" yChannelSelector="G"/></filter>
+<filter id="rough2" x="-25%" y="-25%" width="150%" height="150%"><feTurbulence type="fractalNoise" baseFrequency=".022" numOctaves="3" seed="4" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="6" xChannelSelector="R" yChannelSelector="G"/></filter>
+<pattern id="ht-dark" width="11" height="11" patternUnits="userSpaceOnUse"><circle cx="5.5" cy="5.5" r="2.1" fill="#0A0A0A"/></pattern>
+<marker id="arrow" viewBox="0 0 20 20" refX="15" refY="10" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M3 3 L15 10 L3 17" fill="none" stroke="#0A0A0A" stroke-width="3"/></marker>
+</defs></svg>
+
+<video id="gancho-video" class="clip hook-video" src="assets/gancho-sdr.mp4" data-start="0" data-duration="5" data-track-index="0" muted playsinline></video>
+<section id="gancho-texto" class="clip overlay" data-start="0" data-duration="5" data-track-index="1">
+<div class="hook-copy"><h1>5 conceitos de IA que todo empreendedor precisa conhecer.</h1><p>O último é o mais importante.</p></div>
+</section>
+
+<section id="arquiteturas" class="clip" data-start="5" data-duration="7" data-track-index="0">
+<header class="heading"><span class="number">01</span><h2 class="title">Tipos de arquitetura de sistemas de IA</h2></header>
+<div class="diagram"><svg viewBox="0 0 856 812" role="img" aria-label="Quatro arranjos: uma chamada de LLM, um workflow com caminho definido, um agente que usa ferramentas em loop e um sistema multiagente.">
+<text x="0" y="36">Chamada de LLM: uma resposta</text>
+<g class="sh"><rect x="0" y="60" width="220" height="80"/><rect x="320" y="60" width="220" height="80"/><rect x="640" y="60" width="216" height="80"/></g>
+<g class="ln"><rect x="0" y="60" width="220" height="80"/><rect x="320" y="60" width="220" height="80"/><rect x="640" y="60" width="216" height="80"/><path d="M220 100 H320" marker-end="url(#arrow)"/><path d="M540 100 H640" marker-end="url(#arrow)"/></g>
+<text x="110" y="113" text-anchor="middle">Entrada</text><text x="430" y="113" text-anchor="middle">LLM</text><text x="748" y="113" text-anchor="middle">Saída</text>
+<text x="0" y="216">Workflow: caminho definido</text>
+<g class="sh"><rect x="0" y="240" width="220" height="80"/><rect x="320" y="240" width="220" height="80"/><rect x="640" y="240" width="216" height="80"/></g>
+<g class="ln"><rect x="0" y="240" width="220" height="80"/><rect x="320" y="240" width="220" height="80"/><rect x="640" y="240" width="216" height="80"/><path d="M220 280 H320" marker-end="url(#arrow)"/><path d="M540 280 H640" marker-end="url(#arrow)"/></g>
+<text x="110" y="293" text-anchor="middle">Ler</text><text x="430" y="293" text-anchor="middle">Checar</text><text x="748" y="293" text-anchor="middle">Enviar</text>
+<text x="0" y="396">Agente: escolhe os próximos passos</text>
+<g class="sh"><rect x="0" y="420" width="220" height="80"/><rect x="440" y="420" width="416" height="80"/></g>
+<g class="ln"><rect x="0" y="420" width="220" height="80"/><rect x="440" y="420" width="416" height="80"/><path d="M220 460 H440" marker-end="url(#arrow)"/><path d="M648 500 V560 H110 V500" marker-end="url(#arrow)"/></g>
+<text x="110" y="473" text-anchor="middle">Agente</text><text x="648" y="473" text-anchor="middle">Ferramentas</text>
+<text x="380" y="540" text-anchor="middle">repete até concluir</text>
+<text x="0" y="616">Multiagente: coordena agentes</text>
+<g class="sh"><rect x="0" y="670" width="220" height="80"/><rect x="440" y="640" width="416" height="64"/><rect x="440" y="716" width="416" height="64"/></g>
+<g class="ln"><rect x="0" y="670" width="220" height="80"/><rect x="440" y="640" width="416" height="64"/><rect x="440" y="716" width="416" height="64"/><path d="M220 710 H330 V672 H440" marker-end="url(#arrow)"/><path d="M330 710 V748 H440" marker-end="url(#arrow)"/></g>
+<text x="110" y="723" text-anchor="middle">Coordena</text><text x="648" y="685" text-anchor="middle">Agente A</text><text x="648" y="761" text-anchor="middle">Agente B</text>
+</svg></div>
+<p class="legend">Você precisa de um agente ou de um fluxo bem definido?</p>
+</section>
+
+<section id="contexto" class="clip" data-start="12" data-duration="5" data-track-index="0">
+<header class="heading"><span class="number">02</span><h2 class="title">Engenharia de contexto<span class="subtitle">(context engineering)</span></h2></header>
+<div class="diagram"><svg viewBox="0 0 856 812" role="img" aria-label="Instruções, dados, histórico e ferramentas são selecionados para montar o contexto que o modelo recebe.">
+<g transform="translate(0,16)">
+<g class="sh"><rect x="0" y="60" width="300" height="90"/><rect x="0" y="200" width="300" height="90"/><rect x="0" y="340" width="300" height="90"/><rect x="0" y="480" width="300" height="90"/><rect x="446" y="260" width="410" height="110"/><rect x="0" y="580" width="856" height="140"/></g>
+<g class="ln"><rect x="0" y="60" width="300" height="90"/><rect x="0" y="200" width="300" height="90"/><rect x="0" y="340" width="300" height="90"/><rect x="0" y="480" width="300" height="90"/><path d="M300 105 H390 M300 245 H390 M300 385 H390 M300 525 H390 M390 105 V525"/><path d="M390 315 H446" marker-end="url(#arrow)"/><rect x="446" y="260" width="410" height="110"/><path d="M651 370 V580" marker-end="url(#arrow)"/><rect x="0" y="580" width="856" height="140"/></g>
+<text x="150" y="118" text-anchor="middle">Instruções</text><text x="150" y="258" text-anchor="middle">Dados</text><text x="150" y="398" text-anchor="middle">Histórico</text><text x="150" y="538" text-anchor="middle">Ferramentas</text>
+<text x="651" y="300" text-anchor="middle">Selecionar o</text><text x="651" y="344" text-anchor="middle">que importa</text>
+<text class="big" x="428" y="642" text-anchor="middle">CONTEXTO</text><text x="428" y="692" text-anchor="middle">que o modelo recebe</text>
+</g>
+</svg></div>
+<p class="legend">Sua IA recebe o que precisa para decidir?</p>
+</section>
+
+<section id="dependencias" class="clip" data-start="17" data-duration="5" data-track-index="0">
+<header class="heading"><span class="number">03</span><h2 class="title">Injeção de dependências em agentes</h2></header>
+<div class="diagram"><svg viewBox="0 0 856 812" role="img" aria-label="A aplicação fornece ao agente identidade, cliente de API e ferramentas com escopo. Os serviços validam as permissões.">
+<g transform="translate(0,40)">
+<text x="0" y="40">A aplicação fornece os recursos</text>
+<g class="sh"><rect x="0" y="80" width="400" height="110"/><rect x="0" y="240" width="400" height="110"/><rect x="0" y="400" width="400" height="110"/><rect x="496" y="230" width="360" height="130"/><rect x="0" y="580" width="856" height="120"/></g>
+<g class="ln"><rect x="0" y="80" width="400" height="110"/><rect x="0" y="240" width="400" height="110"/><rect x="0" y="400" width="400" height="110"/><path d="M400 135 H450 M400 295 H450 M400 455 H450 M450 135 V455"/><path d="M450 295 H496" marker-end="url(#arrow)"/><rect x="496" y="230" width="360" height="130"/><path d="M676 360 V580" marker-end="url(#arrow)"/><rect x="0" y="580" width="856" height="120"/></g>
+<text x="200" y="122" text-anchor="middle">Identidade do</text><text x="200" y="166" text-anchor="middle">usuário</text>
+<text x="200" y="282" text-anchor="middle">Cliente</text><text x="200" y="326" text-anchor="middle">de API</text>
+<text x="200" y="442" text-anchor="middle">Ferramentas</text><text x="200" y="486" text-anchor="middle">com escopo</text>
+<text x="676" y="308" text-anchor="middle">Agente</text>
+<text x="428" y="653" text-anchor="middle">Os serviços validam as permissões</text>
+</g>
+</svg></div>
+<p class="legend">O agente pode acessar o quê, em nome de quem?</p>
+</section>
+
+<section id="ai-ops" class="clip" data-start="22" data-duration="5" data-track-index="0">
+<header class="heading"><span class="number">04</span><h2 class="title">AI Ops</h2></header>
+<div class="diagram"><svg viewBox="0 0 856 812" role="img" aria-label="Compare o modelo atual e o novo com os mesmos casos reais, avalie qualidade, custo e latência e faça uma troca gradual com possibilidade de voltar.">
+<g transform="translate(0,46)">
+<g class="sh"><rect x="0" y="50" width="400" height="100"/><rect x="456" y="50" width="400" height="100"/><rect x="128" y="244" width="600" height="100"/><rect x="128" y="392" width="600" height="100"/><rect x="128" y="540" width="600" height="130"/></g>
+<g class="ln"><rect x="0" y="50" width="400" height="100"/><rect x="456" y="50" width="400" height="100"/><path d="M200 150 V200 H428 M656 150 V200 H428 M428 200 V244" marker-end="url(#arrow)"/><rect x="128" y="244" width="600" height="100"/><path d="M428 344 V392" marker-end="url(#arrow)"/><rect x="128" y="392" width="600" height="100"/><path d="M428 492 V540" marker-end="url(#arrow)"/><rect x="128" y="540" width="600" height="130"/></g>
+<text x="200" y="113" text-anchor="middle">Modelo atual</text><text x="656" y="113" text-anchor="middle">Modelo novo</text>
+<text x="428" y="285" text-anchor="middle">Compare com os</text><text x="428" y="329" text-anchor="middle">mesmos casos reais</text>
+<text x="428" y="455" text-anchor="middle">Qualidade · Custo · Latência</text>
+<text x="428" y="596" text-anchor="middle">Troca gradual</text><text x="428" y="640" text-anchor="middle">com possibilidade de voltar</text>
+</g>
+</svg></div>
+<p class="legend">Como saber a hora de trocar de modelo?</p>
+</section>
+
+<section id="evals" class="clip" data-start="27" data-duration="6" data-track-index="0">
+<header class="heading"><span class="number">05</span><h2 class="title">Evals: o mais importante</h2></header>
+<div class="diagram"><svg viewBox="0 0 856 812" role="img" aria-label="Casos reais com critérios de sucesso são executados antes e depois de uma mudança para comparar resultados e detectar regressões.">
+<g transform="translate(0,56)">
+<g class="sh"><rect x="120" y="60" width="616" height="120"/><rect x="0" y="300" width="400" height="100"/><rect x="456" y="300" width="400" height="100"/><rect x="120" y="540" width="616" height="100"/></g>
+<g class="ln"><rect x="120" y="60" width="616" height="120"/><path d="M428 180 V240 H200 V300" marker-end="url(#arrow)"/><path d="M428 240 H656 V300" marker-end="url(#arrow)"/><rect x="0" y="300" width="400" height="100"/><rect x="456" y="300" width="400" height="100"/><path d="M200 400 V470 H428"/><path d="M656 400 V470 H428"/><path d="M428 470 V540" marker-end="url(#arrow)"/><rect x="120" y="540" width="616" height="100"/></g>
+<text x="428" y="111" text-anchor="middle">Casos reais</text><text x="428" y="155" text-anchor="middle">+ critérios de sucesso</text>
+<text x="200" y="363" text-anchor="middle">Antes da mudança</text><text x="656" y="363" text-anchor="middle">Depois da mudança</text>
+<text x="428" y="603" text-anchor="middle">Compare e detecte regressões</text>
+</g>
+</svg></div>
+<p class="legend">A mudança melhorou ou só parece que melhorou?</p>
+</section>
+
+<section id="cta" class="clip" data-start="33" data-duration="4" data-track-index="0">
+<div class="cta-copy"><p>comenta:</p><h2>"RECURSOS"</h2><p>Te envio os artigos sobre esses 5 conceitos.</p></div>
+</section>
+</div>
+<script>
+const tl=gsap.timeline({paused:true});
+tl.set('#root',{color:'#FFFFFF'},0);
+window.__timelines['lista-5-conceitos-ia']=tl;
+</script>
+</body>
+</html>

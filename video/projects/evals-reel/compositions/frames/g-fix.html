@@ -1,0 +1,109 @@
+<template>
+  <style>
+    @font-face {
+      font-family: "Bricolage Grotesque";
+      src: url("node_modules/@fontsource-variable/bricolage-grotesque/files/bricolage-grotesque-latin-wght-normal.woff2") format("woff2");
+      font-weight: 200 800;
+    }
+    #root {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #0A0A0A;
+      color: #FFFFFF;
+      font-family: "Bricolage Grotesque", sans-serif;
+    }
+    #root > * { position: absolute; }
+    #root::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 4;
+      opacity: 0.14;
+      background-image: radial-gradient(#FFFFFF 0.6px, transparent 0.7px);
+      background-size: 4px 4px;
+    }
+    .label {
+      position: absolute;
+      font-weight: 800;
+      letter-spacing: -0.05em;
+      line-height: 0.9;
+    }
+    .off { opacity: 0; }
+    .sheet {
+      position: absolute;
+      border: 7px solid #FFFFFF;
+      background: #0A0A0A;
+      box-sizing: border-box;
+    }
+    .fold {
+      position: absolute;
+      top: -1px;
+      right: -1px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 42px 42px 0;
+      border-color: transparent #FFFFFF transparent transparent;
+    }
+    .rule {
+      height: 8px;
+      margin: 22px 22px 0;
+      background: #FFFFFF;
+      transform-origin: left center;
+      transform: scaleX(0);
+    }
+    .rule.short { width: 58%; }
+    .draw {
+      transform-origin: left center;
+      transform: scaleX(0);
+    }
+    svg .ink {
+      fill: none;
+      stroke: #FFFFFF;
+      stroke-width: 7;
+      stroke-linecap: square;
+      stroke-linejoin: miter;
+    }
+    #g-title { left: 72px; top: 200px; width: 936px; font-size: 64px; line-height: 1.1; }
+ #g-agent { left: 250px; top: 380px; width: 580px; height: 250px; border: 6px solid #FFFFFF; box-sizing: border-box; padding: 28px; }
+ #g-agent-name { font-size: 48px; font-weight: 800; }
+ .g-prompt { position: absolute; left: 28px; top: 118px; width: 512px; padding: 22px 0; border-top: 3px solid #FFFFFF; font-size: 48px; font-weight: 800; text-align: center; }
+ #g-prompt2 { background: #FFFFFF; color: #0A0A0A; }
+ #g-branch { left: 168px; top: 664px; position: absolute; }
+ #g-cases { position: absolute; left: 82px; top: 850px; display: flex; gap: 28px; }
+ .g-case { position: relative; width: 208px; height: 260px; border: 5px solid #FFFFFF; box-sizing: border-box; text-align: center; padding-top: 25px; }
+ .g-name { font-size: 40px; font-weight: 800; } .g-state { position: absolute; left: 0; top: 104px; width: 100%; font-size: 110px; font-weight: 800; line-height: 1; }
+ .g-ok { color: #5BD6A2; } .g-bad { color: #FF6B6B; }
+ #g-fixed { left: 82px; top: 1160px; width: 208px; text-align: center; font-size: 40px; color: #5BD6A2; }
+ #g-regressed { left: 320px; top: 1160px; width: 680px; text-align: center; font-size: 48px; line-height: 1.15; color: #FF6B6B; }
+  </style>
+  <div data-hf-id="hf-cj70" id="root" data-composition-id="g-fix" data-width="1080" data-height="1920" data-duration="7.9">
+    <div data-hf-id="hf-hy0o" id="g-title" class="label off">UMA MUDANÇA NO SISTEMA</div>
+    <div data-hf-id="hf-g9qo" id="g-agent" class="off"><div data-hf-id="hf-k33o" id="g-agent-name">AGENTE</div><div data-hf-id="hf-jnza" id="g-prompt1" class="g-prompt">PROMPT V1</div><div data-hf-id="hf-350d" id="g-prompt2" class="g-prompt off">PROMPT V2</div></div>
+    <svg data-hf-id="hf-ndo0" id="g-branch" class="off" width="744" height="154" viewBox="0 0 744 154"><path data-hf-id="hf-ln3d" class="ink" d="M372 0 V45 M0 45 H744 M12 45 V135 M252 45 V135 M492 45 V135 M732 45 V135 M0 117 L12 138 L24 117 M240 117 L252 138 L264 117 M480 117 L492 138 L504 117 M720 117 L732 138 L744 117" /></svg>
+    <div data-hf-id="hf-dhj0" id="g-cases" class="off">
+      <div data-hf-id="hf-kh98" class="g-case"><div data-hf-id="hf-mkmq" class="g-name">CASO 01</div><div data-hf-id="hf-o37p" id="g-first-bad" class="g-state g-bad">×</div><div data-hf-id="hf-ttu4" id="g-first-ok" class="g-state g-ok off">✓</div></div>
+      <div data-hf-id="hf-6jx0" class="g-case"><div data-hf-id="hf-myxr" class="g-name">CASO 02</div><div data-hf-id="hf-7ckr" class="g-state g-ok g-previous">✓</div><div data-hf-id="hf-m6yn" class="g-state g-bad g-broken off">×</div></div>
+      <div data-hf-id="hf-5czx" class="g-case"><div data-hf-id="hf-nd8s" class="g-name">CASO 03</div><div data-hf-id="hf-0v2j" class="g-state g-ok g-previous">✓</div><div data-hf-id="hf-qugv" class="g-state g-bad g-broken off">×</div></div>
+      <div data-hf-id="hf-5ray" class="g-case"><div data-hf-id="hf-nrjt" class="g-name">CASO 04</div><div data-hf-id="hf-0gri" class="g-state g-ok g-previous">✓</div><div data-hf-id="hf-qg5u" class="g-state g-bad g-broken off">×</div></div>
+    </div>
+    <div data-hf-id="hf-rkmj" id="g-fixed" class="label off">CORRIGIU</div><div data-hf-id="hf-80qq" id="g-regressed" class="label off">MAS OS OUTROS REGREDIRAM</div>
+  </div>
+  <script>
+    const timeline = gsap.timeline({ paused: true });
+    const byId = (name) => document.getElementById(name);
+    timeline.fromTo('#g-title, #g-agent, #g-branch, #g-cases', { opacity: 0 }, { opacity: 1, duration: .35, stagger: .1 }, .1);
+    timeline.to('#g-prompt1', { opacity: 0, duration: .2 }, 1.15);
+    timeline.fromTo('#g-prompt2', { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: .3 }, 1.35);
+    timeline.to('#g-first-bad', { opacity: 0, duration: .2 }, 2.65);
+    timeline.fromTo('#g-first-ok, #g-fixed', { opacity: 0 }, { opacity: 1, duration: .3 }, 2.85);
+    timeline.to('.g-previous', { opacity: 0, duration: .18, stagger: .4 }, 4.2);
+    timeline.fromTo('.g-broken', { opacity: 0, scale: .6 }, { opacity: 1, scale: 1, duration: .25, stagger: .4, ease: 'power3.out' }, 4.4);
+    timeline.fromTo('#g-regressed', { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: .35 }, 5.7);
+    window.__timelines = window.__timelines || {};
+    window.__timelines["g-fix"] = timeline;
+  </script>
+</template>

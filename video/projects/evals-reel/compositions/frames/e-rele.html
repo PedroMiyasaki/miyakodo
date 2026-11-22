@@ -1,0 +1,91 @@
+<template>
+  <style>
+    @font-face {
+      font-family: "Bricolage Grotesque";
+      src: url("node_modules/@fontsource-variable/bricolage-grotesque/files/bricolage-grotesque-latin-wght-normal.woff2") format("woff2");
+      font-weight: 200 800;
+    }
+    #root {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #0A0A0A;
+      color: #FFFFFF;
+      font-family: "Bricolage Grotesque", sans-serif;
+    }
+    #root > * { position: absolute; }
+    #root::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 4;
+      opacity: 0.14;
+      background-image: radial-gradient(#FFFFFF 0.6px, transparent 0.7px);
+      background-size: 4px 4px;
+    }
+    .label {
+      position: absolute;
+      font-weight: 800;
+      letter-spacing: -0.05em;
+      line-height: 0.9;
+    }
+    .off { opacity: 0; }
+    .sheet {
+      position: absolute;
+      border: 7px solid #FFFFFF;
+      background: #0A0A0A;
+      box-sizing: border-box;
+    }
+    .fold {
+      position: absolute;
+      top: -1px;
+      right: -1px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 42px 42px 0;
+      border-color: transparent #FFFFFF transparent transparent;
+    }
+    .rule {
+      height: 8px;
+      margin: 22px 22px 0;
+      background: #FFFFFF;
+      transform-origin: left center;
+      transform: scaleX(0);
+    }
+    .rule.short { width: 58%; }
+    .draw {
+      transform-origin: left center;
+      transform: scaleX(0);
+    }
+    svg .ink {
+      fill: none;
+      stroke: #FFFFFF;
+      stroke-width: 7;
+      stroke-linecap: square;
+      stroke-linejoin: miter;
+    }
+    #er-result { left: 220px; top: 300px; width: 640px; height: 290px; border: 6px solid #FFFFFF; padding: 32px; box-sizing: border-box; }
+ .er-line { height: 16px; margin-bottom: 35px; background: #5BD6A2; }
+ .er-line:last-child { background: #FF6B6B; width: 80%; }
+ #er-loop { position: absolute; left: 360px; top: 740px; }
+ #er-label { left: 160px; top: 1190px; width: 760px; font-size: 80px; text-align: center; }
+  </style>
+  <div data-hf-id="hf-44tk" id="root" data-composition-id="e-rele" data-width="1080" data-height="1920" data-duration="3">
+    <div data-hf-id="hf-wuhi" id="er-result"><div data-hf-id="hf-gwg4" class="er-line"></div><div data-hf-id="hf-vh4s" class="er-line"></div><div data-hf-id="hf-ua7p" class="er-line"></div><div data-hf-id="hf-uoiq" class="er-line"></div></div>
+    <svg data-hf-id="hf-2bmm" id="er-loop" class="off" width="360" height="360" viewBox="0 0 360 360"><defs><marker id="er-head" markerWidth="44" markerHeight="44" refX="30" refY="22" viewBox="0 0 44 44" markerUnits="userSpaceOnUse" orient="auto"><path data-hf-id="hf-fzuv" id="er-arrowhead" fill="#FFFFFF" opacity="0" d="M2 2 L42 22 L2 42 Z" /></marker></defs><path data-hf-id="hf-ah4c" class="ink" id="er-loop-path" d="M180 45 A135 135 0 1 1 65 109" stroke-dasharray="790" stroke-dashoffset="790" marker-end="url(#er-head)" /></svg>
+    <div data-hf-id="hf-8uv0" id="er-label" class="label off">RE-TRABALHO</div>
+  </div>
+  <script>
+    const timeline = gsap.timeline({ paused: true });
+    const byId = (name) => document.getElementById(name);
+    timeline.fromTo('#er-loop', { opacity: 0 }, { opacity: 1, duration: .2 }, .15);
+    timeline.fromTo('#er-loop-path', { strokeDashoffset: 790 }, { strokeDashoffset: 0, duration: 1.15, ease: 'power1.inOut' }, .2);
+    timeline.to('#er-arrowhead', { opacity: 1, duration: .15 }, 1.2);
+    timeline.fromTo('#er-label', { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: .3 }, 1.4);
+    window.__timelines = window.__timelines || {};
+    window.__timelines["e-rele"] = timeline;
+  </script>
+</template>

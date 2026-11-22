@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <style>
+        @font-face {
+          font-family: "Bricolage Grotesque";
+          src: url("assets/fonts/bricolage-grotesque-latin-wght-normal.woff2") format("woff2");
+          font-weight: 200 800;
+          font-style: normal;
+        }
+        @font-face {
+          font-family: "Inter";
+          src: url("assets/fonts/inter-latin-wght-normal.woff2") format("woff2");
+          font-weight: 100 900;
+          font-style: normal;
+        }
+        #take-01-gancho {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+          background: #0a0a0a;
+          font-family: Inter, system-ui, sans-serif;
+        }
+        #take-01-gancho .gancho-video {
+          position: absolute;
+          inset: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+        }
+        #take-01-gancho .impact {
+          position: absolute;
+          top: 300px;
+          left: 88px;
+          right: 88px;
+          margin: 0;
+          padding: 30px 40px 34px;
+          background: #0a0a0a;
+          border: 4px solid #ffffff;
+          color: #ffffff;
+          font-family: "Bricolage Grotesque", system-ui, sans-serif;
+          font-weight: 800;
+          font-size: 80px;
+          line-height: 1.04;
+          letter-spacing: -0.025em;
+        }
+      </style>
+      <div id="take-01-gancho" data-composition-id="take-01-gancho" data-width="1080" data-height="1920" data-duration="5">
+        <video id="gancho-video" class="gancho-video" src="assets/gancho.mp4" data-start="0" data-duration="5" data-track-index="0" muted playsinline></video>
+        <p class="impact">Minha opinião sobre<br />use cases de AI<br />comuns da indústria</p>
+      </div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        window.__timelines["take-01-gancho"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

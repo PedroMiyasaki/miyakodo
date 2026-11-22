@@ -1,0 +1,7 @@
+{
+  "duration": 2.33,
+  "assertions": [
+    { "kind": "appearsBy", "selector": "#comment-word", "bySec": 0.3 },
+    { "kind": "staysInFrame", "selector": "#comment-word" }
+  ]
+}

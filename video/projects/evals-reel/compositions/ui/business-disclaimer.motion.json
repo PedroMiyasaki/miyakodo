@@ -1,0 +1,7 @@
+{
+  "duration": 4,
+  "assertions": [
+    { "kind": "appearsBy", "selector": "#business-note", "bySec": 0.5 },
+    { "kind": "staysInFrame", "selector": "#business-note" }
+  ]
+}

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="pt-BR" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: #0a0a0a;
+      }
+      #root {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: #0a0a0a;
+      }
+      [data-composition-id="main"] > div[data-composition-src] {
+        position: absolute;
+        inset: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="25"
+      data-width="1080"
+      data-height="1920"
+    >
+      <!-- Take 1: gancho de 5 s, sem fala. -->
+      <div id="el-take-01" class="clip" data-composition-id="take-01-gancho" data-composition-src="compositions/take-01-gancho.html" data-start="0" data-duration="5" data-track-index="0" data-width="1080" data-height="1920"></div>
+
+      <!-- Takes 2 a 6: um banner por item da lista, com a nota no lugar do tier. -->
+      <div id="el-take-02" class="clip" data-composition-id="take-02-bot-whatsapp" data-composition-src="compositions/take-02-bot-whatsapp.html" data-start="5" data-duration="3" data-track-index="1" data-width="1080" data-height="1920"></div>
+      <div id="el-take-03" class="clip" data-composition-id="take-03-conteudo-redes" data-composition-src="compositions/take-03-conteudo-redes.html" data-start="8" data-duration="3" data-track-index="1" data-width="1080" data-height="1920"></div>
+      <div id="el-take-04" class="clip" data-composition-id="take-04-ligacoes-reunioes" data-composition-src="compositions/take-04-ligacoes-reunioes.html" data-start="11" data-duration="3" data-track-index="1" data-width="1080" data-height="1920"></div>
+      <div id="el-take-05" class="clip" data-composition-id="take-05-rag-enterprise" data-composition-src="compositions/take-05-rag-enterprise.html" data-start="14" data-duration="3" data-track-index="1" data-width="1080" data-height="1920"></div>
+      <div id="el-take-06" class="clip" data-composition-id="take-06-copiloto" data-composition-src="compositions/take-06-copiloto.html" data-start="17" data-duration="3" data-track-index="1" data-width="1080" data-height="1920"></div>
+
+      <!-- Take final: CTA em fundo preto, sem imagem de ilustracao, em tres linhas. -->
+      <div id="el-take-07" class="clip" data-composition-id="take-07-cta" data-composition-src="compositions/take-07-cta.html" data-start="20" data-duration="5" data-track-index="2" data-width="1080" data-height="1920"></div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

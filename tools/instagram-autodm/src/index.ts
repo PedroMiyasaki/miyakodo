@@ -183,6 +183,10 @@ export default {
       }
     }
 
+    if (request.method === "GET" && (url.pathname === "/privacidade" || url.pathname === "/privacy")) {
+      return html(renderPrivacyPage());
+    }
+
     if (request.method === "GET" && url.pathname === "/") {
       return json({ ok: true, service: "manychat-lite-cloudflare", admin: "/admin" });
     }
@@ -971,6 +975,38 @@ async function sendFollowerPrompt(env: AppEnv, commentId: string, rule: MatchedR
   }
   const sentAt = new Date().toISOString();
   try {
+    if (/^\d{1,40}$/.test(recipientId)) {
+      const decision = await decideFollower(
+        async () => (await lookupInstagramProfile(env, recipientId, Date.now(), { fresh: true })).isFollower,
+        async () => {
+          const waitMs = recheckDelayMs(env.FOLLOWER_RECHECK_MS);
+          if (waitMs > 0) await new Promise((resolve) => setTimeout(resolve, waitMs));
+        }
+      );
+      if (decision === "follower") {
+        const privateReply = await postInstagramMessage(env, { comment_id: commentId }, { text: rule.replyText });
+        await env.DB.prepare(
+          "UPDATE material_deliveries SET status = 'delivered', material_sent_at = ?, updated_at = ? WHERE rule_id = ? AND recipient_id = ?"
+        ).bind(sentAt, sentAt, rule.id, recipientId).run();
+        return completeCommentResponses(env, commentId, privateReply, rule.publicReplyText, sentAt);
+      }
+      if (decision === "not_follower") {
+        const privateReply = await postInstagramMessage(
+          env,
+          { comment_id: commentId },
+          postbackButtonMessage(
+            rule.followPromptText || "Me segue por aqui para eu te enviar o material.",
+            FOLLOWED_BUTTON_LABEL,
+            gatePayload(rule.id, commentId, "followed")
+          )
+        );
+        await env.DB.prepare(
+          "UPDATE material_deliveries SET status = 'awaiting_follow', updated_at = ? WHERE rule_id = ? AND recipient_id = ?"
+        ).bind(sentAt, rule.id, recipientId).run();
+        return { status: "awaiting_follow", metaResponse: { privateReply }, error: null, sentAt };
+      }
+    }
+
     const privateReply = await postInstagramMessage(
       env,
       { comment_id: commentId },
@@ -2216,6 +2252,25 @@ function json(data: unknown, status = 200): Response {
       "cache-control": "no-store"
     }
   });
+}
+
+function renderPrivacyPage(): string {
+  return `<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Política de privacidade</title>
+</head>
+<body>
+  <h1>Política de privacidade</h1>
+  <p>O app auto-response é usado somente pela conta @pedro.miyasaki.ia para responder comentários públicos nos posts dessa conta.</p>
+  <p>Quando alguém comenta, o app recebe o identificador do comentário, o nome de usuário, o texto do comentário e a informação de se essa pessoa segue a conta. Esses dados servem para enviar a mensagem combinada no direct e para não enviar o mesmo material duas vezes.</p>
+  <p>Os registros ficam no banco do app. Não são vendidos nem compartilhados com outras empresas.</p>
+  <h2 id="exclusao">Exclusão de dados</h2>
+  <p>Para apagar os registros ligados ao seu nome de usuário, envie uma mensagem para @pedro.miyasaki.ia pedindo a exclusão. O pedido é atendido em até 30 dias.</p>
+</body>
+</html>`;
 }
 
 function html(markup: string, status = 200): Response {

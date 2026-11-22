@@ -1,0 +1,32 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><style>@font-face{font-family:"Bricolage Grotesque";src:url("../fonts/bricolage-grotesque-latin-wght-normal.woff2") format("woff2");font-weight:200 800;font-style:normal}@font-face{font-family:"Inter";src:url("../fonts/inter-latin-wght-normal.woff2") format("woff2");font-weight:100 900;font-style:normal}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#555}
+.grao::after{content:"";position:absolute;inset:0;z-index:9;pointer-events:none;background-image:radial-gradient(currentColor .5px,transparent .6px);background-size:4px 4px;opacity:.05}
+
+.quadro{position:relative;width:1080px;height:1920px;overflow:hidden;background:#0A0A0A;color:#FFFFFF;font-family:"Inter",system-ui,sans-serif}
+.quadro .foto{position:absolute;left:0;top:0;width:1080px;height:1920px;display:block}
+.quadro .cartao-img{position:absolute;left:60px;top:240px;width:960px;height:1090px;display:block}
+.quadro .legenda{position:absolute;left:88px;top:1400px;width:904px;font-weight:400;font-size:46px;line-height:1.32;border-top:3px solid #FFFFFF;padding-top:22px}
+.quadro .legenda b{font-weight:700}
+.impacto{position:absolute;left:88px;top:640px;width:904px;padding:36px 40px 32px;background:#0A0A0A;color:#FFFFFF;font-family:"Bricolage Grotesque",system-ui,sans-serif;font-weight:800;font-size:92px;line-height:.98;letter-spacing:-.025em;text-wrap:balance}
+.impacto small{display:block;margin-top:22px;font-family:"Inter",system-ui,sans-serif;font-weight:500;font-size:34px;line-height:1.2;letter-spacing:0}
+.cta{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:88px}
+.comenta{font-weight:500;font-size:60px;line-height:1}
+.palavra{font-family:"Bricolage Grotesque",system-ui,sans-serif;font-weight:800;font-size:190px;line-height:.94;letter-spacing:-.025em;margin:44px 0 52px}
+.frase{font-weight:400;font-size:50px;line-height:1.32;max-width:760px}
+</style></head><body><svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<filter id="rough" x="-25%" y="-25%" width="150%" height="150%">
+  <feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="3" seed="11" result="n"/>
+  <feDisplacementMap in="SourceGraphic" in2="n" scale="7" xChannelSelector="R" yChannelSelector="G"/>
+</filter>
+<filter id="rough2" x="-25%" y="-25%" width="150%" height="150%">
+  <feTurbulence type="fractalNoise" baseFrequency="0.022" numOctaves="3" seed="4" result="n"/>
+  <feDisplacementMap in="SourceGraphic" in2="n" scale="6" xChannelSelector="R" yChannelSelector="G"/>
+</filter>
+<pattern id="ht-dark" width="11" height="11" patternUnits="userSpaceOnUse">
+  <circle cx="5.5" cy="5.5" r="2.1" fill="#0A0A0A"/>
+</pattern>
+<marker id="seta" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="40" markerHeight="40" markerUnits="userSpaceOnUse" orient="auto">
+  <path d="M0 0 L10 5 L0 10 Z" fill="#0A0A0A"/>
+</marker>
+</defs></svg><section class="quadro grao " id="alvo"><img class="cartao-img" src="../card-04.png" alt=""><p class="legenda"><b>Fig. 04.</b> Agilizar a análise de apólices e danos, mantendo especialistas nas exceções.</p></section></body></html>

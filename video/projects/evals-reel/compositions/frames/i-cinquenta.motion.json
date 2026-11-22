@@ -1,0 +1,14 @@
+{
+  "duration": 5.2,
+  "assertions": [
+    {
+      "kind": "appearsBy",
+      "selector": "#fifty",
+      "bySec": 0.7
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": "#fifty"
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "ok": true,
+  "strict": false,
+  "browserSkipped": false,
+  "lint": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 1,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "timeline_track_too_dense",
+        "severity": "warning",
+        "message": "Track 0 has 6 timed elements in this HTML file. Smaller sub-compositions keep timelines easier to read, iterate on, and diff.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "c:\\Users\\Pedro Miyasaki\\Desktop\\all\\pedro-miyasaki\\video\\projects\\as-cinco-areas-mais-expostas-a-disrupcao-por-ai\\index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Move coherent scene groups into separate .html files under compositions/ and mount them from the parent with data-composition-src so the timeline stays easier to inspect, revise, and validate."
+      }
+    ],
+    "filesScanned": 1
+  },
+  "runtime": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": []
+  },
+  "layout": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "duration": 27.5,
+    "samples": [
+      2.5,
+      6.75,
+      10.25,
+      13.75,
+      17.25,
+      20.75,
+      25
+    ],
+    "transitionSamples": [],
+    "transitionSamplesDropped": 0,
+    "tolerance": 2,
+    "totalIssueCount": 0,
+    "truncated": false
+  },
+  "motion": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": false,
+    "samples": 0
+  },
+  "contrast": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": true,
+    "samples": [
+      2.5,
+      6.75,
+      13.75,
+      17.25,
+      25
+    ],
+    "checked": 1,
+    "passed": 1
+  },
+  "hdr": {
+    "autoPromotion": null,
+    "inspection": "available"
+  },
+  "snapshots": {
+    "enabled": true,
+    "files": [
+      ".hyperframes\\artifacts\\snapshots\\d6e67e71-8d65-4f27-8d49-a0b6d30c36a5\\frame-00-at-2.5s.png",
+      ".hyperframes\\artifacts\\snapshots\\d6e67e71-8d65-4f27-8d49-a0b6d30c36a5\\frame-01-at-6.8s.png",
+      ".hyperframes\\artifacts\\snapshots\\d6e67e71-8d65-4f27-8d49-a0b6d30c36a5\\frame-02-at-13.8s.png",
+      ".hyperframes\\artifacts\\snapshots\\d6e67e71-8d65-4f27-8d49-a0b6d30c36a5\\frame-03-at-17.3s.png",
+      ".hyperframes\\artifacts\\snapshots\\d6e67e71-8d65-4f27-8d49-a0b6d30c36a5\\frame-04-at-25.0s.png"
+    ],
+    "times": [
+      2.5,
+      6.75,
+      13.75,
+      17.25,
+      25
+    ],
+    "findingFiles": []
+  }
+}

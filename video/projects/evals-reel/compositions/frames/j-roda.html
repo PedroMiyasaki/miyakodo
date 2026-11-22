@@ -1,0 +1,99 @@
+<template>
+  <style>
+    @font-face {
+      font-family: "Bricolage Grotesque";
+      src: url("node_modules/@fontsource-variable/bricolage-grotesque/files/bricolage-grotesque-latin-wght-normal.woff2") format("woff2");
+      font-weight: 200 800;
+    }
+    #root {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #0A0A0A;
+      color: #FFFFFF;
+      font-family: "Bricolage Grotesque", sans-serif;
+    }
+    #root > * { position: absolute; }
+    #root::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 4;
+      opacity: 0.14;
+      background-image: radial-gradient(#FFFFFF 0.6px, transparent 0.7px);
+      background-size: 4px 4px;
+    }
+    .label {
+      position: absolute;
+      font-weight: 800;
+      letter-spacing: -0.05em;
+      line-height: 0.9;
+    }
+    .off { opacity: 0; }
+    .sheet {
+      position: absolute;
+      border: 7px solid #FFFFFF;
+      background: #0A0A0A;
+      box-sizing: border-box;
+    }
+    .fold {
+      position: absolute;
+      top: -1px;
+      right: -1px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 42px 42px 0;
+      border-color: transparent #FFFFFF transparent transparent;
+    }
+    .rule {
+      height: 8px;
+      margin: 22px 22px 0;
+      background: #FFFFFF;
+      transform-origin: left center;
+      transform: scaleX(0);
+    }
+    .rule.short { width: 58%; }
+    .draw {
+      transform-origin: left center;
+      transform: scaleX(0);
+    }
+    svg .ink {
+      fill: none;
+      stroke: #FFFFFF;
+      stroke-width: 7;
+      stroke-linecap: square;
+      stroke-linejoin: miter;
+    }
+    #changed-prompt, #changed-tools { width: 300px; height: 120px; display: flex; align-items: center; justify-content: center; font-size: 42px; font-weight: 800; }
+    #changed-prompt { left: 80px; top: 180px; }
+    #changed-tools { left: 420px; top: 180px; }
+    #loop { position: absolute; left: 760px; top: 170px; }
+    #rerun { left: 80px; top: 420px; font-size: 92px; }
+    #checks { position: absolute; left: 80px; top: 620px; display: flex; gap: 16px; }
+    #checks i { width: 88px; height: 88px; border: 5px solid #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 42px; font-weight: 800; opacity: 0; }
+    #stable { left: 80px; top: 800px; width: 760px; height: 150px; display: flex; align-items: center; justify-content: space-between; padding: 0 28px; font-size: 72px; font-weight: 800; }
+    #stable b { width: 90px; height: 90px; background: #FFFFFF; color: #0A0A0A; display: flex; align-items: center; justify-content: center; font-size: 60px; }
+  </style>
+  <div data-hf-id="hf-fejs" id="root" data-composition-id="j-roda" data-width="1080" data-height="1920" data-duration="3.9">
+    <div data-hf-id="hf-zoua" id="changed-prompt" class="sheet">PROMPT</div>
+    <div data-hf-id="hf-h5fu" id="changed-tools" class="sheet">TOOLS</div>
+    <svg data-hf-id="hf-b2uq" id="loop" class="off" width="140" height="140" viewBox="0 0 140 140"><path data-hf-id="hf-aowx" class="ink" id="loop-path" d="M70 24 A 46 46 0 1 1 40 36" stroke-dasharray="280" stroke-dashoffset="280" /><polyline data-hf-id="hf-omsw" class="ink" points="28,18 40,42 62,24" /></svg>
+    <div data-hf-id="hf-659m" id="rerun" class="label off">RODA DE NOVO</div>
+    <div data-hf-id="hf-ibyy" id="checks"><i data-hf-id="hf-ntqh" id="check-0">✓</i><i data-hf-id="hf-64i6" id="check-1">✓</i><i data-hf-id="hf-bgkr" id="check-2">✓</i><i data-hf-id="hf-qdhk" id="check-3">✓</i><i data-hf-id="hf-gh9x" id="check-4">✓</i><i data-hf-id="hf-ys1m" id="check-5">✓</i><i data-hf-id="hf-34k7" id="check-6">✓</i><i data-hf-id="hf-zdh0" id="check-7">✓</i></div>
+    <div data-hf-id="hf-7frd" id="stable" class="sheet off">ESTÁVEL<b data-hf-id="hf-gl6q">✓</b></div>
+  </div>
+  <script>
+    const timeline = gsap.timeline({ paused: true });
+    const byId = (name) => document.getElementById(name);
+    timeline.fromTo(byId("loop"), { opacity: 0 }, { opacity: 1, duration: 0.1 }, 0.15);
+    timeline.fromTo("#loop-path", { strokeDashoffset: 280 }, { strokeDashoffset: 0, duration: 0.45, ease: "power2.out" }, 0.15);
+    timeline.fromTo(byId("rerun"), { opacity: 0, x: -16 }, { opacity: 1, x: 0, duration: 0.3 }, 0.55);
+    timeline.fromTo("#checks i", { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.2, stagger: 0.08, ease: "back.out(1.5)" }, 1.15);
+    timeline.fromTo(byId("stable"), { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.35, ease: "power3.out" }, 2.85);
+    window.__timelines = window.__timelines || {};
+    window.__timelines["j-roda"] = timeline;
+  </script>
+</template>

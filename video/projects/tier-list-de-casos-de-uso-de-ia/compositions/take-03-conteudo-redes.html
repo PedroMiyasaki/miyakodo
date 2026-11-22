@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <style>
+        @font-face {
+          font-family: "Inter";
+          src: url("assets/fonts/inter-latin-wght-normal.woff2") format("woff2");
+          font-weight: 100 900;
+          font-style: normal;
+        }
+        #take-03-conteudo-redes {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+          background: #0a0a0a;
+          font-family: Inter, system-ui, sans-serif;
+        }
+        #take-03-conteudo-redes .arte {
+          position: absolute;
+          inset: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+        }
+        #take-03-conteudo-redes .legenda {
+          position: absolute;
+          left: 64px;
+          right: 64px;
+          top: 1360px;
+          margin: 0;
+          text-align: center;
+          color: #ffffff;
+          font-family: Inter, system-ui, sans-serif;
+          font-weight: 500;
+          font-size: 40px;
+          line-height: 1.2;
+        }
+        #take-03-conteudo-redes .legenda-item {
+          display: block;
+        }
+      </style>
+      <div id="take-03-conteudo-redes" data-composition-id="take-03-conteudo-redes" data-width="1080" data-height="1920" data-duration="3">
+        <img class="arte" src="assets/banners/2.png" alt="IA para produzir conteúdo para redes sociais, nota 5 de 10" />
+        <div class="legenda">
+          <span class="legenda-item">• Ainda precisa de bom profissional no loop</span>
+          <span class="legenda-item">• Sem cuidado, tudo fica com a mesma cara</span>
+        </div>
+      </div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        window.__timelines["take-03-conteudo-redes"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

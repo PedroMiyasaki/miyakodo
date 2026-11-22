@@ -8,8 +8,8 @@
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <style>
     :root {
-      /* UI chrome tokens, previously coming from the design system. Inlined
-         here so the template is self-contained. Only what this file uses. */
+      /* Chrome da página. O card imita o X e não carrega a marca.
+         A identidade Miyakodo vive em design/, fora deste chrome. */
       --paper:      #ffffff;
       --paper-deep: #f6f5f2;
       --ink:        #000000;
@@ -51,8 +51,9 @@
     }
 
     /* ============================================================
-       UI chrome (toolbar, hint, markdown field).
-       Not exported. Free to use brand tokens.
+       Chrome da ferramenta (toolbar, dica, campo de markdown).
+       Não entra na exportação. A marca Miyakodo vive em design/,
+       fora deste chrome.
        ============================================================ */
 
     .toolbar {

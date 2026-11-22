@@ -1,0 +1,99 @@
+<template>
+  <style>
+    @font-face {
+      font-family: "Bricolage Grotesque";
+      src: url("node_modules/@fontsource-variable/bricolage-grotesque/files/bricolage-grotesque-latin-wght-normal.woff2") format("woff2");
+      font-weight: 200 800;
+    }
+    #root {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #0A0A0A;
+      color: #FFFFFF;
+      font-family: "Bricolage Grotesque", sans-serif;
+    }
+    #root > * { position: absolute; }
+    #root::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 4;
+      opacity: 0.14;
+      background-image: radial-gradient(#FFFFFF 0.6px, transparent 0.7px);
+      background-size: 4px 4px;
+    }
+    .label {
+      position: absolute;
+      font-weight: 800;
+      letter-spacing: -0.05em;
+      line-height: 0.9;
+    }
+    .off { opacity: 0; }
+    .sheet {
+      position: absolute;
+      border: 7px solid #FFFFFF;
+      background: #0A0A0A;
+      box-sizing: border-box;
+    }
+    .fold {
+      position: absolute;
+      top: -1px;
+      right: -1px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 42px 42px 0;
+      border-color: transparent #FFFFFF transparent transparent;
+    }
+    .rule {
+      height: 8px;
+      margin: 22px 22px 0;
+      background: #FFFFFF;
+      transform-origin: left center;
+      transform: scaleX(0);
+    }
+    .rule.short { width: 58%; }
+    .draw {
+      transform-origin: left center;
+      transform: scaleX(0);
+    }
+    svg .ink {
+      fill: none;
+      stroke: #FFFFFF;
+      stroke-width: 7;
+      stroke-linecap: square;
+      stroke-linejoin: miter;
+    }
+    #kept { left: 80px; top: 200px; width: 460px; height: 140px; display: flex; align-items: center; justify-content: space-between; padding: 0 28px; font-size: 48px; font-weight: 800; }
+    #kept b { font-size: 72px; }
+    #down { position: absolute; left: 280px; top: 370px; }
+    #cases { position: absolute; left: 70px; top: 560px; display: flex; gap: 22px; }
+    .case { position: relative; width: 210px; height: 210px; border: 7px solid #FFFFFF; }
+    .case span { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 110px; font-weight: 800; }
+    .bad { opacity: 0; }
+    #broke { left: 80px; top: 860px; font-size: 88px; }
+  </style>
+  <div data-hf-id="hf-8jj2" id="root" data-composition-id="g-quebra" data-width="1080" data-height="1920" data-duration="3.4">
+    <div data-hf-id="hf-0947" id="kept" class="sheet">ESSE CASO<b data-hf-id="hf-gl6q">✓</b></div>
+    <svg data-hf-id="hf-rk2s" id="down" width="40" height="140" viewBox="0 0 40 140"><line data-hf-id="hf-upxf" class="ink" x1="20" y1="0" x2="20" y2="110" /><polyline data-hf-id="hf-j0eb" class="ink" points="4,96 20,128 36,96" /></svg>
+    <div data-hf-id="hf-9nl4" id="cases">
+      <div data-hf-id="hf-9rhg" class="case" id="case-a"><span data-hf-id="hf-nd5k" class="ok">✓</span><span data-hf-id="hf-w80j" class="bad">×</span></div>
+      <div data-hf-id="hf-kmz3" class="case" id="case-b"><span data-hf-id="hf-2bhs" class="ok">✓</span><span data-hf-id="hf-1blf" class="bad">×</span></div>
+      <div data-hf-id="hf-gov2" class="case" id="case-c"><span data-hf-id="hf-14kp" class="ok">✓</span><span data-hf-id="hf-0xae" class="bad">×</span></div>
+      <div data-hf-id="hf-pcqx" class="case" id="case-d"><span data-hf-id="hf-1ivq" class="ok">✓</span><span data-hf-id="hf-0izd" class="bad">×</span></div>
+    </div>
+    <div data-hf-id="hf-5ioz" id="broke" class="label off">QUEBROU</div>
+  </div>
+  <script>
+    const timeline = gsap.timeline({ paused: true });
+    const byId = (name) => document.getElementById(name);
+    timeline.fromTo("#cases .bad", { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.28, stagger: 0.22, ease: "back.out(1.7)" }, 0.35);
+    timeline.to("#cases .ok", { opacity: 0, duration: 0.18, stagger: 0.22 }, 0.35);
+    timeline.fromTo(byId("broke"), { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.3 }, 1.5);
+    window.__timelines = window.__timelines || {};
+    window.__timelines["g-quebra"] = timeline;
+  </script>
+</template>

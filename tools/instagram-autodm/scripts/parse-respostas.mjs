@@ -109,7 +109,7 @@ export function parseRespostasMarkdown(markdown, filePath = "respostas-comentari
       errors.push(`${filePath}: a palavra-chave "${keyword}" precisa ser uma única palavra.`);
       continue;
     }
-    const normalized = keyword.normalize("NFKC").toLowerCase();
+    const normalized = foldKeyword(keyword);
     if (seenKeywords.has(normalized)) {
       errors.push(`${filePath}: a palavra-chave "${keyword}" está repetida.`);
       continue;
@@ -158,7 +158,7 @@ export async function loadRespostas(root) {
 
   const byKeyword = new Map();
   for (const draft of drafts) {
-    const key = draft.keyword.normalize("NFKC").toLowerCase();
+    const key = foldKeyword(draft.keyword);
     const previous = byKeyword.get(key);
     if (previous) {
       errors.push(`A palavra-chave "${draft.keyword}" está em ${previous.file} e ${draft.file}. Cada palavra ativa precisa ser única.`);
@@ -172,6 +172,10 @@ export async function loadRespostas(root) {
 
 export function byteLength(text) {
   return new TextEncoder().encode(text).length;
+}
+
+export function foldKeyword(keyword) {
+  return String(keyword).normalize("NFKC").normalize("NFD").replace(/\p{M}/gu, "").toLowerCase();
 }
 
 function firstHttpsUrl(text) {

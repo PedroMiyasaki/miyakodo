@@ -1,0 +1,116 @@
+[
+  {
+    "id": "a-contratos",
+    "duration": 11.3,
+    "hero": "#a-doc0",
+    "bySec": 0.8
+  },
+  {
+    "id": "b-clausula",
+    "duration": 4.3,
+    "hero": "#contract",
+    "bySec": 0.7
+  },
+  {
+    "id": "c-prompt",
+    "duration": 12.84,
+    "hero": "#c-agent",
+    "bySec": 0.7
+  },
+  {
+    "id": "d-resposta",
+    "duration": 4.6,
+    "hero": "#mini",
+    "bySec": 0.7
+  },
+  {
+    "id": "e-demais",
+    "duration": 4.8,
+    "hero": "#e-valid",
+    "bySec": 0.6
+  },
+  {
+    "id": "e-rele",
+    "duration": 3,
+    "hero": "#er-result",
+    "bySec": 0.2
+  },
+  {
+    "id": "f-faltou",
+    "duration": 7.2,
+    "hero": "#f-expected",
+    "bySec": 0.8
+  },
+  {
+    "id": "g-fix",
+    "duration": 7.9,
+    "hero": "#g-agent",
+    "bySec": 0.6
+  },
+  {
+    "id": "g-quebra",
+    "duration": 3.4,
+    "hero": "#kept",
+    "bySec": 0.2
+  },
+  {
+    "id": "h-marcada",
+    "duration": 6,
+    "hero": "#h-doc0",
+    "bySec": 0.7
+  },
+  {
+    "id": "i-cinquenta",
+    "duration": 5.2,
+    "hero": "#fifty",
+    "bySec": 0.7
+  },
+  {
+    "id": "i-golden",
+    "duration": 2.2,
+    "hero": "#grid",
+    "bySec": 0.2
+  },
+  {
+    "id": "j-muda",
+    "duration": 14.6,
+    "hero": "#j-prompt",
+    "bySec": 0.7
+  },
+  {
+    "id": "j-roda",
+    "duration": 3.9,
+    "hero": "#changed-prompt",
+    "bySec": 0.2
+  },
+  {
+    "id": "k-metrica",
+    "duration": 3.2,
+    "hero": "#k1-card",
+    "bySec": 0.5
+  },
+  {
+    "id": "k-direcao",
+    "duration": 8.4,
+    "hero": "#k2-card",
+    "bySec": 0.5
+  },
+  {
+    "id": "l-xyz",
+    "duration": 4.2,
+    "hero": "#l-rule",
+    "bySec": 0.6
+  },
+  {
+    "id": "m-sub",
+    "duration": 8.2,
+    "hero": "#m-subjective",
+    "bySec": 0.7
+  },
+  {
+    "id": "m-direcao",
+    "duration": 2,
+    "hero": "#subjective",
+    "bySec": 0.2
+  }
+]

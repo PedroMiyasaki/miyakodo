@@ -1,0 +1,109 @@
+<mxfile host="app.diagrams.net" modified="2026-11-22T19:30:00.000Z" agent="Cursor" version="24.0.0" type="device">
+  <diagram id="padrao-03" name="Talk to your data">
+    <mxGraphModel dx="1280" dy="860" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1280" pageHeight="860" math="0" shadow="0" background="#ffffff">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Cabeçalho -->
+        <mxCell id="header_title" value="Padrão 3: Talk to your data" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=0;strokeColor=none;fillColor=none;fontFamily=Helvetica;fontSize=26;fontStyle=1;fontColor=#1e1e1e;" vertex="1" parent="1">
+          <mxGeometry x="40" y="20" width="1200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="header_subtitle" value="A IA traduz a pergunta de negócio para consulta e o banco executa o cálculo determinístico" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=0;strokeColor=none;fillColor=none;fontFamily=Helvetica;fontSize=15;fontStyle=0;fontColor=#555555;" vertex="1" parent="1">
+          <mxGeometry x="40" y="62" width="1200" height="28" as="geometry" />
+        </mxCell>
+
+        <!-- Zona Container Principal (declarada antes das caixas internas para ficar no fundo) -->
+        <mxCell id="zone_harness" value="&lt;b&gt;HARNESS ANALÍTICO&lt;/b&gt;  |  Workflow / Agente + Model Routing + Memória da sessão" style="rounded=1;arcSize=6;whiteSpace=wrap;html=1;fillColor=#ebfbee;strokeColor=#22c55e;strokeWidth=2;verticalAlign=top;align=left;spacingTop=10;spacingLeft=14;fontFamily=Helvetica;fontSize=13;fontColor=#15803d;" vertex="1" parent="1">
+          <mxGeometry x="265" y="115" width="665" height="480" as="geometry" />
+        </mxCell>
+
+        <!-- Coluna Esquerda: Usuário e Superfície -->
+        <mxCell id="node_user" value="&lt;b&gt;Sócio / Gestor&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;Pergunta em linguagem natural&lt;br/&gt;&lt;i&gt;&quot;Por que a margem caiu no trimestre?&quot;&lt;/i&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#fff3bf;strokeColor=#f59e0b;strokeWidth=3;fontFamily=Helvetica;fontSize=13;fontColor=#1e1e1e;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="30" y="165" width="185" height="145" as="geometry" />
+        </mxCell>
+        <mxCell id="node_surface" value="&lt;b&gt;Superfície de Entrega&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;App em nuvem (portal, Slack, Teams) ou Workspace via MCP" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#c3fae8;strokeColor=#06b6d4;strokeWidth=2;fontFamily=Helvetica;fontSize=13;fontColor=#1e1e1e;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="30" y="375" width="185" height="125" as="geometry" />
+        </mxCell>
+
+        <!-- Caixas Internas do Harness Analítico -->
+        <mxCell id="node_agent" value="&lt;b&gt;Workflow / Agente Analítico&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;System Prompt antialucinação&lt;br/&gt;Model Routing (simples vs. investigativo)&lt;br/&gt;Memória contínua da sessão" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#d0bfff;strokeColor=#8b5cf6;strokeWidth=2;fontFamily=Helvetica;fontSize=13;fontColor=#1e1e1e;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="285" y="165" width="265" height="165" as="geometry" />
+        </mxCell>
+        <mxCell id="node_data" value="&lt;b&gt;Camada de Dados Governada&lt;/b&gt;&lt;br/&gt;&lt;i&gt;(somente leitura)&lt;/i&gt;&lt;br/&gt;&lt;br/&gt;Views curadas de ERP, CRM e financeiro com permissão por cargo via MCP / Tools.&lt;br/&gt;&lt;b&gt;Banco executa o cálculo exato.&lt;/b&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#a5d8ff;strokeColor=#4a9eed;strokeWidth=2;fontFamily=Helvetica;fontSize=13;fontColor=#1e1e1e;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="645" y="165" width="265" height="165" as="geometry" />
+        </mxCell>
+        <mxCell id="node_semantic" value="&lt;b&gt;Camada Semântica e Dicionário de KPIs&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;RAG sobre regras oficiais da empresa: receita líquida, margem, cliente ativo, churn e inadimplência" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#c3fae8;strokeColor=#06b6d4;strokeWidth=2;fontFamily=Helvetica;fontSize=13;fontColor=#1e1e1e;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="285" y="435" width="295" height="135" as="geometry" />
+        </mxCell>
+        <mxCell id="node_skills" value="&lt;b&gt;Repositório de Skills&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;Análises recorrentes padronizadas: fechamento de margem, curva ABC de clientes e aging de inadimplência" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#c3fae8;strokeColor=#06b6d4;strokeWidth=2;fontFamily=Helvetica;fontSize=13;fontColor=#1e1e1e;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="625" y="435" width="285" height="135" as="geometry" />
+        </mxCell>
+
+        <!-- Coluna Direita: Saída, Human-in-the-loop e Evals -->
+        <mxCell id="node_output" value="&lt;b&gt;Saída Estruturada&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;Números exatos, tabela e gráfico&lt;br/&gt;+ filtros, período e definição de KPI aplicados" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#b2f2bb;strokeColor=#22c55e;strokeWidth=2;fontFamily=Helvetica;fontSize=13;fontColor=#1e1e1e;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="1010" y="155" width="240" height="145" as="geometry" />
+        </mxCell>
+        <mxCell id="node_hitl" value="&lt;b&gt;Human-in-the-loop&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;Gestor confere filtros na decisão; time de negócio governa KPIs e views" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#fff3bf;strokeColor=#f59e0b;strokeWidth=3;fontFamily=Helvetica;fontSize=13;fontColor=#1e1e1e;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="1010" y="345" width="240" height="115" as="geometry" />
+        </mxCell>
+        <mxCell id="node_evals" value="&lt;b&gt;Validação de Gabarito (Evals)&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;Bateria com números fechados pelo financeiro testa cada mudança" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#b2f2bb;strokeColor=#22c55e;strokeWidth=2;fontFamily=Helvetica;fontSize=13;fontColor=#1e1e1e;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="1010" y="495" width="240" height="100" as="geometry" />
+        </mxCell>
+
+        <!-- Conexões -->
+        <mxCell id="edge_user_surface" value="acessa via" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#1e1e1e;strokeWidth=2;endArrow=classic;endFill=1;fontFamily=Helvetica;fontSize=13;fontColor=#15803d;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="node_user" target="node_surface">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_surface_agent" value="pergunta" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#1e1e1e;strokeWidth=2;endArrow=classic;endFill=1;fontFamily=Helvetica;fontSize=13;fontColor=#15803d;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="node_surface" target="node_agent">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="240" y="438" />
+              <mxPoint x="240" y="248" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge_agent_data" value="consulta&lt;br/&gt;read-only" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#1e1e1e;strokeWidth=2;endArrow=classic;endFill=1;fontFamily=Helvetica;fontSize=13;fontColor=#15803d;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="node_agent" target="node_data">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_agent_semantic" value="consulta regras" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#1e1e1e;strokeWidth=2;endArrow=classic;endFill=1;fontFamily=Helvetica;fontSize=13;fontColor=#15803d;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.45;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="node_agent" target="node_semantic">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_agent_skills" value="segue skill" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#1e1e1e;strokeWidth=2;endArrow=classic;endFill=1;fontFamily=Helvetica;fontSize=13;fontColor=#15803d;labelBackgroundColor=#ffffff;exitX=0.88;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="node_agent" target="node_skills">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="518" y="382" />
+              <mxPoint x="768" y="382" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge_data_output" value="cálculo&lt;br/&gt;exato" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#1e1e1e;strokeWidth=2;endArrow=classic;endFill=1;fontFamily=Helvetica;fontSize=13;fontColor=#15803d;labelBackgroundColor=#ffffff;exitX=1;exitY=0.42;exitDx=0;exitDy=0;entryX=0;entryY=0.55;entryDx=0;entryDy=0;" edge="1" parent="1" source="node_data" target="node_output">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_output_hitl" value="confere filtros" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#1e1e1e;strokeWidth=2;endArrow=classic;endFill=1;fontFamily=Helvetica;fontSize=13;fontColor=#15803d;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="node_output" target="node_hitl">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_hitl_harness" value="governa&lt;br/&gt;KPIs" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#1e1e1e;strokeWidth=2;dashed=1;endArrow=classic;endFill=1;fontFamily=Helvetica;fontSize=13;fontColor=#15803d;labelBackgroundColor=#ffffff;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.6;entryDx=0;entryDy=0;" edge="1" parent="1" source="node_hitl" target="zone_harness">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_evals_harness" value="valida&lt;br/&gt;precisão" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#1e1e1e;strokeWidth=2;dashed=1;endArrow=classic;endFill=1;fontFamily=Helvetica;fontSize=13;fontColor=#15803d;labelBackgroundColor=#ffffff;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.9;entryDx=0;entryDy=0;" edge="1" parent="1" source="node_evals" target="zone_harness">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Faixa Inferior: Ganhos-chave -->
+        <mxCell id="footer_title" value="Por que esse padrão entrega números confiáveis:" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=0;strokeColor=none;fillColor=none;fontFamily=Helvetica;fontSize=16;fontStyle=1;fontColor=#1e1e1e;" vertex="1" parent="1">
+          <mxGeometry x="40" y="632" width="1200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="card_1" value="&lt;b&gt;1. Conta no banco, nunca na IA&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;A IA traduz a pergunta em consulta, mas quem faz a matemática é o banco em modo somente leitura, eliminando chutes numéricos." style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#b2f2bb;strokeColor=#22c55e;strokeWidth=2;fontFamily=Helvetica;fontSize=13;fontColor=#1e1e1e;align=left;verticalAlign=top;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="40" y="672" width="380" height="118" as="geometry" />
+        </mxCell>
+        <mxCell id="card_2" value="&lt;b&gt;2. Definição única de KPIs e Skills&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;Camada semântica, views curadas com permissão por cargo e skills oficiais impedem que cada área chegue a um número diferente." style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#b2f2bb;strokeColor=#22c55e;strokeWidth=2;fontFamily=Helvetica;fontSize=13;fontColor=#1e1e1e;align=left;verticalAlign=top;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="450" y="672" width="380" height="118" as="geometry" />
+        </mxCell>
+        <mxCell id="card_3" value="&lt;b&gt;3. Auditoria de filtros e Evals contínuos&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;Cada resposta mostra período e filtros aplicados, enquanto uma bateria de gabarito do financeiro valida precisão a cada alteração." style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#b2f2bb;strokeColor=#22c55e;strokeWidth=2;fontFamily=Helvetica;fontSize=13;fontColor=#1e1e1e;align=left;verticalAlign=top;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="860" y="672" width="380" height="118" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

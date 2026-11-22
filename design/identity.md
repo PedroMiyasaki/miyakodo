@@ -1,250 +1,122 @@
-# Identidade visual - Alvinegro
+# Identidade visual Miyakodo
 
-O sistema visual de todo entregável que tem layout próprio.
+Índice do sistema visual em `design/`. A entrega do designer foi copiada para cá. A apresentação completa (capa, moodboard, paleta, tipografia, mascote e aplicações) está em `design/apresentacao-idv-pedro-miyakodo.pdf`.
 
-Prova do sistema renderizada: `design/proof/` (HTML + PNGs). Copie o `<style>` e o `<defs>` de lá
-como ponto de partida de qualquer peça nova.
+`idv-pedro/` continua sendo a entrega original e não foi alterada.
 
----
+## Estrutura
 
-## Os slots
+```text
+design/
+├── apresentacao-idv-pedro-miyakodo.pdf
+├── fontes/
+│   ├── instrument-serif.zip
+│   └── poppins.zip
+├── logo/
+│   ├── pdf/horizontal/
+│   ├── pdf/vertical/
+│   ├── png/horizontal/
+│   └── png/vertical/
+├── mascote-e-textura/
+│   ├── textura.pdf
+│   ├── pdf/
+│   └── png/
+└── identity.md
+```
 
-| Slot | Valor |
-|---|---|
-| `GROUND` | `#FFFFFF`, papel. Slides invertidos: `#0A0A0A`. |
-| `INK` | `#0A0A0A` sobre papel, `#FFFFFF` nos invertidos. |
-| `ACCENT` | **Nenhum: a inversão é o acento.** Veja abaixo. |
-| `DISPLAY` | Bricolage Grotesque 800 · `letter-spacing:-.025em` · `line-height:.94` |
-| `BODY` | Inter 400/500 |
-| `READ` | **Newsreader 400 + itálico**: só em modo leitura, só sobre fundo branco. Veja abaixo. |
-| `MARK` | **`@pedro.miyasaki.ia`**: Inter 500, 22px, caixa alta, `letter-spacing:.18em`, `opacity:.55`, canto superior esquerdo, em todo slide. Esse é o handle de verdade, nunca renderize um placeholder. |
-| `ART` | Linha com wobble de mão + preenchimento em halftone. A técnica está abaixo. |
-| `TEXTURE` | Grão de papel: `radial-gradient(currentColor .5px, transparent .6px)`, grade de `4px`, `opacity:.05` |
+Os grupos seguem a entrega: fontes, logo e mascote com textura. A pasta externa `IDV PEDRO` não foi repetida aqui. A apresentação ficou na raiz de `design/`.
 
-Duas famílias, dois valores, nenhum terceiro de nada. Estritamente preto e branco: a retícula de
-halftone é o que produz todo tom intermediário, igual à impressão de jornal.
+## Paleta
 
-**A inversão é o único acento, e significa uma coisa só: a moldura da peça.** A capa e o CTA são
-pretos, tudo entre os dois é branco. Nada mais inverte. Assim, o acento mantém um significado
-constante sem gastar cor, e a capa vira um retângulo preto num feed de retângulos brancos.
+A apresentação define quatro cores principais: off-white, cinza, dark brown e verde. Outras quatro entram para contraste e ponto de atenção. Essas quatro de apoio não têm nome na apresentação, só o hex.
 
-**Escala tipográfica** (canvas de 1080×1350, margem de 88px):
-
-| Nível | Tamanho |
-|---|---|
-| Hook da capa | 104px |
-| Headline do slide | 86px |
-| CTA | 118px, centralizado |
-| Body | 46px / 1.32, máx. 30ch |
-| Marca | 22px |
-
----
-
-## Tipografia - três vozes
-
-| Voz | Fonte | Função |
-|---|---|---|
-| Reconhecimento | Bricolage Grotesque 800 | Hooks, headlines, o logotipo. Nunca abaixo de 40px. |
-| Apoio | Inter 400/500 | Body embaixo de headline, a marca do handle, rótulos, legendas. |
-| Leitura | Newsreader 400 + itálico | Qualquer coisa acima de quatro linhas. **Só sobre fundo branco.** |
-
-A Newsreader tem eixo de tamanho óptico, então ela é composta para o tamanho em que vai aparecer, e
-não escalada até ele: o mesmo argumento das faixas de rugosidade. Sobre fundo preto ela fica fina e
-suja em qualquer tamanho, e é por isso que o modo leitura é só em branco, não por preferência.
-
-Escala no canvas de 1080 × 1350 com margem de 88px: hook da capa 104 · headline do slide 86 · CTA
-118 centralizado · body Inter 46/1.32 a 30ch · **leitura Newsreader 40/1.42 a 38ch** · chapéu e
-marca do handle 22 a `.18em`.
-
-**Dois tamanhos por slide, nunca três.** Se um slide parece precisar de um terceiro nível, ele é
-dois slides.
-
----
-
-## Cor - a rampa de halftone
-
-Cinza é retícula, nunca cor chapada. São quatro densidades na mesma grade de 11px: escolha uma, não
-interpole, e nunca use `opacity` nem um cinza em hex para chegar lá.
-
-| Nome | Raio | Cobertura | Uso |
+| Papel | Hex | RGB | CMYK |
 |---|---|---|---|
-| Sussurro | 1.4 | 5.6% | Grão sobre fundo em sangria |
-| Retícula | 2.1 | 11.4% | O padrão: preenchimento da arte |
-| Sombra | 3.0 | 23.3% | Peso dentro de um desenho |
-| Quase chapado | 3.9 | 39.4% | Parece escuro, mas ainda é ponto |
-| Tinta | - | 100% | Chapado. Sem retícula. |
+| off-white | `#f6f4ee` | 246, 244, 238 | 5, 4, 8, 0 |
+| cinza | `#aba199` | 171, 161, 153 | 33, 31, 34, 10 |
+| dark brown | `#280e03` | 40, 14, 3 | 59, 79, 72, 86 |
+| verde | `#1a3010` | 26, 48, 16 | 82, 55, 88, 69 |
+| apoio | `#b6cadb` | 182, 202, 219 | 33, 14, 10, 0 |
+| apoio | `#c1c167` | 193, 193, 103 | 31, 14, 70, 2 |
+| apoio | `#d39ca7` | 211, 156, 167 | 17, 45, 24, 2 |
+| apoio | `#db3c05` | 219, 60, 5 | 7, 87, 100, 1 |
 
-Sobre fundo preto o ponto inverte para branco: mesmos raios, mesma grade. **Nunca coloque retícula
-sobre retícula:** duas grades sobrepostas geram moiré na exportação, e o artefato sobrevive à
-compressão melhor que a arte.
+Não há arquivo separado de paleta. Os valores saíram dos blocos de cor da apresentação.
 
-`#0A0A0A` em vez de `#000000` porque o preto puro borra em tela OLED durante o scroll e cria banding
-no H.264. O contraste contra o papel é de 19.8:1. Use o mesmo `#0A0A0A` como fundo de Reel, e deixe
-o grão de papel ligado nos frames exportados: ele também funciona como dither.
+O verde é cor principal, e mesmo assim não existe logo verde. Os arquivos de logo vêm em cinza, dark brown e off-white.
 
----
+## Tipografia
 
-## Padrões - seis recursos
+Títulos: Instrument Serif. A apresentação liga a serifa ao tom de autoridade e de mentor.
 
-O filtro e a retícula são técnica. Estes são os elementos que você coloca na página:
+Corpo: Poppins. A apresentação usa essa família no restante do texto, para o tom ficar direto e não competir com o título.
 
-1. **Campo**: a retícula em sangria, cobrindo o slide inteiro.
-2. **Par de fios**: grosso sobre fino, vindo do masthead. Todo divisor do sistema.
-3. **Contagem**: tracinhos de contar, para qualquer coisa medida em semanas ou repetições.
-4. **Grão**: radial de 4px a `.05` em `currentColor`, para sobreviver à inversão. Sempre ligado.
-5. **Faixa rasgada**: um retângulo passado pelo `#rough-lg`. Quebras de seção e citações em destaque.
-6. **Rótulo em bloco**: o bloco do logotipo em escala de rótulo. Só para chapéus e tags.
+Os arquivos estão nos zips, como o designer entregou:
 
-Seis é o vocabulário inteiro. Um sétimo é uma decisão sobre o sistema, então ou entra neste arquivo
-ou não é usado. Nenhum deles pode ficar em cima de retícula.
+- `design/fontes/instrument-serif.zip`: `InstrumentSerif-Regular.ttf` e `InstrumentSerif-Italic.ttf`.
+- `design/fontes/poppins.zip`: Thin, ExtraLight, Light, Regular, Medium, SemiBold, Bold, ExtraBold e Black, com itálico de cada peso, menos Thin. `Poppins-ThinItalic.ttf` não está no zip.
 
----
+## Logotipo
 
-## Templates e papelaria
+Wordmark desenhado à mão, MIYAKODO. Duas disposições: horizontal, e vertical com MIYA sobre KODO. Três cores, tiradas da paleta principal, sem o verde.
 
-| O quê | Fonte | Renderizar com |
+Os PNG têm fundo transparente. O horizontal mede 6011×2701. O vertical mede 4167×4167.
+
+Os PDF são vetor, uma página, sem imagem embutida. O horizontal tem cerca de 2885×1297 pt. O vertical tem 2000×2000 pt.
+
+A numeração não é a mesma cor em todos os formatos. No PNG horizontal, o 1 é cinza. No PDF horizontal e nos verticais, o 1 é dark brown. Use a tabela.
+
+| Arquivo | Cor | Hex |
 |---|---|---|
-| Oito arquétipos de slide | `design/templates/slides.html` | `--selector .slide --width 1080 --height 1350` |
-| Cartão de visita, duas faces | `design/stationery/stationery.html` | `--selector .card --width 1050 --height 600` |
-| Papel timbrado, A4 | `design/stationery/stationery.html` | `--selector .letter --width 1240 --height 1800` |
-| O brand book | `design/brandbook/book.html` | `--selector .page --width 1600 --height 880` |
+| `logo/png/horizontal/MIYAKODO_HORIZONTAL1.png` | cinza | `#aba199` |
+| `logo/png/horizontal/MIYAKODO_HORIZONTAL2.png` | dark brown | `#280e03` |
+| `logo/png/horizontal/MIYAKODO_HORIZONTAL3.png` | off-white | `#f6f4ee` |
+| `logo/pdf/horizontal/MIYAKODO_HORIZONTAL_1.pdf` | dark brown | `#280e03` |
+| `logo/pdf/horizontal/MIYAKODO_HORIZONTAL_2.pdf` | cinza | `#aba199` |
+| `logo/pdf/horizontal/MIYAKODO_HORIZONTAL_3.pdf` | off-white | `#f6f4ee` |
+| `logo/png/vertical/MIYAKODO_VERTICAL1.png` | dark brown | `#280e03` |
+| `logo/png/vertical/MIYAKODO_VERTICAL2.png` | cinza | `#aba199` |
+| `logo/png/vertical/MIYAKODO_VERTICAL3.png` | off-white | `#f6f4ee` |
+| `logo/pdf/vertical/MIYAKODO_VERTICAL_1.pdf` | dark brown | `#280e03` |
+| `logo/pdf/vertical/MIYAKODO_VERTICAL_2.pdf` | cinza | `#aba199` |
+| `logo/pdf/vertical/MIYAKODO_VERTICAL_3.pdf` | off-white | `#f6f4ee` |
 
-Arquétipos: **cover · statement · quote · data · list · split · reading · CTA**. A marca do handle
-está em todos eles, o logotipo em nenhum. Use *quote* quando a frase é o ponto inteiro, *data*
-quando um número convence (nunca dois), *list* para o que o leitor vai printar (no máximo cinco
-itens), *split* quando a inversão carrega a virada, *reading* quando o argumento passa de quatro
-linhas.
+No PDF horizontal o número vem depois de um underline (`HORIZONTAL_1`). No PNG horizontal o número cola no nome (`HORIZONTAL1`). Os nomes originais foram mantidos por causa disso.
 
-A papelaria é **só digital**: sem sangria, sem marcas de corte, sem margem de refile. A frente do
-cartão leva o stamp, o verso leva o badge: duas superfícies, nunca no mesmo campo de visão. Os dados
-de contato são slots de propósito.
+## Mascote
 
----
+O mascote se chama Carlos. A apresentação descreve a figura como a personificação da ansiedade e da raiva: o profissional comum num trabalho acelerado, que aprende no próprio ritmo. O tom é de alívio cômico. A família de expressões entra em PDFs de ensino, PowerPoints e posts de LinkedIn.
 
-## O logotipo
+Os PNG têm fundo transparente. Os PDF trazem a arte como imagem embutida, não como vetor limpo.
 
-`design/logotype/`: `spec.html` é a fonte, `spec-render/` são as quatro páginas renderizadas.
+O número do PNG só coincide com o do PDF no corpo agachado (PNG 1 e PDF 01). Nas outras expressões, o índice muda.
 
-**A marca é o nome vazado de um bloco entintado.** Bloco e letras são desgastados como uma impressão
-só, então a borda fica mordida enquanto as contraformas continuam abertas. Não é um wordmark
-colocado dentro de um retângulo.
-
-| Peça | O que é | Onde entra |
+| Expressão | PNG | PDF |
 |---|---|---|
-| **Stamp** | `PEDRO MIYASAKI` vazado do bloco entintado | Papel timbrado, cartão, capa de deck, assinatura |
-| **Badge** | O mesmo bloco reduzido a `PM` | Avatar, favicon, marca de canto no vídeo |
-| **Masthead** | Nome entre dois fios, slot de descritor embaixo | Cabeçalho de página, Substack, banner do LinkedIn |
+| Corpo agachado, punhos fechados | `png/MASCOTE_1.png` | `pdf/MASCOTE_01.pdf` |
+| Corpo em pé, caneca "WORLD BEST BOSS" | `png/MASCOTE_2.png` | `pdf/MASCOTE_5.pdf` |
+| Rosto na nota de dinheiro | `png/MASCOTE_3.png` | `pdf/MASCOTE_4.pdf` |
+| Cabeça tomando café, olhos fechados | `png/MASCOTE_4.png` | `pdf/MASCOTE_2.pdf` |
+| Cabeça com estrelas no lugar dos olhos | `png/MASCOTE_5.png` | `pdf/MASCOTE_3.pdf` |
 
-```
-Padding do bloco    .30em em cima · .38em nos lados · .34em embaixo
-Wordmark            Bricolage Grotesque 800, caixa alta, -.03em
-Área de proteção    .30em de cada lado, em em do wordmark
-Mínimo              stamp 96px de largura · badge 24px
-```
+Os caminhos ficam em `design/mascote-e-textura/`.
 
-**A rugosidade depende do tamanho.** O deslocamento é em pixels absolutos, então um filtro só não
-serve para todo tamanho: `scale="7"` parece tinta a 900px e lama a 120px.
+## Textura
 
-| Largura da marca | Filtro | scale | baseFrequency |
-|---|---|---|---|
-| ≥ 600px | `#rough-lg` | 7 | .018 |
-| 300–600px | `#rough-md` | 4 | .026 |
-| 120–300px | `#rough-sm` | 2 | .042 |
-| < 120px | nenhum | - | - |
+`design/mascote-e-textura/textura.pdf`. Uma página com anéis de tronco em off-white. Na apresentação, essa textura fica atrás do logo vertical.
 
-A impressão é **fixada no tamanho de render**. Nunca redimensione um PNG exportado da marca:
-renderize de novo no tamanho de destino para a faixa ficar certa.
+## O que a apresentação mostra
 
-**O masthead é composto, nunca filtrado.** Os fios e o descritor são medidos em em, a partir do wordmark:
-fio de cima `.048em`, fio de baixo `.014em`, descritor `.115em` com tracking de `.34em`. Abaixo de um
-wordmark de 96px o descritor some, porque renderizaria com menos de 11px.
+São 13 páginas em 1920×1080. Além da paleta e da tipografia, o PDF mostra o logo sobre fundo marrom e sobre a textura, a grade de expressões do Carlos, um mock de perfil (Pedro, `@MIYAKODO`) com cartões de post, um artigo no tablet, uma tela de desktop, um formulário no celular e ícones de app (logo vertical e o mascote no café).
 
-**Cinco jeitos de quebrar a marca:** esticar (cisalha o grão), recompor em Inter, filtrar duas vezes
-(fecha as contraformas), colocar sobre meio-tom, e usar badge e stamp no mesmo campo de visão,
-porque os dois são uma marca só em duas altitudes.
+Não há arquivo separado de carrossel, stories, thumbnail, papelaria, marca d'água ou template editável. Essas cenas existem só dentro da apresentação. Também não há SVG, AI nem PSD. O vetor do logo é o PDF. Mascote e textura, no PDF, são imagem embutida.
 
-**O logotipo não é a marca do slide.** Os slides de carrossel usam o slot `MARK` lá de cima: o handle
-em Inter, no canto superior esquerdo, discreto. O stamp é peça de marca para papelaria e cabeçalho,
-e nunca aparece em slide de carrossel, onde ia brigar com a headline em display.
+## Nomes ajustados na cópia
 
----
+- A pasta `IDV PEDRO` não entrou em `design/`.
+- `MASCOTE E TEXTURA` virou `mascote-e-textura`. `TEXTURA.pdf` virou `textura.pdf`.
+- `FONTES` virou `fontes`. `Instrument Serif.zip` virou `instrument-serif.zip`. `Poppins.zip` virou `poppins.zip`.
+- O PDF da apresentação, com espaço e acento decomposto no nome, virou `apresentacao-idv-pedro-miyakodo.pdf`.
+- Logos e mascotes mantiveram o nome de arquivo do designer.
 
-## Como os desenhos são feitos
-
-Sem plugin, sem geração de imagem, sem stock. Geometria SVG limpa, rasgada por um filtro de
-deslocamento na hora do render. O Chromium do Playwright aplica o filtro, então ele chega ao PNG.
-
-```html
-<filter id="rough" x="-25%" y="-25%" width="150%" height="150%">
-  <feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="3" seed="11" result="n"/>
-  <feDisplacementMap in="SourceGraphic" in2="n" scale="7" xChannelSelector="R" yChannelSelector="G"/>
-</filter>
-<filter id="rough2" x="-25%" y="-25%" width="150%" height="150%">
-  <feTurbulence type="fractalNoise" baseFrequency="0.022" numOctaves="3" seed="4" result="n"/>
-  <feDisplacementMap in="SourceGraphic" in2="n" scale="6" xChannelSelector="R" yChannelSelector="G"/>
-</filter>
-
-<pattern id="ht-dark" width="11" height="11" patternUnits="userSpaceOnUse">
-  <circle cx="5.5" cy="5.5" r="2.1" fill="#0A0A0A"/>
-</pattern>
-<pattern id="ht-light" width="11" height="11" patternUnits="userSpaceOnUse">
-  <circle cx="5.5" cy="5.5" r="2.1" fill="#FFFFFF"/>
-</pattern>
-```
-
-**A construção, sempre a mesma:**
-
-1. Desenhe a forma duas vezes: uma como sólido preenchido com halftone, outra como contorno traçado.
-2. O preenchimento fica **deslocado 8–9px** do contorno (`transform="translate(-9,7)"`). Esse
-   desregistro é o truque inteiro: parece uma impressão em duas passadas que não bateram.
-3. O preenchimento recebe `#rough2`, o contorno recebe `#rough`: seeds diferentes, para as duas
-   passadas tremerem de forma independente, como duas passadas de mão separadas.
-4. Traço: `stroke-width:7`, `stroke-linecap:round`, `stroke-linejoin:round`. Nunca mais fino, porque
-   o filtro come traço fino.
-5. A arte ocupa os ~40% de baixo do slide, com 600–900px de largura. Arte pequena demais parece
-   espaço morto: a correção é sempre escala.
-
-**Desenhe só o que sobrevive ao tratamento.** O vocabulário é geométrico e diagramático: caixas,
-janelas, terminais, setas, fluxos, barras, gráficos, checkmarks, cruzes, cursores, nós, balões de
-fala, pilhas, sliders. Isso cobre o assunto inteiro de IA para quem constrói.
-
-**Não** tente tema figurativo: rosto, animal, mão, objeto de contorno orgânico. Geometria limpa mais
-filtro de wobble parece desenho de autor. Uma maçã gerada parece clipart com tremor. Se uma peça
-precisa mesmo de um desenho figurativo, desenhe à mão, escaneie e coloque em `design/art/`: o
-sistema aceita um `<img>` de verdade ali.
-
----
-
-## Por que isso não é o visual da Anthropic
-
-O screenshot que deu origem a isso usa a mesma *estrutura*: contorno irregular feito à mão mais
-preenchimento chapado com um leve desregistro. Essa estrutura é um idioma de impressão, não um ativo
-proprietário, e é a mesma ideia que o `habitosqueabracam` usa com ukiyo-e em `examples/carousels/`.
-
-Toda escolha de material por baixo dela é diferente:
-
-| | Anthropic | Alvinegro |
-|---|---|---|
-| Fundo | creme quente | branco puro, e preto metade do tempo |
-| Preenchimento | cinza quente chapado | retícula de halftone, preto ou branco puro |
-| Tipografia | serifa suave | grotesque pesada |
-| Registro | suave, editorial | alto contraste, cartaz |
-| Acento | uma cor (coral) | inversão |
-
-Tipografia suave + desenho suave lê como o registro da Anthropic. Desenho tosco contra uma grotesque dura
-e pesada é outra tensão, e é o que faz `souantisocialmedia` e `okaashish` parecerem de autor, e não
-de template.
-
----
-
-## Pendências
-
-- **Biblioteca de arte figurativa.** `design/art/` ainda não existe. Crie quando uma peça precisar de
-  um tema desenhado que o vocabulário geométrico não aguenta.
-- ~~**Modo leitura.**~~ Fechado em 2026-08-20: Newsreader, só sobre fundo branco. Veja Tipografia
-  acima.
-- ~~**Brand book.**~~ Fechado em 2026-08-20: 17 páginas em `design/brandbook/`. Rota do logotipo
-  decidida: stamp como marca, masthead como estrutura de cabeçalho.
-- **Referência de tom visual.** A página de tom do book (13) descreve o registro em palavras. Um
-  painel de referência de verdade (jornal escaneado, broadsheet real) ia fixar isso melhor que
-  adjetivos.
+Onze arquivos `._*` (AppleDouble, 4 KB cada) não foram copiados. São metadados do macOS, não arte. Continuam em `idv-pedro/`.
