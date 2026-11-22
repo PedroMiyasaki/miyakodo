@@ -4,6 +4,12 @@ Este arquivo organiza as atividades gerais, separadas entre Pedro e Sofia. Tudo 
 
 ## Pedro
 
+### Miyakodo
+
+O fechamento do webinar está em [webinar/README.md](webinar/README.md). Nesta lista, a tarefa abaixo é minha, não da Sofia.
+
+[ ] Escrever o roadmap do zero ao primeiro projeto de IA da empresa. Detalhe em [webinar/README.md](webinar/README.md), tarefa "Roadmap do zero ao primeiro projeto de IA da empresa".
+
 ### Imediatas
 
 Imediatas organiza o que está sendo feito agora, ou as próximas da lista. Pelo [MEMORANDO.MD](MEMORANDO.MD), sempre há dois subtítulos: Conteúdo e Outros.
@@ -21,7 +27,6 @@ Imediatas organiza o que está sendo feito agora, ou as próximas da lista. Pelo
 [ ] Fazer as artes para o webinar
 [ ] Simular o webinar usando as artes feitas
 [ ] Iterar e ajustar qualquer detalhe nas artes, ementa, pauta e etc.
-[ ] Fazer o produto com um roadmap de noventa dias, do zero até o primeiro projeto de AI adotado e rodando
 [ ] Deixar curso pronto  
 [ ] Simular webinar  
 [ ] Expor no portfólio de ofertas o acesso à pré-inscrição do webinar

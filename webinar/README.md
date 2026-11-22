@@ -28,7 +28,7 @@ A ementa é o roteiro das 2 horas, já com a marca de cada slide. Ela abre com q
 4. Seis padrões de projeto, em que as peças acima se combinam em arquiteturas que se repetem entre setores.
 5. Fechamento: os seis padrões como combinações possíveis, não como lista fechada; framework em quatro passos (problema de negócio, conceitos, desenho de solução, ciclo de implementação); entrega do roadmap; perguntas ao vivo sobre cenários reais.
 
-O entregável oficial, citado na parte final da ementa, é o [Roadmap: do zero ao primeiro projeto de IA da empresa](https://app.notion.com/p/420ffe7442fd815aa92cec33128710f7). Os arquivos `webinar-assuntos.md` e `webinar-parte-2.md` desta pasta são rascunhos anteriores. A versão vigente é a página da ementa.
+O entregável oficial, citado na parte final da ementa, é o [Roadmap: do zero ao primeiro projeto de IA da empresa](https://app.notion.com/p/420ffe7442fd815aa92cec33128710f7). A versão vigente da ementa é a página do Notion.
 
 [x] Diagramas dos padrões de projeto citados na ementa
 
@@ -46,6 +46,8 @@ Cada padrão tem o texto do fluxo em `padroes-de-projeto/` e a arte em `diagrama
 ## Para frente, para o fechamento do webinar
 
 [ ] Roadmap do zero ao primeiro projeto de IA da empresa
+
+Tarefa do Pedro, não da Sofia. Está na frente Miyakodo de [TODO.md](../TODO.md).
 
 Escrever o roadmap e salvar em [Roadmap: do zero ao primeiro projeto de IA da empresa](https://app.notion.com/p/420ffe7442fd815aa92cec33128710f7).
 
