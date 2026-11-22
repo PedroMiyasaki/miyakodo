@@ -2,7 +2,11 @@
 
 ## O repositório
 
-Este repositório é o sistema de produção de conteúdo de Pedro Miyasaki. Ele reúne as skills que transformam ideias em roteiros de Reel, carrosséis, threads, posts de LinkedIn e artigos de Substack, além dos arquivos de trabalho e assets de cada peça.
+Este repositório produz o conteúdo da Miyakodo, a escola de inteligência artificial para empreendedores. Pedro Miyasaki é o CEO, o fundador e o único professor. A voz pública das peças é a dele, em primeira pessoa. O perfil `@pedro.miyasaki.ia` e o nome Pedro nas peças de vídeo continuam, porque o canal de publicação é o perfil do fundador. Isso é founder-led growth: publicar no perfil do fundador para a escola crescer. A instituição é a escola, não uma marca pessoal.
+
+No longo prazo, a escola caminha para uma comunidade, algo mais complexo. O desenho dessa comunidade não está definido neste repositório.
+
+Ele reúne as skills que transformam ideias em roteiros de Reel, carrosséis, threads, posts de LinkedIn e artigos de Substack, além dos arquivos de trabalho e assets de cada peça.
 
 O fluxo começa no banco **Ideas**, no Notion. Uma skill lê a ideia, produz o formato pedido e salva as iterações localmente em `posts/`. O usuário revisa a peça até dizer "pronto"; só então a versão aprovada vira a entrega final e o estado da ideia é atualizado no Notion. A publicação na plataforma de destino é manual.
 
@@ -19,13 +23,14 @@ Este não é um projeto de software tradicional. Não há aplicação para execu
 ├── .cursor/
 │   └── skills -> .agents/skills
 ├── CLAUDE.md -> AGENTS.md  # espelho local destas instruções
+├── README.md               # o que é o repositório e a escola
 ├── posts/                  # peças produzidas, organizadas por formato e slug
 │   ├── script/
 │   ├── carousel/
 │   ├── thread/
 │   ├── linkedin/
 │   └── substack/
-├── design/                 # identidade Miyakodo: identity.md, apresentação, fontes, logo, mascote e textura
+├── design/                 # identidade visual da escola Miyakodo: identity.md, apresentação, fontes, logo, mascote e textura
 ├── docs/                   # documentação e pesquisa
 ├── examples/               # referências de conteúdo
 ├── scripts/                # automações de render e manutenção
@@ -43,7 +48,7 @@ Edite skills somente em `.agents/skills/`. As pastas `.claude/skills` e `.cursor
 
 Dentro de `posts/`, cada peça mora em `posts/<formato>/<slug>/`. Em geral, `sketch/` guarda as versões de trabalho e a raiz do slug guarda somente os arquivos aprovados para publicação. Os detalhes variam entre formatos, então consulte o `SKILL.md` correspondente antes de produzir, revisar ou finalizar uma peça.
 
-`design/` é a fonte do sistema visual geral, a identidade Miyakodo. O índice está em `design/identity.md`. Na mesma pasta ficam a apresentação em PDF, as fontes, o logo e o mascote com textura. Os padrões e assets permanentes de edição de vídeo ficam em `.agents/skills/editar-video/`, não em `design/` nem nas pastas dos vídeos. `examples/` oferece material de referência, não templates obrigatórios. `scripts/` automatiza trabalho mecânico e não deve concentrar decisões editoriais.
+`design/` é a fonte do sistema visual da escola Miyakodo. O índice está em `design/identity.md`. Na mesma pasta ficam a apresentação em PDF, as fontes, o logo e o mascote com textura. Os padrões e assets permanentes de edição de vídeo ficam em `.agents/skills/editar-video/`, não em `design/` nem nas pastas dos vídeos. `examples/` oferece material de referência, não templates obrigatórios. `scripts/` automatiza trabalho mecânico e não deve concentrar decisões editoriais.
 
 ## Edição de vídeo
 
@@ -59,7 +64,9 @@ O catálogo define a aparência desses três elementos; as skills do HyperFrames
 
 ## Voz
 
-Esta não é uma definição completa da voz do usuário. Ela reúne apenas os poucos princípios que considero válidos em qualquer produção de conteúdo. Os pontos são propositalmente curtos: regras globais demais fazem os canais soarem iguais e induzem overfitting. As nuances de ritmo, densidade, estrutura e posicionamento devem vir da ideia, da skill do formato e da calibração pelos conteúdos recentes.
+A voz pública é a de Pedro Miyasaki, fundador e único professor da Miyakodo. As peças continuam em primeira pessoa, no perfil dele.
+
+Esta não é uma definição completa dessa voz. Ela reúne apenas os poucos princípios que considero válidos em qualquer produção de conteúdo. Os pontos são propositalmente curtos: regras globais demais fazem os canais soarem iguais e induzem overfitting. As nuances de ritmo, densidade, estrutura e posicionamento devem vir da ideia, da skill do formato e da calibração pelos conteúdos recentes.
 
 - **Nunca utilizar em dash.** Reestruture a frase com ponto, vírgula, dois-pontos ou parênteses. O hífen continua válido quando sua função gramatical exigir.
 - **Nunca utilizar emojis.** Não use emojis em títulos, corpo, listas, CTAs ou como decoração visual.

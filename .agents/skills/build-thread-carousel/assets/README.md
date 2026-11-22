@@ -2,7 +2,7 @@
 
 Pasta dos arquétipos do carrossel de Instagram derivado de uma thread (skill `build-thread-carousel`). Cada arquétipo é um arquivo HTML completo e independente: abra no navegador e ele renderiza um slide de demonstração.
 
-A marca é a Miyakodo. Antes de produzir, leia `design/identity.md`. Ele é a fonte canônica de cor, tipografia, logo, mascote e textura. Os CSS embutem os valores registrados lá. Se divergir, vale o `identity.md`.
+A marca visual é a da escola Miyakodo. Antes de produzir, leia `design/identity.md`. Ele é a fonte canônica de cor, tipografia, logo, mascote e textura. Os CSS embutem os valores registrados lá. Se divergir, vale o `identity.md`.
 
 - Logos: `design/logo/`. No modo default, o PNG horizontal dark brown é `design/logo/png/horizontal/MIYAKODO_HORIZONTAL2.png` (`#280e03`). No modo X, o PNG horizontal off-white é `design/logo/png/horizontal/MIYAKODO_HORIZONTAL3.png` (`#f6f4ee`). O número não é a mesma cor no PNG e no PDF. Use a tabela de `identity.md`.
 - Fontes: `design/fontes/instrument-serif.zip` (títulos, Instrument Serif, Regular e Italic) e `design/fontes/poppins.zip` (corpo, Poppins). Não copie as fontes para fora de `design/fontes/`.
@@ -18,7 +18,7 @@ Qual usar em cada caso está no `SKILL.md` da skill, seção "Modos".
 
 ## Layout do modo default
 
-O cabeçalho traz o logo Miyakodo, o nome Pedro Miyasaki e o handle `@pedro.miyasaki.ia`. O conteúdo fica centralizado na vertical.
+O cabeçalho traz o logo Miyakodo, o nome Pedro Miyasaki e o handle `@pedro.miyasaki.ia`, porque a peça sai no perfil do fundador. O conteúdo fica centralizado na vertical.
 
 - Fundo off-white `#f6f4ee`
 - Texto dark brown `#280e03`, meta em cinza `#aba199`

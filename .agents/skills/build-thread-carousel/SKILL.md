@@ -20,7 +20,7 @@ description: >
 
 Objetivo: montar o carrossel de IG a partir de uma thread já escrita. Cada slide traz o cabeçalho de perfil (logo Miyakodo, nome e handle) e o conteúdo **centralizado na vertical**. Slot de imagem opcional embaixo do texto, para preencher slides curtos.
 
-A marca é a Miyakodo. Leia `design/identity.md` antes de gerar. Logos em `design/logo/`, fontes em `design/fontes/`, mascote e textura em `design/mascote-e-textura/`, guia em `design/apresentacao-idv-pedro-miyakodo.pdf`. A cor do logo horizontal e a expressão do mascote seguem as tabelas desse arquivo. O número do arquivo não indica a mesma cor, nem a mesma expressão, no PNG e no PDF.
+A marca visual é a da escola Miyakodo. O nome e o handle do cabeçalho são os de Pedro Miyasaki (`@pedro.miyasaki.ia`), porque a peça é publicada no perfil do fundador. Leia `design/identity.md` antes de gerar. Logos em `design/logo/`, fontes em `design/fontes/`, mascote e textura em `design/mascote-e-textura/`, guia em `design/apresentacao-idv-pedro-miyakodo.pdf`. A cor do logo horizontal e a expressão do mascote seguem as tabelas desse arquivo. O número do arquivo não indica a mesma cor, nem a mesma expressão, no PNG e no PDF.
 
 A skill tem **dois modos visuais**: mesmo conteúdo, mesma estrutura, fundo claro ou escuro. Veja a seção "Modos" abaixo para escolher qual usar e como ativar cada um.
 

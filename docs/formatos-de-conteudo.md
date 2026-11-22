@@ -1,6 +1,6 @@
 # Formatos de conteúdo
 
-Este documento registra os formatos editoriais que o projeto produz hoje. A lista parte das skills de produção e separa três coisas que não são equivalentes:
+Este documento registra os formatos editoriais da escola Miyakodo. A lista parte das skills de produção e separa três coisas que não são equivalentes:
 
 - **formato** é a peça publicável;
 - **modo** é uma variação narrativa, de densidade ou de edição dentro do formato;

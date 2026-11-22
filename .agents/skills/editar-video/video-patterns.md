@@ -1,6 +1,6 @@
 # Padrões de edição de vídeo
 
-Três elementos recorrentes dos vídeos de Pedro Miyasaki: identificação do perfil, legenda de fala e aviso de reprodução em 2x. Este catálogo, os prints e as fontes ficam dentro de `editar-video`; ele é autossuficiente para reproduzir os padrões, sem consultar projetos anteriores. Estes nomes podem ser usados diretamente num pedido de edição.
+Três elementos recorrentes dos vídeos da Miyakodo publicados no perfil de Pedro Miyasaki (`@pedro.miyasaki.ia`), canal do fundador: identificação do perfil, legenda de fala e aviso de reprodução em 2x. Este catálogo, os prints e as fontes ficam dentro de `editar-video`; ele é autossuficiente para reproduzir os padrões, sem consultar projetos anteriores. Estes nomes podem ser usados diretamente num pedido de edição.
 
 | Nome | Também pode ser chamado de | Uso |
 |---|---|---|

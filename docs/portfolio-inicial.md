@@ -1,5 +1,7 @@
 # Portfólio inicial de ofertas
 
+Cardápio de ofertas da Miyakodo, escola de inteligência artificial para empreendedores. Pedro Miyasaki é o CEO, o fundador e o único professor.
+
 **Marca:** Miyakodo Educação e Treinamento em AI  
 **Posicionamento:** ofertas de caráter educativo sobre inteligência artificial, voltadas principalmente a profissionais de negócio, lideranças e empresas.
 

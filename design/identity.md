@@ -1,8 +1,10 @@
 # Identidade visual Miyakodo
 
+Identidade visual da escola Miyakodo. Pedro Miyasaki é o CEO, o fundador e o único professor, e a voz pública das peças. O nome dele e o perfil `@pedro.miyasaki.ia` aparecem no conteúdo porque a publicação é no canal do fundador. Paleta, fontes, logo e mascote abaixo são a entrega do designer. Este arquivo não redefine o desenho.
+
 Índice do sistema visual em `design/`. A entrega do designer foi copiada para cá. A apresentação completa (capa, moodboard, paleta, tipografia, mascote e aplicações) está em `design/apresentacao-idv-pedro-miyakodo.pdf`.
 
-`idv-pedro/` continua sendo a entrega original e não foi alterada.
+`idv-pedro/` continua sendo a entrega original e não foi alterada. O nome da pasta é o da entrega do designer. A identidade é a da escola.
 
 ## Estrutura
 
