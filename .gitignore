@@ -1,7 +1,31 @@
-# Dados de conteúdo (temporário + final): o que é versionado aqui é o craft e as skills, não a saída
-posts/
+# Peça: texto, HTML e imagem entram. Vídeo publicado e áudio de peça ficam na máquina.
+posts/**/*.mp4
+posts/**/*.mov
+posts/**/*.m4v
+posts/**/*.webm
+posts/**/*.wav
+posts/**/*.mp3
+posts/**/*.m4a
+posts/**/*.ogg
+posts/**/_raw/
+posts/**/sketch/**/render/
+posts/**/sketch/**/qa/
+posts/carousel/**/_*.png
+
 edit/
-video/inputs/
+
+# Câmera e áudio pessoal. PNG de insert e o markdown de corte continuam versionáveis.
+video/inputs/**/*.mov
+video/inputs/**/*.MOV
+video/inputs/**/*.mp4
+video/inputs/**/*.MP4
+video/inputs/**/*.m4v
+video/inputs/**/*.ogg
+video/inputs/**/audios_esposa/
+
+video/outputs/
+video/models/
+video/hooks/originais/
 
 # Python
 .venv/
@@ -14,21 +38,76 @@ node_modules/
 # OS
 .DS_Store
 Thumbs.db
+Desktop.ini
+ehthumbs.db
+._*
 
 # Chave da Gemini API (AI Studio). Nao versionar.
 reference.txt
 
-# Links locais (criar com scripts/link-skills.*)
+# Atalhos locais. Cada máquina roda scripts/link-skills.cmd depois do clone.
 .claude/skills
 .cursor/skills
-CLAUDE.md
+/CLAUDE.md
+.claude/settings.json
 
-# Midia pesada (GitHub recusa arquivos acima de 100 MB; saidas e brutos ficam so no PC)
-video/outputs/
-videos/
-video/hooks/originais/
+# Estado local do Cursor. Regras compartilhadas podem viver em .cursor/rules.
+.cursor/*
+!.cursor/rules/
+!.cursor/rules/**
+
+# Projetos HyperFrames: cache, prova de render e export pesado.
+# O fonte (html, compositions, brief, transcript, áudio curto) continua versionável.
+videos/**/*.mp4
+videos/**/*.mov
+videos/**/snapshots/
+videos/**/preview-frames/
+videos/**/.thumbnails/
+videos/**/.waveform-cache/
+videos/**/.transcode-cache/
+videos/**/.hyperframes/
+videos/**/renders/
+videos/**/audio-export-check.wav
+videos/**/audio-reference-*.wav
+
+video/projects/**/*.mp4
+video/projects/**/*.mov
+video/projects/**/snapshots/
+video/projects/**/.thumbnails/
+video/projects/**/.waveform-cache/
+video/projects/**/.transcode-cache/
+video/projects/**/.hyperframes/
+video/projects/**/renders/
+
 **/.tools/
 **/.media/
-*.bin
+
 .env
+.env.*
+!.env.example
 .dev.vars
+.wrangler/
+.admin-token.local
+*.local
+
+*.log
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+.idea/
+.vscode/
+
+# Entrega duplicada do designer
+design/raw/
+
+# Script de uma peça; o edit/ correspondente já está ignorado
+scripts/build_captions_gpt6.py
+
+# Varredura antiga de comentários (handles e IDs), não é a skill
+.agents/skills/responder-comentarios/estado.md
+.agents/skills/responder-comentarios/provas/
+
+# Tipo gerado pelo Wrangler
+tools/instagram-autodm/worker-configuration.d.ts
