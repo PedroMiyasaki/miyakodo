@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 3,
+  "composition": {
+    "fps": 30,
+    "width": 1080,
+    "height": 1920,
+    "durationSeconds": 193.3167,
+    "layout": "portrait",
+    "themeId": "mono",
+    "seed": 5
+  },
+  "videoTrack": {
+    "sourcePath": "public/input-video.mp4",
+    "startSec": 0,
+    "endSec": 193.3167,
+    "bounds": {
+      "x": 0,
+      "y": 0,
+      "width": 1080,
+      "height": 1920
+    }
+  },
+  "subtitles": {
+    "enabled": true,
+    "cues": 177
+  },
+  "cards": [
+    {
+      "id": "card-01",
+      "intent": "Stat callout for the MIT finding he states: 95% of companies get no financial return from AI.",
+      "startSec": 141.2,
+      "endSec": 149.4,
+      "accentIndex": 0,
+      "zone": "video-overlay",
+      "contentHints": {
+        "kicker": "ESTUDO DO MIT",
+        "title": "95%",
+        "detail": "sem retorno financeiro"
+      }
+    }
+  ]
+}

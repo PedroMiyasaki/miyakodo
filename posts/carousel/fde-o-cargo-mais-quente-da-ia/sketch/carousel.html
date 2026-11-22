@@ -1,0 +1,324 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;800&family=Inter:wght@400;500;700&display=swap');
+
+:root{
+  --paper:#FFFFFF;
+  --ink:#0A0A0A;
+  --display:"Bricolage Grotesque",system-ui,sans-serif;
+  --body:"Inter",system-ui,sans-serif;
+  --pad:88px;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#555;display:flex;flex-direction:column;align-items:center;gap:40px;padding:40px}
+
+.slide{
+  position:relative;
+  width:1080px;height:1350px;
+  overflow:hidden;
+  padding:var(--pad);
+  background:var(--paper);
+  color:var(--ink);
+  display:flex;flex-direction:column;
+}
+.slide.inv{background:var(--ink);color:var(--paper)}
+
+/* paper grain */
+.slide::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:radial-gradient(currentColor .5px,transparent .6px);
+  background-size:4px 4px;opacity:.05;
+}
+
+.mark{
+  font:500 22px/1 var(--body);
+  letter-spacing:.18em;text-transform:uppercase;
+  opacity:.55;
+}
+
+.hl{
+  font-family:var(--display);font-weight:800;
+  letter-spacing:-.025em;line-height:.94;
+  margin-top:52px;
+}
+.cover .hl{font-size:104px}
+.body-slide .hl{font-size:80px}
+.cta .hl{font-size:118px;text-align:center}
+
+.sub{
+  font:400 46px/1.32 var(--body);
+  margin-top:34px;max-width:30ch;
+}
+.body-slide .sub{font-size:42px;line-height:1.4;max-width:38ch}
+.cta .sub{text-align:center;margin:36px auto 0;max-width:26ch}
+
+.art{margin-top:auto;padding-top:44px;display:flex;justify-content:center;align-items:flex-end}
+.cover .art{justify-content:flex-start}
+</style>
+
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <filter id="rough" x="-25%" y="-25%" width="150%" height="150%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="3" seed="11" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="7" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="rough2" x="-25%" y="-25%" width="150%" height="150%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.022" numOctaves="3" seed="4" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="6" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <pattern id="ht-dark" width="11" height="11" patternUnits="userSpaceOnUse">
+      <circle cx="5.5" cy="5.5" r="2.1" fill="#0A0A0A"/>
+    </pattern>
+    <pattern id="ht-light" width="11" height="11" patternUnits="userSpaceOnUse">
+      <circle cx="5.5" cy="5.5" r="2.1" fill="#FFFFFF"/>
+    </pattern>
+  </defs>
+</svg>
+
+<!-- ============ 1 · COVER (inverted) ============ -->
+<section class="slide inv cover">
+  <div class="mark">@pedro.miyasaki.ia</div>
+  <h1 class="hl">As vagas de FDE subiram 5.000% em quinze meses.</h1>
+  <p class="sub">Cargo inventado pela Palantir há mais de dez anos. Hoje paga até $550K.</p>
+
+  <div class="art">
+    <svg width="880" height="491" viewBox="0 0 860 480" fill="none">
+      <g filter="url(#rough2)" transform="translate(-9,7)">
+        <rect x="40" y="412" width="160" height="38" fill="url(#ht-light)"/>
+        <rect x="250" y="368" width="160" height="82" fill="url(#ht-light)"/>
+        <rect x="460" y="265" width="160" height="185" fill="url(#ht-light)"/>
+        <rect x="670" y="25" width="160" height="425" fill="url(#ht-light)"/>
+      </g>
+      <g filter="url(#rough)" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="40" y="412" width="160" height="38"/>
+        <rect x="250" y="368" width="160" height="82"/>
+        <rect x="460" y="265" width="160" height="185"/>
+        <rect x="670" y="25" width="160" height="425"/>
+        <path d="M20 450 H840"/>
+      </g>
+    </svg>
+  </div>
+</section>
+
+<!-- ============ 2 · DEFINIÇÃO POR CONTRASTE ============ -->
+<section class="slide body-slide">
+  <div class="mark">@pedro.miyasaki.ia</div>
+  <h2 class="hl">Product engineer fecha ticket. FDE decide qual é o ticket.</h2>
+  <p class="sub">Forward Deployed Engineer: engenheiro sênior que a empresa de IA coloca dentro do cliente durante o piloto. Ele senta com o time, descobre onde o processo trava e escreve o código lá dentro. Não é consultor que entrega slide. Metade técnico pesado, metade reunião com stakeholder.</p>
+
+  <div class="art">
+    <svg width="884" height="366" viewBox="0 0 820 340" fill="none">
+      <g filter="url(#rough2)" transform="translate(-9,7)">
+        <rect x="30" y="40" width="290" height="60" fill="url(#ht-dark)"/>
+        <rect x="30" y="140" width="290" height="60" fill="url(#ht-dark)"/>
+        <rect x="30" y="240" width="290" height="60" fill="url(#ht-dark)"/>
+        <rect x="490" y="130" width="120" height="90" fill="url(#ht-dark)"/>
+      </g>
+      <g filter="url(#rough)" stroke="#0A0A0A" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="30" y="40" width="290" height="60"/>
+        <rect x="30" y="140" width="290" height="60"/>
+        <rect x="30" y="240" width="290" height="60"/>
+        <path d="M405 20 V320"/>
+        <rect x="490" y="130" width="120" height="90"/>
+        <path d="M610 175 H690 M690 175 V60 M690 175 V290"/>
+        <rect x="690" y="25" width="105" height="70"/>
+        <rect x="690" y="140" width="105" height="70"/>
+        <rect x="690" y="255" width="105" height="70"/>
+      </g>
+    </svg>
+  </div>
+</section>
+
+<!-- ============ 3 · ORIGEM ============ -->
+<section class="slide body-slide">
+  <div class="mark">@pedro.miyasaki.ia</div>
+  <h2 class="hl">A Palantir inventou isso na década de 2010.</h2>
+  <p class="sub">A ideia era simples e cara: mandar os melhores engenheiros pra dentro de agências de governo e de grandes empresas, em vez de vender licença e torcer pra dar certo. Foi a vantagem competitiva da Palantir por mais de dez anos. Hoje virou padrão da indústria.</p>
+
+  <div class="art">
+    <svg width="884" height="345" viewBox="0 0 820 320" fill="none">
+      <g filter="url(#rough2)" transform="translate(-9,7)">
+        <rect x="40" y="140" width="140" height="130" fill="url(#ht-dark)"/>
+      </g>
+      <g filter="url(#rough)" stroke="#0A0A0A" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M25 275 H795"/>
+        <rect x="40" y="140" width="140" height="130"/>
+        <rect x="250" y="175" width="105" height="95"/>
+        <rect x="400" y="175" width="105" height="95"/>
+        <rect x="550" y="175" width="105" height="95"/>
+        <rect x="700" y="175" width="105" height="95"/>
+        <path d="M110 105 V60 H750 V145"/>
+        <path d="M725 118 l25 32 25 -32"/>
+      </g>
+    </svg>
+  </div>
+</section>
+
+<!-- ============ 4 · POR QUE AGORA ============ -->
+<section class="slide body-slide">
+  <div class="mark">@pedro.miyasaki.ia</div>
+  <h2 class="hl">Vender IA pra enterprise virou vender projeto junto.</h2>
+  <p class="sub">O SaaS clássico é "compra, pluga, economiza", e funciona onde o problema de todo mundo tem o mesmo formato. Em IA não: cada empresa tem os dados dela, o workflow dela, o compliance dela. Aí toda venda grande carrega um projeto de integração, e é o FDE quem entrega.</p>
+
+  <div class="art">
+    <svg width="884" height="366" viewBox="0 0 820 340" fill="none">
+      <g filter="url(#rough2)" transform="translate(-9,7)">
+        <rect x="30" y="140" width="150" height="150" fill="url(#ht-dark)"/>
+        <rect x="215" y="140" width="150" height="150" fill="url(#ht-dark)"/>
+        <rect x="400" y="140" width="150" height="150" fill="url(#ht-dark)"/>
+      </g>
+      <g filter="url(#rough)" stroke="#0A0A0A" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M30 95 V60 H550 V95"/>
+        <rect x="30" y="140" width="150" height="150"/>
+        <rect x="215" y="140" width="150" height="150"/>
+        <rect x="400" y="140" width="150" height="150"/>
+        <rect x="605" y="140" width="185" height="150"/>
+        <path d="M625 160 l145 110 M770 160 l-145 110"/>
+      </g>
+    </svg>
+  </div>
+</section>
+
+<!-- ============ 5 · O NÚMERO DO MIT ============ -->
+<section class="slide body-slide">
+  <div class="mark">@pedro.miyasaki.ia</div>
+  <h2 class="hl">95% dos pilotos de IA generativa não movem um centavo.</h2>
+  <p class="sub">O número é do Project NANDA, do MIT, sobre pilotos de IA generativa dentro de empresas: 95% não produzem impacto financeiro mensurável. O detalhe que importa é o diagnóstico. O problema não é o modelo. É o deploy. Modelo bom instalado errado não gera nada.</p>
+
+  <div class="art">
+    <svg width="884" height="331" viewBox="0 0 800 300" fill="none">
+      <g filter="url(#rough2)" transform="translate(-9,7)">
+        <rect x="30" y="70" width="700" height="130" fill="url(#ht-dark)"/>
+      </g>
+      <g filter="url(#rough)" stroke="#0A0A0A" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="30" y="70" width="740" height="130"/>
+        <path d="M730 70 V200"/>
+        <path d="M30 240 V265 H730 V240"/>
+        <path d="M730 240 V265 H770 V240"/>
+      </g>
+    </svg>
+  </div>
+</section>
+
+<!-- ============ 6 · MERCADO ============ -->
+<section class="slide body-slide">
+  <div class="mark">@pedro.miyasaki.ia</div>
+  <h2 class="hl">As contratações deram o primeiro salto de 800% em 2025.</h2>
+  <p class="sub">Entre janeiro e setembro de 2025 as vagas de FDE cresceram mais de 800%. Depois a curva acelerou de novo: por volta de abril de 2026 o volume estava mais de 5.000% acima do nível de janeiro de 2025. Quinze meses pra sair de nicho da Palantir a padrão de contratação.</p>
+
+  <div class="art">
+    <svg width="880" height="363" viewBox="0 0 800 330" fill="none">
+      <g filter="url(#rough2)" transform="translate(-9,7)">
+        <rect x="80" y="100" width="600" height="38" fill="url(#ht-dark)"/>
+        <rect x="80" y="152" width="540" height="38" fill="url(#ht-dark)"/>
+        <rect x="80" y="204" width="610" height="38" fill="url(#ht-dark)"/>
+        <rect x="80" y="256" width="500" height="38" fill="url(#ht-dark)"/>
+      </g>
+      <g filter="url(#rough)" stroke="#0A0A0A" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="30" y="15" width="740" height="300"/>
+        <path d="M30 78 H770"/>
+        <rect x="60" y="34" width="26" height="26"/>
+        <rect x="106" y="34" width="26" height="26"/>
+        <rect x="152" y="34" width="26" height="26"/>
+        <rect x="80" y="100" width="600" height="38"/>
+        <rect x="80" y="152" width="540" height="38"/>
+        <rect x="80" y="204" width="610" height="38"/>
+        <rect x="80" y="256" width="500" height="38"/>
+      </g>
+    </svg>
+  </div>
+</section>
+
+<!-- ============ 7 · QUEM ESTÁ APOSTANDO ============ -->
+<section class="slide body-slide">
+  <div class="mark">@pedro.miyasaki.ia</div>
+  <h2 class="hl">A OpenAI abriu uma subsidiária de $4 bilhões só pra isso.</h2>
+  <p class="sub">Em maio de 2026 nasceu a OpenAI Deployment Company, construída em cima de FDEs. Pra não começar do zero, comprou uma consultoria com 150 FDEs prontos. Google Cloud, Adobe, Ramp e Scale AI já têm time, e a Salesforce prometeu mil. Não é mais moda: é headcount.</p>
+
+  <div class="art">
+    <svg width="884" height="376" viewBox="0 0 800 340" fill="none">
+      <g filter="url(#rough2)" transform="translate(-9,7)">
+        <rect x="40" y="35" width="270" height="55" fill="url(#ht-dark)"/>
+        <rect x="40" y="110" width="270" height="55" fill="url(#ht-dark)"/>
+        <rect x="40" y="185" width="270" height="55" fill="url(#ht-dark)"/>
+        <rect x="40" y="260" width="270" height="55" fill="url(#ht-dark)"/>
+        <rect x="615" y="135" width="90" height="90" fill="url(#ht-dark)"/>
+      </g>
+      <g filter="url(#rough)" stroke="#0A0A0A" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="40" y="35" width="270" height="55"/>
+        <rect x="40" y="110" width="270" height="55"/>
+        <rect x="40" y="185" width="270" height="55"/>
+        <rect x="40" y="260" width="270" height="55"/>
+        <path d="M350 175 H500"/>
+        <path d="M470 150 l32 25 -32 25"/>
+        <rect x="545" y="60" width="215" height="230"/>
+        <rect x="615" y="135" width="90" height="90"/>
+      </g>
+    </svg>
+  </div>
+</section>
+
+<!-- ============ 8 · DINHEIRO ============ -->
+<section class="slide body-slide">
+  <div class="mark">@pedro.miyasaki.ia</div>
+  <h2 class="hl">A faixa em 2026 vai de $200K a mais de $550K.</h2>
+  <p class="sub">Startup em seed paga em torno de $200K all-in. Series C paga de $450K a $550K+. Anthropic e OpenAI pagam acima da banda normal de product engineering, porque o cargo carrega receita direta. Esses números vêm de agregadores de mercado, não de tabela oficial: trate como faixa, não como oferta.</p>
+
+  <div class="art">
+    <svg width="880" height="316" viewBox="0 0 780 280" fill="none">
+      <g filter="url(#rough2)" transform="translate(-9,7)">
+        <rect x="40" y="130" width="700" height="95" fill="url(#ht-dark)"/>
+      </g>
+      <g filter="url(#rough)" stroke="#0A0A0A" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="40" y="130" width="700" height="95"/>
+        <path d="M270 130 V225 M500 130 V225"/>
+        <path d="M40 65 V130 M270 65 V130 M500 65 V130 M740 65 V130"/>
+        <path d="M40 250 V275 M740 250 V275 M40 262 H740"/>
+      </g>
+    </svg>
+  </div>
+</section>
+
+<!-- ============ 9 · REFRAME ============ -->
+<section class="slide body-slide">
+  <div class="mark">@pedro.miyasaki.ia</div>
+  <h2 class="hl">Quem instala IA no cliente hoje funda a startup de amanhã.</h2>
+  <p class="sub">O FDE vê o que quebra na vida real, em dezenas de clientes, antes de qualquer product manager. Isso é pesquisa de mercado que ninguém consegue comprar. Aposta minha, não é dado: boa parte dos fundadores de startup de IA enterprise dos próximos anos vai sair exatamente daí.</p>
+
+  <div class="art">
+    <svg width="884" height="376" viewBox="0 0 800 340" fill="none">
+      <g filter="url(#rough2)" transform="translate(-9,7)">
+        <rect x="300" y="230" width="200" height="85" fill="url(#ht-dark)"/>
+      </g>
+      <g filter="url(#rough)" stroke="#0A0A0A" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="300" y="230" width="200" height="85"/>
+        <path d="M400 230 V185 M150 185 H650 M150 185 V150 M400 185 V150 M650 185 V150"/>
+        <path d="M132 168 l18 -22 18 22"/>
+        <path d="M382 168 l18 -22 18 22"/>
+        <path d="M632 168 l18 -22 18 22"/>
+        <rect x="70" y="35" width="160" height="105"/>
+        <rect x="320" y="35" width="160" height="105"/>
+        <rect x="570" y="35" width="160" height="105"/>
+      </g>
+    </svg>
+  </div>
+</section>
+
+<!-- ============ 10 · CTA (inverted) ============ -->
+<section class="slide inv cta">
+  <div class="mark">@pedro.miyasaki.ia</div>
+  <h2 class="hl">Comenta<br>“FDE”</h2>
+  <p class="sub">e eu te mando o que essas vagas estão pedindo, empresa por empresa.</p>
+
+  <div class="art">
+    <svg width="740" height="586" viewBox="0 0 480 380" fill="none">
+      <g filter="url(#rough2)" transform="translate(-9,8)">
+        <path d="M40 40 H440 V270 H210 L120 340 V270 H40 Z" fill="url(#ht-light)"/>
+      </g>
+      <g filter="url(#rough)" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M40 40 H440 V270 H210 L120 340 V270 H40 Z"/>
+        <path d="M110 120 h300 M110 175 h230"/>
+      </g>
+    </svg>
+  </div>
+</section>

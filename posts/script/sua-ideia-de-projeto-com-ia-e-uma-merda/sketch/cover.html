@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Capa: OpenAI killed my startup</title>
+<style>
+@font-face{font-family:"Bricolage Grotesque";font-weight:100 900;font-style:normal;src:url("../../../../video/projects/tier-list/assets/fonts/bricolage.woff2") format("woff2")}
+@font-face{font-family:"Inter";font-weight:100 900;font-style:normal;src:url("../../../../video/projects/tier-list/assets/fonts/inter.woff2") format("woff2")}
+:root{--paper:#FFFFFF;--ink:#0A0A0A;--display:"Bricolage Grotesque",sans-serif;--body:"Inter",sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--ink)}
+.slide{position:relative;width:1080px;height:1920px;overflow:hidden;background:var(--ink);color:var(--paper)}
+.slide::after{content:"";position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(currentColor .5px,transparent .6px);background-size:4px 4px;opacity:.05}
+/* Keep the title and art inside the central profile-grid crop. */
+.mark{position:absolute;left:88px;top:327px;font:500 22px/1 var(--body);letter-spacing:.18em;text-transform:uppercase;opacity:.55}
+.hook{position:absolute;left:88px;top:420px;width:904px;font:800 118px/.96 var(--display);letter-spacing:-.025em}
+.support{position:absolute;left:88px;top:812px;width:760px;font:400 43px/1.32 var(--body);opacity:.72}
+.art{position:absolute;left:88px;top:1075px;width:904px;height:420px}
+</style>
+</head>
+<body>
+<section class="slide">
+  <div class="mark">@pedro.miyasaki.ia</div>
+  <h1 class="hook">OpenAI<br>killed my<br>startup.</h1>
+  <p class="support">O meme do Vale do Silício que todo projeto de IA deveria conhecer.</p>
+  <svg class="art" viewBox="0 0 904 420" role="img" aria-label="Um quadrado grande engolindo um quadrado pequeno de pontos, a feature absorvida pelo laboratório">
+    <defs>
+      <filter id="rough" x="-25%" y="-25%" width="150%" height="150%">
+        <feTurbulence type="fractalNoise" baseFrequency=".018" numOctaves="3" seed="11" result="n"/>
+        <feDisplacementMap in="SourceGraphic" in2="n" scale="7" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+      <filter id="rough2" x="-25%" y="-25%" width="150%" height="150%">
+        <feTurbulence type="fractalNoise" baseFrequency=".022" numOctaves="3" seed="4" result="n"/>
+        <feDisplacementMap in="SourceGraphic" in2="n" scale="6" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+      <pattern id="ht-light" width="11" height="11" patternUnits="userSpaceOnUse"><circle cx="5.5" cy="5.5" r="2.1" fill="#FFFFFF"/></pattern>
+    </defs>
+    <!-- a small startup, halftone, inside a big outlined square: the lab -->
+    <g filter="url(#rough2)" transform="translate(-9,7)" fill="url(#ht-light)">
+      <rect x="387" y="160" width="130" height="130"/>
+    </g>
+    <g filter="url(#rough)" fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="132" y="30" width="640" height="360"/>
+      <rect x="387" y="160" width="130" height="130"/>
+    </g>
+  </svg>
+</section>
+</body>
+</html>

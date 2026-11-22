@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Capa: empoderar pessoas com IA</title>
+<style>
+@font-face{font-family:"Bricolage Grotesque";font-weight:100 900;font-style:normal;src:url("../../../../../video/projects/tier-list/assets/fonts/bricolage.woff2") format("woff2")}
+@font-face{font-family:"Inter";font-weight:100 900;font-style:normal;src:url("../../../../../video/projects/tier-list/assets/fonts/inter.woff2") format("woff2")}
+:root{--paper:#FFFFFF;--ink:#0A0A0A;--display:"Bricolage Grotesque",sans-serif;--body:"Inter",sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--ink)}
+.slide{position:relative;width:1080px;height:1920px;overflow:hidden;background:var(--ink);color:var(--paper)}
+.slide::after{content:"";position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(currentColor .5px,transparent .6px);background-size:4px 4px;opacity:.05}
+/* Keep the composition inside the central 1080 x 1350 profile crop. */
+.mark{position:absolute;left:88px;top:327px;font:500 22px/1 var(--body);letter-spacing:.18em;text-transform:uppercase;opacity:.55}
+.hook{position:absolute;left:88px;top:420px;width:904px;font:800 118px/.96 var(--display);letter-spacing:-.025em}
+.support{position:absolute;left:88px;top:935px;font:400 43px/1.32 var(--body)}
+.art{position:absolute;left:88px;top:1160px;width:904px;height:380px}
+</style>
+</head>
+<body>
+<section class="slide">
+  <div class="mark">@pedro.miyasaki.ia</div>
+  <h1 class="hook">Empoderar<br>pessoas com IA<br>vence<br>substituí-las.</h1>
+  <p class="support">Especialista com copiloto de IA.</p>
+  <svg class="art" viewBox="0 0 904 380" role="img" aria-label="Uma pessoa somada a um painel de IA">
+    <defs>
+      <filter id="rough" x="-25%" y="-25%" width="150%" height="150%">
+        <feTurbulence type="fractalNoise" baseFrequency=".018" numOctaves="3" seed="11" result="n"/>
+        <feDisplacementMap in="SourceGraphic" in2="n" scale="7" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+      <filter id="rough2" x="-25%" y="-25%" width="150%" height="150%">
+        <feTurbulence type="fractalNoise" baseFrequency=".022" numOctaves="3" seed="4" result="n"/>
+        <feDisplacementMap in="SourceGraphic" in2="n" scale="6" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+      <pattern id="ht-light" width="11" height="11" patternUnits="userSpaceOnUse"><circle cx="5.5" cy="5.5" r="2.1" fill="#FFFFFF"/></pattern>
+    </defs>
+    <g filter="url(#rough2)" transform="translate(-9,7)" fill="url(#ht-light)">
+      <circle cx="170" cy="92" r="62"/>
+      <path d="M30 352 C30 252 90 200 170 200 C250 200 310 252 310 352 Z"/>
+      <rect x="588" y="20" width="280" height="332" rx="8"/>
+    </g>
+    <g filter="url(#rough)" fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="170" cy="92" r="62"/>
+      <path d="M30 352 C30 252 90 200 170 200 C250 200 310 252 310 352 Z"/>
+      <path d="M452 140 V240 M402 190 H502"/>
+      <rect x="588" y="20" width="280" height="332" rx="8"/>
+    </g>
+    <path d="M728 82 C736 148 762 174 828 186 C762 198 736 224 728 290 C720 224 694 198 628 186 C694 174 720 148 728 82 Z" fill="#FFFFFF" stroke="#0A0A0A" stroke-width="7" stroke-linejoin="round"/>
+  </svg>
+</section>
+</body>
+</html>

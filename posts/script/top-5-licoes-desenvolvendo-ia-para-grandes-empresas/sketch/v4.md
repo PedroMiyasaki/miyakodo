@@ -1,0 +1,73 @@
+[HOOK] · literal
+Top 5 lições que eu aprendi desenvolvendo IA pra grandes empresas.
+E como bom aspirante a blogueiro, eu vou deixar a melhor lição por último.
+
+[pause]
+
+[VIRADA] · literal
+E a primeira vai contra o meu próprio trabalho.
+A maioria das empresas precisa organizar os processos dela muito antes de pensar em IA.
+
+[DEGRAU] · tópicos
+- organizar = cada processo escrito, passo a passo, num lugar só → um estagiário novo segue sem perguntar pra ninguém
+- na maioria que eu vi: o processo mora na cabeça de quem faz há anos
+- IA não adivinha o jeito da sua empresa → sem o passo a passo escrito, ela chuta
+
+[VIRADA] · literal
+Segunda lição: as empresas têm que focar na captura de valor imediata.
+Ensinar o time a usar bem o básico da IA.
+
+[DEGRAU] · tópicos
+- muita empresa ainda não usa IA onde ela já funciona comprovadamente: organizar agenda, resumir ata de reunião, analisar contrato, documentar
+- muita gente ainda "analfabeta" em IA: não conhece os modos do Claude (concorrente do ChatGPT), não sabe o que é MCP
+- MCP = conector que liga o Claude, ou outra IA, nos sistemas que a empresa já usa: Drive, e-mail, agenda
+- resultado: muito tempo perdido com tarefa burocrática que a IA já resolve
+
+[VIRADA] · literal
+Terceira: um erro que muita empresa comete é tentar substituir pessoas, ou setores inteiros, com IA.
+Deixar uma pessoa mais rápida com IA é muito mais fácil do que trocar ela por IA.
+E dá mais resultado.
+
+[DEGRAU] · tópicos
+- trocar a pessoa = a IA tem que acertar todo caso sozinha → deixar a pessoa mais rápida = ela confere, a IA só precisa ajudar
+- a pessoa sabe a exceção, o caso estranho → com IA na mão, faz mais rápido e pega o erro da IA
+
+[VIRADA] · literal
+Quarta: não perde tempo tentando fazer um RAG interno.
+Se você que tá assistindo esse vídeo não sabe o que é RAG,
+é basicamente quando uma empresa tenta reunir todos os dados dela num mesmo lugar
+e fazer um ChatGPT interno que consiga ler todos esses dados.
+Parece uma excelente ideia.
+
+[DEGRAU] · tópicos
+- na prática: pré-processar todos os dados e juntar num lugar só → discovery enorme (achar onde cada dado mora, o que ainda vale) + custo nada barato
+- a maioria não precisa → conecta a IA de cada funcionário nos sistemas que já existem, via MCP: Google Drive, SharePoint
+- e já tem muita solução de RAG pronta que resolve a maioria dos casos
+- RAG próprio ainda se justifica, mas em caso raro → não vou listar aqui
+
+[pause]
+
+[VIRADA] · literal
+E a quinta: o uso de IA sem governança.
+Se tem empresa onde as pessoas usam IA **de menos**, até pro básico,
+tem empresa onde elas usam **demais**.
+Sem controle, sem um jeito certo e organizado de usar.
+
+[DEGRAU] · tópicos
+- estudo do MIT, 2025: em mais de 9 de cada 10 empresas tem gente usando o próprio ChatGPT no trabalho → só 40% das empresas pagaram uma IA oficial
+
+[insert: gráfico do relatório do MIT, 90% dos funcionários usando IA × 40% das empresas com assinatura oficial]
+
+- cada pessoa cria a própria base de conhecimento → e gera tanto artefato com IA (resumo, relatório, documento) que ninguém dá conta de ler
+- na prática: o funcionário vira a API entre as IAs = copia o que uma gerou e cola na outra
+- ninguém sabe o que tá fazendo, nem o que tá lendo
+- resultado: custo sem benefício → péssimo pra maturidade de IA do negócio
+
+[CTA] · literal
+Se você achou esse conteúdo útil e quer que eu continue com o meu trabalho,
+por favor, já dá like nesse vídeo aqui e me segue.
+Valeu.
+
+---
+Gravação: um take por bloco. Literal lido, tópicos falados olhando pra lente.
+Fonte do insert: [MIT NANDA, "The GenAI Divide: State of AI in Business 2025", via VentureBeat](https://venturebeat.com/infrastructure/mit-report-misunderstood-shadow-ai-economy-booms-while-headlines-cry-failure)

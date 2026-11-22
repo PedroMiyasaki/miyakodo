@@ -1,0 +1,1443 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      @font-face {
+        font-family: "Inter";
+        src: url("fonts/Inter-400-latin.woff2") format("woff2");
+        font-weight: 400;
+        font-display: block;
+      }
+      @font-face {
+        font-family: "Inter";
+        src: url("fonts/Inter-700-latin.woff2") format("woff2");
+        font-weight: 700;
+        font-display: block;
+      }
+      * { box-sizing: border-box; }
+      html, body {
+        margin: 0;
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: #000;
+      }
+      #root {
+        position: relative;
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: #000;
+        font-family: "Inter", sans-serif;
+      }
+      #bg-video {
+        position: absolute;
+        inset: 0;
+        width: 1080px;
+        height: 1920px;
+        object-fit: cover;
+        z-index: 1;
+      }
+      #handle {
+        position: absolute;
+        top: 64px;
+        left: 64px;
+        z-index: 8;
+        margin: 0;
+        padding: 12px 16px 10px;
+        background: #0A0A0A;
+        color: #FFFFFF;
+        font-family: "Inter", sans-serif;
+        font-weight: 700;
+        font-size: 22px;
+        letter-spacing: 0.04em;
+        line-height: 1;
+      }
+      .logo-plate {
+        position: absolute;
+        left: 72px;
+        top: 168px;
+        width: 936px;
+        height: 200px;
+        z-index: 5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 28px;
+        padding: 28px 32px;
+        background: #FFFFFF;
+        border: 4px solid #0A0A0A;
+        box-shadow: 9px 9px 0 rgba(10, 10, 10, 0.8);
+        visibility: hidden;
+        opacity: 0;
+      }
+      .logo-plate img {
+        height: 64px;
+        width: auto;
+        max-width: 270px;
+        object-fit: contain;
+      }
+      #logos-enter img {
+        height: 78px;
+        max-width: 520px;
+      }
+      .caption-box {
+        position: absolute;
+        left: 72px;
+        right: 72px;
+        bottom: 238px;
+        z-index: 6;
+        display: flex;
+        justify-content: center;
+        pointer-events: none;
+      }
+      .caption-inner {
+        width: max-content;
+        max-width: 936px;
+        padding: 18px 24px 15px;
+        border: 4px solid #FFFFFF;
+        background: #0A0A0A;
+        box-shadow: 9px 9px 0 rgba(10, 10, 10, 0.8);
+        color: #FFFFFF;
+        font-family: "Inter", sans-serif;
+        font-size: 48px;
+        font-weight: 700;
+        letter-spacing: -0.025em;
+        line-height: 1.12;
+        text-align: center;
+        text-wrap: balance;
+      }
+      .caption-word {
+        display: inline;
+        padding: 1px 2px 0;
+        box-decoration-break: clone;
+        -webkit-box-decoration-break: clone;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="talking-head-recut"
+      data-start="0"
+      data-duration="161.35"
+      data-fps="30"
+      data-width="1080"
+      data-height="1920"
+    >
+      <video
+        id="bg-video"
+        src="input-video.mp4"
+        playsinline
+        data-has-audio="true"
+        data-start="0"
+        data-duration="161.35"
+        data-track-index="1"
+      ></video>
+
+      <div id="handle">@pedro.miyasaki.ia</div>
+
+      <div
+        id="logos-foreign"
+        class="clip logo-plate"
+        data-start="76.4333"
+        data-duration="3.6000"
+        data-track-index="5"
+      >
+        <img src="logos/harvey.svg" alt="Harvey" />
+        <img src="logos/legora.svg" alt="Legora" />
+        <img src="logos/evenup.svg" alt="EvenUp" />
+      </div>
+
+      <div
+        id="logos-enter"
+        class="clip logo-plate"
+        data-start="85.6333"
+        data-duration="4.5667"
+        data-track-index="5"
+      >
+        <img src="logos/enter.svg" alt="Enter" />
+      </div>
+
+      <div id="cap-0" class="clip caption-box" data-start="0.1000" data-duration="1.4000" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c0w0" class="caption-word">Se</span> <span id="c0w1" class="caption-word">eu</span> <span id="c0w2" class="caption-word">tivesse</span> <span id="c0w3" class="caption-word">que</span> <span id="c0w4" class="caption-word">apostar</span> <span id="c0w5" class="caption-word">em</span></div></div>
+<div id="cap-1" class="clip caption-box" data-start="1.5000" data-duration="1.2333" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c1w0" class="caption-word">uma</span> <span id="c1w1" class="caption-word">área</span> <span id="c1w2" class="caption-word">que</span> <span id="c1w3" class="caption-word">eu</span> <span id="c1w4" class="caption-word">acredito</span> <span id="c1w5" class="caption-word">que</span></div></div>
+<div id="cap-2" class="clip caption-box" data-start="2.7333" data-duration="2.0000" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c2w0" class="caption-word">vai</span> <span id="c2w1" class="caption-word">ser</span> <span id="c2w2" class="caption-word">muito</span> <span id="c2w3" class="caption-word">disruptada</span> <span id="c2w4" class="caption-word">nos</span> <span id="c2w5" class="caption-word">próximos</span></div></div>
+<div id="cap-3" class="clip caption-box" data-start="4.7333" data-duration="1.6667" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c3w0" class="caption-word">anos</span> <span id="c3w1" class="caption-word">com</span> <span id="c3w2" class="caption-word">a</span> <span id="c3w3" class="caption-word">adoção</span> <span id="c3w4" class="caption-word">massiva</span> <span id="c3w5" class="caption-word">de</span></div></div>
+<div id="cap-4" class="clip caption-box" data-start="6.4000" data-duration="1.4333" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c4w0" class="caption-word">inteligência</span> <span id="c4w1" class="caption-word">artificial,</span> <span id="c4w2" class="caption-word">eu</span> <span id="c4w3" class="caption-word">diria</span> <span id="c4w4" class="caption-word">que</span></div></div>
+<div id="cap-5" class="clip caption-box" data-start="7.8333" data-duration="1.2667" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c5w0" class="caption-word">essa</span> <span id="c5w1" class="caption-word">área</span> <span id="c5w2" class="caption-word">é</span> <span id="c5w3" class="caption-word">a</span> <span id="c5w4" class="caption-word">área</span> <span id="c5w5" class="caption-word">jurídica.</span></div></div>
+<div id="cap-6" class="clip caption-box" data-start="9.1000" data-duration="1.7333" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c6w0" class="caption-word">Por</span> <span id="c6w1" class="caption-word">muitos</span> <span id="c6w2" class="caption-word">anos</span> <span id="c6w3" class="caption-word">a</span> <span id="c6w4" class="caption-word">área</span> <span id="c6w5" class="caption-word">jurídica</span></div></div>
+<div id="cap-7" class="clip caption-box" data-start="10.8333" data-duration="2.2333" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c7w0" class="caption-word">foi</span> <span id="c7w1" class="caption-word">meio</span> <span id="c7w2" class="caption-word">que</span> <span id="c7w3" class="caption-word">considerado</span> <span id="c7w4" class="caption-word">patinho</span> <span id="c7w5" class="caption-word">feio</span></div></div>
+<div id="cap-8" class="clip caption-box" data-start="13.0667" data-duration="1.6333" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c8w0" class="caption-word">da</span> <span id="c8w1" class="caption-word">TI,</span> <span id="c8w2" class="caption-word">meio</span> <span id="c8w3" class="caption-word">que</span> <span id="c8w4" class="caption-word">muita</span> <span id="c8w5" class="caption-word">gente</span></div></div>
+<div id="cap-9" class="clip caption-box" data-start="14.7000" data-duration="1.5667" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c9w0" class="caption-word">não</span> <span id="c9w1" class="caption-word">ia</span> <span id="c9w2" class="caption-word">trabalhar</span> <span id="c9w3" class="caption-word">lá,</span> <span id="c9w4" class="caption-word">e</span> <span id="c9w5" class="caption-word">na</span></div></div>
+<div id="cap-10" class="clip caption-box" data-start="16.2667" data-duration="1.9000" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c10w0" class="caption-word">minha</span> <span id="c10w1" class="caption-word">opinião</span> <span id="c10w2" class="caption-word">isso</span> <span id="c10w3" class="caption-word">sinceramente</span> <span id="c10w4" class="caption-word">também</span></div></div>
+<div id="cap-11" class="clip caption-box" data-start="18.1667" data-duration="1.1333" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c11w0" class="caption-word">não</span> <span id="c11w1" class="caption-word">é</span> <span id="c11w2" class="caption-word">muito</span> <span id="c11w3" class="caption-word">culpa</span> <span id="c11w4" class="caption-word">da</span> <span id="c11w5" class="caption-word">área</span></div></div>
+<div id="cap-12" class="clip caption-box" data-start="19.3000" data-duration="0.7000" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c12w0" class="caption-word">jurídica</span> <span id="c12w1" class="caption-word">não.</span></div></div>
+<div id="cap-13" class="clip caption-box" data-start="20.0000" data-duration="1.1000" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c13w0" class="caption-word">A</span> <span id="c13w1" class="caption-word">área</span> <span id="c13w2" class="caption-word">de</span> <span id="c13w3" class="caption-word">dados</span> <span id="c13w4" class="caption-word">tem</span> <span id="c13w5" class="caption-word">um</span></div></div>
+<div id="cap-14" class="clip caption-box" data-start="21.1000" data-duration="1.8000" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c14w0" class="caption-word">paradigma</span> <span id="c14w1" class="caption-word">meio</span> <span id="c14w2" class="caption-word">central</span> <span id="c14w3" class="caption-word">aí,</span> <span id="c14w4" class="caption-word">que</span> <span id="c14w5" class="caption-word">é</span></div></div>
+<div id="cap-15" class="clip caption-box" data-start="22.9000" data-duration="1.6333" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c15w0" class="caption-word">o</span> <span id="c15w1" class="caption-word">do</span> <span id="c15w2" class="caption-word">dado</span> <span id="c15w3" class="caption-word">estruturado</span> <span id="c15w4" class="caption-word">versus</span> <span id="c15w5" class="caption-word">o</span></div></div>
+<div id="cap-16" class="clip caption-box" data-start="24.5333" data-duration="1.5333" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c16w0" class="caption-word">dado</span> <span id="c16w1" class="caption-word">não</span> <span id="c16w2" class="caption-word">estruturado.</span></div></div>
+<div id="cap-17" class="clip caption-box" data-start="26.0667" data-duration="1.7333" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c17w0" class="caption-word">E a</span> <span id="c17w1" class="caption-word">área</span> <span id="c17w2" class="caption-word">do</span> <span id="c17w3" class="caption-word">direito,</span> <span id="c17w4" class="caption-word">por</span> <span id="c17w5" class="caption-word">natureza,</span></div></div>
+<div id="cap-18" class="clip caption-box" data-start="27.8000" data-duration="1.4000" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c18w0" class="caption-word">tem</span> <span id="c18w1" class="caption-word">muitos</span> <span id="c18w2" class="caption-word">dados</span> <span id="c18w3" class="caption-word">que</span> <span id="c18w4" class="caption-word">são</span> <span id="c18w5" class="caption-word">não</span></div></div>
+<div id="cap-19" class="clip caption-box" data-start="29.2000" data-duration="0.9000" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c19w0" class="caption-word">estruturados.</span></div></div>
+<div id="cap-20" class="clip caption-box" data-start="30.1000" data-duration="1.4000" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c20w0" class="caption-word">Então</span> <span id="c20w1" class="caption-word">por</span> <span id="c20w2" class="caption-word">muitos</span> <span id="c20w3" class="caption-word">anos</span> <span id="c20w4" class="caption-word">ela</span> <span id="c20w5" class="caption-word">meio</span></div></div>
+<div id="cap-21" class="clip caption-box" data-start="31.5000" data-duration="1.5000" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c21w0" class="caption-word">que</span> <span id="c21w1" class="caption-word">foi</span> <span id="c21w2" class="caption-word">essa</span> <span id="c21w3" class="caption-word">área</span> <span id="c21w4" class="caption-word">que</span> <span id="c21w5" class="caption-word">produziu</span></div></div>
+<div id="cap-22" class="clip caption-box" data-start="33.0000" data-duration="2.0000" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c22w0" class="caption-word">uma</span> <span id="c22w1" class="caption-word">quantidade</span> <span id="c22w2" class="caption-word">muito</span> <span id="c22w3" class="caption-word">grande</span> <span id="c22w4" class="caption-word">de</span> <span id="c22w5" class="caption-word">dados,</span></div></div>
+<div id="cap-23" class="clip caption-box" data-start="35.0000" data-duration="0.9000" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c23w0" class="caption-word">mas</span> <span id="c23w1" class="caption-word">é</span> <span id="c23w2" class="caption-word">um</span> <span id="c23w3" class="caption-word">dado</span> <span id="c23w4" class="caption-word">que</span> <span id="c23w5" class="caption-word">não</span></div></div>
+<div id="cap-24" class="clip caption-box" data-start="35.9000" data-duration="1.1000" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c24w0" class="caption-word">tinha</span> <span id="c24w1" class="caption-word">como</span> <span id="c24w2" class="caption-word">trabalhar.</span></div></div>
+<div id="cap-25" class="clip caption-box" data-start="37.0000" data-duration="0.8333" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c25w0" class="caption-word">É</span> <span id="c25w1" class="caption-word">um</span> <span id="c25w2" class="caption-word">dado</span> <span id="c25w3" class="caption-word">que</span> <span id="c25w4" class="caption-word">não</span> <span id="c25w5" class="caption-word">estava</span></div></div>
+<div id="cap-26" class="clip caption-box" data-start="37.8333" data-duration="1.4667" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c26w0" class="caption-word">em</span> <span id="c26w1" class="caption-word">nenhuma</span> <span id="c26w2" class="caption-word">tabela,</span> <span id="c26w3" class="caption-word">não</span> <span id="c26w4" class="caption-word">era</span> <span id="c26w5" class="caption-word">organizado</span></div></div>
+<div id="cap-27" class="clip caption-box" data-start="39.3000" data-duration="1.5533" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c27w0" class="caption-word">o</span> <span id="c27w1" class="caption-word">suficiente,</span> <span id="c27w2" class="caption-word">então</span> <span id="c27w3" class="caption-word">ela</span> <span id="c27w4" class="caption-word">não</span> <span id="c27w5" class="caption-word">atraía</span></div></div>
+<div id="cap-28" class="clip caption-box" data-start="40.8667" data-duration="2.0333" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c28w0" class="caption-word">muitos</span> <span id="c28w1" class="caption-word">profissionais</span> <span id="c28w2" class="caption-word">de</span> <span id="c28w3" class="caption-word">TI</span> <span id="c28w4" class="caption-word">da</span> <span id="c28w5" class="caption-word">área</span></div></div>
+<div id="cap-29" class="clip caption-box" data-start="42.9000" data-duration="1.9333" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c29w0" class="caption-word">de</span> <span id="c29w1" class="caption-word">dados</span> <span id="c29w2" class="caption-word">especificamente</span> <span id="c29w3" class="caption-word">e</span> <span id="c29w4" class="caption-word">acabava</span></div></div>
+<div id="cap-30" class="clip caption-box" data-start="44.8333" data-duration="1.1667" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c30w0" class="caption-word">ficando</span> <span id="c30w1" class="caption-word">ali</span> <span id="c30w2" class="caption-word">sem</span> <span id="c30w3" class="caption-word">bons</span> <span id="c30w4" class="caption-word">profissionais</span></div></div>
+<div id="cap-31" class="clip caption-box" data-start="46.0000" data-duration="1.8667" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c31w0" class="caption-word">e</span> <span id="c31w1" class="caption-word">não</span> <span id="c31w2" class="caption-word">tinha</span> <span id="c31w3" class="caption-word">muitos</span> <span id="c31w4" class="caption-word">use cases</span> <span id="c31w5" class="caption-word">também</span></div></div>
+<div id="cap-32" class="clip caption-box" data-start="47.8667" data-duration="1.7000" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c32w0" class="caption-word">que</span> <span id="c32w1" class="caption-word">dava</span> <span id="c32w2" class="caption-word">para</span> <span id="c32w3" class="caption-word">fazer,</span> <span id="c32w4" class="caption-word">devido</span> <span id="c32w5" class="caption-word">à</span></div></div>
+<div id="cap-33" class="clip caption-box" data-start="49.5667" data-duration="2.1667" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c33w0" class="caption-word">ausência</span> <span id="c33w1" class="caption-word">de</span> <span id="c33w2" class="caption-word">massa</span> <span id="c33w3" class="caption-word">crítica</span> <span id="c33w4" class="caption-word">para</span> <span id="c33w5" class="caption-word">conseguir</span></div></div>
+<div id="cap-34" class="clip caption-box" data-start="51.7333" data-duration="1.1867" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c34w0" class="caption-word">fazer</span> <span id="c34w1" class="caption-word">alguma</span> <span id="c34w2" class="caption-word">coisa.</span></div></div>
+<div id="cap-35" class="clip caption-box" data-start="53.1000" data-duration="1.5000" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c35w0" class="caption-word">Isso</span> <span id="c35w1" class="caption-word">é</span> <span id="c35w2" class="caption-word">claro,</span> <span id="c35w3" class="caption-word">até</span> <span id="c35w4" class="caption-word">aparecer</span> <span id="c35w5" class="caption-word">a</span></div></div>
+<div id="cap-36" class="clip caption-box" data-start="54.6000" data-duration="2.5000" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c36w0" class="caption-word">adoção</span> <span id="c36w1" class="caption-word">massiva</span> <span id="c36w2" class="caption-word">de</span> <span id="c36w3" class="caption-word">inteligência</span> <span id="c36w4" class="caption-word">artificial</span></div></div>
+<div id="cap-37" class="clip caption-box" data-start="57.1000" data-duration="1.1200" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c37w0" class="caption-word">e</span> <span id="c37w1" class="caption-word">aí</span> <span id="c37w2" class="caption-word">do</span> <span id="c37w3" class="caption-word">nada,</span> <span id="c37w4" class="caption-word">a</span> <span id="c37w5" class="caption-word">área</span></div></div>
+<div id="cap-38" class="clip caption-box" data-start="58.2333" data-duration="1.7333" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c38w0" class="caption-word">do</span> <span id="c38w1" class="caption-word">direito</span> <span id="c38w2" class="caption-word">que</span> <span id="c38w3" class="caption-word">tinha</span> <span id="c38w4" class="caption-word">milhares</span> <span id="c38w5" class="caption-word">de</span></div></div>
+<div id="cap-39" class="clip caption-box" data-start="59.9667" data-duration="2.1333" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c39w0" class="caption-word">dados</span> <span id="c39w1" class="caption-word">que</span> <span id="c39w2" class="caption-word">não</span> <span id="c39w3" class="caption-word">tinham</span> <span id="c39w4" class="caption-word">muito</span> <span id="c39w5" class="caption-word">valor,</span></div></div>
+<div id="cap-40" class="clip caption-box" data-start="62.1000" data-duration="1.3667" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c40w0" class="caption-word">passou</span> <span id="c40w1" class="caption-word">a</span> <span id="c40w2" class="caption-word">ter</span> <span id="c40w3" class="caption-word">processos</span> <span id="c40w4" class="caption-word">que</span> <span id="c40w5" class="caption-word">eram</span></div></div>
+<div id="cap-41" class="clip caption-box" data-start="63.4667" data-duration="1.8667" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c41w0" class="caption-word">possíveis</span> <span id="c41w1" class="caption-word">de</span> <span id="c41w2" class="caption-word">serem</span> <span id="c41w3" class="caption-word">lidos</span> <span id="c41w4" class="caption-word">com</span> <span id="c41w5" class="caption-word">inteligência</span></div></div>
+<div id="cap-42" class="clip caption-box" data-start="65.3333" data-duration="2.7333" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c42w0" class="caption-word">artificial</span> <span id="c42w1" class="caption-word">e</span> <span id="c42w2" class="caption-word">serem</span> <span id="c42w3" class="caption-word">analisados.</span></div></div>
+<div id="cap-43" class="clip caption-box" data-start="68.0667" data-duration="1.0667" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c43w0" class="caption-word">E essa</span> <span id="c43w1" class="caption-word">tese</span> <span id="c43w2" class="caption-word">não</span> <span id="c43w3" class="caption-word">é</span> <span id="c43w4" class="caption-word">só</span> <span id="c43w5" class="caption-word">minha,</span></div></div>
+<div id="cap-44" class="clip caption-box" data-start="69.1333" data-duration="1.1000" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c44w0" class="caption-word">lá</span> <span id="c44w1" class="caption-word">fora</span> <span id="c44w2" class="caption-word">o</span> <span id="c44w3" class="caption-word">próprio</span> <span id="c44w4" class="caption-word">ramo</span> <span id="c44w5" class="caption-word">de</span></div></div>
+<div id="cap-45" class="clip caption-box" data-start="70.2333" data-duration="1.3333" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c45w0" class="caption-word">legaltech,</span> <span id="c45w1" class="caption-word">que</span> <span id="c45w2" class="caption-word">era</span> <span id="c45w3" class="caption-word">um</span> <span id="c45w4" class="caption-word">ramo</span> <span id="c45w5" class="caption-word">que</span></div></div>
+<div id="cap-46" class="clip caption-box" data-start="71.5667" data-duration="1.7333" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c46w0" class="caption-word">antes</span> <span id="c46w1" class="caption-word">da</span> <span id="c46w2" class="caption-word">inteligência</span> <span id="c46w3" class="caption-word">artificial</span> <span id="c46w4" class="caption-word">era</span></div></div>
+<div id="cap-47" class="clip caption-box" data-start="73.3000" data-duration="1.8333" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c47w0" class="caption-word">bem</span> <span id="c47w1" class="caption-word">morto,</span> <span id="c47w2" class="caption-word">está</span> <span id="c47w3" class="caption-word">tendo</span> <span id="c47w4" class="caption-word">várias</span> <span id="c47w5" class="caption-word">empresas</span></div></div>
+<div id="cap-48" class="clip caption-box" data-start="75.1333" data-duration="2.2000" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c48w0" class="caption-word">muito</span> <span id="c48w1" class="caption-word">grandes</span> <span id="c48w2" class="caption-word">surgido,</span> <span id="c48w3" class="caption-word">como</span> <span id="c48w4" class="caption-word">a</span> <span id="c48w5" class="caption-word">Harvey,</span></div></div>
+<div id="cap-49" class="clip caption-box" data-start="77.3333" data-duration="1.7333" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c49w0" class="caption-word">a</span> <span id="c49w1" class="caption-word">Legora,</span> <span id="c49w2" class="caption-word">a</span> <span id="c49w3" class="caption-word">EvenUp.</span></div></div>
+<div id="cap-50" class="clip caption-box" data-start="79.0667" data-duration="1.6000" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c50w0" class="caption-word">E essas</span> <span id="c50w1" class="caption-word">empresas</span> <span id="c50w2" class="caption-word">estão</span> <span id="c50w3" class="caption-word">conseguindo</span></div></div>
+<div id="cap-51" class="clip caption-box" data-start="80.6667" data-duration="2.0333" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c51w0" class="caption-word">captar</span> <span id="c51w1" class="caption-word">milhões</span> <span id="c51w2" class="caption-word">de</span> <span id="c51w3" class="caption-word">dólares</span> <span id="c51w4" class="caption-word">de</span> <span id="c51w5" class="caption-word">valuation,</span></div></div>
+<div id="cap-52" class="clip caption-box" data-start="82.7000" data-duration="1.3667" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c52w0" class="caption-word">até</span> <span id="c52w1" class="caption-word">aqui</span> <span id="c52w2" class="caption-word">mesmo</span> <span id="c52w3" class="caption-word">no</span> <span id="c52w4" class="caption-word">Brasil,</span> <span id="c52w5" class="caption-word">a</span></div></div>
+<div id="cap-53" class="clip caption-box" data-start="84.0667" data-duration="2.0667" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c53w0" class="caption-word">gente</span> <span id="c53w1" class="caption-word">tem</span> <span id="c53w2" class="caption-word">uma</span> <span id="c53w3" class="caption-word">empresa</span> <span id="c53w4" class="caption-word">chamada</span> <span id="c53w5" class="caption-word">Enter,</span></div></div>
+<div id="cap-54" class="clip caption-box" data-start="86.1333" data-duration="1.2000" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c54w0" class="caption-word">que</span> <span id="c54w1" class="caption-word">esse</span> <span id="c54w2" class="caption-word">ano</span> <span id="c54w3" class="caption-word">oficialmente</span> <span id="c54w4" class="caption-word">se</span> <span id="c54w5" class="caption-word">tornou</span></div></div>
+<div id="cap-55" class="clip caption-box" data-start="87.3333" data-duration="1.3333" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c55w0" class="caption-word">um</span> <span id="c55w1" class="caption-word">novo</span> <span id="c55w2" class="caption-word">unicórnio</span> <span id="c55w3" class="caption-word">aí,</span> <span id="c55w4" class="caption-word">sendo</span> <span id="c55w5" class="caption-word">avaliado</span></div></div>
+<div id="cap-56" class="clip caption-box" data-start="88.6667" data-duration="0.7667" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c56w0" class="caption-word">em</span> <span id="c56w1" class="caption-word">mais</span> <span id="c56w2" class="caption-word">de</span> <span id="c56w3" class="caption-word">um</span> <span id="c56w4" class="caption-word">bilhão</span> <span id="c56w5" class="caption-word">de</span></div></div>
+<div id="cap-57" class="clip caption-box" data-start="89.4333" data-duration="2.0333" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c57w0" class="caption-word">dólares,</span> <span id="c57w1" class="caption-word">que</span> <span id="c57w2" class="caption-word">também</span> <span id="c57w3" class="caption-word">é</span> <span id="c57w4" class="caption-word">uma</span> <span id="c57w5" class="caption-word">empresa</span></div></div>
+<div id="cap-58" class="clip caption-box" data-start="91.4667" data-duration="2.5333" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c58w0" class="caption-word">de</span> <span id="c58w1" class="caption-word">legaltech</span> <span id="c58w2" class="caption-word">pro</span> <span id="c58w3" class="caption-word">direito</span> <span id="c58w4" class="caption-word">brasileiro,</span></div></div>
+<div id="cap-59" class="clip caption-box" data-start="94.0000" data-duration="1.3667" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c59w0" class="caption-word">então</span> <span id="c59w1" class="caption-word">essa</span> <span id="c59w2" class="caption-word">área</span> <span id="c59w3" class="caption-word">está</span> <span id="c59w4" class="caption-word">muito,</span> <span id="c59w5" class="caption-word">muito</span></div></div>
+<div id="cap-60" class="clip caption-box" data-start="95.3667" data-duration="0.7333" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c60w0" class="caption-word">acelerada.</span></div></div>
+<div id="cap-61" class="clip caption-box" data-start="96.1000" data-duration="0.9667" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c61w0" class="caption-word">Um</span> <span id="c61w1" class="caption-word">pouco</span> <span id="c61w2" class="caption-word">antes</span> <span id="c61w3" class="caption-word">de</span> <span id="c61w4" class="caption-word">eu</span> <span id="c61w5" class="caption-word">vir</span></div></div>
+<div id="cap-62" class="clip caption-box" data-start="97.0667" data-duration="1.3000" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c62w0" class="caption-word">para</span> <span id="c62w1" class="caption-word">a</span> <span id="c62w2" class="caption-word">área</span> <span id="c62w3" class="caption-word">de</span> <span id="c62w4" class="caption-word">tecnologia,</span> <span id="c62w5" class="caption-word">eu</span></div></div>
+<div id="cap-63" class="clip caption-box" data-start="98.3667" data-duration="1.5333" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c63w0" class="caption-word">trabalhei</span> <span id="c63w1" class="caption-word">durante</span> <span id="c63w2" class="caption-word">dois</span> <span id="c63w3" class="caption-word">anos</span> <span id="c63w4" class="caption-word">e</span> <span id="c63w5" class="caption-word">meio</span></div></div>
+<div id="cap-64" class="clip caption-box" data-start="99.9000" data-duration="1.3667" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c64w0" class="caption-word">aí,</span> <span id="c64w1" class="caption-word">como</span> <span id="c64w2" class="caption-word">estagiário</span> <span id="c64w3" class="caption-word">na</span> <span id="c64w4" class="caption-word">área</span> <span id="c64w5" class="caption-word">do</span></div></div>
+<div id="cap-65" class="clip caption-box" data-start="101.2667" data-duration="1.8667" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c65w0" class="caption-word">direito</span> <span id="c65w1" class="caption-word">e</span> <span id="c65w2" class="caption-word">sinceramente</span> <span id="c65w3" class="caption-word">qualquer</span> <span id="c65w4" class="caption-word">pessoa</span></div></div>
+<div id="cap-66" class="clip caption-box" data-start="103.1333" data-duration="1.8000" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c66w0" class="caption-word">que</span> <span id="c66w1" class="caption-word">tenha</span> <span id="c66w2" class="caption-word">conhecimento</span> <span id="c66w3" class="caption-word">nas</span> <span id="c66w4" class="caption-word">duas</span> <span id="c66w5" class="caption-word">áreas,</span></div></div>
+<div id="cap-67" class="clip caption-box" data-start="104.9333" data-duration="1.2333" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c67w0" class="caption-word">que</span> <span id="c67w1" class="caption-word">já</span> <span id="c67w2" class="caption-word">tenho</span> <span id="c67w3" class="caption-word">visto</span> <span id="c67w4" class="caption-word">um</span> <span id="c67w5" class="caption-word">pouco</span></div></div>
+<div id="cap-68" class="clip caption-box" data-start="106.1667" data-duration="1.4000" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c68w0" class="caption-word">como</span> <span id="c68w1" class="caption-word">que</span> <span id="c68w2" class="caption-word">a</span> <span id="c68w3" class="caption-word">realidade</span> <span id="c68w4" class="caption-word">do</span> <span id="c68w5" class="caption-word">trabalho</span></div></div>
+<div id="cap-69" class="clip caption-box" data-start="107.5667" data-duration="1.6867" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c69w0" class="caption-word">dos</span> <span id="c69w1" class="caption-word">dois</span> <span id="c69w2" class="caption-word">lados</span> <span id="c69w3" class="caption-word">consegue</span> <span id="c69w4" class="caption-word">enxergar</span> <span id="c69w5" class="caption-word">esse</span></div></div>
+<div id="cap-70" class="clip caption-box" data-start="109.2667" data-duration="2.0000" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c70w0" class="caption-word">use</span> <span id="c70w1" class="caption-word">case</span> <span id="c70w2" class="caption-word">e</span> <span id="c70w3" class="caption-word">é</span> <span id="c70w4" class="caption-word">meio</span> <span id="c70w5" class="caption-word">que</span></div></div>
+<div id="cap-71" class="clip caption-box" data-start="111.2667" data-duration="1.0667" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c71w0" class="caption-word">por</span> <span id="c71w1" class="caption-word">causa</span> <span id="c71w2" class="caption-word">disso</span> <span id="c71w3" class="caption-word">que</span> <span id="c71w4" class="caption-word">essas</span> <span id="c71w5" class="caption-word">áreas</span></div></div>
+<div id="cap-72" class="clip caption-box" data-start="112.3333" data-duration="1.6667" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c72w0" class="caption-word">estão</span> <span id="c72w1" class="caption-word">sendo</span> <span id="c72w2" class="caption-word">muito</span> <span id="c72w3" class="caption-word">disruptadas.</span></div></div>
+<div id="cap-73" class="clip caption-box" data-start="114.0000" data-duration="1.2333" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c73w0" class="caption-word">É</span> <span id="c73w1" class="caption-word">muito</span> <span id="c73w2" class="caption-word">fácil</span> <span id="c73w3" class="caption-word">uma</span> <span id="c73w4" class="caption-word">pessoa</span> <span id="c73w5" class="caption-word">que</span></div></div>
+<div id="cap-74" class="clip caption-box" data-start="115.2333" data-duration="1.6667" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c74w0" class="caption-word">tem</span> <span id="c74w1" class="caption-word">experiência</span> <span id="c74w2" class="caption-word">com</span> <span id="c74w3" class="caption-word">as</span> <span id="c74w4" class="caption-word">duas</span> <span id="c74w5" class="caption-word">coisas,</span></div></div>
+<div id="cap-75" class="clip caption-box" data-start="116.9000" data-duration="1.2333" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c75w0" class="caption-word">conseguir</span> <span id="c75w1" class="caption-word">ver</span> <span id="c75w2" class="caption-word">os</span> <span id="c75w3" class="caption-word">use</span> <span id="c75w4" class="caption-word">cases</span> <span id="c75w5" class="caption-word">e</span></div></div>
+<div id="cap-76" class="clip caption-box" data-start="118.1333" data-duration="2.1000" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c76w0" class="caption-word">sair</span> <span id="c76w1" class="caption-word">aplicando</span> <span id="c76w2" class="caption-word">essa</span> <span id="c76w3" class="caption-word">tecnologia</span> <span id="c76w4" class="caption-word">e</span> <span id="c76w5" class="caption-word">disruptando</span></div></div>
+<div id="cap-77" class="clip caption-box" data-start="120.2333" data-duration="1.1000" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c77w0" class="caption-word">uma</span> <span id="c77w1" class="caption-word">área</span> <span id="c77w2" class="caption-word">que</span> <span id="c77w3" class="caption-word">até</span> <span id="c77w4" class="caption-word">ontem</span> <span id="c77w5" class="caption-word">era</span></div></div>
+<div id="cap-78" class="clip caption-box" data-start="121.3333" data-duration="1.6000" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c78w0" class="caption-word">uma</span> <span id="c78w1" class="caption-word">área</span> <span id="c78w2" class="caption-word">muito</span> <span id="c78w3" class="caption-word">antiga</span> <span id="c78w4" class="caption-word">com</span> <span id="c78w5" class="caption-word">processos</span></div></div>
+<div id="cap-79" class="clip caption-box" data-start="122.9333" data-duration="1.1667" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c79w0" class="caption-word">muito</span> <span id="c79w1" class="caption-word">velhos.</span></div></div>
+<div id="cap-80" class="clip caption-box" data-start="124.1000" data-duration="1.3000" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c80w0" class="caption-word">Na</span> <span id="c80w1" class="caption-word">minha</span> <span id="c80w2" class="caption-word">opinião,</span> <span id="c80w3" class="caption-word">o</span> <span id="c80w4" class="caption-word">que</span> <span id="c80w5" class="caption-word">falta</span></div></div>
+<div id="cap-81" class="clip caption-box" data-start="125.4000" data-duration="1.6667" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c81w0" class="caption-word">para</span> <span id="c81w1" class="caption-word">um</span> <span id="c81w2" class="caption-word">negócio</span> <span id="c81w3" class="caption-word">acelerar</span> <span id="c81w4" class="caption-word">mais</span> <span id="c81w5" class="caption-word">ainda</span></div></div>
+<div id="cap-82" class="clip caption-box" data-start="127.0667" data-duration="2.0000" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c82w0" class="caption-word">são</span> <span id="c82w1" class="caption-word">bons</span> <span id="c82w2" class="caption-word">profissionais</span> <span id="c82w3" class="caption-word">porque</span> <span id="c82w4" class="caption-word">geralmente</span></div></div>
+<div id="cap-83" class="clip caption-box" data-start="129.0667" data-duration="1.6667" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c83w0" class="caption-word">como</span> <span id="c83w1" class="caption-word">essas</span> <span id="c83w2" class="caption-word">áreas</span> <span id="c83w3" class="caption-word">estavam</span> <span id="c83w4" class="caption-word">crescendo</span></div></div>
+<div id="cap-84" class="clip caption-box" data-start="130.7333" data-duration="1.9667" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c84w0" class="caption-word">de</span> <span id="c84w1" class="caption-word">maneira</span> <span id="c84w2" class="caption-word">separada,</span> <span id="c84w3" class="caption-word">tem</span> <span id="c84w4" class="caption-word">poucas</span> <span id="c84w5" class="caption-word">pessoas</span></div></div>
+<div id="cap-85" class="clip caption-box" data-start="132.7000" data-duration="1.0333" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c85w0" class="caption-word">que</span> <span id="c85w1" class="caption-word">estão</span> <span id="c85w2" class="caption-word">na</span> <span id="c85w3" class="caption-word">área</span> <span id="c85w4" class="caption-word">do</span> <span id="c85w5" class="caption-word">direito</span></div></div>
+<div id="cap-86" class="clip caption-box" data-start="133.7333" data-duration="0.9667" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c86w0" class="caption-word">e</span> <span id="c86w1" class="caption-word">entendem</span> <span id="c86w2" class="caption-word">de</span> <span id="c86w3" class="caption-word">TI</span> <span id="c86w4" class="caption-word">ao</span> <span id="c86w5" class="caption-word">mesmo</span></div></div>
+<div id="cap-87" class="clip caption-box" data-start="134.7000" data-duration="2.0667" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c87w0" class="caption-word">tempo,</span> <span id="c87w1" class="caption-word">mas</span> <span id="c87w2" class="caption-word">não</span> <span id="c87w3" class="caption-word">impressionaria</span> <span id="c87w4" class="caption-word">se</span> <span id="c87w5" class="caption-word">nos</span></div></div>
+<div id="cap-88" class="clip caption-box" data-start="136.7667" data-duration="2.1000" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c88w0" class="caption-word">próximos</span> <span id="c88w1" class="caption-word">anos</span> <span id="c88w2" class="caption-word">os</span> <span id="c88w3" class="caption-word">grandes</span> <span id="c88w4" class="caption-word">escritórios</span></div></div>
+<div id="cap-89" class="clip caption-box" data-start="138.8667" data-duration="2.0667" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c89w0" class="caption-word">de</span> <span id="c89w1" class="caption-word">advocacia</span> <span id="c89w2" class="caption-word">do</span> <span id="c89w3" class="caption-word">Brasil</span> <span id="c89w4" class="caption-word">não</span> <span id="c89w5" class="caption-word">começassem</span></div></div>
+<div id="cap-90" class="clip caption-box" data-start="140.9333" data-duration="1.4667" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c90w0" class="caption-word">a</span> <span id="c90w1" class="caption-word">montar</span> <span id="c90w2" class="caption-word">times</span> <span id="c90w3" class="caption-word">de</span> <span id="c90w4" class="caption-word">dados</span> <span id="c90w5" class="caption-word">bem</span></div></div>
+<div id="cap-91" class="clip caption-box" data-start="142.4000" data-duration="1.8000" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c91w0" class="caption-word">grandes</span> <span id="c91w1" class="caption-word">e</span> <span id="c91w2" class="caption-word">acredito</span> <span id="c91w3" class="caption-word">até</span> <span id="c91w4" class="caption-word">que</span> <span id="c91w5" class="caption-word">times</span></div></div>
+<div id="cap-92" class="clip caption-box" data-start="144.2000" data-duration="1.9000" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c92w0" class="caption-word">de</span> <span id="c92w1" class="caption-word">dados</span> <span id="c92w2" class="caption-word">muito</span> <span id="c92w3" class="caption-word">bem</span> <span id="c92w4" class="caption-word">pagos</span> <span id="c92w5" class="caption-word">também.</span></div></div>
+<div id="cap-93" class="clip caption-box" data-start="146.1000" data-duration="1.3000" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c93w0" class="caption-word">Se</span> <span id="c93w1" class="caption-word">você</span> <span id="c93w2" class="caption-word">se</span> <span id="c93w3" class="caption-word">interessou</span> <span id="c93w4" class="caption-word">por</span> <span id="c93w5" class="caption-word">essa</span></div></div>
+<div id="cap-94" class="clip caption-box" data-start="147.4000" data-duration="1.1867" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c94w0" class="caption-word">tese</span> <span id="c94w1" class="caption-word">e</span> <span id="c94w2" class="caption-word">eu</span> <span id="c94w3" class="caption-word">no</span> <span id="c94w4" class="caption-word">meu</span> <span id="c94w5" class="caption-word">Substack</span></div></div>
+<div id="cap-95" class="clip caption-box" data-start="148.6000" data-duration="1.4667" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c95w0" class="caption-word">escrevi</span> <span id="c95w1" class="caption-word">um</span> <span id="c95w2" class="caption-word">post</span> <span id="c95w3" class="caption-word">sobre</span> <span id="c95w4" class="caption-word">isso,</span> <span id="c95w5" class="caption-word">como</span></div></div>
+<div id="cap-96" class="clip caption-box" data-start="150.0667" data-duration="1.6000" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c96w0" class="caption-word">eu</span> <span id="c96w1" class="caption-word">tive</span> <span id="c96w2" class="caption-word">experiência</span> <span id="c96w3" class="caption-word">nas</span> <span id="c96w4" class="caption-word">duas</span> <span id="c96w5" class="caption-word">áreas</span></div></div>
+<div id="cap-97" class="clip caption-box" data-start="151.6667" data-duration="1.6333" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c97w0" class="caption-word">eu</span> <span id="c97w1" class="caption-word">tenho</span> <span id="c97w2" class="caption-word">bastante</span> <span id="c97w3" class="caption-word">coisa</span> <span id="c97w4" class="caption-word">para</span> <span id="c97w5" class="caption-word">falar</span></div></div>
+<div id="cap-98" class="clip caption-box" data-start="153.3000" data-duration="1.0333" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c98w0" class="caption-word">e</span> <span id="c98w1" class="caption-word">lá</span> <span id="c98w2" class="caption-word">eu</span> <span id="c98w3" class="caption-word">não</span> <span id="c98w4" class="caption-word">sou</span> <span id="c98w5" class="caption-word">limitado</span></div></div>
+<div id="cap-99" class="clip caption-box" data-start="154.3333" data-duration="1.9667" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c99w0" class="caption-word">pelos</span> <span id="c99w1" class="caption-word">3</span> <span id="c99w2" class="caption-word">minutos</span> <span id="c99w3" class="caption-word">do</span> <span id="c99w4" class="caption-word">Instagram,</span> <span id="c99w5" class="caption-word">então</span></div></div>
+<div id="cap-100" class="clip caption-box" data-start="156.3000" data-duration="0.9667" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c100w0" class="caption-word">se</span> <span id="c100w1" class="caption-word">você</span> <span id="c100w2" class="caption-word">quiser</span> <span id="c100w3" class="caption-word">dar</span> <span id="c100w4" class="caption-word">uma</span> <span id="c100w5" class="caption-word">olhada</span></div></div>
+<div id="cap-101" class="clip caption-box" data-start="157.2667" data-duration="1.3000" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c101w0" class="caption-word">nesse</span> <span id="c101w1" class="caption-word">conteúdo</span> <span id="c101w2" class="caption-word">aí</span> <span id="c101w3" class="caption-word">você</span> <span id="c101w4" class="caption-word">pode</span> <span id="c101w5" class="caption-word">comentar</span></div></div>
+<div id="cap-102" class="clip caption-box" data-start="158.5667" data-duration="1.1000" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c102w0" class="caption-word">aqui</span> <span id="c102w1" class="caption-word">embaixo</span> <span id="c102w2" class="caption-word">direito</span> <span id="c102w3" class="caption-word">que</span> <span id="c102w4" class="caption-word">eu</span> <span id="c102w5" class="caption-word">vou</span></div></div>
+<div id="cap-103" class="clip caption-box" data-start="159.6667" data-duration="1.0333" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c103w0" class="caption-word">mandar</span> <span id="c103w1" class="caption-word">o</span> <span id="c103w2" class="caption-word">link</span> <span id="c103w3" class="caption-word">desse</span> <span id="c103w4" class="caption-word">post</span> <span id="c103w5" class="caption-word">para</span></div></div>
+<div id="cap-104" class="clip caption-box" data-start="160.7000" data-duration="0.3000" data-track-index="4" data-layout-allow-caption-zone><div class="caption-inner"><span id="c104w0" class="caption-word">você.</span></div></div>
+
+      <script src="vendor/gsap.min.js"></script>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        function show(id, start, end) {
+          tl.set(id, { visibility: "visible" }, start);
+          tl.fromTo(id, { opacity: 0 }, { opacity: 1, duration: 0.2, ease: "power2.out" }, start);
+          tl.to(id, { opacity: 0, duration: 0.2, ease: "power2.in" }, end - 0.2);
+          tl.set(id, { visibility: "hidden" }, end);
+        }
+        show("#logos-foreign", 76.4333, 80.0333);
+        show("#logos-enter", 85.6333, 90.2000);
+        tl.set("#c0w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 0.1000);
+tl.set("#c0w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 0.1333);
+tl.set("#c0w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 0.1333);
+tl.set("#c0w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 0.2667);
+tl.set("#c0w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 0.2667);
+tl.set("#c0w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 0.7000);
+tl.set("#c0w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 0.7000);
+tl.set("#c0w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 0.9000);
+tl.set("#c0w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 0.9000);
+tl.set("#c0w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 1.4000);
+tl.set("#c0w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 1.4000);
+tl.set("#c0w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 1.5000);
+tl.set("#c1w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 1.5000);
+tl.set("#c1w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 1.7000);
+tl.set("#c1w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 1.7000);
+tl.set("#c1w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 2.0000);
+tl.set("#c1w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 2.0000);
+tl.set("#c1w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 2.1333);
+tl.set("#c1w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 2.1333);
+tl.set("#c1w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 2.2333);
+tl.set("#c1w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 2.2333);
+tl.set("#c1w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 2.6000);
+tl.set("#c1w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 2.6000);
+tl.set("#c1w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 2.7333);
+tl.set("#c2w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 2.7333);
+tl.set("#c2w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 2.8667);
+tl.set("#c2w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 2.8667);
+tl.set("#c2w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 3.0000);
+tl.set("#c2w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 3.0000);
+tl.set("#c2w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 3.4333);
+tl.set("#c2w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 3.4333);
+tl.set("#c2w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 4.0667);
+tl.set("#c2w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 4.0667);
+tl.set("#c2w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 4.2333);
+tl.set("#c2w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 4.2333);
+tl.set("#c2w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 4.7333);
+tl.set("#c3w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 4.7333);
+tl.set("#c3w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 5.0000);
+tl.set("#c3w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 5.0000);
+tl.set("#c3w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 5.4000);
+tl.set("#c3w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 5.4000);
+tl.set("#c3w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 5.4667);
+tl.set("#c3w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 5.4667);
+tl.set("#c3w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 6.0000);
+tl.set("#c3w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 6.0000);
+tl.set("#c3w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 6.1333);
+tl.set("#c3w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 6.1333);
+tl.set("#c3w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 6.4000);
+tl.set("#c4w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 6.4000);
+tl.set("#c4w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 6.7333);
+tl.set("#c4w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 6.7333);
+tl.set("#c4w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 7.4000);
+tl.set("#c4w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 7.4000);
+tl.set("#c4w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 7.5333);
+tl.set("#c4w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 7.5333);
+tl.set("#c4w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 7.7000);
+tl.set("#c4w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 7.7000);
+tl.set("#c4w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 7.8333);
+tl.set("#c5w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 7.8333);
+tl.set("#c5w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 8.0333);
+tl.set("#c5w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 8.0333);
+tl.set("#c5w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 8.2000);
+tl.set("#c5w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 8.2000);
+tl.set("#c5w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 8.2333);
+tl.set("#c5w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 8.2333);
+tl.set("#c5w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 8.2667);
+tl.set("#c5w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 8.2667);
+tl.set("#c5w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 8.4667);
+tl.set("#c5w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 8.4667);
+tl.set("#c5w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 9.0000);
+tl.set("#c6w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 9.1000);
+tl.set("#c6w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 9.5667);
+tl.set("#c6w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 9.5667);
+tl.set("#c6w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 9.6333);
+tl.set("#c6w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 9.6333);
+tl.set("#c6w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 9.9333);
+tl.set("#c6w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 9.9333);
+tl.set("#c6w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 9.9667);
+tl.set("#c6w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 9.9667);
+tl.set("#c6w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 10.2667);
+tl.set("#c6w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 10.2667);
+tl.set("#c6w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 10.8333);
+tl.set("#c7w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 10.8333);
+tl.set("#c7w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 11.0333);
+tl.set("#c7w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 11.0333);
+tl.set("#c7w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 11.3333);
+tl.set("#c7w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 11.3333);
+tl.set("#c7w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 11.6000);
+tl.set("#c7w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 11.6000);
+tl.set("#c7w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 12.3000);
+tl.set("#c7w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 12.3000);
+tl.set("#c7w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 12.8667);
+tl.set("#c7w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 12.8667);
+tl.set("#c7w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 13.0667);
+tl.set("#c8w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 13.0667);
+tl.set("#c8w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 13.2333);
+tl.set("#c8w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 13.2333);
+tl.set("#c8w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 13.5333);
+tl.set("#c8w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 13.5333);
+tl.set("#c8w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 13.7667);
+tl.set("#c8w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 13.7667);
+tl.set("#c8w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 14.0000);
+tl.set("#c8w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 14.0000);
+tl.set("#c8w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 14.3333);
+tl.set("#c8w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 14.3333);
+tl.set("#c8w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 14.7000);
+tl.set("#c9w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 14.7000);
+tl.set("#c9w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 14.9333);
+tl.set("#c9w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 14.9333);
+tl.set("#c9w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 15.0667);
+tl.set("#c9w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 15.0667);
+tl.set("#c9w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 15.7000);
+tl.set("#c9w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 15.7000);
+tl.set("#c9w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 16.1000);
+tl.set("#c9w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 16.1000);
+tl.set("#c9w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 16.1667);
+tl.set("#c9w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 16.1667);
+tl.set("#c9w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 16.2667);
+tl.set("#c10w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 16.2667);
+tl.set("#c10w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 16.5333);
+tl.set("#c10w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 16.5333);
+tl.set("#c10w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 16.9333);
+tl.set("#c10w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 16.9333);
+tl.set("#c10w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 17.1667);
+tl.set("#c10w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 17.1667);
+tl.set("#c10w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 17.8333);
+tl.set("#c10w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 17.8333);
+tl.set("#c10w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 18.1000);
+tl.set("#c11w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 18.1667);
+tl.set("#c11w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 18.3333);
+tl.set("#c11w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 18.3333);
+tl.set("#c11w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 18.4000);
+tl.set("#c11w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 18.4000);
+tl.set("#c11w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 18.6667);
+tl.set("#c11w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 18.6667);
+tl.set("#c11w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 18.9667);
+tl.set("#c11w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 18.9667);
+tl.set("#c11w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 19.1667);
+tl.set("#c11w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 19.1667);
+tl.set("#c11w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 19.3000);
+tl.set("#c12w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 19.3000);
+tl.set("#c12w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 19.7333);
+tl.set("#c12w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 19.7333);
+tl.set("#c12w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 20.0000);
+tl.set("#c13w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 20.0000);
+tl.set("#c13w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 20.1000);
+tl.set("#c13w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 20.1000);
+tl.set("#c13w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 20.3333);
+tl.set("#c13w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 20.3333);
+tl.set("#c13w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 20.6000);
+tl.set("#c13w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 20.6000);
+tl.set("#c13w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 20.7667);
+tl.set("#c13w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 20.7667);
+tl.set("#c13w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 20.9667);
+tl.set("#c13w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 20.9667);
+tl.set("#c13w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 21.1000);
+tl.set("#c14w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 21.1000);
+tl.set("#c14w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 21.6667);
+tl.set("#c14w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 21.6667);
+tl.set("#c14w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 21.9333);
+tl.set("#c14w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 21.9333);
+tl.set("#c14w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 22.3667);
+tl.set("#c14w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 22.3667);
+tl.set("#c14w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 22.6667);
+tl.set("#c14w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 22.6667);
+tl.set("#c14w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 22.8333);
+tl.set("#c14w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 22.8333);
+tl.set("#c14w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 22.9000);
+tl.set("#c15w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 22.9000);
+tl.set("#c15w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 22.9667);
+tl.set("#c15w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 22.9667);
+tl.set("#c15w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 23.1000);
+tl.set("#c15w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 23.1000);
+tl.set("#c15w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 23.3333);
+tl.set("#c15w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 23.3333);
+tl.set("#c15w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 24.0667);
+tl.set("#c15w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 24.0667);
+tl.set("#c15w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 24.4667);
+tl.set("#c15w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 24.4667);
+tl.set("#c15w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 24.5000);
+tl.set("#c16w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 24.5333);
+tl.set("#c16w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 24.7667);
+tl.set("#c16w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 24.7667);
+tl.set("#c16w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 24.9667);
+tl.set("#c16w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 24.9667);
+tl.set("#c16w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 26.0000);
+tl.set("#c17w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 26.0667);
+tl.set("#c17w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 26.1333);
+tl.set("#c17w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 26.1333);
+tl.set("#c17w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 26.3667);
+tl.set("#c17w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 26.3667);
+tl.set("#c17w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 26.6000);
+tl.set("#c17w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 26.6000);
+tl.set("#c17w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 27.0667);
+tl.set("#c17w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 27.0667);
+tl.set("#c17w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 27.2000);
+tl.set("#c17w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 27.2000);
+tl.set("#c17w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 27.8000);
+tl.set("#c18w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 27.8000);
+tl.set("#c18w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 28.0000);
+tl.set("#c18w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 28.0000);
+tl.set("#c18w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 28.3333);
+tl.set("#c18w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 28.3333);
+tl.set("#c18w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 28.6667);
+tl.set("#c18w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 28.6667);
+tl.set("#c18w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 28.8333);
+tl.set("#c18w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 28.8333);
+tl.set("#c18w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 29.0000);
+tl.set("#c18w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 29.0000);
+tl.set("#c18w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 29.2000);
+tl.set("#c19w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 29.2000);
+tl.set("#c19w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 30.0000);
+tl.set("#c20w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 30.1000);
+tl.set("#c20w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 30.3000);
+tl.set("#c20w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 30.3000);
+tl.set("#c20w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 30.6000);
+tl.set("#c20w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 30.6000);
+tl.set("#c20w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 30.8333);
+tl.set("#c20w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 30.8333);
+tl.set("#c20w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 31.0667);
+tl.set("#c20w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 31.0667);
+tl.set("#c20w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 31.2667);
+tl.set("#c20w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 31.2667);
+tl.set("#c20w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 31.5000);
+tl.set("#c21w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 31.5000);
+tl.set("#c21w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 31.6667);
+tl.set("#c21w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 31.6667);
+tl.set("#c21w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 31.8667);
+tl.set("#c21w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 31.8667);
+tl.set("#c21w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 32.1000);
+tl.set("#c21w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 32.1000);
+tl.set("#c21w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 32.3333);
+tl.set("#c21w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 32.3333);
+tl.set("#c21w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 32.6000);
+tl.set("#c21w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 32.6000);
+tl.set("#c21w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 33.0000);
+tl.set("#c22w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 33.0000);
+tl.set("#c22w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 33.1667);
+tl.set("#c22w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 33.1667);
+tl.set("#c22w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 33.8667);
+tl.set("#c22w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 33.8667);
+tl.set("#c22w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 34.0667);
+tl.set("#c22w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 34.0667);
+tl.set("#c22w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 34.4333);
+tl.set("#c22w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 34.4333);
+tl.set("#c22w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 34.5667);
+tl.set("#c22w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 34.5667);
+tl.set("#c22w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 35.0000);
+tl.set("#c23w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 35.0000);
+tl.set("#c23w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 35.1000);
+tl.set("#c23w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 35.1000);
+tl.set("#c23w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 35.2333);
+tl.set("#c23w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 35.2333);
+tl.set("#c23w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 35.3333);
+tl.set("#c23w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 35.3333);
+tl.set("#c23w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 35.5667);
+tl.set("#c23w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 35.5667);
+tl.set("#c23w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 35.7333);
+tl.set("#c23w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 35.7333);
+tl.set("#c23w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 35.9000);
+tl.set("#c24w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 35.9000);
+tl.set("#c24w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 36.1667);
+tl.set("#c24w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 36.1667);
+tl.set("#c24w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 36.4333);
+tl.set("#c24w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 36.4333);
+tl.set("#c24w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 37.0000);
+tl.set("#c25w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 37.0000);
+tl.set("#c25w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 37.1000);
+tl.set("#c25w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 37.1000);
+tl.set("#c25w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 37.1333);
+tl.set("#c25w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 37.1333);
+tl.set("#c25w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 37.3000);
+tl.set("#c25w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 37.3000);
+tl.set("#c25w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 37.4333);
+tl.set("#c25w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 37.4333);
+tl.set("#c25w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 37.6333);
+tl.set("#c25w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 37.6333);
+tl.set("#c25w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 37.8333);
+tl.set("#c26w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 37.8333);
+tl.set("#c26w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 37.9333);
+tl.set("#c26w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 37.9333);
+tl.set("#c26w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 38.2667);
+tl.set("#c26w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 38.2667);
+tl.set("#c26w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 38.6000);
+tl.set("#c26w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 38.6000);
+tl.set("#c26w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 38.7333);
+tl.set("#c26w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 38.7333);
+tl.set("#c26w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 38.8667);
+tl.set("#c26w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 38.8667);
+tl.set("#c26w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 39.3000);
+tl.set("#c27w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 39.3000);
+tl.set("#c27w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 39.3333);
+tl.set("#c27w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 39.3333);
+tl.set("#c27w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 40.0000);
+tl.set("#c27w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 40.0000);
+tl.set("#c27w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 40.2667);
+tl.set("#c27w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 40.2667);
+tl.set("#c27w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 40.4333);
+tl.set("#c27w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 40.4333);
+tl.set("#c27w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 40.5333);
+tl.set("#c27w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 40.5333);
+tl.set("#c27w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 40.7333);
+tl.set("#c28w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 40.8667);
+tl.set("#c28w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 41.1333);
+tl.set("#c28w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 41.1333);
+tl.set("#c28w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 41.7667);
+tl.set("#c28w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 41.7667);
+tl.set("#c28w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 41.8667);
+tl.set("#c28w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 41.8667);
+tl.set("#c28w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 42.0000);
+tl.set("#c28w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 42.0000);
+tl.set("#c28w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 42.3000);
+tl.set("#c28w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 42.3000);
+tl.set("#c28w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 42.9000);
+tl.set("#c29w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 42.9000);
+tl.set("#c29w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 43.2000);
+tl.set("#c29w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 43.2000);
+tl.set("#c29w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 44.0000);
+tl.set("#c29w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 44.0000);
+tl.set("#c29w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 44.5333);
+tl.set("#c29w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 44.5333);
+tl.set("#c29w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 44.5667);
+tl.set("#c29w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 44.5667);
+tl.set("#c29w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 44.8333);
+tl.set("#c30w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 44.8333);
+tl.set("#c30w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 45.1000);
+tl.set("#c30w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 45.1000);
+tl.set("#c30w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 45.2000);
+tl.set("#c30w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 45.2000);
+tl.set("#c30w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 45.3333);
+tl.set("#c30w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 45.3333);
+tl.set("#c30w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 45.4667);
+tl.set("#c30w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 45.4667);
+tl.set("#c30w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 46.0000);
+tl.set("#c31w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 46.0000);
+tl.set("#c31w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 46.0667);
+tl.set("#c31w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 46.0667);
+tl.set("#c31w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 46.2000);
+tl.set("#c31w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 46.2000);
+tl.set("#c31w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 46.6667);
+tl.set("#c31w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 46.6667);
+tl.set("#c31w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 47.0667);
+tl.set("#c31w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 47.0667);
+tl.set("#c31w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 47.4667);
+tl.set("#c31w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 47.4667);
+tl.set("#c31w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 47.8667);
+tl.set("#c32w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 47.8667);
+tl.set("#c32w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 48.0667);
+tl.set("#c32w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 48.0667);
+tl.set("#c32w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 48.3000);
+tl.set("#c32w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 48.3000);
+tl.set("#c32w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 48.5667);
+tl.set("#c32w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 48.5667);
+tl.set("#c32w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 49.1333);
+tl.set("#c32w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 49.1333);
+tl.set("#c32w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 49.5000);
+tl.set("#c32w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 49.5000);
+tl.set("#c32w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 49.5667);
+tl.set("#c33w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 49.5667);
+tl.set("#c33w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 50.0667);
+tl.set("#c33w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 50.0667);
+tl.set("#c33w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 50.2667);
+tl.set("#c33w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 50.2667);
+tl.set("#c33w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 50.5000);
+tl.set("#c33w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 50.5000);
+tl.set("#c33w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 50.9333);
+tl.set("#c33w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 50.9333);
+tl.set("#c33w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 51.3000);
+tl.set("#c33w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 51.3000);
+tl.set("#c33w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 51.7333);
+tl.set("#c34w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 51.7333);
+tl.set("#c34w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 52.0667);
+tl.set("#c34w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 52.0667);
+tl.set("#c34w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 52.4333);
+tl.set("#c34w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 52.4333);
+tl.set("#c34w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 52.8000);
+tl.set("#c35w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 53.1000);
+tl.set("#c35w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 53.2667);
+tl.set("#c35w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 53.2667);
+tl.set("#c35w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 53.6000);
+tl.set("#c35w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 53.6000);
+tl.set("#c35w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 53.8000);
+tl.set("#c35w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 53.8000);
+tl.set("#c35w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 54.0000);
+tl.set("#c35w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 54.0000);
+tl.set("#c35w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 54.5333);
+tl.set("#c35w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 54.5333);
+tl.set("#c35w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 54.6000);
+tl.set("#c36w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 54.6000);
+tl.set("#c36w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 55.0000);
+tl.set("#c36w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 55.0000);
+tl.set("#c36w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 55.4667);
+tl.set("#c36w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 55.4667);
+tl.set("#c36w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 55.6000);
+tl.set("#c36w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 55.6000);
+tl.set("#c36w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 56.4333);
+tl.set("#c36w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 56.4333);
+tl.set("#c36w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 57.1000);
+tl.set("#c37w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 57.1000);
+tl.set("#c37w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 57.1667);
+tl.set("#c37w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 57.1667);
+tl.set("#c37w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 57.3000);
+tl.set("#c37w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 57.3000);
+tl.set("#c37w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 57.4333);
+tl.set("#c37w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 57.4333);
+tl.set("#c37w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 57.8333);
+tl.set("#c37w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 57.8333);
+tl.set("#c37w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 57.8667);
+tl.set("#c37w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 57.8667);
+tl.set("#c37w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 58.1000);
+tl.set("#c38w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 58.2333);
+tl.set("#c38w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 58.2667);
+tl.set("#c38w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 58.2667);
+tl.set("#c38w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 58.7667);
+tl.set("#c38w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 58.7667);
+tl.set("#c38w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 58.9667);
+tl.set("#c38w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 58.9667);
+tl.set("#c38w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 59.3000);
+tl.set("#c38w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 59.3000);
+tl.set("#c38w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 59.8333);
+tl.set("#c38w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 59.8333);
+tl.set("#c38w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 59.9333);
+tl.set("#c39w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 59.9667);
+tl.set("#c39w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 60.3000);
+tl.set("#c39w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 60.3000);
+tl.set("#c39w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 60.5333);
+tl.set("#c39w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 60.5333);
+tl.set("#c39w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 60.7000);
+tl.set("#c39w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 60.7000);
+tl.set("#c39w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 61.1333);
+tl.set("#c39w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 61.1333);
+tl.set("#c39w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 61.4667);
+tl.set("#c39w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 61.4667);
+tl.set("#c39w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 62.1000);
+tl.set("#c40w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 62.1000);
+tl.set("#c40w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 62.3667);
+tl.set("#c40w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 62.3667);
+tl.set("#c40w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 62.4667);
+tl.set("#c40w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 62.4667);
+tl.set("#c40w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 62.6667);
+tl.set("#c40w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 62.6667);
+tl.set("#c40w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 63.1667);
+tl.set("#c40w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 63.1667);
+tl.set("#c40w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 63.2667);
+tl.set("#c40w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 63.2667);
+tl.set("#c40w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 63.4667);
+tl.set("#c41w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 63.4667);
+tl.set("#c41w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 63.9333);
+tl.set("#c41w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 63.9333);
+tl.set("#c41w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 64.0333);
+tl.set("#c41w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 64.0333);
+tl.set("#c41w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 64.3000);
+tl.set("#c41w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 64.3000);
+tl.set("#c41w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 64.5667);
+tl.set("#c41w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 64.5667);
+tl.set("#c41w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 64.7333);
+tl.set("#c41w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 64.7333);
+tl.set("#c41w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 65.3333);
+tl.set("#c42w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 65.3333);
+tl.set("#c42w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 65.9667);
+tl.set("#c42w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 65.9667);
+tl.set("#c42w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 66.1000);
+tl.set("#c42w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 66.1000);
+tl.set("#c42w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 66.6333);
+tl.set("#c42w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 66.6333);
+tl.set("#c42w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 68.0000);
+tl.set("#c43w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 68.0667);
+tl.set("#c43w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 68.2667);
+tl.set("#c43w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 68.2667);
+tl.set("#c43w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 68.6000);
+tl.set("#c43w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 68.6000);
+tl.set("#c43w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 68.6333);
+tl.set("#c43w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 68.6333);
+tl.set("#c43w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 68.6667);
+tl.set("#c43w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 68.6667);
+tl.set("#c43w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 68.8000);
+tl.set("#c43w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 68.8000);
+tl.set("#c43w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 69.1333);
+tl.set("#c44w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 69.1333);
+tl.set("#c44w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 69.2667);
+tl.set("#c44w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 69.2667);
+tl.set("#c44w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 69.4667);
+tl.set("#c44w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 69.4667);
+tl.set("#c44w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 69.5000);
+tl.set("#c44w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 69.5000);
+tl.set("#c44w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 69.9000);
+tl.set("#c44w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 69.9000);
+tl.set("#c44w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 70.1000);
+tl.set("#c44w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 70.1000);
+tl.set("#c44w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 70.1667);
+tl.set("#c45w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 70.2333);
+tl.set("#c45w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 70.7667);
+tl.set("#c45w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 70.7667);
+tl.set("#c45w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 70.9333);
+tl.set("#c45w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 70.9333);
+tl.set("#c45w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 71.1000);
+tl.set("#c45w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 71.1000);
+tl.set("#c45w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 71.2000);
+tl.set("#c45w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 71.2000);
+tl.set("#c45w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 71.4333);
+tl.set("#c45w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 71.4333);
+tl.set("#c45w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 71.5667);
+tl.set("#c46w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 71.5667);
+tl.set("#c46w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 71.8667);
+tl.set("#c46w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 71.8667);
+tl.set("#c46w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 71.9333);
+tl.set("#c46w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 71.9333);
+tl.set("#c46w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 72.6000);
+tl.set("#c46w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 72.6000);
+tl.set("#c46w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 73.2333);
+tl.set("#c46w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 73.2333);
+tl.set("#c46w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 73.3000);
+tl.set("#c47w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 73.3000);
+tl.set("#c47w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 73.4667);
+tl.set("#c47w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 73.4667);
+tl.set("#c47w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 74.0000);
+tl.set("#c47w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 74.0000);
+tl.set("#c47w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 74.1667);
+tl.set("#c47w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 74.1667);
+tl.set("#c47w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 74.4000);
+tl.set("#c47w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 74.4000);
+tl.set("#c47w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 74.6667);
+tl.set("#c47w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 74.6667);
+tl.set("#c47w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 75.0333);
+tl.set("#c48w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 75.1333);
+tl.set("#c48w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 75.2667);
+tl.set("#c48w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 75.2667);
+tl.set("#c48w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 75.5667);
+tl.set("#c48w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 75.5667);
+tl.set("#c48w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 76.0000);
+tl.set("#c48w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 76.0000);
+tl.set("#c48w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 76.4000);
+tl.set("#c48w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 76.4000);
+tl.set("#c48w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 76.5000);
+tl.set("#c48w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 76.5000);
+tl.set("#c48w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 77.2333);
+tl.set("#c49w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 77.3333);
+tl.set("#c49w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 77.4333);
+tl.set("#c49w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 77.4333);
+tl.set("#c49w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 78.2333);
+tl.set("#c49w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 78.2333);
+tl.set("#c49w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 78.3333);
+tl.set("#c49w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 78.3333);
+tl.set("#c49w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 79.0000);
+tl.set("#c50w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 79.0667);
+tl.set("#c50w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 79.6000);
+tl.set("#c50w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 79.6000);
+tl.set("#c50w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 79.8000);
+tl.set("#c50w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 79.8000);
+tl.set("#c50w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 80.0667);
+tl.set("#c50w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 80.0667);
+tl.set("#c50w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 80.6667);
+tl.set("#c51w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 80.6667);
+tl.set("#c51w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 81.0333);
+tl.set("#c51w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 81.0333);
+tl.set("#c51w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 81.4333);
+tl.set("#c51w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 81.4333);
+tl.set("#c51w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 81.6000);
+tl.set("#c51w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 81.6000);
+tl.set("#c51w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 81.9333);
+tl.set("#c51w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 81.9333);
+tl.set("#c51w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 82.0333);
+tl.set("#c51w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 82.0333);
+tl.set("#c51w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 82.6667);
+tl.set("#c52w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 82.7000);
+tl.set("#c52w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 82.8667);
+tl.set("#c52w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 82.8667);
+tl.set("#c52w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 83.0667);
+tl.set("#c52w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 83.0667);
+tl.set("#c52w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 83.3333);
+tl.set("#c52w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 83.3333);
+tl.set("#c52w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 83.4667);
+tl.set("#c52w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 83.4667);
+tl.set("#c52w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 84.0000);
+tl.set("#c52w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 84.0000);
+tl.set("#c52w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 84.0667);
+tl.set("#c53w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 84.0667);
+tl.set("#c53w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 84.3667);
+tl.set("#c53w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 84.3667);
+tl.set("#c53w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 84.5667);
+tl.set("#c53w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 84.5667);
+tl.set("#c53w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 84.7667);
+tl.set("#c53w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 84.7667);
+tl.set("#c53w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 85.2000);
+tl.set("#c53w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 85.2000);
+tl.set("#c53w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 85.6667);
+tl.set("#c53w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 85.6667);
+tl.set("#c53w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 86.0333);
+tl.set("#c54w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 86.1333);
+tl.set("#c54w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 86.2000);
+tl.set("#c54w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 86.2000);
+tl.set("#c54w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 86.3667);
+tl.set("#c54w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 86.3667);
+tl.set("#c54w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 86.5333);
+tl.set("#c54w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 86.5333);
+tl.set("#c54w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 87.0333);
+tl.set("#c54w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 87.0333);
+tl.set("#c54w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 87.1000);
+tl.set("#c54w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 87.1000);
+tl.set("#c54w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 87.3333);
+tl.set("#c55w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 87.3333);
+tl.set("#c55w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 87.4333);
+tl.set("#c55w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 87.4333);
+tl.set("#c55w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 87.6000);
+tl.set("#c55w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 87.6000);
+tl.set("#c55w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 87.9667);
+tl.set("#c55w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 87.9667);
+tl.set("#c55w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 88.1333);
+tl.set("#c55w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 88.1333);
+tl.set("#c55w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 88.3333);
+tl.set("#c55w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 88.3333);
+tl.set("#c55w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 88.6667);
+tl.set("#c56w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 88.6667);
+tl.set("#c56w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 88.7667);
+tl.set("#c56w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 88.7667);
+tl.set("#c56w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 88.9333);
+tl.set("#c56w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 88.9333);
+tl.set("#c56w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 89.0000);
+tl.set("#c56w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 89.0000);
+tl.set("#c56w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 89.1667);
+tl.set("#c56w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 89.1667);
+tl.set("#c56w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 89.3333);
+tl.set("#c56w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 89.3333);
+tl.set("#c56w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 89.3667);
+tl.set("#c57w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 89.4333);
+tl.set("#c57w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 90.0000);
+tl.set("#c57w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 90.0000);
+tl.set("#c57w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 90.2333);
+tl.set("#c57w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 90.2333);
+tl.set("#c57w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 90.6667);
+tl.set("#c57w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 90.6667);
+tl.set("#c57w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 90.7333);
+tl.set("#c57w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 90.7333);
+tl.set("#c57w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 91.0667);
+tl.set("#c57w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 91.0667);
+tl.set("#c57w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 91.4667);
+tl.set("#c58w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 91.4667);
+tl.set("#c58w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 91.6333);
+tl.set("#c58w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 91.6333);
+tl.set("#c58w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 92.3000);
+tl.set("#c58w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 92.3000);
+tl.set("#c58w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 92.5333);
+tl.set("#c58w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 92.5333);
+tl.set("#c58w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 93.0333);
+tl.set("#c58w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 93.0333);
+tl.set("#c58w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 94.0000);
+tl.set("#c59w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 94.0000);
+tl.set("#c59w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 94.2333);
+tl.set("#c59w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 94.2333);
+tl.set("#c59w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 94.4333);
+tl.set("#c59w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 94.4333);
+tl.set("#c59w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 94.6333);
+tl.set("#c59w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 94.6333);
+tl.set("#c59w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 94.8000);
+tl.set("#c59w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 94.8000);
+tl.set("#c59w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 95.3333);
+tl.set("#c59w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 95.3333);
+tl.set("#c59w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 95.3667);
+tl.set("#c60w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 95.3667);
+tl.set("#c60w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 96.0000);
+tl.set("#c61w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 96.1000);
+tl.set("#c61w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 96.1333);
+tl.set("#c61w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 96.1000);
+tl.set("#c61w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 96.6000);
+tl.set("#c61w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 96.6000);
+tl.set("#c61w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 96.6667);
+tl.set("#c61w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 96.6667);
+tl.set("#c61w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 96.7667);
+tl.set("#c61w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 96.7667);
+tl.set("#c61w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 96.8667);
+tl.set("#c61w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 96.8667);
+tl.set("#c61w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 97.0000);
+tl.set("#c62w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 97.0667);
+tl.set("#c62w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 97.2333);
+tl.set("#c62w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 97.2333);
+tl.set("#c62w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 97.3000);
+tl.set("#c62w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 97.3000);
+tl.set("#c62w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 97.5000);
+tl.set("#c62w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 97.5000);
+tl.set("#c62w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 97.6000);
+tl.set("#c62w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 97.6000);
+tl.set("#c62w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 98.2333);
+tl.set("#c62w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 98.2333);
+tl.set("#c62w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 98.3667);
+tl.set("#c63w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 98.3667);
+tl.set("#c63w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 98.8333);
+tl.set("#c63w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 98.8333);
+tl.set("#c63w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 99.2333);
+tl.set("#c63w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 99.2333);
+tl.set("#c63w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 99.4333);
+tl.set("#c63w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 99.4333);
+tl.set("#c63w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 99.6333);
+tl.set("#c63w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 99.6333);
+tl.set("#c63w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 99.7000);
+tl.set("#c63w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 99.7000);
+tl.set("#c63w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 99.9000);
+tl.set("#c64w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 99.9000);
+tl.set("#c64w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 100.1000);
+tl.set("#c64w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 100.1000);
+tl.set("#c64w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 100.3333);
+tl.set("#c64w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 100.3333);
+tl.set("#c64w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 100.8667);
+tl.set("#c64w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 100.8667);
+tl.set("#c64w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 100.9667);
+tl.set("#c64w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 100.9667);
+tl.set("#c64w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 101.2333);
+tl.set("#c64w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 101.2333);
+tl.set("#c64w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 101.2667);
+tl.set("#c65w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 101.2667);
+tl.set("#c65w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 101.6667);
+tl.set("#c65w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 101.6667);
+tl.set("#c65w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 101.7000);
+tl.set("#c65w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 101.7000);
+tl.set("#c65w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 102.3333);
+tl.set("#c65w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 102.3333);
+tl.set("#c65w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 102.7667);
+tl.set("#c65w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 102.7667);
+tl.set("#c65w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 103.0333);
+tl.set("#c66w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 103.1333);
+tl.set("#c66w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 103.2667);
+tl.set("#c66w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 103.2667);
+tl.set("#c66w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 103.5333);
+tl.set("#c66w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 103.5333);
+tl.set("#c66w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 104.1667);
+tl.set("#c66w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 104.1667);
+tl.set("#c66w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 104.3333);
+tl.set("#c66w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 104.3333);
+tl.set("#c66w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 104.5333);
+tl.set("#c66w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 104.5333);
+tl.set("#c66w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 104.9333);
+tl.set("#c67w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 104.9333);
+tl.set("#c67w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 105.0667);
+tl.set("#c67w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 105.0667);
+tl.set("#c67w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 105.2000);
+tl.set("#c67w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 105.2000);
+tl.set("#c67w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 105.4667);
+tl.set("#c67w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 105.4667);
+tl.set("#c67w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 105.7333);
+tl.set("#c67w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 105.7333);
+tl.set("#c67w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 105.8333);
+tl.set("#c67w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 105.8333);
+tl.set("#c67w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 106.1667);
+tl.set("#c68w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 106.1667);
+tl.set("#c68w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 106.3333);
+tl.set("#c68w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 106.3333);
+tl.set("#c68w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 106.4667);
+tl.set("#c68w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 106.4667);
+tl.set("#c68w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 106.5333);
+tl.set("#c68w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 106.5333);
+tl.set("#c68w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 107.0333);
+tl.set("#c68w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 107.0333);
+tl.set("#c68w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 107.1333);
+tl.set("#c68w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 107.1333);
+tl.set("#c68w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 107.5667);
+tl.set("#c69w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 107.5667);
+tl.set("#c69w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 107.7333);
+tl.set("#c69w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 107.7333);
+tl.set("#c69w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 107.9333);
+tl.set("#c69w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 107.9333);
+tl.set("#c69w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 108.2000);
+tl.set("#c69w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 108.2000);
+tl.set("#c69w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 108.6333);
+tl.set("#c69w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 108.6333);
+tl.set("#c69w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 109.0667);
+tl.set("#c69w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 109.0667);
+tl.set("#c69w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 109.1333);
+tl.set("#c70w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 109.2667);
+tl.set("#c70w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 109.4333);
+tl.set("#c70w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 109.4333);
+tl.set("#c70w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 110.0000);
+tl.set("#c70w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 110.0000);
+tl.set("#c70w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 111.0000);
+tl.set("#c70w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 111.0000);
+tl.set("#c70w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 111.0333);
+tl.set("#c70w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 111.0333);
+tl.set("#c70w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 111.1667);
+tl.set("#c70w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 111.1667);
+tl.set("#c70w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 111.2667);
+tl.set("#c71w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 111.2667);
+tl.set("#c71w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 111.3667);
+tl.set("#c71w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 111.3667);
+tl.set("#c71w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 111.5333);
+tl.set("#c71w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 111.5333);
+tl.set("#c71w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 111.7000);
+tl.set("#c71w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 111.7000);
+tl.set("#c71w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 111.8000);
+tl.set("#c71w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 111.8000);
+tl.set("#c71w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 111.8333);
+tl.set("#c71w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 111.8333);
+tl.set("#c71w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 112.3333);
+tl.set("#c72w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 112.3333);
+tl.set("#c72w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 112.6667);
+tl.set("#c72w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 112.6667);
+tl.set("#c72w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 112.9333);
+tl.set("#c72w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 112.9333);
+tl.set("#c72w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 113.2333);
+tl.set("#c72w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 113.2333);
+tl.set("#c72w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 114.0000);
+tl.set("#c73w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 114.0000);
+tl.set("#c73w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 114.1000);
+tl.set("#c73w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 114.1000);
+tl.set("#c73w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 114.5667);
+tl.set("#c73w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 114.5667);
+tl.set("#c73w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 114.6000);
+tl.set("#c73w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 114.6000);
+tl.set("#c73w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 114.7333);
+tl.set("#c73w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 114.7333);
+tl.set("#c73w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 115.0667);
+tl.set("#c73w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 115.0667);
+tl.set("#c73w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 115.2333);
+tl.set("#c74w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 115.2333);
+tl.set("#c74w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 115.4000);
+tl.set("#c74w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 115.4000);
+tl.set("#c74w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 116.0000);
+tl.set("#c74w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 116.0000);
+tl.set("#c74w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 116.1333);
+tl.set("#c74w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 116.1333);
+tl.set("#c74w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 116.2667);
+tl.set("#c74w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 116.2667);
+tl.set("#c74w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 116.4667);
+tl.set("#c74w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 116.4667);
+tl.set("#c74w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 116.9000);
+tl.set("#c75w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 116.9000);
+tl.set("#c75w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 117.4333);
+tl.set("#c75w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 117.4333);
+tl.set("#c75w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 117.5333);
+tl.set("#c75w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 117.5333);
+tl.set("#c75w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 117.6667);
+tl.set("#c75w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 117.6667);
+tl.set("#c75w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 117.8667);
+tl.set("#c75w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 117.8667);
+tl.set("#c75w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 118.0667);
+tl.set("#c75w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 118.0667);
+tl.set("#c75w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 118.1333);
+tl.set("#c76w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 118.1333);
+tl.set("#c76w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 118.3333);
+tl.set("#c76w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 118.3333);
+tl.set("#c76w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 118.8333);
+tl.set("#c76w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 118.8333);
+tl.set("#c76w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 119.0333);
+tl.set("#c76w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 119.0333);
+tl.set("#c76w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 119.5667);
+tl.set("#c76w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 119.5667);
+tl.set("#c76w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 119.6333);
+tl.set("#c76w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 119.6333);
+tl.set("#c76w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 120.2333);
+tl.set("#c77w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 120.2333);
+tl.set("#c77w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 120.4000);
+tl.set("#c77w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 120.4000);
+tl.set("#c77w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 120.6000);
+tl.set("#c77w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 120.6000);
+tl.set("#c77w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 120.7667);
+tl.set("#c77w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 120.7667);
+tl.set("#c77w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 120.9333);
+tl.set("#c77w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 120.9333);
+tl.set("#c77w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 121.2000);
+tl.set("#c77w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 121.2000);
+tl.set("#c77w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 121.3333);
+tl.set("#c78w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 121.3333);
+tl.set("#c78w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 121.5333);
+tl.set("#c78w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 121.5333);
+tl.set("#c78w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 121.7333);
+tl.set("#c78w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 121.7333);
+tl.set("#c78w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 122.0000);
+tl.set("#c78w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 122.0000);
+tl.set("#c78w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 122.3000);
+tl.set("#c78w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 122.3000);
+tl.set("#c78w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 122.4667);
+tl.set("#c78w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 122.4667);
+tl.set("#c78w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 122.9333);
+tl.set("#c79w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 122.9333);
+tl.set("#c79w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 123.2000);
+tl.set("#c79w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 123.2000);
+tl.set("#c79w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 124.0000);
+tl.set("#c80w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 124.1000);
+tl.set("#c80w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 124.1333);
+tl.set("#c80w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 124.1000);
+tl.set("#c80w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 124.6000);
+tl.set("#c80w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 124.6000);
+tl.set("#c80w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 124.9000);
+tl.set("#c80w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 124.9000);
+tl.set("#c80w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 124.9333);
+tl.set("#c80w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 124.9333);
+tl.set("#c80w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 125.1000);
+tl.set("#c80w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 125.1000);
+tl.set("#c80w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 125.3333);
+tl.set("#c81w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 125.4000);
+tl.set("#c81w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 125.6000);
+tl.set("#c81w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 125.6000);
+tl.set("#c81w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 125.7333);
+tl.set("#c81w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 125.7333);
+tl.set("#c81w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 126.1000);
+tl.set("#c81w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 126.1000);
+tl.set("#c81w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 126.6000);
+tl.set("#c81w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 126.6000);
+tl.set("#c81w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 126.7667);
+tl.set("#c81w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 126.7667);
+tl.set("#c81w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 127.0667);
+tl.set("#c82w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 127.0667);
+tl.set("#c82w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 127.2333);
+tl.set("#c82w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 127.2333);
+tl.set("#c82w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 127.4333);
+tl.set("#c82w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 127.4333);
+tl.set("#c82w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 128.1667);
+tl.set("#c82w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 128.1667);
+tl.set("#c82w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 128.5333);
+tl.set("#c82w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 128.5333);
+tl.set("#c82w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 129.0667);
+tl.set("#c83w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 129.0667);
+tl.set("#c83w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 129.3000);
+tl.set("#c83w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 129.3000);
+tl.set("#c83w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 129.5667);
+tl.set("#c83w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 129.5667);
+tl.set("#c83w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 129.8667);
+tl.set("#c83w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 129.8667);
+tl.set("#c83w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 130.2333);
+tl.set("#c83w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 130.2333);
+tl.set("#c83w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 130.7333);
+tl.set("#c84w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 130.7333);
+tl.set("#c84w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 130.8667);
+tl.set("#c84w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 130.8667);
+tl.set("#c84w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 131.2333);
+tl.set("#c84w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 131.2333);
+tl.set("#c84w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 132.0000);
+tl.set("#c84w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 132.0000);
+tl.set("#c84w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 132.1333);
+tl.set("#c84w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 132.1333);
+tl.set("#c84w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 132.4000);
+tl.set("#c84w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 132.4000);
+tl.set("#c84w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 132.7000);
+tl.set("#c85w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 132.7000);
+tl.set("#c85w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 132.8333);
+tl.set("#c85w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 132.8333);
+tl.set("#c85w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 133.0667);
+tl.set("#c85w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 133.0667);
+tl.set("#c85w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 133.1667);
+tl.set("#c85w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 133.1667);
+tl.set("#c85w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 133.3333);
+tl.set("#c85w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 133.3333);
+tl.set("#c85w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 133.4000);
+tl.set("#c85w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 133.4000);
+tl.set("#c85w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 133.7333);
+tl.set("#c86w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 133.7333);
+tl.set("#c86w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 133.7667);
+tl.set("#c86w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 133.7667);
+tl.set("#c86w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 134.1667);
+tl.set("#c86w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 134.1667);
+tl.set("#c86w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 134.2000);
+tl.set("#c86w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 134.2000);
+tl.set("#c86w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 134.4333);
+tl.set("#c86w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 134.4333);
+tl.set("#c86w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 134.4667);
+tl.set("#c86w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 134.4667);
+tl.set("#c86w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 134.7000);
+tl.set("#c87w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 134.7000);
+tl.set("#c87w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 135.1333);
+tl.set("#c87w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 135.1333);
+tl.set("#c87w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 135.3333);
+tl.set("#c87w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 135.3333);
+tl.set("#c87w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 135.5333);
+tl.set("#c87w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 135.5333);
+tl.set("#c87w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 136.4333);
+tl.set("#c87w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 136.4333);
+tl.set("#c87w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 136.5667);
+tl.set("#c87w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 136.5667);
+tl.set("#c87w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 136.7000);
+tl.set("#c88w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 136.7667);
+tl.set("#c88w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 137.3000);
+tl.set("#c88w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 137.3000);
+tl.set("#c88w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 137.6333);
+tl.set("#c88w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 137.6333);
+tl.set("#c88w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 137.7000);
+tl.set("#c88w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 137.7000);
+tl.set("#c88w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 138.1333);
+tl.set("#c88w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 138.1333);
+tl.set("#c88w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 138.8667);
+tl.set("#c89w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 138.8667);
+tl.set("#c89w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 139.0000);
+tl.set("#c89w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 139.0000);
+tl.set("#c89w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 139.5667);
+tl.set("#c89w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 139.5667);
+tl.set("#c89w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 139.7000);
+tl.set("#c89w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 139.7000);
+tl.set("#c89w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 139.8000);
+tl.set("#c89w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 139.8000);
+tl.set("#c89w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 140.3333);
+tl.set("#c89w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 140.3333);
+tl.set("#c89w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 140.9333);
+tl.set("#c90w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 140.9333);
+tl.set("#c90w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 141.0000);
+tl.set("#c90w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 141.0000);
+tl.set("#c90w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 141.4000);
+tl.set("#c90w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 141.4000);
+tl.set("#c90w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 141.7333);
+tl.set("#c90w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 141.7333);
+tl.set("#c90w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 141.8667);
+tl.set("#c90w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 141.8667);
+tl.set("#c90w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 142.2000);
+tl.set("#c90w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 142.2000);
+tl.set("#c90w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 142.4000);
+tl.set("#c91w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 142.4000);
+tl.set("#c91w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 143.0000);
+tl.set("#c91w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 143.0000);
+tl.set("#c91w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 143.0667);
+tl.set("#c91w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 143.0667);
+tl.set("#c91w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 143.5333);
+tl.set("#c91w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 143.5333);
+tl.set("#c91w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 143.7333);
+tl.set("#c91w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 143.7333);
+tl.set("#c91w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 143.9000);
+tl.set("#c91w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 143.9000);
+tl.set("#c91w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 144.2000);
+tl.set("#c92w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 144.2000);
+tl.set("#c92w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 144.6000);
+tl.set("#c92w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 144.6000);
+tl.set("#c92w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 144.6333);
+tl.set("#c92w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 144.6333);
+tl.set("#c92w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 144.9333);
+tl.set("#c92w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 144.9333);
+tl.set("#c92w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 145.1000);
+tl.set("#c92w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 145.1000);
+tl.set("#c92w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 145.4000);
+tl.set("#c92w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 145.4000);
+tl.set("#c92w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 146.0000);
+tl.set("#c93w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 146.1000);
+tl.set("#c93w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 146.1333);
+tl.set("#c93w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 146.1000);
+tl.set("#c93w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 146.3333);
+tl.set("#c93w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 146.3333);
+tl.set("#c93w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 146.6000);
+tl.set("#c93w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 146.6000);
+tl.set("#c93w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 147.0667);
+tl.set("#c93w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 147.0667);
+tl.set("#c93w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 147.2000);
+tl.set("#c93w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 147.2000);
+tl.set("#c93w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 147.3333);
+tl.set("#c94w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 147.4000);
+tl.set("#c94w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 147.6000);
+tl.set("#c94w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 147.6000);
+tl.set("#c94w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 147.6667);
+tl.set("#c94w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 147.6667);
+tl.set("#c94w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 147.7667);
+tl.set("#c94w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 147.7667);
+tl.set("#c94w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 147.8667);
+tl.set("#c94w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 147.8667);
+tl.set("#c94w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 148.0667);
+tl.set("#c94w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 148.0667);
+tl.set("#c94w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 148.4667);
+tl.set("#c95w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 148.6000);
+tl.set("#c95w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 148.9000);
+tl.set("#c95w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 148.9000);
+tl.set("#c95w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 149.0000);
+tl.set("#c95w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 149.0000);
+tl.set("#c95w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 149.2333);
+tl.set("#c95w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 149.2333);
+tl.set("#c95w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 149.4667);
+tl.set("#c95w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 149.4667);
+tl.set("#c95w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 149.8667);
+tl.set("#c95w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 149.8667);
+tl.set("#c95w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 150.0333);
+tl.set("#c96w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 150.0667);
+tl.set("#c96w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 150.1667);
+tl.set("#c96w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 150.1667);
+tl.set("#c96w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 150.3667);
+tl.set("#c96w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 150.3667);
+tl.set("#c96w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 151.0000);
+tl.set("#c96w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 151.0000);
+tl.set("#c96w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 151.2333);
+tl.set("#c96w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 151.2333);
+tl.set("#c96w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 151.4000);
+tl.set("#c96w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 151.4000);
+tl.set("#c96w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 151.6667);
+tl.set("#c97w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 151.6667);
+tl.set("#c97w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 151.7667);
+tl.set("#c97w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 151.7667);
+tl.set("#c97w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 152.0667);
+tl.set("#c97w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 152.0667);
+tl.set("#c97w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 152.5333);
+tl.set("#c97w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 152.5333);
+tl.set("#c97w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 152.8000);
+tl.set("#c97w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 152.8000);
+tl.set("#c97w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 153.1333);
+tl.set("#c97w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 153.1333);
+tl.set("#c97w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 153.3000);
+tl.set("#c98w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 153.3000);
+tl.set("#c98w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 153.3333);
+tl.set("#c98w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 153.3333);
+tl.set("#c98w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 153.5333);
+tl.set("#c98w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 153.5333);
+tl.set("#c98w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 153.5667);
+tl.set("#c98w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 153.5667);
+tl.set("#c98w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 153.7333);
+tl.set("#c98w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 153.7333);
+tl.set("#c98w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 153.9333);
+tl.set("#c98w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 153.9333);
+tl.set("#c98w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 154.3333);
+tl.set("#c99w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 154.3333);
+tl.set("#c99w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 154.6333);
+tl.set("#c99w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 154.6333);
+tl.set("#c99w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 154.8000);
+tl.set("#c99w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 154.8000);
+tl.set("#c99w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 155.1667);
+tl.set("#c99w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 155.1667);
+tl.set("#c99w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 155.3000);
+tl.set("#c99w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 155.3000);
+tl.set("#c99w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 156.1667);
+tl.set("#c99w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 156.1667);
+tl.set("#c99w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 156.3000);
+tl.set("#c100w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 156.3000);
+tl.set("#c100w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 156.4333);
+tl.set("#c100w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 156.4333);
+tl.set("#c100w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 156.5333);
+tl.set("#c100w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 156.5333);
+tl.set("#c100w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 156.8000);
+tl.set("#c100w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 156.8000);
+tl.set("#c100w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 156.9000);
+tl.set("#c100w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 156.9000);
+tl.set("#c100w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 157.0333);
+tl.set("#c100w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 157.0333);
+tl.set("#c100w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 157.2667);
+tl.set("#c101w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 157.2667);
+tl.set("#c101w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 157.5000);
+tl.set("#c101w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 157.5000);
+tl.set("#c101w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 157.8333);
+tl.set("#c101w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 157.8333);
+tl.set("#c101w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 157.9000);
+tl.set("#c101w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 157.9000);
+tl.set("#c101w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 158.0667);
+tl.set("#c101w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 158.0667);
+tl.set("#c101w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 158.2667);
+tl.set("#c101w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 158.2667);
+tl.set("#c101w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 158.5667);
+tl.set("#c102w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 158.5667);
+tl.set("#c102w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 158.7667);
+tl.set("#c102w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 158.7667);
+tl.set("#c102w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 159.0333);
+tl.set("#c102w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 159.0333);
+tl.set("#c102w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 159.3333);
+tl.set("#c102w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 159.3333);
+tl.set("#c102w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 159.4667);
+tl.set("#c102w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 159.4667);
+tl.set("#c102w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 159.5333);
+tl.set("#c102w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 159.5333);
+tl.set("#c102w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 159.6667);
+tl.set("#c103w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 159.6667);
+tl.set("#c103w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 159.9000);
+tl.set("#c103w1", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 159.9000);
+tl.set("#c103w1", { color: "#FFFFFF", backgroundColor: "transparent" }, 159.9333);
+tl.set("#c103w2", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 159.9333);
+tl.set("#c103w2", { color: "#FFFFFF", backgroundColor: "transparent" }, 160.1333);
+tl.set("#c103w3", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 160.1333);
+tl.set("#c103w3", { color: "#FFFFFF", backgroundColor: "transparent" }, 160.3333);
+tl.set("#c103w4", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 160.3333);
+tl.set("#c103w4", { color: "#FFFFFF", backgroundColor: "transparent" }, 160.5333);
+tl.set("#c103w5", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 160.5333);
+tl.set("#c103w5", { color: "#FFFFFF", backgroundColor: "transparent" }, 160.6667);
+tl.set("#c104w0", { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, 160.7000);
+tl.set("#c104w0", { color: "#FFFFFF", backgroundColor: "transparent" }, 161.0000);
+        window.__timelines = window.__timelines || {};
+        window.__timelines["talking-head-recut"] = tl;
+      </script>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,97 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;800&family=Inter:wght@400;500;700&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&display=swap');
+
+:root{
+  --paper:#FFFFFF; --ink:#0A0A0A;
+  --display:"Bricolage Grotesque",system-ui,sans-serif;
+  --body:"Inter",system-ui,sans-serif;
+  --read:"Newsreader",Georgia,serif;
+  --pad:88px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#555;display:flex;flex-wrap:wrap;gap:40px;padding:40px;justify-content:center}
+
+.slide{
+  position:relative;width:1080px;height:1350px;overflow:hidden;
+  padding:var(--pad);background:var(--paper);color:var(--ink);
+  display:flex;flex-direction:column;
+}
+.slide.inv{background:var(--ink);color:var(--paper)}
+.slide::after{
+  content:"";position:absolute;inset:0;pointer-events:none;z-index:9;
+  background-image:radial-gradient(currentColor .5px,transparent .6px);
+  background-size:4px 4px;opacity:.05;
+}
+.mark{font:500 22px/1 var(--body);letter-spacing:.18em;text-transform:uppercase;opacity:.55}
+
+.hook{font-family:var(--display);font-weight:800;letter-spacing:-.025em;line-height:.94;font-size:104px;margin-top:52px;text-wrap:balance}
+.bd{font:400 46px/1.32 var(--body);max-width:30ch;margin-top:34px}
+.art{margin-top:auto;display:flex;justify-content:center;align-items:flex-end}
+</style>
+
+<style>
+/* 9:16 for the Reels tab. The archetype is 1350 tall and the CSS box is what
+   the renderer screenshots, so the height has to be overridden here, not on
+   the command line. The grid crops back to the central 1080x1350 (y 285-1635),
+   so the hook is pushed below that line and only the mark and the art bleed. */
+.slide{height:1920px}
+.hook{margin-top:196px;font-size:100px}
+.bd{margin-top:40px;opacity:.72;font-size:42px;max-width:26ch}
+/* not margin-top:auto - that parks the art in the bottom bleed, where the 4:5
+   crop cuts it in half and leaves a hole in the middle of the frame */
+.art{margin-top:104px;align-items:flex-start}
+</style>
+
+<style>
+/* The Google Fonts @import is blocked headless (net::ERR_BLOCKED_BY_ORB on a file:// page), so the
+   display face loads from the TTF the edit-video skill already ships. Inter has no local file yet. */
+@font-face{font-family:"Bricolage Grotesque";font-weight:800;
+  src:url("../../../../.claude/skills/edit-video/assets/fonts/BricolageGrotesque-ExtraBold.ttf")}
+</style>
+
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <filter id="rough" x="-25%" y="-25%" width="150%" height="150%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="3" seed="11" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="7" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="rough2" x="-25%" y="-25%" width="150%" height="150%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.022" numOctaves="3" seed="4" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="6" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="rough-sm" x="-25%" y="-25%" width="150%" height="150%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.042" numOctaves="2" seed="11" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="2" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <pattern id="ht-dark" width="11" height="11" patternUnits="userSpaceOnUse"><circle cx="5.5" cy="5.5" r="2.1" fill="#0A0A0A"/></pattern>
+    <pattern id="ht-light" width="11" height="11" patternUnits="userSpaceOnUse"><circle cx="5.5" cy="5.5" r="2.1" fill="#FFFFFF"/></pattern>
+  </defs>
+</svg>
+
+<!-- ===== 01 COVER ===== -->
+<div class="slide inv">
+  <div class="mark">@pedro.miyasaki.ia</div>
+  <div class="hook">A próxima empresa de US$ 1 trilhão vai ser software se passando por serviço.</div>
+  <div class="bd">A tese da Sequoia, com um caso brasileiro.</div>
+  <div class="art">
+    <svg width="860" height="420" viewBox="0 0 860 420">
+      <!-- halftone fills, offset from the outlines: the app window and the delivered document -->
+      <g filter="url(#rough2)" transform="translate(-9,7)">
+        <rect x="40" y="90" width="300" height="240" fill="url(#ht-light)"/>
+        <rect x="560" y="60" width="240" height="300" fill="url(#ht-light)"/>
+      </g>
+      <g filter="url(#rough)" fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+        <!-- software: a window with a title bar and lines of code -->
+        <rect x="40" y="90" width="300" height="240"/>
+        <path d="M40 140 L340 140"/>
+        <path d="M76 190 L236 190"/><path d="M76 236 L296 236"/><path d="M76 282 L196 282"/>
+        <!-- becomes -->
+        <path d="M390 210 L500 210"/><path d="M500 210 L472 190"/><path d="M500 210 L472 230"/>
+        <!-- service: the finished document, checked -->
+        <rect x="560" y="60" width="240" height="300"/>
+        <path d="M600 116 L760 116"/><path d="M600 160 L730 160"/><path d="M600 204 L750 204"/>
+        <path d="M620 290 L660 326 L744 246"/>
+      </g>
+    </svg>
+  </div>
+</div>

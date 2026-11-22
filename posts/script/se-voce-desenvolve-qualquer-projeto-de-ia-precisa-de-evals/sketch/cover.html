@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Capa: evals</title>
+<style>
+@font-face{font-family:"Bricolage Grotesque";font-weight:100 900;font-style:normal;src:url("../../../../video/projects/evals-reel/node_modules/@fontsource-variable/bricolage-grotesque/files/bricolage-grotesque-latin-wght-normal.woff2") format("woff2")}
+@font-face{font-family:"Inter";font-weight:100 900;font-style:normal;src:url("../../../../video/projects/evals-reel/node_modules/@fontsource-variable/inter/files/inter-latin-wght-normal.woff2") format("woff2")}
+:root{--paper:#FFFFFF;--ink:#0A0A0A;--display:"Bricolage Grotesque",sans-serif;--body:"Inter",sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--ink)}
+.slide{position:relative;width:1080px;height:1920px;overflow:hidden;background:var(--ink);color:var(--paper)}
+.slide::after{content:"";position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(currentColor .5px,transparent .6px);background-size:4px 4px;opacity:.05}
+/* Keep the composition inside the central 1080 × 1350 profile crop. */
+.mark{position:absolute;left:88px;top:327px;font:500 22px/1 var(--body);letter-spacing:.18em;text-transform:uppercase;opacity:.55}
+.hook{position:absolute;left:88px;top:420px;width:904px;font:800 118px/.96 var(--display);letter-spacing:-.025em}
+.support{position:absolute;left:88px;top:935px;font:400 43px/1.32 var(--body)}
+.art{position:absolute;left:88px;top:1160px;width:904px;height:380px}
+</style>
+</head>
+<body>
+<section class="slide">
+  <div class="mark">@pedro.miyasaki.ia</div>
+  <h1 class="hook">Sem evals,<br>você só acha<br>que a IA<br>funciona.</h1>
+  <p class="support">Evals são o gabarito<br>do seu agente.</p>
+  <svg class="art" viewBox="0 0 904 380" role="img" aria-label="Três documentos apontam para um gabarito com respostas marcadas">
+    <defs>
+      <filter id="rough" x="-25%" y="-25%" width="150%" height="150%">
+        <feTurbulence type="fractalNoise" baseFrequency=".018" numOctaves="3" seed="11" result="n"/>
+        <feDisplacementMap in="SourceGraphic" in2="n" scale="7" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+      <filter id="rough2" x="-25%" y="-25%" width="150%" height="150%">
+        <feTurbulence type="fractalNoise" baseFrequency=".022" numOctaves="3" seed="4" result="n"/>
+        <feDisplacementMap in="SourceGraphic" in2="n" scale="6" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+      <pattern id="ht-light" width="11" height="11" patternUnits="userSpaceOnUse"><circle cx="5.5" cy="5.5" r="2.1" fill="#FFFFFF"/></pattern>
+    </defs>
+    <g filter="url(#rough)" fill="#0A0A0A" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M30 84 H186 L224 122 V353 H30 Z"/>
+      <path d="M84 52 H240 L278 90 V321 H84 Z"/>
+      <path d="M138 20 H294 L332 58 V289 H138 Z"/>
+    </g>
+    <g filter="url(#rough2)" transform="translate(-9,7)" fill="url(#ht-light)">
+      <path d="M138 20 H294 L332 58 V289 H138 Z"/>
+      <rect x="588" y="20" width="280" height="332" rx="8"/>
+    </g>
+    <g filter="url(#rough)" fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M294 20 V58 H332 M175 111 H291 M175 146 H291 M175 181 H255 M175 232 H278"/>
+      <path d="M381 187 H533 M500 154 L533 187 L500 220"/>
+      <rect x="588" y="20" width="280" height="332" rx="8"/>
+      <path d="M624 81 H819 M624 98 H819"/>
+    </g>
+    <g fill="#FFFFFF" stroke="#0A0A0A" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="619" y="134" width="52" height="52" rx="4" stroke="none"/>
+      <rect x="619" y="206" width="52" height="52" rx="4" stroke="none"/>
+      <rect x="619" y="278" width="52" height="52" rx="4" stroke="none"/>
+      <path d="M631 159 L642 170 L660 149 M631 231 L642 242 L660 221 M631 303 L642 314 L660 293" fill="none"/>
+    </g>
+    <g filter="url(#rough)" fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round">
+      <path d="M699 160 H823 M699 232 H794 M699 304 H815"/>
+    </g>
+  </svg>
+</section>
+</body>
+</html>

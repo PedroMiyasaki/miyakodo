@@ -1,0 +1,614 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      @font-face {
+        font-family: "Inter";
+        src: url("fonts/inter-latin-wght-normal.woff2") format("woff2");
+        font-style: normal;
+        font-weight: 100 900;
+        font-display: block;
+      }
+      * { box-sizing: border-box; }
+      html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: #000;
+      }
+      #stage {
+        position: relative;
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: #000;
+      }
+      video.clip {
+        position: absolute;
+        inset: 0;
+        width: 1080px;
+        height: 1920px;
+        object-fit: cover;
+      }
+      .caption-track {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        z-index: 8;
+      }
+      .caption-box {
+        position: absolute;
+        inset: auto 72px 238px;
+        width: max-content;
+        max-width: 936px;
+        margin: 0 auto;
+        padding: 18px 24px 15px;
+        border: 4px solid #FFFFFF;
+        background: #0A0A0A;
+        box-shadow: 9px 9px 0 rgba(10, 10, 10, 0.8);
+        color: #FFFFFF;
+        font-family: "Inter", sans-serif;
+        font-size: 48px;
+        font-weight: 650;
+        letter-spacing: -0.025em;
+        line-height: 1.12;
+        text-align: center;
+        text-wrap: balance;
+        visibility: hidden;
+      }
+      .caption-word {
+        display: inline;
+        padding: 1px 2px 0;
+        box-decoration-break: clone;
+        -webkit-box-decoration-break: clone;
+      }
+      #news-card {
+        position: absolute;
+        left: 72px;
+        right: 72px;
+        bottom: 470px;
+        z-index: 6;
+        visibility: hidden;
+      }
+      #news-card img {
+        display: block;
+        width: 100%;
+        height: auto;
+        background: #fff;
+        border: 4px solid #0A0A0A;
+      }
+      #speed-hint-inner {
+        position: absolute;
+        top: 880px;
+        right: 48px;
+        z-index: 9;
+        padding: 9px 12px 7px;
+        border: 4px solid #FFFFFF;
+        background: #0A0A0A;
+        box-shadow: 6px 6px 0 rgba(10, 10, 10, 0.8);
+        color: #FFFFFF;
+        font-family: "Inter", sans-serif;
+        font-size: 20px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        line-height: 1;
+        text-transform: uppercase;
+        white-space: nowrap;
+        transform-origin: 100% 50%;
+        opacity: 0;
+      }
+      #persistent-handle {
+        position: absolute;
+        inset: 0;
+        z-index: 12;
+        pointer-events: none;
+      }
+      #persistent-handle-inner {
+        position: absolute;
+        top: 66px;
+        left: 54px;
+        padding: 12px 15px 9px;
+        border: 4px solid #FFFFFF;
+        background: #0A0A0A;
+        color: #FFFFFF;
+        font-family: "Inter", sans-serif;
+        font-size: 24px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        line-height: 1;
+        text-transform: uppercase;
+        opacity: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="stage"
+      data-composition-id="talking-head-recut"
+      data-start="0"
+      data-duration="193.0"
+      data-fps="30"
+      data-width="1080"
+      data-height="1920"
+    >
+      <video id="seg-a" class="clip" src="input-video.mp4" playsinline data-has-audio="true" data-start="0" data-duration="35.7" data-media-start="0" data-track-index="1"></video>
+      <video id="seg-c" class="clip" src="input-video.mp4" playsinline data-has-audio="true" data-start="35.7" data-duration="8.066666666666663" data-media-start="75.63333333333334" data-track-index="1"></video>
+      <video id="seg-b" class="clip" src="input-video.mp4" playsinline data-has-audio="true" data-start="43.766666666666666" data-duration="39.93333333333334" data-media-start="35.7" data-track-index="1"></video>
+      <video id="seg-d" class="clip" src="input-video.mp4" playsinline data-has-audio="true" data-start="83.7" data-duration="109.30000000000001" data-media-start="84.0" data-track-index="1"></video>
+
+      <div id="news-card" class="clip" data-start="140.43333333333334" data-duration="7.7333" data-track-index="2">
+        <img src="cards/fortune-mit.png" alt="Fortune: MIT report, 95 percent of generative AI pilots at companies are failing" />
+      </div>
+
+      <div id="speed-hint-inner">SEGURE PARA 2X</div>
+
+      <div id="persistent-handle" data-layout-ignore>
+        <div id="persistent-handle-inner">@pedro.miyasaki.ia</div>
+      </div>
+
+      <div class="caption-track" id="captions" data-start="0" data-duration="193.0" data-track-index="3" data-track-kind="captions">
+        <div id="cg-0" class="caption-box clip" data-start="0.07" data-duration="1.65" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-0-w-0" class="caption-word">Cinco</span> <span id="cg-0-w-1" class="caption-word">lições</span> <span id="cg-0-w-2" class="caption-word">que</span> <span id="cg-0-w-3" class="caption-word">eu</span> <span id="cg-0-w-4" class="caption-word">aprendi</span>
+        </div>
+        <div id="cg-1" class="caption-box clip" data-start="1.72" data-duration="0.89" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-1-w-0" class="caption-word">desenvolvendo</span> <span id="cg-1-w-1" class="caption-word">inteligência</span>
+        </div>
+        <div id="cg-2" class="caption-box clip" data-start="2.61" data-duration="1.31" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-2-w-0" class="caption-word">artificial</span> <span id="cg-2-w-1" class="caption-word">para</span> <span id="cg-2-w-2" class="caption-word">grandes</span> <span id="cg-2-w-3" class="caption-word">empresas</span> <span id="cg-2-w-4" class="caption-word">já</span>
+        </div>
+        <div id="cg-3" class="caption-box clip" data-start="3.92" data-duration="1.18" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-3-w-0" class="caption-word">fazem</span> <span id="cg-3-w-1" class="caption-word">cinco</span> <span id="cg-3-w-2" class="caption-word">anos</span> <span id="cg-3-w-3" class="caption-word">e</span> <span id="cg-3-w-4" class="caption-word">eu</span> <span id="cg-3-w-5" class="caption-word">vou</span>
+        </div>
+        <div id="cg-4" class="caption-box clip" data-start="5.1" data-duration="1.16" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-4-w-0" class="caption-word">deixar</span> <span id="cg-4-w-1" class="caption-word">a</span> <span id="cg-4-w-2" class="caption-word">melhor</span> <span id="cg-4-w-3" class="caption-word">lição</span> <span id="cg-4-w-4" class="caption-word">aí</span> <span id="cg-4-w-5" class="caption-word">para</span>
+        </div>
+        <div id="cg-5" class="caption-box clip" data-start="6.26" data-duration="0.53" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-5-w-0" class="caption-word">a</span> <span id="cg-5-w-1" class="caption-word">última.</span>
+        </div>
+        <div id="cg-6" class="caption-box clip" data-start="7.78" data-duration="0.66" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-6-w-0" class="caption-word">A</span> <span id="cg-6-w-1" class="caption-word">primeira</span> <span id="cg-6-w-2" class="caption-word">é</span> <span id="cg-6-w-3" class="caption-word">uma</span> <span id="cg-6-w-4" class="caption-word">realidade</span> <span id="cg-6-w-5" class="caption-word">meio</span>
+        </div>
+        <div id="cg-7" class="caption-box clip" data-start="8.44" data-duration="1.43" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-7-w-0" class="caption-word">cruel</span> <span id="cg-7-w-1" class="caption-word">aí,</span> <span id="cg-7-w-2" class="caption-word">mas</span> <span id="cg-7-w-3" class="caption-word">a</span> <span id="cg-7-w-4" class="caption-word">maioria</span> <span id="cg-7-w-5" class="caption-word">das</span>
+        </div>
+        <div id="cg-8" class="caption-box clip" data-start="9.87" data-duration="1.76" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-8-w-0" class="caption-word">empresas</span> <span id="cg-8-w-1" class="caption-word">não</span> <span id="cg-8-w-2" class="caption-word">está</span> <span id="cg-8-w-3" class="caption-word">nem</span> <span id="cg-8-w-4" class="caption-word">pronta</span> <span id="cg-8-w-5" class="caption-word">para</span>
+        </div>
+        <div id="cg-9" class="caption-box clip" data-start="11.63" data-duration="1.42" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-9-w-0" class="caption-word">adotar</span> <span id="cg-9-w-1" class="caption-word">AI</span> <span id="cg-9-w-2" class="caption-word">ali</span> <span id="cg-9-w-3" class="caption-word">no</span> <span id="cg-9-w-4" class="caption-word">ambiente</span> <span id="cg-9-w-5" class="caption-word">de</span>
+        </div>
+        <div id="cg-10" class="caption-box clip" data-start="13.05" data-duration="1.25" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-10-w-0" class="caption-word">trabalho</span> <span id="cg-10-w-1" class="caption-word">delas,</span> <span id="cg-10-w-2" class="caption-word">né?</span>
+        </div>
+        <div id="cg-11" class="caption-box clip" data-start="14.37" data-duration="1.3" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-11-w-0" class="caption-word">Tem</span> <span id="cg-11-w-1" class="caption-word">muitas</span> <span id="cg-11-w-2" class="caption-word">empresas</span> <span id="cg-11-w-3" class="caption-word">onde</span> <span id="cg-11-w-4" class="caption-word">as</span> <span id="cg-11-w-5" class="caption-word">regras</span>
+        </div>
+        <div id="cg-12" class="caption-box clip" data-start="15.67" data-duration="1.41" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-12-w-0" class="caption-word">não</span> <span id="cg-12-w-1" class="caption-word">estão</span> <span id="cg-12-w-2" class="caption-word">muito</span> <span id="cg-12-w-3" class="caption-word">bem</span> <span id="cg-12-w-4" class="caption-word">documentadas</span> <span id="cg-12-w-5" class="caption-word">em</span>
+        </div>
+        <div id="cg-13" class="caption-box clip" data-start="17.15" data-duration="1.14" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-13-w-0" class="caption-word">lugar</span> <span id="cg-13-w-1" class="caption-word">nenhum</span> <span id="cg-13-w-2" class="caption-word">e</span> <span id="cg-13-w-3" class="caption-word">meio</span> <span id="cg-13-w-4" class="caption-word">que</span> <span id="cg-13-w-5" class="caption-word">as</span>
+        </div>
+        <div id="cg-14" class="caption-box clip" data-start="18.38" data-duration="1.25" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-14-w-0" class="caption-word">pessoas</span> <span id="cg-14-w-1" class="caption-word">no</span> <span id="cg-14-w-2" class="caption-word">dia</span> <span id="cg-14-w-3" class="caption-word">a</span> <span id="cg-14-w-4" class="caption-word">dia</span> <span id="cg-14-w-5" class="caption-word">fazem</span>
+        </div>
+        <div id="cg-15" class="caption-box clip" data-start="19.63" data-duration="1.69" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-15-w-0" class="caption-word">muitas</span> <span id="cg-15-w-1" class="caption-word">heurísticas</span> <span id="cg-15-w-2" class="caption-word">mentais</span> <span id="cg-15-w-3" class="caption-word">ali,</span>
+        </div>
+        <div id="cg-16" class="caption-box clip" data-start="21.53" data-duration="1.49" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-16-w-0" class="caption-word">muitas</span> <span id="cg-16-w-1" class="caption-word">regras</span> <span id="cg-16-w-2" class="caption-word">para</span> <span id="cg-16-w-3" class="caption-word">facilitar</span> <span id="cg-16-w-4" class="caption-word">o</span>
+        </div>
+        <div id="cg-17" class="caption-box clip" data-start="23.02" data-duration="1.69" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-17-w-0" class="caption-word">trabalho</span> <span id="cg-17-w-1" class="caption-word">e,</span> <span id="cg-17-w-2" class="caption-word">obviamente,</span> <span id="cg-17-w-3" class="caption-word">nesse</span>
+        </div>
+        <div id="cg-18" class="caption-box clip" data-start="24.72" data-duration="1.92" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-18-w-0" class="caption-word">contexto,</span> <span id="cg-18-w-1" class="caption-word">se</span> <span id="cg-18-w-2" class="caption-word">nem</span> <span id="cg-18-w-3" class="caption-word">as</span> <span id="cg-18-w-4" class="caption-word">próprias</span> <span id="cg-18-w-5" class="caption-word">pessoas</span>
+        </div>
+        <div id="cg-19" class="caption-box clip" data-start="26.65" data-duration="1.56" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-19-w-0" class="caption-word">têm</span> <span id="cg-19-w-1" class="caption-word">uma</span> <span id="cg-19-w-2" class="caption-word">política</span> <span id="cg-19-w-3" class="caption-word">meio</span> <span id="cg-19-w-4" class="caption-word">fixa</span> <span id="cg-19-w-5" class="caption-word">de</span>
+        </div>
+        <div id="cg-20" class="caption-box clip" data-start="28.21" data-duration="1.72" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-20-w-0" class="caption-word">como</span> <span id="cg-20-w-1" class="caption-word">elas</span> <span id="cg-20-w-2" class="caption-word">trabalham</span> <span id="cg-20-w-3" class="caption-word">para</span> <span id="cg-20-w-4" class="caption-word">chegar</span> <span id="cg-20-w-5" class="caption-word">nas</span>
+        </div>
+        <div id="cg-21" class="caption-box clip" data-start="29.93" data-duration="1.41" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-21-w-0" class="caption-word">conclusões,</span> <span id="cg-21-w-1" class="caption-word">vai</span> <span id="cg-21-w-2" class="caption-word">ser</span> <span id="cg-21-w-3" class="caption-word">quase</span> <span id="cg-21-w-4" class="caption-word">impossível</span>
+        </div>
+        <div id="cg-22" class="caption-box clip" data-start="31.34" data-duration="1.48" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-22-w-0" class="caption-word">você</span> <span id="cg-22-w-1" class="caption-word">conseguir</span> <span id="cg-22-w-2" class="caption-word">adotar</span> <span id="cg-22-w-3" class="caption-word">inteligência</span>
+        </div>
+        <div id="cg-23" class="caption-box clip" data-start="32.82" data-duration="1.35" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-23-w-0" class="caption-word">artificial</span> <span id="cg-23-w-1" class="caption-word">para</span> <span id="cg-23-w-2" class="caption-word">deixar</span> <span id="cg-23-w-3" class="caption-word">qualquer</span>
+        </div>
+        <div id="cg-24" class="caption-box clip" data-start="34.17" data-duration="1.07" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-24-w-0" class="caption-word">coisa</span> <span id="cg-24-w-1" class="caption-word">ali</span> <span id="cg-24-w-2" class="caption-word">eficiente.</span>
+        </div>
+        <div id="cg-25" class="caption-box clip" data-start="35.7067" data-duration="0.85" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-25-w-0" class="caption-word">A</span> <span id="cg-25-w-1" class="caption-word">segunda</span> <span id="cg-25-w-2" class="caption-word">é</span> <span id="cg-25-w-3" class="caption-word">que</span> <span id="cg-25-w-4" class="caption-word">a</span> <span id="cg-25-w-5" class="caption-word">maioria</span>
+        </div>
+        <div id="cg-26" class="caption-box clip" data-start="36.5567" data-duration="1.62" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-26-w-0" class="caption-word">das</span> <span id="cg-26-w-1" class="caption-word">empresas</span> <span id="cg-26-w-2" class="caption-word">deveria</span> <span id="cg-26-w-3" class="caption-word">focar</span> <span id="cg-26-w-4" class="caption-word">nas</span>
+        </div>
+        <div id="cg-27" class="caption-box clip" data-start="38.1767" data-duration="1.52" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-27-w-0" class="caption-word">coisas</span> <span id="cg-27-w-1" class="caption-word">que</span> <span id="cg-27-w-2" class="caption-word">são</span> <span id="cg-27-w-3" class="caption-word">mais</span> <span id="cg-27-w-4" class="caption-word">fáceis</span> <span id="cg-27-w-5" class="caption-word">de</span>
+        </div>
+        <div id="cg-28" class="caption-box clip" data-start="39.7867" data-duration="1.32" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-28-w-0" class="caption-word">capturar</span> <span id="cg-28-w-1" class="caption-word">com</span> <span id="cg-28-w-2" class="caption-word">o</span> <span id="cg-28-w-3" class="caption-word">uso</span> <span id="cg-28-w-4" class="caption-word">de</span> <span id="cg-28-w-5" class="caption-word">AI</span>
+        </div>
+        <div id="cg-29" class="caption-box clip" data-start="41.1767" data-duration="1.26" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-29-w-0" class="caption-word">ao</span> <span id="cg-29-w-1" class="caption-word">invés</span> <span id="cg-29-w-2" class="caption-word">de</span> <span id="cg-29-w-3" class="caption-word">soluções</span> <span id="cg-29-w-4" class="caption-word">muito</span>
+        </div>
+        <div id="cg-30" class="caption-box clip" data-start="42.4367" data-duration="1.09" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-30-w-0" class="caption-word">mirabolantes</span> <span id="cg-30-w-1" class="caption-word">aí.</span>
+        </div>
+        <div id="cg-31" class="caption-box clip" data-start="44.2867" data-duration="0.79" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-31-w-0" class="caption-word">Eu</span> <span id="cg-31-w-1" class="caption-word">percebo</span> <span id="cg-31-w-2" class="caption-word">que</span> <span id="cg-31-w-3" class="caption-word">tem</span> <span id="cg-31-w-4" class="caption-word">muitas</span> <span id="cg-31-w-5" class="caption-word">coisas,</span>
+        </div>
+        <div id="cg-32" class="caption-box clip" data-start="45.0767" data-duration="1.72" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-32-w-0" class="caption-word">tipo</span> <span id="cg-32-w-1" class="caption-word">fazer</span> <span id="cg-32-w-2" class="caption-word">ata</span> <span id="cg-32-w-3" class="caption-word">de</span> <span id="cg-32-w-4" class="caption-word">reunião,</span> <span id="cg-32-w-5" class="caption-word">fazer</span>
+        </div>
+        <div id="cg-33" class="caption-box clip" data-start="46.7967" data-duration="1.48" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-33-w-0" class="caption-word">otimização</span> <span id="cg-33-w-1" class="caption-word">de</span> <span id="cg-33-w-2" class="caption-word">agenda,</span> <span id="cg-33-w-3" class="caption-word">fazer</span>
+        </div>
+        <div id="cg-34" class="caption-box clip" data-start="48.3667" data-duration="1.9" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-34-w-0" class="caption-word">atendimento</span> <span id="cg-34-w-1" class="caption-word">básico</span> <span id="cg-34-w-2" class="caption-word">ali</span> <span id="cg-34-w-3" class="caption-word">ao</span> <span id="cg-34-w-4" class="caption-word">cliente,</span>
+        </div>
+        <div id="cg-35" class="caption-box clip" data-start="50.3867" data-duration="1.24" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-35-w-0" class="caption-word">que</span> <span id="cg-35-w-1" class="caption-word">são</span> <span id="cg-35-w-2" class="caption-word">use</span> <span id="cg-35-w-3" class="caption-word">cases</span> <span id="cg-35-w-4" class="caption-word">relativamente</span>
+        </div>
+        <div id="cg-36" class="caption-box clip" data-start="51.6267" data-duration="1.44" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-36-w-0" class="caption-word">simples,</span> <span id="cg-36-w-1" class="caption-word">que</span> <span id="cg-36-w-2" class="caption-word">já</span> <span id="cg-36-w-3" class="caption-word">tem</span> <span id="cg-36-w-4" class="caption-word">muita</span> <span id="cg-36-w-5" class="caption-word">solução</span>
+        </div>
+        <div id="cg-37" class="caption-box clip" data-start="53.1767" data-duration="0.91" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-37-w-0" class="caption-word">de</span> <span id="cg-37-w-1" class="caption-word">AI</span> <span id="cg-37-w-2" class="caption-word">meio</span> <span id="cg-37-w-3" class="caption-word">pronta</span> <span id="cg-37-w-4" class="caption-word">que</span> <span id="cg-37-w-5" class="caption-word">faz</span>
+        </div>
+        <div id="cg-38" class="caption-box clip" data-start="54.0867" data-duration="1.5" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-38-w-0" class="caption-word">aquilo</span> <span id="cg-38-w-1" class="caption-word">ali</span> <span id="cg-38-w-2" class="caption-word">e</span> <span id="cg-38-w-3" class="caption-word">que</span> <span id="cg-38-w-4" class="caption-word">muita</span> <span id="cg-38-w-5" class="caption-word">empresa</span>
+        </div>
+        <div id="cg-39" class="caption-box clip" data-start="55.5867" data-duration="1.46" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-39-w-0" class="caption-word">ainda</span> <span id="cg-39-w-1" class="caption-word">não</span> <span id="cg-39-w-2" class="caption-word">utiliza</span> <span id="cg-39-w-3" class="caption-word">e</span> <span id="cg-39-w-4" class="caption-word">também</span> <span id="cg-39-w-5" class="caption-word">tem</span>
+        </div>
+        <div id="cg-40" class="caption-box clip" data-start="57.0467" data-duration="1.29" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-40-w-0" class="caption-word">toda</span> <span id="cg-40-w-1" class="caption-word">uma</span> <span id="cg-40-w-2" class="caption-word">linha</span> <span id="cg-40-w-3" class="caption-word">aí</span> <span id="cg-40-w-4" class="caption-word">de</span> <span id="cg-40-w-5" class="caption-word">educação</span>
+        </div>
+        <div id="cg-41" class="caption-box clip" data-start="58.3467" data-duration="1.51" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-41-w-0" class="caption-word">básica</span> <span id="cg-41-w-1" class="caption-word">para</span> <span id="cg-41-w-2" class="caption-word">o</span> <span id="cg-41-w-3" class="caption-word">funcionário</span> <span id="cg-41-w-4" class="caption-word">que</span> <span id="cg-41-w-5" class="caption-word">vai</span>
+        </div>
+        <div id="cg-42" class="caption-box clip" data-start="59.8567" data-duration="1.48" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-42-w-0" class="caption-word">utilizar</span> <span id="cg-42-w-1" class="caption-word">a</span> <span id="cg-42-w-2" class="caption-word">AI</span> <span id="cg-42-w-3" class="caption-word">dentro</span> <span id="cg-42-w-4" class="caption-word">da</span> <span id="cg-42-w-5" class="caption-word">empresa,</span>
+        </div>
+        <div id="cg-43" class="caption-box clip" data-start="61.4467" data-duration="0.35" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-43-w-0" class="caption-word">né?</span>
+        </div>
+        <div id="cg-44" class="caption-box clip" data-start="61.8067" data-duration="1.13" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-44-w-0" class="caption-word">Muitos</span> <span id="cg-44-w-1" class="caption-word">funcionários</span> <span id="cg-44-w-2" class="caption-word">ainda</span> <span id="cg-44-w-3" class="caption-word">não</span>
+        </div>
+        <div id="cg-45" class="caption-box clip" data-start="62.9367" data-duration="1.33" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-45-w-0" class="caption-word">entendem</span> <span id="cg-45-w-1" class="caption-word">a</span> <span id="cg-45-w-2" class="caption-word">diferença</span> <span id="cg-45-w-3" class="caption-word">de</span> <span id="cg-45-w-4" class="caption-word">você</span> <span id="cg-45-w-5" class="caption-word">rodar</span>
+        </div>
+        <div id="cg-46" class="caption-box clip" data-start="64.2667" data-duration="1.0" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-46-w-0" class="caption-word">a</span> <span id="cg-46-w-1" class="caption-word">Claude</span> <span id="cg-46-w-2" class="caption-word">na</span> <span id="cg-46-w-3" class="caption-word">nuvem,</span> <span id="cg-46-w-4" class="caption-word">de</span> <span id="cg-46-w-5" class="caption-word">rodar</span>
+        </div>
+        <div id="cg-47" class="caption-box clip" data-start="65.2667" data-duration="1.17" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-47-w-0" class="caption-word">na</span> <span id="cg-47-w-1" class="caption-word">sua</span> <span id="cg-47-w-2" class="caption-word">máquina,</span> <span id="cg-47-w-3" class="caption-word">de</span> <span id="cg-47-w-4" class="caption-word">rodar</span> <span id="cg-47-w-5" class="caption-word">no</span>
+        </div>
+        <div id="cg-48" class="caption-box clip" data-start="66.4367" data-duration="1.81" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-48-w-0" class="caption-word">Cowork,</span> <span id="cg-48-w-1" class="caption-word">de</span> <span id="cg-48-w-2" class="caption-word">rodar</span> <span id="cg-48-w-3" class="caption-word">no</span> <span id="cg-48-w-4" class="caption-word">Code,</span> <span id="cg-48-w-5" class="caption-word">não</span>
+        </div>
+        <div id="cg-49" class="caption-box clip" data-start="68.2467" data-duration="1.52" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-49-w-0" class="caption-word">sabem</span> <span id="cg-49-w-1" class="caption-word">que</span> <span id="cg-49-w-2" class="caption-word">você</span> <span id="cg-49-w-3" class="caption-word">pode</span> <span id="cg-49-w-4" class="caption-word">usar</span> <span id="cg-49-w-5" class="caption-word">skills</span>
+        </div>
+        <div id="cg-50" class="caption-box clip" data-start="69.7867" data-duration="1.56" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-50-w-0" class="caption-word">para</span> <span id="cg-50-w-1" class="caption-word">meio</span> <span id="cg-50-w-2" class="caption-word">que</span> <span id="cg-50-w-3" class="caption-word">fazer</span> <span id="cg-50-w-4" class="caption-word">processos</span>
+        </div>
+        <div id="cg-51" class="caption-box clip" data-start="71.3667" data-duration="2.25" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-51-w-0" class="caption-word">repetidos</span> <span id="cg-51-w-1" class="caption-word">serem</span> <span id="cg-51-w-2" class="caption-word">registrados,</span> <span id="cg-51-w-3" class="caption-word">não</span>
+        </div>
+        <div id="cg-52" class="caption-box clip" data-start="73.6367" data-duration="0.63" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-52-w-0" class="caption-word">entendem</span> <span id="cg-52-w-1" class="caption-word">o</span> <span id="cg-52-w-2" class="caption-word">que</span> <span id="cg-52-w-3" class="caption-word">é</span> <span id="cg-52-w-4" class="caption-word">o</span> <span id="cg-52-w-5" class="caption-word">MCP</span>
+        </div>
+        <div id="cg-53" class="caption-box clip" data-start="74.2667" data-duration="1.24" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-53-w-0" class="caption-word">e</span> <span id="cg-53-w-1" class="caption-word">como</span> <span id="cg-53-w-2" class="caption-word">que</span> <span id="cg-53-w-3" class="caption-word">você</span> <span id="cg-53-w-4" class="caption-word">conecta</span> <span id="cg-53-w-5" class="caption-word">com</span>
+        </div>
+        <div id="cg-54" class="caption-box clip" data-start="75.5067" data-duration="0.8" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-54-w-0" class="caption-word">os</span> <span id="cg-54-w-1" class="caption-word">serviços.</span>
+        </div>
+        <div id="cg-55" class="caption-box clip" data-start="76.4867" data-duration="1.37" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-55-w-0" class="caption-word">Aí</span> <span id="cg-55-w-1" class="caption-word">tem</span> <span id="cg-55-w-2" class="caption-word">muito</span> <span id="cg-55-w-3" class="caption-word">espaço</span> <span id="cg-55-w-4" class="caption-word">ainda</span> <span id="cg-55-w-5" class="caption-word">meio</span>
+        </div>
+        <div id="cg-56" class="caption-box clip" data-start="77.9367" data-duration="1.57" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-56-w-0" class="caption-word">que</span> <span id="cg-56-w-1" class="caption-word">para</span> <span id="cg-56-w-2" class="caption-word">tornar</span> <span id="cg-56-w-3" class="caption-word">as</span> <span id="cg-56-w-4" class="caption-word">pessoas</span> <span id="cg-56-w-5" class="caption-word">mais</span>
+        </div>
+        <div id="cg-57" class="caption-box clip" data-start="79.5067" data-duration="2.52" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-57-w-0" class="caption-word">alfabetizadas</span> <span id="cg-57-w-1" class="caption-word">no</span> <span id="cg-57-w-2" class="caption-word">uso</span> <span id="cg-57-w-3" class="caption-word">básico</span> <span id="cg-57-w-4" class="caption-word">de</span> <span id="cg-57-w-5" class="caption-word">AI</span>
+        </div>
+        <div id="cg-58" class="caption-box clip" data-start="82.0267" data-duration="1.27" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-58-w-0" class="caption-word">no</span> <span id="cg-58-w-1" class="caption-word">dia</span> <span id="cg-58-w-2" class="caption-word">a</span> <span id="cg-58-w-3" class="caption-word">dia</span> <span id="cg-58-w-4" class="caption-word">delas.</span>
+        </div>
+        <div id="cg-59" class="caption-box clip" data-start="83.72" data-duration="1.07" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-59-w-0" class="caption-word">A</span> <span id="cg-59-w-1" class="caption-word">terceira</span> <span id="cg-59-w-2" class="caption-word">é</span> <span id="cg-59-w-3" class="caption-word">que</span> <span id="cg-59-w-4" class="caption-word">muitas</span> <span id="cg-59-w-5" class="caption-word">empresas</span>
+        </div>
+        <div id="cg-60" class="caption-box clip" data-start="84.79" data-duration="1.81" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-60-w-0" class="caption-word">tentam</span> <span id="cg-60-w-1" class="caption-word">substituir</span> <span id="cg-60-w-2" class="caption-word">pessoas</span> <span id="cg-60-w-3" class="caption-word">com</span> <span id="cg-60-w-4" class="caption-word">o</span> <span id="cg-60-w-5" class="caption-word">uso</span>
+        </div>
+        <div id="cg-61" class="caption-box clip" data-start="86.6" data-duration="1.72" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-61-w-0" class="caption-word">de</span> <span id="cg-61-w-1" class="caption-word">inteligência</span> <span id="cg-61-w-2" class="caption-word">artificial</span> <span id="cg-61-w-3" class="caption-word">e</span> <span id="cg-61-w-4" class="caption-word">na</span>
+        </div>
+        <div id="cg-62" class="caption-box clip" data-start="88.61" data-duration="1.48" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-62-w-0" class="caption-word">minha</span> <span id="cg-62-w-1" class="caption-word">experiência</span> <span id="cg-62-w-2" class="caption-word">isso</span> <span id="cg-62-w-3" class="caption-word">costuma</span> <span id="cg-62-w-4" class="caption-word">não</span>
+        </div>
+        <div id="cg-63" class="caption-box clip" data-start="90.09" data-duration="1.23" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-63-w-0" class="caption-word">dar</span> <span id="cg-63-w-1" class="caption-word">muito</span> <span id="cg-63-w-2" class="caption-word">certo</span> <span id="cg-63-w-3" class="caption-word">e</span> <span id="cg-63-w-4" class="caption-word">na</span> <span id="cg-63-w-5" class="caption-word">verdade</span>
+        </div>
+        <div id="cg-64" class="caption-box clip" data-start="91.32" data-duration="1.25" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-64-w-0" class="caption-word">um</span> <span id="cg-64-w-1" class="caption-word">uso</span> <span id="cg-64-w-2" class="caption-word">muito</span> <span id="cg-64-w-3" class="caption-word">melhor</span> <span id="cg-64-w-4" class="caption-word">de</span> <span id="cg-64-w-5" class="caption-word">inteligência</span>
+        </div>
+        <div id="cg-65" class="caption-box clip" data-start="92.61" data-duration="1.63" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-65-w-0" class="caption-word">artificial</span> <span id="cg-65-w-1" class="caption-word">é</span> <span id="cg-65-w-2" class="caption-word">você</span> <span id="cg-65-w-3" class="caption-word">dar</span> <span id="cg-65-w-4" class="caption-word">a</span> <span id="cg-65-w-5" class="caption-word">capacidade</span>
+        </div>
+        <div id="cg-66" class="caption-box clip" data-start="94.32" data-duration="1.56" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-66-w-0" class="caption-word">da</span> <span id="cg-66-w-1" class="caption-word">pessoa</span> <span id="cg-66-w-2" class="caption-word">produzir</span> <span id="cg-66-w-3" class="caption-word">mais</span> <span id="cg-66-w-4" class="caption-word">ao</span> <span id="cg-66-w-5" class="caption-word">invés</span>
+        </div>
+        <div id="cg-67" class="caption-box clip" data-start="95.95" data-duration="1.75" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-67-w-0" class="caption-word">de</span> <span id="cg-67-w-1" class="caption-word">você</span> <span id="cg-67-w-2" class="caption-word">tentar</span> <span id="cg-67-w-3" class="caption-word">substituir</span> <span id="cg-67-w-4" class="caption-word">ela.</span>
+        </div>
+        <div id="cg-68" class="caption-box clip" data-start="98.24" data-duration="1.02" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-68-w-0" class="caption-word">Na</span> <span id="cg-68-w-1" class="caption-word">minha</span> <span id="cg-68-w-2" class="caption-word">experiência</span> <span id="cg-68-w-3" class="caption-word">geralmente</span> <span id="cg-68-w-4" class="caption-word">as</span>
+        </div>
+        <div id="cg-69" class="caption-box clip" data-start="99.26" data-duration="1.52" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-69-w-0" class="caption-word">pessoas</span> <span id="cg-69-w-1" class="caption-word">subestimam</span> <span id="cg-69-w-2" class="caption-word">o</span> <span id="cg-69-w-3" class="caption-word">quanto</span> <span id="cg-69-w-4" class="caption-word">que</span> <span id="cg-69-w-5" class="caption-word">um</span>
+        </div>
+        <div id="cg-70" class="caption-box clip" data-start="100.78" data-duration="2.18" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-70-w-0" class="caption-word">funcionário</span> <span id="cg-70-w-1" class="caption-word">faz</span> <span id="cg-70-w-2" class="caption-word">ali</span> <span id="cg-70-w-3" class="caption-word">regras</span> <span id="cg-70-w-4" class="caption-word">mentais,</span>
+        </div>
+        <div id="cg-71" class="caption-box clip" data-start="102.96" data-duration="0.35" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-71-w-0" class="caption-word">né?</span>
+        </div>
+        <div id="cg-72" class="caption-box clip" data-start="103.33" data-duration="1.02" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-72-w-0" class="caption-word">Quantas</span> <span id="cg-72-w-1" class="caption-word">heurísticas</span> <span id="cg-72-w-2" class="caption-word">no</span> <span id="cg-72-w-3" class="caption-word">dia</span> <span id="cg-72-w-4" class="caption-word">a</span> <span id="cg-72-w-5" class="caption-word">dia</span>
+        </div>
+        <div id="cg-73" class="caption-box clip" data-start="104.35" data-duration="1.08" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-73-w-0" class="caption-word">meio</span> <span id="cg-73-w-1" class="caption-word">que</span> <span id="cg-73-w-2" class="caption-word">ele</span> <span id="cg-73-w-3" class="caption-word">usa</span> <span id="cg-73-w-4" class="caption-word">para</span> <span id="cg-73-w-5" class="caption-word">resolver</span>
+        </div>
+        <div id="cg-74" class="caption-box clip" data-start="105.43" data-duration="0.55" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-74-w-0" class="caption-word">os</span> <span id="cg-74-w-1" class="caption-word">problemas.</span>
+        </div>
+        <div id="cg-75" class="caption-box clip" data-start="106.38" data-duration="0.94" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-75-w-0" class="caption-word">E</span> <span id="cg-75-w-1" class="caption-word">aí</span> <span id="cg-75-w-2" class="caption-word">quando</span> <span id="cg-75-w-3" class="caption-word">ele</span> <span id="cg-75-w-4" class="caption-word">tenta</span> <span id="cg-75-w-5" class="caption-word">substituir</span>
+        </div>
+        <div id="cg-76" class="caption-box clip" data-start="107.35" data-duration="1.32" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-76-w-0" class="caption-word">essa</span> <span id="cg-76-w-1" class="caption-word">pessoa</span> <span id="cg-76-w-2" class="caption-word">a</span> <span id="cg-76-w-3" class="caption-word">coisa</span> <span id="cg-76-w-4" class="caption-word">costuma</span> <span id="cg-76-w-5" class="caption-word">não</span>
+        </div>
+        <div id="cg-77" class="caption-box clip" data-start="108.67" data-duration="1.13" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-77-w-0" class="caption-word">funcionar</span> <span id="cg-77-w-1" class="caption-word">muito</span> <span id="cg-77-w-2" class="caption-word">bem.</span>
+        </div>
+        <div id="cg-78" class="caption-box clip" data-start="110.7" data-duration="1.62" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-78-w-0" class="caption-word">A</span> <span id="cg-78-w-1" class="caption-word">quarta</span> <span id="cg-78-w-2" class="caption-word">é</span> <span id="cg-78-w-3" class="caption-word">perder</span> <span id="cg-78-w-4" class="caption-word">tempo</span> <span id="cg-78-w-5" class="caption-word">tentando</span>
+        </div>
+        <div id="cg-79" class="caption-box clip" data-start="112.32" data-duration="1.7" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-79-w-0" class="caption-word">fazer</span> <span id="cg-79-w-1" class="caption-word">um</span> <span id="cg-79-w-2" class="caption-word">RAG</span> <span id="cg-79-w-3" class="caption-word">interno</span> <span id="cg-79-w-4" class="caption-word">da</span> <span id="cg-79-w-5" class="caption-word">empresa.</span>
+        </div>
+        <div id="cg-80" class="caption-box clip" data-start="114.4" data-duration="0.58" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-80-w-0" class="caption-word">Se</span> <span id="cg-80-w-1" class="caption-word">você</span> <span id="cg-80-w-2" class="caption-word">não</span> <span id="cg-80-w-3" class="caption-word">sabe</span> <span id="cg-80-w-4" class="caption-word">o</span> <span id="cg-80-w-5" class="caption-word">que</span>
+        </div>
+        <div id="cg-81" class="caption-box clip" data-start="114.98" data-duration="0.81" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-81-w-0" class="caption-word">é</span> <span id="cg-81-w-1" class="caption-word">RAG,</span> <span id="cg-81-w-2" class="caption-word">meio</span> <span id="cg-81-w-3" class="caption-word">que</span> <span id="cg-81-w-4" class="caption-word">é</span> <span id="cg-81-w-5" class="caption-word">um</span>
+        </div>
+        <div id="cg-82" class="caption-box clip" data-start="115.86" data-duration="1.74" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-82-w-0" class="caption-word">ChatGPT</span> <span id="cg-82-w-1" class="caption-word">ali</span> <span id="cg-82-w-2" class="caption-word">da</span> <span id="cg-82-w-3" class="caption-word">empresa</span> <span id="cg-82-w-4" class="caption-word">que</span> <span id="cg-82-w-5" class="caption-word">conhece</span>
+        </div>
+        <div id="cg-83" class="caption-box clip" data-start="117.6" data-duration="1.51" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-83-w-0" class="caption-word">todos</span> <span id="cg-83-w-1" class="caption-word">os</span> <span id="cg-83-w-2" class="caption-word">dados</span> <span id="cg-83-w-3" class="caption-word">da</span> <span id="cg-83-w-4" class="caption-word">empresa,</span> <span id="cg-83-w-5" class="caption-word">todas</span>
+        </div>
+        <div id="cg-84" class="caption-box clip" data-start="119.11" data-duration="0.93" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-84-w-0" class="caption-word">as</span> <span id="cg-84-w-1" class="caption-word">políticas</span> <span id="cg-84-w-2" class="caption-word">e</span> <span id="cg-84-w-3" class="caption-word">tal.</span>
+        </div>
+        <div id="cg-85" class="caption-box clip" data-start="120.46" data-duration="0.54" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-85-w-0" class="caption-word">E</span> <span id="cg-85-w-1" class="caption-word">falando</span> <span id="cg-85-w-2" class="caption-word">assim</span> <span id="cg-85-w-3" class="caption-word">meio</span> <span id="cg-85-w-4" class="caption-word">que</span> <span id="cg-85-w-5" class="caption-word">o</span>
+        </div>
+        <div id="cg-86" class="caption-box clip" data-start="121.0" data-duration="1.5" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-86-w-0" class="caption-word">negócio</span> <span id="cg-86-w-1" class="caption-word">parece</span> <span id="cg-86-w-2" class="caption-word">uma</span> <span id="cg-86-w-3" class="caption-word">boa</span> <span id="cg-86-w-4" class="caption-word">ideia,</span> <span id="cg-86-w-5" class="caption-word">né?</span>
+        </div>
+        <div id="cg-87" class="caption-box clip" data-start="122.88" data-duration="1.14" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-87-w-0" class="caption-word">Mas</span> <span id="cg-87-w-1" class="caption-word">a</span> <span id="cg-87-w-2" class="caption-word">maioria</span> <span id="cg-87-w-3" class="caption-word">das</span> <span id="cg-87-w-4" class="caption-word">empresas</span> <span id="cg-87-w-5" class="caption-word">não</span>
+        </div>
+        <div id="cg-88" class="caption-box clip" data-start="124.02" data-duration="1.49" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-88-w-0" class="caption-word">tem</span> <span id="cg-88-w-1" class="caption-word">nem</span> <span id="cg-88-w-2" class="caption-word">dado</span> <span id="cg-88-w-3" class="caption-word">o</span> <span id="cg-88-w-4" class="caption-word">suficiente</span> <span id="cg-88-w-5" class="caption-word">para</span>
+        </div>
+        <div id="cg-89" class="caption-box clip" data-start="125.53" data-duration="0.91" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-89-w-0" class="caption-word">justificar</span> <span id="cg-89-w-1" class="caption-word">isso.</span>
+        </div>
+        <div id="cg-90" class="caption-box clip" data-start="126.49" data-duration="1.53" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-90-w-0" class="caption-word">E</span> <span id="cg-90-w-1" class="caption-word">ela</span> <span id="cg-90-w-2" class="caption-word">também</span> <span id="cg-90-w-3" class="caption-word">poderia</span> <span id="cg-90-w-4" class="caption-word">utilizar</span> <span id="cg-90-w-5" class="caption-word">umas</span>
+        </div>
+        <div id="cg-91" class="caption-box clip" data-start="128.02" data-duration="1.62" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-91-w-0" class="caption-word">soluções</span> <span id="cg-91-w-1" class="caption-word">que</span> <span id="cg-91-w-2" class="caption-word">são</span> <span id="cg-91-w-3" class="caption-word">meio</span> <span id="cg-91-w-4" class="caption-word">prontas</span> <span id="cg-91-w-5" class="caption-word">aí,</span>
+        </div>
+        <div id="cg-92" class="caption-box clip" data-start="129.65" data-duration="1.93" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-92-w-0" class="caption-word">tipo</span> <span id="cg-92-w-1" class="caption-word">um</span> <span id="cg-92-w-2" class="caption-word">SharePoint</span> <span id="cg-92-w-3" class="caption-word">com</span> <span id="cg-92-w-4" class="caption-word">o</span> <span id="cg-92-w-5" class="caption-word">Copilot,</span>
+        </div>
+        <div id="cg-93" class="caption-box clip" data-start="131.72" data-duration="1.24" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-93-w-0" class="caption-word">um</span> <span id="cg-93-w-1" class="caption-word">Google</span> <span id="cg-93-w-2" class="caption-word">Workspace</span> <span id="cg-93-w-3" class="caption-word">com</span> <span id="cg-93-w-4" class="caption-word">o</span> <span id="cg-93-w-5" class="caption-word">Gemini.</span>
+        </div>
+        <div id="cg-94" class="caption-box clip" data-start="133.1" data-duration="1.28" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-94-w-0" class="caption-word">A</span> <span id="cg-94-w-1" class="caption-word">maioria</span> <span id="cg-94-w-2" class="caption-word">das</span> <span id="cg-94-w-3" class="caption-word">empresas</span> <span id="cg-94-w-4" class="caption-word">não</span> <span id="cg-94-w-5" class="caption-word">tem</span>
+        </div>
+        <div id="cg-95" class="caption-box clip" data-start="134.38" data-duration="1.46" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-95-w-0" class="caption-word">aí</span> <span id="cg-95-w-1" class="caption-word">maturidade</span> <span id="cg-95-w-2" class="caption-word">suficiente</span> <span id="cg-95-w-3" class="caption-word">para</span>
+        </div>
+        <div id="cg-96" class="caption-box clip" data-start="135.95" data-duration="1.63" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-96-w-0" class="caption-word">justificar</span> <span id="cg-96-w-1" class="caption-word">entrar</span> <span id="cg-96-w-2" class="caption-word">num</span> <span id="cg-96-w-3" class="caption-word">projeto</span> <span id="cg-96-w-4" class="caption-word">para</span>
+        </div>
+        <div id="cg-97" class="caption-box clip" data-start="137.6" data-duration="0.84" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-97-w-0" class="caption-word">fazer</span> <span id="cg-97-w-1" class="caption-word">um</span> <span id="cg-97-w-2" class="caption-word">RAG.</span>
+        </div>
+        <div id="cg-98" class="caption-box clip" data-start="139.12" data-duration="1.33" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-98-w-0" class="caption-word">E</span> <span id="cg-98-w-1" class="caption-word">a</span> <span id="cg-98-w-2" class="caption-word">quinta</span> <span id="cg-98-w-3" class="caption-word">é</span> <span id="cg-98-w-4" class="caption-word">relacionada</span> <span id="cg-98-w-5" class="caption-word">a</span>
+        </div>
+        <div id="cg-99" class="caption-box clip" data-start="140.45" data-duration="1.18" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-99-w-0" class="caption-word">um</span> <span id="cg-99-w-1" class="caption-word">estudo</span> <span id="cg-99-w-2" class="caption-word">do</span> <span id="cg-99-w-3" class="caption-word">MIT</span> <span id="cg-99-w-4" class="caption-word">aí</span> <span id="cg-99-w-5" class="caption-word">que</span>
+        </div>
+        <div id="cg-100" class="caption-box clip" data-start="141.63" data-duration="1.91" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-100-w-0" class="caption-word">diz</span> <span id="cg-100-w-1" class="caption-word">que</span> <span id="cg-100-w-2" class="caption-word">95%</span> <span id="cg-100-w-3" class="caption-word">das</span> <span id="cg-100-w-4" class="caption-word">empresas</span> <span id="cg-100-w-5" class="caption-word">que</span>
+        </div>
+        <div id="cg-101" class="caption-box clip" data-start="143.56" data-duration="1.06" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-101-w-0" class="caption-word">estão</span> <span id="cg-101-w-1" class="caption-word">adotando</span> <span id="cg-101-w-2" class="caption-word">inteligência</span>
+        </div>
+        <div id="cg-102" class="caption-box clip" data-start="144.63" data-duration="1.23" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-102-w-0" class="caption-word">artificial</span> <span id="cg-102-w-1" class="caption-word">não</span> <span id="cg-102-w-2" class="caption-word">estão</span> <span id="cg-102-w-3" class="caption-word">conseguindo</span> <span id="cg-102-w-4" class="caption-word">ter</span>
+        </div>
+        <div id="cg-103" class="caption-box clip" data-start="145.86" data-duration="1.38" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-103-w-0" class="caption-word">nenhum</span> <span id="cg-103-w-1" class="caption-word">retorno</span> <span id="cg-103-w-2" class="caption-word">financeiro</span> <span id="cg-103-w-3" class="caption-word">com</span> <span id="cg-103-w-4" class="caption-word">isso.</span>
+        </div>
+        <div id="cg-104" class="caption-box clip" data-start="147.7" data-duration="0.86" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-104-w-0" class="caption-word">E</span> <span id="cg-104-w-1" class="caption-word">o</span> <span id="cg-104-w-2" class="caption-word">quinto</span> <span id="cg-104-w-3" class="caption-word">ponto</span> <span id="cg-104-w-4" class="caption-word">é</span> <span id="cg-104-w-5" class="caption-word">justamente</span>
+        </div>
+        <div id="cg-105" class="caption-box clip" data-start="148.56" data-duration="0.44" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-105-w-0" class="caption-word">esse.</span>
+        </div>
+        <div id="cg-106" class="caption-box clip" data-start="149.11" data-duration="1.49" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-106-w-0" class="caption-word">Eu</span> <span id="cg-106-w-1" class="caption-word">percebo</span> <span id="cg-106-w-2" class="caption-word">que</span> <span id="cg-106-w-3" class="caption-word">tem</span> <span id="cg-106-w-4" class="caption-word">muitas</span> <span id="cg-106-w-5" class="caption-word">empresas</span>
+        </div>
+        <div id="cg-107" class="caption-box clip" data-start="150.6" data-duration="1.19" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-107-w-0" class="caption-word">que</span> <span id="cg-107-w-1" class="caption-word">pagam</span> <span id="cg-107-w-2" class="caption-word">licenças</span> <span id="cg-107-w-3" class="caption-word">de</span> <span id="cg-107-w-4" class="caption-word">AI</span> <span id="cg-107-w-5" class="caption-word">aí</span>
+        </div>
+        <div id="cg-108" class="caption-box clip" data-start="151.79" data-duration="1.6" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-108-w-0" class="caption-word">relativamente</span> <span id="cg-108-w-1" class="caption-word">caras</span> <span id="cg-108-w-2" class="caption-word">para</span> <span id="cg-108-w-3" class="caption-word">todos</span> <span id="cg-108-w-4" class="caption-word">os</span>
+        </div>
+        <div id="cg-109" class="caption-box clip" data-start="153.39" data-duration="1.73" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-109-w-0" class="caption-word">funcionários</span> <span id="cg-109-w-1" class="caption-word">e</span> <span id="cg-109-w-2" class="caption-word">ninguém</span> <span id="cg-109-w-3" class="caption-word">usa</span> <span id="cg-109-w-4" class="caption-word">de</span> <span id="cg-109-w-5" class="caption-word">fato</span>
+        </div>
+        <div id="cg-110" class="caption-box clip" data-start="155.15" data-duration="1.76" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-110-w-0" class="caption-word">essas</span> <span id="cg-110-w-1" class="caption-word">licenças</span> <span id="cg-110-w-2" class="caption-word">para</span> <span id="cg-110-w-3" class="caption-word">fazer</span> <span id="cg-110-w-4" class="caption-word">o</span> <span id="cg-110-w-5" class="caption-word">trabalho</span>
+        </div>
+        <div id="cg-111" class="caption-box clip" data-start="157.03" data-duration="1.73" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-111-w-0" class="caption-word">que</span> <span id="cg-111-w-1" class="caption-word">é</span> <span id="cg-111-w-2" class="caption-word">principal</span> <span id="cg-111-w-3" class="caption-word">na</span> <span id="cg-111-w-4" class="caption-word">empresa,</span> <span id="cg-111-w-5" class="caption-word">né?</span>
+        </div>
+        <div id="cg-112" class="caption-box clip" data-start="158.87" data-duration="1.39" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-112-w-0" class="caption-word">Então</span> <span id="cg-112-w-1" class="caption-word">ao</span> <span id="cg-112-w-2" class="caption-word">invés</span> <span id="cg-112-w-3" class="caption-word">deles</span> <span id="cg-112-w-4" class="caption-word">pegarem</span> <span id="cg-112-w-5" class="caption-word">a</span>
+        </div>
+        <div id="cg-113" class="caption-box clip" data-start="160.26" data-duration="1.82" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-113-w-0" class="caption-word">AI</span> <span id="cg-113-w-1" class="caption-word">e</span> <span id="cg-113-w-2" class="caption-word">colocar</span> <span id="cg-113-w-3" class="caption-word">num</span> <span id="cg-113-w-4" class="caption-word">processo</span> <span id="cg-113-w-5" class="caption-word">principal</span>
+        </div>
+        <div id="cg-114" class="caption-box clip" data-start="162.08" data-duration="1.14" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-114-w-0" class="caption-word">que</span> <span id="cg-114-w-1" class="caption-word">de</span> <span id="cg-114-w-2" class="caption-word">fato</span> <span id="cg-114-w-3" class="caption-word">faz</span> <span id="cg-114-w-4" class="caption-word">a</span> <span id="cg-114-w-5" class="caption-word">empresa</span>
+        </div>
+        <div id="cg-115" class="caption-box clip" data-start="163.22" data-duration="1.4" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-115-w-0" class="caption-word">ali</span> <span id="cg-115-w-1" class="caption-word">ganhar</span> <span id="cg-115-w-2" class="caption-word">dinheiro</span> <span id="cg-115-w-3" class="caption-word">e</span> <span id="cg-115-w-4" class="caption-word">escalar</span> <span id="cg-115-w-5" class="caption-word">ela</span>
+        </div>
+        <div id="cg-116" class="caption-box clip" data-start="164.62" data-duration="1.82" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-116-w-0" class="caption-word">em</span> <span id="cg-116-w-1" class="caption-word">muitas</span> <span id="cg-116-w-2" class="caption-word">vezes</span> <span id="cg-116-w-3" class="caption-word">ou</span> <span id="cg-116-w-4" class="caption-word">cortar</span> <span id="cg-116-w-5" class="caption-word">custos</span>
+        </div>
+        <div id="cg-117" class="caption-box clip" data-start="166.44" data-duration="0.58" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-117-w-0" class="caption-word">e</span> <span id="cg-117-w-1" class="caption-word">etc.</span>
+        </div>
+        <div id="cg-118" class="caption-box clip" data-start="167.54" data-duration="0.87" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-118-w-0" class="caption-word">Meio</span> <span id="cg-118-w-1" class="caption-word">que</span> <span id="cg-118-w-2" class="caption-word">fica</span> <span id="cg-118-w-3" class="caption-word">aquele</span> <span id="cg-118-w-4" class="caption-word">uso</span>
+        </div>
+        <div id="cg-119" class="caption-box clip" data-start="168.42" data-duration="1.27" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-119-w-0" class="caption-word">indiscriminado</span> <span id="cg-119-w-1" class="caption-word">de</span> <span id="cg-119-w-2" class="caption-word">AI</span> <span id="cg-119-w-3" class="caption-word">para</span> <span id="cg-119-w-4" class="caption-word">fazer</span>
+        </div>
+        <div id="cg-120" class="caption-box clip" data-start="169.69" data-duration="1.57" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-120-w-0" class="caption-word">tudo,</span> <span id="cg-120-w-1" class="caption-word">responder</span> <span id="cg-120-w-2" class="caption-word">e-mail,</span> <span id="cg-120-w-3" class="caption-word">escrever</span>
+        </div>
+        <div id="cg-121" class="caption-box clip" data-start="171.26" data-duration="0.84" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-121-w-0" class="caption-word">documento</span> <span id="cg-121-w-1" class="caption-word">e</span> <span id="cg-121-w-2" class="caption-word">etc.</span>
+        </div>
+        <div id="cg-122" class="caption-box clip" data-start="172.4" data-duration="1.07" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-122-w-0" class="caption-word">Mas</span> <span id="cg-122-w-1" class="caption-word">ninguém</span> <span id="cg-122-w-2" class="caption-word">de</span> <span id="cg-122-w-3" class="caption-word">fato</span> <span id="cg-122-w-4" class="caption-word">está</span> <span id="cg-122-w-5" class="caption-word">fazendo</span>
+        </div>
+        <div id="cg-123" class="caption-box clip" data-start="173.47" data-duration="1.41" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-123-w-0" class="caption-word">o</span> <span id="cg-123-w-1" class="caption-word">que</span> <span id="cg-123-w-2" class="caption-word">importa</span> <span id="cg-123-w-3" class="caption-word">para</span> <span id="cg-123-w-4" class="caption-word">a</span> <span id="cg-123-w-5" class="caption-word">empresa.</span>
+        </div>
+        <div id="cg-124" class="caption-box clip" data-start="175.36" data-duration="0.52" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-124-w-0" class="caption-word">Esse</span> <span id="cg-124-w-1" class="caption-word">aí</span> <span id="cg-124-w-2" class="caption-word">é</span> <span id="cg-124-w-3" class="caption-word">um</span> <span id="cg-124-w-4" class="caption-word">ponto</span> <span id="cg-124-w-5" class="caption-word">que</span>
+        </div>
+        <div id="cg-125" class="caption-box clip" data-start="175.88" data-duration="1.71" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-125-w-0" class="caption-word">eu</span> <span id="cg-125-w-1" class="caption-word">também</span> <span id="cg-125-w-2" class="caption-word">percebo</span> <span id="cg-125-w-3" class="caption-word">bastante</span> <span id="cg-125-w-4" class="caption-word">e</span> <span id="cg-125-w-5" class="caption-word">muitas</span>
+        </div>
+        <div id="cg-126" class="caption-box clip" data-start="177.59" data-duration="1.53" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-126-w-0" class="caption-word">empresas</span> <span id="cg-126-w-1" class="caption-word">aí</span> <span id="cg-126-w-2" class="caption-word">estão</span> <span id="cg-126-w-3" class="caption-word">tendo</span> <span id="cg-126-w-4" class="caption-word">custos</span> <span id="cg-126-w-5" class="caption-word">sem</span>
+        </div>
+        <div id="cg-127" class="caption-box clip" data-start="179.12" data-duration="0.92" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-127-w-0" class="caption-word">ter</span> <span id="cg-127-w-1" class="caption-word">o</span> <span id="cg-127-w-2" class="caption-word">benefício.</span>
+        </div>
+        <div id="cg-128" class="caption-box clip" data-start="181.02" data-duration="0.8" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-128-w-0" class="caption-word">E</span> <span id="cg-128-w-1" class="caption-word">eu</span> <span id="cg-128-w-2" class="caption-word">peço</span> <span id="cg-128-w-3" class="caption-word">encarecidamente</span> <span id="cg-128-w-4" class="caption-word">que</span> <span id="cg-128-w-5" class="caption-word">se</span>
+        </div>
+        <div id="cg-129" class="caption-box clip" data-start="181.82" data-duration="1.79" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-129-w-0" class="caption-word">você</span> <span id="cg-129-w-1" class="caption-word">gostou</span> <span id="cg-129-w-2" class="caption-word">desse</span> <span id="cg-129-w-3" class="caption-word">vídeo</span> <span id="cg-129-w-4" class="caption-word">aqui</span> <span id="cg-129-w-5" class="caption-word">e</span>
+        </div>
+        <div id="cg-130" class="caption-box clip" data-start="183.61" data-duration="1.32" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-130-w-0" class="caption-word">você</span> <span id="cg-130-w-1" class="caption-word">quer</span> <span id="cg-130-w-2" class="caption-word">que</span> <span id="cg-130-w-3" class="caption-word">eu</span> <span id="cg-130-w-4" class="caption-word">continue</span> <span id="cg-130-w-5" class="caption-word">dando</span>
+        </div>
+        <div id="cg-131" class="caption-box clip" data-start="185.01" data-duration="1.49" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-131-w-0" class="caption-word">mais</span> <span id="cg-131-w-1" class="caption-word">dessas</span> <span id="cg-131-w-2" class="caption-word">perspectivas</span> <span id="cg-131-w-3" class="caption-word">internas</span>
+        </div>
+        <div id="cg-132" class="caption-box clip" data-start="186.5" data-duration="0.54" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-132-w-0" class="caption-word">aí,</span> <span id="cg-132-w-1" class="caption-word">né?</span>
+        </div>
+        <div id="cg-133" class="caption-box clip" data-start="187.1" data-duration="1.08" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-133-w-0" class="caption-word">De</span> <span id="cg-133-w-1" class="caption-word">quem</span> <span id="cg-133-w-2" class="caption-word">trabalha</span> <span id="cg-133-w-3" class="caption-word">na</span> <span id="cg-133-w-4" class="caption-word">área</span> <span id="cg-133-w-5" class="caption-word">que</span>
+        </div>
+        <div id="cg-134" class="caption-box clip" data-start="188.26" data-duration="1.35" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-134-w-0" class="caption-word">você,</span> <span id="cg-134-w-1" class="caption-word">por</span> <span id="cg-134-w-2" class="caption-word">favor,</span> <span id="cg-134-w-3" class="caption-word">dê</span> <span id="cg-134-w-4" class="caption-word">uma</span> <span id="cg-134-w-5" class="caption-word">curtida</span>
+        </div>
+        <div id="cg-135" class="caption-box clip" data-start="189.61" data-duration="1.01" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-135-w-0" class="caption-word">nesse</span> <span id="cg-135-w-1" class="caption-word">vídeo</span> <span id="cg-135-w-2" class="caption-word">aí</span> <span id="cg-135-w-3" class="caption-word">e</span> <span id="cg-135-w-4" class="caption-word">me</span> <span id="cg-135-w-5" class="caption-word">siga</span>
+        </div>
+        <div id="cg-136" class="caption-box clip" data-start="190.79" data-duration="1.13" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-136-w-0" class="caption-word">para</span> <span id="cg-136-w-1" class="caption-word">eu</span> <span id="cg-136-w-2" class="caption-word">continuar</span> <span id="cg-136-w-3" class="caption-word">trazendo</span> <span id="cg-136-w-4" class="caption-word">esse</span> <span id="cg-136-w-5" class="caption-word">tipo</span>
+        </div>
+        <div id="cg-137" class="caption-box clip" data-start="191.92" data-duration="0.71" data-track-index="3" data-layout-allow-caption-zone>
+          <span id="cg-137-w-0" class="caption-word">de</span> <span id="cg-137-w-1" class="caption-word">conteúdo</span> <span id="cg-137-w-2" class="caption-word">aqui.</span>
+        </div>
+      </div>
+
+      <script src="vendor/gsap.min.js"></script>
+      <script>
+        (function () {
+          const tl = window.gsap.timeline({ paused: true });
+          const cues = [{"start": 0.07, "end": 1.72, "words": [{"text": "Cinco", "start": 0.07, "end": 0.36}, {"text": "lições", "start": 0.49, "end": 0.79}, {"text": "que", "start": 0.79, "end": 1.01}, {"text": "eu", "start": 1.01, "end": 1.14}, {"text": "aprendi", "start": 1.22, "end": 1.72}]}, {"start": 1.72, "end": 2.61, "words": [{"text": "desenvolvendo", "start": 1.72, "end": 2.18}, {"text": "inteligência", "start": 2.18, "end": 2.61}]}, {"start": 2.61, "end": 3.92, "words": [{"text": "artificial", "start": 2.61, "end": 3.0}, {"text": "para", "start": 3.0, "end": 3.16}, {"text": "grandes", "start": 3.16, "end": 3.44}, {"text": "empresas", "start": 3.44, "end": 3.8}, {"text": "já", "start": 3.8, "end": 3.92}]}, {"start": 3.92, "end": 5.1, "words": [{"text": "fazem", "start": 3.92, "end": 4.23}, {"text": "cinco", "start": 4.23, "end": 4.54}, {"text": "anos", "start": 4.54, "end": 4.8}, {"text": "e", "start": 4.8, "end": 4.83}, {"text": "eu", "start": 4.94, "end": 4.95}, {"text": "vou", "start": 4.95, "end": 5.1}]}, {"start": 5.1, "end": 6.26, "words": [{"text": "deixar", "start": 5.1, "end": 5.39}, {"text": "a", "start": 5.39, "end": 5.44}, {"text": "melhor", "start": 5.44, "end": 5.73}, {"text": "lição", "start": 5.73, "end": 5.93}, {"text": "aí", "start": 5.99, "end": 6.07}, {"text": "para", "start": 6.07, "end": 6.26}]}, {"start": 6.26, "end": 6.79, "words": [{"text": "a", "start": 6.26, "end": 6.29}, {"text": "última.", "start": 6.45, "end": 6.79}]}, {"start": 7.78, "end": 8.44, "words": [{"text": "A", "start": 7.78, "end": 7.83}, {"text": "primeira", "start": 7.78, "end": 7.83}, {"text": "é", "start": 7.78, "end": 7.83}, {"text": "uma", "start": 7.78, "end": 7.83}, {"text": "realidade", "start": 7.92, "end": 8.17}, {"text": "meio", "start": 8.3, "end": 8.44}]}, {"start": 8.44, "end": 9.87, "words": [{"text": "cruel", "start": 8.44, "end": 8.72}, {"text": "aí,", "start": 8.75, "end": 8.92}, {"text": "mas", "start": 9.0, "end": 9.17}, {"text": "a", "start": 9.24, "end": 9.29}, {"text": "maioria", "start": 9.25, "end": 9.68}, {"text": "das", "start": 9.68, "end": 9.87}]}, {"start": 9.87, "end": 11.63, "words": [{"text": "empresas", "start": 9.87, "end": 10.37}, {"text": "não", "start": 10.37, "end": 10.52}, {"text": "está", "start": 10.63, "end": 10.82}, {"text": "nem", "start": 10.82, "end": 11.0}, {"text": "pronta", "start": 11.01, "end": 11.35}, {"text": "para", "start": 11.39, "end": 11.63}]}, {"start": 11.63, "end": 13.05, "words": [{"text": "adotar", "start": 11.63, "end": 11.99}, {"text": "AI", "start": 11.99, "end": 12.11}, {"text": "ali", "start": 12.11, "end": 12.3}, {"text": "no", "start": 12.3, "end": 12.42}, {"text": "ambiente", "start": 12.42, "end": 12.93}, {"text": "de", "start": 12.93, "end": 13.05}]}, {"start": 13.05, "end": 14.3, "words": [{"text": "trabalho", "start": 13.05, "end": 13.56}, {"text": "delas,", "start": 13.56, "end": 14.07}, {"text": "né?", "start": 14.2, "end": 14.3}]}, {"start": 14.37, "end": 15.67, "words": [{"text": "Tem", "start": 14.37, "end": 14.44}, {"text": "muitas", "start": 14.73, "end": 14.78}, {"text": "empresas", "start": 14.83, "end": 15.12}, {"text": "onde", "start": 15.12, "end": 15.31}, {"text": "as", "start": 15.31, "end": 15.4}, {"text": "regras", "start": 15.4, "end": 15.67}]}, {"start": 15.67, "end": 17.08, "words": [{"text": "não", "start": 15.67, "end": 15.81}, {"text": "estão", "start": 15.81, "end": 16.05}, {"text": "muito", "start": 16.05, "end": 16.29}, {"text": "bem", "start": 16.29, "end": 16.43}, {"text": "documentadas", "start": 16.43, "end": 17.01}, {"text": "em", "start": 17.01, "end": 17.08}]}, {"start": 17.15, "end": 18.29, "words": [{"text": "lugar", "start": 17.15, "end": 17.34}, {"text": "nenhum", "start": 17.34, "end": 17.76}, {"text": "e", "start": 17.76, "end": 17.82}, {"text": "meio", "start": 17.82, "end": 18.06}, {"text": "que", "start": 18.06, "end": 18.24}, {"text": "as", "start": 18.24, "end": 18.29}]}, {"start": 18.38, "end": 19.63, "words": [{"text": "pessoas", "start": 18.38, "end": 18.78}, {"text": "no", "start": 18.8, "end": 18.91}, {"text": "dia", "start": 18.91, "end": 19.09}, {"text": "a", "start": 19.09, "end": 19.13}, {"text": "dia", "start": 19.24, "end": 19.33}, {"text": "fazem", "start": 19.33, "end": 19.63}]}, {"start": 19.63, "end": 21.32, "words": [{"text": "muitas", "start": 19.63, "end": 19.99}, {"text": "heurísticas", "start": 19.99, "end": 20.59}, {"text": "mentais", "start": 20.75, "end": 21.06}, {"text": "ali,", "start": 21.06, "end": 21.32}]}, {"start": 21.53, "end": 23.02, "words": [{"text": "muitas", "start": 21.53, "end": 21.82}, {"text": "regras", "start": 21.94, "end": 22.16}, {"text": "para", "start": 22.2, "end": 22.4}, {"text": "facilitar", "start": 22.43, "end": 22.94}, {"text": "o", "start": 22.96, "end": 23.02}]}, {"start": 23.02, "end": 24.71, "words": [{"text": "trabalho", "start": 23.02, "end": 23.51}, {"text": "e,", "start": 23.51, "end": 23.69}, {"text": "obviamente,", "start": 23.69, "end": 24.42}, {"text": "nesse", "start": 24.42, "end": 24.71}]}, {"start": 24.72, "end": 26.64, "words": [{"text": "contexto,", "start": 24.72, "end": 25.33}, {"text": "se", "start": 25.33, "end": 25.45}, {"text": "nem", "start": 25.45, "end": 25.63}, {"text": "as", "start": 25.63, "end": 25.75}, {"text": "próprias", "start": 25.75, "end": 26.23}, {"text": "pessoas", "start": 26.23, "end": 26.64}]}, {"start": 26.65, "end": 28.21, "words": [{"text": "têm", "start": 26.65, "end": 26.81}, {"text": "uma", "start": 26.83, "end": 27.01}, {"text": "política", "start": 27.01, "end": 27.49}, {"text": "meio", "start": 27.49, "end": 27.74}, {"text": "fixa", "start": 27.74, "end": 28.08}, {"text": "de", "start": 28.08, "end": 28.21}]}, {"start": 28.21, "end": 29.93, "words": [{"text": "como", "start": 28.21, "end": 28.33}, {"text": "elas", "start": 28.4, "end": 28.62}, {"text": "trabalham", "start": 28.82, "end": 29.4}, {"text": "para", "start": 29.47, "end": 29.55}, {"text": "chegar", "start": 29.55, "end": 29.77}, {"text": "nas", "start": 29.88, "end": 29.93}]}, {"start": 29.93, "end": 31.34, "words": [{"text": "conclusões,", "start": 29.93, "end": 30.33}, {"text": "vai", "start": 30.34, "end": 30.48}, {"text": "ser", "start": 30.48, "end": 30.54}, {"text": "quase", "start": 30.62, "end": 30.8}, {"text": "impossível", "start": 30.86, "end": 31.34}]}, {"start": 31.34, "end": 32.82, "words": [{"text": "você", "start": 31.34, "end": 31.53}, {"text": "conseguir", "start": 31.53, "end": 31.97}, {"text": "adotar", "start": 31.97, "end": 32.24}, {"text": "inteligência", "start": 32.25, "end": 32.82}]}, {"start": 32.82, "end": 34.17, "words": [{"text": "artificial", "start": 32.82, "end": 33.3}, {"text": "para", "start": 33.3, "end": 33.49}, {"text": "deixar", "start": 33.49, "end": 33.78}, {"text": "qualquer", "start": 33.78, "end": 34.17}]}, {"start": 34.17, "end": 35.24, "words": [{"text": "coisa", "start": 34.17, "end": 34.41}, {"text": "ali", "start": 34.41, "end": 34.55}, {"text": "eficiente.", "start": 34.55, "end": 35.24}]}, {"start": 35.7067, "end": 36.5567, "words": [{"text": "A", "start": 35.7067, "end": 35.7567}, {"text": "segunda", "start": 35.7667, "end": 35.8067}, {"text": "é", "start": 35.8067, "end": 35.8667}, {"text": "que", "start": 35.8667, "end": 36.0567}, {"text": "a", "start": 36.0567, "end": 36.1067}, {"text": "maioria", "start": 36.2367, "end": 36.5567}]}, {"start": 36.5567, "end": 38.1767, "words": [{"text": "das", "start": 36.5567, "end": 36.7467}, {"text": "empresas", "start": 36.7467, "end": 37.2467}, {"text": "deveria", "start": 37.2467, "end": 37.6767}, {"text": "focar", "start": 37.6767, "end": 37.9767}, {"text": "nas", "start": 37.9767, "end": 38.1767}]}, {"start": 38.1767, "end": 39.6967, "words": [{"text": "coisas", "start": 38.1767, "end": 38.4467}, {"text": "que", "start": 38.5567, "end": 38.7467}, {"text": "são", "start": 38.7467, "end": 38.9267}, {"text": "mais", "start": 38.9367, "end": 39.1867}, {"text": "fáceis", "start": 39.1867, "end": 39.5467}, {"text": "de", "start": 39.5467, "end": 39.6967}]}, {"start": 39.7867, "end": 41.1067, "words": [{"text": "capturar", "start": 39.7867, "end": 40.1867}, {"text": "com", "start": 40.2067, "end": 40.4367}, {"text": "o", "start": 40.4367, "end": 40.5167}, {"text": "uso", "start": 40.5167, "end": 40.7667}, {"text": "de", "start": 40.7667, "end": 40.9267}, {"text": "AI", "start": 40.9267, "end": 41.1067}]}, {"start": 41.1767, "end": 42.4367, "words": [{"text": "ao", "start": 41.1767, "end": 41.2267}, {"text": "invés", "start": 41.2267, "end": 41.5267}, {"text": "de", "start": 41.6167, "end": 41.6467}, {"text": "soluções", "start": 41.6467, "end": 42.1267}, {"text": "muito", "start": 42.1267, "end": 42.4367}]}, {"start": 42.4367, "end": 43.5267, "words": [{"text": "mirabolantes", "start": 42.4367, "end": 43.1567}, {"text": "aí.", "start": 43.1567, "end": 43.5267}]}, {"start": 44.2867, "end": 45.0767, "words": [{"text": "Eu", "start": 44.2867, "end": 44.3367}, {"text": "percebo", "start": 44.2867, "end": 44.3367}, {"text": "que", "start": 44.2867, "end": 44.3367}, {"text": "tem", "start": 44.2867, "end": 44.3367}, {"text": "muitas", "start": 44.3567, "end": 44.5867}, {"text": "coisas,", "start": 44.7967, "end": 45.0767}]}, {"start": 45.0767, "end": 46.7967, "words": [{"text": "tipo", "start": 45.0767, "end": 45.3267}, {"text": "fazer", "start": 45.3267, "end": 45.6367}, {"text": "ata", "start": 45.6367, "end": 45.8167}, {"text": "de", "start": 45.8167, "end": 45.9367}, {"text": "reunião,", "start": 45.9367, "end": 46.4867}, {"text": "fazer", "start": 46.4867, "end": 46.7967}]}, {"start": 46.7967, "end": 48.2767, "words": [{"text": "otimização", "start": 46.7967, "end": 47.4167}, {"text": "de", "start": 47.4167, "end": 47.5167}, {"text": "agenda,", "start": 47.5367, "end": 48.0267}, {"text": "fazer", "start": 48.0267, "end": 48.2767}]}, {"start": 48.3667, "end": 50.2667, "words": [{"text": "atendimento", "start": 48.3667, "end": 49.0067}, {"text": "básico", "start": 49.0067, "end": 49.3667}, {"text": "ali", "start": 49.3667, "end": 49.5467}, {"text": "ao", "start": 49.5467, "end": 49.6667}, {"text": "cliente,", "start": 49.6667, "end": 50.2667}]}, {"start": 50.3867, "end": 51.6267, "words": [{"text": "que", "start": 50.3867, "end": 50.4167}, {"text": "são", "start": 50.4167, "end": 50.5667}, {"text": "use", "start": 50.5667, "end": 50.7067}, {"text": "cases", "start": 50.8367, "end": 50.9667}, {"text": "relativamente", "start": 50.9667, "end": 51.6267}]}, {"start": 51.6267, "end": 53.0667, "words": [{"text": "simples,", "start": 51.6267, "end": 52.0867}, {"text": "que", "start": 52.0867, "end": 52.2367}, {"text": "já", "start": 52.2367, "end": 52.3367}, {"text": "tem", "start": 52.3367, "end": 52.4867}, {"text": "muita", "start": 52.4867, "end": 52.7367}, {"text": "solução", "start": 52.7367, "end": 53.0667}]}, {"start": 53.1767, "end": 54.0867, "words": [{"text": "de", "start": 53.1767, "end": 53.1867}, {"text": "AI", "start": 53.1867, "end": 53.2867}, {"text": "meio", "start": 53.2867, "end": 53.4867}, {"text": "pronta", "start": 53.4867, "end": 53.7867}, {"text": "que", "start": 53.7867, "end": 53.8967}, {"text": "faz", "start": 53.9367, "end": 54.0867}]}, {"start": 54.0867, "end": 55.5867, "words": [{"text": "aquilo", "start": 54.0867, "end": 54.3167}, {"text": "ali", "start": 54.4067, "end": 54.6467}, {"text": "e", "start": 54.6467, "end": 54.7067}, {"text": "que", "start": 54.7067, "end": 54.8867}, {"text": "muita", "start": 54.8867, "end": 55.1567}, {"text": "empresa", "start": 55.2667, "end": 55.5867}]}, {"start": 55.5867, "end": 57.0467, "words": [{"text": "ainda", "start": 55.5867, "end": 55.8767}, {"text": "não", "start": 55.8767, "end": 56.0567}, {"text": "utiliza", "start": 56.0567, "end": 56.5067}, {"text": "e", "start": 56.5567, "end": 56.6067}, {"text": "também", "start": 56.5767, "end": 56.8867}, {"text": "tem", "start": 57.0067, "end": 57.0467}]}, {"start": 57.0467, "end": 58.3367, "words": [{"text": "toda", "start": 57.0467, "end": 57.2667}, {"text": "uma", "start": 57.2667, "end": 57.4167}, {"text": "linha", "start": 57.4167, "end": 57.6467}, {"text": "aí", "start": 57.7267, "end": 57.8067}, {"text": "de", "start": 57.8067, "end": 57.8967}, {"text": "educação", "start": 57.9767, "end": 58.3367}]}, {"start": 58.3467, "end": 59.8567, "words": [{"text": "básica", "start": 58.3467, "end": 58.6667}, {"text": "para", "start": 58.6667, "end": 58.8867}, {"text": "o", "start": 58.8867, "end": 58.9367}, {"text": "funcionário", "start": 58.9367, "end": 59.5367}, {"text": "que", "start": 59.5367, "end": 59.6967}, {"text": "vai", "start": 59.6967, "end": 59.8567}]}, {"start": 59.8567, "end": 61.3367, "words": [{"text": "utilizar", "start": 59.8567, "end": 60.2967}, {"text": "a", "start": 60.2967, "end": 60.3467}, {"text": "AI", "start": 60.3467, "end": 60.4567}, {"text": "dentro", "start": 60.4567, "end": 60.7867}, {"text": "da", "start": 60.7867, "end": 60.8967}, {"text": "empresa,", "start": 60.8967, "end": 61.3367}]}, {"start": 61.4467, "end": 61.7967, "words": [{"text": "né?", "start": 61.4467, "end": 61.7467}]}, {"start": 61.8067, "end": 62.9367, "words": [{"text": "Muitos", "start": 61.8067, "end": 62.0167}, {"text": "funcionários", "start": 62.3067, "end": 62.5667}, {"text": "ainda", "start": 62.5667, "end": 62.7967}, {"text": "não", "start": 62.7967, "end": 62.9367}]}, {"start": 62.9367, "end": 64.2667, "words": [{"text": "entendem", "start": 62.9367, "end": 63.2867}, {"text": "a", "start": 63.3067, "end": 63.3467}, {"text": "diferença", "start": 63.3467, "end": 63.7667}, {"text": "de", "start": 63.7667, "end": 63.8567}, {"text": "você", "start": 63.8567, "end": 64.0367}, {"text": "rodar", "start": 64.0367, "end": 64.2667}]}, {"start": 64.2667, "end": 65.2667, "words": [{"text": "a", "start": 64.2667, "end": 64.3067}, {"text": "Claude", "start": 64.3067, "end": 64.5367}, {"text": "na", "start": 64.5367, "end": 64.5667}, {"text": "nuvem,", "start": 64.6567, "end": 64.9467}, {"text": "de", "start": 64.9467, "end": 65.0267}, {"text": "rodar", "start": 65.0367, "end": 65.2667}]}, {"start": 65.2667, "end": 66.4367, "words": [{"text": "na", "start": 65.2667, "end": 65.3567}, {"text": "sua", "start": 65.3567, "end": 65.4967}, {"text": "máquina,", "start": 65.4967, "end": 66.0267}, {"text": "de", "start": 66.0267, "end": 66.1167}, {"text": "rodar", "start": 66.1167, "end": 66.3467}, {"text": "no", "start": 66.3467, "end": 66.4367}]}, {"start": 66.4367, "end": 68.2467, "words": [{"text": "Cowork,", "start": 66.4367, "end": 66.8667}, {"text": "de", "start": 66.9367, "end": 67.0267}, {"text": "rodar", "start": 67.0267, "end": 67.4167}, {"text": "no", "start": 67.4167, "end": 67.5667}, {"text": "Code,", "start": 67.6067, "end": 68.0067}, {"text": "não", "start": 68.0867, "end": 68.2467}]}, {"start": 68.2467, "end": 69.7667, "words": [{"text": "sabem", "start": 68.2467, "end": 68.5367}, {"text": "que", "start": 68.5367, "end": 68.7067}, {"text": "você", "start": 68.7367, "end": 68.9567}, {"text": "pode", "start": 68.9567, "end": 69.1567}, {"text": "usar", "start": 69.2167, "end": 69.4367}, {"text": "skills", "start": 69.4367, "end": 69.7667}]}, {"start": 69.7867, "end": 71.3467, "words": [{"text": "para", "start": 69.7867, "end": 70.0267}, {"text": "meio", "start": 70.0267, "end": 70.2667}, {"text": "que", "start": 70.2667, "end": 70.4367}, {"text": "fazer", "start": 70.4767, "end": 70.7667}, {"text": "processos", "start": 70.7667, "end": 71.3467}]}, {"start": 71.3667, "end": 73.6167, "words": [{"text": "repetidos", "start": 71.3667, "end": 71.9467}, {"text": "serem", "start": 71.9467, "end": 72.2667}, {"text": "registrados,", "start": 72.2667, "end": 73.1567}, {"text": "não", "start": 73.5667, "end": 73.6167}]}, {"start": 73.6367, "end": 74.2667, "words": [{"text": "entendem", "start": 73.6367, "end": 73.7867}, {"text": "o", "start": 73.7867, "end": 73.8367}, {"text": "que", "start": 74.0067, "end": 74.0567}, {"text": "é", "start": 74.0567, "end": 74.1067}, {"text": "o", "start": 74.0767, "end": 74.1067}, {"text": "MCP", "start": 74.1067, "end": 74.2667}]}, {"start": 74.2667, "end": 75.5067, "words": [{"text": "e", "start": 74.2667, "end": 74.3067}, {"text": "como", "start": 74.3167, "end": 74.5467}, {"text": "que", "start": 74.5467, "end": 74.7067}, {"text": "você", "start": 74.7867, "end": 74.9467}, {"text": "conecta", "start": 74.9467, "end": 75.3367}, {"text": "com", "start": 75.3367, "end": 75.5067}]}, {"start": 75.5067, "end": 76.3067, "words": [{"text": "os", "start": 75.5067, "end": 75.6167}, {"text": "serviços.", "start": 75.6167, "end": 76.3067}]}, {"start": 76.4867, "end": 77.8567, "words": [{"text": "Aí", "start": 76.4867, "end": 76.5367}, {"text": "tem", "start": 76.5367, "end": 76.6667}, {"text": "muito", "start": 76.9567, "end": 76.9667}, {"text": "espaço", "start": 76.9967, "end": 77.3267}, {"text": "ainda", "start": 77.3267, "end": 77.6067}, {"text": "meio", "start": 77.6867, "end": 77.8567}]}, {"start": 77.9367, "end": 79.5067, "words": [{"text": "que", "start": 77.9367, "end": 78.0467}, {"text": "para", "start": 78.0467, "end": 78.2867}, {"text": "tornar", "start": 78.2967, "end": 78.6467}, {"text": "as", "start": 78.6467, "end": 78.7567}, {"text": "pessoas", "start": 78.8167, "end": 79.1967}, {"text": "mais", "start": 79.1967, "end": 79.5067}]}, {"start": 79.5067, "end": 82.0267, "words": [{"text": "alfabetizadas", "start": 79.5067, "end": 80.6767}, {"text": "no", "start": 80.6767, "end": 80.8567}, {"text": "uso", "start": 80.8567, "end": 81.1267}, {"text": "básico", "start": 81.1267, "end": 81.6667}, {"text": "de", "start": 81.6667, "end": 81.8467}, {"text": "AI", "start": 81.8467, "end": 82.0267}]}, {"start": 82.0267, "end": 83.2967, "words": [{"text": "no", "start": 82.0267, "end": 82.2067}, {"text": "dia", "start": 82.2067, "end": 82.4767}, {"text": "a", "start": 82.4767, "end": 82.5667}, {"text": "dia", "start": 82.5667, "end": 82.9267}, {"text": "delas.", "start": 82.9267, "end": 83.2967}]}, {"start": 83.72, "end": 84.79, "words": [{"text": "A", "start": 83.72, "end": 83.77}, {"text": "terceira", "start": 83.72, "end": 83.77}, {"text": "é", "start": 83.76, "end": 83.81}, {"text": "que", "start": 83.79, "end": 83.94}, {"text": "muitas", "start": 84.22, "end": 84.3}, {"text": "empresas", "start": 84.3, "end": 84.79}]}, {"start": 84.79, "end": 86.6, "words": [{"text": "tentam", "start": 84.79, "end": 85.11}, {"text": "substituir", "start": 85.19, "end": 85.75}, {"text": "pessoas", "start": 85.75, "end": 86.18}, {"text": "com", "start": 86.18, "end": 86.35}, {"text": "o", "start": 86.37, "end": 86.42}, {"text": "uso", "start": 86.42, "end": 86.6}]}, {"start": 86.6, "end": 88.32, "words": [{"text": "de", "start": 86.6, "end": 86.72}, {"text": "inteligência", "start": 86.72, "end": 87.45}, {"text": "artificial", "start": 87.45, "end": 88.14}, {"text": "e", "start": 88.2, "end": 88.25}, {"text": "na", "start": 88.21, "end": 88.32}]}, {"start": 88.61, "end": 90.09, "words": [{"text": "minha", "start": 88.61, "end": 88.66}, {"text": "experiência", "start": 88.67, "end": 89.26}, {"text": "isso", "start": 89.26, "end": 89.5}, {"text": "costuma", "start": 89.5, "end": 89.91}, {"text": "não", "start": 89.91, "end": 90.09}]}, {"start": 90.09, "end": 91.32, "words": [{"text": "dar", "start": 90.09, "end": 90.27}, {"text": "muito", "start": 90.27, "end": 90.56}, {"text": "certo", "start": 90.56, "end": 90.88}, {"text": "e", "start": 90.89, "end": 90.92}, {"text": "na", "start": 90.99, "end": 91.02}, {"text": "verdade", "start": 91.02, "end": 91.32}]}, {"start": 91.32, "end": 92.57, "words": [{"text": "um", "start": 91.32, "end": 91.39}, {"text": "uso", "start": 91.4, "end": 91.53}, {"text": "muito", "start": 91.53, "end": 91.71}, {"text": "melhor", "start": 91.75, "end": 92.01}, {"text": "de", "start": 92.01, "end": 92.09}, {"text": "inteligência", "start": 92.09, "end": 92.57}]}, {"start": 92.61, "end": 94.24, "words": [{"text": "artificial", "start": 92.61, "end": 93.1}, {"text": "é", "start": 93.16, "end": 93.21}, {"text": "você", "start": 93.17, "end": 93.4}, {"text": "dar", "start": 93.58, "end": 93.63}, {"text": "a", "start": 93.61, "end": 93.64}, {"text": "capacidade", "start": 93.64, "end": 94.24}]}, {"start": 94.32, "end": 95.88, "words": [{"text": "da", "start": 94.32, "end": 94.38}, {"text": "pessoa", "start": 94.38, "end": 94.74}, {"text": "produzir", "start": 94.75, "end": 95.23}, {"text": "mais", "start": 95.23, "end": 95.48}, {"text": "ao", "start": 95.48, "end": 95.6}, {"text": "invés", "start": 95.6, "end": 95.88}]}, {"start": 95.95, "end": 97.7, "words": [{"text": "de", "start": 95.95, "end": 96.0}, {"text": "você", "start": 96.02, "end": 96.26}, {"text": "tentar", "start": 96.26, "end": 96.63}, {"text": "substituir", "start": 96.63, "end": 97.24}, {"text": "ela.", "start": 97.24, "end": 97.7}]}, {"start": 98.24, "end": 99.26, "words": [{"text": "Na", "start": 98.24, "end": 98.29}, {"text": "minha", "start": 98.24, "end": 98.29}, {"text": "experiência", "start": 98.36, "end": 98.64}, {"text": "geralmente", "start": 98.76, "end": 99.16}, {"text": "as", "start": 99.16, "end": 99.26}]}, {"start": 99.26, "end": 100.78, "words": [{"text": "pessoas", "start": 99.26, "end": 99.63}, {"text": "subestimam", "start": 99.63, "end": 100.15}, {"text": "o", "start": 100.15, "end": 100.2}, {"text": "quanto", "start": 100.2, "end": 100.51}, {"text": "que", "start": 100.51, "end": 100.68}, {"text": "um", "start": 100.68, "end": 100.78}]}, {"start": 100.78, "end": 102.96, "words": [{"text": "funcionário", "start": 100.78, "end": 101.36}, {"text": "faz", "start": 101.36, "end": 101.52}, {"text": "ali", "start": 101.52, "end": 101.78}, {"text": "regras", "start": 101.78, "end": 102.23}, {"text": "mentais,", "start": 102.23, "end": 102.96}]}, {"start": 102.96, "end": 103.31, "words": [{"text": "né?", "start": 102.96, "end": 103.22}]}, {"start": 103.33, "end": 104.35, "words": [{"text": "Quantas", "start": 103.33, "end": 103.51}, {"text": "heurísticas", "start": 103.51, "end": 103.96}, {"text": "no", "start": 104.0, "end": 104.05}, {"text": "dia", "start": 104.05, "end": 104.18}, {"text": "a", "start": 104.18, "end": 104.2}, {"text": "dia", "start": 104.23, "end": 104.35}]}, {"start": 104.35, "end": 105.43, "words": [{"text": "meio", "start": 104.35, "end": 104.52}, {"text": "que", "start": 104.52, "end": 104.65}, {"text": "ele", "start": 104.65, "end": 104.78}, {"text": "usa", "start": 104.78, "end": 104.91}, {"text": "para", "start": 104.91, "end": 105.08}, {"text": "resolver", "start": 105.09, "end": 105.43}]}, {"start": 105.43, "end": 105.98, "words": [{"text": "os", "start": 105.43, "end": 105.51}, {"text": "problemas.", "start": 105.51, "end": 105.98}]}, {"start": 106.38, "end": 107.32, "words": [{"text": "E", "start": 106.38, "end": 106.43}, {"text": "aí", "start": 106.38, "end": 106.43}, {"text": "quando", "start": 106.44, "end": 106.49}, {"text": "ele", "start": 106.45, "end": 106.59}, {"text": "tenta", "start": 106.6, "end": 106.84}, {"text": "substituir", "start": 106.91, "end": 107.32}]}, {"start": 107.35, "end": 108.67, "words": [{"text": "essa", "start": 107.35, "end": 107.52}, {"text": "pessoa", "start": 107.6, "end": 107.86}, {"text": "a", "start": 107.86, "end": 107.91}, {"text": "coisa", "start": 107.91, "end": 108.16}, {"text": "costuma", "start": 108.18, "end": 108.52}, {"text": "não", "start": 108.52, "end": 108.67}]}, {"start": 108.67, "end": 109.8, "words": [{"text": "funcionar", "start": 108.67, "end": 109.12}, {"text": "muito", "start": 109.23, "end": 109.39}, {"text": "bem.", "start": 109.39, "end": 109.8}]}, {"start": 110.7, "end": 112.32, "words": [{"text": "A", "start": 110.7, "end": 110.75}, {"text": "quarta", "start": 110.71, "end": 111.07}, {"text": "é", "start": 111.13, "end": 111.18}, {"text": "perder", "start": 111.17, "end": 111.51}, {"text": "tempo", "start": 111.51, "end": 111.78}, {"text": "tentando", "start": 111.86, "end": 112.32}]}, {"start": 112.32, "end": 114.02, "words": [{"text": "fazer", "start": 112.32, "end": 112.63}, {"text": "um", "start": 112.63, "end": 112.74}, {"text": "RAG", "start": 112.74, "end": 112.93}, {"text": "interno", "start": 112.93, "end": 113.36}, {"text": "da", "start": 113.36, "end": 113.39}, {"text": "empresa.", "start": 113.5, "end": 114.02}]}, {"start": 114.4, "end": 114.98, "words": [{"text": "Se", "start": 114.4, "end": 114.45}, {"text": "você", "start": 114.4, "end": 114.45}, {"text": "não", "start": 114.47, "end": 114.53}, {"text": "sabe", "start": 114.53, "end": 114.76}, {"text": "o", "start": 114.81, "end": 114.86}, {"text": "que", "start": 114.91, "end": 114.98}]}, {"start": 114.98, "end": 115.79, "words": [{"text": "é", "start": 114.98, "end": 115.03}, {"text": "RAG,", "start": 115.03, "end": 115.3}, {"text": "meio", "start": 115.3, "end": 115.53}, {"text": "que", "start": 115.53, "end": 115.7}, {"text": "é", "start": 115.7, "end": 115.75}, {"text": "um", "start": 115.75, "end": 115.79}]}, {"start": 115.86, "end": 117.6, "words": [{"text": "ChatGPT", "start": 115.86, "end": 116.24}, {"text": "ali", "start": 116.27, "end": 116.42}, {"text": "da", "start": 116.42, "end": 116.53}, {"text": "empresa", "start": 116.53, "end": 117.08}, {"text": "que", "start": 117.08, "end": 117.15}, {"text": "conhece", "start": 117.25, "end": 117.6}]}, {"start": 117.6, "end": 119.11, "words": [{"text": "todos", "start": 117.6, "end": 117.86}, {"text": "os", "start": 117.86, "end": 117.96}, {"text": "dados", "start": 117.96, "end": 118.22}, {"text": "da", "start": 118.22, "end": 118.32}, {"text": "empresa,", "start": 118.32, "end": 118.84}, {"text": "todas", "start": 119.07, "end": 119.11}]}, {"start": 119.11, "end": 120.04, "words": [{"text": "as", "start": 119.11, "end": 119.21}, {"text": "políticas", "start": 119.51, "end": 119.67}, {"text": "e", "start": 119.67, "end": 119.7}, {"text": "tal.", "start": 119.74, "end": 120.04}]}, {"start": 120.46, "end": 121.0, "words": [{"text": "E", "start": 120.46, "end": 120.51}, {"text": "falando", "start": 120.46, "end": 120.51}, {"text": "assim", "start": 120.53, "end": 120.64}, {"text": "meio", "start": 120.64, "end": 120.82}, {"text": "que", "start": 120.95, "end": 121.0}, {"text": "o", "start": 120.98, "end": 121.0}]}, {"start": 121.0, "end": 122.5, "words": [{"text": "negócio", "start": 121.0, "end": 121.33}, {"text": "parece", "start": 121.33, "end": 121.6}, {"text": "uma", "start": 121.68, "end": 121.75}, {"text": "boa", "start": 121.75, "end": 121.85}, {"text": "ideia,", "start": 121.93, "end": 122.21}, {"text": "né?", "start": 122.21, "end": 122.5}]}, {"start": 122.88, "end": 124.02, "words": [{"text": "Mas", "start": 122.88, "end": 122.93}, {"text": "a", "start": 122.88, "end": 122.93}, {"text": "maioria", "start": 122.95, "end": 123.17}, {"text": "das", "start": 123.35, "end": 123.4}, {"text": "empresas", "start": 123.41, "end": 123.82}, {"text": "não", "start": 123.85, "end": 124.02}]}, {"start": 124.02, "end": 125.51, "words": [{"text": "tem", "start": 124.02, "end": 124.2}, {"text": "nem", "start": 124.2, "end": 124.36}, {"text": "dado", "start": 124.38, "end": 124.62}, {"text": "o", "start": 124.62, "end": 124.68}, {"text": "suficiente", "start": 124.68, "end": 125.29}, {"text": "para", "start": 125.29, "end": 125.51}]}, {"start": 125.53, "end": 126.44, "words": [{"text": "justificar", "start": 125.53, "end": 126.11}, {"text": "isso.", "start": 126.13, "end": 126.44}]}, {"start": 126.49, "end": 128.02, "words": [{"text": "E", "start": 126.49, "end": 126.54}, {"text": "ela", "start": 126.51, "end": 126.65}, {"text": "também", "start": 126.94, "end": 126.98}, {"text": "poderia", "start": 126.98, "end": 127.36}, {"text": "utilizar", "start": 127.36, "end": 127.8}, {"text": "umas", "start": 127.8, "end": 128.02}]}, {"start": 128.02, "end": 129.64, "words": [{"text": "soluções", "start": 128.02, "end": 128.46}, {"text": "que", "start": 128.46, "end": 128.62}, {"text": "são", "start": 128.62, "end": 128.73}, {"text": "meio", "start": 128.79, "end": 129.0}, {"text": "prontas", "start": 129.0, "end": 129.38}, {"text": "aí,", "start": 129.38, "end": 129.64}]}, {"start": 129.65, "end": 131.58, "words": [{"text": "tipo", "start": 129.65, "end": 129.83}, {"text": "um", "start": 129.83, "end": 129.99}, {"text": "SharePoint", "start": 129.99, "end": 130.73}, {"text": "com", "start": 130.73, "end": 130.95}, {"text": "o", "start": 130.95, "end": 131.02}, {"text": "Copilot,", "start": 131.02, "end": 131.58}]}, {"start": 131.72, "end": 132.96, "words": [{"text": "um", "start": 131.72, "end": 131.77}, {"text": "Google", "start": 131.79, "end": 131.94}, {"text": "Workspace", "start": 131.94, "end": 132.34}, {"text": "com", "start": 132.34, "end": 132.46}, {"text": "o", "start": 132.47, "end": 132.51}, {"text": "Gemini.", "start": 132.51, "end": 132.96}]}, {"start": 133.1, "end": 134.38, "words": [{"text": "A", "start": 133.1, "end": 133.15}, {"text": "maioria", "start": 133.17, "end": 133.41}, {"text": "das", "start": 133.58, "end": 133.63}, {"text": "empresas", "start": 133.63, "end": 134.04}, {"text": "não", "start": 134.04, "end": 134.21}, {"text": "tem", "start": 134.21, "end": 134.38}]}, {"start": 134.38, "end": 135.84, "words": [{"text": "aí", "start": 134.38, "end": 134.49}, {"text": "maturidade", "start": 134.49, "end": 135.06}, {"text": "suficiente", "start": 135.06, "end": 135.64}, {"text": "para", "start": 135.64, "end": 135.84}]}, {"start": 135.95, "end": 137.58, "words": [{"text": "justificar", "start": 135.95, "end": 136.44}, {"text": "entrar", "start": 136.44, "end": 136.78}, {"text": "num", "start": 136.78, "end": 136.95}, {"text": "projeto", "start": 136.95, "end": 137.35}, {"text": "para", "start": 137.35, "end": 137.58}]}, {"start": 137.6, "end": 138.44, "words": [{"text": "fazer", "start": 137.6, "end": 137.87}, {"text": "um", "start": 137.87, "end": 137.93}, {"text": "RAG.", "start": 138.04, "end": 138.44}]}, {"start": 139.12, "end": 140.45, "words": [{"text": "E", "start": 139.12, "end": 139.17}, {"text": "a", "start": 139.13, "end": 139.18}, {"text": "quinta", "start": 139.18, "end": 139.58}, {"text": "é", "start": 139.58, "end": 139.64}, {"text": "relacionada", "start": 139.64, "end": 140.39}, {"text": "a", "start": 140.39, "end": 140.45}]}, {"start": 140.45, "end": 141.63, "words": [{"text": "um", "start": 140.45, "end": 140.58}, {"text": "estudo", "start": 140.58, "end": 140.98}, {"text": "do", "start": 140.98, "end": 141.11}, {"text": "MIT", "start": 141.11, "end": 141.31}, {"text": "aí", "start": 141.31, "end": 141.44}, {"text": "que", "start": 141.44, "end": 141.63}]}, {"start": 141.63, "end": 143.54, "words": [{"text": "diz", "start": 141.63, "end": 141.8}, {"text": "que", "start": 141.91, "end": 142.04}, {"text": "95%", "start": 142.04, "end": 142.5}, {"text": "das", "start": 142.5, "end": 142.7}, {"text": "empresas", "start": 142.71, "end": 143.4}, {"text": "que", "start": 143.4, "end": 143.54}]}, {"start": 143.56, "end": 144.62, "words": [{"text": "estão", "start": 143.56, "end": 143.84}, {"text": "adotando", "start": 143.84, "end": 144.22}, {"text": "inteligência", "start": 144.22, "end": 144.62}]}, {"start": 144.63, "end": 145.86, "words": [{"text": "artificial", "start": 144.63, "end": 144.97}, {"text": "não", "start": 145.05, "end": 145.1}, {"text": "estão", "start": 145.1, "end": 145.3}, {"text": "conseguindo", "start": 145.48, "end": 145.74}, {"text": "ter", "start": 145.74, "end": 145.86}]}, {"start": 145.86, "end": 147.24, "words": [{"text": "nenhum", "start": 145.86, "end": 146.1}, {"text": "retorno", "start": 146.1, "end": 146.37}, {"text": "financeiro", "start": 146.45, "end": 146.78}, {"text": "com", "start": 146.78, "end": 146.9}, {"text": "isso.", "start": 146.9, "end": 147.24}]}, {"start": 147.7, "end": 148.56, "words": [{"text": "E", "start": 147.7, "end": 147.75}, {"text": "o", "start": 147.7, "end": 147.75}, {"text": "quinto", "start": 147.7, "end": 147.75}, {"text": "ponto", "start": 147.77, "end": 147.95}, {"text": "é", "start": 147.95, "end": 148.0}, {"text": "justamente", "start": 148.22, "end": 148.56}]}, {"start": 148.56, "end": 149.0, "words": [{"text": "esse.", "start": 148.56, "end": 149.0}]}, {"start": 149.11, "end": 150.6, "words": [{"text": "Eu", "start": 149.11, "end": 149.16}, {"text": "percebo", "start": 149.15, "end": 149.5}, {"text": "que", "start": 149.59, "end": 149.66}, {"text": "tem", "start": 149.66, "end": 149.82}, {"text": "muitas", "start": 149.82, "end": 150.15}, {"text": "empresas", "start": 150.15, "end": 150.6}]}, {"start": 150.6, "end": 151.79, "words": [{"text": "que", "start": 150.6, "end": 150.76}, {"text": "pagam", "start": 150.76, "end": 151.03}, {"text": "licenças", "start": 151.03, "end": 151.46}, {"text": "de", "start": 151.46, "end": 151.57}, {"text": "AI", "start": 151.57, "end": 151.67}, {"text": "aí", "start": 151.67, "end": 151.79}]}, {"start": 151.79, "end": 153.39, "words": [{"text": "relativamente", "start": 151.79, "end": 152.51}, {"text": "caras", "start": 152.51, "end": 152.78}, {"text": "para", "start": 152.78, "end": 153.0}, {"text": "todos", "start": 153.0, "end": 153.28}, {"text": "os", "start": 153.28, "end": 153.39}]}, {"start": 153.39, "end": 155.12, "words": [{"text": "funcionários", "start": 153.39, "end": 154.17}, {"text": "e", "start": 154.23, "end": 154.28}, {"text": "ninguém", "start": 154.64, "end": 154.69}, {"text": "usa", "start": 154.7, "end": 154.81}, {"text": "de", "start": 154.81, "end": 154.91}, {"text": "fato", "start": 154.92, "end": 155.12}]}, {"start": 155.15, "end": 156.91, "words": [{"text": "essas", "start": 155.15, "end": 155.44}, {"text": "licenças", "start": 155.44, "end": 155.89}, {"text": "para", "start": 155.89, "end": 156.12}, {"text": "fazer", "start": 156.12, "end": 156.41}, {"text": "o", "start": 156.41, "end": 156.46}, {"text": "trabalho", "start": 156.46, "end": 156.91}]}, {"start": 157.03, "end": 158.76, "words": [{"text": "que", "start": 157.03, "end": 157.08}, {"text": "é", "start": 157.1, "end": 157.15}, {"text": "principal", "start": 157.15, "end": 157.68}, {"text": "na", "start": 157.68, "end": 157.75}, {"text": "empresa,", "start": 157.79, "end": 158.31}, {"text": "né?", "start": 158.31, "end": 158.76}]}, {"start": 158.87, "end": 160.26, "words": [{"text": "Então", "start": 158.87, "end": 159.06}, {"text": "ao", "start": 159.06, "end": 159.18}, {"text": "invés", "start": 159.31, "end": 159.48}, {"text": "deles", "start": 159.48, "end": 159.78}, {"text": "pegarem", "start": 159.78, "end": 160.19}, {"text": "a", "start": 160.26, "end": 160.31}]}, {"start": 160.26, "end": 162.08, "words": [{"text": "AI", "start": 160.26, "end": 160.38}, {"text": "e", "start": 160.38, "end": 160.43}, {"text": "colocar", "start": 160.44, "end": 160.86}, {"text": "num", "start": 160.86, "end": 161.04}, {"text": "processo", "start": 161.04, "end": 161.52}, {"text": "principal", "start": 161.52, "end": 162.08}]}, {"start": 162.08, "end": 163.22, "words": [{"text": "que", "start": 162.08, "end": 162.25}, {"text": "de", "start": 162.25, "end": 162.36}, {"text": "fato", "start": 162.36, "end": 162.58}, {"text": "faz", "start": 162.58, "end": 162.75}, {"text": "a", "start": 162.75, "end": 162.79}, {"text": "empresa", "start": 162.88, "end": 163.22}]}, {"start": 163.22, "end": 164.62, "words": [{"text": "ali", "start": 163.22, "end": 163.33}, {"text": "ganhar", "start": 163.33, "end": 163.56}, {"text": "dinheiro", "start": 163.56, "end": 163.88}, {"text": "e", "start": 163.94, "end": 163.95}, {"text": "escalar", "start": 163.95, "end": 164.42}, {"text": "ela", "start": 164.42, "end": 164.62}]}, {"start": 164.62, "end": 166.44, "words": [{"text": "em", "start": 164.62, "end": 164.75}, {"text": "muitas", "start": 164.75, "end": 165.16}, {"text": "vezes", "start": 165.16, "end": 165.49}, {"text": "ou", "start": 165.49, "end": 165.63}, {"text": "cortar", "start": 165.63, "end": 166.04}, {"text": "custos", "start": 166.04, "end": 166.44}]}, {"start": 166.44, "end": 167.02, "words": [{"text": "e", "start": 166.44, "end": 166.51}, {"text": "etc.", "start": 166.51, "end": 167.02}]}, {"start": 167.54, "end": 168.41, "words": [{"text": "Meio", "start": 167.54, "end": 167.66}, {"text": "que", "start": 167.66, "end": 167.8}, {"text": "fica", "start": 167.98, "end": 167.99}, {"text": "aquele", "start": 168.01, "end": 168.28}, {"text": "uso", "start": 168.28, "end": 168.41}]}, {"start": 168.42, "end": 169.69, "words": [{"text": "indiscriminado", "start": 168.42, "end": 169.08}, {"text": "de", "start": 169.08, "end": 169.17}, {"text": "AI", "start": 169.17, "end": 169.26}, {"text": "para", "start": 169.26, "end": 169.45}, {"text": "fazer", "start": 169.45, "end": 169.69}]}, {"start": 169.69, "end": 171.26, "words": [{"text": "tudo,", "start": 169.69, "end": 170.05}, {"text": "responder", "start": 170.05, "end": 170.5}, {"text": "e-mail,", "start": 170.5, "end": 170.87}, {"text": "escrever", "start": 170.87, "end": 171.26}]}, {"start": 171.26, "end": 172.1, "words": [{"text": "documento", "start": 171.26, "end": 171.69}, {"text": "e", "start": 171.69, "end": 171.74}, {"text": "etc.", "start": 171.74, "end": 172.1}]}, {"start": 172.4, "end": 173.47, "words": [{"text": "Mas", "start": 172.4, "end": 172.45}, {"text": "ninguém", "start": 172.47, "end": 172.61}, {"text": "de", "start": 172.61, "end": 172.71}, {"text": "fato", "start": 172.89, "end": 172.91}, {"text": "está", "start": 172.93, "end": 173.11}, {"text": "fazendo", "start": 173.12, "end": 173.47}]}, {"start": 173.47, "end": 174.88, "words": [{"text": "o", "start": 173.47, "end": 173.52}, {"text": "que", "start": 173.52, "end": 173.67}, {"text": "importa", "start": 173.67, "end": 174.02}, {"text": "para", "start": 174.03, "end": 174.23}, {"text": "a", "start": 174.23, "end": 174.28}, {"text": "empresa.", "start": 174.28, "end": 174.88}]}, {"start": 175.36, "end": 175.88, "words": [{"text": "Esse", "start": 175.36, "end": 175.41}, {"text": "aí", "start": 175.36, "end": 175.41}, {"text": "é", "start": 175.36, "end": 175.41}, {"text": "um", "start": 175.38, "end": 175.43}, {"text": "ponto", "start": 175.43, "end": 175.67}, {"text": "que", "start": 175.84, "end": 175.89}]}, {"start": 175.88, "end": 177.59, "words": [{"text": "eu", "start": 175.88, "end": 175.95}, {"text": "também", "start": 175.95, "end": 176.29}, {"text": "percebo", "start": 176.3, "end": 176.7}, {"text": "bastante", "start": 176.7, "end": 177.2}, {"text": "e", "start": 177.23, "end": 177.27}, {"text": "muitas", "start": 177.27, "end": 177.59}]}, {"start": 177.59, "end": 179.12, "words": [{"text": "empresas", "start": 177.59, "end": 178.02}, {"text": "aí", "start": 178.02, "end": 178.11}, {"text": "estão", "start": 178.21, "end": 178.39}, {"text": "tendo", "start": 178.39, "end": 178.65}, {"text": "custos", "start": 178.65, "end": 178.93}, {"text": "sem", "start": 178.97, "end": 179.12}]}, {"start": 179.12, "end": 180.04, "words": [{"text": "ter", "start": 179.12, "end": 179.28}, {"text": "o", "start": 179.28, "end": 179.33}, {"text": "benefício.", "start": 179.33, "end": 180.04}]}, {"start": 181.02, "end": 181.82, "words": [{"text": "E", "start": 181.02, "end": 181.07}, {"text": "eu", "start": 181.02, "end": 181.07}, {"text": "peço", "start": 181.02, "end": 181.07}, {"text": "encarecidamente", "start": 181.02, "end": 181.49}, {"text": "que", "start": 181.54, "end": 181.69}, {"text": "se", "start": 181.69, "end": 181.82}]}, {"start": 181.82, "end": 183.61, "words": [{"text": "você", "start": 181.82, "end": 182.09}, {"text": "gostou", "start": 182.09, "end": 182.41}, {"text": "desse", "start": 182.48, "end": 182.82}, {"text": "vídeo", "start": 182.83, "end": 183.17}, {"text": "aqui", "start": 183.17, "end": 183.54}, {"text": "e", "start": 183.59, "end": 183.64}]}, {"start": 183.61, "end": 184.93, "words": [{"text": "você", "start": 183.61, "end": 183.8}, {"text": "quer", "start": 184.01, "end": 184.06}, {"text": "que", "start": 184.06, "end": 184.16}, {"text": "eu", "start": 184.16, "end": 184.24}, {"text": "continue", "start": 184.26, "end": 184.68}, {"text": "dando", "start": 184.68, "end": 184.93}]}, {"start": 185.01, "end": 186.5, "words": [{"text": "mais", "start": 185.01, "end": 185.14}, {"text": "dessas", "start": 185.14, "end": 185.46}, {"text": "perspectivas", "start": 185.46, "end": 186.09}, {"text": "internas", "start": 186.09, "end": 186.5}]}, {"start": 186.5, "end": 187.04, "words": [{"text": "aí,", "start": 186.5, "end": 186.7}, {"text": "né?", "start": 186.7, "end": 187.04}]}, {"start": 187.1, "end": 188.18, "words": [{"text": "De", "start": 187.1, "end": 187.14}, {"text": "quem", "start": 187.14, "end": 187.34}, {"text": "trabalha", "start": 187.54, "end": 187.74}, {"text": "na", "start": 187.78, "end": 187.85}, {"text": "área", "start": 187.85, "end": 188.05}, {"text": "que", "start": 188.05, "end": 188.18}]}, {"start": 188.26, "end": 189.61, "words": [{"text": "você,", "start": 188.26, "end": 188.43}, {"text": "por", "start": 188.51, "end": 188.64}, {"text": "favor,", "start": 188.64, "end": 189.01}, {"text": "dê", "start": 189.01, "end": 189.11}, {"text": "uma", "start": 189.11, "end": 189.26}, {"text": "curtida", "start": 189.26, "end": 189.61}]}, {"start": 189.61, "end": 190.62, "words": [{"text": "nesse", "start": 189.61, "end": 189.78}, {"text": "vídeo", "start": 189.89, "end": 190.08}, {"text": "aí", "start": 190.13, "end": 190.34}, {"text": "e", "start": 190.38, "end": 190.43}, {"text": "me", "start": 190.41, "end": 190.46}, {"text": "siga", "start": 190.46, "end": 190.62}]}, {"start": 190.79, "end": 191.92, "words": [{"text": "para", "start": 190.79, "end": 190.84}, {"text": "eu", "start": 190.85, "end": 190.87}, {"text": "continuar", "start": 190.87, "end": 191.25}, {"text": "trazendo", "start": 191.25, "end": 191.58}, {"text": "esse", "start": 191.58, "end": 191.74}, {"text": "tipo", "start": 191.81, "end": 191.92}]}, {"start": 191.92, "end": 192.63, "words": [{"text": "de", "start": 191.92, "end": 192.0}, {"text": "conteúdo", "start": 192.0, "end": 192.34}, {"text": "aqui.", "start": 192.34, "end": 192.63}]}];
+          const q = function (t) { return Math.round(t * 30) / 30; };
+
+          cues.forEach(function (cue, i) {
+            var card = "#cg-" + i;
+            tl.set(card, { visibility: "visible", opacity: 1 }, q(cue.start));
+            tl.set(card, { visibility: "hidden", opacity: 0 }, q(cue.end));
+            cue.words.forEach(function (word, j) {
+              var el = "#cg-" + i + "-w-" + j;
+              tl.set(el, { color: "#0A0A0A", backgroundColor: "#FFFFFF" }, q(word.start));
+              tl.set(el, { color: "#FFFFFF", backgroundColor: "transparent" }, q(word.end));
+            });
+          });
+
+          tl.fromTo(
+            "#persistent-handle-inner",
+            { opacity: 0, y: -18 },
+            { opacity: 1, y: 0, duration: 0.35, ease: "power3.out" },
+            0.2
+          );
+
+          tl.fromTo(
+            "#speed-hint-inner",
+            { opacity: 0, y: 12 },
+            { opacity: 1, y: 0, duration: 0.34, ease: "power3.out" },
+            0.45
+          );
+
+          var newsIn = q(140.43333333333334);
+          var newsOut = q(148.16666666666666 - 0.3);
+          tl.set("#news-card", { visibility: "visible" }, newsIn);
+          tl.fromTo("#news-card", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.35, ease: "power2.out" }, newsIn);
+          tl.to("#news-card", { opacity: 0, duration: 0.3, ease: "power2.in" }, newsOut);
+          tl.set("#news-card", { visibility: "hidden" }, q(148.16666666666666));
+
+          window.__timelines = window.__timelines || {};
+          window.__timelines["talking-head-recut"] = tl;
+        })();
+      </script>
+    </div>
+  </body>
+</html>

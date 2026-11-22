@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="pt-BR" data-resolution="portrait"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=1080, height=1920">
+<title>Hype de IA</title><script src="vendor/gsap.min.js"></script>
+<style>html, body {margin: 0; width: 100%; height: 100%; overflow: hidden;} #root {position: relative; width: 100%; height: 100%; overflow: hidden;} .clip {position: absolute; inset: 0;} #a-roll {width: 100%; height: 100%; object-fit: contain;}</style>
+</head><body>
+<div id="root" data-composition-id="hype-ia" data-start="0" data-width="1080" data-height="1920" data-duration="140.16666636363635">
+<video id="a-roll" class="clip" src="assets/input-video.mp4" data-start="0" data-duration="140.16666636363635" data-playback-rate="1.1" data-track-index="0" data-has-audio="true" playsinline></video>
+<div id="openai-source-host" class="clip" data-composition-id="openai-source" data-composition-src="compositions/openai-source.html" data-start="53.95454545454545" data-duration="7.86363636363636" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index: 10"></div>
+<div id="profile-host" class="clip" data-composition-id="profile" data-composition-src="compositions/profile.html" data-start="0" data-duration="140.16666636363635" data-track-index="2" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index: 20"></div>
+<div id="speed-hint-host" class="clip" data-composition-id="speed-hint" data-composition-src="compositions/speed-hint.html" data-start="0.40909090909090906" data-duration="3.0909090909090904" data-track-index="3" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index: 30"></div>
+<div id="captions-host" class="clip" data-composition-id="captions" data-composition-src="compositions/captions.html" data-start="0" data-duration="140.16666636363635" data-track-index="4" data-track-kind="captions" data-width="1080" data-height="1920" style="z-index: 40"></div>
+</div><script>window.__timelines["hype-ia"] = gsap.timeline({paused: true});</script>
+</body></html>

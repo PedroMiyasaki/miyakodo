@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quem controla seu IDE decide quais modelos chegam</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;800&family=Inter:wght@400;500;700&display=swap');
+
+:root{
+  --paper:#FFFFFF;
+  --ink:#0A0A0A;
+  --display:"Bricolage Grotesque",system-ui,sans-serif;
+  --body:"Inter",system-ui,sans-serif;
+  --pad:88px;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  background:#555;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:40px;
+  padding:40px;
+}
+
+.slide{
+  position:relative;
+  width:1080px;
+  height:1350px;
+  overflow:hidden;
+  padding:var(--pad);
+  background:var(--paper);
+  color:var(--ink);
+  display:flex;
+  flex-direction:column;
+}
+
+.slide.inv{background:var(--ink);color:var(--paper)}
+
+.slide::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background-image:radial-gradient(currentColor .5px,transparent .6px);
+  background-size:4px 4px;
+  opacity:.05;
+  z-index:4;
+}
+
+.mark{
+  position:relative;
+  z-index:2;
+  font:500 22px/1 var(--body);
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  opacity:.55;
+}
+
+.hl{
+  position:relative;
+  z-index:2;
+  font-family:var(--display);
+  font-weight:800;
+  letter-spacing:-.025em;
+  line-height:.94;
+  margin-top:52px;
+}
+
+.cover .hl{
+  font-size:86px;
+  line-height:.92;
+  margin-top:44px;
+  max-width:900px;
+}
+.body-slide .hl{font-size:86px}
+.cta .hl{
+  font-size:118px;
+  text-align:center;
+  margin-top:128px;
+}
+
+.sub{
+  position:relative;
+  z-index:2;
+  font:400 44px/1.3 var(--body);
+  margin-top:30px;
+  max-width:30ch;
+}
+
+.cover .sub{
+  font-size:36px;
+  line-height:1.22;
+  font-weight:500;
+  max-width:30ch;
+  margin-top:22px;
+}
+.cta .sub{
+  font-size:46px;
+  text-align:center;
+  margin:36px auto 0;
+  max-width:25ch;
+}
+
+.art{
+  position:relative;
+  z-index:1;
+  margin-top:auto;
+  display:flex;
+  justify-content:center;
+  align-items:flex-end;
+}
+
+.cover .art{
+  position:absolute;
+  left:88px;
+  right:88px;
+  bottom:54px;
+  height:520px;
+  justify-content:flex-start;
+  overflow:hidden;
+}
+.text-only{
+  justify-content:flex-start;
+}
+.cta .art{
+  height:280px;
+  margin-top:48px;
+}
+
+svg{display:block;overflow:visible}
+.logo-pair image{
+  display:block;
+}
+.svg-label{
+  font-family:var(--body);
+  font-weight:700;
+  letter-spacing:.06em;
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <filter id="rough" x="-25%" y="-25%" width="150%" height="150%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="3" seed="11" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="7" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="rough2" x="-25%" y="-25%" width="150%" height="150%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.022" numOctaves="3" seed="4" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="6" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <pattern id="ht-dark" width="11" height="11" patternUnits="userSpaceOnUse">
+      <circle cx="5.5" cy="5.5" r="2.1" fill="#0A0A0A"/>
+    </pattern>
+    <pattern id="ht-light" width="11" height="11" patternUnits="userSpaceOnUse">
+      <circle cx="5.5" cy="5.5" r="2.1" fill="#FFFFFF"/>
+    </pattern>
+    <filter id="photo-bw" color-interpolation-filters="sRGB">
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+  </defs>
+</svg>
+
+<!-- Template: mark, headline, compact support, one bottom-third geometric diagram.
+     Cover and CTA invert to frame the deck. Artwork carries the lower optical mass. -->
+
+<section class="slide inv cover">
+  <div class="mark">@pedro.miyasaki.ia</div>
+  <h1 class="hl">A SpaceX comprou o Cursor. E a OpenAI não gostou nada disso.</h1>
+  <p class="sub">Entenda o caso que abalou o mercado de inteligência artificial esta semana.</p>
+
+  <!-- Photo: NASA/Kim Shiflett, 8 Apr 2016, public-domain NASA work.
+       Source: https://commons.wikimedia.org/wiki/File:Elon_Musk_at_the_SpaceX_CRS-8_post-launch_press_conference_(25711174644)_(cropped).jpg -->
+  <div class="art">
+    <svg width="904" height="520" viewBox="0 0 904 520" fill="none" aria-hidden="true">
+      <image
+        href="./images/elon-musk-nasa-kim-shiflett.jpg"
+        x="0"
+        y="-110"
+        width="904"
+        height="1205"
+        preserveAspectRatio="none"
+        filter="url(#photo-bw)"
+      />
+      <rect x="4" y="4" width="896" height="512" fill="none" stroke="#FFFFFF" stroke-width="7" filter="url(#rough)"/>
+    </svg>
+  </div>
+</section>
+
+<section class="slide body-slide">
+  <div class="mark">@pedro.miyasaki.ia</div>
+  <h2 class="hl">Antes da compra, o Cursor distribuía modelos da OpenAI dentro do editor.</h2>
+  <p class="sub">Isso era possível porque as duas empresas tinham um contrato próprio, que definia como o Cursor poderia oferecer esses modelos aos seus usuários.</p>
+
+  <div class="art">
+    <svg class="logo-pair" width="904" height="320" viewBox="0 0 904 320" fill="none" aria-hidden="true">
+      <image href="./images/cursor-logo.png" x="86" y="48" width="180" height="180"/>
+      <image href="./images/openai-logo.svg" x="638" y="58" width="180" height="180"/>
+      <g filter="url(#rough)" stroke="#0A0A0A" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M310 168 H594"/>
+        <path d="M342 136 L310 168 L342 200"/>
+        <path d="M562 136 L594 168 L562 200"/>
+      </g>
+      <text x="452" y="128" text-anchor="middle" class="svg-label" font-size="28" fill="#0A0A0A">CONTRATO</text>
+      <text x="176" y="292" text-anchor="middle" class="svg-label" font-size="28" fill="#0A0A0A">CURSOR</text>
+      <text x="728" y="292" text-anchor="middle" class="svg-label" font-size="28" fill="#0A0A0A">OPENAI</text>
+    </svg>
+  </div>
+</section>
+
+<section class="slide body-slide">
+  <div class="mark">@pedro.miyasaki.ia</div>
+  <h2 class="hl">O contrato deixava a OpenAI sair caso o Cursor mudasse de dono.</h2>
+  <p class="sub">Quando a SpaceX concluiu a compra, essa mudança de controle ativou uma janela limitada em que a OpenAI poderia cancelar o acordo.</p>
+
+  <div class="art">
+    <svg width="904" height="380" viewBox="0 0 904 380" fill="none" aria-hidden="true">
+      <g filter="url(#rough2)" transform="translate(-9,7)">
+        <rect x="262" y="18" width="380" height="344" rx="8" fill="url(#ht-dark)"/>
+      </g>
+      <g filter="url(#rough)" stroke="#0A0A0A" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="262" y="18" width="380" height="344" rx="8"/>
+        <path d="M262 78 H642"/>
+        <path d="M314 118 H592 M314 164 H560 M314 210 H580 M314 256 H544"/>
+        <path d="M304 86 L600 332 M600 86 L304 332"/>
+      </g>
+    </svg>
+  </div>
+</section>
+
+<section class="slide body-slide text-only">
+  <div class="mark">@pedro.miyasaki.ia</div>
+  <h2 class="hl">A OpenAI acionou a cláusula porque diz não confiar nas empresas de Elon Musk.</h2>
+  <p class="sub">Segundo a OpenAI, empresas de Musk já haviam descumprido contratos e termos de uso antes, então ela não confiava que a SpaceX respeitaria as regras aplicadas aos seus modelos.</p>
+</section>
+
+<section class="slide body-slide">
+  <div class="mark">@pedro.miyasaki.ia</div>
+  <h2 class="hl">Isso não remove todos os modelos agora, mas já muda o futuro do catálogo.</h2>
+  <p class="sub">Os modelos atuais ficam disponíveis durante o aviso, com encerramento proposto para 12 de novembro. Já os próximos modelos, incluindo o Astra, não entraram no Cursor conforme o novo contrato.</p>
+
+  <div class="art">
+    <svg width="904" height="340" viewBox="0 0 904 340" fill="none" aria-hidden="true">
+      <g filter="url(#rough2)" transform="translate(-9,7)">
+        <rect x="212" y="28" width="480" height="246" rx="14" fill="url(#ht-dark)"/>
+      </g>
+      <g filter="url(#rough)" stroke="#0A0A0A" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="212" y="28" width="480" height="246" rx="14"/>
+        <path d="M212 82 H692"/>
+        <path d="M268 132 H540 M268 182 H510 M268 232 H558"/>
+        <circle cx="624" cy="132" r="24"/>
+        <path d="M612 132 l10 10 18-22"/>
+        <circle cx="624" cy="182" r="24"/>
+        <path d="M612 182 l10 10 18-22"/>
+      </g>
+      <text x="452" y="65" text-anchor="middle" class="svg-label" font-size="24" fill="#0A0A0A">MODELOS ATUAIS</text>
+      <text x="452" y="322" text-anchor="middle" class="svg-label" font-size="27" fill="#0A0A0A">ATÉ 12 NOV</text>
+    </svg>
+  </div>
+</section>
+
+<section class="slide body-slide text-only">
+  <div class="mark">@pedro.miyasaki.ia</div>
+  <h2 class="hl">Assinar uma IDE também é escolher o catálogo e os conflitos de quem controla a ferramenta.</h2>
+  <p class="sub">Quando o grupo que controla um laboratório de IA compra uma ferramenta de programação, o catálogo deixa de ser neutro e passa a depender de contratos, concorrência e relações comerciais que podem mudar a qualquer momento.</p>
+</section>
+
+<section class="slide inv cta">
+  <div class="mark">@pedro.miyasaki.ia</div>
+  <h2 class="hl">Qual harness de codificação você usa?</h2>
+  <p class="sub">Prefere pagar por uso ou assumir o risco de assinar algum provedor? Diga sua opinião.</p>
+
+  <div class="art">
+    <svg width="904" height="280" viewBox="0 0 904 280" fill="none" aria-hidden="true">
+      <g filter="url(#rough2)" transform="translate(-9,8)">
+        <rect x="48" y="48" width="360" height="184" rx="12" fill="url(#ht-light)"/>
+        <rect x="496" y="48" width="360" height="184" rx="12" fill="url(#ht-light)"/>
+      </g>
+      <g filter="url(#rough)" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="48" y="48" width="360" height="184" rx="12"/>
+        <rect x="496" y="48" width="360" height="184" rx="12"/>
+      </g>
+      <text x="228" y="160" text-anchor="middle" class="svg-label" font-size="42" fill="#FFFFFF">POR USO</text>
+      <text x="676" y="160" text-anchor="middle" class="svg-label" font-size="42" fill="#FFFFFF">ASSINAR</text>
+    </svg>
+  </div>
+</section>
+
+</body>
+</html>

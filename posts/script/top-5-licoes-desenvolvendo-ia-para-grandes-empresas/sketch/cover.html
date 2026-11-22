@@ -1,0 +1,88 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;800&family=Inter:wght@400;500;700&display=swap');
+
+:root{
+  --paper:#FFFFFF; --ink:#0A0A0A;
+  --display:"Bricolage Grotesque",system-ui,sans-serif;
+  --body:"Inter",system-ui,sans-serif;
+  --pad:88px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#555;display:flex;flex-wrap:wrap;gap:40px;padding:40px;justify-content:center}
+
+.slide{
+  position:relative;width:1080px;height:1350px;overflow:hidden;
+  padding:var(--pad);background:var(--paper);color:var(--ink);
+  display:flex;flex-direction:column;
+}
+.slide.inv{background:var(--ink);color:var(--paper)}
+.slide::after{
+  content:"";position:absolute;inset:0;pointer-events:none;z-index:9;
+  background-image:radial-gradient(currentColor .5px,transparent .6px);
+  background-size:4px 4px;opacity:.05;
+}
+.mark{font:500 22px/1 var(--body);letter-spacing:.18em;text-transform:uppercase;opacity:.55}
+
+.hook{font-family:var(--display);font-weight:800;letter-spacing:-.025em;line-height:.94;font-size:104px;margin-top:52px;text-wrap:balance}
+.bd{font:400 46px/1.32 var(--body);max-width:30ch;margin-top:34px}
+.art{margin-top:auto;display:flex;justify-content:center;align-items:flex-end}
+</style>
+
+<style>
+/* 9:16 for the Reels tab. The grid crops back to the central 1080x1350
+   (y 285-1635), so the hook, the support line and the art stay inside
+   that band. Only the mark sits in the top bleed. */
+.slide{height:1920px}
+.hook{margin-top:196px;font-size:96px}
+.bd{margin-top:40px;opacity:.72;font-size:42px;max-width:26ch}
+.art{margin-top:96px;align-items:flex-start}
+</style>
+
+<style>
+@font-face{font-family:"Bricolage Grotesque";font-weight:800;font-style:normal;
+  src:url("../../../../videos/ia-torna-dados-juridicos-estruturaveis-a-area-vai-ser-disruptada/capa/bricolage-800.woff2") format("woff2")}
+@font-face{font-family:"Inter";font-weight:400;font-style:normal;
+  src:url("../../../../videos/top-5-licoes-desenvolvendo-ia-para-grandes-empresas/public/fonts/Inter-400-latin.woff2") format("woff2")}
+@font-face{font-family:"Inter";font-weight:500;font-style:normal;
+  src:url("../../../../videos/ia-torna-dados-juridicos-estruturaveis-a-area-vai-ser-disruptada/capa/inter-500.woff2") format("woff2")}
+</style>
+
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <filter id="rough" x="-25%" y="-25%" width="150%" height="150%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="3" seed="11" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="7" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="rough2" x="-25%" y="-25%" width="150%" height="150%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.022" numOctaves="3" seed="4" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="6" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <pattern id="ht-light" width="11" height="11" patternUnits="userSpaceOnUse"><circle cx="5.5" cy="5.5" r="2.1" fill="#FFFFFF"/></pattern>
+  </defs>
+</svg>
+
+<div class="slide inv">
+  <div class="mark">@pedro.miyasaki.ia</div>
+  <div class="hook">Cinco lições que eu aprendi desenvolvendo IA para grandes empresas.</div>
+  <div class="bd">Já fazem cinco anos. A melhor eu deixo por último.</div>
+  <div class="art">
+    <svg width="900" height="400" viewBox="0 0 900 400">
+      <!-- four equal lessons, the fifth one taller: the one saved for the end -->
+      <g filter="url(#rough2)" transform="translate(-9,7)">
+        <rect x="36" y="214" width="128" height="126" fill="url(#ht-light)"/>
+        <rect x="208" y="214" width="128" height="126" fill="url(#ht-light)"/>
+        <rect x="380" y="214" width="128" height="126" fill="url(#ht-light)"/>
+        <rect x="552" y="214" width="128" height="126" fill="url(#ht-light)"/>
+        <rect x="724" y="70" width="128" height="270" fill="url(#ht-light)"/>
+      </g>
+      <g filter="url(#rough)" fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 348 H880"/>
+        <rect x="36" y="214" width="128" height="126"/>
+        <rect x="208" y="214" width="128" height="126"/>
+        <rect x="380" y="214" width="128" height="126"/>
+        <rect x="552" y="214" width="128" height="126"/>
+        <rect x="724" y="70" width="128" height="270"/>
+      </g>
+    </svg>
+  </div>
+</div>

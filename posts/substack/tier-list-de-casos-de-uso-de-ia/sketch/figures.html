@@ -1,0 +1,88 @@
+<!doctype html><html lang="pt-BR"><meta charset="utf-8"><title>IA no trabalho de especialistas · Figuras</title><style>
+:root{
+  --paper:#FFFFFF;
+  --ink:#0A0A0A;
+  --display:"Bricolage Grotesque",system-ui,sans-serif;
+  --body:"Inter",system-ui,sans-serif;
+  --pad:88px;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#555;display:flex;flex-direction:column;align-items:center;gap:40px;padding:40px}
+
+.slide{
+  position:relative;
+  width:1080px;height:1350px;
+  overflow:hidden;
+  padding:var(--pad);
+  background:var(--paper);
+  color:var(--ink);
+  display:flex;flex-direction:column;
+}
+.slide.inv{background:var(--ink);color:var(--paper)}
+
+/* paper grain */
+.slide::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:radial-gradient(currentColor .5px,transparent .6px);
+  background-size:4px 4px;opacity:.05;
+}
+
+.mark{
+  font:500 22px/1 var(--body);
+  letter-spacing:.18em;text-transform:uppercase;
+  opacity:.55;
+}
+
+.hl{
+  font-family:var(--display);font-weight:800;
+  letter-spacing:-.025em;line-height:.94;
+  margin-top:56px;
+}
+.cover .hl{font-size:104px}
+.body-slide .hl{font-size:86px}
+.cta .hl{font-size:118px;text-align:center}
+
+.sub{
+  font:400 46px/1.32 var(--body);
+  margin-top:36px;max-width:30ch;
+}
+.cta .sub{text-align:center;margin:36px auto 0;max-width:26ch}
+
+.art{margin-top:auto;display:flex;justify-content:center;align-items:flex-end}
+.cover .art{justify-content:flex-start}
+</style>
+
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <filter id="rough" x="-25%" y="-25%" width="150%" height="150%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="3" seed="11" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="7" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="rough2" x="-25%" y="-25%" width="150%" height="150%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.022" numOctaves="3" seed="4" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="6" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <pattern id="ht-dark" width="11" height="11" patternUnits="userSpaceOnUse">
+      <circle cx="5.5" cy="5.5" r="2.1" fill="#0A0A0A"/>
+    </pattern>
+    <pattern id="ht-light" width="11" height="11" patternUnits="userSpaceOnUse">
+      <circle cx="5.5" cy="5.5" r="2.1" fill="#FFFFFF"/>
+    </pattern>
+  </defs>
+</svg>
+
+<style>
+@font-face{font-family:'Bricolage Grotesque';font-weight:800;font-style:normal;src:url('assets/bricolage-800.woff2') format('woff2');font-display:block}
+@font-face{font-family:Inter;font-weight:100 900;font-style:normal;src:url('assets/inter.woff2') format('woff2');font-display:block}
+.artboard{position:relative;width:2000px;overflow:hidden;background:#FFFFFF;color:#0A0A0A;flex:none}
+.artboard.inv{background:#0A0A0A;color:#FFFFFF}
+.artboard::after{content:'';position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(currentColor .5px,transparent .6px);background-size:4px 4px;opacity:.05}
+.artboard .mark{position:absolute;left:120px;top:82px;z-index:2;font-size:22px}
+.artboard h1,.artboard h2{position:absolute;left:120px;top:156px;width:1760px;font-family:'Bricolage Grotesque';font-weight:800;line-height:.94;letter-spacing:-.025em;z-index:2}
+.artboard h1{font-size:154px}
+.artboard h2{font-size:86px}
+.artboard svg.diagram{position:absolute;left:0;top:0;width:100%;height:100%}
+.diagram .label{font-family:Inter;font-size:42px;font-weight:500}
+.diagram .outline{fill:none;stroke-width:7;stroke-linecap:round;stroke-linejoin:round;filter:url(#rough)}
+</style><section id="cover" class="artboard inv" style="height:1000px"><div class="mark">@pedro.miyasaki.ia</div><h1>IA no trabalho<br>de especialistas</h1><svg class="diagram" viewBox="0 0 2000 1000" aria-label="IA no trabalho de especialistas"><g filter="url(#rough2)" transform="translate(-9,7)"><rect x="195" y="652" width="245" height="176" fill="url(#ht-light)"/><rect x="790" y="604" width="420" height="246" fill="url(#ht-light)"/><path d="M1580 594 H1760 L1840 674 V850 H1580 Z" fill="url(#ht-light)"/></g><g class="outline" stroke="#FFFFFF"><rect x="160" y="616" width="245" height="176"/><rect x="195" y="652" width="245" height="176"/><path d="M240 706 H357 M240 752 H388"/><rect x="790" y="604" width="420" height="246"/><path d="M850 668 H1150 M850 727 H1090 M850 786 H1120"/><path d="M1580 594 H1760 L1840 674 V850 H1580 Z"/><path d="M1760 594 V674 H1840 M1630 727 H1770 M1630 785 H1740"/></g><g class="outline" stroke="#FFFFFF"><path d="M515 727 L720 727"/><path d="M696 709 L720 727 L696 745"/></g><g class="outline" stroke="#FFFFFF"><path d="M1290 727 L1500 727"/><path d="M1476 709 L1500 727 L1476 745"/></g><text class="label" x="300" y="930" text-anchor="middle" fill="#FFFFFF"><tspan x="300" dy="0">DADOS</tspan></text><text class="label" x="1000" y="930" text-anchor="middle" fill="#FFFFFF"><tspan x="1000" dy="0">ESPECIALISTA</tspan></text><text class="label" x="1710" y="930" text-anchor="middle" fill="#FFFFFF"><tspan x="1710" dy="0">ENTREGA</tspan></text></svg></section><section id="figure01" class="artboard" style="height:1100px"><div class="mark">@pedro.miyasaki.ia</div><h2>O trabalho do especialista</h2><svg class="diagram" viewBox="0 0 2000 1100" aria-label="O trabalho do especialista"><g filter="url(#rough2)" transform="translate(-9,7)"><rect x="350" y="305" width="410" height="150" fill="url(#ht-dark)"/></g><rect x="368" y="323" width="374" height="114" fill="#FFFFFF"/><rect class="outline" x="350" y="305" width="410" height="150" stroke="#0A0A0A"/><text class="label" x="555" y="392" text-anchor="middle" fill="#0A0A0A"><tspan x="555" dy="0">CONTEXTO</tspan></text><g filter="url(#rough2)" transform="translate(-9,7)"><rect x="795" y="305" width="410" height="150" fill="url(#ht-dark)"/></g><rect x="813" y="323" width="374" height="114" fill="#FFFFFF"/><rect class="outline" x="795" y="305" width="410" height="150" stroke="#0A0A0A"/><text class="label" x="1000" y="392" text-anchor="middle" fill="#0A0A0A"><tspan x="1000" dy="0">CONHECIMENTO</tspan></text><g filter="url(#rough2)" transform="translate(-9,7)"><rect x="1240" y="305" width="410" height="150" fill="url(#ht-dark)"/></g><rect x="1258" y="323" width="374" height="114" fill="#FFFFFF"/><rect class="outline" x="1240" y="305" width="410" height="150" stroke="#0A0A0A"/><text class="label" x="1445" y="392" text-anchor="middle" fill="#0A0A0A"><tspan x="1445" dy="0">MÉTODO</tspan></text><g class="outline" stroke="#0A0A0A"><path d="M555 480 L875 620"/><path d="M857 594 L875 620 L893 594"/></g><g class="outline" stroke="#0A0A0A"><path d="M1000 480 L1000 620"/><path d="M982 594 L1000 620 L1018 594"/></g><g class="outline" stroke="#0A0A0A"><path d="M1445 480 L1125 620"/><path d="M1107 594 L1125 620 L1143 594"/></g><g filter="url(#rough2)" transform="translate(-9,7)"><rect x="120" y="660" width="430" height="360" fill="url(#ht-dark)"/></g><rect x="138" y="678" width="394" height="324" fill="#FFFFFF"/><rect class="outline" x="120" y="660" width="430" height="360" stroke="#0A0A0A"/><g filter="url(#rough2)" transform="translate(-9,7)"><rect x="785" y="660" width="430" height="360" fill="url(#ht-dark)"/></g><rect x="803" y="678" width="394" height="324" fill="#FFFFFF"/><rect class="outline" x="785" y="660" width="430" height="360" stroke="#0A0A0A"/><g filter="url(#rough2)" transform="translate(-9,7)"><rect x="1450" y="660" width="430" height="360" fill="url(#ht-dark)"/></g><rect x="1468" y="678" width="394" height="324" fill="#FFFFFF"/><rect class="outline" x="1450" y="660" width="430" height="360" stroke="#0A0A0A"/><g class="outline" stroke="#0A0A0A"><path d="M600 840 L735 840"/><path d="M711 822 L735 840 L711 858"/></g><g class="outline" stroke="#0A0A0A"><path d="M1265 840 L1400 840"/><path d="M1376 822 L1400 840 L1376 858"/></g><text class="label" x="335" y="726" text-anchor="middle" fill="#0A0A0A"><tspan x="335" dy="0">DADOS DE</tspan><tspan x="335" dy="52">ENTRADA</tspan></text><text class="label" x="335" y="858" text-anchor="middle" fill="#0A0A0A"><tspan x="335" dy="0">documentos</tspan><tspan x="335" dy="52">e registros</tspan></text><text class="label" x="1000" y="726" text-anchor="middle" fill="#0A0A0A"><tspan x="1000" dy="0">TRABALHO DO</tspan><tspan x="1000" dy="52">ESPECIALISTA</tspan></text><text class="label" x="1000" y="858" text-anchor="middle" fill="#0A0A0A"><tspan x="1000" dy="0">analisar o caso</tspan><tspan x="1000" dy="52">e aplicar critérios</tspan></text><text class="label" x="1665" y="726" text-anchor="middle" fill="#0A0A0A"><tspan x="1665" dy="0">ENTREGA</tspan><tspan x="1665" dy="52">AO CLIENTE</tspan></text><text class="label" x="1665" y="858" text-anchor="middle" fill="#0A0A0A"><tspan x="1665" dy="0">relatório, análise,</tspan><tspan x="1665" dy="52">recomendação</tspan><tspan x="1665" dy="52">ou plano</tspan></text></svg></section><section id="figure02" class="artboard" style="height:1120px"><div class="mark">@pedro.miyasaki.ia</div><h2>Como a IA participa do trabalho</h2><svg class="diagram" viewBox="0 0 2000 1120" aria-label="Como a IA participa do trabalho"><g filter="url(#rough2)" transform="translate(-9,7)"><rect x="1125" y="290" width="400" height="260" fill="url(#ht-dark)"/></g><rect x="1143" y="308" width="364" height="224" fill="#FFFFFF"/><rect class="outline" x="1125" y="290" width="400" height="260" stroke="#0A0A0A"/><text class="label" x="1325" y="353" text-anchor="middle" fill="#0A0A0A"><tspan x="1325" dy="0">MÉTODO DO</tspan><tspan x="1325" dy="52">TRABALHO</tspan></text><text class="label" x="1325" y="465" text-anchor="middle" fill="#0A0A0A"><tspan x="1325" dy="0">critérios e</tspan><tspan x="1325" dy="52">exemplos</tspan></text><g class="outline" stroke="#0A0A0A"><path d="M1325 565 L1325 600"/><path d="M1307 574 L1325 600 L1343 574"/></g><g filter="url(#rough2)" transform="translate(-9,7)"><rect x="120" y="620" width="300" height="330" fill="url(#ht-dark)"/></g><rect x="138" y="638" width="264" height="294" fill="#FFFFFF"/><rect class="outline" x="120" y="620" width="300" height="330" stroke="#0A0A0A"/><g filter="url(#rough2)" transform="translate(-9,7)"><rect x="470" y="620" width="360" height="330" fill="url(#ht-dark)"/></g><rect x="488" y="638" width="324" height="294" fill="#FFFFFF"/><rect class="outline" x="470" y="620" width="360" height="330" stroke="#0A0A0A"/><g filter="url(#rough2)" transform="translate(-9,7)"><rect x="880" y="620" width="210" height="330" fill="url(#ht-dark)"/></g><rect x="898" y="638" width="174" height="294" fill="#FFFFFF"/><rect class="outline" x="880" y="620" width="210" height="330" stroke="#0A0A0A"/><g filter="url(#rough2)" transform="translate(-9,7)"><rect x="1140" y="620" width="370" height="330" fill="url(#ht-dark)"/></g><rect x="1158" y="638" width="334" height="294" fill="#FFFFFF"/><rect class="outline" x="1140" y="620" width="370" height="330" stroke="#0A0A0A"/><g filter="url(#rough2)" transform="translate(-9,7)"><rect x="1560" y="620" width="320" height="330" fill="url(#ht-dark)"/></g><rect x="1578" y="638" width="284" height="294" fill="#FFFFFF"/><rect class="outline" x="1560" y="620" width="320" height="330" stroke="#0A0A0A"/><g class="outline" stroke="#0A0A0A"><path d="M427 785 L463 785"/><path d="M439 767 L463 785 L439 803"/></g><g class="outline" stroke="#0A0A0A"><path d="M837 785 L873 785"/><path d="M849 767 L873 785 L849 803"/></g><g class="outline" stroke="#0A0A0A"><path d="M1097 785 L1133 785"/><path d="M1109 767 L1133 785 L1109 803"/></g><g class="outline" stroke="#0A0A0A"><path d="M1517 785 L1553 785"/><path d="M1529 767 L1553 785 L1529 803"/></g><text class="label" x="270" y="688" text-anchor="middle" fill="#0A0A0A"><tspan x="270" dy="0">FONTES DA</tspan><tspan x="270" dy="52">EMPRESA</tspan></text><text class="label" x="270" y="833" text-anchor="middle" fill="#0A0A0A"><tspan x="270" dy="0">arquivos e</tspan><tspan x="270" dy="52">registros</tspan></text><text class="label" x="650" y="688" text-anchor="middle" fill="#0A0A0A"><tspan x="650" dy="0">DADOS</tspan><tspan x="650" dy="52">ORGANIZADOS</tspan></text><text class="label" x="650" y="833" text-anchor="middle" fill="#0A0A0A"><tspan x="650" dy="0">conferir e</tspan><tspan x="650" dy="52">atualizar</tspan></text><text class="label" x="985" y="714" text-anchor="middle" fill="#0A0A0A"><tspan x="985" dy="0">MCP</tspan></text><text class="label" x="985" y="833" text-anchor="middle" fill="#0A0A0A"><tspan x="985" dy="0">acesso</tspan><tspan x="985" dy="52">à base</tspan></text><text class="label" x="1325" y="688" text-anchor="middle" fill="#0A0A0A"><tspan x="1325" dy="0">IA DO</tspan><tspan x="1325" dy="52">ESPECIALISTA</tspan></text><text class="label" x="1325" y="833" text-anchor="middle" fill="#0A0A0A"><tspan x="1325" dy="0">a IA que</tspan><tspan x="1325" dy="52">ele já usa</tspan></text><text class="label" x="1720" y="688" text-anchor="middle" fill="#0A0A0A"><tspan x="1720" dy="0">REVISÃO</tspan><tspan x="1720" dy="52">E ENTREGA</tspan></text><text class="label" x="1720" y="833" text-anchor="middle" fill="#0A0A0A"><tspan x="1720" dy="0">conferir e</tspan><tspan x="1720" dy="52">aprovar</tspan></text><text class="label" x="1000" y="1042" text-anchor="middle" fill="#0A0A0A"><tspan x="1000" dy="0">A equipe mantém os dados atualizados e confere o resultado.</tspan></text></svg></section></html>

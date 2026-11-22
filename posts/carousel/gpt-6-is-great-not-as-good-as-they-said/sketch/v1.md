@@ -1,0 +1,56 @@
+SLIDE 1 - COVER
+Headline: 6 fatos mostram onde o GPT-6 termina e o discurso de AGI começa.
+Sub: O modelo é excelente. A propaganda foi além dos dados.
+
+SLIDE 2 - CONTRAST
+Headline: A OpenAI terminou o briefing falando em “era da AGI”, mas não definiu AGI.
+Body: O GPT-6 Astra saiu em 3 de setembro de 2026. Greg Brockman fechou a apresentação com “Welcome to the AGI era”. A frase foi forte. Uma definição formal de AGI não veio junto.
+Proof: Briefing de lançamento da OpenAI, 3 de setembro de 2026.
+
+SLIDE 3 - BENCHMARK CAVEAT
+Headline: O 99,9% mais chamativo veio com o harness da própria OpenAI.
+Body: A OpenAI reportou 99,9% no ARC-AGI-3. A nota da tabela diz que o teste rodou com o harness da Responses API da OpenAI. Isso não invalida o resultado, mas impede tratar o número como evidência neutra.
+Proof: Tabela oficial do GPT-6 Astra e sua nota metodológica.
+
+SLIDE 4 - INDEPENDENT DATA
+Headline: Fora da OpenAI, o GPT-6 empatou com o antecessor e perdeu para o Claude Fable 5.1.
+Body: No Intelligence Index da Artificial Analysis, Astra marcou 61, o mesmo que GPT-5.6 Sol. Claude Fable 5.1 marcou 66. A tabela da OpenAI já mostrava praticamente a mesma ordem: 61,2, 60,9 e 65,7.
+Proof: Artificial Analysis Intelligence Index v4.1.1, 3 de setembro de 2026.
+
+SLIDE 5 - PRICE
+Headline: O preço subiu 2,5 vezes para entregar quase a mesma inteligência.
+Body: A tabela foi de US$ 4/US$ 20 para US$ 10/US$ 50 por milhão de tokens de entrada e saída. Mesmo usando cerca de 10% menos tokens, Astra ficou 75% mais caro por tarefa do Intelligence Index que o Sol.
+Proof: Análise de preço por tarefa da Artificial Analysis.
+
+SLIDE 6 - IMPROVEMENT
+Headline: A melhora mais clara apareceu onde importa: o modelo alucina muito menos.
+Body: No AA-Omniscience, em esforço máximo, a taxa de alucinação caiu de 92% para 51%. A acurácia ainda subiu 4 pontos. Esse é um ganho grande, mesmo com 51% longe de ser um número confortável.
+Proof: AA-Omniscience, Artificial Analysis.
+
+SLIDE 7 - MIXED RESULTS
+Headline: Em trabalho de conhecimento, o GPT-6 avançou 80 pontos e perdeu outros 80.
+Body: Astra ganhou cerca de 80 pontos Elo no AA-Briefcase, que mede projetos longos. No GDPval-AA v2, caiu perto de 80. Progresso real, mas irregular. A OpenAI não incluiu o GDPval no material de lançamento.
+Proof: AA-Briefcase e GDPval-AA v2, Artificial Analysis.
+
+SLIDE 8 - REFRAME
+Headline: O GPT-6 é excelente. A evidência de uma “era da AGI” não acompanhou.
+Body: Um dos melhores modelos disponíveis pode empatar com o antecessor num índice, perder para um rival e ainda melhorar muito em alucinação. Isso é avanço. Só não é a mesma coisa que provar AGI.
+Proof: Leitura conjunta dos resultados oficiais e independentes.
+
+SLIDE 9 - CTA
+Headline: Agora escolha: AGI ou ótimo upgrade?
+Action: Qual das duas descrições combina mais com esses 6 fatos?
+
+---
+
+O GPT-6 Astra é excelente. O problema é a distância entre o modelo e o palco.
+
+A OpenAI encerrou o briefing de 3 de setembro com “Welcome to the AGI era”. Dois dias depois, os números independentes contam uma história menos cinematográfica: empate com o GPT-5.6 Sol no Intelligence Index, preço 2,5 vezes maior e resultados mistos em trabalho de conhecimento.
+
+Nada disso transforma o Astra num modelo ruim. A queda na taxa de alucinação, de 92% para 51% no AA-Omniscience, é uma melhora enorme. Mas um ótimo lançamento não precisa de uma definição elástica de AGI para parecer importante.
+
+Depois desses dados, você chama de AGI ou de ótimo upgrade?
+
+Fontes: OpenAI e Artificial Analysis, 3 de setembro de 2026.
+
+#GPT6 #InteligenciaArtificial #OpenAI #AGI #Benchmarks

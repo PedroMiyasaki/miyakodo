@@ -1,0 +1,576 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GPT-6 Astra: modelo e discurso</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;800&family=Inter:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&display=swap');
+
+:root{
+  --paper:#FFFFFF;
+  --ink:#0A0A0A;
+  --display:"Bricolage Grotesque",system-ui,sans-serif;
+  --body:"Inter",system-ui,sans-serif;
+  --read:"Newsreader",Georgia,serif;
+  --pad:88px;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  background:#555;
+  display:flex;
+  flex-wrap:wrap;
+  gap:40px;
+  justify-content:center;
+  padding:40px;
+}
+
+.slide{
+  position:relative;
+  width:1080px;
+  height:1350px;
+  overflow:hidden;
+  padding:var(--pad);
+  background:var(--paper);
+  color:var(--ink);
+  display:flex;
+  flex-direction:column;
+}
+.slide.inv{background:var(--ink);color:var(--paper)}
+.slide::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  z-index:9;
+  background-image:radial-gradient(currentColor .5px,transparent .6px);
+  background-size:4px 4px;
+  opacity:.05;
+}
+.mark{
+  font:500 22px/1 var(--body);
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  opacity:.55;
+}
+.headline{
+  margin-top:42px;
+  font-family:var(--display);
+  font-size:72px;
+  font-weight:800;
+  letter-spacing:-.025em;
+  line-height:.95;
+  text-wrap:balance;
+}
+.copy{
+  max-width:38ch;
+  margin-top:28px;
+  font:400 38px/1.35 var(--read);
+}
+.copy p+p{margin-top:18px}
+.proof{font-style:italic}
+.art{
+  flex:1;
+  margin-top:28px;
+  min-height:0;
+  height:auto;
+  display:flex;
+  align-items:stretch;
+  justify-content:center;
+}
+.art svg{
+  width:904px;
+  height:100%;
+  overflow:visible;
+}
+.cover .headline{
+  margin-top:36px;
+  font-size:86px;
+  line-height:.9;
+  text-align:center;
+  width:100%;
+}
+.cover .brand-art{
+  flex:1;
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.cover .brand-art img{
+  width:320px;
+  height:317px;
+  object-fit:contain;
+  filter:invert(1);
+}
+.cover .punch{
+  font-family:var(--display);
+  font-size:86px;
+  font-weight:800;
+  letter-spacing:-.025em;
+  line-height:.9;
+  text-align:center;
+  text-wrap:balance;
+}
+.cover .sub{
+  margin-top:28px;
+  max-width:22ch;
+  align-self:center;
+  font:500 40px/1.22 var(--body);
+  text-align:center;
+}
+.quote-slide .copy{
+  margin-top:24px;
+  max-width:28ch;
+  align-self:center;
+  text-align:center;
+  font:500 36px/1.28 var(--body);
+}
+.quote-slide .q-wrap{
+  flex:1;
+  min-height:0;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.quote-slide .q-txt{
+  font-family:var(--read);
+  font-style:italic;
+  font-weight:400;
+  font-optical-sizing:auto;
+  font-size:88px;
+  line-height:.98;
+  letter-spacing:-.02em;
+  text-align:center;
+  text-wrap:balance;
+}
+.quote-slide .caveat{
+  margin-top:0;
+  margin-bottom:20px;
+  max-width:26ch;
+  align-self:center;
+  text-align:center;
+  font:500 36px/1.28 var(--body);
+}
+.photo-art{
+  margin-top:auto;
+  height:420px;
+  overflow:hidden;
+}
+.quote-slide .photo-art{
+  height:800px;
+  width:1080px;
+  margin-left:calc(0px - var(--pad));
+  margin-bottom:calc(0px - var(--pad));
+}
+.photo-art img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 32%;
+  filter:grayscale(1) contrast(1.08);
+}
+.quote-slide .photo-art img{
+  filter:none;
+}
+.chart-art{
+  flex:1;
+  margin-top:20px;
+  margin-left:-20px;
+  margin-right:-20px;
+  min-height:0;
+  display:flex;
+  align-items:stretch;
+  justify-content:center;
+}
+.chart-art img{
+  display:block;
+  height:100%;
+  width:auto;
+}
+.lead{
+  margin-top:42px;
+  font:500 40px/1.28 var(--body);
+  max-width:32ch;
+}
+.lead + .headline{
+  margin-top:16px;
+}
+.reading .copy{
+  margin-top:36px;
+  max-width:32ch;
+  font:400 36px/1.38 var(--read);
+}
+.reading .copy strong,
+.reading .copy .turn{
+  font-family:var(--display);
+  font-weight:800;
+  font-style:normal;
+}
+.reading .copy .turn{
+  margin-top:22px;
+}
+.chart-frame{
+  position:relative;
+  height:100%;
+  width:fit-content;
+  margin:0 auto;
+}
+.fable-ring{
+  position:absolute;
+  left:6.5%;
+  top:39.5%;
+  width:15.5%;
+  height:36%;
+  overflow:visible;
+  pointer-events:none;
+}
+.fable-ring ellipse{
+  fill:none;
+  stroke:#0A0A0A;
+  stroke-width:3;
+  filter:url(#rough);
+}
+.load-art{
+  flex:1;
+  min-height:0;
+  margin-top:28px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.load-art .svg-ui{
+  font-size:28px;
+  letter-spacing:.08em;
+}
+.cta{
+  justify-content:flex-start;
+}
+.cta .ask{
+  flex:none;
+  margin-top:80px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  align-items:center;
+  text-align:center;
+}
+.cta .headline{
+  margin-top:0;
+  font-size:118px;
+  line-height:.91;
+}
+.cta.article-cta .headline{
+  margin-top:38px;
+  max-width:18ch;
+  font-size:68px;
+  line-height:.96;
+}
+.cta.article-cta .article-copy{
+  max-width:20ch;
+  font:500 43px/1.18 var(--body);
+  text-wrap:balance;
+}
+.cta .sub{
+  max-width:26ch;
+  margin-top:28px;
+  font:400 40px/1.24 var(--body);
+}
+.cta .art{
+  flex:none;
+  height:220px;
+  margin-top:12px;
+}
+.cta .art svg{height:220px}
+.verdict{
+  width:904px;
+  height:100%;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:48px;
+  align-items:stretch;
+}
+.verdict .box{
+  border:7px solid currentColor;
+  filter:url(#rough);
+  min-height:240px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  padding:28px 32px 32px;
+}
+.verdict .kicker{
+  font:500 38px/1.15 var(--body);
+  letter-spacing:0;
+  text-transform:none;
+  opacity:.85;
+}
+.verdict .word{
+  margin-top:18px;
+  font-family:var(--display);
+  font-size:72px;
+  font-weight:800;
+  letter-spacing:-.04em;
+  line-height:.9;
+}
+.verdict .no{
+  border-style:dashed;
+}
+
+.but{
+  margin-top:12px;
+  font-family:var(--display);
+  font-size:72px;
+  font-weight:800;
+  letter-spacing:-.025em;
+  line-height:.9;
+}
+.svg-outline{
+  fill:none;
+  stroke:currentColor;
+  stroke-width:7;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  filter:url(#rough);
+}
+.svg-fill{filter:url(#rough2)}
+.svg-ui{
+  fill:currentColor;
+  font-family:var(--body);
+  font-size:22px;
+  font-weight:500;
+  letter-spacing:.12em;
+}
+.svg-num{
+  fill:currentColor;
+  font-family:var(--display);
+  font-size:70px;
+  font-weight:800;
+  letter-spacing:-.04em;
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <filter id="rough" x="-25%" y="-25%" width="150%" height="150%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="3" seed="11" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="7" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="rough2" x="-25%" y="-25%" width="150%" height="150%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.022" numOctaves="3" seed="4" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="6" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <pattern id="ht-dark" width="11" height="11" patternUnits="userSpaceOnUse">
+      <circle cx="5.5" cy="5.5" r="2.1" fill="#0A0A0A"/>
+    </pattern>
+    <pattern id="ht-light" width="11" height="11" patternUnits="userSpaceOnUse">
+      <circle cx="5.5" cy="5.5" r="2.1" fill="#FFFFFF"/>
+    </pattern>
+  </defs>
+</svg>
+
+<section class="slide inv cover">
+  <div class="mark">@pedro.miyasaki.ia</div>
+  <h1 class="headline">O ChatGPT-6 é ótimo</h1>
+  <div class="brand-art">
+    <img src="openai-logo.svg" alt="Símbolo da OpenAI">
+  </div>
+  <p class="punch">Mas se acalmem, a AGI ainda não está entre nós</p>
+</section>
+
+<section class="slide quote-slide">
+  <div class="mark">@pedro.miyasaki.ia</div>
+  <div class="copy">
+    <p>Greg Brockman fechou o lançamento do GPT-6 dizendo:</p>
+  </div>
+  <div class="q-wrap">
+    <h2 class="q-txt">“Welcome to the AGI era”</h2>
+  </div>
+  <p class="caveat">Mas o conceito de AGI ainda não é algo bem definido</p>
+  <div class="photo-art">
+    <img src="greg-brockman.jpg" alt="Greg Brockman">
+  </div>
+</section>
+
+<section class="slide reading">
+  <div class="mark">@pedro.miyasaki.ia</div>
+  <div class="copy">
+    <p>O <strong>ARC-AGI-3</strong> é um teste que mede a capacidade de um modelo no eixo AGI. Ele gera um mini-game nunca visto pela IA, o que teoricamente testa a capacidade dela de generalizar inteligência em tarefas novas. Nesse contexto, o ChatGPT-6 foi muito bem, com 99,9% de acerto.</p>
+    <p class="turn">Mas tem um detalhe importante...</p>
+  </div>
+  <div class="art">
+    <svg viewBox="0 0 904 520" aria-hidden="true">
+      <g class="svg-fill" transform="translate(-9,7)" fill="url(#ht-dark)">
+        <rect x="92" y="140" width="200" height="140"/>
+        <rect x="612" y="308" width="200" height="140"/>
+      </g>
+      <g class="svg-outline">
+        <rect x="70" y="36" width="764" height="448" rx="16"/>
+        <path d="M94 108 H810"/>
+        <circle cx="118" cy="72" r="8"/>
+        <circle cx="150" cy="72" r="8"/>
+        <circle cx="182" cy="72" r="8"/>
+        <rect x="92" y="140" width="200" height="140"/>
+        <rect x="352" y="140" width="200" height="140"/>
+        <rect x="612" y="140" width="200" height="140"/>
+        <rect x="92" y="308" width="200" height="140"/>
+        <rect x="352" y="308" width="200" height="140"/>
+        <rect x="612" y="308" width="200" height="140"/>
+        <path d="M292 210 H352"/>
+        <path d="M320 186 L352 210 L320 234"/>
+        <path d="M552 210 H612"/>
+        <path d="M580 186 L612 210 L580 234"/>
+        <path d="M712 280 V308"/>
+        <path d="M688 288 L712 308 L736 288"/>
+      </g>
+    </svg>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="mark">@pedro.miyasaki.ia</div>
+  <h2 class="headline">Os testes foram executados internamente pela OpenAI</h2>
+  <div class="copy">
+    <p>Em uma analogia simples, isso é como se uma escola estivesse tentando provar que seus alunos são melhores fazendo uma prova internamente como medida. O ideal mesmo seria que esses alunos fossem testados por uma instituição independente.</p>
+  </div>
+  <div class="art">
+    <svg viewBox="0 0 904 520" aria-hidden="true">
+      <g class="svg-fill" transform="translate(-9,7)">
+        <circle cx="452" cy="290" r="168" fill="url(#ht-dark)"/>
+      </g>
+      <g class="svg-outline">
+        <rect x="70" y="36" width="764" height="448" rx="16"/>
+        <circle cx="452" cy="290" r="168"/>
+        <path d="M94 108 H810"/>
+        <circle cx="118" cy="72" r="8"/>
+        <circle cx="150" cy="72" r="8"/>
+        <circle cx="182" cy="72" r="8"/>
+      </g>
+      <text x="214" y="84" class="svg-ui" font-size="28">ARC-AGI-3</text>
+      <text x="452" y="322" text-anchor="middle" class="svg-num" font-size="128">99,9%</text>
+    </svg>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="mark">@pedro.miyasaki.ia</div>
+  <h2 class="headline">E no caso do GPT-6, isso aconteceu mesmo.</h2>
+  <div class="copy">
+    <p>No Intelligence Index, o GPT-6 fez 61 pontos, a mesma qualidade que o modelo da série anterior, o GPT-5.6. Já o Claude Fable 5.1 da concorrência fez 66 pontos.</p>
+  </div>
+  <div class="chart-art">
+    <div class="chart-frame">
+      <img src="aa-intelligence-index.png" alt="Artificial Analysis Intelligence Index">
+      <svg class="fable-ring" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+        <ellipse cx="50" cy="50" rx="46" ry="46"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="mark">@pedro.miyasaki.ia</div>
+  <p class="lead">E o fato mais importante: apesar do resultado não ter mudado no Artificial Analysis,</p>
+  <h2 class="headline">o preço do GPT-6 não é nada convidativo.</h2>
+  <div class="copy">
+    <p>O milhão de tokens de entrada saiu de 4 dólares para 10. O de saída, de 20 para 50. 150% mais caro, e praticamente o mesmo resultado.</p>
+  </div>
+  <div class="art">
+    <svg viewBox="0 0 904 300" aria-hidden="true">
+      <g class="svg-fill" transform="translate(-9,7)" fill="url(#ht-dark)">
+        <rect x="90" y="162" width="150" height="100"/>
+        <rect x="664" y="42" width="150" height="220"/>
+      </g>
+      <g class="svg-outline">
+        <rect x="90" y="162" width="150" height="100"/>
+        <rect x="664" y="42" width="150" height="220"/>
+        <path d="M240 154 C340 28 500 22 664 108"/>
+        <path d="M628 70 L666 108 L622 118"/>
+        <path d="M30 264 H874"/>
+      </g>
+      <text x="165" y="229" text-anchor="middle" class="svg-num" font-size="56">4</text>
+      <text x="739" y="176" text-anchor="middle" class="svg-num" font-size="56">10</text>
+      <text x="452" y="36" text-anchor="middle" class="svg-num" font-size="48">+150%</text>
+    </svg>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="mark">@pedro.miyasaki.ia</div>
+  <h2 class="headline">Apesar disso, o modelo ainda apresentou sim grandes melhoras em alguns testes independentes, como o de alucinação.</h2>
+  <div class="copy">
+    <p>A taxa de alucinação caiu de 92% para 51%. Ainda é alta. Mas é o salto mais claro desse lançamento.</p>
+  </div>
+  <div class="art">
+    <svg viewBox="0 0 904 300" aria-hidden="true">
+      <g class="svg-fill" transform="translate(-9,7)" fill="url(#ht-dark)">
+        <rect x="120" y="28" width="220" height="234"/>
+        <rect x="564" y="132" width="220" height="130"/>
+      </g>
+      <g class="svg-outline">
+        <rect x="120" y="28" width="220" height="234"/>
+        <rect x="564" y="132" width="220" height="130"/>
+        <path d="M374 92 H530"/>
+        <path d="M494 58 L532 92 L494 126"/>
+        <path d="M70 264 H834"/>
+      </g>
+      <text x="230" y="174" text-anchor="middle" class="svg-num">92%</text>
+      <text x="674" y="218" text-anchor="middle" class="svg-num">51%</text>
+    </svg>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="mark">@pedro.miyasaki.ia</div>
+  <div class="art" style="flex:none;height:280px;margin-top:36px">
+    <div class="verdict">
+      <div class="box">
+        <div class="kicker">Modelo melhor?</div>
+        <div class="word">Sim</div>
+      </div>
+      <div class="box no">
+        <div class="kicker">AGI?</div>
+        <div class="word">Ainda não</div>
+      </div>
+    </div>
+  </div>
+  <div class="copy">
+    <p>O modelo empatou em muitos testes importantes com o anterior, e ainda está abaixo do Fable 5.1, lançado na mesma semana pela Anthropic. Se a Anthropic, que também tem conflito de interesse, não puxou o argumento de AGI, acho seguro dizer que ainda não estamos lá.</p>
+  </div>
+  <div class="load-art">
+    <svg viewBox="0 0 904 160" aria-hidden="true">
+      <g class="svg-fill" transform="translate(-9,7)" fill="url(#ht-dark)">
+        <rect x="0" y="58" width="723" height="52"/>
+      </g>
+      <g class="svg-outline">
+        <rect x="0" y="58" width="904" height="52"/>
+      </g>
+      <text x="0" y="36" class="svg-ui" font-size="28">AGI incoming...</text>
+    </svg>
+  </div>
+</section>
+
+<section class="slide inv cta article-cta">
+  <div class="mark">@pedro.miyasaki.ia</div>
+  <div class="ask">
+    <p class="article-copy">Eu escrevi um artigo detalhando melhor esse comparativo entre o GPT-6 e os modelos que já foram lançados.</p>
+    <h2 class="headline">Comenta<br>“COMPARATIVO”<br>e eu te envio!</h2>
+  </div>
+  <div class="art">
+    <svg viewBox="0 0 904 250" aria-hidden="true">
+      <g class="svg-fill" transform="translate(-9,7)">
+        <path d="M122 20 H782 V168 H508 L420 232 V168 H122 Z" fill="url(#ht-light)"/>
+      </g>
+      <g class="svg-outline" stroke="#FFFFFF">
+        <path d="M122 20 H782 V168 H508 L420 232 V168 H122 Z"/>
+        <path d="M198 76 H706 M198 120 H580"/>
+      </g>
+    </svg>
+  </div>
+</section>
+
+</body>
+</html>
