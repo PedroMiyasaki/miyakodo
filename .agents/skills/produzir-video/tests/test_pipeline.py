@@ -7,7 +7,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from pipeline.audio import keep_ranges, parse_silences, range_duration, remap_time, write_wav
-from pipeline.brand import SCENE_TYPES
+from pipeline.brand import AVATAR_ASPECT, LAYOUT_SPOTS, SAFE_BOTTOM, SAFE_RIGHT, SCENE_TOP, SCENE_TYPES
 from pipeline.captions import group_words, tag_roles
 from pipeline.compile import ScriptError, compile_script
 from pipeline.compose import render_html
@@ -132,12 +132,38 @@ class CompileTests(unittest.TestCase):
             "quote": {"text": "Uma frase.", "by": "Pedro"},
             "badge": {"text": "fica"},
             "stack": {"children": [{"type": "badge", "text": "a"}, {"type": "quote", "text": "b", "by": ""}]},
+            "statement": {"kicker": "Ideia", "text": "Sem interface"},
+            "carlos": {"pose": "boss", "line": "o empresário"},
+            "versus": {"left": "Pessoa", "right": "Agente", "left_items": ["tela"], "right_items": ["API"], "pose": "squat"},
         }
         for kind in SCENE_TYPES:
             html, ops, sfx = build_scene("p", 0, 0, 400, 300, {"type": kind, **sample[kind]}, 0.2, 2.0)
             self.assertIn("p", html)
             self.assertTrue(ops)
             self.assertTrue(sfx)
+
+
+class SafeZoneTests(unittest.TestCase):
+    def test_faceless_spots_clear_caption_footer_and_buttons(self):
+        def overlaps(a, b):
+            ax, ay, aw, ah = a
+            bx, by, bw, bh = b
+            return ax < bx + bw and ax + aw > bx and ay < by + bh and ay + ah > by
+
+        for name, spot in LAYOUT_SPOTS.items():
+            sx, sy, sw, sh = spot["scene"]
+            self.assertGreaterEqual(sy, SCENE_TOP, name)
+            self.assertLessEqual(sx + sw, SAFE_RIGHT, name)
+            self.assertLessEqual(sy + sh, SAFE_BOTTOM, name)
+            left, top, width, opacity = spot["avatar"]
+            height = width * AVATAR_ASPECT
+            if not opacity:
+                continue
+            box = (left, top, width, height)
+            self.assertGreaterEqual(top, SCENE_TOP, name)
+            self.assertLessEqual(left + width, SAFE_RIGHT, name)
+            self.assertLessEqual(top + height, SAFE_BOTTOM + 0.5, name)
+            self.assertFalse(overlaps(box, (sx, sy, sw, sh)), name)
 
 
 class BuildTests(unittest.TestCase):

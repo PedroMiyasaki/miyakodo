@@ -11,7 +11,9 @@ from pipeline.brand import (
     LARANJA,
     MUTED,
     OFFWHITE,
+    OLIVA,
     PAPER,
+    ROSA,
     SFX_FILES,
     VERDE,
 )
@@ -22,7 +24,13 @@ def render_html(model: dict) -> str:
     mode = model["mode"]
     groups_html = _captions(model)
     videos_html = _videos(model)
-    stage = _stage(model)
+    stage = model["scenes_html"]
+    grain = ""
+    if mode == "sem-gravacao":
+        grain = (
+            f'<div id="grain" class="clip" data-start="0" data-duration="{duration}" '
+            f'data-track-index="1"></div>'
+        )
     avatar = ""
     if mode == "sem-gravacao":
         avatar = (
@@ -63,6 +71,7 @@ def render_html(model: dict) -> str:
 <body>
   <div id="root" data-composition-id="main" data-start="0" data-width="1080" data-height="1920" data-duration="{duration}" data-fps="{model["fps"]}">
     <div id="bg" class="clip" data-start="0" data-duration="{duration}" data-track-index="0"></div>
+    {grain}
     {videos_html}
     {stage}
     {avatar}
@@ -107,15 +116,25 @@ def render_html(model: dict) -> str:
         avatar.lifts.forEach((at) => {{
           tl.to("#av-brows", {{ y: -7, duration: 0.16, yoyo: true, repeat: 1, ease: "power2.out" }}, at);
         }});
-        avatar.moves.forEach((move, index) => {{
-          const vars = {{ x: move.x, y: move.y, scale: move.scale, duration: index ? move.duration : 0.01, ease: "power3.out", transformOrigin: "50% 80%" }};
-          tl.to("#avatar", vars, move.at);
+        avatar.moves.forEach((move) => {{
+          const vars = {{
+            x: move.x, y: move.y, scale: move.scale,
+            opacity: move.opacity == null ? 1 : move.opacity,
+            transformOrigin: "0 0"
+          }};
+          if (!move.duration) tl.set("#avatar", vars, move.at);
+          else tl.to("#avatar", {{ ...vars, duration: move.duration, ease: "power3.out" }}, move.at);
         }});
+        const mouths = ["#av-m0", "#av-m1", "#av-m2", "#av-m3"];
         const hz = PROJECT.mouthHz || 40;
+        let lastViseme = -1;
         PROJECT.mouth.forEach((level, index) => {{
+          if (index % 3) return;
+          const viseme = level < 0.08 ? 0 : level < 0.2 ? 1 : level < 0.42 ? 2 : 3;
+          if (viseme === lastViseme) return;
+          lastViseme = viseme;
           const at = index / hz;
-          tl.set("#av-mouth-open", {{ scaleY: 0.18 + level * 2.5, scaleX: 0.82 + level * 0.45 }}, at);
-          tl.set("#av-mouth-closed", {{ opacity: Math.max(0, 1 - level * 3.4) }}, at);
+          mouths.forEach((sel, which) => tl.set(sel, {{ opacity: which === viseme ? 1 : 0 }}, at));
         }});
       }}
       PROJECT.videos.forEach((video) => {{
@@ -133,19 +152,6 @@ def render_html(model: dict) -> str:
 </body>
 </html>
 """
-
-
-def _stage(model: dict) -> str:
-    if model["mode"] != "sem-gravacao":
-        return model["scenes_html"]
-    panels = max(1, len(model["beats"]))
-    height = panels * 1920
-    duration = f'{model["duration"]:.3f}'
-    return (
-        f'<section id="stage" class="clip" data-start="0" data-duration="{duration}" data-track-index="2">'
-        f'<div id="world" data-layout-allow-overflow="true" style="height:{height}px">{model["scenes_html"]}</div>'
-        f'</section>'
-    )
 
 
 def _videos(model: dict) -> str:
@@ -199,7 +205,7 @@ def _captions(model: dict) -> str:
 
 def _top(model, start):
     if model["mode"] == "sem-gravacao":
-        return 156
+        return 224
     beat = model["beats"][-1]
     for item in model["beats"]:
         if item["start"] - 0.05 <= start <= item["end"] + 0.05:
@@ -243,9 +249,24 @@ def _css() -> str:
         linear-gradient({CINZA}33 1px, transparent 1px),
         linear-gradient(90deg, {CINZA}33 1px, transparent 1px);
       background-size: auto, auto, 72px 72px, 72px 72px; }}
-    #stage {{ inset: 0; overflow: hidden; z-index: 2; }}
-    #world {{ position: absolute; left: 0; top: 0; width: 100%; }}
+    #grain {{ inset: 0; z-index: 1; pointer-events: none; opacity: 0.28; mix-blend-mode: multiply;
+      background: url("assets/noise.png") repeat; }}
     .beat {{ inset: 0; z-index: 4; }}
+    .beat-in {{ position: absolute; inset: 0; }}
+    .wash {{ position: absolute; inset: 0; }}
+    .tone-ink .wash {{ background: {BROWN}; }}
+    .tone-verde .wash {{ background: {VERDE}; }}
+    .tone-azul .wash {{ background: {AZUL}; }}
+    .tone-rosa .wash {{ background: {ROSA}; }}
+    .tone-oliva .wash {{ background: {OLIVA}; }}
+    .tone-ink .open, .tone-verde .open {{ color: {OFFWHITE}; }}
+    .tone-ink .open .kicker, .tone-verde .open .kicker,
+    .tone-ink .open .giant, .tone-verde .open .giant,
+    .tone-ink .open .big, .tone-verde .open .big,
+    .tone-ink .open .say, .tone-verde .open .say {{ color: {OFFWHITE}; }}
+    .tone-ink .card, .tone-verde .card {{ background: {OFFWHITE}; color: {BROWN}; }}
+    .tone-ink .card .kicker, .tone-verde .card .kicker {{ color: {BROWN}; }}
+    .tone-ink .orbit, .tone-verde .orbit, .tone-ink .cell, .tone-verde .cell {{ color: {BROWN}; background: {OFFWHITE}; }}
     .host {{ position: absolute; overflow: hidden; z-index: 2; }}
     .host.split {{ left: 0; right: 0; top: 52%; height: 48%; }}
     .host.full {{ inset: 0; }}
@@ -253,9 +274,10 @@ def _css() -> str:
     .host video {{ position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }}
     .host.split video {{ object-position: center 16%; }}
     .host.full video {{ object-position: center 24%; }}
-    #avatar {{ left: 36px; top: 1460px; width: 280px; z-index: 6; height: auto; }}
+    #avatar {{ left: 48px; top: 1196px; width: 220px; z-index: 6; height: auto; transform-origin: 0 0;
+      filter: drop-shadow(5px 0 0 {OFFWHITE}) drop-shadow(-5px 0 0 {OFFWHITE}) drop-shadow(0 5px 0 {OFFWHITE}) drop-shadow(0 -5px 0 {OFFWHITE}); }}
     #av-lid-l, #av-lid-r, #av-mouth-open, #av-mouth-closed, #av-rig, #av-brows {{ transform-box: fill-box; }}
-    .piece {{ position: absolute; }}
+    .piece {{ position: absolute; overflow: hidden; }}
     .card {{ background: {PAPER}; border: 3px solid {BROWN}; border-radius: 28px; box-shadow: 0 24px 44px rgba(40,14,3,.16); padding: 28px 32px; overflow: hidden; }}
     .kicker {{ margin: 0 0 18px; font-family: "Instrument Serif", serif; font-size: 52px; line-height: 1; color: {BROWN}; }}
     .kicker.center {{ text-align: center; }}
@@ -308,8 +330,20 @@ def _css() -> str:
     .rail-node {{ position: absolute; left: 46px; display: flex; align-items: center; gap: 18px; }}
     .rail-node span {{ width: 64px; height: 64px; border-radius: 50%; background: {BROWN}; color: {OFFWHITE}; display: grid; place-items: center; font-family: "Instrument Serif", serif; font-size: 32px; }}
     .rail-node b {{ font-size: 30px; font-weight: 600; }}
-    .cap {{ left: 0; right: 0; z-index: 8; display: flex; justify-content: center; }}
-    .cap-line {{ position: relative; display: inline-flex; flex-wrap: wrap; justify-content: center; max-width: 960px; }}
+    .statement {{ height: 100%; display: flex; flex-direction: column; justify-content: center; }}
+    .big {{ margin: 0; font-family: "Instrument Serif", serif; font-size: 92px; line-height: 0.96; }}
+    .carlos-wrap {{ height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; gap: 8px; }}
+    .carlos-wrap img {{ width: auto; max-width: 100%; height: 74%; object-fit: contain; }}
+    .say {{ margin: 0; font-family: "Instrument Serif", serif; font-size: 46px; line-height: 1.05; text-align: center; }}
+    .versus {{ height: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }}
+    .vcol {{ background: {PAPER}; color: {BROWN}; border: 3px solid {BROWN}; border-radius: 28px; padding: 22px; display: flex; flex-direction: column; min-height: 0; }}
+    .vcol .kicker {{ color: inherit; }}
+    .vcol.agent {{ background: {VERDE}; color: {OFFWHITE}; border-color: {VERDE}; }}
+    .vcol img {{ width: auto; height: 42%; object-fit: contain; align-self: center; }}
+    .vitem {{ font-size: 32px; font-weight: 700; margin: 10px 0; }}
+    .cap {{ left: 48px; right: 176px; z-index: 8; display: flex; justify-content: center; }}
+    .cap-line {{ position: relative; display: inline-flex; flex-wrap: wrap; justify-content: center; max-width: 820px; }}
+    .cap.face .cap-line {{ background: {OFFWHITE}; border: 3px solid {BROWN}; border-radius: 22px; padding: 12px 18px 14px; }}
     .cap.grav .cap-line {{ background: {OFFWHITE}; border: 3px solid {BROWN}; border-radius: 18px; padding: 10px 16px; }}
     .cap-box {{ position: absolute; border: 3px solid {BROWN}; border-radius: 16px; }}
     .cap.face .word {{ color: {MUTED}; }}

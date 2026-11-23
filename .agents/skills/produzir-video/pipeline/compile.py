@@ -5,11 +5,13 @@ from pipeline.avatar import avatar_motion
 from pipeline.brand import (
     FPS,
     HEIGHT,
+    LAYOUT_SPOTS,
     LAYOUTS_FACELESS,
     LAYOUTS_RECORDED,
     MODES,
     PURPOSES,
     SCENE_TYPES,
+    TONES,
     WIDTH,
 )
 from pipeline.captions import group_words, sanitize_words, tag_roles, words_from_lines
@@ -129,12 +131,16 @@ def _normalize_beats(beats, origin, voice_out, mode):
         scene = beat.get("scene")
         if not scene or scene.get("type") not in SCENE_TYPES:
             raise ScriptError(f"beat {index} sem cena conhecida")
+        tone = str(beat.get("tone") or "paper")
+        if mode == "sem-gravacao" and tone not in TONES:
+            raise ScriptError(f"tom {tone} fora da paleta")
         normal.append({
             "id": f"b{index}",
             "start": round(start, 4),
             "end": round(end, 4),
             "layout": layout,
-            "label": str(beat.get("label") or scene.get("title") or f"{index + 1}"),
+            "tone": tone,
+            "label": str(beat.get("label") or scene.get("title") or scene.get("text") or f"{index + 1}"),
             "scene": scene,
             "punch": bool(beat.get("punch", layout == "creator")),
         })
@@ -203,10 +209,7 @@ def _extend_beats(beats, duration):
 
 def _box_for(mode, layout, index, panel_count):
     if mode == "sem-gravacao":
-        base = index * 1920
-        if layout == "center":
-            return (150, base + 280, 780, 620)
-        return (170, base + 300, 860, 980)
+        return LAYOUT_SPOTS[layout]["scene"]
     if layout == "split":
         return (64, 110, 952, 820)
     if layout == "creator":
@@ -223,109 +226,49 @@ def _scenes(beats, mode):
         piece, piece_ops, piece_sfx = build_scene(
             beat["id"], x, y, w, h, beat["scene"], beat["start"] + 0.08, beat["end"],
         )
+        dur = round(beat["end"] - beat["start"], 3)
         if mode == "gravacao":
             html_parts.append(
                 f'<section id="beat-{beat["id"]}" class="clip beat" data-start="{beat["start"]}" '
-                f'data-duration="{round(beat["end"] - beat["start"], 3)}" data-track-index="4">'
+                f'data-duration="{dur}" data-track-index="4">'
                 f'{piece}</section>'
             )
         else:
-            html_parts.append(piece)
+            html_parts.append(
+                f'<section id="beat-{beat["id"]}" class="clip beat tone-{beat["tone"]}" '
+                f'data-start="{beat["start"]}" data-duration="{dur}" data-track-index="4">'
+                f'<div class="wash"></div>'
+                f'<div id="beat-{beat["id"]}-in" class="beat-in">{piece}</div>'
+                f'</section>'
+            )
+            ops.append({
+                "kind": "fromTo",
+                "sel": f'#beat-{beat["id"]}-in',
+                "from": {"opacity": 0},
+                "to": {"opacity": 1, "duration": 0.16, "ease": "power1.out"},
+                "at": beat["start"],
+            })
         ops.extend(piece_ops)
         sfx.extend(piece_sfx)
         if mode == "gravacao" and index:
             sfx.append({"name": "whoosh", "at": beat["start"]})
-    if mode == "sem-gravacao":
-        html_parts.append(_rail(beats))
-        ops.extend(_camera(beats))
     return "".join(html_parts), ops, sfx
-
-
-def _rail(beats):
-    height = len(beats) * 1920
-    nodes = []
-    for index, beat in enumerate(beats):
-        top = index * 1920 + 860
-        nodes.append(
-            f'<div id="rail-{beat["id"]}" class="rail-node" style="top:{top}px">'
-            f'<span>{index + 1}</span><b>{_escape(beat["label"])}</b></div>'
-        )
-    return (
-        f'<div class="rail" data-layout-allow-overflow="true" style="height:{height}px"></div>'
-        + "".join(nodes)
-    )
-
-
-def _escape(text: str) -> str:
-    return (
-        text.replace("&", "&amp;")
-        .replace("<", "&lt;")
-        .replace(">", "&gt;")
-        .replace('"', "&quot;")
-    )
-
-
-def _camera(beats):
-    ops = []
-    for index, beat in enumerate(beats):
-        if index == 0:
-            continue
-        ops.append({
-            "kind": "to",
-            "sel": "#world",
-            "vars": {"y": -index * 1920, "duration": 0.62, "ease": "power2.inOut"},
-            "at": beat["start"],
-        })
-        ops.append({
-            "kind": "fromTo",
-            "sel": f'#rail-{beat["id"]}',
-            "from": {"scale": 0.4, "opacity": 0},
-            "to": {"scale": 1, "opacity": 1, "duration": 0.35, "ease": "back.out(1.6)"},
-            "at": round(beat["start"] + 0.1, 4),
-        })
-    if len(beats) > 1:
-        zoom_at = max(0.2, beats[-1]["end"] - 1.25)
-        ops.append({
-            "kind": "to",
-            "sel": "#world",
-            "vars": {
-                "y": 0,
-                "scale": round(1 / len(beats), 4),
-                "duration": 1.05,
-                "ease": "power3.inOut",
-                "transformOrigin": "50% 0%",
-            },
-            "at": round(zoom_at, 4),
-        })
-    return ops
 
 
 def _avatar_moves(beats, mode, duration):
     if mode != "sem-gravacao":
         return []
-    anchor_left, anchor_top, anchor_width = 36, 1460, 280
-    spots = {
-        "guide": (36, 1460, 280),
-        "corner": (36, 1460, 250),
-        "center": (250, 980, 520),
-    }
+    anchor_left, anchor_top, anchor_width, _anchor_opacity = LAYOUT_SPOTS["pip"]["avatar"]
     moves = []
     for beat in beats:
-        left, top, width = spots[beat["layout"]]
+        left, top, width, opacity = LAYOUT_SPOTS[beat["layout"]]["avatar"]
         moves.append({
             "at": beat["start"],
-            "duration": 0.45,
+            "duration": 0.38 if beat["start"] else 0,
             "x": left - anchor_left,
             "y": top - anchor_top,
             "scale": round(width / anchor_width, 3),
-        })
-    if len(beats) > 1:
-        moves.append({
-            "at": round(max(0.2, duration - 1.25), 4),
-            "duration": 0.5,
-            "x": 760 - anchor_left,
-            "y": 1560 - anchor_top,
-            "scale": round(220 / anchor_width, 3),
+            "opacity": opacity,
         })
     return moves
 

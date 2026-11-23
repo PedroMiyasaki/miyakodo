@@ -289,7 +289,21 @@ def _copy_static(assets: Path, sfx: list[dict], duration: float) -> None:
     names = {SFX_FILES[event["name"]] for event in sfx if event["name"] in SFX_FILES}
     for name in names:
         shutil.copy2(SKILL_DIR / "assets" / "sfx" / name, assets / "sfx" / name)
+    _run([
+        "ffmpeg", "-y", "-hide_banner", "-loglevel", "error",
+        "-f", "lavfi", "-i", "color=c=0x8a8178:s=96x96,noise=alls=24:allf=t",
+        "-frames:v", "1", str(assets / "noise.png"),
+    ])
     repo = find_repo(SKILL_DIR)
+    carlos = assets / "carlos"
+    carlos.mkdir(exist_ok=True)
+    mascotes = repo / "design" / "mascote-e-textura" / "png"
+    for png in sorted(mascotes.glob("MASCOTE_*.png")):
+        _run([
+            "ffmpeg", "-y", "-hide_banner", "-loglevel", "error",
+            "-i", str(png), "-vf", "scale=720:-1",
+            str(carlos / png.name),
+        ])
     logo = repo / "design/logo/png/horizontal/MIYAKODO_HORIZONTAL2.png"
     _run([
         "ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-i", str(logo),

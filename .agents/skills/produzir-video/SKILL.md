@@ -11,13 +11,13 @@ Peças antigas em `video/projects/` (anteriores a este pipeline) são arquivo do
 
 A identidade é a de `design/identity.md`: off-white `#f6f4ee`, cinza `#aba199`, dark brown `#280e03`, verde `#1a3010`, e as cores de apoio `#b6cadb`, `#c1c167`, `#d39ca7`, `#db3c05`. Título em Instrument Serif, texto de interface em Poppins. O logo usado nas cenas é o horizontal dark brown.
 
-Os modos não copiam o visual dos reels de referência. Eles emprestam só a lógica: no sem gravação, um avatar guia um canvas contínuo; na gravação, o talking head alterna com motion e leva um punch-in no CTA. As cenas servem opinião, notícia, lista, história, tutorial ou CTA. O campo `purpose` registra a intenção e não trava o visual.
+Os modos não copiam o visual dos reels de referência. Eles emprestam só a lógica: no sem gravação, o avatar do Pedro conduz um quadro que corta a cada poucos segundos; na gravação, o talking head alterna com motion e leva um punch-in no CTA. As cenas servem opinião, notícia, lista, história, tutorial ou CTA. O campo `purpose` registra a intenção e não trava o visual.
 
 ## Quando usar cada modo
 
 | Modo | Pedro grava? | O que entra | O que sai |
 |---|---|---|---|
-| `sem-gravacao` | Não | Roteiro + faixa de voz | Avatar 2D do rosto, legendas no terço superior, canvas que desce e abre no final |
+| `sem-gravacao` | Não | Roteiro + faixa de voz | Avatar do Pedro, legendas numa faixa própria, cortes entre layouts |
 | `gravacao` | Sim | Roteiro + vídeo bruto + voz (a do bruto, ou a mesma janela) | Talking head com jump cut de silêncio, overlays em split, tela cheia ou punch-in |
 
 `sem-gravacao` quando não há gravação nova e a peça pode ser carregada pela voz e pelo desenho. `gravacao` quando existe talking head e as animações entram por cima da pessoa.
@@ -32,16 +32,25 @@ Arquivo JSON. Tempos do `voice`, dos `beats` e das `words` usam o relógio do ar
 - `voice.src`: caminho a partir da raiz do repo. `voice.in` e `voice.out` recortam a janela.
 - `words`: opcional. Lista `{text, start, end}` alinhada à voz. Sem isso, o pipeline reparte `lines` de cada beat pela duração.
 - `emphasis`, `strong`, `cta`: listas de palavras. No sem gravação, as três viram itálico em Instrument Serif. Na gravação, `emphasis` vai para o verde, `strong` para uma pílula dark brown e `cta` para uma pílula laranja.
-- `beats`: `{start, end, layout, label, scene}`.
+- `beats`: `{start, end, layout, label, scene, tone}`. `tone` vale `paper`, `ink`, `verde`, `azul`, `rosa` ou `oliva`. No sem gravação o padrão é `paper`.
 - `footage` (só `gravacao`): `src` de um mp4 no mesmo relógio da voz, ou `still` para o pipeline fabricar um plano a partir de uma foto. O mp4 e a voz são fatiados com o mesmo `in`/`out`.
 
-Layouts de `sem-gravacao`: `guide` (avatar no canto), `center` (avatar grande no meio), `corner`. O canvas é uma coluna de painéis. A câmera desce. No último segundo o quadro abre e mostra a trilha numerada inteira.
+Layouts de `sem-gravacao`, todos dentro da área segura do Reels (abaixo da faixa de legenda, acima do rodapé da legenda do post, longe da coluna de botões à direita):
+
+- `hero` e `center`: frase curta em cima, busto grande embaixo.
+- `guide`: Pedro à esquerda, cena à direita.
+- `pip` e `corner`: a cena ocupa o miolo e o busto fica pequeno, acima do rodapé.
+- `full`: a cena toma a área segura e o avatar sai.
+
+A troca é corte. A legenda fica numa placa off-white, entre o topo da interface e o começo da cena, e não cobre avatar nem texto de cena.
 
 Layouts de `gravacao`: `split` (pessoa embaixo, cena em cima), `motion` (pessoa some, a cena ocupa o quadro), `creator` (pessoa em tela cheia, com punch-in se `punch` não for false). A troca é corte seco. Silêncios internos acima de cerca de 0,28 s saem, com um respiro curto nas bordas para não comer consoante.
 
 ### Cenas
 
-O campo `scene.type` aceita: `timeline`, `mockup`, `counter`, `diagram`, `chat`, `code`, `phone`, `grid`, `scanline`, `folders`, `bullets`, `quote`, `badge`, `stack`.
+O campo `scene.type` aceita: `timeline`, `mockup`, `counter`, `diagram`, `chat`, `code`, `phone`, `grid`, `scanline`, `folders`, `bullets`, `quote`, `badge`, `stack`, `statement`, `carlos`, `versus`.
+
+`statement` é o letreiro grande (`text` ou `lines`, `kicker` opcional). `carlos` coloca o mascote de `design/mascote-e-textura/` (`pose`: `squat`, `boss`, `money`, `coffee`, `stars`) sempre que a cena for o público, o empresário ou a pessoa com quem o Pedro fala. `versus` divide pessoa e agente. Se `pose` vier, o Carlos entra na coluna da pessoa.
 
 `stack` recebe `children`, cada um com o próprio `type`. Os outros tipos leem `title`, `items`, `lines`, `messages`, `value`, `label`, `text`, `filename`, `handle`, `comment`, `dm`, `center`, `root`, `kicker`, `kind` ou `scan`, conforme o caso. O que não vier usa um miolo pequeno, para o componente não quebrar.
 
@@ -106,7 +115,16 @@ Os dois JSON em `examples/` usam a narração real de `evals-cut-audio.m4a` e a 
 
 O bruto `evals-cut-sdr.mp4`, citado pelo projeto antigo, não está no checkout. O exemplo de gravação gera o plano a partir de `assets/pedro-frame.jpg` (o frame do rosto que estava em `evals-reel/snapshots/final-113/face.jpg`), com a voz real na mesma janela. Um talking head novo entra em `footage.src` sem mudar o pipeline.
 
-O avatar não é o mascote Carlos. É um desenho 2D do Pedro (cabelo escuro, sobrancelha fechada, barba curta, pinta), na cor da marca, com boca guiada pelo volume da faixa, piscada e um balanço curto de cabeça.
+O avatar não é o mascote Carlos. É o Pedro desenhado no mesmo sistema do Carlos: contorno dark brown, chapado, grão de papel e a paleta de `design/identity.md`. O rosto sai do vídeo de referência (cabelo escuro com mecha cinza, sobrancelha grossa, barba curta, pinta, camiseta e lapela). A boca troca de visema pelo volume da faixa. Carlos só entra quando a cena representa o público.
+
+A narração de Headless Software está no release `footage-headless-software`, arquivo `headless-software.MP4` (sha256 `7da8c5295e52addbf88c5bc741fbf2b28418c00fe4b52ebc63ee6eba3867304d`). O mp4 não entra no git.
+
+```bash
+mkdir -p video/inputs/headless-software
+gh release download footage-headless-software --repo PedroMiyasaki/miyakodo -p headless-software.MP4 -D video/inputs/headless-software
+python3 .agents/skills/produzir-video/pipeline/cli.py build .agents/skills/produzir-video/examples/headless-software.json --out video/projects/headless-software-sem-gravacao
+python3 .agents/skills/produzir-video/pipeline/cli.py render video/projects/headless-software-sem-gravacao --output video/outputs/headless-software-sem-gravacao.mp4 --quality looks
+```
 
 ## O que este pipeline não faz
 

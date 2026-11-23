@@ -33,9 +33,53 @@ SCENE_TYPES = (
     "quote",
     "badge",
     "stack",
+    "statement",
+    "carlos",
+    "versus",
 )
 
-LAYOUTS_FACELESS = ("guide", "center", "corner")
+# guide: Pedro à esquerda, cena à direita.
+# hero e center: frase em cima, busto grande embaixo.
+# pip e corner: a cena ocupa o miolo e o busto fica pequeno, acima do rodapé.
+# full: a cena toma a área segura e o avatar sai.
+# A legenda mora numa faixa própria (CAPTION_TOP até o início da cena).
+# Direita livre para os botões do Reels. Rodapé livre para a legenda do post.
+CAPTION_TOP = 220
+SCENE_TOP = 448
+SAFE_RIGHT = 900
+SAFE_BOTTOM = 1468
+AVATAR_ASPECT = 860 / 720
+
+LAYOUT_SPOTS = {
+    "full": {
+        "scene": (48, 448, 840, 1000),
+        "avatar": (48, 1180, 200, 0),
+    },
+    "hero": {
+        "scene": (48, 448, 840, 220),
+        "avatar": (80, 700, 600, 1),
+    },
+    "center": {
+        "scene": (48, 448, 840, 220),
+        "avatar": (80, 700, 600, 1),
+    },
+    "guide": {
+        "scene": (400, 448, 488, 1000),
+        "avatar": (36, 620, 340, 1),
+    },
+    "pip": {
+        "scene": (48, 448, 840, 720),
+        "avatar": (48, 1196, 220, 1),
+    },
+    "corner": {
+        "scene": (48, 448, 840, 720),
+        "avatar": (48, 1196, 220, 1),
+    },
+}
+
+TONES = ("paper", "ink", "verde", "azul", "rosa", "oliva")
+
+LAYOUTS_FACELESS = ("guide", "center", "corner", "hero", "pip", "full")
 LAYOUTS_RECORDED = ("split", "motion", "creator")
 
 SFX_FILES = {

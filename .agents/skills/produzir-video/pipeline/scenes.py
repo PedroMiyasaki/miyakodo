@@ -374,6 +374,108 @@ def scene_quote(pid, x, y, w, h, scene, t0, t1):
     return _box(pid, x, y, w, h, inner, "card quote-card"), _pop(pid, t0), _sfx("chime", t0)
 
 
+def scene_statement(pid, x, y, w, h, scene, t0, t1):
+    kicker = escape(str(scene.get("kicker") or ""))
+    lines = scene.get("lines") or [scene.get("text") or ""]
+    lines = [str(item) for item in lines if str(item).strip()]
+    if not lines:
+        lines = [" "]
+    per_line = 0.32 if len(lines) == 1 else 0.2
+    size = int(min(h * per_line, w * 0.15))
+    size = max(42, min(104, size))
+    ops = _pop(pid, t0, "50% 60%")
+    sfx = _sfx("impact", t0)
+    rendered = []
+    for index, line in enumerate(lines):
+        at = t0 + 0.08 + index * 0.18
+        rendered.append(f'<p id="{pid}-ln-{index}" class="big" style="font-size:{size}px">{escape(line)}</p>')
+        if index:
+            ops.append({
+                "kind": "fromTo",
+                "sel": f"#{pid}-ln-{index}",
+                "from": {"y": 18, "opacity": 0},
+                "to": {"y": 0, "opacity": 1, "duration": 0.28, "ease": "power3.out"},
+                "at": round(at, 4),
+            })
+    head = f'<p class="kicker">{kicker}</p>' if kicker else ""
+    inner = f'<div class="statement">{head}{"".join(rendered)}</div>'
+    return _box(pid, x, y, w, h, inner, "open"), ops, sfx
+
+
+CARLOS_POSES = {
+    "squat": "MASCOTE_1.png",
+    "boss": "MASCOTE_2.png",
+    "money": "MASCOTE_3.png",
+    "coffee": "MASCOTE_4.png",
+    "stars": "MASCOTE_5.png",
+}
+
+
+def _carlos_src(pose: str) -> str:
+    return f'assets/carlos/{CARLOS_POSES.get(pose, CARLOS_POSES["boss"])}'
+
+
+def scene_carlos(pid, x, y, w, h, scene, t0, t1):
+    line = escape(str(scene.get("line") or scene.get("text") or ""))
+    src = _carlos_src(str(scene.get("pose") or "boss"))
+    ops = _pop(pid, t0, "50% 80%")
+    ops.append({
+        "kind": "to",
+        "sel": f"#{pid}-fig",
+        "vars": {"y": -10, "duration": 0.7, "yoyo": True, "repeat": 3, "ease": "sine.inOut"},
+        "at": round(t0 + 0.35, 4),
+    })
+    say = f'<p class="say">{line}</p>' if line else ""
+    inner = (
+        f'<div class="carlos-wrap">{say}'
+        f'<img id="{pid}-fig" src="{src}" alt="Carlos"/></div>'
+    )
+    return _box(pid, x, y, w, h, inner, "open"), ops, _sfx("pop", t0)
+
+
+def scene_versus(pid, x, y, w, h, scene, t0, t1):
+    left = escape(str(scene.get("left") or "Pessoa"))
+    right = escape(str(scene.get("right") or "Agente"))
+    left_items = _lines(scene.get("left_items"), ["Pessoa"])
+    right_items = _lines(scene.get("right_items"), ["Agente"])
+    pose = scene.get("pose")
+    ops = _pop(pid, t0)
+    sfx = _sfx("whoosh", t0)
+    figure = ""
+    if pose:
+        figure = f'<img src="{_carlos_src(str(pose))}" alt="Carlos"/>'
+    left_html = []
+    right_html = []
+    for index, item in enumerate(left_items):
+        at = t0 + 0.22 + index * 0.28
+        left_html.append(f'<div id="{pid}-l-{index}" class="vitem">{escape(item)}</div>')
+        ops.append({
+            "kind": "fromTo",
+            "sel": f"#{pid}-l-{index}",
+            "from": {"x": -12, "opacity": 0},
+            "to": {"x": 0, "opacity": 1, "duration": 0.26, "ease": "power2.out"},
+            "at": round(at, 4),
+        })
+    for index, item in enumerate(right_items):
+        at = t0 + 0.32 + index * 0.28
+        right_html.append(f'<div id="{pid}-r-{index}" class="vitem">{escape(item)}</div>')
+        ops.append({
+            "kind": "fromTo",
+            "sel": f"#{pid}-r-{index}",
+            "from": {"x": 12, "opacity": 0},
+            "to": {"x": 0, "opacity": 1, "duration": 0.26, "ease": "power2.out"},
+            "at": round(at, 4),
+        })
+        sfx.append({"name": "click", "at": round(at, 4)})
+    inner = (
+        f'<div class="versus">'
+        f'<div class="vcol">{figure}<p class="kicker">{left}</p>{"".join(left_html)}</div>'
+        f'<div class="vcol agent"><p class="kicker">{right}</p>{"".join(right_html)}</div>'
+        f'</div>'
+    )
+    return _box(pid, x, y, w, h, inner, "open"), ops, sfx
+
+
 def scene_badge(pid, x, y, w, h, scene, t0, t1):
     text = escape(str(scene.get("text") or ""))
     inner = f'<div class="badge" style="background:{LARANJA}">{text}</div>'
@@ -395,6 +497,9 @@ BUILDERS = {
     "bullets": scene_bullets,
     "quote": scene_quote,
     "badge": scene_badge,
+    "statement": scene_statement,
+    "carlos": scene_carlos,
+    "versus": scene_versus,
 }
 
 # Cores usadas no SVG/CSS inline acima ficam explícitas para o teste de paleta.
