@@ -1,0 +1,453 @@
+{
+  "mode": "gravacao",
+  "slug": "exemplo-gravacao",
+  "title": "Contratos e cláusulas",
+  "purpose": "historia",
+  "voice": {
+    "src": "video/projects/evals-reel/assets/evals-cut-audio.m4a",
+    "in": 18.13,
+    "out": 34.2
+  },
+  "footage": {
+    "still": ".agents/skills/produzir-video/assets/pedro-frame.jpg"
+  },
+  "emphasis": [
+    "contratos",
+    "cláusulas",
+    "importantes",
+    "IA"
+  ],
+  "strong": [
+    "críticas"
+  ],
+  "cta": [
+    "empresa"
+  ],
+  "words": [
+    {
+      "text": "produto",
+      "start": 18.13,
+      "end": 18.39
+    },
+    {
+      "text": "de",
+      "start": 18.39,
+      "end": 18.46
+    },
+    {
+      "text": "inteligência",
+      "start": 18.46,
+      "end": 18.91
+    },
+    {
+      "text": "artificial.",
+      "start": 18.91,
+      "end": 19.44
+    },
+    {
+      "text": "Por",
+      "start": 19.62,
+      "end": 19.67
+    },
+    {
+      "text": "exemplo,",
+      "start": 19.67,
+      "end": 19.77
+    },
+    {
+      "text": "não",
+      "start": 19.77,
+      "end": 19.92
+    },
+    {
+      "text": "ficar",
+      "start": 19.92,
+      "end": 20.28
+    },
+    {
+      "text": "muito",
+      "start": 20.28,
+      "end": 20.42
+    },
+    {
+      "text": "subjetivo,",
+      "start": 20.42,
+      "end": 20.97
+    },
+    {
+      "text": "vamos",
+      "start": 20.97,
+      "end": 21.22
+    },
+    {
+      "text": "imaginar",
+      "start": 21.22,
+      "end": 21.67
+    },
+    {
+      "text": "que",
+      "start": 21.67,
+      "end": 21.78
+    },
+    {
+      "text": "você",
+      "start": 21.78,
+      "end": 21.98
+    },
+    {
+      "text": "tem",
+      "start": 21.98,
+      "end": 22.13
+    },
+    {
+      "text": "uma",
+      "start": 22.13,
+      "end": 22.28
+    },
+    {
+      "text": "empresa",
+      "start": 22.28,
+      "end": 22.64
+    },
+    {
+      "text": "e",
+      "start": 22.64,
+      "end": 22.69
+    },
+    {
+      "text": "você",
+      "start": 22.69,
+      "end": 22.89
+    },
+    {
+      "text": "tem",
+      "start": 22.89,
+      "end": 23.04
+    },
+    {
+      "text": "vários",
+      "start": 23.04,
+      "end": 23.35
+    },
+    {
+      "text": "fornecedores,",
+      "start": 23.35,
+      "end": 24.18
+    },
+    {
+      "text": "cada",
+      "start": 24.18,
+      "end": 24.38
+    },
+    {
+      "text": "um",
+      "start": 24.38,
+      "end": 24.49
+    },
+    {
+      "text": "com",
+      "start": 24.49,
+      "end": 24.65
+    },
+    {
+      "text": "um",
+      "start": 24.65,
+      "end": 24.75
+    },
+    {
+      "text": "contrato",
+      "start": 24.75,
+      "end": 25.17
+    },
+    {
+      "text": "diferente,",
+      "start": 25.17,
+      "end": 25.68
+    },
+    {
+      "text": "e",
+      "start": 25.73,
+      "end": 25.78
+    },
+    {
+      "text": "você",
+      "start": 25.78,
+      "end": 25.94
+    },
+    {
+      "text": "quer",
+      "start": 25.94,
+      "end": 26.34
+    },
+    {
+      "text": "fazer",
+      "start": 26.34,
+      "end": 26.42
+    },
+    {
+      "text": "um",
+      "start": 26.42,
+      "end": 26.52
+    },
+    {
+      "text": "produto",
+      "start": 26.52,
+      "end": 26.9
+    },
+    {
+      "text": "de",
+      "start": 26.9,
+      "end": 27.0
+    },
+    {
+      "text": "IA",
+      "start": 27.0,
+      "end": 27.1
+    },
+    {
+      "text": "aí",
+      "start": 27.1,
+      "end": 27.2
+    },
+    {
+      "text": "que",
+      "start": 27.2,
+      "end": 27.41
+    },
+    {
+      "text": "lê",
+      "start": 27.41,
+      "end": 27.46
+    },
+    {
+      "text": "os",
+      "start": 27.46,
+      "end": 27.56
+    },
+    {
+      "text": "contratos",
+      "start": 27.56,
+      "end": 28.04
+    },
+    {
+      "text": "dos",
+      "start": 28.04,
+      "end": 28.2
+    },
+    {
+      "text": "fornecedores",
+      "start": 28.2,
+      "end": 28.83
+    },
+    {
+      "text": "e",
+      "start": 28.83,
+      "end": 28.88
+    },
+    {
+      "text": "meio",
+      "start": 28.88,
+      "end": 29.09
+    },
+    {
+      "text": "que",
+      "start": 29.09,
+      "end": 29.25
+    },
+    {
+      "text": "aponta",
+      "start": 29.25,
+      "end": 29.56
+    },
+    {
+      "text": "quais",
+      "start": 29.56,
+      "end": 29.83
+    },
+    {
+      "text": "são",
+      "start": 29.83,
+      "end": 29.99
+    },
+    {
+      "text": "as",
+      "start": 29.99,
+      "end": 30.09
+    },
+    {
+      "text": "cláusulas",
+      "start": 30.09,
+      "end": 30.55
+    },
+    {
+      "text": "mais",
+      "start": 30.55,
+      "end": 30.75
+    },
+    {
+      "text": "importantes",
+      "start": 30.75,
+      "end": 31.72
+    },
+    {
+      "text": "que",
+      "start": 31.72,
+      "end": 31.72
+    },
+    {
+      "text": "você",
+      "start": 31.72,
+      "end": 32.04
+    },
+    {
+      "text": "tem",
+      "start": 32.04,
+      "end": 32.05
+    },
+    {
+      "text": "que",
+      "start": 32.05,
+      "end": 32.19
+    },
+    {
+      "text": "considerar",
+      "start": 32.19,
+      "end": 32.68
+    },
+    {
+      "text": "e",
+      "start": 32.68,
+      "end": 32.73
+    },
+    {
+      "text": "as",
+      "start": 32.73,
+      "end": 32.83
+    },
+    {
+      "text": "coisas",
+      "start": 32.83,
+      "end": 33.14
+    },
+    {
+      "text": "mais",
+      "start": 33.14,
+      "end": 33.35
+    },
+    {
+      "text": "críticas",
+      "start": 33.35,
+      "end": 33.77
+    },
+    {
+      "text": "para",
+      "start": 33.77,
+      "end": 33.98
+    },
+    {
+      "text": "a",
+      "start": 33.98,
+      "end": 34.09
+    },
+    {
+      "text": "sua",
+      "start": 34.09,
+      "end": 34.19
+    },
+    {
+      "text": "empresa.",
+      "start": 34.19,
+      "end": 34.76
+    }
+  ],
+  "beats": [
+    {
+      "start": 18.13,
+      "end": 24.1,
+      "layout": "split",
+      "label": "Empresa",
+      "scene": {
+        "type": "stack",
+        "children": [
+          {
+            "type": "folders",
+            "root": "Empresa",
+            "items": [
+              {
+                "name": "Fornecedor A",
+                "depth": 1
+              },
+              {
+                "name": "Fornecedor B",
+                "depth": 1
+              },
+              {
+                "name": "Contratos",
+                "depth": 1
+              }
+            ]
+          },
+          {
+            "type": "chat",
+            "title": "Contratos",
+            "messages": [
+              {
+                "from": "Empresa",
+                "text": "chegou contrato novo"
+              },
+              {
+                "from": "Pedro",
+                "text": "lê as cláusulas"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "start": 24.1,
+      "end": 29.2,
+      "layout": "motion",
+      "label": "Contrato",
+      "scene": {
+        "type": "stack",
+        "children": [
+          {
+            "type": "counter",
+            "label": "fornecedores",
+            "value": 4
+          },
+          {
+            "type": "grid",
+            "items": [
+              "prazo",
+              "multa",
+              "foro",
+              "sigilo",
+              "preço",
+              "vigência",
+              "anexo",
+              "aviso",
+              "rescisão"
+            ]
+          },
+          {
+            "type": "scanline",
+            "label": "leitura do contrato"
+          }
+        ]
+      }
+    },
+    {
+      "start": 29.2,
+      "end": 34.2,
+      "layout": "creator",
+      "label": "Cláusulas",
+      "punch": true,
+      "scene": {
+        "type": "badge",
+        "text": "cláusulas críticas"
+      }
+    }
+  ]
+}

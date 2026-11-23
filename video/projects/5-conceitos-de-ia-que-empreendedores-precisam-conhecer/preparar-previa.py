@@ -19,8 +19,11 @@ def prepare():
     ASSETS.mkdir(exist_ok=True)
     fonts = ASSETS / "fonts"
     fonts.mkdir(exist_ok=True)
-    source = REPO / ".agents/skills/editar-video/assets/fonts"
-    for name in ["inter-latin-wght-normal.woff2", "bricolage-grotesque-latin-wght-normal.woff2", "Inter-LICENSE.txt", "Bricolage-LICENSE.txt"]:
+    source = REPO / ".agents/skills/produzir-video/assets/fonts"
+    for name in [
+        "Poppins-Regular.ttf", "Poppins-SemiBold.ttf", "Poppins-Bold.ttf", "Poppins-ExtraBold.ttf",
+        "InstrumentSerif-Regular.ttf", "InstrumentSerif-Italic.ttf", "Poppins-OFL.txt", "InstrumentSerif-OFL.txt",
+    ]:
         shutil.copy2(source / name, fonts / name)
     subprocess.run([
         "ffmpeg", "-hide_banner", "-loglevel", "error", "-y", "-ss", "1.5",
