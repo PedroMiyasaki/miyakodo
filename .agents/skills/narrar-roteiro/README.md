@@ -59,9 +59,10 @@ Dez a trinta segundos de fala limpa, uma pessoa só, sem música. O lugar é `vi
 Para tirar o trecho de um vídeo já publicado, por exemplo o `headless-software.MP4` do release `footage-headless-software`:
 
 ```powershell
+mkdir video\inputs\headless-software
 mkdir video\inputs\voice-ref
-gh release download footage-headless-software --repo PedroMiyasaki/miyakodo -p headless-software.MP4 -D video\inputs
-python .agents\skills\narrar-roteiro\cli.py extrair-referencia video\inputs\headless-software.MP4 --out video\inputs\voice-ref\pedro.wav --transcribe --transcript-out video\inputs\voice-ref\pedro.txt
+gh release download footage-headless-software --repo PedroMiyasaki/miyakodo -p headless-software.MP4 -D video\inputs\headless-software
+python .agents\skills\narrar-roteiro\cli.py extrair-referencia video\inputs\headless-software\headless-software.MP4 --out video\inputs\voice-ref\pedro.wav --transcribe --transcript-out video\inputs\voice-ref\pedro.txt
 ```
 
 O comando corta um trecho contínuo de fala perto de 18 segundos, tira o silêncio das pontas, aplica highpass e normaliza o volume. `--start 12 --duration 18` fixa a janela quando você já sabe o ponto.

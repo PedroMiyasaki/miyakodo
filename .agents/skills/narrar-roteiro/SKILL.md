@@ -49,9 +49,9 @@ python3 .agents/skills/narrar-roteiro/cli.py texto posts/script/<slug>/final.md 
 Extrair 15 a 20 segundos limpos de um vídeo. O exemplo usa o release `footage-headless-software`. Sem `--start`, o corte procura um trecho contínuo de fala, perto de 18 segundos.
 
 ```bash
-mkdir -p video/inputs video/inputs/voice-ref
-gh release download footage-headless-software --repo PedroMiyasaki/miyakodo -p headless-software.MP4 -D video/inputs
-python3 .agents/skills/narrar-roteiro/cli.py extrair-referencia video/inputs/headless-software.MP4 --out video/inputs/voice-ref/pedro.wav --transcribe --transcript-out video/inputs/voice-ref/pedro.txt
+mkdir -p video/inputs/headless-software video/inputs/voice-ref
+gh release download footage-headless-software --repo PedroMiyasaki/miyakodo -p headless-software.MP4 -D video/inputs/headless-software
+python3 .agents/skills/narrar-roteiro/cli.py extrair-referencia video/inputs/headless-software/headless-software.MP4 --out video/inputs/voice-ref/pedro.wav --transcribe --transcript-out video/inputs/voice-ref/pedro.txt
 ```
 
 Narrar:
