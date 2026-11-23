@@ -16,7 +16,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from pipeline.audio import detect_silences, keep_ranges, mouth_envelope, probe_duration, range_duration
-from pipeline.brand import SFX_FILES
+from pipeline.brand import MASCOT_SOURCES, SFX_FILES
 from pipeline.compile import compile_script
 from pipeline.compose import render_html
 
@@ -144,7 +144,7 @@ def _media(data: dict, assets: Path, repo: Path):
     if mode == "gravacao":
         duration = probe_duration(sliced)
         silences = detect_silences(sliced)
-        ranges = keep_ranges(duration, silences)
+        ranges = keep_ranges(duration, silences, pad=0.08)
         removed = duration - range_duration(ranges)
         if ranges and removed > 0.12:
             cuts = ranges
@@ -176,8 +176,11 @@ def _footage(data, assets, repo, start, end, duration):
             "ffmpeg", "-y", "-hide_banner", "-loglevel", "error",
             "-ss", str(start), "-to", str(end), "-i", str(source),
             "-an", "-vf", _video_filter(source),
-            "-c:v", "libx264", "-preset", "veryfast", "-crf", "20",
-            "-pix_fmt", "yuv420p",
+            "-c:v", "libx264", "-profile:v", "high", "-level", "4.1",
+            "-preset", "veryfast", "-crf", "20",
+            "-pix_fmt", "yuv420p", "-r", "30",
+            "-g", "30", "-keyint_min", "30", "-sc_threshold", "0", "-bf", "0",
+            "-movflags", "+faststart",
             "-color_primaries", "bt709", "-color_trc", "bt709", "-colorspace", "bt709",
             str(window),
         ])
@@ -252,7 +255,10 @@ def _concat_video(src: Path, ranges, dest: Path) -> None:
         parts[0].replace(dest)
     else:
         listing = work / "list.txt"
-        listing.write_text("".join(f"file '{part.as_posix()}'\n" for part in parts), encoding="utf-8")
+        listing.write_text(
+            "".join(f"file '{part.resolve().as_posix()}'\n" for part in parts),
+            encoding="utf-8",
+        )
         _run([
             "ffmpeg", "-y", "-hide_banner", "-loglevel", "error",
             "-f", "concat", "-safe", "0", "-i", str(listing),
@@ -270,8 +276,11 @@ def _concat_video_filter(src: Path, ranges, dest: Path) -> None:
     _run([
         "ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-i", str(src),
         "-filter_complex", graph, "-map", "[out]",
-        "-c:v", "libx264", "-preset", "veryfast", "-crf", "20",
-        "-pix_fmt", "yuv420p", "-r", "30", str(dest),
+        "-c:v", "libx264", "-profile:v", "high", "-level", "4.1",
+        "-preset", "veryfast", "-crf", "20",
+        "-pix_fmt", "yuv420p", "-r", "30",
+        "-g", "30", "-keyint_min", "30", "-sc_threshold", "0", "-bf", "0",
+        "-movflags", "+faststart", str(dest),
     ])
 
 
@@ -290,6 +299,13 @@ def _copy_static(assets: Path, sfx: list[dict], duration: float) -> None:
     for name in names:
         shutil.copy2(SKILL_DIR / "assets" / "sfx" / name, assets / "sfx" / name)
     repo = find_repo(SKILL_DIR)
+    for filename, rel in MASCOT_SOURCES.items():
+        _run([
+            "ffmpeg", "-y", "-hide_banner", "-loglevel", "error",
+            "-i", str(repo / rel),
+            "-vf", "scale=900:-1",
+            str(assets / filename),
+        ])
     logo = repo / "design/logo/png/horizontal/MIYAKODO_HORIZONTAL2.png"
     _run([
         "ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-i", str(logo),

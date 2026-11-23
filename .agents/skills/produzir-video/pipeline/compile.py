@@ -14,6 +14,7 @@ from pipeline.brand import (
 )
 from pipeline.captions import group_words, sanitize_words, tag_roles, words_from_lines
 from pipeline.scenes import build_scene
+from pipeline.zones import validate_zones, zones
 
 
 class ScriptError(ValueError):
@@ -52,6 +53,8 @@ def compile_script(data: dict, cuts=None, mouth=None) -> dict:
     if not beats:
         raise ScriptError("nenhum beat sobreviveu aos cortes")
 
+    if mode == "gravacao":
+        validate_zones()
     words = [word for word in words if word["end"] > 0 and word["start"] < duration]
     words = tag_roles(
         sanitize_words(words),
@@ -60,6 +63,8 @@ def compile_script(data: dict, cuts=None, mouth=None) -> dict:
         data.get("cta") or [],
     )
     groups = _clamp_groups(group_words(words, mode), duration)
+    if mode == "gravacao":
+        groups = _split_groups_on_beats(groups, beats)
     scenes, ops, sfx = _scenes(beats, mode)
     moves = _avatar_moves(beats, mode, duration)
     emphasis_times = [word["start"] for word in words if word["role"] == "emphasis"]
@@ -136,7 +141,7 @@ def _normalize_beats(beats, origin, voice_out, mode):
             "layout": layout,
             "label": str(beat.get("label") or scene.get("title") or f"{index + 1}"),
             "scene": scene,
-            "punch": bool(beat.get("punch", layout == "creator")),
+            "punch": bool(beat.get("punch", layout in {"creator", "zoom"})),
         })
     if len(normal) < 1:
         raise ScriptError("beats fora da janela da voz")
@@ -214,26 +219,63 @@ def _box_for(mode, layout, index, panel_count):
     return (64, 160, 952, 1480)
 
 
+def _split_groups_on_beats(groups, beats):
+    """Uma legenda não atravessa a troca de layout. A faixa muda com a cena."""
+    bounds = [beat["start"] for beat in beats[1:]]
+    pieces = []
+    for group in groups:
+        current = []
+        for word in group["words"]:
+            if current and any(current[-1]["start"] < bound <= word["start"] + 0.02 for bound in bounds):
+                pieces.append(current)
+                current = []
+            current.append(word)
+        if current:
+            pieces.append(current)
+    packed = []
+    for index, words in enumerate(pieces):
+        start = words[0]["start"]
+        end = words[-1]["end"]
+        if index + 1 < len(pieces):
+            nxt = pieces[index + 1][0]["start"]
+            if nxt - end < 0.12:
+                end = nxt
+        end = max(end, start + 0.12)
+        packed.append({
+            "id": f"cap-{index}",
+            "start": round(start, 4),
+            "end": round(end, 4),
+            "words": [{**word, "id": f"cap-{index}-w-{wi}"} for wi, word in enumerate(words)],
+        })
+    return packed
+
+
 def _scenes(beats, mode):
     html_parts = []
     ops = []
     sfx = []
     for index, beat in enumerate(beats):
-        x, y, w, h = _box_for(mode, beat["layout"], index, len(beats))
+        if mode == "gravacao":
+            box = zones(beat["layout"])["scene"]
+            x, y, w, h = 0, 0, box.w, box.h
+        else:
+            box = None
+            x, y, w, h = _box_for(mode, beat["layout"], index, len(beats))
         piece, piece_ops, piece_sfx = build_scene(
             beat["id"], x, y, w, h, beat["scene"], beat["start"] + 0.08, beat["end"],
         )
         if mode == "gravacao":
             html_parts.append(
                 f'<section id="beat-{beat["id"]}" class="clip beat" data-start="{beat["start"]}" '
-                f'data-duration="{round(beat["end"] - beat["start"], 3)}" data-track-index="4">'
+                f'data-duration="{round(beat["end"] - beat["start"], 3)}" data-track-index="4" '
+                f'style="left:{box.x}px;top:{box.y}px;width:{box.w}px;height:{box.h}px">'
                 f'{piece}</section>'
             )
         else:
             html_parts.append(piece)
         ops.extend(piece_ops)
         sfx.extend(piece_sfx)
-        if mode == "gravacao" and index:
+        if mode == "gravacao" and index and beat["layout"] != beats[index - 1]["layout"]:
             sfx.append({"name": "whoosh", "at": beat["start"]})
     if mode == "sem-gravacao":
         html_parts.append(_rail(beats))
@@ -333,15 +375,20 @@ def _avatar_moves(beats, mode, duration):
 def _videos(beats):
     videos = []
     for beat in beats:
-        if beat["layout"] == "motion":
+        zone = zones(beat["layout"])
+        if zone["video"] is None:
             continue
         videos.append({
             "id": f'vid-{beat["id"]}',
             "start": beat["start"],
             "duration": round(beat["end"] - beat["start"], 3),
             "media_start": beat["start"],
-            "layout": "full" if beat["layout"] == "creator" else "split",
-            "punch": beat["punch"] and beat["layout"] == "creator",
+            "layout": beat["layout"],
+            "host": zone["host"],
+            "box": zone["video"].box(),
+            "object_position": zone["object_position"],
+            "punch": bool(beat["punch"]) and beat["layout"] in {"creator", "zoom"},
+            "punch_scale": 1.14 if beat["layout"] == "zoom" else 1.08,
         })
     return videos
 

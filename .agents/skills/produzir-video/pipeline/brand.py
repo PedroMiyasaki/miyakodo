@@ -32,11 +32,31 @@ SCENE_TYPES = (
     "bullets",
     "quote",
     "badge",
+    "hero",
+    "reveal",
+    "mascot",
     "stack",
 )
 
+# Carlos, o público. PNGs de design/mascote-e-textura/, copiados para assets/.
+MASCOT_FILES = {
+    "agachado": "carlos-agachado.png",
+    "chefe": "carlos-chefe.png",
+    "dinheiro": "carlos-dinheiro.png",
+    "cafe": "carlos-cafe.png",
+    "estrelas": "carlos-estrelas.png",
+}
+
+MASCOT_SOURCES = {
+    "carlos-agachado.png": "design/mascote-e-textura/png/MASCOTE_1.png",
+    "carlos-chefe.png": "design/mascote-e-textura/png/MASCOTE_2.png",
+    "carlos-dinheiro.png": "design/mascote-e-textura/png/MASCOTE_3.png",
+    "carlos-cafe.png": "design/mascote-e-textura/png/MASCOTE_4.png",
+    "carlos-estrelas.png": "design/mascote-e-textura/png/MASCOTE_5.png",
+}
+
 LAYOUTS_FACELESS = ("guide", "center", "corner")
-LAYOUTS_RECORDED = ("split", "motion", "creator")
+LAYOUTS_RECORDED = ("pip", "split", "motion", "creator", "zoom")
 
 SFX_FILES = {
     "pop": "pop.mp3",

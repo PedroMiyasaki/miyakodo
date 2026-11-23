@@ -3,7 +3,7 @@
 import re
 from html import escape
 
-from pipeline.brand import AZUL, BROWN, LARANJA, OLIVA, ROSA, VERDE
+from pipeline.brand import AZUL, BROWN, LARANJA, MASCOT_FILES, OLIVA, ROSA, VERDE
 
 
 def build_scene(pid, x, y, w, h, scene, t0, t1):
@@ -11,7 +11,16 @@ def build_scene(pid, x, y, w, h, scene, t0, t1):
     builder = BUILDERS.get(kind)
     if builder is None:
         raise ValueError(f"cena desconhecida: {kind}")
-    return builder(pid, float(x), float(y), float(w), float(h), scene or {}, float(t0), float(t1))
+    html, ops, sfx = builder(pid, float(x), float(y), float(w), float(h), scene or {}, float(t0), float(t1))
+    if f'id="{pid}-root"' in html:
+        span = max(0.7, min(1.4, (float(t1) - float(t0)) * 0.35))
+        ops = list(ops) + [{
+            "kind": "to",
+            "sel": f"#{pid}-root",
+            "vars": {"y": -8, "duration": round(span, 3), "yoyo": True, "repeat": 1, "ease": "sine.inOut"},
+            "at": round(float(t0) + 0.4, 4),
+        }]
+    return html, ops, sfx
 
 
 def _box(pid, x, y, w, h, inner, cls=""):
@@ -380,6 +389,144 @@ def scene_badge(pid, x, y, w, h, scene, t0, t1):
     return _box(pid, x, y, w, h, inner, "open badge-wrap"), _pop(pid, t0, "50% 50%"), _sfx("pop", t0)
 
 
+def scene_hero(pid, x, y, w, h, scene, t0, t1):
+    text = str(scene.get("text") or "")
+    kicker = escape(str(scene.get("kicker") or ""))
+    size = 48 if h < 220 else (120 if len(text) <= 14 else 92 if len(text) <= 22 else 76)
+    items = [str(item) for item in (scene.get("items") or [])]
+    chips = []
+    ops = _pop(pid, t0, "50% 60%")
+    ops.append({
+        "kind": "fromTo",
+        "sel": f"#{pid}-hero",
+        "from": {"y": 36, "scale": 0.92, "opacity": 0},
+        "to": {"y": 0, "scale": 1, "opacity": 1, "duration": 0.42, "ease": "power3.out"},
+        "at": round(t0 + 0.06, 4),
+    })
+    for index, item in enumerate(items):
+        at = t0 + 0.32 + index * 0.22
+        chips.append(f'<span id="{pid}-chip-{index}" class="chip">{escape(item)}</span>')
+        ops.append({
+            "kind": "fromTo",
+            "sel": f"#{pid}-chip-{index}",
+            "from": {"y": 16, "opacity": 0},
+            "to": {"y": 0, "opacity": 1, "duration": 0.28, "ease": "back.out(1.6)"},
+            "at": round(at, 4),
+        })
+    kicker_html = f'<p class="hero-kicker">{kicker}</p>' if kicker else ""
+    chip_html = f'<div class="chip-row">{"".join(chips)}</div>' if chips else ""
+    inner = (
+        f'{kicker_html}'
+        f'<p id="{pid}-hero" class="hero-text" style="font-size:{size}px">{escape(text)}</p>'
+        f'{chip_html}'
+    )
+    return _box(pid, x, y, w, h, inner, "open hero"), ops, _sfx("impact", t0)
+
+
+def scene_reveal(pid, x, y, w, h, scene, t0, t1):
+    title = escape(str(scene.get("title") or "Headless Software"))
+    rows = _lines(scene.get("lines"), ["Botão", "Menu", "Tela"])
+    agent = escape(str(scene.get("agent") or "o agente"))
+    pose = str(scene.get("pose") or "estrelas")
+    filename = MASCOT_FILES.get(pose, MASCOT_FILES["estrelas"])
+    ops = _pop(pid, t0, "50% 20%")
+    sfx = _sfx("whoosh", t0)
+    row_html = []
+    for index, row in enumerate(rows):
+        at = t0 + 0.28 + index * 0.28
+        row_html.append(f'<div id="{pid}-row-{index}" class="ui-row">{escape(row)}</div>')
+        ops.append({
+            "kind": "fromTo",
+            "sel": f"#{pid}-row-{index}",
+            "from": {"x": 0, "opacity": 1},
+            "to": {"x": 80, "opacity": 0, "duration": 0.35, "ease": "power2.in"},
+            "at": round(at, 4),
+        })
+        sfx.append({"name": "whoosh", "at": round(at, 4)})
+    ops.append({
+        "kind": "fromTo",
+        "sel": f"#{pid}-agent",
+        "from": {"y": 24, "scale": 0.8, "opacity": 0},
+        "to": {"y": 0, "scale": 1, "opacity": 1, "duration": 0.4, "ease": "back.out(1.7)"},
+        "at": round(t0 + 0.9, 4),
+    })
+    ops.append({
+        "kind": "to",
+        "sel": f"#{pid}-agent",
+        "vars": {"y": -6, "duration": 0.8, "yoyo": True, "repeat": 1, "ease": "sine.inOut"},
+        "at": round(t0 + 1.35, 4),
+    })
+    sfx.append({"name": "pop", "at": round(t0 + 0.9, 4)})
+    inner = (
+        f'<p id="{pid}-title" class="hero-text" style="font-size:78px">{title}</p>'
+        f'<div class="ui-card">{"".join(row_html)}</div>'
+        f'<div id="{pid}-agent" class="agent-pill">'
+        f'<img src="assets/{filename}" alt="Carlos"/>'
+        f'<span>{agent}</span></div>'
+    )
+    return _box(pid, x, y, w, h, inner, "open hero"), ops, sfx
+
+
+def scene_mascot(pid, x, y, w, h, scene, t0, t1):
+    pose = str(scene.get("pose") or "chefe")
+    filename = MASCOT_FILES.get(pose)
+    if not filename:
+        raise ValueError(f"pose de mascote desconhecida: {pose}")
+    kicker = escape(str(scene.get("kicker") or ""))
+    line = escape(str(scene.get("line") or scene.get("text") or ""))
+    chips = [str(item) for item in (scene.get("chips") or scene.get("items") or [])]
+    bubbles = [str(item) for item in (scene.get("bubbles") or [])]
+    chip_html = []
+    bubble_html = []
+    ops = _pop(pid, t0, "30% 80%")
+    ops.append({
+        "kind": "to",
+        "sel": f"#{pid}-fig",
+        "vars": {"y": -10, "duration": 0.7, "yoyo": True, "repeat": 3, "ease": "sine.inOut"},
+        "at": round(t0 + 0.2, 4),
+    })
+    ops.append({
+        "kind": "fromTo",
+        "sel": f"#{pid}-line",
+        "from": {"y": 18, "opacity": 0},
+        "to": {"y": 0, "opacity": 1, "duration": 0.32, "ease": "power2.out"},
+        "at": round(t0 + 0.18, 4),
+    })
+    sfx = _sfx("pop", t0)
+    for index, chip in enumerate(chips):
+        at = t0 + 0.34 + index * 0.18
+        chip_html.append(f'<span id="{pid}-chip-{index}" class="chip">{escape(chip)}</span>')
+        ops.append({
+            "kind": "fromTo",
+            "sel": f"#{pid}-chip-{index}",
+            "from": {"scale": 0.7, "opacity": 0},
+            "to": {"scale": 1, "opacity": 1, "duration": 0.26, "ease": "back.out(1.8)"},
+            "at": round(at, 4),
+        })
+    for index, bubble in enumerate(bubbles):
+        at = t0 + 0.5 + index * 0.28
+        bubble_html.append(f'<div id="{pid}-say-{index}" class="say">{escape(bubble)}</div>')
+        ops.append({
+            "kind": "fromTo",
+            "sel": f"#{pid}-say-{index}",
+            "from": {"x": 20, "opacity": 0},
+            "to": {"x": 0, "opacity": 1, "duration": 0.28, "ease": "power2.out"},
+            "at": round(at, 4),
+        })
+        sfx.append({"name": "notification", "at": round(at, 4)})
+    inner = (
+        f'<div class="cast">'
+        f'<img id="{pid}-fig" class="cast-fig" src="assets/{filename}" alt="Carlos"/>'
+        f'<div class="cast-copy">'
+        f'<p class="kicker">{kicker}</p>'
+        f'<p id="{pid}-line" class="cast-line">{line}</p>'
+        f'<div class="chip-row">{"".join(chip_html)}</div>'
+        f'{"".join(bubble_html)}'
+        f'</div></div>'
+    )
+    return _box(pid, x, y, w, h, inner, "card cast-card"), ops, sfx
+
+
 BUILDERS = {
     "stack": scene_stack,
     "timeline": scene_timeline,
@@ -395,6 +542,9 @@ BUILDERS = {
     "bullets": scene_bullets,
     "quote": scene_quote,
     "badge": scene_badge,
+    "hero": scene_hero,
+    "reveal": scene_reveal,
+    "mascot": scene_mascot,
 }
 
 # Cores usadas no SVG/CSS inline acima ficam explícitas para o teste de paleta.

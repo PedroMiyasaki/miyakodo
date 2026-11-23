@@ -1,0 +1,2877 @@
+{
+  "mode": "gravacao",
+  "slug": "headless-software-gravacao",
+  "title": "Headless Software",
+  "purpose": "opiniao",
+  "voice": {
+    "src": "video/inputs/headless-software/headless-software.MP4",
+    "in": 0,
+    "out": 124.683
+  },
+  "footage": {
+    "src": "video/inputs/headless-software/headless-software.MP4"
+  },
+  "emphasis": [
+    "Headless",
+    "interface",
+    "agentes",
+    "Stripe",
+    "empresário",
+    "cardápio",
+    "Personal",
+    "Agents",
+    "AI"
+  ],
+  "strong": [
+    "alerta",
+    "concorrente"
+  ],
+  "cta": [
+    "segue",
+    "like"
+  ],
+  "words": [
+    {
+      "text": "Talvez",
+      "start": 0.0,
+      "end": 0.34
+    },
+    {
+      "text": "você",
+      "start": 0.34,
+      "end": 0.5
+    },
+    {
+      "text": "não",
+      "start": 0.5,
+      "end": 0.56
+    },
+    {
+      "text": "saiba",
+      "start": 0.56,
+      "end": 0.84
+    },
+    {
+      "text": "disso,",
+      "start": 0.84,
+      "end": 1.12
+    },
+    {
+      "text": "mas",
+      "start": 1.18,
+      "end": 1.5
+    },
+    {
+      "text": "o",
+      "start": 1.5,
+      "end": 1.68
+    },
+    {
+      "text": "futuro",
+      "start": 1.68,
+      "end": 2.02
+    },
+    {
+      "text": "de",
+      "start": 2.02,
+      "end": 2.18
+    },
+    {
+      "text": "quem",
+      "start": 2.18,
+      "end": 2.28
+    },
+    {
+      "text": "quer",
+      "start": 2.28,
+      "end": 2.46
+    },
+    {
+      "text": "construir",
+      "start": 2.46,
+      "end": 2.82
+    },
+    {
+      "text": "software",
+      "start": 2.82,
+      "end": 3.18
+    },
+    {
+      "text": "na",
+      "start": 3.18,
+      "end": 3.38
+    },
+    {
+      "text": "era",
+      "start": 3.38,
+      "end": 3.58
+    },
+    {
+      "text": "de",
+      "start": 3.58,
+      "end": 3.76
+    },
+    {
+      "text": "AI",
+      "start": 3.76,
+      "end": 3.98
+    },
+    {
+      "text": "é",
+      "start": 3.98,
+      "end": 4.34
+    },
+    {
+      "text": "construir",
+      "start": 4.34,
+      "end": 4.62
+    },
+    {
+      "text": "software",
+      "start": 4.62,
+      "end": 5.04
+    },
+    {
+      "text": "sem",
+      "start": 5.04,
+      "end": 5.3
+    },
+    {
+      "text": "nenhuma",
+      "start": 5.3,
+      "end": 5.78
+    },
+    {
+      "text": "interface.",
+      "start": 5.78,
+      "end": 6.26
+    },
+    {
+      "text": "Essa",
+      "start": 6.7,
+      "end": 6.84
+    },
+    {
+      "text": "ideia",
+      "start": 6.84,
+      "end": 7.02
+    },
+    {
+      "text": "se",
+      "start": 7.02,
+      "end": 7.22
+    },
+    {
+      "text": "chama",
+      "start": 7.22,
+      "end": 7.44
+    },
+    {
+      "text": "Headless",
+      "start": 7.44,
+      "end": 7.94
+    },
+    {
+      "text": "Software,",
+      "start": 7.94,
+      "end": 8.3
+    },
+    {
+      "text": "e",
+      "start": 8.48,
+      "end": 8.52
+    },
+    {
+      "text": "é",
+      "start": 8.52,
+      "end": 8.56
+    },
+    {
+      "text": "uma",
+      "start": 8.56,
+      "end": 8.64
+    },
+    {
+      "text": "ideia",
+      "start": 8.64,
+      "end": 8.78
+    },
+    {
+      "text": "que",
+      "start": 8.78,
+      "end": 8.9
+    },
+    {
+      "text": "está",
+      "start": 8.9,
+      "end": 9.08
+    },
+    {
+      "text": "muito",
+      "start": 9.08,
+      "end": 9.46
+    },
+    {
+      "text": "em",
+      "start": 9.46,
+      "end": 9.58
+    },
+    {
+      "text": "alta",
+      "start": 9.58,
+      "end": 9.74
+    },
+    {
+      "text": "no",
+      "start": 9.74,
+      "end": 9.88
+    },
+    {
+      "text": "Vale",
+      "start": 9.88,
+      "end": 10.04
+    },
+    {
+      "text": "do",
+      "start": 10.04,
+      "end": 10.2
+    },
+    {
+      "text": "Silício,",
+      "start": 10.2,
+      "end": 10.62
+    },
+    {
+      "text": "e",
+      "start": 11.02,
+      "end": 11.26
+    },
+    {
+      "text": "a",
+      "start": 11.26,
+      "end": 11.42
+    },
+    {
+      "text": "ideia",
+      "start": 11.42,
+      "end": 11.58
+    },
+    {
+      "text": "por",
+      "start": 11.58,
+      "end": 11.82
+    },
+    {
+      "text": "trás",
+      "start": 11.82,
+      "end": 12.04
+    },
+    {
+      "text": "dela",
+      "start": 12.04,
+      "end": 12.2
+    },
+    {
+      "text": "é",
+      "start": 12.2,
+      "end": 12.3
+    },
+    {
+      "text": "que",
+      "start": 12.3,
+      "end": 12.38
+    },
+    {
+      "text": "você",
+      "start": 12.38,
+      "end": 12.58
+    },
+    {
+      "text": "vai",
+      "start": 12.58,
+      "end": 12.8
+    },
+    {
+      "text": "construir",
+      "start": 12.8,
+      "end": 13.12
+    },
+    {
+      "text": "o",
+      "start": 13.12,
+      "end": 13.42
+    },
+    {
+      "text": "software",
+      "start": 13.42,
+      "end": 13.66
+    },
+    {
+      "text": "sem",
+      "start": 13.66,
+      "end": 13.94
+    },
+    {
+      "text": "nenhuma",
+      "start": 13.94,
+      "end": 14.38
+    },
+    {
+      "text": "interface,",
+      "start": 14.38,
+      "end": 15.0
+    },
+    {
+      "text": "sem",
+      "start": 15.12,
+      "end": 15.26
+    },
+    {
+      "text": "botão,",
+      "start": 15.26,
+      "end": 15.66
+    },
+    {
+      "text": "sem",
+      "start": 15.74,
+      "end": 16.44
+    },
+    {
+      "text": "usuário",
+      "start": 16.44,
+      "end": 17.1
+    },
+    {
+      "text": "utilizar",
+      "start": 17.1,
+      "end": 17.62
+    },
+    {
+      "text": "o",
+      "start": 17.62,
+      "end": 17.88
+    },
+    {
+      "text": "software",
+      "start": 17.88,
+      "end": 18.14
+    },
+    {
+      "text": "em",
+      "start": 18.14,
+      "end": 18.38
+    },
+    {
+      "text": "si.",
+      "start": 18.38,
+      "end": 18.56
+    },
+    {
+      "text": "Mas",
+      "start": 19.12,
+      "end": 19.5
+    },
+    {
+      "text": "se",
+      "start": 19.5,
+      "end": 19.78
+    },
+    {
+      "text": "você",
+      "start": 19.78,
+      "end": 20.1
+    },
+    {
+      "text": "não",
+      "start": 20.1,
+      "end": 20.32
+    },
+    {
+      "text": "tem",
+      "start": 20.32,
+      "end": 20.4
+    },
+    {
+      "text": "uma",
+      "start": 20.4,
+      "end": 20.64
+    },
+    {
+      "text": "interface",
+      "start": 20.64,
+      "end": 20.98
+    },
+    {
+      "text": "pro",
+      "start": 20.98,
+      "end": 21.18
+    },
+    {
+      "text": "usuário,",
+      "start": 21.18,
+      "end": 21.54
+    },
+    {
+      "text": "como",
+      "start": 21.6,
+      "end": 21.86
+    },
+    {
+      "text": "que",
+      "start": 21.86,
+      "end": 22.04
+    },
+    {
+      "text": "esse",
+      "start": 22.04,
+      "end": 22.2
+    },
+    {
+      "text": "software",
+      "start": 22.2,
+      "end": 22.5
+    },
+    {
+      "text": "funciona?",
+      "start": 22.5,
+      "end": 23.0
+    },
+    {
+      "text": "Ela",
+      "start": 23.66,
+      "end": 23.9
+    },
+    {
+      "text": "funciona",
+      "start": 23.9,
+      "end": 24.26
+    },
+    {
+      "text": "em",
+      "start": 24.26,
+      "end": 24.42
+    },
+    {
+      "text": "conjunto",
+      "start": 24.42,
+      "end": 24.74
+    },
+    {
+      "text": "com",
+      "start": 24.74,
+      "end": 25.0
+    },
+    {
+      "text": "uma",
+      "start": 25.0,
+      "end": 25.32
+    },
+    {
+      "text": "outra",
+      "start": 25.32,
+      "end": 25.54
+    },
+    {
+      "text": "ideia",
+      "start": 25.54,
+      "end": 25.74
+    },
+    {
+      "text": "que",
+      "start": 25.74,
+      "end": 25.92
+    },
+    {
+      "text": "também",
+      "start": 25.92,
+      "end": 26.16
+    },
+    {
+      "text": "está",
+      "start": 26.16,
+      "end": 26.28
+    },
+    {
+      "text": "em",
+      "start": 26.28,
+      "end": 26.6
+    },
+    {
+      "text": "muito",
+      "start": 26.6,
+      "end": 26.84
+    },
+    {
+      "text": "em",
+      "start": 26.84,
+      "end": 27.0
+    },
+    {
+      "text": "voga",
+      "start": 27.0,
+      "end": 27.12
+    },
+    {
+      "text": "no",
+      "start": 27.12,
+      "end": 27.26
+    },
+    {
+      "text": "Vale",
+      "start": 27.26,
+      "end": 27.42
+    },
+    {
+      "text": "do",
+      "start": 27.42,
+      "end": 27.62
+    },
+    {
+      "text": "Silício,",
+      "start": 27.62,
+      "end": 27.92
+    },
+    {
+      "text": "que",
+      "start": 28.0,
+      "end": 28.08
+    },
+    {
+      "text": "é",
+      "start": 28.08,
+      "end": 28.14
+    },
+    {
+      "text": "a",
+      "start": 28.14,
+      "end": 28.3
+    },
+    {
+      "text": "ideia",
+      "start": 28.3,
+      "end": 28.42
+    },
+    {
+      "text": "de",
+      "start": 28.42,
+      "end": 28.76
+    },
+    {
+      "text": "Personal",
+      "start": 28.76,
+      "end": 29.22
+    },
+    {
+      "text": "Agents,",
+      "start": 29.22,
+      "end": 29.64
+    },
+    {
+      "text": "que",
+      "start": 29.88,
+      "end": 30.06
+    },
+    {
+      "text": "estão",
+      "start": 30.06,
+      "end": 30.2
+    },
+    {
+      "text": "sendo",
+      "start": 30.2,
+      "end": 30.4
+    },
+    {
+      "text": "muito",
+      "start": 30.4,
+      "end": 30.76
+    },
+    {
+      "text": "utilizados",
+      "start": 30.76,
+      "end": 31.22
+    },
+    {
+      "text": "por",
+      "start": 31.22,
+      "end": 31.52
+    },
+    {
+      "text": "uma",
+      "start": 31.52,
+      "end": 31.66
+    },
+    {
+      "text": "empresa",
+      "start": 31.66,
+      "end": 31.86
+    },
+    {
+      "text": "chamada",
+      "start": 31.86,
+      "end": 32.36
+    },
+    {
+      "text": "Instinct",
+      "start": 32.36,
+      "end": 33.0
+    },
+    {
+      "text": "e",
+      "start": 33.0,
+      "end": 33.24
+    },
+    {
+      "text": "Grok,",
+      "start": 33.24,
+      "end": 33.74
+    },
+    {
+      "text": "que",
+      "start": 33.82,
+      "end": 34.0
+    },
+    {
+      "text": "eu",
+      "start": 34.0,
+      "end": 34.16
+    },
+    {
+      "text": "uso",
+      "start": 34.16,
+      "end": 34.28
+    },
+    {
+      "text": "pessoalmente.",
+      "start": 34.28,
+      "end": 34.9
+    },
+    {
+      "text": "Os",
+      "start": 35.28,
+      "end": 35.56
+    },
+    {
+      "text": "Personal",
+      "start": 35.56,
+      "end": 35.9
+    },
+    {
+      "text": "Agents",
+      "start": 35.9,
+      "end": 36.2
+    },
+    {
+      "text": "são",
+      "start": 36.2,
+      "end": 36.38
+    },
+    {
+      "text": "esses",
+      "start": 36.38,
+      "end": 36.62
+    },
+    {
+      "text": "agentes",
+      "start": 36.62,
+      "end": 36.88
+    },
+    {
+      "text": "que",
+      "start": 36.88,
+      "end": 37.16
+    },
+    {
+      "text": "fazem",
+      "start": 37.16,
+      "end": 37.36
+    },
+    {
+      "text": "as",
+      "start": 37.36,
+      "end": 37.58
+    },
+    {
+      "text": "tarefas",
+      "start": 37.58,
+      "end": 37.88
+    },
+    {
+      "text": "do",
+      "start": 37.88,
+      "end": 38.06
+    },
+    {
+      "text": "seu",
+      "start": 38.06,
+      "end": 38.18
+    },
+    {
+      "text": "dia",
+      "start": 38.18,
+      "end": 38.46
+    },
+    {
+      "text": "a",
+      "start": 38.46,
+      "end": 38.5
+    },
+    {
+      "text": "dia,",
+      "start": 38.5,
+      "end": 38.62
+    },
+    {
+      "text": "então",
+      "start": 38.72,
+      "end": 38.88
+    },
+    {
+      "text": "eles",
+      "start": 38.88,
+      "end": 39.1
+    },
+    {
+      "text": "te",
+      "start": 39.1,
+      "end": 39.22
+    },
+    {
+      "text": "lembram",
+      "start": 39.22,
+      "end": 39.42
+    },
+    {
+      "text": "de",
+      "start": 39.42,
+      "end": 39.56
+    },
+    {
+      "text": "pagar",
+      "start": 39.56,
+      "end": 39.78
+    },
+    {
+      "text": "contas,",
+      "start": 39.78,
+      "end": 40.32
+    },
+    {
+      "text": "marcando",
+      "start": 40.48,
+      "end": 40.62
+    },
+    {
+      "text": "coisas",
+      "start": 40.62,
+      "end": 40.88
+    },
+    {
+      "text": "no",
+      "start": 40.88,
+      "end": 41.02
+    },
+    {
+      "text": "médico",
+      "start": 41.02,
+      "end": 41.18
+    },
+    {
+      "text": "pra",
+      "start": 41.18,
+      "end": 41.36
+    },
+    {
+      "text": "você",
+      "start": 41.36,
+      "end": 41.76
+    },
+    {
+      "text": "e",
+      "start": 41.76,
+      "end": 41.92
+    },
+    {
+      "text": "etc.",
+      "start": 41.92,
+      "end": 42.3
+    },
+    {
+      "text": "E",
+      "start": 42.92,
+      "end": 43.02
+    },
+    {
+      "text": "a",
+      "start": 43.02,
+      "end": 43.22
+    },
+    {
+      "text": "ideia",
+      "start": 43.22,
+      "end": 43.46
+    },
+    {
+      "text": "é",
+      "start": 43.46,
+      "end": 43.76
+    },
+    {
+      "text": "que",
+      "start": 43.76,
+      "end": 43.94
+    },
+    {
+      "text": "esse",
+      "start": 43.94,
+      "end": 44.16
+    },
+    {
+      "text": "Headless",
+      "start": 44.16,
+      "end": 44.64
+    },
+    {
+      "text": "Software",
+      "start": 44.64,
+      "end": 45.04
+    },
+    {
+      "text": "vai",
+      "start": 45.04,
+      "end": 45.36
+    },
+    {
+      "text": "ser",
+      "start": 45.36,
+      "end": 45.52
+    },
+    {
+      "text": "um",
+      "start": 45.52,
+      "end": 45.68
+    },
+    {
+      "text": "software",
+      "start": 45.68,
+      "end": 46.02
+    },
+    {
+      "text": "feito",
+      "start": 46.02,
+      "end": 46.4
+    },
+    {
+      "text": "para",
+      "start": 46.4,
+      "end": 46.7
+    },
+    {
+      "text": "os",
+      "start": 46.7,
+      "end": 46.9
+    },
+    {
+      "text": "seus",
+      "start": 46.9,
+      "end": 47.15
+    },
+    {
+      "text": "agentes,",
+      "start": 47.15,
+      "end": 47.42
+    },
+    {
+      "text": "e",
+      "start": 47.66,
+      "end": 48.02
+    },
+    {
+      "text": "não",
+      "start": 48.02,
+      "end": 48.22
+    },
+    {
+      "text": "para",
+      "start": 48.22,
+      "end": 48.4
+    },
+    {
+      "text": "você.",
+      "start": 48.4,
+      "end": 48.7
+    },
+    {
+      "text": "A",
+      "start": 49.06,
+      "end": 49.18
+    },
+    {
+      "text": "própria",
+      "start": 49.18,
+      "end": 49.46
+    },
+    {
+      "text": "Stripe,",
+      "start": 49.46,
+      "end": 49.84
+    },
+    {
+      "text": "que",
+      "start": 50.02,
+      "end": 50.06
+    },
+    {
+      "text": "é",
+      "start": 50.06,
+      "end": 50.1
+    },
+    {
+      "text": "uma",
+      "start": 50.1,
+      "end": 50.24
+    },
+    {
+      "text": "empresa",
+      "start": 50.24,
+      "end": 50.5
+    },
+    {
+      "text": "de",
+      "start": 50.5,
+      "end": 50.74
+    },
+    {
+      "text": "pagamento,",
+      "start": 50.74,
+      "end": 51.08
+    },
+    {
+      "text": "que",
+      "start": 51.24,
+      "end": 51.34
+    },
+    {
+      "text": "processa",
+      "start": 51.34,
+      "end": 51.7
+    },
+    {
+      "text": "1%",
+      "start": 51.7,
+      "end": 52.32
+    },
+    {
+      "text": "do",
+      "start": 52.32,
+      "end": 52.5
+    },
+    {
+      "text": "PIB",
+      "start": 52.5,
+      "end": 52.74
+    },
+    {
+      "text": "mundial,",
+      "start": 52.74,
+      "end": 53.14
+    },
+    {
+      "text": "já",
+      "start": 53.3,
+      "end": 53.42
+    },
+    {
+      "text": "soltou",
+      "start": 53.42,
+      "end": 53.72
+    },
+    {
+      "text": "esse",
+      "start": 53.72,
+      "end": 53.88
+    },
+    {
+      "text": "número,",
+      "start": 53.88,
+      "end": 54.18
+    },
+    {
+      "text": "de",
+      "start": 54.26,
+      "end": 54.48
+    },
+    {
+      "text": "que",
+      "start": 54.48,
+      "end": 54.62
+    },
+    {
+      "text": "nos",
+      "start": 54.62,
+      "end": 54.9
+    },
+    {
+      "text": "últimos",
+      "start": 54.9,
+      "end": 55.32
+    },
+    {
+      "text": "tempos",
+      "start": 55.32,
+      "end": 55.68
+    },
+    {
+      "text": "o",
+      "start": 55.68,
+      "end": 55.88
+    },
+    {
+      "text": "número",
+      "start": 55.88,
+      "end": 56.22
+    },
+    {
+      "text": "de",
+      "start": 56.22,
+      "end": 56.46
+    },
+    {
+      "text": "agentes",
+      "start": 56.46,
+      "end": 56.84
+    },
+    {
+      "text": "de",
+      "start": 56.84,
+      "end": 57.08
+    },
+    {
+      "text": "AI",
+      "start": 57.08,
+      "end": 57.32
+    },
+    {
+      "text": "que",
+      "start": 57.32,
+      "end": 57.66
+    },
+    {
+      "text": "estão",
+      "start": 57.66,
+      "end": 57.88
+    },
+    {
+      "text": "realizando",
+      "start": 57.88,
+      "end": 58.36
+    },
+    {
+      "text": "pagamentos",
+      "start": 58.36,
+      "end": 58.78
+    },
+    {
+      "text": "por",
+      "start": 58.78,
+      "end": 58.98
+    },
+    {
+      "text": "dentro",
+      "start": 58.98,
+      "end": 59.1
+    },
+    {
+      "text": "da",
+      "start": 59.1,
+      "end": 59.3
+    },
+    {
+      "text": "Stripe",
+      "start": 59.3,
+      "end": 59.92
+    },
+    {
+      "text": "veio",
+      "start": 59.92,
+      "end": 60.3
+    },
+    {
+      "text": "crescendo",
+      "start": 60.3,
+      "end": 60.84
+    },
+    {
+      "text": "vertiginosamente,",
+      "start": 61.4,
+      "end": 61.88
+    },
+    {
+      "text": "ou",
+      "start": 62.02,
+      "end": 62.28
+    },
+    {
+      "text": "seja,",
+      "start": 62.28,
+      "end": 62.56
+    },
+    {
+      "text": "a",
+      "start": 62.76,
+      "end": 62.84
+    },
+    {
+      "text": "gente",
+      "start": 62.84,
+      "end": 62.98
+    },
+    {
+      "text": "está",
+      "start": 62.98,
+      "end": 63.12
+    },
+    {
+      "text": "indo",
+      "start": 63.12,
+      "end": 63.22
+    },
+    {
+      "text": "para",
+      "start": 63.22,
+      "end": 63.36
+    },
+    {
+      "text": "uma",
+      "start": 63.36,
+      "end": 63.44
+    },
+    {
+      "text": "economia",
+      "start": 63.44,
+      "end": 64.06
+    },
+    {
+      "text": "nova",
+      "start": 64.06,
+      "end": 64.46
+    },
+    {
+      "text": "onde",
+      "start": 64.46,
+      "end": 64.8
+    },
+    {
+      "text": "os",
+      "start": 64.8,
+      "end": 65.14
+    },
+    {
+      "text": "softwares",
+      "start": 65.14,
+      "end": 65.44
+    },
+    {
+      "text": "estão",
+      "start": 65.44,
+      "end": 65.66
+    },
+    {
+      "text": "sendo",
+      "start": 65.66,
+      "end": 65.92
+    },
+    {
+      "text": "feitos,",
+      "start": 65.92,
+      "end": 66.36
+    },
+    {
+      "text": "e",
+      "start": 66.46,
+      "end": 66.6
+    },
+    {
+      "text": "os",
+      "start": 66.6,
+      "end": 66.76
+    },
+    {
+      "text": "serviços",
+      "start": 66.76,
+      "end": 67.26
+    },
+    {
+      "text": "também,",
+      "start": 67.26,
+      "end": 67.58
+    },
+    {
+      "text": "para",
+      "start": 68.36,
+      "end": 68.5
+    },
+    {
+      "text": "os",
+      "start": 68.5,
+      "end": 68.68
+    },
+    {
+      "text": "agentes",
+      "start": 68.68,
+      "end": 69.0
+    },
+    {
+      "text": "das",
+      "start": 69.0,
+      "end": 69.24
+    },
+    {
+      "text": "pessoas,",
+      "start": 69.24,
+      "end": 69.64
+    },
+    {
+      "text": "e",
+      "start": 69.88,
+      "end": 70.14
+    },
+    {
+      "text": "menos",
+      "start": 70.14,
+      "end": 70.44
+    },
+    {
+      "text": "para",
+      "start": 70.44,
+      "end": 70.78
+    },
+    {
+      "text": "elas.",
+      "start": 70.78,
+      "end": 71.06
+    },
+    {
+      "text": "E",
+      "start": 71.32,
+      "end": 71.52
+    },
+    {
+      "text": "se",
+      "start": 71.52,
+      "end": 71.62
+    },
+    {
+      "text": "você",
+      "start": 71.62,
+      "end": 71.82
+    },
+    {
+      "text": "é",
+      "start": 71.82,
+      "end": 72.04
+    },
+    {
+      "text": "empresário,",
+      "start": 72.04,
+      "end": 72.3
+    },
+    {
+      "text": "isso",
+      "start": 72.64,
+      "end": 72.7
+    },
+    {
+      "text": "também",
+      "start": 72.7,
+      "end": 73.04
+    },
+    {
+      "text": "tem",
+      "start": 73.04,
+      "end": 73.14
+    },
+    {
+      "text": "que",
+      "start": 73.14,
+      "end": 73.28
+    },
+    {
+      "text": "acender",
+      "start": 73.28,
+      "end": 73.54
+    },
+    {
+      "text": "um",
+      "start": 73.54,
+      "end": 73.72
+    },
+    {
+      "text": "alerta",
+      "start": 73.72,
+      "end": 73.88
+    },
+    {
+      "text": "na",
+      "start": 73.88,
+      "end": 74.06
+    },
+    {
+      "text": "sua",
+      "start": 74.06,
+      "end": 74.16
+    },
+    {
+      "text": "cabeça,",
+      "start": 74.16,
+      "end": 74.5
+    },
+    {
+      "text": "porque",
+      "start": 74.62,
+      "end": 74.8
+    },
+    {
+      "text": "você",
+      "start": 74.8,
+      "end": 75.06
+    },
+    {
+      "text": "não",
+      "start": 75.06,
+      "end": 75.18
+    },
+    {
+      "text": "tem",
+      "start": 75.18,
+      "end": 75.36
+    },
+    {
+      "text": "que",
+      "start": 75.36,
+      "end": 75.5
+    },
+    {
+      "text": "mais",
+      "start": 75.5,
+      "end": 75.64
+    },
+    {
+      "text": "só",
+      "start": 75.64,
+      "end": 75.8
+    },
+    {
+      "text": "pensar",
+      "start": 75.8,
+      "end": 76.12
+    },
+    {
+      "text": "como",
+      "start": 76.12,
+      "end": 76.52
+    },
+    {
+      "text": "que",
+      "start": 76.52,
+      "end": 76.66
+    },
+    {
+      "text": "você",
+      "start": 76.66,
+      "end": 76.84
+    },
+    {
+      "text": "tem",
+      "start": 76.84,
+      "end": 76.96
+    },
+    {
+      "text": "que",
+      "start": 76.96,
+      "end": 77.1
+    },
+    {
+      "text": "vender",
+      "start": 77.1,
+      "end": 77.3
+    },
+    {
+      "text": "o",
+      "start": 77.3,
+      "end": 77.44
+    },
+    {
+      "text": "seu",
+      "start": 77.44,
+      "end": 77.6
+    },
+    {
+      "text": "produto,",
+      "start": 77.6,
+      "end": 77.98
+    },
+    {
+      "text": "o",
+      "start": 78.08,
+      "end": 78.16
+    },
+    {
+      "text": "seu",
+      "start": 78.16,
+      "end": 78.24
+    },
+    {
+      "text": "serviço",
+      "start": 78.24,
+      "end": 78.64
+    },
+    {
+      "text": "para",
+      "start": 78.64,
+      "end": 78.86
+    },
+    {
+      "text": "outras",
+      "start": 78.86,
+      "end": 79.18
+    },
+    {
+      "text": "pessoas.",
+      "start": 79.18,
+      "end": 79.58
+    },
+    {
+      "text": "Você",
+      "start": 80.08,
+      "end": 80.34
+    },
+    {
+      "text": "também",
+      "start": 80.34,
+      "end": 80.56
+    },
+    {
+      "text": "tem",
+      "start": 80.56,
+      "end": 80.72
+    },
+    {
+      "text": "que",
+      "start": 80.72,
+      "end": 80.88
+    },
+    {
+      "text": "expor",
+      "start": 80.88,
+      "end": 81.28
+    },
+    {
+      "text": "o",
+      "start": 81.28,
+      "end": 81.46
+    },
+    {
+      "text": "teu",
+      "start": 81.46,
+      "end": 81.6
+    },
+    {
+      "text": "produto,",
+      "start": 81.6,
+      "end": 82.0
+    },
+    {
+      "text": "o",
+      "start": 82.14,
+      "end": 82.18
+    },
+    {
+      "text": "teu",
+      "start": 82.18,
+      "end": 82.32
+    },
+    {
+      "text": "cardápio,",
+      "start": 82.32,
+      "end": 83.1
+    },
+    {
+      "text": "pros",
+      "start": 83.28,
+      "end": 83.5
+    },
+    {
+      "text": "agentes",
+      "start": 83.5,
+      "end": 84.06
+    },
+    {
+      "text": "de",
+      "start": 84.06,
+      "end": 84.22
+    },
+    {
+      "text": "AI",
+      "start": 84.22,
+      "end": 84.52
+    },
+    {
+      "text": "pessoais",
+      "start": 84.52,
+      "end": 85.14
+    },
+    {
+      "text": "delas,",
+      "start": 85.14,
+      "end": 85.64
+    },
+    {
+      "text": "que",
+      "start": 85.8,
+      "end": 86.0
+    },
+    {
+      "text": "podem",
+      "start": 86.0,
+      "end": 86.2
+    },
+    {
+      "text": "estar",
+      "start": 86.2,
+      "end": 86.36
+    },
+    {
+      "text": "tentando",
+      "start": 86.36,
+      "end": 86.64
+    },
+    {
+      "text": "resolver",
+      "start": 86.64,
+      "end": 86.96
+    },
+    {
+      "text": "alguma",
+      "start": 86.96,
+      "end": 87.28
+    },
+    {
+      "text": "coisa",
+      "start": 87.28,
+      "end": 87.42
+    },
+    {
+      "text": "do",
+      "start": 87.42,
+      "end": 87.64
+    },
+    {
+      "text": "cotidiano.",
+      "start": 87.64,
+      "end": 88.12
+    },
+    {
+      "text": "E",
+      "start": 88.54,
+      "end": 88.84
+    },
+    {
+      "text": "se",
+      "start": 88.84,
+      "end": 89.14
+    },
+    {
+      "text": "o",
+      "start": 89.14,
+      "end": 89.24
+    },
+    {
+      "text": "jeito",
+      "start": 89.24,
+      "end": 89.42
+    },
+    {
+      "text": "que",
+      "start": 89.42,
+      "end": 89.6
+    },
+    {
+      "text": "você",
+      "start": 89.6,
+      "end": 89.9
+    },
+    {
+      "text": "expõe",
+      "start": 89.9,
+      "end": 90.14
+    },
+    {
+      "text": "o",
+      "start": 90.14,
+      "end": 90.3
+    },
+    {
+      "text": "produto",
+      "start": 90.3,
+      "end": 90.6
+    },
+    {
+      "text": "é",
+      "start": 90.6,
+      "end": 90.9
+    },
+    {
+      "text": "bom",
+      "start": 90.9,
+      "end": 91.08
+    },
+    {
+      "text": "pra",
+      "start": 91.08,
+      "end": 91.26
+    },
+    {
+      "text": "pessoas,",
+      "start": 91.26,
+      "end": 91.72
+    },
+    {
+      "text": "que",
+      "start": 91.82,
+      "end": 91.94
+    },
+    {
+      "text": "nem",
+      "start": 91.94,
+      "end": 92.1
+    },
+    {
+      "text": "deve",
+      "start": 92.1,
+      "end": 92.26
+    },
+    {
+      "text": "ser",
+      "start": 92.26,
+      "end": 92.44
+    },
+    {
+      "text": "atualmente,",
+      "start": 92.44,
+      "end": 92.84
+    },
+    {
+      "text": "mas",
+      "start": 92.88,
+      "end": 93.16
+    },
+    {
+      "text": "não",
+      "start": 93.16,
+      "end": 93.46
+    },
+    {
+      "text": "é",
+      "start": 93.46,
+      "end": 93.66
+    },
+    {
+      "text": "bom",
+      "start": 93.66,
+      "end": 93.8
+    },
+    {
+      "text": "pros",
+      "start": 93.8,
+      "end": 94.02
+    },
+    {
+      "text": "agentes",
+      "start": 94.02,
+      "end": 94.4
+    },
+    {
+      "text": "pessoais",
+      "start": 94.4,
+      "end": 94.86
+    },
+    {
+      "text": "delas,",
+      "start": 94.86,
+      "end": 95.32
+    },
+    {
+      "text": "o",
+      "start": 95.32,
+      "end": 95.7
+    },
+    {
+      "text": "seu",
+      "start": 95.7,
+      "end": 95.84
+    },
+    {
+      "text": "produto",
+      "start": 95.84,
+      "end": 96.08
+    },
+    {
+      "text": "não",
+      "start": 96.08,
+      "end": 96.26
+    },
+    {
+      "text": "vai",
+      "start": 96.26,
+      "end": 96.42
+    },
+    {
+      "text": "aparecer,",
+      "start": 96.42,
+      "end": 96.8
+    },
+    {
+      "text": "porque",
+      "start": 97.18,
+      "end": 97.46
+    },
+    {
+      "text": "o",
+      "start": 97.46,
+      "end": 97.58
+    },
+    {
+      "text": "agente",
+      "start": 97.58,
+      "end": 97.86
+    },
+    {
+      "text": "de",
+      "start": 97.86,
+      "end": 98.0
+    },
+    {
+      "text": "AI",
+      "start": 98.0,
+      "end": 98.16
+    },
+    {
+      "text": "não",
+      "start": 98.16,
+      "end": 98.3
+    },
+    {
+      "text": "vai",
+      "start": 98.3,
+      "end": 98.46
+    },
+    {
+      "text": "conseguir",
+      "start": 98.46,
+      "end": 98.78
+    },
+    {
+      "text": "nem",
+      "start": 98.78,
+      "end": 98.96
+    },
+    {
+      "text": "achar",
+      "start": 98.96,
+      "end": 99.24
+    },
+    {
+      "text": "ele,",
+      "start": 99.24,
+      "end": 99.5
+    },
+    {
+      "text": "ou",
+      "start": 99.5,
+      "end": 99.78
+    },
+    {
+      "text": "se",
+      "start": 99.78,
+      "end": 100.05
+    },
+    {
+      "text": "não",
+      "start": 100.05,
+      "end": 100.28
+    },
+    {
+      "text": "vai",
+      "start": 100.28,
+      "end": 100.62
+    },
+    {
+      "text": "conseguir",
+      "start": 100.62,
+      "end": 101.16
+    },
+    {
+      "text": "operar,",
+      "start": 101.16,
+      "end": 102.12
+    },
+    {
+      "text": "e",
+      "start": 102.28,
+      "end": 102.42
+    },
+    {
+      "text": "aí",
+      "start": 102.42,
+      "end": 102.56
+    },
+    {
+      "text": "o",
+      "start": 102.56,
+      "end": 102.68
+    },
+    {
+      "text": "teu",
+      "start": 102.68,
+      "end": 102.92
+    },
+    {
+      "text": "concorrente",
+      "start": 102.92,
+      "end": 103.22
+    },
+    {
+      "text": "vai",
+      "start": 103.22,
+      "end": 103.4
+    },
+    {
+      "text": "ganhar",
+      "start": 103.4,
+      "end": 103.62
+    },
+    {
+      "text": "o",
+      "start": 103.62,
+      "end": 103.76
+    },
+    {
+      "text": "teu",
+      "start": 103.76,
+      "end": 103.92
+    },
+    {
+      "text": "cliente.",
+      "start": 103.92,
+      "end": 104.2
+    },
+    {
+      "text": "Ou",
+      "start": 104.2,
+      "end": 104.48
+    },
+    {
+      "text": "seja,",
+      "start": 104.48,
+      "end": 104.9
+    },
+    {
+      "text": "as",
+      "start": 105.0,
+      "end": 105.16
+    },
+    {
+      "text": "maiores",
+      "start": 105.16,
+      "end": 105.62
+    },
+    {
+      "text": "empresas",
+      "start": 105.62,
+      "end": 106.05
+    },
+    {
+      "text": "de",
+      "start": 106.05,
+      "end": 106.22
+    },
+    {
+      "text": "bens",
+      "start": 106.22,
+      "end": 106.48
+    },
+    {
+      "text": "e",
+      "start": 106.48,
+      "end": 106.62
+    },
+    {
+      "text": "serviços",
+      "start": 106.62,
+      "end": 107.05
+    },
+    {
+      "text": "que",
+      "start": 107.05,
+      "end": 107.24
+    },
+    {
+      "text": "vão",
+      "start": 107.24,
+      "end": 107.55
+    },
+    {
+      "text": "continuar",
+      "start": 107.55,
+      "end": 108.05
+    },
+    {
+      "text": "crescendo",
+      "start": 108.05,
+      "end": 108.45
+    },
+    {
+      "text": "no",
+      "start": 108.45,
+      "end": 108.62
+    },
+    {
+      "text": "futuro",
+      "start": 108.62,
+      "end": 109.05
+    },
+    {
+      "text": "são",
+      "start": 109.05,
+      "end": 109.22
+    },
+    {
+      "text": "as",
+      "start": 109.22,
+      "end": 109.4
+    },
+    {
+      "text": "empresas",
+      "start": 109.4,
+      "end": 109.78
+    },
+    {
+      "text": "que",
+      "start": 109.78,
+      "end": 110.0
+    },
+    {
+      "text": "vão",
+      "start": 110.0,
+      "end": 110.28
+    },
+    {
+      "text": "dar",
+      "start": 110.28,
+      "end": 110.62
+    },
+    {
+      "text": "os",
+      "start": 110.62,
+      "end": 110.78
+    },
+    {
+      "text": "seus",
+      "start": 110.78,
+      "end": 111.1
+    },
+    {
+      "text": "para",
+      "start": 111.1,
+      "end": 111.4
+    },
+    {
+      "text": "os",
+      "start": 111.4,
+      "end": 111.62
+    },
+    {
+      "text": "agentes",
+      "start": 111.62,
+      "end": 112.15
+    },
+    {
+      "text": "de",
+      "start": 112.15,
+      "end": 112.32
+    },
+    {
+      "text": "AI",
+      "start": 112.32,
+      "end": 112.55
+    },
+    {
+      "text": "pessoais",
+      "start": 112.55,
+      "end": 113.05
+    },
+    {
+      "text": "das",
+      "start": 113.05,
+      "end": 113.22
+    },
+    {
+      "text": "pessoas,",
+      "start": 113.22,
+      "end": 113.55
+    },
+    {
+      "text": "e",
+      "start": 113.59,
+      "end": 113.81
+    },
+    {
+      "text": "não",
+      "start": 113.81,
+      "end": 114.01
+    },
+    {
+      "text": "só",
+      "start": 114.01,
+      "end": 114.19
+    },
+    {
+      "text": "para",
+      "start": 114.19,
+      "end": 114.35
+    },
+    {
+      "text": "as",
+      "start": 114.35,
+      "end": 114.55
+    },
+    {
+      "text": "pessoas",
+      "start": 114.55,
+      "end": 114.85
+    },
+    {
+      "text": "diretamente.",
+      "start": 114.85,
+      "end": 115.25
+    },
+    {
+      "text": "Nesse",
+      "start": 115.69,
+      "end": 115.95
+    },
+    {
+      "text": "perfil",
+      "start": 115.95,
+      "end": 116.25
+    },
+    {
+      "text": "aqui",
+      "start": 116.25,
+      "end": 116.42
+    },
+    {
+      "text": "eu",
+      "start": 116.42,
+      "end": 116.55
+    },
+    {
+      "text": "dou",
+      "start": 116.55,
+      "end": 116.75
+    },
+    {
+      "text": "mais",
+      "start": 116.75,
+      "end": 117.0
+    },
+    {
+      "text": "a",
+      "start": 117.0,
+      "end": 117.15
+    },
+    {
+      "text": "minha",
+      "start": 117.15,
+      "end": 117.45
+    },
+    {
+      "text": "perspectiva",
+      "start": 117.45,
+      "end": 118.05
+    },
+    {
+      "text": "de",
+      "start": 118.05,
+      "end": 118.25
+    },
+    {
+      "text": "mercado",
+      "start": 118.25,
+      "end": 118.65
+    },
+    {
+      "text": "sobre",
+      "start": 118.65,
+      "end": 118.9
+    },
+    {
+      "text": "o",
+      "start": 118.9,
+      "end": 119.05
+    },
+    {
+      "text": "mercado",
+      "start": 119.05,
+      "end": 119.35
+    },
+    {
+      "text": "de",
+      "start": 119.35,
+      "end": 119.55
+    },
+    {
+      "text": "AI",
+      "start": 119.55,
+      "end": 119.8
+    },
+    {
+      "text": "e",
+      "start": 119.8,
+      "end": 120.0
+    },
+    {
+      "text": "tecnologia,",
+      "start": 120.0,
+      "end": 120.45
+    },
+    {
+      "text": "então",
+      "start": 120.5,
+      "end": 120.72
+    },
+    {
+      "text": "se",
+      "start": 120.72,
+      "end": 120.88
+    },
+    {
+      "text": "você",
+      "start": 120.88,
+      "end": 121.08
+    },
+    {
+      "text": "quiser",
+      "start": 121.08,
+      "end": 121.32
+    },
+    {
+      "text": "continuar",
+      "start": 121.32,
+      "end": 121.75
+    },
+    {
+      "text": "atualizado,",
+      "start": 121.75,
+      "end": 122.4
+    },
+    {
+      "text": "por",
+      "start": 122.61,
+      "end": 122.8
+    },
+    {
+      "text": "favor",
+      "start": 122.8,
+      "end": 123.0
+    },
+    {
+      "text": "me",
+      "start": 123.0,
+      "end": 123.16
+    },
+    {
+      "text": "segue",
+      "start": 123.16,
+      "end": 123.38
+    },
+    {
+      "text": "aqui",
+      "start": 123.38,
+      "end": 123.58
+    },
+    {
+      "text": "embaixo",
+      "start": 123.58,
+      "end": 123.82
+    },
+    {
+      "text": "e",
+      "start": 123.82,
+      "end": 123.96
+    },
+    {
+      "text": "dá",
+      "start": 123.96,
+      "end": 124.1
+    },
+    {
+      "text": "um",
+      "start": 124.1,
+      "end": 124.22
+    },
+    {
+      "text": "like",
+      "start": 124.22,
+      "end": 124.4
+    },
+    {
+      "text": "nesse",
+      "start": 124.4,
+      "end": 124.55
+    },
+    {
+      "text": "vídeo.",
+      "start": 124.55,
+      "end": 124.66
+    }
+  ],
+  "beats": [
+    {
+      "start": 0.0,
+      "end": 3.05,
+      "layout": "creator",
+      "label": "Futuro",
+      "scene": {
+        "type": "hero",
+        "kicker": "era de AI",
+        "text": "o futuro"
+      },
+      "punch": true
+    },
+    {
+      "start": 3.05,
+      "end": 6.3,
+      "layout": "pip",
+      "label": "Sem interface",
+      "scene": {
+        "type": "reveal",
+        "title": "Headless Software",
+        "lines": [
+          "botão",
+          "menu",
+          "tela"
+        ],
+        "agent": "fica o agente",
+        "pose": "estrelas"
+      }
+    },
+    {
+      "start": 6.3,
+      "end": 9.7,
+      "layout": "motion",
+      "label": "Nome",
+      "scene": {
+        "type": "hero",
+        "kicker": "o nome",
+        "text": "Headless Software",
+        "items": [
+          "sem tela",
+          "sem botão",
+          "API"
+        ]
+      }
+    },
+    {
+      "start": 9.7,
+      "end": 13.1,
+      "layout": "split",
+      "label": "Vale",
+      "scene": {
+        "type": "hero",
+        "kicker": "em alta",
+        "text": "Vale do Silício",
+        "items": [
+          "ideia",
+          "software",
+          "agente"
+        ]
+      }
+    },
+    {
+      "start": 13.1,
+      "end": 16.55,
+      "layout": "pip",
+      "label": "Sem tela",
+      "scene": {
+        "type": "mockup",
+        "title": "o software",
+        "kind": "sem UI",
+        "lines": [
+          "sem tela",
+          "sem menu",
+          "sem clique"
+        ]
+      }
+    },
+    {
+      "start": 16.55,
+      "end": 19.15,
+      "layout": "motion",
+      "label": "Sem usuário",
+      "scene": {
+        "type": "bullets",
+        "kicker": "nada disso",
+        "items": [
+          "sem botão",
+          "sem usuário",
+          "sem clique"
+        ]
+      }
+    },
+    {
+      "start": 19.15,
+      "end": 23.0,
+      "layout": "pip",
+      "label": "Como funciona",
+      "scene": {
+        "type": "mascot",
+        "pose": "estrelas",
+        "kicker": "e o usuário?",
+        "line": "como esse software funciona?",
+        "chips": [
+          "sem tela",
+          "sem clique"
+        ],
+        "bubbles": [
+          "ué, e eu?"
+        ]
+      }
+    },
+    {
+      "start": 23.0,
+      "end": 26.4,
+      "layout": "split",
+      "label": "Em conjunto",
+      "scene": {
+        "type": "diagram",
+        "center": "junto",
+        "items": [
+          "Headless",
+          "Agents",
+          "Vale"
+        ]
+      }
+    },
+    {
+      "start": 26.4,
+      "end": 28.76,
+      "layout": "motion",
+      "label": "Em voga",
+      "scene": {
+        "type": "hero",
+        "kicker": "no Vale",
+        "text": "em voga",
+        "items": [
+          "agora",
+          "agentes",
+          "software"
+        ]
+      }
+    },
+    {
+      "start": 28.76,
+      "end": 31.9,
+      "layout": "motion",
+      "label": "Personal Agents",
+      "scene": {
+        "type": "reveal",
+        "title": "Personal Agents",
+        "lines": [
+          "pagar contas",
+          "marcar médico",
+          "lembrar"
+        ],
+        "agent": "faz o dia",
+        "pose": "cafe"
+      }
+    },
+    {
+      "start": 31.9,
+      "end": 34.95,
+      "layout": "zoom",
+      "label": "Quem usa",
+      "scene": {
+        "type": "badge",
+        "text": "Instinct e Grok"
+      },
+      "punch": true
+    },
+    {
+      "start": 34.95,
+      "end": 38.7,
+      "layout": "pip",
+      "label": "Dia a dia",
+      "scene": {
+        "type": "mascot",
+        "pose": "cafe",
+        "kicker": "o seu dia",
+        "line": "tarefas do dia a dia",
+        "chips": [
+          "contas",
+          "médico",
+          "lembrete"
+        ],
+        "bubbles": [
+          "deixa comigo"
+        ]
+      }
+    },
+    {
+      "start": 38.7,
+      "end": 42.5,
+      "layout": "motion",
+      "label": "Tarefas",
+      "scene": {
+        "type": "mascot",
+        "pose": "chefe",
+        "kicker": "o agente faz",
+        "line": "pagar contas e o médico",
+        "chips": [
+          "contas",
+          "consulta"
+        ],
+        "bubbles": [
+          "já anotei"
+        ]
+      }
+    },
+    {
+      "start": 42.5,
+      "end": 46.15,
+      "layout": "pip",
+      "label": "Feito para agentes",
+      "scene": {
+        "type": "mockup",
+        "title": "Headless",
+        "kind": "API",
+        "lines": [
+          "feito para o agente",
+          "não para a tela",
+          "tool por tool"
+        ]
+      }
+    },
+    {
+      "start": 46.15,
+      "end": 49.05,
+      "layout": "split",
+      "label": "Não para você",
+      "scene": {
+        "type": "mascot",
+        "pose": "estrelas",
+        "kicker": "não é para você",
+        "line": "é para os seus agentes",
+        "chips": [
+          "você",
+          "agente"
+        ],
+        "bubbles": [
+          "não sou o usuário"
+        ]
+      }
+    },
+    {
+      "start": 49.05,
+      "end": 52.35,
+      "layout": "motion",
+      "label": "Stripe",
+      "scene": {
+        "type": "hero",
+        "kicker": "pagamento",
+        "text": "Stripe",
+        "items": [
+          "agentes",
+          "pagando",
+          "por dentro"
+        ]
+      }
+    },
+    {
+      "start": 52.35,
+      "end": 56.15,
+      "layout": "pip",
+      "label": "PIB",
+      "scene": {
+        "type": "hero",
+        "kicker": "a Stripe processa",
+        "text": "1% do PIB",
+        "items": [
+          "mundial",
+          "agentes",
+          "pagamento"
+        ]
+      }
+    },
+    {
+      "start": 56.15,
+      "end": 60.05,
+      "layout": "pip",
+      "label": "Pagamentos",
+      "scene": {
+        "type": "mascot",
+        "pose": "dinheiro",
+        "kicker": "agentes de AI",
+        "line": "pagando por dentro da Stripe",
+        "chips": [
+          "Stripe",
+          "pagamento"
+        ],
+        "bubbles": [
+          "manda pagar"
+        ]
+      }
+    },
+    {
+      "start": 60.05,
+      "end": 63.7,
+      "layout": "motion",
+      "label": "Crescendo",
+      "scene": {
+        "type": "hero",
+        "kicker": "vertiginosamente",
+        "text": "crescendo",
+        "items": [
+          "mais agentes",
+          "mais pagos"
+        ]
+      }
+    },
+    {
+      "start": 63.7,
+      "end": 67.55,
+      "layout": "split",
+      "label": "Economia nova",
+      "scene": {
+        "type": "hero",
+        "kicker": "ou seja",
+        "text": "uma economia nova",
+        "items": [
+          "software",
+          "serviço",
+          "agente"
+        ]
+      }
+    },
+    {
+      "start": 67.55,
+      "end": 71.15,
+      "layout": "motion",
+      "label": "Para os agentes",
+      "scene": {
+        "type": "mascot",
+        "pose": "chefe",
+        "kicker": "menos para elas",
+        "line": "serviços para os agentes",
+        "chips": [
+          "produto",
+          "serviço"
+        ],
+        "bubbles": [
+          "vende pro agente"
+        ]
+      }
+    },
+    {
+      "start": 71.15,
+      "end": 74.2,
+      "layout": "pip",
+      "label": "Alerta",
+      "scene": {
+        "type": "mascot",
+        "pose": "agachado",
+        "kicker": "se você é empresário",
+        "line": "isso acende um alerta",
+        "chips": [
+          "produto",
+          "agente",
+          "cliente"
+        ],
+        "bubbles": [
+          "peraí"
+        ]
+      }
+    },
+    {
+      "start": 74.2,
+      "end": 77.55,
+      "layout": "creator",
+      "label": "Vender",
+      "scene": {
+        "type": "badge",
+        "text": "não basta vender"
+      },
+      "punch": true
+    },
+    {
+      "start": 77.55,
+      "end": 80.08,
+      "layout": "motion",
+      "label": "Produto",
+      "scene": {
+        "type": "bullets",
+        "kicker": "para pessoas",
+        "items": [
+          "o produto",
+          "o serviço",
+          "o cardápio"
+        ]
+      }
+    },
+    {
+      "start": 80.08,
+      "end": 82.3,
+      "layout": "pip",
+      "label": "Expor",
+      "scene": {
+        "type": "mockup",
+        "title": "cardápio",
+        "kind": "expor",
+        "lines": [
+          "o produto",
+          "o preço",
+          "aberto ao agente"
+        ]
+      }
+    },
+    {
+      "start": 82.3,
+      "end": 84.5,
+      "layout": "motion",
+      "label": "Cardápio",
+      "scene": {
+        "type": "hero",
+        "kicker": "expor também",
+        "text": "o cardápio",
+        "items": [
+          "pessoas",
+          "agentes"
+        ]
+      }
+    },
+    {
+      "start": 84.5,
+      "end": 88.2,
+      "layout": "pip",
+      "label": "Cotidiano",
+      "scene": {
+        "type": "mascot",
+        "pose": "cafe",
+        "kicker": "o agente dela",
+        "line": "resolvendo o cotidiano",
+        "chips": [
+          "tarefa",
+          "compra"
+        ],
+        "bubbles": [
+          "resolve hoje"
+        ]
+      }
+    },
+    {
+      "start": 88.2,
+      "end": 92.2,
+      "layout": "split",
+      "label": "Bom para pessoas",
+      "scene": {
+        "type": "mascot",
+        "pose": "chefe",
+        "kicker": "hoje",
+        "line": "bom para pessoas",
+        "chips": [
+          "pessoa: ok",
+          "agente: não"
+        ],
+        "bubbles": [
+          "e o agente?"
+        ]
+      }
+    },
+    {
+      "start": 92.2,
+      "end": 96.15,
+      "layout": "motion",
+      "label": "Contraste",
+      "scene": {
+        "type": "stack",
+        "children": [
+          {
+            "type": "badge",
+            "text": "pessoas: serve"
+          },
+          {
+            "type": "badge",
+            "text": "agentes: não serve"
+          }
+        ]
+      }
+    },
+    {
+      "start": 96.15,
+      "end": 99.4,
+      "layout": "zoom",
+      "label": "Não aparece",
+      "scene": {
+        "type": "badge",
+        "text": "não vai aparecer"
+      },
+      "punch": true
+    },
+    {
+      "start": 99.4,
+      "end": 101.9,
+      "layout": "pip",
+      "label": "Não opera",
+      "scene": {
+        "type": "hero",
+        "kicker": "ou então",
+        "text": "não consegue operar",
+        "items": [
+          "não acha",
+          "não compra"
+        ]
+      }
+    },
+    {
+      "start": 101.9,
+      "end": 104.05,
+      "layout": "motion",
+      "label": "Concorrente",
+      "scene": {
+        "type": "mascot",
+        "pose": "dinheiro",
+        "kicker": "e aí",
+        "line": "o concorrente leva o cliente",
+        "chips": [
+          "cliente",
+          "perda"
+        ],
+        "bubbles": [
+          "foi embora"
+        ]
+      }
+    },
+    {
+      "start": 104.05,
+      "end": 107.4,
+      "layout": "split",
+      "label": "Quem cresce",
+      "scene": {
+        "type": "hero",
+        "kicker": "no futuro",
+        "text": "quem continua crescendo",
+        "items": [
+          "abre",
+          "agente",
+          "produto"
+        ]
+      }
+    },
+    {
+      "start": 107.4,
+      "end": 110.4,
+      "layout": "pip",
+      "label": "A empresa",
+      "scene": {
+        "type": "folders",
+        "root": "a empresa",
+        "items": [
+          {
+            "name": "produto",
+            "depth": 1
+          },
+          {
+            "name": "cardápio",
+            "depth": 1
+          },
+          {
+            "name": "agentes de AI",
+            "depth": 2
+          }
+        ]
+      }
+    },
+    {
+      "start": 110.4,
+      "end": 113.2,
+      "layout": "motion",
+      "label": "Abrir",
+      "scene": {
+        "type": "mascot",
+        "pose": "estrelas",
+        "kicker": "dar acesso",
+        "line": "para os agentes de AI",
+        "chips": [
+          "API",
+          "cardápio"
+        ],
+        "bubbles": [
+          "me mostra"
+        ]
+      }
+    },
+    {
+      "start": 113.2,
+      "end": 115.65,
+      "layout": "pip",
+      "label": "Diretamente",
+      "scene": {
+        "type": "mascot",
+        "pose": "chefe",
+        "kicker": "não só",
+        "line": "para as pessoas diretamente",
+        "chips": [
+          "pessoa",
+          "agente"
+        ],
+        "bubbles": [
+          "os dois"
+        ]
+      }
+    },
+    {
+      "start": 115.65,
+      "end": 119.15,
+      "layout": "creator",
+      "label": "Mercado",
+      "scene": {
+        "type": "badge",
+        "text": "mercado de AI"
+      },
+      "punch": false
+    },
+    {
+      "start": 119.15,
+      "end": 122.45,
+      "layout": "zoom",
+      "label": "Atualizado",
+      "scene": {
+        "type": "badge",
+        "text": "continua atualizado"
+      },
+      "punch": true
+    },
+    {
+      "start": 122.45,
+      "end": 124.683,
+      "layout": "zoom",
+      "label": "CTA",
+      "scene": {
+        "type": "badge",
+        "text": "segue e deixa o like"
+      },
+      "punch": true
+    }
+  ]
+}

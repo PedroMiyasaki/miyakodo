@@ -37,13 +37,29 @@ Arquivo JSON. Tempos do `voice`, dos `beats` e das `words` usam o relógio do ar
 
 Layouts de `sem-gravacao`: `guide` (avatar no canto), `center` (avatar grande no meio), `corner`. O canvas é uma coluna de painéis. A câmera desce. No último segundo o quadro abre e mostra a trilha numerada inteira.
 
-Layouts de `gravacao`: `split` (pessoa embaixo, cena em cima), `motion` (pessoa some, a cena ocupa o quadro), `creator` (pessoa em tela cheia, com punch-in se `punch` não for false). A troca é corte seco. Silêncios internos acima de cerca de 0,28 s saem, com um respiro curto nas bordas para não comer consoante.
+Layouts de `gravacao`, escolhidos cena a cena:
+
+- `pip`: o rosto fica num cartão no canto superior esquerdo (cerca de y 168–448). A animação ocupa a faixa y 510–1280, em largura cheia da área segura.
+- `motion`: a cena toma o quadro e o rosto sai.
+- `split`: cena em cima, rosto numa faixa embaixo.
+- `creator`: talking head em tela cheia. O punch-in entra se `punch` não for false.
+- `zoom`: o mesmo quadro do talking head, com punch mais fechado.
+
+A troca é corte seco. Silêncios internos acima de cerca de 0,28 s saem, com um respiro de cerca de 0,08 s nas bordas para não comer consoante.
+
+### Zonas
+
+No modo gravação a legenda, o desenho e o rosto são três retângulos que não se cruzam. O `<video>` é filho direto da composição, com a caixa da zona, sem ancestral com `data-start` e sem uma caixa opaca por cima. A legenda é uma faixa fixa em y 1340–1460, acima dos 450 px de rodapé do Reels e fora da coluna direita. O desenho para em y 1300. A palavra falada ganha fundo sólido (verde, ou laranja no CTA). Uma legenda não atravessa a troca de layout.
+
+A tabela mora em `pipeline/zones.py`. Mudou a zona, o teste `validate_zones` quebra.
 
 ### Cenas
 
-O campo `scene.type` aceita: `timeline`, `mockup`, `counter`, `diagram`, `chat`, `code`, `phone`, `grid`, `scanline`, `folders`, `bullets`, `quote`, `badge`, `stack`.
+O campo `scene.type` aceita: `timeline`, `mockup`, `counter`, `diagram`, `chat`, `code`, `phone`, `grid`, `scanline`, `folders`, `bullets`, `quote`, `badge`, `hero`, `reveal`, `mascot`, `stack`.
 
-`stack` recebe `children`, cada um com o próprio `type`. Os outros tipos leem `title`, `items`, `lines`, `messages`, `value`, `label`, `text`, `filename`, `handle`, `comment`, `dm`, `center`, `root`, `kicker`, `kind` ou `scan`, conforme o caso. O que não vier usa um miolo pequeno, para o componente não quebrar.
+`hero` é uma frase grande em Instrument Serif. `mascot` é o Carlos, o público, com `pose` `agachado`, `chefe`, `dinheiro`, `cafe` ou `estrelas`. As poses são os PNG de `design/mascote-e-textura/`. Quando a cena representa o empresário, o público ou a pessoa com quem o Pedro fala, o tipo é `mascot`. Não entra bonequinho genérico.
+
+`stack` recebe `children`, cada um com o próprio `type`. `mascot` lê `pose`, `kicker` e `line`. Os outros tipos leem `title`, `items`, `lines`, `messages`, `value`, `label`, `text`, `filename`, `handle`, `comment`, `dm`, `center`, `root`, `kicker`, `kind` ou `scan`, conforme o caso. O que não vier usa um miolo pequeno, para o componente não quebrar.
 
 Cada cena entra com pop elástico e dispara um efeito (pop, whoosh, click, typing, notification, chime, impact, key). A cama sonora é `assets/bed.wav`, um tom baixo gerado, trocável por uma faixa real no mesmo caminho do projeto.
 
@@ -78,6 +94,20 @@ python3 .agents/skills/produzir-video/pipeline/cli.py render video/projects/eval
 ```
 
 `video/projects/evals-gravacao/cortes.json` lista os silêncios removidos e as cenas na timeline já cortada.
+
+O bruto de Headless Software está no release `footage-headless-software`:
+
+```bash
+mkdir -p video/inputs/headless-software
+gh release download footage-headless-software --repo PedroMiyasaki/miyakodo -p headless-software.MP4 -D video/inputs/headless-software
+```
+
+O arquivo esperado é `video/inputs/headless-software/headless-software.MP4` (sha256 `7da8c5295e52addbf88c5bc741fbf2b28418c00fe4b52ebc63ee6eba3867304d`). O roteiro, com a transcrição palavra a palavra, é `examples/headless-software-gravacao.json`.
+
+```bash
+python3 .agents/skills/produzir-video/pipeline/cli.py build .agents/skills/produzir-video/examples/headless-software-gravacao.json --out video/projects/headless-software-gravacao
+python3 .agents/skills/produzir-video/pipeline/cli.py render video/projects/headless-software-gravacao --output video/outputs/headless-software-gravacao.mp4 --quality looks
+```
 
 ## Comandos
 

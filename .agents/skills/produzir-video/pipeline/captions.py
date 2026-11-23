@@ -52,7 +52,7 @@ def _flush(groups: list[list[dict]], current: list[dict]) -> None:
 
 def group_words(words: list[dict], mode: str) -> list[dict]:
     if mode == "gravacao":
-        max_n, max_chars, max_dur = 5, 32, 1.75
+        max_n, max_chars, max_dur = 4, 22, 1.6
     else:
         max_n, max_chars, max_dur = 4, 26, 1.2
     groups: list[list[dict]] = []

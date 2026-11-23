@@ -12,6 +12,7 @@ from pipeline.captions import group_words, tag_roles
 from pipeline.compile import ScriptError, compile_script
 from pipeline.compose import render_html
 from pipeline.scenes import build_scene
+from pipeline.zones import validate_zones, zones
 
 
 def words(text, start=0.0, step=0.3):
@@ -131,6 +132,9 @@ class CompileTests(unittest.TestCase):
             "bullets": {"kicker": "Notas", "items": ["uma"]},
             "quote": {"text": "Uma frase.", "by": "Pedro"},
             "badge": {"text": "fica"},
+            "hero": {"kicker": "tese", "text": "sem interface", "items": ["API"]},
+            "reveal": {"title": "Headless", "lines": ["Botão", "Menu"], "agent": "agente", "pose": "estrelas"},
+            "mascot": {"pose": "chefe", "kicker": "o empresário", "line": "paga as contas", "chips": ["contas"], "bubbles": ["alerta"]},
             "stack": {"children": [{"type": "badge", "text": "a"}, {"type": "quote", "text": "b", "by": ""}]},
         }
         for kind in SCENE_TYPES:
@@ -138,6 +142,51 @@ class CompileTests(unittest.TestCase):
             self.assertIn("p", html)
             self.assertTrue(ops)
             self.assertTrue(sfx)
+
+
+class ZoneTests(unittest.TestCase):
+    def test_zones_do_not_cross(self):
+        self.assertTrue(validate_zones())
+
+    def test_pip_keeps_caption_out_of_the_scene_and_the_face(self):
+        model = compile_script({
+            "mode": "gravacao",
+            "slug": "pip",
+            "purpose": "opiniao",
+            "voice": {"src": "voz.wav", "in": 0, "out": 6},
+            "beats": [
+                {"start": 0, "end": 3, "layout": "pip", "label": "Carlos", "scene": {"type": "mascot", "pose": "agachado", "kicker": "você", "line": "o alerta"}},
+                {"start": 3, "end": 6, "layout": "zoom", "label": "Zoom", "punch": True, "scene": {"type": "badge", "text": "segue"}},
+            ],
+            "words": words("o empresário precisa ver isso agora segue", start=0.2, step=0.7),
+        })
+        self.assertEqual(model["videos"][0]["layout"], "pip")
+        self.assertEqual(model["videos"][0]["host"], "pip")
+        self.assertEqual(model["videos"][0]["box"], zones("pip")["video"].box())
+        self.assertTrue(model["videos"][1]["punch"])
+        html = render_html(model)
+        scene = zones("pip")["scene"]
+        caption = zones("pip")["caption"]
+        self.assertIn(f"left:{scene.x}px;top:{scene.y}px;width:{scene.w}px;height:{scene.h}px", html)
+        self.assertIn(f"left:{caption.x}px;top:{caption.y}px;width:{caption.w}px;height:{caption.h}px", html)
+        self.assertIn("assets/carlos-agachado.png", html)
+        self.assertIn('class="clip face-video pip"', html)
+        self.assertIn(f'left:{zones("pip")["video"].x}px;top:{zones("pip")["video"].y}px', html)
+        self.assertNotIn('class="word" data-layout-allow-overlap', html)
+
+        def beat_of(moment):
+            for beat in model["beats"]:
+                if beat["start"] <= moment < beat["end"]:
+                    return beat["layout"]
+            return model["beats"][-1]["layout"]
+
+        for group in model["groups"]:
+            layouts = {beat_of(word["start"]) for word in group["words"]}
+            self.assertEqual(layouts, {beat_of(group["start"])})
+
+    def test_unknown_mascot_pose(self):
+        with self.assertRaises(ValueError):
+            build_scene("p", 0, 0, 400, 300, {"type": "mascot", "pose": "bonequinho", "line": "x"}, 0.2, 2)
 
 
 class BuildTests(unittest.TestCase):

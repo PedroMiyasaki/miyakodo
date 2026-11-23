@@ -15,6 +15,7 @@ from pipeline.brand import (
     SFX_FILES,
     VERDE,
 )
+from pipeline.zones import zones
 
 
 def render_html(model: dict) -> str:
@@ -66,6 +67,7 @@ def render_html(model: dict) -> str:
     {videos_html}
     {stage}
     {avatar}
+    {_masks(model)}
     {groups_html}
     {audio}
   </div>
@@ -90,7 +92,15 @@ def render_html(model: dict) -> str:
             }}, word.start);
             tl.to(sel, {{ scale: 1, boxShadow: "0 0 0 0px {BROWN}", duration: 0.07, ease: "power2.out" }}, word.end);
           }} else {{
-            tl.to(sel, {{ opacity: 1, duration: 0.05 }}, word.start);
+            const ink = word.role === "cta" ? "{LARANJA}" : "{VERDE}";
+            tl.to(sel, {{
+              backgroundColor: ink, color: "{OFFWHITE}", scale: 1.06,
+              duration: 0.06, ease: "power2.out"
+            }}, word.start);
+            tl.to(sel, {{
+              backgroundColor: "transparent", color: "{BROWN}", scale: 1,
+              duration: 0.08, ease: "power2.out"
+            }}, word.end);
           }}
         }});
       }});
@@ -120,8 +130,11 @@ def render_html(model: dict) -> str:
       }}
       PROJECT.videos.forEach((video) => {{
         if (!video.punch) return;
-        tl.fromTo("#punch-" + video.id, {{ scale: 1 }}, {{
-          scale: 1.14, duration: Math.max(0.4, video.duration - 0.05), ease: "power1.inOut", transformOrigin: "50% 30%"
+        tl.fromTo("#" + video.id, {{ scale: 1 }}, {{
+          scale: video.punch_scale || 1.08,
+          duration: Math.max(0.4, video.duration - 0.05),
+          ease: "power1.inOut",
+          transformOrigin: "50% 28%"
         }}, video.start);
       }});
       window.__timelines["main"] = tl;
@@ -149,18 +162,37 @@ def _stage(model: dict) -> str:
 
 
 def _videos(model: dict) -> str:
+    """O <video> é filho direto da composição. Sem caixa por cima, sem ancestral com data-start."""
     if model["mode"] != "gravacao":
         return ""
     blocks = []
     for video in model["videos"]:
-        klass = "split" if video["layout"] == "split" else "full"
+        x, y, w, h = video["box"]
         blocks.append(
-            f'<div class="host {klass}">'
-            f'<div id="punch-{video["id"]}" class="punch">'
-            f'<video id="{video["id"]}" class="clip" src="assets/footage.mp4" muted playsinline '
+            f'<video id="{video["id"]}" class="clip face-video {video["host"]}" '
+            f'src="assets/footage.mp4" muted playsinline '
             f'data-start="{video["start"]}" data-duration="{video["duration"]}" '
-            f'data-media-start="{video["media_start"]}" data-track-index="1"></video>'
-            f'</div></div>'
+            f'data-media-start="{video["media_start"]}" data-track-index="1" '
+            f'style="left:{x}px;top:{y}px;width:{w}px;height:{h}px;object-fit:cover;'
+            f'object-position:{video["object_position"]}"></video>'
+        )
+    return "".join(blocks)
+
+
+def _masks(model: dict) -> str:
+    if model["mode"] != "gravacao":
+        return ""
+    blocks = []
+    for beat in model["beats"]:
+        zone = zones(beat["layout"])
+        if not zone["cover"]:
+            continue
+        box = zone["caption"]
+        blocks.append(
+            f'<div class="clip burn" data-start="{beat["start"]}" '
+            f'data-duration="{round(beat["end"] - beat["start"], 3)}" data-track-index="7" '
+            f'data-layout-allow-overlap="true" '
+            f'style="left:{box.x}px;top:{box.y}px;width:{box.w}px;height:{box.h}px"></div>'
         )
     return "".join(blocks)
 
@@ -169,7 +201,6 @@ def _captions(model: dict) -> str:
     mode = model["mode"]
     chunks = []
     for group in model["groups"]:
-        top = _top(model, group["start"])
         words = []
         for word in group["words"]:
             role = word["role"]
@@ -183,29 +214,33 @@ def _captions(model: dict) -> str:
                 cls = "word key"
             else:
                 cls = "word"
-            words.append(
-                f'<span id="{word["id"]}" class="{cls}" data-layout-allow-overlap="true">{escape(word["text"])}</span>'
-            )
-        box = ""
+            words.append(f'<span id="{word["id"]}" class="{cls}">{escape(word["text"])}</span>')
         dur = round(group["end"] - group["start"], 3)
-        kind = "face" if mode == "sem-gravacao" else "grav"
+        if mode == "sem-gravacao":
+            box = 'style="top:156px"'
+            kind = "face"
+        else:
+            zone = zones(_layout_at(model, group["start"]))
+            rect = zone["caption"]
+            kind = "grav cover" if zone["cover"] else "grav"
+            box = (
+                f'style="left:{rect.x}px;top:{rect.y}px;width:{rect.w}px;height:{rect.h}px"'
+            )
         chunks.append(
             f'<div id="{group["id"]}" class="clip cap {kind}" data-start="{group["start"]}" '
-            f'data-duration="{dur}" data-track-index="8" style="top:{top}px">'
-            f'<div class="cap-line">{box}{"".join(words)}</div></div>'
+            f'data-duration="{dur}" data-track-index="8" {box}>'
+            f'<div class="cap-line">{"".join(words)}</div></div>'
         )
     return "".join(chunks)
 
 
-def _top(model, start):
-    if model["mode"] == "sem-gravacao":
-        return 156
+def _layout_at(model, start):
     beat = model["beats"][-1]
     for item in model["beats"]:
         if item["start"] - 0.05 <= start <= item["end"] + 0.05:
             beat = item
             break
-    return {"split": 900, "motion": 188, "creator": 220}[beat["layout"]]
+    return beat["layout"]
 
 
 def _audio(model, duration: str) -> str:
@@ -245,17 +280,15 @@ def _css() -> str:
       background-size: auto, auto, 72px 72px, 72px 72px; }}
     #stage {{ inset: 0; overflow: hidden; z-index: 2; }}
     #world {{ position: absolute; left: 0; top: 0; width: 100%; }}
-    .beat {{ inset: 0; z-index: 4; }}
-    .host {{ position: absolute; overflow: hidden; z-index: 2; }}
-    .host.split {{ left: 0; right: 0; top: 52%; height: 48%; }}
-    .host.full {{ inset: 0; }}
-    .punch {{ position: absolute; inset: 0; }}
-    .host video {{ position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }}
-    .host.split video {{ object-position: center 16%; }}
-    .host.full video {{ object-position: center 24%; }}
+    .beat {{ z-index: 4; overflow: hidden; }}
+    .face-video {{ z-index: 3; background: transparent; }}
+    .face-video.pip {{ z-index: 6; border-radius: 32px; border: 4px solid {BROWN}; box-shadow: 0 16px 28px rgba(40,14,3,.22); }}
+    .face-video.full {{ z-index: 1; }}
+    .face-video.split {{ z-index: 2; }}
+    .burn {{ z-index: 7; background: {OFFWHITE}; border-radius: 0; }}
     #avatar {{ left: 36px; top: 1460px; width: 280px; z-index: 6; height: auto; }}
     #av-lid-l, #av-lid-r, #av-mouth-open, #av-mouth-closed, #av-rig, #av-brows {{ transform-box: fill-box; }}
-    .piece {{ position: absolute; }}
+    .piece {{ position: absolute; overflow: hidden; }}
     .card {{ background: {PAPER}; border: 3px solid {BROWN}; border-radius: 28px; box-shadow: 0 24px 44px rgba(40,14,3,.16); padding: 28px 32px; overflow: hidden; }}
     .kicker {{ margin: 0 0 18px; font-family: "Instrument Serif", serif; font-size: 52px; line-height: 1; color: {BROWN}; }}
     .kicker.center {{ text-align: center; }}
@@ -308,15 +341,34 @@ def _css() -> str:
     .rail-node {{ position: absolute; left: 46px; display: flex; align-items: center; gap: 18px; }}
     .rail-node span {{ width: 64px; height: 64px; border-radius: 50%; background: {BROWN}; color: {OFFWHITE}; display: grid; place-items: center; font-family: "Instrument Serif", serif; font-size: 32px; }}
     .rail-node b {{ font-size: 30px; font-weight: 600; }}
-    .cap {{ left: 0; right: 0; z-index: 8; display: flex; justify-content: center; }}
-    .cap-line {{ position: relative; display: inline-flex; flex-wrap: wrap; justify-content: center; max-width: 960px; }}
-    .cap.grav .cap-line {{ background: {OFFWHITE}; border: 3px solid {BROWN}; border-radius: 18px; padding: 10px 16px; }}
+    .hero {{ display: flex; flex-direction: column; justify-content: center; height: 100%; gap: 18px; }}
+    .hero-kicker {{ margin: 0; font-weight: 700; font-size: 28px; letter-spacing: .08em; text-transform: uppercase; color: {MUTED}; }}
+    .hero-text {{ margin: 0; font-family: "Instrument Serif", serif; line-height: .92; color: {BROWN}; }}
+    .chip-row {{ display: flex; flex-wrap: wrap; gap: 12px; }}
+    .chip {{ background: {VERDE}; color: {OFFWHITE}; border-radius: 999px; padding: 12px 18px; font-weight: 800; font-size: 30px; }}
+    .cast {{ display: grid; grid-template-columns: 44% 1fr; gap: 18px; height: 100%; align-items: center; }}
+    .cast-fig {{ width: 100%; height: 92%; object-fit: contain; justify-self: center; }}
+    .cast-copy {{ min-width: 0; display: flex; flex-direction: column; gap: 12px; }}
+    .cast-line {{ margin: 0; font-family: "Instrument Serif", serif; font-size: 58px; line-height: 1.02; }}
+    .cast-card {{ padding: 22px 24px; }}
+    .say {{ background: {AZUL}; color: {BROWN}; border-radius: 22px; padding: 14px 16px; font-weight: 700; font-size: 30px; }}
+    .ui-card {{ background: {PAPER}; border: 3px solid {BROWN}; border-radius: 24px; padding: 18px 20px; }}
+    .ui-row {{ font-size: 34px; font-weight: 700; padding: 10px 0; border-bottom: 2px solid {CINZA}; }}
+    .agent-pill {{ display: inline-flex; align-items: center; gap: 12px; background: {VERDE}; color: {OFFWHITE}; border-radius: 24px; padding: 16px 18px; font-weight: 800; font-size: 32px; }}
+    .agent-pill img {{ height: 72px; width: auto; }}
+    .cap.face {{ left: 60px; right: 160px; }}
+    .cap {{ z-index: 9; display: flex; align-items: center; justify-content: center; overflow: hidden; }}
+    .cap-line {{ position: relative; display: inline-flex; flex-wrap: wrap; justify-content: center; align-items: center; max-width: 100%; }}
+    .cap.grav {{ background: {OFFWHITE}; }}
+    .cap.grav .cap-line {{ background: transparent; border: 0; padding: 0; }}
+    .cap.cover {{ align-items: center; padding-top: 0; }}
+    .cap.cover .cap-line {{ background: transparent; border: 0; }}
     .cap-box {{ position: absolute; border: 3px solid {BROWN}; border-radius: 16px; }}
     .cap.face .word {{ color: {MUTED}; }}
-    .cap.grav .word {{ opacity: 0; }}
-    .word {{ display: inline-block; margin: 0 8px; font-weight: 600; font-size: 54px; line-height: 1.15; color: {BROWN}; }}
+    .cap.grav .word {{ opacity: 1; }}
+    .word {{ display: inline-block; margin: 0 6px; font-weight: 600; font-size: 54px; line-height: 1.05; color: {BROWN}; }}
     .serif {{ font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400; font-size: 62px; }}
-    .cap.grav .word {{ font-weight: 800; font-size: 50px; }}
+    .cap.grav .word {{ font-weight: 800; font-size: 56px; padding: 2px 10px; border-radius: 14px; }}
     .word.key {{ color: {VERDE}; }}
     .word.pill {{ background: {BROWN}; color: {OFFWHITE}; border-radius: 999px; padding: 6px 16px; }}
     .word.pill.cta {{ background: {LARANJA}; }}
