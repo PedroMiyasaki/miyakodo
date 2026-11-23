@@ -49,7 +49,7 @@ A troca é corte seco. Silêncios internos acima de cerca de 0,28 s saem, com um
 
 ### Zonas
 
-No modo gravação a legenda, o desenho e o rosto são três retângulos que não se cruzam. O `<video>` é filho direto da composição, com a caixa da zona, sem ancestral com `data-start` e sem uma caixa opaca por cima. A legenda é uma faixa fixa em y 1340–1460, acima dos 450 px de rodapé do Reels e fora da coluna direita. O desenho para em y 1300. A palavra falada ganha fundo sólido (verde, ou laranja no CTA). Uma legenda não atravessa a troca de layout.
+No modo gravação a legenda, o desenho e o rosto são três retângulos que não se cruzam. O `<video>` é filho direto da composição, com a caixa da zona, sem ancestral com `data-start` e sem uma caixa opaca por cima. A legenda é uma faixa fixa em y 1340–1460, acima dos 450 px de rodapé do Reels e fora da coluna direita. O desenho para em y 1300. A palavra falada ganha fundo sólido (verde, ou laranja no CTA). Uma legenda não atravessa a troca de layout. Se `footage.burnedCaptions` for verdadeiro, os layouts de tela cheia ganham uma placa opaca em y 1248–1544 para cobrir a legenda queimada do bruto.
 
 A tabela mora em `pipeline/zones.py`. Mudou a zona, o teste `validate_zones` quebra.
 

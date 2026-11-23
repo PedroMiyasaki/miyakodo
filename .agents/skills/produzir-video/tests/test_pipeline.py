@@ -133,7 +133,8 @@ class CompileTests(unittest.TestCase):
             "quote": {"text": "Uma frase.", "by": "Pedro"},
             "badge": {"text": "fica"},
             "hero": {"kicker": "tese", "text": "sem interface", "items": ["API"]},
-            "reveal": {"title": "Headless", "lines": ["Botão", "Menu"], "agent": "agente", "pose": "estrelas"},
+            "reveal": {"title": "Headless", "lines": ["Botão", "Menu"], "layers": ["API"], "agent": "agente", "pose": "estrelas"},
+            "board": {"title": "Dia", "kicker": "agora", "rows": [{"name": "boleto pago", "status": "ok"}]},
             "mascot": {"pose": "chefe", "kicker": "o empresário", "line": "paga as contas", "chips": ["contas"], "bubbles": ["alerta"]},
             "stack": {"children": [{"type": "badge", "text": "a"}, {"type": "quote", "text": "b", "by": ""}]},
         }

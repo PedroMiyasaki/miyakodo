@@ -17,7 +17,7 @@ def build_scene(pid, x, y, w, h, scene, t0, t1):
         ops = list(ops) + [{
             "kind": "to",
             "sel": f"#{pid}-root",
-            "vars": {"y": -8, "duration": round(span, 3), "yoyo": True, "repeat": 1, "ease": "sine.inOut"},
+            "vars": {"y": -4, "duration": round(span, 3), "yoyo": True, "repeat": 1, "ease": "sine.inOut"},
             "at": round(float(t0) + 0.4, 4),
         }]
     return html, ops, sfx
@@ -108,7 +108,10 @@ def scene_mockup(pid, x, y, w, h, scene, t0, t1):
     sfx = _sfx("whoosh", t0)
     for index, line in enumerate(lines):
         at = t0 + 0.35 + index * 0.38
-        body.append(f'<div id="{pid}-ln-{index}" class="mock-line">{escape(line)}</div>')
+        body.append(
+            f'<div id="{pid}-ln-{index}" class="mock-line">'
+            f'<i>✓</i><span>{escape(line)}</span></div>'
+        )
         ops.append({
             "kind": "fromTo",
             "sel": f"#{pid}-ln-{index}",
@@ -392,7 +395,8 @@ def scene_badge(pid, x, y, w, h, scene, t0, t1):
 def scene_hero(pid, x, y, w, h, scene, t0, t1):
     text = str(scene.get("text") or "")
     kicker = escape(str(scene.get("kicker") or ""))
-    size = 48 if h < 220 else (120 if len(text) <= 14 else 92 if len(text) <= 22 else 76)
+    slam = bool(scene.get("slam"))
+    size = 64 if slam else (48 if h < 220 else (120 if len(text) <= 14 else 92 if len(text) <= 22 else 76))
     items = [str(item) for item in (scene.get("items") or [])]
     chips = []
     ops = _pop(pid, t0, "50% 60%")
@@ -420,51 +424,121 @@ def scene_hero(pid, x, y, w, h, scene, t0, t1):
         f'<p id="{pid}-hero" class="hero-text" style="font-size:{size}px">{escape(text)}</p>'
         f'{chip_html}'
     )
-    return _box(pid, x, y, w, h, inner, "open hero"), ops, _sfx("impact", t0)
+    klass = "open hero slam" if slam else "open hero"
+    return _box(pid, x, y, w, h, inner, klass), ops, _sfx("impact", t0)
 
 
 def scene_reveal(pid, x, y, w, h, scene, t0, t1):
+    """A interface sai com um X e a camada API / MCP / CLI fica no lugar."""
     title = escape(str(scene.get("title") or "Headless Software"))
-    rows = _lines(scene.get("lines"), ["Botão", "Menu", "Tela"])
+    buttons = _lines(scene.get("lines"), ["Início", "Menu", "Enviar"])
+    layers = _lines(scene.get("layers"), ["API", "MCP", "CLI"])
     agent = escape(str(scene.get("agent") or "o agente"))
     pose = str(scene.get("pose") or "estrelas")
     filename = MASCOT_FILES.get(pose, MASCOT_FILES["estrelas"])
-    ops = _pop(pid, t0, "50% 20%")
+    ops = _pop(pid, t0, "50% 18%")
     sfx = _sfx("whoosh", t0)
-    row_html = []
-    for index, row in enumerate(rows):
-        at = t0 + 0.28 + index * 0.28
-        row_html.append(f'<div id="{pid}-row-{index}" class="ui-row">{escape(row)}</div>')
+    button_html = []
+    for index, label in enumerate(buttons):
+        at = t0 + 0.42 + index * 0.38
+        button_html.append(
+            f'<div id="{pid}-btn-{index}" class="app-btn">'
+            f'<span>{escape(label)}</span><b id="{pid}-x-{index}">×</b></div>'
+        )
         ops.append({
             "kind": "fromTo",
-            "sel": f"#{pid}-row-{index}",
-            "from": {"x": 0, "opacity": 1},
-            "to": {"x": 80, "opacity": 0, "duration": 0.35, "ease": "power2.in"},
+            "sel": f"#{pid}-x-{index}",
+            "from": {"scale": 0.4, "opacity": 0},
+            "to": {"scale": 1, "opacity": 1, "duration": 0.16, "ease": "back.out(2)"},
             "at": round(at, 4),
         })
-        sfx.append({"name": "whoosh", "at": round(at, 4)})
+        ops.append({
+            "kind": "to",
+            "sel": f"#{pid}-btn-{index}",
+            "vars": {"x": 140, "opacity": 0, "duration": 0.32, "ease": "power2.in"},
+            "at": round(at + 0.16, 4),
+        })
+        sfx.append({"name": "click", "at": round(at, 4)})
+    ops.append({
+        "kind": "to",
+        "sel": f"#{pid}-shell",
+        "vars": {"opacity": 0, "duration": 0.28, "ease": "power2.in"},
+        "at": round(t0 + 1.55, 4),
+    })
+    layer_html = []
+    for index, label in enumerate(layers):
+        at = t0 + 0.7 + index * 0.32
+        layer_html.append(
+            f'<div id="{pid}-ly-{index}" class="layer-card"><i>✓</i><b>{escape(label)}</b>'
+            f'<em>conectado</em></div>'
+        )
+        ops.append({
+            "kind": "fromTo",
+            "sel": f"#{pid}-ly-{index}",
+            "from": {"y": 18, "opacity": 0},
+            "to": {"y": 0, "opacity": 1, "duration": 0.32, "ease": "power3.out"},
+            "at": round(at, 4),
+        })
+        sfx.append({"name": "pop", "at": round(at, 4)})
     ops.append({
         "kind": "fromTo",
         "sel": f"#{pid}-agent",
-        "from": {"y": 24, "scale": 0.8, "opacity": 0},
-        "to": {"y": 0, "scale": 1, "opacity": 1, "duration": 0.4, "ease": "back.out(1.7)"},
-        "at": round(t0 + 0.9, 4),
+        "from": {"scale": 0.86, "opacity": 0},
+        "to": {"scale": 1, "opacity": 1, "duration": 0.35, "ease": "back.out(1.5)"},
+        "at": round(t0 + 1.55, 4),
     })
-    ops.append({
-        "kind": "to",
-        "sel": f"#{pid}-agent",
-        "vars": {"y": -6, "duration": 0.8, "yoyo": True, "repeat": 1, "ease": "sine.inOut"},
-        "at": round(t0 + 1.35, 4),
-    })
-    sfx.append({"name": "pop", "at": round(t0 + 0.9, 4)})
     inner = (
-        f'<p id="{pid}-title" class="hero-text" style="font-size:78px">{title}</p>'
-        f'<div class="ui-card">{"".join(row_html)}</div>'
+        f'<p class="hero-text" style="font-size:62px">{title}</p>'
+        f'<div class="stage-swap">'
+        f'<div id="{pid}-shell" class="app-shell">'
+        f'<div class="app-head">interface</div>'
+        f'{"".join(button_html)}</div>'
+        f'<div class="layer-stack">{"".join(layer_html)}'
         f'<div id="{pid}-agent" class="agent-pill">'
-        f'<img src="assets/{filename}" alt="Carlos"/>'
-        f'<span>{agent}</span></div>'
+        f'<img src="assets/{filename}" alt="Carlos"/><span>{agent}</span></div>'
+        f'</div></div>'
     )
     return _box(pid, x, y, w, h, inner, "open hero"), ops, sfx
+
+
+def scene_board(pid, x, y, w, h, scene, t0, t1):
+    title = escape(str(scene.get("title") or "Status"))
+    kicker = escape(str(scene.get("kicker") or ""))
+    rows = scene.get("rows") or scene.get("items") or ["feito"]
+    ops = _pop(pid, t0, "50% 16%")
+    sfx = _sfx("pop", t0)
+    row_html = []
+    for index, row in enumerate(rows):
+        if isinstance(row, str):
+            name, status = row, "ok"
+        else:
+            name, status = row.get("name", "item"), row.get("status", "ok")
+        at = t0 + 0.22 + index * 0.28
+        row_html.append(
+            f'<div id="{pid}-st-{index}" class="status-row">'
+            f'<i>✓</i><b>{escape(str(name))}</b><em>{escape(str(status))}</em></div>'
+        )
+        ops.append({
+            "kind": "fromTo",
+            "sel": f"#{pid}-st-{index}",
+            "from": {"y": 22, "opacity": 0},
+            "to": {"y": 0, "opacity": 1, "duration": 0.32, "ease": "power3.out"},
+            "at": round(at, 4),
+        })
+        ops.append({
+            "kind": "fromTo",
+            "sel": f"#{pid}-st-{index} i",
+            "from": {"scale": 0.4},
+            "to": {"scale": 1, "duration": 0.28, "ease": "back.out(2)"},
+            "at": round(at + 0.08, 4),
+        })
+        sfx.append({"name": "click", "at": round(at, 4)})
+    kicker_html = f'<span>{kicker}</span>' if kicker else ""
+    inner = (
+        f'<div class="board-head"><b>{title}</b>{kicker_html}</div>'
+        f'<div class="board-list">{"".join(row_html)}</div>'
+    )
+    return _box(pid, x, y, w, h, inner, "card board"), ops, sfx
 
 
 def scene_mascot(pid, x, y, w, h, scene, t0, t1):
@@ -544,6 +618,7 @@ BUILDERS = {
     "badge": scene_badge,
     "hero": scene_hero,
     "reveal": scene_reveal,
+    "board": scene_board,
     "mascot": scene_mascot,
 }
 

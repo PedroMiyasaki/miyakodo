@@ -9,7 +9,8 @@
     "out": 124.683
   },
   "footage": {
-    "src": "video/inputs/headless-software/headless-software.MP4"
+    "src": "video/inputs/headless-software/headless-software.MP4",
+    "burnedCaptions": true
   },
   "emphasis": [
     "Headless",
@@ -2245,8 +2246,9 @@
       "label": "Futuro",
       "scene": {
         "type": "hero",
-        "kicker": "era de AI",
-        "text": "o futuro"
+        "slam": true,
+        "kicker": "O FUTURO SEM INTERFACE",
+        "text": "HEADLESS SOFTWARE"
       },
       "punch": true
     },
@@ -2259,9 +2261,14 @@
         "type": "reveal",
         "title": "Headless Software",
         "lines": [
-          "botão",
-          "menu",
-          "tela"
+          "Início",
+          "Menu",
+          "Enviar"
+        ],
+        "layers": [
+          "API",
+          "MCP",
+          "CLI"
         ],
         "agent": "fica o agente",
         "pose": "estrelas"
@@ -2273,13 +2280,22 @@
       "layout": "motion",
       "label": "Nome",
       "scene": {
-        "type": "hero",
-        "kicker": "o nome",
-        "text": "Headless Software",
-        "items": [
-          "sem tela",
-          "sem botão",
-          "API"
+        "type": "board",
+        "title": "Headless Software",
+        "kicker": "por baixo da tela",
+        "rows": [
+          {
+            "name": "API",
+            "status": "conectado"
+          },
+          {
+            "name": "MCP",
+            "status": "aberto"
+          },
+          {
+            "name": "CLI",
+            "status": "no agente"
+          }
         ]
       }
     },
@@ -2386,15 +2402,23 @@
       "layout": "motion",
       "label": "Personal Agents",
       "scene": {
-        "type": "reveal",
+        "type": "board",
         "title": "Personal Agents",
-        "lines": [
-          "pagar contas",
-          "marcar médico",
-          "lembrar"
-        ],
-        "agent": "faz o dia",
-        "pose": "cafe"
+        "kicker": "o dia dele",
+        "rows": [
+          {
+            "name": "boleto pago",
+            "status": "ok"
+          },
+          {
+            "name": "consulta 14h",
+            "status": "ok"
+          },
+          {
+            "name": "lembrete",
+            "status": "ok"
+          }
+        ]
       }
     },
     {
@@ -2539,12 +2563,22 @@
       "layout": "motion",
       "label": "Crescendo",
       "scene": {
-        "type": "hero",
-        "kicker": "vertiginosamente",
-        "text": "crescendo",
-        "items": [
-          "mais agentes",
-          "mais pagos"
+        "type": "board",
+        "title": "Crescendo",
+        "kicker": "na Stripe",
+        "rows": [
+          {
+            "name": "agentes pagando",
+            "status": "sobe"
+          },
+          {
+            "name": "volume",
+            "status": "sobe"
+          },
+          {
+            "name": "economia nova",
+            "status": "agora"
+          }
         ]
       }
     },
@@ -2554,13 +2588,22 @@
       "layout": "split",
       "label": "Economia nova",
       "scene": {
-        "type": "hero",
+        "type": "board",
+        "title": "Economia nova",
         "kicker": "ou seja",
-        "text": "uma economia nova",
-        "items": [
-          "software",
-          "serviço",
-          "agente"
+        "rows": [
+          {
+            "name": "software",
+            "status": "pro agente"
+          },
+          {
+            "name": "serviço",
+            "status": "pro agente"
+          },
+          {
+            "name": "pessoa",
+            "status": "menos"
+          }
         ]
       }
     },

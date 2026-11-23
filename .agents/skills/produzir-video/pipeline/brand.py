@@ -34,6 +34,7 @@ SCENE_TYPES = (
     "badge",
     "hero",
     "reveal",
+    "board",
     "mascot",
     "stack",
 )

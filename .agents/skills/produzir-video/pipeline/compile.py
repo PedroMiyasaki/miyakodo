@@ -90,6 +90,7 @@ def compile_script(data: dict, cuts=None, mouth=None) -> dict:
         "mouth_hz": 40,
         "voice_src": voice.get("src"),
         "footage": data.get("footage") or {},
+        "burned_captions": bool((data.get("footage") or {}).get("burnedCaptions")),
     }
 
 
@@ -257,7 +258,8 @@ def _scenes(beats, mode):
     for index, beat in enumerate(beats):
         if mode == "gravacao":
             box = zones(beat["layout"])["scene"]
-            x, y, w, h = 0, 0, box.w, box.h
+            pad = 16
+            x, y, w, h = pad, pad, box.w - pad * 2, box.h - pad * 2
         else:
             box = None
             x, y, w, h = _box_for(mode, beat["layout"], index, len(beats))

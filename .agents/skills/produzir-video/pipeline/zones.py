@@ -63,12 +63,12 @@ CAPTION = Rect(64, 1340, 820, 120)
 
 LAYOUT_ZONES = {
     "pip": _zone(
-        scene=Rect(48, 510, 876, 770),
+        scene=Rect(48, 524, 876, 756),
         caption=CAPTION,
-        face=Rect(52, 168, 360, 280),
-        video=Rect(52, 168, 360, 280),
+        face=Rect(52, 160, 360, 340),
+        video=Rect(52, 160, 360, 340),
         host="pip",
-        object_position="center 32%",
+        object_position="center 23%",
     ),
     "motion": _zone(
         scene=Rect(48, 168, 876, 1112),
@@ -78,32 +78,37 @@ LAYOUT_ZONES = {
         host="full",
     ),
     "split": _zone(
-        scene=Rect(48, 168, 876, 500),
+        scene=Rect(48, 156, 876, 420),
         caption=CAPTION,
-        face=Rect(0, 700, WIDTH, 560),
-        video=Rect(0, 700, WIDTH, 560),
+        face=Rect(0, 596, WIDTH, 640),
+        video=Rect(0, 596, WIDTH, 640),
         host="split",
         object_position="center 40%",
     ),
     "creator": _zone(
-        scene=Rect(48, 168, 620, 140),
+        scene=Rect(64, 248, 852, 176),
         caption=CAPTION,
-        face=Rect(160, 360, 760, 860),
+        face=Rect(140, 460, 800, 760),
         video=Rect(0, 0, WIDTH, HEIGHT),
         host="full",
         object_position="center 46%",
         cover=True,
     ),
     "zoom": _zone(
-        scene=Rect(48, 168, 620, 140),
+        scene=Rect(64, 248, 852, 176),
         caption=CAPTION,
-        face=Rect(160, 360, 760, 860),
+        face=Rect(140, 460, 800, 760),
         video=Rect(0, 0, WIDTH, HEIGHT),
         host="full",
         object_position="center 42%",
         cover=True,
     ),
 }
+
+# Placa opaca nos layouts de tela cheia quando o bruto já tem legenda queimada.
+# A legenda antiga chega perto de 78% da altura. A placa vai até y 1544
+# para não sobrar ponta de letra, e deixa 376 px livres no rodapé.
+BURN_PLATE = Rect(28, 1248, 1024, 296)
 
 
 class ZoneError(ValueError):
@@ -148,10 +153,19 @@ def validate_zones():
                 raise ZoneError(f"{name}: rosto e cena se cruzam")
         video = zone["video"]
         if name == "pip":
-            if video.y < 160 or video.bottom > 480:
+            if video.y < 150 or video.bottom > 520:
                 raise ZoneError("pip fora do canto superior esquerdo")
             if video.x > 80:
                 raise ZoneError("pip não está na esquerda")
-        if video is not None and name == "split" and video.bottom > SCENE_BOTTOM:
-            raise ZoneError("split: rosto entra na faixa da legenda")
+        if video is not None and name == "split":
+            if video.h < 600:
+                raise ZoneError("split: faixa do rosto baixa demais")
+            if video.bottom > SCENE_BOTTOM:
+                raise ZoneError("split: rosto entra na faixa da legenda")
+        plate = BURN_PLATE
+        if zone["cover"]:
+            if plate.bottom > 1560:
+                raise ZoneError(f"{name}: placa da legenda desce demais")
+            if face is not None and overlaps(face, plate, GAP - 4):
+                raise ZoneError(f"{name}: placa cobre o rosto")
     return True

@@ -15,7 +15,7 @@ from pipeline.brand import (
     SFX_FILES,
     VERDE,
 )
-from pipeline.zones import zones
+from pipeline.zones import BURN_PLATE, zones
 
 
 def render_html(model: dict) -> str:
@@ -187,7 +187,7 @@ def _masks(model: dict) -> str:
         zone = zones(beat["layout"])
         if not zone["cover"]:
             continue
-        box = zone["caption"]
+        box = BURN_PLATE if model.get("burned_captions") else zone["caption"]
         blocks.append(
             f'<div class="clip burn" data-start="{beat["start"]}" '
             f'data-duration="{round(beat["end"] - beat["start"], 3)}" data-track-index="7" '
@@ -285,7 +285,7 @@ def _css() -> str:
     .face-video.pip {{ z-index: 6; border-radius: 32px; border: 4px solid {BROWN}; box-shadow: 0 16px 28px rgba(40,14,3,.22); }}
     .face-video.full {{ z-index: 1; }}
     .face-video.split {{ z-index: 2; }}
-    .burn {{ z-index: 7; background: {OFFWHITE}; border-radius: 0; }}
+    .burn {{ z-index: 7; background: {OFFWHITE}; border-radius: 28px; box-shadow: 0 16px 32px rgba(40,14,3,.16); }}
     #avatar {{ left: 36px; top: 1460px; width: 280px; z-index: 6; height: auto; }}
     #av-lid-l, #av-lid-r, #av-mouth-open, #av-mouth-closed, #av-rig, #av-brows {{ transform-box: fill-box; }}
     .piece {{ position: absolute; overflow: hidden; }}
@@ -298,7 +298,8 @@ def _css() -> str:
     .dot {{ width: 16px; height: 16px; border-radius: 50%; }}
     .chrome-title {{ font-weight: 700; font-size: 28px; }}
     .kind {{ margin-left: auto; color: {MUTED}; font-style: normal; font-size: 22px; }}
-    .mock-line {{ font-size: 36px; font-weight: 600; padding: 14px 0; border-bottom: 2px solid {CINZA}; }}
+    .mock-line {{ display: flex; align-items: center; gap: 14px; margin: 12px 0; padding: 14px 16px; border-radius: 18px; background: {OFFWHITE}; box-shadow: 0 10px 22px rgba(40,14,3,.08); font-size: 32px; font-weight: 700; }}
+    .mock-line i, .status-row i, .layer-card i {{ width: 42px; height: 42px; border-radius: 50%; background: {VERDE}; color: {OFFWHITE}; display: grid; place-items: center; font-style: normal; font-weight: 800; flex: 0 0 auto; }}
     .mock-body {{ position: relative; min-height: 180px; }}
     .scan {{ position: absolute; left: 8px; right: 8px; height: 8px; background: {LARANJA}; border-radius: 8px; }}
     .scan.fat {{ height: 16px; }}
@@ -342,6 +343,21 @@ def _css() -> str:
     .rail-node span {{ width: 64px; height: 64px; border-radius: 50%; background: {BROWN}; color: {OFFWHITE}; display: grid; place-items: center; font-family: "Instrument Serif", serif; font-size: 32px; }}
     .rail-node b {{ font-size: 30px; font-weight: 600; }}
     .hero {{ display: flex; flex-direction: column; justify-content: center; height: 100%; gap: 18px; }}
+    .hero.slam {{ justify-content: center; background: {OFFWHITE}; border: 3px solid {BROWN}; border-radius: 28px; box-shadow: 0 18px 36px rgba(40,14,3,.22); padding: 16px 28px; }}
+    .hero.slam .hero-kicker {{ color: {LARANJA}; font-size: 26px; letter-spacing: .06em; }}
+    .stage-swap {{ position: relative; flex: 1; min-height: 460px; }}
+    .app-shell, .layer-stack {{ position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 14px; }}
+    .app-head {{ background: {VERDE}; color: {OFFWHITE}; border-radius: 18px; padding: 12px 18px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; font-size: 22px; }}
+    .app-btn {{ display: flex; align-items: center; justify-content: space-between; background: {PAPER}; border-radius: 18px; padding: 16px 18px; box-shadow: 0 12px 24px rgba(40,14,3,.1); font-size: 32px; font-weight: 700; }}
+    .app-btn b {{ width: 42px; height: 42px; border-radius: 50%; background: {LARANJA}; color: {OFFWHITE}; display: grid; place-items: center; }}
+    .layer-card, .status-row {{ display: flex; align-items: center; gap: 14px; background: {PAPER}; border-radius: 18px; padding: 16px 18px; box-shadow: 0 12px 24px rgba(40,14,3,.1); font-size: 32px; }}
+    .layer-card {{ opacity: 0; }}
+    .layer-stack .agent-pill {{ opacity: 0; }}
+    .layer-card em, .status-row em {{ margin-left: auto; font-style: normal; color: {VERDE}; font-weight: 700; font-size: 22px; }}
+    .board-head {{ display: flex; align-items: baseline; justify-content: space-between; gap: 12px; background: {VERDE}; color: {OFFWHITE}; border-radius: 20px; padding: 16px 20px; margin-bottom: 16px; }}
+    .board-head b {{ font-family: "Instrument Serif", serif; font-size: 48px; font-weight: 400; }}
+    .board-head span {{ font-size: 22px; letter-spacing: .04em; text-transform: uppercase; }}
+    .board-list {{ display: flex; flex-direction: column; gap: 12px; }}
     .hero-kicker {{ margin: 0; font-weight: 700; font-size: 28px; letter-spacing: .08em; text-transform: uppercase; color: {MUTED}; }}
     .hero-text {{ margin: 0; font-family: "Instrument Serif", serif; line-height: .92; color: {BROWN}; }}
     .chip-row {{ display: flex; flex-wrap: wrap; gap: 12px; }}
@@ -361,7 +377,7 @@ def _css() -> str:
     .cap-line {{ position: relative; display: inline-flex; flex-wrap: wrap; justify-content: center; align-items: center; max-width: 100%; }}
     .cap.grav {{ background: {OFFWHITE}; }}
     .cap.grav .cap-line {{ background: transparent; border: 0; padding: 0; }}
-    .cap.cover {{ align-items: center; padding-top: 0; }}
+    .cap.cover {{ align-items: center; padding-top: 0; background: transparent; }}
     .cap.cover .cap-line {{ background: transparent; border: 0; }}
     .cap-box {{ position: absolute; border: 3px solid {BROWN}; border-radius: 16px; }}
     .cap.face .word {{ color: {MUTED}; }}
