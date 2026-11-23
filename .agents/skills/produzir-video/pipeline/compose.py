@@ -3,7 +3,7 @@
 import json
 from html import escape
 
-from pipeline.avatar import avatar_svg
+from pipeline.avatar import avatar_html
 from pipeline.brand import (
     AZUL,
     BROWN,
@@ -35,7 +35,7 @@ def render_html(model: dict) -> str:
     if mode == "sem-gravacao":
         avatar = (
             f'<div id="avatar" class="clip" data-start="0" data-duration="{duration}" '
-            f'data-track-index="6">{avatar_svg()}</div>'
+            f'data-track-index="6">{avatar_html()}</div>'
         )
     audio = _audio(model, duration)
     payload = {
@@ -94,10 +94,14 @@ def render_html(model: dict) -> str:
           const sel = "#" + word.id;
           if (PROJECT.mode === "sem-gravacao") {{
             tl.to(sel, {{
-              color: ink, scale: 1.08, duration: 0.08, ease: "power2.out", transformOrigin: "50% 60%",
-              boxShadow: "0 0 0 3px {BROWN}", borderRadius: "14px"
+              backgroundColor: "{LARANJA}", color: "{OFFWHITE}", borderRadius: "12px",
+              paddingLeft: "10px", paddingRight: "10px", scale: 1.06,
+              duration: 0.08, ease: "power2.out", transformOrigin: "50% 60%"
             }}, word.start);
-            tl.to(sel, {{ scale: 1, boxShadow: "0 0 0 0px {BROWN}", duration: 0.07, ease: "power2.out" }}, word.end);
+            tl.to(sel, {{
+              backgroundColor: "transparent", color: ink, scale: 1,
+              duration: 0.07, ease: "power2.out"
+            }}, word.end);
           }} else {{
             tl.to(sel, {{ opacity: 1, duration: 0.05 }}, word.start);
           }}
@@ -105,16 +109,13 @@ def render_html(model: dict) -> str:
       }});
       const avatar = PROJECT.avatar;
       if (avatar) {{
-        tl.to("#av-rig", {{
-          y: 7, rotation: 1.6, duration: 0.48, yoyo: true, repeat: avatar.bob_repeats,
+        tl.to("#av-bob", {{
+          y: 8, rotation: 1.2, duration: 0.55, yoyo: true, repeat: avatar.bob_repeats,
           ease: "sine.inOut", transformOrigin: "50% 80%"
         }}, 0);
         avatar.blinks.forEach((at) => {{
-          tl.to("#av-lid-l", {{ opacity: 1, duration: 0.06, yoyo: true, repeat: 1, ease: "power1.inOut" }}, at);
-          tl.to("#av-lid-r", {{ opacity: 1, duration: 0.06, yoyo: true, repeat: 1, ease: "power1.inOut" }}, at);
-        }});
-        avatar.lifts.forEach((at) => {{
-          tl.to("#av-brows", {{ y: -7, duration: 0.16, yoyo: true, repeat: 1, ease: "power2.out" }}, at);
+          tl.set("#av-blink", {{ opacity: 1 }}, at);
+          tl.set("#av-blink", {{ opacity: 0 }}, at + 0.12);
         }});
         avatar.moves.forEach((move) => {{
           const vars = {{
@@ -123,17 +124,18 @@ def render_html(model: dict) -> str:
             transformOrigin: "0 0"
           }};
           if (!move.duration) tl.set("#avatar", vars, move.at);
-          else tl.to("#avatar", {{ ...vars, duration: move.duration, ease: "power3.out" }}, move.at);
+          else tl.to("#avatar", {{ ...vars, duration: move.duration, ease: "power2.inOut" }}, move.at);
         }});
         const mouths = ["#av-m0", "#av-m1", "#av-m2", "#av-m3"];
         const hz = PROJECT.mouthHz || 40;
         let lastViseme = -1;
         PROJECT.mouth.forEach((level, index) => {{
           if (index % 3) return;
-          const viseme = level < 0.08 ? 0 : level < 0.2 ? 1 : level < 0.42 ? 2 : 3;
+          const viseme = level < 0.05 ? 0 : level < 0.14 ? 1 : level < 0.3 ? 2 : 3;
+          const at = index / hz;
+          tl.set("#av-pulse", {{ scale: 1 + Math.min(0.07, level * 0.09), transformOrigin: "50% 72%" }}, at);
           if (viseme === lastViseme) return;
           lastViseme = viseme;
-          const at = index / hz;
           mouths.forEach((sel, which) => tl.set(sel, {{ opacity: which === viseme ? 1 : 0 }}, at));
         }});
       }}
@@ -203,9 +205,18 @@ def _captions(model: dict) -> str:
     return "".join(chunks)
 
 
+def _layout_at(model, start):
+    beat = model["beats"][-1]
+    for item in model["beats"]:
+        if item["start"] - 0.05 <= start <= item["end"] + 0.05:
+            beat = item
+            break
+    return beat["layout"]
+
+
 def _top(model, start):
     if model["mode"] == "sem-gravacao":
-        return 224
+        return 1288
     beat = model["beats"][-1]
     for item in model["beats"]:
         if item["start"] - 0.05 <= start <= item["end"] + 0.05:
@@ -274,8 +285,9 @@ def _css() -> str:
     .host video {{ position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }}
     .host.split video {{ object-position: center 16%; }}
     .host.full video {{ object-position: center 24%; }}
-    #avatar {{ left: 48px; top: 1196px; width: 220px; z-index: 6; height: auto; transform-origin: 0 0;
-      filter: drop-shadow(5px 0 0 {OFFWHITE}) drop-shadow(-5px 0 0 {OFFWHITE}) drop-shadow(0 5px 0 {OFFWHITE}) drop-shadow(0 -5px 0 {OFFWHITE}); }}
+    #avatar {{ left: 40px; top: 211px; width: 180px; z-index: 6; aspect-ratio: 217 / 404; transform-origin: 0 0; }}
+    #av-bob, #av-pulse {{ position: absolute; inset: 0; }}
+    .av-face {{ position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }}
     #av-lid-l, #av-lid-r, #av-mouth-open, #av-mouth-closed, #av-rig, #av-brows {{ transform-box: fill-box; }}
     .piece {{ position: absolute; overflow: hidden; }}
     .card {{ background: {PAPER}; border: 3px solid {BROWN}; border-radius: 28px; box-shadow: 0 24px 44px rgba(40,14,3,.16); padding: 28px 32px; overflow: hidden; }}
@@ -330,25 +342,67 @@ def _css() -> str:
     .rail-node {{ position: absolute; left: 46px; display: flex; align-items: center; gap: 18px; }}
     .rail-node span {{ width: 64px; height: 64px; border-radius: 50%; background: {BROWN}; color: {OFFWHITE}; display: grid; place-items: center; font-family: "Instrument Serif", serif; font-size: 32px; }}
     .rail-node b {{ font-size: 30px; font-weight: 600; }}
-    .statement {{ height: 100%; display: flex; flex-direction: column; justify-content: center; }}
-    .big {{ margin: 0; font-family: "Instrument Serif", serif; font-size: 92px; line-height: 0.96; }}
-    .carlos-wrap {{ height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; gap: 8px; }}
-    .carlos-wrap img {{ width: auto; max-width: 100%; height: 74%; object-fit: contain; }}
-    .say {{ margin: 0; font-family: "Instrument Serif", serif; font-size: 46px; line-height: 1.05; text-align: center; }}
+    .statement {{ height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; gap: 18px; }}
+    .big {{ margin: 0; font-family: "Instrument Serif", serif; font-size: 120px; line-height: 0.92; text-align: center; }}
+    .chip-row {{ display: flex; flex-wrap: wrap; justify-content: center; gap: 22px; }}
+    .peel .chip-row {{ flex-wrap: nowrap; }}
+    .peel-chip {{ flex: none; }}
+    .pill, .tone-ink .pill, .tone-verde .pill, .tone-ink .open .pill, .tone-verde .open .pill {{ display: inline-flex; align-items: center; min-height: 64px; padding: 8px 18px; border-radius: 999px; border: 3px solid {BROWN}; background: {OFFWHITE}; color: {BROWN}; font-weight: 800; font-size: 28px; }}
+    .late {{ opacity: 0; }}
+    .chart, .close, .maze, .clutter {{ height: 100%; display: flex; flex-direction: column; justify-content: center; gap: 16px; }}
+    .bars {{ display: flex; align-items: flex-end; justify-content: center; gap: 22px; height: 58%; width: 100%; }}
+    .bar-col {{ width: 72px; flex: none; height: 100%; display: flex; align-items: flex-end; }}
+    .bar-col i {{ display: block; width: 100%; background: {VERDE}; border-radius: 12px 12px 0 0; transform-origin: 50% 100%; }}
+    .tone-ink .bar-col i, .tone-verde .bar-col i {{ background: {LARANJA}; }}
+    .clutter {{ display: grid; grid-template-columns: minmax(300px, 46%) 1fr; gap: 24px; height: 100%; padding-left: 28px; }}
+    .form-card {{ background: {PAPER}; border: 3px solid {BROWN}; border-radius: 24px; padding: 18px 16px; align-self: center; }}
+    .form {{ display: flex; flex-direction: column; gap: 10px; justify-content: center; position: relative; z-index: 3; }}
+    .field {{ display: flex; justify-content: space-between; align-items: center; background: {PAPER}; color: {BROWN}; border: 3px solid {BROWN}; border-radius: 16px; padding: 12px 16px; font-weight: 700; font-size: 28px; position: relative; z-index: 3; }}
+    .field b {{ color: {LARANJA}; font-size: 32px; }}
+    .clutter-side {{ display: flex; flex-direction: column; align-items: center; justify-content: flex-end; overflow: hidden; min-width: 0; }}
+    .clutter-side img {{ width: auto; max-width: 100%; max-height: 70%; height: auto; object-fit: contain; }}
+    .maze {{ position: relative; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; }}
+    .maze img {{ height: 58%; width: auto; object-fit: contain; z-index: 2; }}
+    .popups {{ position: absolute; inset: 0; }}
+    .popup {{ position: absolute; background: {PAPER}; color: {BROWN}; border: 3px solid {BROWN}; border-radius: 16px; padding: 12px 16px; font-weight: 800; font-size: 26px; }}
+    .popup:nth-child(1) {{ left: 4%; top: 8%; }}
+    .popup:nth-child(2) {{ right: 6%; top: 4%; }}
+    .popup:nth-child(3) {{ left: 8%; top: 28%; }}
+    .popup:nth-child(4) {{ right: 4%; top: 30%; }}
+    .popup:nth-child(5) {{ left: 2%; top: 48%; }}
+    .popup:nth-child(6) {{ right: 8%; top: 50%; }}
+    .close-card, .tone-ink .close-card, .tone-verde .close-card {{ background: {PAPER}; color: {BROWN}; border: 3px solid {BROWN}; border-radius: 28px; padding: 28px 24px; display: flex; flex-direction: column; gap: 16px; align-items: center; }}
+    .api-line, .tone-ink .api-line, .tone-verde .api-line {{ margin: 0; font-weight: 800; font-size: 40px; letter-spacing: 0.04em; text-align: center; color: {OFFWHITE}; background: {BROWN}; border-radius: 16px; padding: 14px 22px; }}
+    .lane {{ margin: 0; font-family: "Instrument Serif", serif; font-size: 42px; text-align: center; }}
+    .trend {{ margin: 0; text-align: center; font-weight: 800; font-size: 32px; }}
+    .handle {{ margin: 0; font-weight: 800; font-size: 36px; text-align: center; }}
+    .pill.gone {{ background: {ROSA}; text-decoration: line-through; }}
+    .peel, .flow {{ height: 100%; display: flex; flex-direction: column; justify-content: center; gap: 22px; }}
+    .term {{ background: {BROWN}; color: {OFFWHITE}; border-radius: 28px; padding: 28px 32px; }}
+    .term .ln {{ font-family: "Instrument Serif", serif; font-size: 64px; line-height: 1.15; }}
+    .step {{ display: flex; align-items: center; gap: 18px; background: {PAPER}; color: {BROWN}; border: 3px solid {BROWN}; border-radius: 24px; padding: 18px 22px; font-weight: 800; font-size: 40px; }}
+    .step b {{ width: 64px; height: 64px; border-radius: 50%; background: {VERDE}; color: {OFFWHITE}; display: grid; place-items: center; font-family: "Instrument Serif", serif; }}
+    .carlos-wrap {{ height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: space-between; gap: 12px; }}
+    .carlos-wrap img {{ width: auto; max-width: 100%; height: 62%; object-fit: contain; }}
+    .say {{ margin: 0; font-family: "Instrument Serif", serif; font-size: 54px; line-height: 1.05; text-align: center; background: {PAPER}; color: {BROWN}; border: 3px solid {BROWN}; border-radius: 28px; padding: 14px 20px; }}
+    .tone-ink .say, .tone-verde .say {{ color: {BROWN}; background: {PAPER}; }}
     .versus {{ height: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }}
-    .vcol {{ background: {PAPER}; color: {BROWN}; border: 3px solid {BROWN}; border-radius: 28px; padding: 22px; display: flex; flex-direction: column; min-height: 0; }}
+    .vcol {{ background: {PAPER}; color: {BROWN}; border: 3px solid {BROWN}; border-radius: 28px; padding: 22px; display: flex; flex-direction: column; justify-content: space-between; min-height: 0; height: 100%; }}
     .vcol .kicker {{ color: inherit; }}
     .vcol.agent {{ background: {VERDE}; color: {OFFWHITE}; border-color: {VERDE}; }}
-    .vcol img {{ width: auto; height: 42%; object-fit: contain; align-self: center; }}
-    .vitem {{ font-size: 32px; font-weight: 700; margin: 10px 0; }}
-    .cap {{ left: 48px; right: 176px; z-index: 8; display: flex; justify-content: center; }}
+    .vcol img {{ width: auto; height: 26%; object-fit: contain; align-self: center; }}
+    .vitem {{ font-size: 36px; font-weight: 800; margin: 8px 0; display: flex; align-items: center; gap: 12px; flex: 1; }}
+    .vitem i {{ width: 18px; height: 18px; border-radius: 50%; background: {LARANJA}; display: block; flex: none; }}
+    .vcol.agent .vitem i {{ background: {OLIVA}; }}
+    .cap {{ left: 48px; right: 160px; z-index: 9; display: flex; justify-content: center; }}
+    .cap.cap-side {{ left: 270px; }}
     .cap-line {{ position: relative; display: inline-flex; flex-wrap: wrap; justify-content: center; max-width: 820px; }}
-    .cap.face .cap-line {{ background: {OFFWHITE}; border: 3px solid {BROWN}; border-radius: 22px; padding: 12px 18px 14px; }}
+    .cap.face .cap-line {{ background: {OFFWHITE}; border-radius: 18px; padding: 12px 18px 14px; box-shadow: 0 10px 0 rgba(40,14,3,.12); }}
     .cap.grav .cap-line {{ background: {OFFWHITE}; border: 3px solid {BROWN}; border-radius: 18px; padding: 10px 16px; }}
     .cap-box {{ position: absolute; border: 3px solid {BROWN}; border-radius: 16px; }}
     .cap.face .word {{ color: {MUTED}; }}
     .cap.grav .word {{ opacity: 0; }}
-    .word {{ display: inline-block; margin: 0 8px; font-weight: 600; font-size: 54px; line-height: 1.15; color: {BROWN}; }}
+    .word {{ display: inline-block; margin: 0 6px; font-weight: 800; font-size: 58px; line-height: 1.15; color: {BROWN}; }}
     .serif {{ font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400; font-size: 62px; }}
     .cap.grav .word {{ font-weight: 800; font-size: 50px; }}
     .word.key {{ color: {VERDE}; }}
