@@ -255,9 +255,20 @@ function status(value: string): string {
   return `<span class="status ${tone}">${esc(STATUS_NAMES[value] ?? value.replace(/_/g, " "))}</span>`;
 }
 
+function commentRetryButton(row: RecentEventRow, dryRun: boolean): string {
+  if (dryRun) return "";
+  const label = row.status === "send_error"
+    ? "Retry send"
+    : row.status === "sent_public_reply_error" || ((row.status === "prompted" || row.status === "awaiting_follow") && row.error)
+      ? "Retry public reply"
+      : null;
+  if (!label) return "";
+  return `<form action="/admin/events/${encodeURIComponent(row.comment_id)}/retry" method="post"><button class="text-link">${label}</button></form>`;
+}
+
 function comments(rows: RecentEventRow[], dryRun: boolean): string {
   if (!rows.length) return '<p class="empty">No matching comments. Comments appear here once Instagram sends them; clear the filters to see everything.</p>';
-  return `<div class="events">${rows.map((row) => `<article class="event"><div class="event-body"><div class="event-title"><strong>${esc(row.username ? "@" + row.username : "Unknown user")}</strong>${time(row.received_at)}</div><p>${esc(row.comment_text)}</p><span class="event-rule">${esc(row.rule_label ?? "No automation")}${row.matched_keyword ? ` <span>· ${esc(row.matched_keyword.toUpperCase())}</span>` : ""}</span>${row.error ? `<details class="error-details"><summary>View error</summary><p>${esc(row.error)}</p></details>` : ""}</div><div class="event-state">${status(row.status)}${!dryRun && (row.status === "send_error" || row.status === "sent_public_reply_error") ? `<form action="/admin/events/${encodeURIComponent(row.comment_id)}/retry" method="post"><button class="text-link">${row.status === "sent_public_reply_error" ? "Retry public reply" : "Retry send"}</button></form>` : ""}</div></article>`).join("")}</div><p class="field-help list-foot">Latest ${rows.length} matching comments (up to 50).</p>`;
+  return `<div class="events">${rows.map((row) => `<article class="event"><div class="event-body"><div class="event-title"><strong>${esc(row.username ? "@" + row.username : "Unknown user")}</strong>${time(row.received_at)}</div><p>${esc(row.comment_text)}</p><span class="event-rule">${esc(row.rule_label ?? "No automation")}${row.matched_keyword ? ` <span>· ${esc(row.matched_keyword.toUpperCase())}</span>` : ""}</span>${row.error ? `<details class="error-details"><summary>View error</summary><p>${esc(row.error)}</p></details>` : ""}</div><div class="event-state">${status(row.status)}${commentRetryButton(row, dryRun)}</div></article>`).join("")}</div><p class="field-help list-foot">Latest ${rows.length} matching comments (up to 50).</p>`;
 }
 
 function messages(rows: RecentMessageRow[]): string {

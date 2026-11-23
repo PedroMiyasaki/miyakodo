@@ -442,30 +442,91 @@ async function completeCommentResponses(
   publicReplyText: string | null,
   sentAt = new Date().toISOString()
 ): Promise<SendRuleResult> {
-  let publicReply: unknown = null;
-  let publicReplyError: string | null = null;
-
-  const selectedText = publicReplyText ? selectRotatingText(publicReplyText, commentId) : null;
-  if (selectedText) {
-    try {
-      publicReply = await sendPublicCommentReply(env, commentId, selectedText);
-    } catch (error) {
-      publicReplyError = error instanceof Error ? error.message : String(error);
-      console.error(JSON.stringify({
-        level: "error",
-        msg: "public_comment_reply_failed",
-        commentId,
-        error: publicReplyError
-      }));
-    }
-  }
-
+  const attempt = await sendPublicReplyOnce(env, commentId, publicReplyText);
+  const publicReplyError = attempt?.publicReplyError ?? null;
   return {
     status: publicReplyError ? "sent_public_reply_error" : "sent",
-    metaResponse: { privateReply, publicReply, publicReplyError },
+    metaResponse: {
+      privateReply,
+      publicReply: attempt?.publicReply ?? null,
+      publicReplyError
+    },
     error: publicReplyError,
     sentAt
   };
+}
+
+// The gate's first DM (the "Quero o material" button, or the follow request)
+// posts public_reply_text immediately. The comment stays open until the material
+// itself goes out. A missing public reply leaves the stored shape unchanged.
+async function finishOpenPrompt(
+  env: AppEnv,
+  commentId: string,
+  rule: MatchedRule,
+  privateReply: unknown,
+  status: "prompted" | "awaiting_follow",
+  sentAt: string
+): Promise<SendRuleResult> {
+  const attempt = await sendPublicReplyOnce(env, commentId, rule.publicReplyText);
+  const metaResponse: Record<string, unknown> = { privateReply };
+  if (attempt) {
+    metaResponse.publicReply = attempt.publicReply;
+    metaResponse.publicReplyError = attempt.publicReplyError;
+  }
+  return {
+    status,
+    metaResponse,
+    error: attempt?.publicReplyError ?? null,
+    sentAt
+  };
+}
+
+function storedCommentMeta(value: string | null | undefined): Record<string, unknown> | null {
+  if (!value) return null;
+  const parsed = parseJsonText(value);
+  if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) return null;
+  return parsed as Record<string, unknown>;
+}
+
+function publicReplyAlreadyPosted(meta: Record<string, unknown> | null): boolean {
+  if (!meta || meta.publicReply == null) return false;
+  const error = meta.publicReplyError;
+  return !(typeof error === "string" && error.length > 0);
+}
+
+// One public reply per comment. Button clicks, retries and comment polls read the
+// stored publicReply and skip the Graph call when it already succeeded.
+async function sendPublicReplyOnce(
+  env: AppEnv,
+  commentId: string,
+  publicReplyText: string | null
+): Promise<{ publicReply: unknown; publicReplyError: string | null } | null> {
+  if (!publicReplyText?.trim()) return null;
+  const existing = await loadCommentMeta(env, commentId);
+  if (publicReplyAlreadyPosted(existing)) {
+    return { publicReply: existing?.publicReply ?? null, publicReplyError: null };
+  }
+  const selectedText = selectRotatingText(publicReplyText, commentId);
+  if (!selectedText) return null;
+  try {
+    return { publicReply: await sendPublicCommentReply(env, commentId, selectedText), publicReplyError: null };
+  } catch (error) {
+    const publicReplyError = error instanceof Error ? error.message : String(error);
+    console.error(JSON.stringify({
+      level: "error",
+      msg: "public_comment_reply_failed",
+      commentId,
+      error: publicReplyError
+    }));
+    return { publicReply: null, publicReplyError };
+  }
+}
+
+async function loadCommentMeta(env: AppEnv, commentId: string): Promise<Record<string, unknown> | null> {
+  const row = await env.DB.prepare("SELECT meta_response FROM comment_events WHERE comment_id = ?")
+    .bind(commentId)
+    .first<{ meta_response: string | null }>();
+  return storedCommentMeta(row?.meta_response);
 }
 
 // Public reply text may hold several lines. One line is picked per comment, so
@@ -1003,7 +1064,7 @@ async function sendFollowerPrompt(env: AppEnv, commentId: string, rule: MatchedR
         await env.DB.prepare(
           "UPDATE material_deliveries SET status = 'awaiting_follow', updated_at = ? WHERE rule_id = ? AND recipient_id = ?"
         ).bind(sentAt, rule.id, recipientId).run();
-        return { status: "awaiting_follow", metaResponse: { privateReply }, error: null, sentAt };
+        return finishOpenPrompt(env, commentId, rule, privateReply, "awaiting_follow", sentAt);
       }
     }
 
@@ -1012,7 +1073,7 @@ async function sendFollowerPrompt(env: AppEnv, commentId: string, rule: MatchedR
       { comment_id: commentId },
       postbackButtonMessage(GATE_BUTTON_TEXT, MATERIAL_BUTTON_LABEL, gatePayload(rule.id, commentId, "material"))
     );
-    return { status: "prompted", metaResponse: { privateReply }, error: null, sentAt };
+    return finishOpenPrompt(env, commentId, rule, privateReply, "prompted", sentAt);
   } catch (error) {
     await env.DB.prepare(
       `UPDATE material_deliveries SET status = 'prompt_error', updated_at = ?
@@ -1142,16 +1203,9 @@ async function deliverMaterial(
     await env.DB.prepare(
       "UPDATE material_deliveries SET status = 'delivered', material_sent_at = ?, updated_at = ? WHERE id = ?"
     ).bind(now, now, deliveryId).run();
-    let publicReply: unknown = null;
-    let publicReplyError: string | null = null;
-    if (rule.publicReplyText) {
-      try {
-        publicReply = await sendPublicCommentReply(env, commentId, rule.publicReplyText);
-      } catch (error) {
-        publicReplyError = error instanceof Error ? error.message : String(error);
-        console.error(JSON.stringify({ level: "error", msg: "public_comment_reply_failed", commentId, error: publicReplyError }));
-      }
-    }
+    const attempt = await sendPublicReplyOnce(env, commentId, rule.publicReplyText);
+    const publicReply = attempt?.publicReply ?? null;
+    const publicReplyError = attempt?.publicReplyError ?? null;
     const result: SendRuleResult = {
       status: publicReplyError ? "sent_public_reply_error" : "sent",
       metaResponse: { material, publicReply, publicReplyError },
@@ -1568,7 +1622,8 @@ async function handleRetryEvent(request: Request, env: AppEnv, commentId: string
   }
 
   const event = await getRetryEvent(env.DB, commentId);
-  if (!event || !isRetryableStatus(event.status)) {
+  const openPublicRetry = event ? isOpenPublicReplyRetry(event) : false;
+  if (!event || (!isRetryableStatus(event.status) && !openPublicRetry)) {
     return html(renderErrorPage("Only failed replies can be retried."), 400);
   }
 
@@ -1613,24 +1668,11 @@ async function handleRetryEvent(request: Request, env: AppEnv, commentId: string
 
   try {
     let result: SendRuleResult;
-    if (event.status === "sent_public_reply_error") {
+    if (openPublicRetry) {
+      result = await retryOpenPublicReply(env, commentId, matchedRule, event);
+    } else if (event.status === "sent_public_reply_error") {
       if (matchedRule.followersOnly && matchedRule.publicReplyText) {
-        try {
-          const publicReply = await sendPublicCommentReply(env, commentId, matchedRule.publicReplyText);
-          result = {
-            status: "sent",
-            metaResponse: { publicReply },
-            error: null,
-            sentAt: event.sent_at ?? new Date().toISOString()
-          };
-        } catch (error) {
-          result = {
-            status: "sent_public_reply_error",
-            metaResponse: null,
-            error: error instanceof Error ? error.message : String(error),
-            sentAt: event.sent_at ?? new Date().toISOString()
-          };
-        }
+        result = await retryDeliveredPublicReply(env, commentId, matchedRule, event);
       } else {
       // The DM was delivered. Only the public comment reply is sent again.
       const stored = event.meta_response ? parseJsonText(event.meta_response) : null;
@@ -1650,10 +1692,10 @@ async function handleRetryEvent(request: Request, env: AppEnv, commentId: string
     }
     await updateEventAfterSend(env.DB, commentId, matchedRule, result);
   } catch (error) {
-    if (event.status === "sent_public_reply_error") {
-      // Keep a delivered DM marked as delivered.
-      await env.DB.prepare("UPDATE comment_events SET status = 'sent_public_reply_error', error = ? WHERE comment_id = ?")
-        .bind(error instanceof Error ? error.message : String(error), commentId)
+    if (event.status === "sent_public_reply_error" || event.status === "prompted" || event.status === "awaiting_follow") {
+      // Keep a delivered DM, or an open gate, from being marked as an unsent reply.
+      await env.DB.prepare("UPDATE comment_events SET status = ?, error = ? WHERE comment_id = ?")
+        .bind(event.status, error instanceof Error ? error.message : String(error), commentId)
         .run();
     } else {
       await recordCommentSendError(env.DB, commentId, matchedRule, error);
@@ -1665,6 +1707,61 @@ async function handleRetryEvent(request: Request, env: AppEnv, commentId: string
 
 function isRetryableStatus(status: string): boolean {
   return status === "send_error" || status === "sent_public_reply_error";
+}
+
+// The gate DM already went out. Retry only the public comment, and leave the
+// comment prompted or awaiting_follow so the material is not marked as sent.
+function isOpenPublicReplyRetry(event: RetryEventRow): boolean {
+  if (event.status !== "prompted" && event.status !== "awaiting_follow") return false;
+  const stored = storedCommentMeta(event.meta_response);
+  return Boolean(
+    stored &&
+    stored.publicReply == null &&
+    typeof stored.publicReplyError === "string" &&
+    stored.publicReplyError.length > 0
+  );
+}
+
+async function retryOpenPublicReply(
+  env: AppEnv,
+  commentId: string,
+  rule: MatchedRule,
+  event: RetryEventRow
+): Promise<SendRuleResult> {
+  const attempt = await sendPublicReplyOnce(env, commentId, rule.publicReplyText);
+  const stored = storedCommentMeta(event.meta_response) ?? {};
+  const publicReplyError = attempt?.publicReplyError ?? null;
+  return {
+    status: event.status,
+    metaResponse: {
+      ...stored,
+      publicReply: attempt?.publicReply ?? null,
+      publicReplyError
+    },
+    error: publicReplyError,
+    sentAt: event.sent_at ?? new Date().toISOString()
+  };
+}
+
+async function retryDeliveredPublicReply(
+  env: AppEnv,
+  commentId: string,
+  rule: MatchedRule,
+  event: RetryEventRow
+): Promise<SendRuleResult> {
+  const attempt = await sendPublicReplyOnce(env, commentId, rule.publicReplyText);
+  const stored = storedCommentMeta(event.meta_response) ?? {};
+  const publicReplyError = attempt?.publicReplyError ?? null;
+  return {
+    status: publicReplyError ? "sent_public_reply_error" : "sent",
+    metaResponse: {
+      ...stored,
+      publicReply: attempt?.publicReply ?? null,
+      publicReplyError
+    },
+    error: publicReplyError,
+    sentAt: event.sent_at ?? new Date().toISOString()
+  };
 }
 
 async function getRules(db: D1Database, activeOnly: boolean): Promise<Rule[]> {

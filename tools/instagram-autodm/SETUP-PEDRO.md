@@ -10,7 +10,7 @@ Nada aqui foi publicado na Cloudflare nem chamado na API da Meta. `DRY_RUN` est�
 
 1. A pessoa comenta uma única palavra, igual à palavra-chave daquele post. Maiúsculas não importam. Espaço e pontuação nas pontas também não. `EVALS!` dispara. `quero evals` não. A palavra de um post não dispara em outro.
 2. O Worker manda um private reply com o botão "Quero o material". O texto desse primeiro direct é fixo: "Toque no botão para receber o material." O link ainda não vai.
-3. Quando a pessoa toca o botão, a API já pode dizer se ela segue a conta. Se segue, o Worker manda o texto exato de `## Mensagem no direct` e, só depois disso, a resposta de `## Resposta no comentário`.
+3. A resposta de `## Resposta no comentário`, quando a regra tem uma, sai junto com esse primeiro direct. Quando a pessoa toca o botão e segue, o Worker manda o texto exato de `## Mensagem no direct` e não publica outra resposta no mesmo comentário.
 4. Se não segue, manda o texto exato de `## Pedido para seguir` com o botão "Já segui". Esse botão repete a checagem.
 5. Se a primeira checagem diz que a pessoa não segue, o Worker espera 4 segundos e checa de novo antes de negar. O atraso da API logo depois do follow é comum. Se a checagem falha, ele não trata a pessoa como quem não segue: pede para tocar de novo.
 6. A mesma pessoa não recebe o material duas vezes no mesmo post. Comentário seu (`pedro.miyasaki.ia`) é ignorado. Comentário genérico também.
@@ -155,7 +155,7 @@ Quando o teste acima bater com o comentário certo:
 1. Em `wrangler.jsonc`, mude `DRY_RUN` para `"false"`.
 2. `npm run deploy` de novo.
 3. Comente de novo, com uma conta que ainda não recebeu aquele material. O direct deve trazer o botão, não o link.
-4. Toque o botão. Seguindo a conta, o material chega e a resposta pública aparece no comentário. Sem seguir, chega o pedido para seguir.
+4. Toque o botão. Seguindo a conta, o material chega. A resposta pública já foi publicada no comentário junto com o primeiro direct. Sem seguir, chega o pedido para seguir.
 
 Abra `/admin` com o `ADMIN_TOKEN` para ver a atividade. As regras dos markdowns também aparecem lá. Se você editar uma nesse dashboard, o próximo `build-respostas --remote` cobre com o texto do arquivo.
 
