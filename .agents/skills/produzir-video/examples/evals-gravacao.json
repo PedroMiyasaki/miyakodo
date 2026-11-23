@@ -1,0 +1,4218 @@
+{
+  "mode": "gravacao",
+  "slug": "evals-gravacao",
+  "title": "Evals no produto",
+  "purpose": "opiniao",
+  "voice": {
+    "src": "video/inputs/evals/evals.MP4",
+    "in": 0,
+    "out": 209.533
+  },
+  "footage": {
+    "src": "video/inputs/evals/evals.MP4"
+  },
+  "emphasis": [
+    "evals",
+    "IA",
+    "contratos",
+    "cláusulas",
+    "prompt",
+    "Anthropic",
+    "dataset"
+  ],
+  "strong": [
+    "problema",
+    "quebrando"
+  ],
+  "cta": [
+    "comenta"
+  ],
+  "words": [
+    {
+      "text": "Se",
+      "start": 0.0,
+      "end": 0.74
+    },
+    {
+      "text": "você",
+      "start": 0.74,
+      "end": 0.92
+    },
+    {
+      "text": "está",
+      "start": 0.92,
+      "end": 1.08
+    },
+    {
+      "text": "desenvolvendo",
+      "start": 1.08,
+      "end": 1.58
+    },
+    {
+      "text": "qualquer",
+      "start": 1.58,
+      "end": 2.04
+    },
+    {
+      "text": "use",
+      "start": 2.04,
+      "end": 2.36
+    },
+    {
+      "text": "case",
+      "start": 2.36,
+      "end": 2.58
+    },
+    {
+      "text": "com",
+      "start": 2.58,
+      "end": 2.84
+    },
+    {
+      "text": "IA,",
+      "start": 2.84,
+      "end": 3.02
+    },
+    {
+      "text": "você",
+      "start": 3.28,
+      "end": 3.36
+    },
+    {
+      "text": "precisa",
+      "start": 3.36,
+      "end": 3.88
+    },
+    {
+      "text": "conhecer",
+      "start": 3.88,
+      "end": 4.24
+    },
+    {
+      "text": "um",
+      "start": 4.24,
+      "end": 4.34
+    },
+    {
+      "text": "negócio",
+      "start": 4.34,
+      "end": 4.64
+    },
+    {
+      "text": "chamado",
+      "start": 4.64,
+      "end": 5.1
+    },
+    {
+      "text": "evals.",
+      "start": 5.1,
+      "end": 5.78
+    },
+    {
+      "text": "Apesar",
+      "start": 6.26,
+      "end": 6.64
+    },
+    {
+      "text": "dos",
+      "start": 6.64,
+      "end": 6.8
+    },
+    {
+      "text": "evals",
+      "start": 6.8,
+      "end": 7.18
+    },
+    {
+      "text": "aí",
+      "start": 7.18,
+      "end": 7.3
+    },
+    {
+      "text": "serem",
+      "start": 7.3,
+      "end": 7.54
+    },
+    {
+      "text": "um",
+      "start": 7.54,
+      "end": 7.66
+    },
+    {
+      "text": "assunto",
+      "start": 7.66,
+      "end": 7.82
+    },
+    {
+      "text": "técnico",
+      "start": 7.82,
+      "end": 8.42
+    },
+    {
+      "text": "na",
+      "start": 8.42,
+      "end": 8.54
+    },
+    {
+      "text": "área",
+      "start": 8.54,
+      "end": 8.64
+    },
+    {
+      "text": "de",
+      "start": 8.64,
+      "end": 8.74
+    },
+    {
+      "text": "inteligência",
+      "start": 8.74,
+      "end": 9.04
+    },
+    {
+      "text": "artificial,",
+      "start": 9.04,
+      "end": 9.48
+    },
+    {
+      "text": "eles",
+      "start": 9.74,
+      "end": 9.86
+    },
+    {
+      "text": "tocam",
+      "start": 9.86,
+      "end": 10.3
+    },
+    {
+      "text": "muito",
+      "start": 10.3,
+      "end": 10.72
+    },
+    {
+      "text": "na",
+      "start": 10.72,
+      "end": 10.9
+    },
+    {
+      "text": "área",
+      "start": 10.9,
+      "end": 11.0
+    },
+    {
+      "text": "de",
+      "start": 11.0,
+      "end": 11.1
+    },
+    {
+      "text": "negócios,",
+      "start": 11.1,
+      "end": 11.5
+    },
+    {
+      "text": "então",
+      "start": 11.72,
+      "end": 11.88
+    },
+    {
+      "text": "se",
+      "start": 11.88,
+      "end": 12.1
+    },
+    {
+      "text": "você",
+      "start": 12.1,
+      "end": 12.32
+    },
+    {
+      "text": "é",
+      "start": 12.32,
+      "end": 12.44
+    },
+    {
+      "text": "uma",
+      "start": 12.44,
+      "end": 12.48
+    },
+    {
+      "text": "pessoa",
+      "start": 12.48,
+      "end": 12.78
+    },
+    {
+      "text": "que",
+      "start": 12.78,
+      "end": 13.02
+    },
+    {
+      "text": "é",
+      "start": 13.02,
+      "end": 13.2
+    },
+    {
+      "text": "não",
+      "start": 13.2,
+      "end": 13.42
+    },
+    {
+      "text": "técnica",
+      "start": 13.42,
+      "end": 13.8
+    },
+    {
+      "text": "e",
+      "start": 13.8,
+      "end": 14.08
+    },
+    {
+      "text": "eu",
+      "start": 14.08,
+      "end": 14.14
+    },
+    {
+      "text": "ficaria",
+      "start": 14.14,
+      "end": 14.56
+    },
+    {
+      "text": "nesse",
+      "start": 14.56,
+      "end": 14.72
+    },
+    {
+      "text": "vídeo",
+      "start": 14.72,
+      "end": 14.92
+    },
+    {
+      "text": "aqui",
+      "start": 14.92,
+      "end": 15.1
+    },
+    {
+      "text": "para",
+      "start": 15.1,
+      "end": 15.24
+    },
+    {
+      "text": "você",
+      "start": 15.24,
+      "end": 15.54
+    },
+    {
+      "text": "entender",
+      "start": 15.54,
+      "end": 16.08
+    },
+    {
+      "text": "como",
+      "start": 16.08,
+      "end": 16.96
+    },
+    {
+      "text": "que",
+      "start": 16.96,
+      "end": 17.12
+    },
+    {
+      "text": "evals",
+      "start": 17.12,
+      "end": 17.42
+    },
+    {
+      "text": "são",
+      "start": 17.42,
+      "end": 17.5
+    },
+    {
+      "text": "importantes",
+      "start": 17.5,
+      "end": 17.88
+    },
+    {
+      "text": "em",
+      "start": 17.88,
+      "end": 18.1
+    },
+    {
+      "text": "qualquer",
+      "start": 18.1,
+      "end": 18.28
+    },
+    {
+      "text": "produto",
+      "start": 18.28,
+      "end": 18.64
+    },
+    {
+      "text": "de",
+      "start": 18.64,
+      "end": 18.84
+    },
+    {
+      "text": "inteligência",
+      "start": 18.84,
+      "end": 19.14
+    },
+    {
+      "text": "artificial.",
+      "start": 19.14,
+      "end": 19.6
+    },
+    {
+      "text": "Por",
+      "start": 20.06,
+      "end": 20.32
+    },
+    {
+      "text": "exemplo,",
+      "start": 20.32,
+      "end": 20.5
+    },
+    {
+      "text": "não",
+      "start": 20.6,
+      "end": 20.66
+    },
+    {
+      "text": "fica",
+      "start": 20.66,
+      "end": 20.8
+    },
+    {
+      "text": "muito",
+      "start": 20.8,
+      "end": 21.0
+    },
+    {
+      "text": "subjetivo,",
+      "start": 21.0,
+      "end": 21.54
+    },
+    {
+      "text": "vamos",
+      "start": 21.64,
+      "end": 21.74
+    },
+    {
+      "text": "imaginar",
+      "start": 21.74,
+      "end": 22.1
+    },
+    {
+      "text": "que",
+      "start": 22.1,
+      "end": 22.42
+    },
+    {
+      "text": "você",
+      "start": 22.42,
+      "end": 22.64
+    },
+    {
+      "text": "tem",
+      "start": 22.64,
+      "end": 22.8
+    },
+    {
+      "text": "uma",
+      "start": 22.8,
+      "end": 22.92
+    },
+    {
+      "text": "empresa",
+      "start": 22.92,
+      "end": 23.16
+    },
+    {
+      "text": "e",
+      "start": 23.16,
+      "end": 23.32
+    },
+    {
+      "text": "você",
+      "start": 23.32,
+      "end": 23.46
+    },
+    {
+      "text": "tem",
+      "start": 23.46,
+      "end": 23.72
+    },
+    {
+      "text": "vários",
+      "start": 23.72,
+      "end": 24.0
+    },
+    {
+      "text": "fornecedores,",
+      "start": 24.0,
+      "end": 24.58
+    },
+    {
+      "text": "cada",
+      "start": 24.68,
+      "end": 24.88
+    },
+    {
+      "text": "um",
+      "start": 24.88,
+      "end": 25.04
+    },
+    {
+      "text": "com",
+      "start": 25.04,
+      "end": 25.2
+    },
+    {
+      "text": "um",
+      "start": 25.2,
+      "end": 25.32
+    },
+    {
+      "text": "contrato",
+      "start": 25.32,
+      "end": 25.62
+    },
+    {
+      "text": "diferente",
+      "start": 25.62,
+      "end": 25.98
+    },
+    {
+      "text": "e",
+      "start": 25.98,
+      "end": 26.42
+    },
+    {
+      "text": "você",
+      "start": 26.42,
+      "end": 26.6
+    },
+    {
+      "text": "quer",
+      "start": 26.6,
+      "end": 26.74
+    },
+    {
+      "text": "fazer",
+      "start": 26.74,
+      "end": 26.92
+    },
+    {
+      "text": "um",
+      "start": 26.92,
+      "end": 27.04
+    },
+    {
+      "text": "produto",
+      "start": 27.04,
+      "end": 27.26
+    },
+    {
+      "text": "de",
+      "start": 27.26,
+      "end": 27.5
+    },
+    {
+      "text": "IA",
+      "start": 27.5,
+      "end": 27.7
+    },
+    {
+      "text": "aí",
+      "start": 27.7,
+      "end": 27.88
+    },
+    {
+      "text": "que",
+      "start": 27.88,
+      "end": 28.14
+    },
+    {
+      "text": "lê",
+      "start": 28.14,
+      "end": 28.46
+    },
+    {
+      "text": "os",
+      "start": 28.46,
+      "end": 28.56
+    },
+    {
+      "text": "contraste",
+      "start": 28.56,
+      "end": 28.94
+    },
+    {
+      "text": "dos",
+      "start": 28.94,
+      "end": 29.08
+    },
+    {
+      "text": "fornecedores",
+      "start": 29.08,
+      "end": 29.62
+    },
+    {
+      "text": "e",
+      "start": 29.62,
+      "end": 29.86
+    },
+    {
+      "text": "meio",
+      "start": 29.86,
+      "end": 29.98
+    },
+    {
+      "text": "que",
+      "start": 29.98,
+      "end": 30.1
+    },
+    {
+      "text": "aponta",
+      "start": 30.1,
+      "end": 30.42
+    },
+    {
+      "text": "quais",
+      "start": 30.42,
+      "end": 30.66
+    },
+    {
+      "text": "são",
+      "start": 30.66,
+      "end": 30.82
+    },
+    {
+      "text": "as",
+      "start": 30.82,
+      "end": 30.94
+    },
+    {
+      "text": "cláusulas",
+      "start": 30.94,
+      "end": 31.3
+    },
+    {
+      "text": "mais",
+      "start": 31.3,
+      "end": 31.56
+    },
+    {
+      "text": "importantes",
+      "start": 31.56,
+      "end": 32.0
+    },
+    {
+      "text": "que",
+      "start": 32.0,
+      "end": 32.18
+    },
+    {
+      "text": "você",
+      "start": 32.18,
+      "end": 32.34
+    },
+    {
+      "text": "tem",
+      "start": 32.34,
+      "end": 32.52
+    },
+    {
+      "text": "que",
+      "start": 32.52,
+      "end": 32.62
+    },
+    {
+      "text": "considerar",
+      "start": 32.62,
+      "end": 33.34
+    },
+    {
+      "text": "e",
+      "start": 33.34,
+      "end": 33.62
+    },
+    {
+      "text": "as",
+      "start": 33.62,
+      "end": 33.76
+    },
+    {
+      "text": "coisas",
+      "start": 33.76,
+      "end": 33.9
+    },
+    {
+      "text": "mais",
+      "start": 33.9,
+      "end": 34.12
+    },
+    {
+      "text": "críticas",
+      "start": 34.12,
+      "end": 34.56
+    },
+    {
+      "text": "para",
+      "start": 34.56,
+      "end": 34.72
+    },
+    {
+      "text": "a",
+      "start": 34.72,
+      "end": 34.8
+    },
+    {
+      "text": "sua",
+      "start": 34.8,
+      "end": 34.86
+    },
+    {
+      "text": "empresa.",
+      "start": 34.86,
+      "end": 35.18
+    },
+    {
+      "text": "Num",
+      "start": 36.14,
+      "end": 36.48
+    },
+    {
+      "text": "mundo",
+      "start": 36.48,
+      "end": 36.78
+    },
+    {
+      "text": "onde",
+      "start": 36.78,
+      "end": 37.08
+    },
+    {
+      "text": "os",
+      "start": 37.08,
+      "end": 37.48
+    },
+    {
+      "text": "evals",
+      "start": 37.48,
+      "end": 37.9
+    },
+    {
+      "text": "não",
+      "start": 37.9,
+      "end": 38.0
+    },
+    {
+      "text": "existissem,",
+      "start": 38.0,
+      "end": 38.64
+    },
+    {
+      "text": "você",
+      "start": 38.72,
+      "end": 38.96
+    },
+    {
+      "text": "ia",
+      "start": 38.96,
+      "end": 39.1
+    },
+    {
+      "text": "simplesmente",
+      "start": 39.1,
+      "end": 39.36
+    },
+    {
+      "text": "escrever",
+      "start": 39.36,
+      "end": 39.7
+    },
+    {
+      "text": "um",
+      "start": 39.7,
+      "end": 39.88
+    },
+    {
+      "text": "prompt",
+      "start": 39.88,
+      "end": 40.18
+    },
+    {
+      "text": "ali",
+      "start": 40.18,
+      "end": 40.4
+    },
+    {
+      "text": "que",
+      "start": 40.4,
+      "end": 40.56
+    },
+    {
+      "text": "explicasse",
+      "start": 40.56,
+      "end": 41.02
+    },
+    {
+      "text": "por",
+      "start": 41.02,
+      "end": 41.24
+    },
+    {
+      "text": "a",
+      "start": 41.24,
+      "end": 41.32
+    },
+    {
+      "text": "gente",
+      "start": 41.32,
+      "end": 41.48
+    },
+    {
+      "text": "como",
+      "start": 41.48,
+      "end": 41.76
+    },
+    {
+      "text": "que",
+      "start": 41.76,
+      "end": 41.9
+    },
+    {
+      "text": "ele",
+      "start": 41.9,
+      "end": 41.98
+    },
+    {
+      "text": "vai",
+      "start": 41.98,
+      "end": 42.12
+    },
+    {
+      "text": "achar",
+      "start": 42.12,
+      "end": 42.44
+    },
+    {
+      "text": "essas",
+      "start": 42.44,
+      "end": 42.6
+    },
+    {
+      "text": "cláusulas",
+      "start": 42.6,
+      "end": 43.02
+    },
+    {
+      "text": "importantes",
+      "start": 43.02,
+      "end": 43.48
+    },
+    {
+      "text": "do",
+      "start": 43.48,
+      "end": 43.7
+    },
+    {
+      "text": "contrato,",
+      "start": 43.7,
+      "end": 44.16
+    },
+    {
+      "text": "você",
+      "start": 44.26,
+      "end": 44.52
+    },
+    {
+      "text": "ia",
+      "start": 44.52,
+      "end": 44.64
+    },
+    {
+      "text": "jogar",
+      "start": 44.64,
+      "end": 44.88
+    },
+    {
+      "text": "esse",
+      "start": 44.88,
+      "end": 45.06
+    },
+    {
+      "text": "contrato",
+      "start": 45.06,
+      "end": 45.44
+    },
+    {
+      "text": "por",
+      "start": 45.44,
+      "end": 45.6
+    },
+    {
+      "text": "a",
+      "start": 45.6,
+      "end": 45.66
+    },
+    {
+      "text": "gente",
+      "start": 45.66,
+      "end": 45.86
+    },
+    {
+      "text": "ou",
+      "start": 45.86,
+      "end": 46.0
+    },
+    {
+      "text": "a",
+      "start": 46.0,
+      "end": 46.04
+    },
+    {
+      "text": "gente",
+      "start": 46.04,
+      "end": 46.24
+    },
+    {
+      "text": "ia",
+      "start": 46.24,
+      "end": 46.56
+    },
+    {
+      "text": "dar",
+      "start": 46.56,
+      "end": 46.74
+    },
+    {
+      "text": "ali",
+      "start": 46.74,
+      "end": 46.96
+    },
+    {
+      "text": "a",
+      "start": 46.96,
+      "end": 47.0
+    },
+    {
+      "text": "resposta",
+      "start": 47.0,
+      "end": 47.36
+    },
+    {
+      "text": "dizendo",
+      "start": 47.36,
+      "end": 47.74
+    },
+    {
+      "text": "ah,",
+      "start": 47.74,
+      "end": 47.96
+    },
+    {
+      "text": "essa",
+      "start": 48.36,
+      "end": 48.58
+    },
+    {
+      "text": "aqui",
+      "start": 48.58,
+      "end": 48.74
+    },
+    {
+      "text": "são",
+      "start": 48.74,
+      "end": 48.88
+    },
+    {
+      "text": "as",
+      "start": 48.88,
+      "end": 49.0
+    },
+    {
+      "text": "cláusulas",
+      "start": 49.0,
+      "end": 49.3
+    },
+    {
+      "text": "mais",
+      "start": 49.3,
+      "end": 49.54
+    },
+    {
+      "text": "importantes",
+      "start": 49.54,
+      "end": 49.98
+    },
+    {
+      "text": "e",
+      "start": 49.98,
+      "end": 50.32
+    },
+    {
+      "text": "aí",
+      "start": 50.32,
+      "end": 50.42
+    },
+    {
+      "text": "beleza,",
+      "start": 50.42,
+      "end": 50.66
+    },
+    {
+      "text": "você",
+      "start": 50.74,
+      "end": 50.92
+    },
+    {
+      "text": "ia",
+      "start": 50.92,
+      "end": 51.06
+    },
+    {
+      "text": "seguir",
+      "start": 51.06,
+      "end": 51.26
+    },
+    {
+      "text": "sua",
+      "start": 51.26,
+      "end": 51.46
+    },
+    {
+      "text": "vida.",
+      "start": 51.46,
+      "end": 51.68
+    },
+    {
+      "text": "Só",
+      "start": 52.44,
+      "end": 52.66
+    },
+    {
+      "text": "que",
+      "start": 52.66,
+      "end": 52.78
+    },
+    {
+      "text": "o",
+      "start": 52.78,
+      "end": 52.84
+    },
+    {
+      "text": "problema",
+      "start": 52.84,
+      "end": 53.08
+    },
+    {
+      "text": "é,",
+      "start": 53.08,
+      "end": 53.38
+    },
+    {
+      "text": "talvez",
+      "start": 53.8,
+      "end": 54.22
+    },
+    {
+      "text": "essa",
+      "start": 54.22,
+      "end": 54.76
+    },
+    {
+      "text": "aplicação",
+      "start": 54.76,
+      "end": 55.22
+    },
+    {
+      "text": "de",
+      "start": 55.22,
+      "end": 55.34
+    },
+    {
+      "text": "inteligência",
+      "start": 55.34,
+      "end": 55.64
+    },
+    {
+      "text": "artificial",
+      "start": 55.64,
+      "end": 55.96
+    },
+    {
+      "text": "que",
+      "start": 55.96,
+      "end": 56.12
+    },
+    {
+      "text": "você",
+      "start": 56.12,
+      "end": 56.3
+    },
+    {
+      "text": "tem",
+      "start": 56.3,
+      "end": 56.96
+    },
+    {
+      "text": "que",
+      "start": 56.96,
+      "end": 56.96
+    },
+    {
+      "text": "ter,",
+      "start": 56.96,
+      "end": 56.96
+    },
+    {
+      "text": "você",
+      "start": 56.96,
+      "end": 56.96
+    },
+    {
+      "text": "vai",
+      "start": 56.96,
+      "end": 56.96
+    },
+    {
+      "text": "dar",
+      "start": 56.96,
+      "end": 56.96
+    },
+    {
+      "text": "as",
+      "start": 56.96,
+      "end": 56.96
+    },
+    {
+      "text": "cláusulas",
+      "start": 56.96,
+      "end": 57.6
+    },
+    {
+      "text": "demais,",
+      "start": 57.6,
+      "end": 58.0
+    },
+    {
+      "text": "que",
+      "start": 58.44,
+      "end": 58.54
+    },
+    {
+      "text": "o",
+      "start": 58.54,
+      "end": 58.66
+    },
+    {
+      "text": "seu",
+      "start": 58.66,
+      "end": 58.72
+    },
+    {
+      "text": "time",
+      "start": 58.72,
+      "end": 58.92
+    },
+    {
+      "text": "jurídico",
+      "start": 58.92,
+      "end": 59.26
+    },
+    {
+      "text": "não",
+      "start": 59.26,
+      "end": 59.44
+    },
+    {
+      "text": "considera",
+      "start": 59.44,
+      "end": 59.92
+    },
+    {
+      "text": "importantes",
+      "start": 59.92,
+      "end": 60.42
+    },
+    {
+      "text": "e",
+      "start": 60.42,
+      "end": 60.64
+    },
+    {
+      "text": "aí",
+      "start": 60.64,
+      "end": 60.8
+    },
+    {
+      "text": "na",
+      "start": 60.8,
+      "end": 60.94
+    },
+    {
+      "text": "prática",
+      "start": 60.94,
+      "end": 61.38
+    },
+    {
+      "text": "ele",
+      "start": 61.38,
+      "end": 61.7
+    },
+    {
+      "text": "vai",
+      "start": 61.7,
+      "end": 61.9
+    },
+    {
+      "text": "fazer",
+      "start": 61.9,
+      "end": 62.12
+    },
+    {
+      "text": "um",
+      "start": 62.12,
+      "end": 62.2
+    },
+    {
+      "text": "trabalho",
+      "start": 62.2,
+      "end": 62.5
+    },
+    {
+      "text": "tão",
+      "start": 62.5,
+      "end": 63.04
+    },
+    {
+      "text": "excessivo",
+      "start": 63.04,
+      "end": 63.52
+    },
+    {
+      "text": "que",
+      "start": 63.52,
+      "end": 63.64
+    },
+    {
+      "text": "o",
+      "start": 63.64,
+      "end": 63.7
+    },
+    {
+      "text": "seu",
+      "start": 63.7,
+      "end": 63.76
+    },
+    {
+      "text": "time",
+      "start": 63.76,
+      "end": 63.96
+    },
+    {
+      "text": "jurídico",
+      "start": 63.96,
+      "end": 64.28
+    },
+    {
+      "text": "vai",
+      "start": 64.28,
+      "end": 64.4
+    },
+    {
+      "text": "ter",
+      "start": 64.4,
+      "end": 64.48
+    },
+    {
+      "text": "que",
+      "start": 64.48,
+      "end": 64.58
+    },
+    {
+      "text": "refazer",
+      "start": 64.58,
+      "end": 65.0
+    },
+    {
+      "text": "toda",
+      "start": 65.0,
+      "end": 65.1
+    },
+    {
+      "text": "a",
+      "start": 65.1,
+      "end": 65.24
+    },
+    {
+      "text": "análise",
+      "start": 65.24,
+      "end": 65.8
+    },
+    {
+      "text": "e",
+      "start": 65.8,
+      "end": 66.02
+    },
+    {
+      "text": "aí",
+      "start": 66.02,
+      "end": 66.1
+    },
+    {
+      "text": "o",
+      "start": 66.1,
+      "end": 66.22
+    },
+    {
+      "text": "teu",
+      "start": 66.22,
+      "end": 66.26
+    },
+    {
+      "text": "time",
+      "start": 66.26,
+      "end": 66.52
+    },
+    {
+      "text": "não",
+      "start": 66.52,
+      "end": 66.7
+    },
+    {
+      "text": "vai",
+      "start": 66.7,
+      "end": 66.84
+    },
+    {
+      "text": "ganhar",
+      "start": 66.84,
+      "end": 67.0
+    },
+    {
+      "text": "nenhum",
+      "start": 67.0,
+      "end": 67.22
+    },
+    {
+      "text": "tempo",
+      "start": 67.22,
+      "end": 67.56
+    },
+    {
+      "text": "ou",
+      "start": 67.56,
+      "end": 68.42
+    },
+    {
+      "text": "pode",
+      "start": 68.42,
+      "end": 68.64
+    },
+    {
+      "text": "apontar",
+      "start": 68.64,
+      "end": 68.94
+    },
+    {
+      "text": "seu",
+      "start": 68.94,
+      "end": 69.06
+    },
+    {
+      "text": "problema",
+      "start": 69.06,
+      "end": 69.32
+    },
+    {
+      "text": "contrário,",
+      "start": 69.32,
+      "end": 69.86
+    },
+    {
+      "text": "dele",
+      "start": 69.92,
+      "end": 70.08
+    },
+    {
+      "text": "não",
+      "start": 70.08,
+      "end": 70.32
+    },
+    {
+      "text": "apontar",
+      "start": 70.32,
+      "end": 70.68
+    },
+    {
+      "text": "cláusulas",
+      "start": 70.68,
+      "end": 71.08
+    },
+    {
+      "text": "que",
+      "start": 71.08,
+      "end": 71.24
+    },
+    {
+      "text": "o",
+      "start": 71.24,
+      "end": 71.34
+    },
+    {
+      "text": "seu",
+      "start": 71.34,
+      "end": 71.52
+    },
+    {
+      "text": "time",
+      "start": 71.52,
+      "end": 71.76
+    },
+    {
+      "text": "jurídico",
+      "start": 71.76,
+      "end": 72.12
+    },
+    {
+      "text": "considera",
+      "start": 72.12,
+      "end": 72.64
+    },
+    {
+      "text": "importante",
+      "start": 72.64,
+      "end": 73.1
+    },
+    {
+      "text": "e",
+      "start": 73.1,
+      "end": 73.28
+    },
+    {
+      "text": "aí",
+      "start": 73.28,
+      "end": 73.36
+    },
+    {
+      "text": "nesse",
+      "start": 73.36,
+      "end": 73.56
+    },
+    {
+      "text": "cenário",
+      "start": 73.56,
+      "end": 73.94
+    },
+    {
+      "text": "o",
+      "start": 73.94,
+      "end": 74.08
+    },
+    {
+      "text": "time",
+      "start": 74.08,
+      "end": 74.2
+    },
+    {
+      "text": "jurídico",
+      "start": 74.2,
+      "end": 74.68
+    },
+    {
+      "text": "também",
+      "start": 74.68,
+      "end": 74.9
+    },
+    {
+      "text": "vai",
+      "start": 74.9,
+      "end": 75.06
+    },
+    {
+      "text": "estar",
+      "start": 75.06,
+      "end": 75.18
+    },
+    {
+      "text": "perdendo",
+      "start": 75.18,
+      "end": 75.4
+    },
+    {
+      "text": "tempo",
+      "start": 75.4,
+      "end": 75.66
+    },
+    {
+      "text": "porque",
+      "start": 75.66,
+      "end": 75.86
+    },
+    {
+      "text": "ele",
+      "start": 75.86,
+      "end": 75.96
+    },
+    {
+      "text": "vai",
+      "start": 75.96,
+      "end": 76.04
+    },
+    {
+      "text": "estar",
+      "start": 76.04,
+      "end": 76.12
+    },
+    {
+      "text": "tendo",
+      "start": 76.12,
+      "end": 76.3
+    },
+    {
+      "text": "que",
+      "start": 76.3,
+      "end": 76.4
+    },
+    {
+      "text": "refazer",
+      "start": 76.4,
+      "end": 76.78
+    },
+    {
+      "text": "o",
+      "start": 76.78,
+      "end": 76.82
+    },
+    {
+      "text": "trabalho",
+      "start": 76.82,
+      "end": 77.12
+    },
+    {
+      "text": "também.",
+      "start": 77.12,
+      "end": 77.76
+    },
+    {
+      "text": "E",
+      "start": 78.26,
+      "end": 78.48
+    },
+    {
+      "text": "mesmo",
+      "start": 78.48,
+      "end": 78.64
+    },
+    {
+      "text": "que",
+      "start": 78.64,
+      "end": 78.82
+    },
+    {
+      "text": "o",
+      "start": 78.82,
+      "end": 78.88
+    },
+    {
+      "text": "teu",
+      "start": 78.88,
+      "end": 78.96
+    },
+    {
+      "text": "time",
+      "start": 78.96,
+      "end": 79.16
+    },
+    {
+      "text": "jurídico",
+      "start": 79.16,
+      "end": 79.56
+    },
+    {
+      "text": "te",
+      "start": 79.56,
+      "end": 79.72
+    },
+    {
+      "text": "aponte",
+      "start": 79.72,
+      "end": 80.04
+    },
+    {
+      "text": "ali",
+      "start": 80.04,
+      "end": 80.22
+    },
+    {
+      "text": "olha,",
+      "start": 80.22,
+      "end": 80.56
+    },
+    {
+      "text": "para",
+      "start": 80.78,
+      "end": 81.06
+    },
+    {
+      "text": "esse",
+      "start": 81.06,
+      "end": 81.26
+    },
+    {
+      "text": "caso",
+      "start": 81.26,
+      "end": 81.54
+    },
+    {
+      "text": "aqui",
+      "start": 81.54,
+      "end": 81.78
+    },
+    {
+      "text": "eu",
+      "start": 81.78,
+      "end": 81.9
+    },
+    {
+      "text": "quero",
+      "start": 81.9,
+      "end": 82.06
+    },
+    {
+      "text": "que",
+      "start": 82.06,
+      "end": 82.16
+    },
+    {
+      "text": "você",
+      "start": 82.16,
+      "end": 82.32
+    },
+    {
+      "text": "corrija",
+      "start": 82.32,
+      "end": 82.68
+    },
+    {
+      "text": "isso",
+      "start": 82.68,
+      "end": 82.88
+    },
+    {
+      "text": "e",
+      "start": 82.88,
+      "end": 82.98
+    },
+    {
+      "text": "isso",
+      "start": 82.98,
+      "end": 83.18
+    },
+    {
+      "text": "e",
+      "start": 83.18,
+      "end": 83.3
+    },
+    {
+      "text": "isso",
+      "start": 83.3,
+      "end": 83.38
+    },
+    {
+      "text": "e",
+      "start": 83.38,
+      "end": 83.44
+    },
+    {
+      "text": "aí",
+      "start": 83.44,
+      "end": 83.54
+    },
+    {
+      "text": "você",
+      "start": 83.54,
+      "end": 83.74
+    },
+    {
+      "text": "vai",
+      "start": 83.74,
+      "end": 83.9
+    },
+    {
+      "text": "lá",
+      "start": 83.9,
+      "end": 84.06
+    },
+    {
+      "text": "e",
+      "start": 84.06,
+      "end": 84.18
+    },
+    {
+      "text": "muda",
+      "start": 84.18,
+      "end": 84.48
+    },
+    {
+      "text": "o",
+      "start": 84.48,
+      "end": 84.6
+    },
+    {
+      "text": "prompt",
+      "start": 84.6,
+      "end": 84.82
+    },
+    {
+      "text": "do",
+      "start": 84.82,
+      "end": 85.14
+    },
+    {
+      "text": "agente",
+      "start": 85.14,
+      "end": 85.76
+    },
+    {
+      "text": "que",
+      "start": 85.76,
+      "end": 85.88
+    },
+    {
+      "text": "ele",
+      "start": 85.88,
+      "end": 85.94
+    },
+    {
+      "text": "está",
+      "start": 85.94,
+      "end": 85.94
+    },
+    {
+      "text": "fazendo",
+      "start": 85.94,
+      "end": 86.16
+    },
+    {
+      "text": "essa",
+      "start": 86.16,
+      "end": 86.36
+    },
+    {
+      "text": "análise,",
+      "start": 86.36,
+      "end": 86.76
+    },
+    {
+      "text": "quem",
+      "start": 87.1,
+      "end": 87.48
+    },
+    {
+      "text": "garante",
+      "start": 87.48,
+      "end": 87.78
+    },
+    {
+      "text": "que",
+      "start": 87.78,
+      "end": 87.92
+    },
+    {
+      "text": "você",
+      "start": 87.92,
+      "end": 88.16
+    },
+    {
+      "text": "está",
+      "start": 88.16,
+      "end": 88.36
+    },
+    {
+      "text": "ajustando",
+      "start": 88.36,
+      "end": 88.88
+    },
+    {
+      "text": "esse",
+      "start": 88.88,
+      "end": 89.02
+    },
+    {
+      "text": "caso",
+      "start": 89.02,
+      "end": 89.3
+    },
+    {
+      "text": "e",
+      "start": 89.3,
+      "end": 89.44
+    },
+    {
+      "text": "não",
+      "start": 89.44,
+      "end": 89.52
+    },
+    {
+      "text": "está",
+      "start": 89.52,
+      "end": 89.64
+    },
+    {
+      "text": "quebrando",
+      "start": 89.64,
+      "end": 89.98
+    },
+    {
+      "text": "todos",
+      "start": 89.98,
+      "end": 90.46
+    },
+    {
+      "text": "os",
+      "start": 90.46,
+      "end": 90.62
+    },
+    {
+      "text": "outros",
+      "start": 90.62,
+      "end": 90.76
+    },
+    {
+      "text": "casos",
+      "start": 90.76,
+      "end": 90.98
+    },
+    {
+      "text": "que",
+      "start": 90.98,
+      "end": 91.1
+    },
+    {
+      "text": "já",
+      "start": 91.1,
+      "end": 91.28
+    },
+    {
+      "text": "estavam",
+      "start": 91.28,
+      "end": 91.46
+    },
+    {
+      "text": "funcionando",
+      "start": 91.46,
+      "end": 91.98
+    },
+    {
+      "text": "e",
+      "start": 91.98,
+      "end": 93.04
+    },
+    {
+      "text": "é",
+      "start": 93.04,
+      "end": 93.1
+    },
+    {
+      "text": "justamente",
+      "start": 93.1,
+      "end": 93.3
+    },
+    {
+      "text": "para",
+      "start": 93.3,
+      "end": 93.62
+    },
+    {
+      "text": "resolver",
+      "start": 93.62,
+      "end": 93.98
+    },
+    {
+      "text": "esse",
+      "start": 93.98,
+      "end": 94.36
+    },
+    {
+      "text": "tipo",
+      "start": 94.36,
+      "end": 94.6
+    },
+    {
+      "text": "de",
+      "start": 94.6,
+      "end": 94.72
+    },
+    {
+      "text": "coisas",
+      "start": 94.72,
+      "end": 95.02
+    },
+    {
+      "text": "que",
+      "start": 95.02,
+      "end": 95.22
+    },
+    {
+      "text": "os",
+      "start": 95.22,
+      "end": 95.34
+    },
+    {
+      "text": "evals",
+      "start": 95.34,
+      "end": 95.62
+    },
+    {
+      "text": "existem,",
+      "start": 95.62,
+      "end": 96.06
+    },
+    {
+      "text": "os",
+      "start": 96.34,
+      "end": 96.46
+    },
+    {
+      "text": "evals",
+      "start": 96.46,
+      "end": 96.8
+    },
+    {
+      "text": "meio",
+      "start": 96.8,
+      "end": 97.24
+    },
+    {
+      "text": "que",
+      "start": 97.24,
+      "end": 97.42
+    },
+    {
+      "text": "vão",
+      "start": 97.42,
+      "end": 97.6
+    },
+    {
+      "text": "ser",
+      "start": 97.6,
+      "end": 97.86
+    },
+    {
+      "text": "um",
+      "start": 97.86,
+      "end": 98.16
+    },
+    {
+      "text": "dataset",
+      "start": 98.16,
+      "end": 98.34
+    },
+    {
+      "text": "com",
+      "start": 98.72,
+      "end": 98.98
+    },
+    {
+      "text": "a",
+      "start": 98.98,
+      "end": 99.06
+    },
+    {
+      "text": "resposta",
+      "start": 99.06,
+      "end": 99.32
+    },
+    {
+      "text": "marcada",
+      "start": 99.32,
+      "end": 100.08
+    },
+    {
+      "text": "de",
+      "start": 100.08,
+      "end": 100.36
+    },
+    {
+      "text": "quais",
+      "start": 100.36,
+      "end": 100.8
+    },
+    {
+      "text": "são",
+      "start": 100.8,
+      "end": 101.08
+    },
+    {
+      "text": "as",
+      "start": 101.08,
+      "end": 101.26
+    },
+    {
+      "text": "cláusulas",
+      "start": 101.26,
+      "end": 101.62
+    },
+    {
+      "text": "que",
+      "start": 101.62,
+      "end": 101.82
+    },
+    {
+      "text": "o",
+      "start": 101.82,
+      "end": 101.94
+    },
+    {
+      "text": "seu",
+      "start": 101.94,
+      "end": 102.02
+    },
+    {
+      "text": "agente",
+      "start": 102.02,
+      "end": 102.32
+    },
+    {
+      "text": "deveria",
+      "start": 102.32,
+      "end": 102.74
+    },
+    {
+      "text": "analis,",
+      "start": 102.74,
+      "end": 103.12
+    },
+    {
+      "text": "analisar",
+      "start": 103.14,
+      "end": 103.26
+    },
+    {
+      "text": "e",
+      "start": 103.26,
+      "end": 103.32
+    },
+    {
+      "text": "deveria",
+      "start": 103.32,
+      "end": 103.86
+    },
+    {
+      "text": "apontar.",
+      "start": 103.86,
+      "end": 104.68
+    },
+    {
+      "text": "Então",
+      "start": 105.26,
+      "end": 105.54
+    },
+    {
+      "text": "você",
+      "start": 105.54,
+      "end": 105.78
+    },
+    {
+      "text": "pegaria",
+      "start": 105.78,
+      "end": 106.28
+    },
+    {
+      "text": "ali",
+      "start": 106.28,
+      "end": 106.38
+    },
+    {
+      "text": "por",
+      "start": 106.38,
+      "end": 106.54
+    },
+    {
+      "text": "exemplo",
+      "start": 106.54,
+      "end": 106.8
+    },
+    {
+      "text": "50",
+      "start": 106.8,
+      "end": 107.18
+    },
+    {
+      "text": "contratos",
+      "start": 107.18,
+      "end": 107.8
+    },
+    {
+      "text": "do",
+      "start": 107.8,
+      "end": 108.08
+    },
+    {
+      "text": "seu",
+      "start": 108.08,
+      "end": 108.2
+    },
+    {
+      "text": "setor",
+      "start": 108.2,
+      "end": 108.48
+    },
+    {
+      "text": "jurídico",
+      "start": 108.48,
+      "end": 108.98
+    },
+    {
+      "text": "que",
+      "start": 108.98,
+      "end": 109.44
+    },
+    {
+      "text": "eles",
+      "start": 109.44,
+      "end": 109.6
+    },
+    {
+      "text": "sabem",
+      "start": 109.6,
+      "end": 109.92
+    },
+    {
+      "text": "a",
+      "start": 109.92,
+      "end": 110.04
+    },
+    {
+      "text": "resposta,",
+      "start": 110.04,
+      "end": 110.38
+    },
+    {
+      "text": "que",
+      "start": 110.58,
+      "end": 110.62
+    },
+    {
+      "text": "eles",
+      "start": 110.62,
+      "end": 110.72
+    },
+    {
+      "text": "sabem",
+      "start": 110.72,
+      "end": 110.96
+    },
+    {
+      "text": "quais",
+      "start": 110.96,
+      "end": 111.14
+    },
+    {
+      "text": "são",
+      "start": 111.14,
+      "end": 111.3
+    },
+    {
+      "text": "as",
+      "start": 111.3,
+      "end": 111.4
+    },
+    {
+      "text": "cláusulas",
+      "start": 111.4,
+      "end": 111.76
+    },
+    {
+      "text": "mais",
+      "start": 111.76,
+      "end": 112.08
+    },
+    {
+      "text": "relevantes",
+      "start": 112.08,
+      "end": 112.76
+    },
+    {
+      "text": "ali",
+      "start": 112.76,
+      "end": 112.94
+    },
+    {
+      "text": "e",
+      "start": 112.94,
+      "end": 113.54
+    },
+    {
+      "text": "você",
+      "start": 113.54,
+      "end": 113.74
+    },
+    {
+      "text": "montaria",
+      "start": 113.74,
+      "end": 114.16
+    },
+    {
+      "text": "um",
+      "start": 114.16,
+      "end": 114.32
+    },
+    {
+      "text": "dataset",
+      "start": 114.32,
+      "end": 114.44
+    },
+    {
+      "text": "de",
+      "start": 114.76,
+      "end": 114.96
+    },
+    {
+      "text": "evals",
+      "start": 114.96,
+      "end": 115.26
+    },
+    {
+      "text": "com",
+      "start": 115.26,
+      "end": 115.4
+    },
+    {
+      "text": "aquilo",
+      "start": 115.4,
+      "end": 115.6
+    },
+    {
+      "text": "ali,",
+      "start": 115.6,
+      "end": 115.78
+    },
+    {
+      "text": "ou",
+      "start": 115.88,
+      "end": 115.9
+    },
+    {
+      "text": "seja,",
+      "start": 115.9,
+      "end": 116.16
+    },
+    {
+      "text": "você",
+      "start": 116.22,
+      "end": 116.4
+    },
+    {
+      "text": "mostraria",
+      "start": 116.4,
+      "end": 116.98
+    },
+    {
+      "text": "para",
+      "start": 116.98,
+      "end": 117.08
+    },
+    {
+      "text": "o",
+      "start": 117.08,
+      "end": 117.16
+    },
+    {
+      "text": "seu",
+      "start": 117.16,
+      "end": 117.2
+    },
+    {
+      "text": "agente",
+      "start": 117.2,
+      "end": 117.52
+    },
+    {
+      "text": "olha,",
+      "start": 117.52,
+      "end": 117.76
+    },
+    {
+      "text": "nesses",
+      "start": 117.92,
+      "end": 118.1
+    },
+    {
+      "text": "50",
+      "start": 118.1,
+      "end": 118.52
+    },
+    {
+      "text": "casos",
+      "start": 118.52,
+      "end": 118.9
+    },
+    {
+      "text": "aqui",
+      "start": 118.9,
+      "end": 119.22
+    },
+    {
+      "text": "a",
+      "start": 119.22,
+      "end": 119.74
+    },
+    {
+      "text": "resposta",
+      "start": 119.74,
+      "end": 120.08
+    },
+    {
+      "text": "certa",
+      "start": 120.08,
+      "end": 120.58
+    },
+    {
+      "text": "é",
+      "start": 120.58,
+      "end": 120.9
+    },
+    {
+      "text": "essa",
+      "start": 120.9,
+      "end": 121.08
+    },
+    {
+      "text": "aqui",
+      "start": 121.08,
+      "end": 121.3
+    },
+    {
+      "text": "e",
+      "start": 121.3,
+      "end": 122.04
+    },
+    {
+      "text": "aí",
+      "start": 122.04,
+      "end": 122.18
+    },
+    {
+      "text": "toda",
+      "start": 122.18,
+      "end": 122.4
+    },
+    {
+      "text": "vez",
+      "start": 122.4,
+      "end": 122.6
+    },
+    {
+      "text": "que",
+      "start": 122.6,
+      "end": 122.74
+    },
+    {
+      "text": "você",
+      "start": 122.74,
+      "end": 122.96
+    },
+    {
+      "text": "fizesse",
+      "start": 122.96,
+      "end": 123.4
+    },
+    {
+      "text": "uma",
+      "start": 123.4,
+      "end": 123.54
+    },
+    {
+      "text": "mudança",
+      "start": 123.54,
+      "end": 123.92
+    },
+    {
+      "text": "no",
+      "start": 123.92,
+      "end": 124.08
+    },
+    {
+      "text": "prompt",
+      "start": 124.08,
+      "end": 124.36
+    },
+    {
+      "text": "de",
+      "start": 124.36,
+      "end": 124.58
+    },
+    {
+      "text": "sistema",
+      "start": 124.58,
+      "end": 125.0
+    },
+    {
+      "text": "desse",
+      "start": 125.0,
+      "end": 125.2
+    },
+    {
+      "text": "agente",
+      "start": 125.2,
+      "end": 125.6
+    },
+    {
+      "text": "ou",
+      "start": 125.6,
+      "end": 125.84
+    },
+    {
+      "text": "nas",
+      "start": 125.84,
+      "end": 126.06
+    },
+    {
+      "text": "tools",
+      "start": 126.06,
+      "end": 126.32
+    },
+    {
+      "text": "que",
+      "start": 126.32,
+      "end": 126.48
+    },
+    {
+      "text": "ele",
+      "start": 126.48,
+      "end": 126.58
+    },
+    {
+      "text": "usa",
+      "start": 126.58,
+      "end": 126.84
+    },
+    {
+      "text": "ali",
+      "start": 126.84,
+      "end": 127.06
+    },
+    {
+      "text": "em",
+      "start": 127.06,
+      "end": 127.2
+    },
+    {
+      "text": "produção",
+      "start": 127.2,
+      "end": 127.56
+    },
+    {
+      "text": "você",
+      "start": 127.56,
+      "end": 128.26
+    },
+    {
+      "text": "teria",
+      "start": 128.26,
+      "end": 128.5
+    },
+    {
+      "text": "que",
+      "start": 128.5,
+      "end": 128.84
+    },
+    {
+      "text": "ser",
+      "start": 128.84,
+      "end": 129.0
+    },
+    {
+      "text": "obrigado",
+      "start": 129.0,
+      "end": 129.32
+    },
+    {
+      "text": "a",
+      "start": 129.32,
+      "end": 129.56
+    },
+    {
+      "text": "rodar",
+      "start": 129.56,
+      "end": 129.98
+    },
+    {
+      "text": "esse",
+      "start": 129.98,
+      "end": 130.14
+    },
+    {
+      "text": "dataset",
+      "start": 130.14,
+      "end": 130.32
+    },
+    {
+      "text": "de",
+      "start": 130.6,
+      "end": 130.8
+    },
+    {
+      "text": "evals",
+      "start": 130.8,
+      "end": 131.02
+    },
+    {
+      "text": "de",
+      "start": 131.02,
+      "end": 131.2
+    },
+    {
+      "text": "novo",
+      "start": 131.2,
+      "end": 131.4
+    },
+    {
+      "text": "e",
+      "start": 131.4,
+      "end": 131.74
+    },
+    {
+      "text": "ver",
+      "start": 131.74,
+      "end": 131.88
+    },
+    {
+      "text": "se",
+      "start": 131.88,
+      "end": 132.0
+    },
+    {
+      "text": "o",
+      "start": 132.0,
+      "end": 132.14
+    },
+    {
+      "text": "seu",
+      "start": 132.14,
+      "end": 132.18
+    },
+    {
+      "text": "agente",
+      "start": 132.18,
+      "end": 132.46
+    },
+    {
+      "text": "ainda",
+      "start": 132.46,
+      "end": 132.62
+    },
+    {
+      "text": "está",
+      "start": 132.62,
+      "end": 132.82
+    },
+    {
+      "text": "estável,",
+      "start": 132.82,
+      "end": 133.26
+    },
+    {
+      "text": "ou",
+      "start": 133.42,
+      "end": 133.5
+    },
+    {
+      "text": "seja,",
+      "start": 133.5,
+      "end": 133.76
+    },
+    {
+      "text": "se",
+      "start": 133.82,
+      "end": 133.96
+    },
+    {
+      "text": "ele",
+      "start": 133.96,
+      "end": 134.06
+    },
+    {
+      "text": "ainda",
+      "start": 134.06,
+      "end": 134.4
+    },
+    {
+      "text": "está",
+      "start": 134.4,
+      "end": 134.64
+    },
+    {
+      "text": "tirando",
+      "start": 134.64,
+      "end": 135.16
+    },
+    {
+      "text": "a",
+      "start": 135.16,
+      "end": 135.52
+    },
+    {
+      "text": "mesma",
+      "start": 135.52,
+      "end": 135.76
+    },
+    {
+      "text": "resposta",
+      "start": 135.76,
+      "end": 136.28
+    },
+    {
+      "text": "que",
+      "start": 136.28,
+      "end": 136.56
+    },
+    {
+      "text": "a",
+      "start": 136.56,
+      "end": 136.68
+    },
+    {
+      "text": "resposta",
+      "start": 136.68,
+      "end": 136.98
+    },
+    {
+      "text": "certa",
+      "start": 136.98,
+      "end": 137.46
+    },
+    {
+      "text": "igual",
+      "start": 137.46,
+      "end": 138.0
+    },
+    {
+      "text": "da",
+      "start": 138.0,
+      "end": 138.18
+    },
+    {
+      "text": "última",
+      "start": 138.18,
+      "end": 138.32
+    },
+    {
+      "text": "vez.",
+      "start": 138.32,
+      "end": 138.62
+    },
+    {
+      "text": "Quando",
+      "start": 139.32,
+      "end": 139.58
+    },
+    {
+      "text": "você",
+      "start": 139.58,
+      "end": 139.82
+    },
+    {
+      "text": "tem",
+      "start": 139.82,
+      "end": 140.02
+    },
+    {
+      "text": "isso",
+      "start": 140.02,
+      "end": 140.22
+    },
+    {
+      "text": "perceba",
+      "start": 140.22,
+      "end": 140.58
+    },
+    {
+      "text": "que",
+      "start": 140.58,
+      "end": 140.68
+    },
+    {
+      "text": "vai",
+      "start": 140.68,
+      "end": 140.78
+    },
+    {
+      "text": "acontecer",
+      "start": 140.78,
+      "end": 141.06
+    },
+    {
+      "text": "duas",
+      "start": 141.06,
+      "end": 141.42
+    },
+    {
+      "text": "coisas,",
+      "start": 141.42,
+      "end": 141.74
+    },
+    {
+      "text": "primeiro",
+      "start": 141.78,
+      "end": 142.16
+    },
+    {
+      "text": "você",
+      "start": 142.16,
+      "end": 142.5
+    },
+    {
+      "text": "vai",
+      "start": 142.5,
+      "end": 142.62
+    },
+    {
+      "text": "ter",
+      "start": 142.62,
+      "end": 142.74
+    },
+    {
+      "text": "uma",
+      "start": 142.74,
+      "end": 142.88
+    },
+    {
+      "text": "métrica",
+      "start": 142.88,
+      "end": 143.24
+    },
+    {
+      "text": "objetiva,",
+      "start": 143.24,
+      "end": 143.94
+    },
+    {
+      "text": "disse",
+      "start": 144.0,
+      "end": 144.2
+    },
+    {
+      "text": "o",
+      "start": 144.2,
+      "end": 144.32
+    },
+    {
+      "text": "agente",
+      "start": 144.32,
+      "end": 144.58
+    },
+    {
+      "text": "de",
+      "start": 144.58,
+      "end": 144.74
+    },
+    {
+      "text": "fato",
+      "start": 144.74,
+      "end": 144.96
+    },
+    {
+      "text": "está",
+      "start": 144.96,
+      "end": 145.22
+    },
+    {
+      "text": "funcionando",
+      "start": 145.22,
+      "end": 145.82
+    },
+    {
+      "text": "no",
+      "start": 145.82,
+      "end": 146.06
+    },
+    {
+      "text": "seu",
+      "start": 146.06,
+      "end": 146.2
+    },
+    {
+      "text": "sistema",
+      "start": 146.2,
+      "end": 146.62
+    },
+    {
+      "text": "e",
+      "start": 146.62,
+      "end": 147.26
+    },
+    {
+      "text": "segundo",
+      "start": 147.26,
+      "end": 147.58
+    },
+    {
+      "text": "você",
+      "start": 147.58,
+      "end": 147.96
+    },
+    {
+      "text": "vai",
+      "start": 147.96,
+      "end": 148.1
+    },
+    {
+      "text": "ter",
+      "start": 148.1,
+      "end": 148.24
+    },
+    {
+      "text": "de",
+      "start": 148.24,
+      "end": 148.38
+    },
+    {
+      "text": "fato",
+      "start": 148.38,
+      "end": 148.6
+    },
+    {
+      "text": "uma",
+      "start": 148.6,
+      "end": 148.8
+    },
+    {
+      "text": "direção",
+      "start": 148.8,
+      "end": 149.24
+    },
+    {
+      "text": "para",
+      "start": 149.24,
+      "end": 149.46
+    },
+    {
+      "text": "onde",
+      "start": 149.46,
+      "end": 149.56
+    },
+    {
+      "text": "você",
+      "start": 149.56,
+      "end": 149.76
+    },
+    {
+      "text": "quer",
+      "start": 149.76,
+      "end": 149.94
+    },
+    {
+      "text": "ir,",
+      "start": 149.94,
+      "end": 150.08
+    },
+    {
+      "text": "então",
+      "start": 150.16,
+      "end": 150.46
+    },
+    {
+      "text": "toda",
+      "start": 150.46,
+      "end": 150.74
+    },
+    {
+      "text": "a",
+      "start": 150.74,
+      "end": 150.9
+    },
+    {
+      "text": "melhoria",
+      "start": 150.9,
+      "end": 151.2
+    },
+    {
+      "text": "que",
+      "start": 151.2,
+      "end": 151.3
+    },
+    {
+      "text": "vocês",
+      "start": 151.3,
+      "end": 151.5
+    },
+    {
+      "text": "fizerem",
+      "start": 151.5,
+      "end": 151.84
+    },
+    {
+      "text": "no",
+      "start": 151.84,
+      "end": 151.98
+    },
+    {
+      "text": "sistema",
+      "start": 151.98,
+      "end": 152.3
+    },
+    {
+      "text": "vai",
+      "start": 152.3,
+      "end": 152.54
+    },
+    {
+      "text": "ter",
+      "start": 152.54,
+      "end": 152.68
+    },
+    {
+      "text": "que",
+      "start": 152.68,
+      "end": 152.76
+    },
+    {
+      "text": "fazer",
+      "start": 152.76,
+      "end": 152.96
+    },
+    {
+      "text": "o",
+      "start": 152.96,
+      "end": 153.1
+    },
+    {
+      "text": "dataset",
+      "start": 153.1,
+      "end": 153.14
+    },
+    {
+      "text": "de",
+      "start": 153.42,
+      "end": 153.64
+    },
+    {
+      "text": "evals",
+      "start": 153.64,
+      "end": 153.92
+    },
+    {
+      "text": "passar,",
+      "start": 153.92,
+      "end": 154.36
+    },
+    {
+      "text": "passar",
+      "start": 154.36,
+      "end": 154.4
+    },
+    {
+      "text": "com",
+      "start": 154.4,
+      "end": 154.78
+    },
+    {
+      "text": "uma",
+      "start": 154.78,
+      "end": 154.92
+    },
+    {
+      "text": "nota",
+      "start": 154.92,
+      "end": 155.1
+    },
+    {
+      "text": "mais",
+      "start": 155.1,
+      "end": 155.32
+    },
+    {
+      "text": "alta",
+      "start": 155.32,
+      "end": 155.52
+    },
+    {
+      "text": "do",
+      "start": 155.52,
+      "end": 155.66
+    },
+    {
+      "text": "que",
+      "start": 155.66,
+      "end": 155.78
+    },
+    {
+      "text": "a",
+      "start": 155.78,
+      "end": 155.84
+    },
+    {
+      "text": "anterior",
+      "start": 155.84,
+      "end": 156.16
+    },
+    {
+      "text": "e",
+      "start": 156.16,
+      "end": 157.1
+    },
+    {
+      "text": "isso",
+      "start": 157.1,
+      "end": 157.26
+    },
+    {
+      "text": "também",
+      "start": 157.26,
+      "end": 157.54
+    },
+    {
+      "text": "impede",
+      "start": 157.54,
+      "end": 157.92
+    },
+    {
+      "text": "que",
+      "start": 157.92,
+      "end": 158.1
+    },
+    {
+      "text": "o",
+      "start": 158.1,
+      "end": 158.22
+    },
+    {
+      "text": "teu",
+      "start": 158.22,
+      "end": 158.24
+    },
+    {
+      "text": "time",
+      "start": 158.24,
+      "end": 158.46
+    },
+    {
+      "text": "jurídico",
+      "start": 158.46,
+      "end": 158.9
+    },
+    {
+      "text": "tem",
+      "start": 158.9,
+      "end": 159.1
+    },
+    {
+      "text": "uma",
+      "start": 159.1,
+      "end": 159.24
+    },
+    {
+      "text": "regra",
+      "start": 159.24,
+      "end": 159.54
+    },
+    {
+      "text": "que",
+      "start": 159.54,
+      "end": 159.66
+    },
+    {
+      "text": "seja",
+      "start": 159.66,
+      "end": 159.86
+    },
+    {
+      "text": "muito",
+      "start": 159.86,
+      "end": 160.12
+    },
+    {
+      "text": "subjetiva,",
+      "start": 160.12,
+      "end": 160.86
+    },
+    {
+      "text": "porque",
+      "start": 161.08,
+      "end": 161.42
+    },
+    {
+      "text": "se",
+      "start": 161.42,
+      "end": 161.6
+    },
+    {
+      "text": "eles",
+      "start": 161.6,
+      "end": 161.72
+    },
+    {
+      "text": "mudarem",
+      "start": 161.72,
+      "end": 162.1
+    },
+    {
+      "text": "uma",
+      "start": 162.1,
+      "end": 162.28
+    },
+    {
+      "text": "coisa",
+      "start": 162.28,
+      "end": 162.5
+    },
+    {
+      "text": "de",
+      "start": 162.5,
+      "end": 162.64
+    },
+    {
+      "text": "um",
+      "start": 162.64,
+      "end": 162.74
+    },
+    {
+      "text": "lado",
+      "start": 162.74,
+      "end": 162.96
+    },
+    {
+      "text": "e",
+      "start": 162.96,
+      "end": 163.12
+    },
+    {
+      "text": "eles",
+      "start": 163.12,
+      "end": 163.26
+    },
+    {
+      "text": "quebrarem",
+      "start": 163.26,
+      "end": 163.62
+    },
+    {
+      "text": "todos",
+      "start": 163.62,
+      "end": 163.8
+    },
+    {
+      "text": "os",
+      "start": 163.8,
+      "end": 163.94
+    },
+    {
+      "text": "outros",
+      "start": 163.94,
+      "end": 164.06
+    },
+    {
+      "text": "casos",
+      "start": 164.06,
+      "end": 164.26
+    },
+    {
+      "text": "que",
+      "start": 164.26,
+      "end": 164.38
+    },
+    {
+      "text": "já",
+      "start": 164.38,
+      "end": 164.52
+    },
+    {
+      "text": "estão",
+      "start": 164.52,
+      "end": 164.62
+    },
+    {
+      "text": "funcionando,",
+      "start": 164.62,
+      "end": 165.14
+    },
+    {
+      "text": "o",
+      "start": 165.28,
+      "end": 165.32
+    },
+    {
+      "text": "teu",
+      "start": 165.32,
+      "end": 165.42
+    },
+    {
+      "text": "time",
+      "start": 165.42,
+      "end": 165.74
+    },
+    {
+      "text": "de",
+      "start": 165.74,
+      "end": 165.9
+    },
+    {
+      "text": "desenvolvimento",
+      "start": 165.9,
+      "end": 166.62
+    },
+    {
+      "text": "do",
+      "start": 166.62,
+      "end": 166.86
+    },
+    {
+      "text": "seu",
+      "start": 166.86,
+      "end": 166.98
+    },
+    {
+      "text": "produto",
+      "start": 166.98,
+      "end": 167.32
+    },
+    {
+      "text": "de",
+      "start": 167.32,
+      "end": 167.54
+    },
+    {
+      "text": "IA",
+      "start": 167.54,
+      "end": 167.7
+    },
+    {
+      "text": "vai",
+      "start": 167.7,
+      "end": 168.3
+    },
+    {
+      "text": "podendo",
+      "start": 168.3,
+      "end": 168.56
+    },
+    {
+      "text": "time",
+      "start": 168.56,
+      "end": 168.76
+    },
+    {
+      "text": "jurídico",
+      "start": 168.76,
+      "end": 169.14
+    },
+    {
+      "text": "e",
+      "start": 169.14,
+      "end": 169.24
+    },
+    {
+      "text": "falar,",
+      "start": 169.24,
+      "end": 169.38
+    },
+    {
+      "text": "escuta,",
+      "start": 169.52,
+      "end": 169.76
+    },
+    {
+      "text": "essa",
+      "start": 170.16,
+      "end": 170.44
+    },
+    {
+      "text": "regra",
+      "start": 170.44,
+      "end": 170.76
+    },
+    {
+      "text": "é",
+      "start": 170.76,
+      "end": 170.88
+    },
+    {
+      "text": "essa",
+      "start": 170.88,
+      "end": 170.98
+    },
+    {
+      "text": "regra",
+      "start": 170.98,
+      "end": 171.18
+    },
+    {
+      "text": "mesmo,",
+      "start": 171.18,
+      "end": 171.18
+    },
+    {
+      "text": "porque",
+      "start": 171.34,
+      "end": 171.52
+    },
+    {
+      "text": "isso",
+      "start": 171.52,
+      "end": 171.74
+    },
+    {
+      "text": "que",
+      "start": 171.74,
+      "end": 171.82
+    },
+    {
+      "text": "vocês",
+      "start": 171.82,
+      "end": 171.98
+    },
+    {
+      "text": "estão",
+      "start": 171.98,
+      "end": 172.14
+    },
+    {
+      "text": "fazendo",
+      "start": 172.14,
+      "end": 172.4
+    },
+    {
+      "text": "está",
+      "start": 172.4,
+      "end": 172.54
+    },
+    {
+      "text": "quebrando",
+      "start": 172.54,
+      "end": 172.88
+    },
+    {
+      "text": "o",
+      "start": 172.88,
+      "end": 173.36
+    },
+    {
+      "text": "caso",
+      "start": 173.36,
+      "end": 173.52
+    },
+    {
+      "text": "XYZ",
+      "start": 173.52,
+      "end": 174.52
+    },
+    {
+      "text": "e",
+      "start": 174.52,
+      "end": 174.78
+    },
+    {
+      "text": "aí",
+      "start": 174.78,
+      "end": 174.9
+    },
+    {
+      "text": "talvez",
+      "start": 174.9,
+      "end": 175.18
+    },
+    {
+      "text": "você",
+      "start": 175.18,
+      "end": 175.38
+    },
+    {
+      "text": "vai",
+      "start": 175.38,
+      "end": 175.5
+    },
+    {
+      "text": "perceber",
+      "start": 175.5,
+      "end": 175.74
+    },
+    {
+      "text": "que",
+      "start": 175.74,
+      "end": 175.98
+    },
+    {
+      "text": "essa",
+      "start": 175.98,
+      "end": 176.16
+    },
+    {
+      "text": "regra",
+      "start": 176.16,
+      "end": 176.46
+    },
+    {
+      "text": "não",
+      "start": 176.46,
+      "end": 176.82
+    },
+    {
+      "text": "é",
+      "start": 176.82,
+      "end": 176.98
+    },
+    {
+      "text": "a",
+      "start": 176.98,
+      "end": 177.04
+    },
+    {
+      "text": "correta",
+      "start": 177.04,
+      "end": 177.42
+    },
+    {
+      "text": "e",
+      "start": 177.42,
+      "end": 177.8
+    },
+    {
+      "text": "que",
+      "start": 177.8,
+      "end": 177.9
+    },
+    {
+      "text": "o",
+      "start": 177.9,
+      "end": 178.0
+    },
+    {
+      "text": "teu",
+      "start": 178.0,
+      "end": 178.06
+    },
+    {
+      "text": "time",
+      "start": 178.06,
+      "end": 178.28
+    },
+    {
+      "text": "jurídico",
+      "start": 178.28,
+      "end": 178.64
+    },
+    {
+      "text": "poderia",
+      "start": 178.64,
+      "end": 178.92
+    },
+    {
+      "text": "ter",
+      "start": 178.92,
+      "end": 179.06
+    },
+    {
+      "text": "escrito",
+      "start": 179.06,
+      "end": 179.3
+    },
+    {
+      "text": "ela",
+      "start": 179.3,
+      "end": 179.54
+    },
+    {
+      "text": "de",
+      "start": 179.54,
+      "end": 179.62
+    },
+    {
+      "text": "uma",
+      "start": 179.62,
+      "end": 179.7
+    },
+    {
+      "text": "maneira",
+      "start": 179.7,
+      "end": 179.96
+    },
+    {
+      "text": "diferente.",
+      "start": 179.96,
+      "end": 180.32
+    },
+    {
+      "text": "Essa",
+      "start": 180.94,
+      "end": 181.28
+    },
+    {
+      "text": "é",
+      "start": 181.28,
+      "end": 181.54
+    },
+    {
+      "text": "o",
+      "start": 181.54,
+      "end": 181.62
+    },
+    {
+      "text": "tamanho",
+      "start": 181.62,
+      "end": 181.94
+    },
+    {
+      "text": "da",
+      "start": 181.94,
+      "end": 182.12
+    },
+    {
+      "text": "importância",
+      "start": 182.12,
+      "end": 182.5
+    },
+    {
+      "text": "de",
+      "start": 182.5,
+      "end": 182.64
+    },
+    {
+      "text": "você",
+      "start": 182.64,
+      "end": 182.82
+    },
+    {
+      "text": "ter",
+      "start": 182.82,
+      "end": 182.96
+    },
+    {
+      "text": "evals,",
+      "start": 182.96,
+      "end": 183.26
+    },
+    {
+      "text": "o",
+      "start": 183.46,
+      "end": 183.58
+    },
+    {
+      "text": "teu",
+      "start": 183.58,
+      "end": 183.66
+    },
+    {
+      "text": "time",
+      "start": 183.66,
+      "end": 183.9
+    },
+    {
+      "text": "passa",
+      "start": 183.9,
+      "end": 184.34
+    },
+    {
+      "text": "de",
+      "start": 184.34,
+      "end": 184.62
+    },
+    {
+      "text": "ter",
+      "start": 184.62,
+      "end": 184.74
+    },
+    {
+      "text": "uma",
+      "start": 184.74,
+      "end": 184.84
+    },
+    {
+      "text": "posição",
+      "start": 184.84,
+      "end": 185.18
+    },
+    {
+      "text": "subjetiva",
+      "start": 185.18,
+      "end": 186.06
+    },
+    {
+      "text": "e",
+      "start": 186.06,
+      "end": 186.24
+    },
+    {
+      "text": "de",
+      "start": 186.24,
+      "end": 186.36
+    },
+    {
+      "text": "poder",
+      "start": 186.36,
+      "end": 186.58
+    },
+    {
+      "text": "cometer",
+      "start": 186.58,
+      "end": 186.92
+    },
+    {
+      "text": "erros",
+      "start": 186.92,
+      "end": 187.2
+    },
+    {
+      "text": "o",
+      "start": 187.2,
+      "end": 187.3
+    },
+    {
+      "text": "tempo",
+      "start": 187.3,
+      "end": 187.46
+    },
+    {
+      "text": "todo",
+      "start": 187.46,
+      "end": 187.7
+    },
+    {
+      "text": "e",
+      "start": 187.7,
+      "end": 187.84
+    },
+    {
+      "text": "ser",
+      "start": 187.84,
+      "end": 187.96
+    },
+    {
+      "text": "super",
+      "start": 187.96,
+      "end": 188.26
+    },
+    {
+      "text": "reativo",
+      "start": 188.26,
+      "end": 188.68
+    },
+    {
+      "text": "para",
+      "start": 188.68,
+      "end": 189.34
+    },
+    {
+      "text": "de",
+      "start": 189.34,
+      "end": 189.48
+    },
+    {
+      "text": "fato",
+      "start": 189.48,
+      "end": 189.74
+    },
+    {
+      "text": "ter",
+      "start": 189.74,
+      "end": 190.0
+    },
+    {
+      "text": "uma",
+      "start": 190.0,
+      "end": 190.12
+    },
+    {
+      "text": "direção",
+      "start": 190.12,
+      "end": 190.54
+    },
+    {
+      "text": "para",
+      "start": 190.54,
+      "end": 190.66
+    },
+    {
+      "text": "onde",
+      "start": 190.66,
+      "end": 190.8
+    },
+    {
+      "text": "o",
+      "start": 190.8,
+      "end": 190.88
+    },
+    {
+      "text": "produto",
+      "start": 190.88,
+      "end": 191.2
+    },
+    {
+      "text": "de",
+      "start": 191.2,
+      "end": 191.38
+    },
+    {
+      "text": "inteligência",
+      "start": 191.38,
+      "end": 191.78
+    },
+    {
+      "text": "artificial",
+      "start": 191.78,
+      "end": 192.1
+    },
+    {
+      "text": "pode",
+      "start": 192.1,
+      "end": 192.36
+    },
+    {
+      "text": "evoluir.",
+      "start": 192.36,
+      "end": 192.76
+    },
+    {
+      "text": "O",
+      "start": 193.22,
+      "end": 193.22
+    },
+    {
+      "text": "assunto",
+      "start": 193.22,
+      "end": 193.96
+    },
+    {
+      "text": "é",
+      "start": 193.96,
+      "end": 194.14
+    },
+    {
+      "text": "gigantesco,",
+      "start": 194.14,
+      "end": 194.78
+    },
+    {
+      "text": "tem",
+      "start": 194.84,
+      "end": 194.96
+    },
+    {
+      "text": "muita",
+      "start": 194.96,
+      "end": 195.28
+    },
+    {
+      "text": "coisa",
+      "start": 195.28,
+      "end": 195.5
+    },
+    {
+      "text": "acontecendo",
+      "start": 195.5,
+      "end": 195.88
+    },
+    {
+      "text": "no",
+      "start": 195.88,
+      "end": 196.04
+    },
+    {
+      "text": "Vale",
+      "start": 196.04,
+      "end": 196.2
+    },
+    {
+      "text": "do",
+      "start": 196.2,
+      "end": 196.32
+    },
+    {
+      "text": "Silício",
+      "start": 196.32,
+      "end": 196.62
+    },
+    {
+      "text": "em",
+      "start": 196.62,
+      "end": 196.76
+    },
+    {
+      "text": "volta",
+      "start": 196.76,
+      "end": 196.96
+    },
+    {
+      "text": "desse",
+      "start": 196.96,
+      "end": 197.18
+    },
+    {
+      "text": "assunto",
+      "start": 197.18,
+      "end": 197.5
+    },
+    {
+      "text": "nesse",
+      "start": 197.5,
+      "end": 197.66
+    },
+    {
+      "text": "exato",
+      "start": 197.66,
+      "end": 197.96
+    },
+    {
+      "text": "momento,",
+      "start": 197.96,
+      "end": 198.24
+    },
+    {
+      "text": "mas",
+      "start": 198.54,
+      "end": 198.7
+    },
+    {
+      "text": "sinceramente",
+      "start": 198.7,
+      "end": 199.44
+    },
+    {
+      "text": "a",
+      "start": 199.44,
+      "end": 199.56
+    },
+    {
+      "text": "Anthropic",
+      "start": 199.56,
+      "end": 200.12
+    },
+    {
+      "text": "tem",
+      "start": 200.12,
+      "end": 200.48
+    },
+    {
+      "text": "o",
+      "start": 200.48,
+      "end": 200.8
+    },
+    {
+      "text": "que",
+      "start": 200.8,
+      "end": 200.94
+    },
+    {
+      "text": "eu",
+      "start": 200.94,
+      "end": 201.0
+    },
+    {
+      "text": "considero",
+      "start": 201.0,
+      "end": 201.46
+    },
+    {
+      "text": "um",
+      "start": 201.46,
+      "end": 201.5
+    },
+    {
+      "text": "dos",
+      "start": 201.5,
+      "end": 201.6
+    },
+    {
+      "text": "melhores",
+      "start": 201.6,
+      "end": 201.94
+    },
+    {
+      "text": "materiais",
+      "start": 201.94,
+      "end": 202.54
+    },
+    {
+      "text": "a",
+      "start": 202.54,
+      "end": 202.58
+    },
+    {
+      "text": "respeito",
+      "start": 202.58,
+      "end": 202.9
+    },
+    {
+      "text": "desse",
+      "start": 202.9,
+      "end": 203.04
+    },
+    {
+      "text": "assunto,",
+      "start": 203.04,
+      "end": 203.38
+    },
+    {
+      "text": "então",
+      "start": 203.82,
+      "end": 204.06
+    },
+    {
+      "text": "se",
+      "start": 204.06,
+      "end": 204.2
+    },
+    {
+      "text": "você",
+      "start": 204.2,
+      "end": 204.4
+    },
+    {
+      "text": "quiser",
+      "start": 204.4,
+      "end": 204.74
+    },
+    {
+      "text": "ver",
+      "start": 204.74,
+      "end": 205.14
+    },
+    {
+      "text": "esse",
+      "start": 205.14,
+      "end": 205.28
+    },
+    {
+      "text": "material",
+      "start": 205.28,
+      "end": 205.56
+    },
+    {
+      "text": "oficial",
+      "start": 205.56,
+      "end": 205.92
+    },
+    {
+      "text": "da",
+      "start": 205.92,
+      "end": 206.08
+    },
+    {
+      "text": "Anthropic",
+      "start": 206.08,
+      "end": 206.56
+    },
+    {
+      "text": "comenta",
+      "start": 206.56,
+      "end": 206.84
+    },
+    {
+      "text": "aqui",
+      "start": 206.84,
+      "end": 206.98
+    },
+    {
+      "text": "embaixo",
+      "start": 206.98,
+      "end": 207.22
+    },
+    {
+      "text": "e",
+      "start": 207.22,
+      "end": 207.46
+    },
+    {
+      "text": "evals",
+      "start": 207.46,
+      "end": 207.72
+    },
+    {
+      "text": "que",
+      "start": 207.72,
+      "end": 207.8
+    },
+    {
+      "text": "eu",
+      "start": 207.8,
+      "end": 207.88
+    },
+    {
+      "text": "vou",
+      "start": 207.88,
+      "end": 207.94
+    },
+    {
+      "text": "mandar",
+      "start": 207.94,
+      "end": 208.14
+    },
+    {
+      "text": "o",
+      "start": 208.14,
+      "end": 208.26
+    },
+    {
+      "text": "link",
+      "start": 208.26,
+      "end": 208.38
+    },
+    {
+      "text": "desse",
+      "start": 208.38,
+      "end": 208.56
+    },
+    {
+      "text": "material",
+      "start": 208.56,
+      "end": 208.9
+    },
+    {
+      "text": "para",
+      "start": 208.9,
+      "end": 209.02
+    },
+    {
+      "text": "você.",
+      "start": 209.02,
+      "end": 209.24
+    }
+  ],
+  "beats": [
+    {
+      "start": 0.0,
+      "end": 20.06,
+      "layout": "split",
+      "label": "Gancho",
+      "scene": {
+        "type": "stack",
+        "children": [
+          {
+            "type": "timeline",
+            "title": "O argumento",
+            "items": [
+              "Use case",
+              "Evals",
+              "Negócio"
+            ]
+          },
+          {
+            "type": "mockup",
+            "title": "Produto",
+            "kind": "app",
+            "lines": [
+              "cliente",
+              "promessa",
+              "IA"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "start": 20.06,
+      "end": 36.14,
+      "layout": "split",
+      "label": "Fornecedores",
+      "scene": {
+        "type": "stack",
+        "children": [
+          {
+            "type": "folders",
+            "root": "Empresa",
+            "items": [
+              {
+                "name": "Fornecedor A",
+                "depth": 1
+              },
+              {
+                "name": "Fornecedor B",
+                "depth": 1
+              },
+              {
+                "name": "Contratos",
+                "depth": 1
+              }
+            ]
+          },
+          {
+            "type": "chat",
+            "title": "Contratos",
+            "messages": [
+              {
+                "from": "Empresa",
+                "text": "cada contrato é diferente"
+              },
+              {
+                "from": "Pedro",
+                "text": "lê as cláusulas"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "start": 36.14,
+      "end": 52.84,
+      "layout": "motion",
+      "label": "Sem evals",
+      "scene": {
+        "type": "code",
+        "filename": "agente.ts",
+        "lines": [
+          "const resposta = agente(contrato)",
+          "return resposta"
+        ]
+      }
+    },
+    {
+      "start": 52.84,
+      "end": 78.26,
+      "layout": "split",
+      "label": "O problema",
+      "scene": {
+        "type": "bullets",
+        "kicker": "Dois erros",
+        "items": [
+          "Aponta cláusula demais",
+          "Esquece a cláusula crítica"
+        ]
+      }
+    },
+    {
+      "start": 78.26,
+      "end": 93.1,
+      "layout": "motion",
+      "label": "O prompt",
+      "scene": {
+        "type": "quote",
+        "text": "Mudou o prompt. Quebrou o resto.",
+        "by": "Pedro"
+      }
+    },
+    {
+      "start": 93.1,
+      "end": 106.8,
+      "layout": "split",
+      "label": "Dataset",
+      "scene": {
+        "type": "diagram",
+        "center": "Evals",
+        "items": [
+          "Contratos",
+          "Resposta",
+          "Agente"
+        ]
+      }
+    },
+    {
+      "start": 106.8,
+      "end": 122.0,
+      "layout": "motion",
+      "label": "50 contratos",
+      "scene": {
+        "type": "counter",
+        "label": "contratos",
+        "value": 50
+      }
+    },
+    {
+      "start": 122.0,
+      "end": 139.32,
+      "layout": "split",
+      "label": "Rodar de novo",
+      "scene": {
+        "type": "mockup",
+        "title": "Produção",
+        "kind": "evals",
+        "scan": true,
+        "lines": [
+          "mudou o prompt",
+          "roda o dataset",
+          "confere a nota"
+        ]
+      }
+    },
+    {
+      "start": 139.32,
+      "end": 153.0,
+      "layout": "motion",
+      "label": "Métrica",
+      "scene": {
+        "type": "diagram",
+        "center": "Direção",
+        "items": [
+          "Métrica",
+          "Nota",
+          "Estabilidade"
+        ]
+      }
+    },
+    {
+      "start": 153.0,
+      "end": 169.52,
+      "layout": "split",
+      "label": "Nota",
+      "scene": {
+        "type": "bullets",
+        "kicker": "A regra",
+        "items": [
+          "Nota mais alta que a anterior",
+          "Regra subjetiva quebra o resto"
+        ]
+      }
+    },
+    {
+      "start": 169.52,
+      "end": 182.12,
+      "layout": "motion",
+      "label": "Jurídico",
+      "scene": {
+        "type": "chat",
+        "title": "O caso",
+        "messages": [
+          {
+            "from": "Produto",
+            "text": "essa regra quebra o caso"
+          },
+          {
+            "from": "Jurídico",
+            "text": "deixa eu reescrever"
+          }
+        ]
+      }
+    },
+    {
+      "start": 182.12,
+      "end": 199.56,
+      "layout": "creator",
+      "label": "Direção",
+      "punch": false,
+      "scene": {
+        "type": "quote",
+        "text": "O time deixa de ser reativo.",
+        "by": "Pedro"
+      }
+    },
+    {
+      "start": 199.56,
+      "end": 206.56,
+      "layout": "split",
+      "label": "Anthropic",
+      "scene": {
+        "type": "mockup",
+        "title": "Anthropic",
+        "kind": "material",
+        "lines": [
+          "material oficial",
+          "sobre evals"
+        ]
+      }
+    },
+    {
+      "start": 206.56,
+      "end": 209.533,
+      "layout": "creator",
+      "label": "CTA",
+      "punch": true,
+      "scene": {
+        "type": "phone",
+        "handle": "@MIYAKODO",
+        "comment": "evals",
+        "dm": "te mando o material"
+      }
+    }
+  ]
+}

@@ -39,8 +39,8 @@ def keep_ranges(duration: float, silences: list[tuple[float, float]], pad: float
         end = max(0.0, min(duration, end))
         if end <= start:
             continue
-        speech_end = min(duration, start + pad)
-        if speech_end > cursor + 0.02:
+        if start > cursor + 0.02:
+            speech_end = min(duration, start + pad)
             spans.append([cursor, speech_end])
         cursor = max(cursor, end - pad)
     if duration > cursor + 0.02:

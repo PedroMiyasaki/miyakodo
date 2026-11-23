@@ -52,6 +52,11 @@ class CutTests(unittest.TestCase):
         self.assertAlmostEqual(remap_time(0.4, ranges), 0.4, places=2)
         self.assertLess(remap_time(2.0, ranges), 1.6)
 
+    def test_leading_silence_is_dropped(self):
+        ranges = keep_ranges(4.0, [(0.0, 0.6), (2.0, 2.5)], pad=0.05)
+        self.assertGreaterEqual(ranges[0][0], 0.5)
+        self.assertLess(ranges[0][0], 0.7)
+
     def test_compile_remaps_gravacao(self):
         cuts = [(0.0, 1.0), (1.7, 3.0)]
         model = compile_script({

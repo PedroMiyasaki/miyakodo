@@ -1,0 +1,187 @@
+{
+  "origem_segundos": 209.533,
+  "duracao_segundos": 200.379,
+  "removido_segundos": 9.154,
+  "silencios_removidos": [
+    {
+      "in": 0.0,
+      "out": 0.484
+    },
+    {
+      "in": 5.869,
+      "out": 6.319
+    },
+    {
+      "in": 16.451,
+      "out": 16.751
+    },
+    {
+      "in": 19.666,
+      "out": 20.197
+    },
+    {
+      "in": 35.34,
+      "out": 36.314
+    },
+    {
+      "in": 48.098,
+      "out": 48.39
+    },
+    {
+      "in": 51.758,
+      "out": 52.515
+    },
+    {
+      "in": 53.563,
+      "out": 53.816
+    },
+    {
+      "in": 62.698,
+      "out": 62.915
+    },
+    {
+      "in": 67.867,
+      "out": 68.192
+    },
+    {
+      "in": 77.937,
+      "out": 78.245
+    },
+    {
+      "in": 87.045,
+      "out": 87.342
+    },
+    {
+      "in": 92.099,
+      "out": 92.936
+    },
+    {
+      "in": 104.726,
+      "out": 105.307
+    },
+    {
+      "in": 109.065,
+      "out": 109.294
+    },
+    {
+      "in": 121.407,
+      "out": 121.926
+    },
+    {
+      "in": 138.742,
+      "out": 139.424
+    },
+    {
+      "in": 180.741,
+      "out": 180.94
+    },
+    {
+      "in": 192.852,
+      "out": 193.537
+    },
+    {
+      "in": 203.608,
+      "out": 203.841
+    }
+  ],
+  "cenas_na_timeline_editada": [
+    {
+      "inicio": 0.0,
+      "fim": 18.4319,
+      "layout": "split",
+      "label": "Gancho",
+      "tipo": "stack:timeline+mockup"
+    },
+    {
+      "inicio": 18.4319,
+      "fim": 33.5752,
+      "layout": "split",
+      "label": "Fornecedores",
+      "tipo": "stack:folders+chat"
+    },
+    {
+      "inicio": 33.5752,
+      "fim": 49.052,
+      "layout": "motion",
+      "label": "Sem evals",
+      "tipo": "code"
+    },
+    {
+      "inicio": 49.052,
+      "fim": 73.3687,
+      "layout": "split",
+      "label": "O problema",
+      "tipo": "bullets"
+    },
+    {
+      "inicio": 73.3687,
+      "fim": 87.0743,
+      "layout": "motion",
+      "label": "O prompt",
+      "tipo": "quote"
+    },
+    {
+      "inicio": 87.0743,
+      "fim": 100.1933,
+      "layout": "split",
+      "label": "Dataset",
+      "tipo": "diagram"
+    },
+    {
+      "inicio": 100.1933,
+      "fim": 114.6453,
+      "layout": "motion",
+      "label": "50 contratos",
+      "tipo": "counter"
+    },
+    {
+      "inicio": 114.6453,
+      "fim": 131.3873,
+      "layout": "split",
+      "label": "Rodar de novo",
+      "tipo": "mockup"
+    },
+    {
+      "inicio": 131.3873,
+      "fim": 144.9633,
+      "layout": "motion",
+      "label": "Métrica",
+      "tipo": "diagram"
+    },
+    {
+      "inicio": 144.9633,
+      "fim": 161.4833,
+      "layout": "split",
+      "label": "Nota",
+      "tipo": "bullets"
+    },
+    {
+      "inicio": 161.4833,
+      "fim": 173.8843,
+      "layout": "motion",
+      "label": "Jurídico",
+      "tipo": "chat"
+    },
+    {
+      "inicio": 173.8843,
+      "fim": 190.6393,
+      "layout": "creator",
+      "label": "Direção",
+      "tipo": "quote"
+    },
+    {
+      "inicio": 190.6393,
+      "fim": 197.4063,
+      "layout": "split",
+      "label": "Anthropic",
+      "tipo": "mockup"
+    },
+    {
+      "inicio": 197.4063,
+      "fim": 200.3793,
+      "layout": "creator",
+      "label": "CTA",
+      "tipo": "phone"
+    }
+  ]
+}

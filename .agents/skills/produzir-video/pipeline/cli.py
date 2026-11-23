@@ -24,6 +24,13 @@ HF = "0.8.169"
 SKILL_DIR = Path(__file__).resolve().parents[1]
 
 
+def _scene_tipo(scene: dict) -> str:
+    if scene.get("type") == "stack":
+        kids = "+".join(str(child.get("type")) for child in scene.get("children") or [])
+        return f"stack:{kids}"
+    return str(scene.get("type"))
+
+
 def find_repo(start: Path) -> Path:
     for candidate in [start, *start.parents]:
         if (candidate / "AGENTS.md").exists() and (candidate / "design").is_dir():
@@ -68,7 +75,33 @@ def build_project(roteiro_path: Path, out: Path | None, repo: Path) -> Path:
     (assets / "sfx").mkdir()
     cuts, mouth = _media(data, assets, repo)
     model = compile_script(data, cuts=cuts, mouth=mouth)
-    _copy_static(assets, model["sfx"])
+    _copy_static(assets, model["sfx"], model["duration"])
+    origem = round(float(data["voice"]["out"]) - float(data["voice"]["in"]), 3)
+    mantidos = [{"in": a, "out": b} for a, b in (cuts or [(0.0, origem)])]
+    removidos = []
+    cursor = 0.0
+    for trecho in mantidos:
+        if trecho["in"] > cursor + 0.02:
+            removidos.append({"in": round(cursor, 3), "out": round(trecho["in"], 3)})
+        cursor = trecho["out"]
+    if origem > cursor + 0.02:
+        removidos.append({"in": round(cursor, 3), "out": origem})
+    (target / "cortes.json").write_text(json.dumps({
+        "origem_segundos": origem,
+        "duracao_segundos": model["duration"],
+        "removido_segundos": round(origem - model["duration"], 3),
+        "silencios_removidos": removidos,
+        "cenas_na_timeline_editada": [
+            {
+                "inicio": beat["start"],
+                "fim": beat["end"],
+                "layout": beat["layout"],
+                "label": beat["label"],
+                "tipo": _scene_tipo(beat["scene"]),
+            }
+            for beat in model["beats"]
+        ],
+    }, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     (target / "index.html").write_text(render_html(model), encoding="utf-8")
     (target / "hyperframes.json").write_text(json.dumps({
         "$schema": "https://hyperframes.heygen.com/schema/hyperframes.json",
@@ -142,8 +175,11 @@ def _footage(data, assets, repo, start, end, duration):
         _run([
             "ffmpeg", "-y", "-hide_banner", "-loglevel", "error",
             "-ss", str(start), "-to", str(end), "-i", str(source),
-            "-an", "-vf", "scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920",
-            "-r", "30", "-pix_fmt", "yuv420p", str(window),
+            "-an", "-vf", _video_filter(source),
+            "-c:v", "libx264", "-preset", "veryfast", "-crf", "20",
+            "-pix_fmt", "yuv420p",
+            "-color_primaries", "bt709", "-color_trc", "bt709", "-colorspace", "bt709",
+            str(window),
         ])
         return window
     still = spec.get("still")
@@ -173,7 +209,59 @@ def _concat_audio(src: Path, ranges, dest: Path) -> None:
     ])
 
 
+def _video_filter(source: Path) -> str:
+    base = "scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,fps=30"
+    if not _is_hdr(source):
+        return base
+    return (
+        base
+        + ",zscale=tin=arib-std-b67:t=linear:npl=100,format=gbrpf32le,"
+        + "zscale=p=bt709,tonemap=hable:desat=0,zscale=t=bt709:m=bt709:r=tv,format=yuv420p"
+    )
+
+
+def _is_hdr(source: Path) -> bool:
+    result = subprocess.run(
+        [
+            "ffprobe", "-v", "error", "-select_streams", "v:0",
+            "-show_entries", "stream=color_transfer,color_primaries",
+            "-of", "default=nw=1", str(source),
+        ],
+        capture_output=True, text=True, check=False,
+    )
+    text = result.stdout.lower()
+    return any(token in text for token in ("arib-std-b67", "smpte2084", "bt2020"))
+
+
 def _concat_video(src: Path, ranges, dest: Path) -> None:
+    """Corta em lotes. Um filtro com dezenas de trims estoura a memória."""
+    if not ranges:
+        raise SystemExit("sem trechos para montar o vídeo")
+    work = dest.parent / "_segs"
+    if work.exists():
+        shutil.rmtree(work)
+    work.mkdir()
+    parts = []
+    step = 4
+    for offset in range(0, len(ranges), step):
+        group = list(ranges[offset:offset + step])
+        part = work / f"part-{offset:02d}.mp4"
+        _concat_video_filter(src, group, part)
+        parts.append(part)
+    if len(parts) == 1:
+        parts[0].replace(dest)
+    else:
+        listing = work / "list.txt"
+        listing.write_text("".join(f"file '{part.as_posix()}'\n" for part in parts), encoding="utf-8")
+        _run([
+            "ffmpeg", "-y", "-hide_banner", "-loglevel", "error",
+            "-f", "concat", "-safe", "0", "-i", str(listing),
+            "-c", "copy", str(dest),
+        ])
+    shutil.rmtree(work, ignore_errors=True)
+
+
+def _concat_video_filter(src: Path, ranges, dest: Path) -> None:
     filters, labels = [], []
     for index, (start, end) in enumerate(ranges):
         filters.append(f"[0:v]trim=start={start}:end={end},setpts=PTS-STARTPTS[v{index}]")
@@ -181,16 +269,23 @@ def _concat_video(src: Path, ranges, dest: Path) -> None:
     graph = ";".join(filters) + f";{''.join(labels)}concat=n={len(ranges)}:v=1:a=0[out]"
     _run([
         "ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-i", str(src),
-        "-filter_complex", graph, "-map", "[out]", "-pix_fmt", "yuv420p", "-r", "30", str(dest),
+        "-filter_complex", graph, "-map", "[out]",
+        "-c:v", "libx264", "-preset", "veryfast", "-crf", "20",
+        "-pix_fmt", "yuv420p", "-r", "30", str(dest),
     ])
 
 
-def _copy_static(assets: Path, sfx: list[dict]) -> None:
+def _copy_static(assets: Path, sfx: list[dict], duration: float) -> None:
     for font in (SKILL_DIR / "assets" / "fonts").iterdir():
         if font.suffix.lower() in {".ttf", ".txt"}:
             shutil.copy2(font, assets / "fonts" / font.name)
     shutil.copy2(SKILL_DIR / "assets" / "gsap.min.js", assets / "gsap.min.js")
-    shutil.copy2(SKILL_DIR / "assets" / "bed.wav", assets / "bed.wav")
+    _run([
+        "ffmpeg", "-y", "-hide_banner", "-loglevel", "error",
+        "-stream_loop", "-1", "-i", str(SKILL_DIR / "assets" / "bed.wav"),
+        "-t", f"{max(duration, 0.5):.3f}",
+        "-ac", "1", "-ar", "44100", str(assets / "bed.wav"),
+    ])
     names = {SFX_FILES[event["name"]] for event in sfx if event["name"] in SFX_FILES}
     for name in names:
         shutil.copy2(SKILL_DIR / "assets" / "sfx" / name, assets / "sfx" / name)
@@ -205,11 +300,15 @@ def _copy_static(assets: Path, sfx: list[dict]) -> None:
 def _run(cmd: list[str]) -> None:
     result = subprocess.run(cmd, capture_output=True, text=True)
     if result.returncode != 0:
-        raise SystemExit(result.stderr[-2000:] or f"falhou: {' '.join(cmd)}")
+        detail = (result.stderr or result.stdout or "").strip()
+        raise SystemExit(f"exit {result.returncode}: {detail[-1500:] or cmd[0]}")
 
 
 def _hyperframes(project: Path, args: list[str]) -> int:
-    cmd = ["npx", "--yes", f"hyperframes@{HF}", *args]
+    extra = []
+    if args and args[0] == "render":
+        extra = ["--browser-timeout", "180", "--player-ready-timeout", "120000", "--workers", "2", "--sdr"]
+    cmd = ["npx", "--yes", f"hyperframes@{HF}", *args, *extra]
     result = subprocess.run(cmd, cwd=project)
     return result.returncode
 

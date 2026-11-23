@@ -78,7 +78,7 @@ def compile_script(data: dict, cuts=None, mouth=None) -> dict:
         "groups": groups,
         "scenes_html": scenes,
         "ops": ops,
-        "sfx": _cap_sfx(sfx),
+        "sfx": _cap_sfx(sfx, duration),
         "videos": videos,
         "avatar": motion,
         "mouth": mouth or [],
@@ -346,7 +346,9 @@ def _videos(beats):
     return videos
 
 
-def _cap_sfx(events, limit=28):
+def _cap_sfx(events, duration=30, limit=None):
+    if limit is None:
+        limit = max(28, min(80, int(float(duration) / 2)))
     cleaned = []
     seen = set()
     for event in sorted(events, key=lambda item: (item["at"], item["name"])):

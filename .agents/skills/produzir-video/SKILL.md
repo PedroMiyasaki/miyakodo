@@ -57,6 +57,28 @@ Cada cena entra com pop elástico e dispara um efeito (pop, whoosh, click, typin
 
 O render não entra no build. Ele é um comando separado e grava o mp4 no caminho pedido. A pasta `video/outputs/` segue no gitignore.
 
+## Gravação longa e o bruto de evals
+
+O pipeline transcodifica o bruto para H.264, 1080×1920, 30 fps, antes dos cortes. HEVC e 60 fps entram do mesmo jeito. Se o arquivo vier em HLG ou BT.2020, como o iPhone, a imagem é convertida para SDR BT.709. O render usa `--sdr` para não cair no caminho HDR. A cama sonora é repetida até cobrir a duração. O teto de efeitos sobe com o tamanho da peça, até 80.
+
+O mp4 original de evals não entra no git (passa de 100 MB). Ele está no release `footage-evals`:
+
+```bash
+mkdir -p video/inputs/evals
+gh release download footage-evals --repo PedroMiyasaki/miyakodo -p evals.MP4 -D video/inputs/evals
+```
+
+O arquivo esperado é `video/inputs/evals/evals.MP4` (sha256 `bd6cdc1abcca5e8d672476c7bd86ae4f10918c9ac316c8eba330ed43b1d222fe`). `video/inputs/` já está no gitignore. O `footage.mp4` gerado em `video/projects/` também, pela regra `video/projects/**/*.mp4`.
+
+O roteiro da peça inteira é `examples/evals-gravacao.json`. Voz e imagem são o mesmo arquivo, janela 0 até 209,533 s.
+
+```bash
+python3 .agents/skills/produzir-video/pipeline/cli.py build .agents/skills/produzir-video/examples/evals-gravacao.json --out video/projects/evals-gravacao
+python3 .agents/skills/produzir-video/pipeline/cli.py render video/projects/evals-gravacao --output video/outputs/evals-gravacao.mp4 --quality looks
+```
+
+`video/projects/evals-gravacao/cortes.json` lista os silêncios removidos e as cenas na timeline já cortada.
+
 ## Comandos
 
 Na raiz do repo:
