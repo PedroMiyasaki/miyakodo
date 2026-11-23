@@ -99,7 +99,8 @@ class CompileTests(unittest.TestCase):
         self.assertIn("Instrument Serif", html)
         self.assertIn("Poppins", html)
         self.assertIn('id="avatar"', html)
-        self.assertIn("boxShadow", html)
+        self.assertIn("backgroundColor", html)
+        self.assertIn("assets/pedro/m0.png", html)
         self.assertIn("evals", html)
 
     def test_rejects_unknown_scene_and_bad_layout(self):
@@ -135,6 +136,12 @@ class CompileTests(unittest.TestCase):
             "statement": {"kicker": "Ideia", "text": "Sem interface"},
             "carlos": {"pose": "boss", "line": "o empresário"},
             "versus": {"left": "Pessoa", "right": "Agente", "left_items": ["tela"], "right_items": ["API"], "pose": "squat"},
+            "peel": {"text": "Headless", "items": ["Tela"], "lines": ["API"]},
+            "flow": {"kicker": "Passos", "items": ["Um", "Dois"]},
+            "chart": {"text": "Crescendo"},
+            "clutter": {"line": "Não", "props": ["Nome", "Email"]},
+            "maze": {"line": "Trava", "props": ["Modal", "Popup"]},
+            "close": {"text": "Headless", "handle": "@pedro.miyasaki.ia"},
         }
         for kind in SCENE_TYPES:
             html, ops, sfx = build_scene("p", 0, 0, 400, 300, {"type": kind, **sample[kind]}, 0.2, 2.0)

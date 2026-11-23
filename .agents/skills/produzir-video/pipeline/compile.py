@@ -248,6 +248,28 @@ def _scenes(beats, mode):
                 "to": {"opacity": 1, "duration": 0.16, "ease": "power1.out"},
                 "at": beat["start"],
             })
+            ops.append({
+                "kind": "fromTo",
+                "sel": f'#beat-{beat["id"]}-in',
+                "from": {"scale": 1},
+                "to": {
+                    "scale": 1.025,
+                    "duration": max(1.1, dur - 0.25),
+                    "ease": "sine.inOut",
+                    "yoyo": True,
+                    "repeat": 1,
+                    "transformOrigin": "50% 42%",
+                },
+                "at": round(beat["start"] + 0.2, 4),
+            })
+            if dur > 3.5 and " late" in piece:
+                ops.append({
+                    "kind": "fromTo",
+                    "sel": f'#beat-{beat["id"]} .late',
+                    "from": {"opacity": 0, "y": 18},
+                    "to": {"opacity": 1, "y": 0, "duration": 0.42, "ease": "back.out(1.5)"},
+                    "at": round(beat["start"] + dur * 0.46, 4),
+                })
         ops.extend(piece_ops)
         sfx.extend(piece_sfx)
         if mode == "gravacao" and index:
@@ -264,7 +286,7 @@ def _avatar_moves(beats, mode, duration):
         left, top, width, opacity = LAYOUT_SPOTS[beat["layout"]]["avatar"]
         moves.append({
             "at": beat["start"],
-            "duration": 0.38 if beat["start"] else 0,
+            "duration": 0.62 if beat["start"] else 0,
             "x": left - anchor_left,
             "y": top - anchor_top,
             "scale": round(width / anchor_width, 3),
