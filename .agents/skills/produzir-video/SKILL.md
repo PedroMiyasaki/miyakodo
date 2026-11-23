@@ -128,4 +128,4 @@ python3 .agents/skills/produzir-video/pipeline/cli.py render video/projects/head
 
 ## O que este pipeline não faz
 
-Não publica no Instagram. Não pede aprovação num plano de stills antes do render: o roteiro JSON é a direção. Não remove fundo de um vídeo arbitrário. Não clona uma voz que não esteja num arquivo. Se a faixa não for a do Pedro, o resultado não é a voz dele.
+Não publica no Instagram. Não pede aprovação num plano de stills antes do render: o roteiro JSON é a direção. Não remove fundo de um vídeo arbitrário. Não clona voz. A faixa entra pronta em `voice.src`. A skill `narrar-roteiro` gera essa faixa na GPU local e entrega `words` no formato `{text, start, end}`. Se a faixa não for a do Pedro, o resultado não é a voz dele.

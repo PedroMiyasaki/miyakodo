@@ -21,7 +21,15 @@ video/inputs/**/*.mp4
 video/inputs/**/*.MP4
 video/inputs/**/*.m4v
 video/inputs/**/*.ogg
+video/inputs/**/*.wav
+video/inputs/**/*.mp3
+video/inputs/**/*.m4a
+video/inputs/**/*.flac
+video/inputs/**/*.aac
 video/inputs/**/audios_esposa/
+
+# Amostra de voz do Pedro para clonagem local. Nunca versionar.
+video/inputs/voice-ref/
 
 video/outputs/
 video/models/
@@ -29,6 +37,7 @@ video/hooks/originais/
 
 # Python
 .venv/
+.venv-tts/
 __pycache__/
 *.pyc
 

@@ -56,7 +56,7 @@ Vídeo novo passa pela skill `produzir-video` ([SKILL.md](.agents/skills/produzi
 
 Dois modos:
 
-- **`sem-gravacao`**: Pedro não grava. Entram o roteiro e a faixa de voz. Saem o avatar 2D do rosto dele, legendas no terço superior e motion graphics na paleta de `design/identity.md`.
+- **`sem-gravacao`**: Pedro não grava. Entram o roteiro e a faixa de voz. Saem o avatar 2D do rosto dele, legendas no terço superior e motion graphics na paleta de `design/identity.md`. A faixa e o `words` podem sair da skill `narrar-roteiro`: ela clona a voz do Pedro na GPU da máquina dele e grava `voice.wav` mais `words.json`. A amostra fica em `video/inputs/voice-ref/` e não entra no git.
 - **`gravacao`**: Pedro grava um talking head. Entram o roteiro, o bruto e a voz na mesma janela de tempo. O pipeline tira silêncio entre frases e monta as cenas por cima: split, motion em tela cheia ou o criador em tela cheia com punch-in.
 
 O roteiro escolhe cenas combináveis (legenda, avatar, timeline, mockup, contador, diagrama, chat, código, telefone, grade, scanline, pastas, lista, citação, badge). `purpose` pode ser tutorial, opinião, notícia, lista, história ou CTA. Isso não troca o motor.
