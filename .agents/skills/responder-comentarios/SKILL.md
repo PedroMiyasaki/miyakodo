@@ -21,7 +21,7 @@ Não use automação de navegador para responder comentários. Essa rotina está
 
 O comentário dispara só quando é uma única palavra igual à palavra-chave daquele post. `EVALS!` dispara. `quero evals` não. A palavra não vale em outro post.
 
-O direct começa com o botão "Quero o material". Quem segue recebe o texto de `## Mensagem no direct` e, só depois disso, a resposta pública. Quem não segue recebe o texto de `## Pedido para seguir` e o botão "Já segui".
+O primeiro direct sai no comentário. Quem já segue recebe o texto de `## Mensagem no direct`. Quem não segue recebe o texto de `## Pedido para seguir` e o botão "Já segui". Quando a checagem não confirma, o direct traz o botão "Quero o material". A resposta pública, quando a regra tem uma, sai junto com esse primeiro direct. O clique no botão entrega o material e não publica outra resposta no mesmo comentário.
 
 ## Estado antigo
 
