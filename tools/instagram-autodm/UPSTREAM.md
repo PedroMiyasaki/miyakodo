@@ -9,4 +9,4 @@ O que este repositório acrescenta:
 - direct com botão, checagem de seguidor e entrega do material só depois
 - polling opcional de comentários, desligado por padrão
 
-O guia de uso é `SETUP-PEDRO.md`.
+O guia de uso é a skill `.agents/skills/deploy-instagram-autodm/SKILL.md`.

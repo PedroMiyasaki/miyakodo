@@ -1,6 +1,6 @@
 # ManyChat-Lite on Cloudflare
 
-> Cópia local do [manychat-lite-cloudflare](https://github.com/paulmil11/manychat-lite-cloudflare), commit `1217423`. O texto abaixo é o README original. Neste repositório, o guia de uso é [SETUP-PEDRO.md](SETUP-PEDRO.md). As regras que vêm dos markdowns usam correspondência de uma palavra e checagem de seguidor, descritas nesse guia. O nome do Worker aqui é `instagram-autodm`.
+> Cópia local do [manychat-lite-cloudflare](https://github.com/paulmil11/manychat-lite-cloudflare), commit `1217423`. O texto abaixo é o README original. Neste repositório, o guia de uso é a skill [deploy-instagram-autodm](.agents/skills/deploy-instagram-autodm/SKILL.md). As regras que vêm dos markdowns usam correspondência de uma palavra e checagem de seguidor, descritas nessa skill. O nome do Worker aqui é `instagram-autodm`. A produção está no ar, com `DRY_RUN` `"false"`. O README original ainda descreve o starter com `DRY_RUN` `"true"`. Siga a skill.
 
 A small, self-hosted starter for building a ManyChat-style Instagram auto-DM tool on Cloudflare Workers.
 
