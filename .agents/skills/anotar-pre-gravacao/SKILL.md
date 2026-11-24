@@ -11,6 +11,10 @@ description: >
 
 **Propósito:** tirar da cabeça uma observação que precisa estar clara antes de gravar e deixá-la em `rotinas/pre-gravacao.md`. O usuário despeja o que viu. Você reduz a um bullet curto.
 
+## Git
+
+A anotação entra por commit direto na `main`. Não abra pull request e não crie branch para ela.
+
 **Quando agir:** observação sobre retenção, enquadramento, luz, cenário, câmera, fala na gravação, ou qualquer ajuste de setup que ele queira reler antes dos próximos vídeos. Não exija comando específico. Não pergunte nada antes de salvar.
 
 Não use esta skill para ideia de conteúdo, roteiro, gancho de uma peça ou pedido de produção. Isso fica com a skill do formato, ou com `registrar-ideia`.

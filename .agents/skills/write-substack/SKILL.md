@@ -10,6 +10,10 @@ description: >
 
 # Artigo de Substack
 
+## Git
+
+Peça desta skill entra por commit direto na `main`. Não abra pull request e não crie branch para o conteúdo. Rascunho e versão final são conteúdo. Saída intermediária ou que dá para gerar de novo fica de fora do git, no caminho coberto pelo `.gitignore`.
+
 ## Quando agir
 
 Use esta skill quando o usuário pedir uma peça longa e ilustrada para o Substack, seja a partir de uma ideia nova, uma notícia ou um conteúdo já produzido.

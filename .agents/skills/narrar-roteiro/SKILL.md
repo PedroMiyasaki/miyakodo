@@ -18,6 +18,10 @@ O código mora em `.agents/skills/narrar-roteiro`. `.cursor/skills` e `.claude/s
 
 O setup da GPU no Windows está no [README.md](README.md).
 
+## Git
+
+A narração não abre pull request e não cria branch. O áudio, a amostra de voz e o cache do modelo ficam de fora do git.
+
 ## Entradas
 
 - Um Markdown (`.md`). No formato híbrido do `write-script`, só os blocos `literal` são falados. Blocos `tópicos`, títulos, `[pause]`, `[insert: ...]`, `[cena: ...]` e o miolo depois de `---` ficam de fora. `[pause]` vira uma pausa maior, não uma palavra. Num Markdown corrido, o texto entra inteiro, já sem negrito, link, código e lista.

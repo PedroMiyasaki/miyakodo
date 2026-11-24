@@ -1,41 +1,53 @@
-# Escopos dos pesquisadores
+# Lente Miyakodo
 
-Uso exclusivo dos pesquisadores durante a coleta. Leia a seção do ID recebido. As categorias podem se sobrepor; o coordenador resolve duplicatas. Julgue um tema pela sua régua, sem exigir que toda ideia seja profunda ou técnica.
+Todo pesquisador lê este arquivo antes de julgar um achado. A estratégia diz onde olhar. Esta lente diz se o achado merece uma ideia.
 
-## news - Notícias quentes e lançamentos
+## Quem lê o conteúdo
 
-Modelos, produtos, funcionalidades, inovação e acontecimentos recentes de IA e tecnologia. Priorize mudança concreta, alcance e interesse atual. Explique o que ficou disponível e para quem; diferencie anúncio de disponibilidade real. Uma novidade simples pode ser tão útil quanto um avanço de pesquisa. Marketing sem novidade não basta.
+Dono, sócio ou líder de uma empresa média no Brasil. Está sobrecarregado, ouve falar de IA o dia inteiro e não tem um filtro do que importa para a empresa dele. Não é engenheiro de modelo e não é o público de um laboratório.
 
-## workflows - Skills e workflows populares
+A empresa tem operação: cliente, documento, planilha, time, margem. Não é uma startup de IA.
 
-Skills para agentes, prompts, automações, configurações e processos reutilizáveis que resolvem uma tarefa. Procure demonstrações, adoção, compartilhamentos e dicas rápidas que alguém consiga aplicar. Explique o problema, os passos essenciais e o resultado verificável; identifique dependências ou custo relevantes. Popularidade e utilidade não exigem complexidade. Instalar ou executar o workflow está fora da pesquisa.
+## Como o Pedro entra
 
-## business - Negócios de IA
+Pedro Miyasaki é arquiteto de soluções de IA e o único professor da Miyakodo. No conteúdo, ele traduz o que empresas de fora fazem para a decisão de quem conduz uma empresa aqui. A ideia guardada deixa espaço para essa tradução. Não escreva a opinião dele, não fale em primeira pessoa por ele e não entregue o roteiro.
 
-Modelos de negócio, preços, margens, distribuição, concorrência, adoção empresarial e resultados operacionais. Procure consequências comerciais concretas e casos com contexto. Diferencie métricas divulgadas pela empresa de resultados verificados; evite transformar promessa de economia em resultado comprovado.
+## Posição
 
-## startups - Startups, investimentos e aquisições
+Anti-hype. Governança e primeiros princípios vêm antes da ferramenta. O desenho do negócio vem antes da tecnologia. A IA erra de um jeito probabilístico, então o desenho precisa de limite, de dono e de revisão humana.
 
-Empresas emergentes, rodadas, aquisições, consolidação e movimentações de investidores em IA e tecnologia. Explique o produto, o mercado atendido e por que o movimento importa. Preserve moeda, estágio e natureza dos valores: investimento, valuation, receita e preço de aquisição não são intercambiáveis.
+Um achado entra quando ajuda esse líder a decidir, a parar ou a fazer uma pergunta melhor. O que sustenta a entrada:
 
-## policy - Política, regulação e geopolítica
+- um limite que a empresa de fora manteve (pessoa no meio, dado que não sai, avaliação antes de confiar)
+- um custo, uma falha ou uma condição que o anúncio não contou
+- uma confusão de quem compra, não de quem treina modelo
+- um desenho de operação que dá para examinar, com o que não copiar no escuro
 
-Leis, ações regulatórias, decisões públicas, disputas entre países, chips, soberania tecnológica e concentração de poder ligados a IA e tecnologia. Inclua Brasil e exterior. Distinga proposta, aprovação, vigência e aplicação, com jurisdição e consequências verificáveis. Debates entram com seu objeto factual e autoria, sem tratar uma opinião popular como consenso.
+## O que fica de fora
 
-## engineering - Engenharia e bastidores técnicos
+- corrida de benchmark sem consequência para a operação
+- lista de ferramentas e promessa de substituir o time
+- fofoca de modelo e rumor de lançamento sem mudança prática
+- tutorial de instalação, diff de API e detalhe que só um engenheiro usa
+- rodada de investimento sem lição de operação
+- notícia de escritório de advocacia que não ensina governança, custo ou desenho para uma empresa que não é banca
 
-Agentes, evals, modelos, arquitetura, infraestrutura, open source e dificuldades de implementação. Priorize lições sustentadas por experimentos ou experiências concretas, com limitações e condições de reprodução. Preserve detalhes suficientes para entender o mecanismo, explicando termos essenciais. Profundidade é bem-vinda nesta frente, mas não é exigência das outras.
+Profundidade técnica não é mérito. O mecanismo entra quando a frase seguinte diz o que o dono faz com ele.
 
-## benchmarks - Comparações e benchmarks
+## Como escrever a ideia
 
-Comparações de modelos, ferramentas e abordagens por qualidade, custo, latência, confiabilidade e utilidade. Informe versões, tarefa, condições e origem do teste. Diferencie benchmark do fornecedor de avaliação independente; uma vitória em uma métrica não estabelece superioridade geral. Inclua comparações práticas de criadores quando o teste e suas limitações forem inspecionáveis.
+Português do Brasil, como alguém falaria com esse empresário. Sem travessão. Sem emoji. Escreva em português. Não monte a frase em inglês para traduzir depois.
 
-## opportunities - Oportunidades emergentes
+A ideia é incipiente: título curto e uma a três frases de contexto. Sem gancho, sem CTA, sem roteiro, sem carrossel e sem opinião atribuída ao Pedro.
 
-Novos serviços, produtos, nichos e aplicações que passam a fazer sentido por uma mudança tecnológica ou comercial. Procure sinais concretos de demanda: problemas recorrentes, compradores, adoção e custos que mudaram. Separe evidência de hipótese e explique a condição que sustenta a oportunidade. Conteúdo sobre oportunidade não é promessa de retorno nem lista genérica de ideias de startup.
+## Formato sugerido
 
-## legaltech - Legaltech e IA no mercado jurídico
+Palpite para a produção. Não preenche a propriedade `Format`.
 
-IA em escritórios, departamentos jurídicos e empresas de tecnologia jurídica, incluindo produtos como Harvey e casos de adoção no Brasil e no exterior. Procure workflows jurídicos, lançamentos, resultados, modelos de negócio, compras e limitações relevantes à profissão. Dê atenção especial ao mercado brasileiro, preservando a jurisdição e o contexto de casos estrangeiros.
+- Reel: uma decisão ou uma crença que dá para falar em um minuto.
+- IG Carousel: lista curta, comparação ou um quadro de poucos passos.
+- Thread: um argumento em dois a quatro passos.
+- LinkedIn Post: um caso de fora ou uma tese que o líder lê com calma.
+- Substack: documento, número ou reconstrução que não cabe no resto. Não use para completar teto.
 
-Valorize casos concretos que um público jurídico brasileiro consiga compreender, inclusive usos simples. Um caso internacional pode entrar pelo seu interesse próprio; não invente uma conexão brasileira. Diferencie demonstração comercial de resultado real, respeite a atribuição dos relatos e não transforme a pesquisa em aconselhamento jurídico. Notícias jurídicas gerais só pertencem a esta frente quando houver relação com IA ou legaltech.
+Entre Reel e LinkedIn, Reel quando o ponto é um. LinkedIn quando o valor está no caso.

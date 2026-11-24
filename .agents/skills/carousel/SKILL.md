@@ -13,6 +13,10 @@ Transforme uma ideia em um carrossel pronto para publicar. Trabalhe como copywri
 
 Não escreva primeiro um roteiro de slides em Markdown. A primeira versão apresentada já deve ser visual e renderizada.
 
+## Git
+
+Peça desta skill entra por commit direto na `main`. Não abra pull request e não crie branch para o conteúdo. O HTML da versão é conteúdo. PNG numerado dentro de `sketch/vN/` é render e fica de fora do git. O PNG final, na raiz do slug, entra no commit.
+
 ## Fonte e destino
 
 O banco canônico é **Ideas**, data source `e2970ca3-7724-4a81-8f12-7ea34c048c67`.

@@ -9,6 +9,10 @@ description: >
 
 **Propósito:** tirar a ideia da cabeça do usuário e deixá-la pronta para virar conteúdo depois. Ele só despeja o pensamento; estrutura, classificação e registro são trabalho seu.
 
+## Git
+
+Registrar uma ideia não mexe no git. Não abra pull request e não crie branch por causa do registro.
+
 **Quando agir:** qualquer mensagem que pareça ideia, observação, aforismo ou insight - mesmo incompleta ou abstrata. Não exija comando específico. Não pergunte nada antes de salvar.
 
 ## O que gravar

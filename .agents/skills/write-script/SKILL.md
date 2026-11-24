@@ -11,6 +11,10 @@ description: >
 
 # Roteiro de Reel
 
+## Git
+
+Peça desta skill entra por commit direto na `main`. Não abra pull request e não crie branch para o conteúdo. Rascunho e versão final são conteúdo. Saída intermediária ou que dá para gerar de novo fica de fora do git, no caminho coberto pelo `.gitignore`.
+
 ## Quando ativar
 
 Use esta skill quando o usuário pedir para transformar uma ideia em roteiro de Reel.
