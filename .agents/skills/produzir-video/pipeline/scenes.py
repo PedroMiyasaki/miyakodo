@@ -12,7 +12,7 @@ def build_scene(pid, x, y, w, h, scene, t0, t1):
     if builder is None:
         raise ValueError(f"cena desconhecida: {kind}")
     html, ops, sfx = builder(pid, float(x), float(y), float(w), float(h), scene or {}, float(t0), float(t1))
-    if f'id="{pid}-root"' in html:
+    if f'id="{pid}-root"' in html and "piece card" not in html:
         span = max(0.7, min(1.4, (float(t1) - float(t0)) * 0.35))
         ops = list(ops) + [{
             "kind": "to",

@@ -2334,7 +2334,7 @@
     {
       "start": 16.55,
       "end": 19.15,
-      "layout": "motion",
+      "layout": "pip",
       "label": "Sem usuário",
       "scene": {
         "type": "bullets",
@@ -2383,7 +2383,7 @@
     {
       "start": 26.4,
       "end": 28.76,
-      "layout": "motion",
+      "layout": "pip",
       "label": "Em voga",
       "scene": {
         "type": "hero",
@@ -2399,7 +2399,7 @@
     {
       "start": 28.76,
       "end": 31.9,
-      "layout": "motion",
+      "layout": "pip",
       "label": "Personal Agents",
       "scene": {
         "type": "board",
@@ -2560,7 +2560,7 @@
     {
       "start": 60.05,
       "end": 63.7,
-      "layout": "motion",
+      "layout": "pip",
       "label": "Crescendo",
       "scene": {
         "type": "board",
@@ -2610,7 +2610,7 @@
     {
       "start": 67.55,
       "end": 71.15,
-      "layout": "motion",
+      "layout": "pip",
       "label": "Para os agentes",
       "scene": {
         "type": "mascot",
@@ -2660,7 +2660,7 @@
     {
       "start": 77.55,
       "end": 80.08,
-      "layout": "motion",
+      "layout": "pip",
       "label": "Produto",
       "scene": {
         "type": "bullets",
@@ -2789,7 +2789,7 @@
     {
       "start": 101.9,
       "end": 104.05,
-      "layout": "motion",
+      "layout": "pip",
       "label": "Concorrente",
       "scene": {
         "type": "mascot",

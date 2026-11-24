@@ -280,7 +280,12 @@ def _css() -> str:
       background-size: auto, auto, 72px 72px, 72px 72px; }}
     #stage {{ inset: 0; overflow: hidden; z-index: 2; }}
     #world {{ position: absolute; left: 0; top: 0; width: 100%; }}
-    .beat {{ z-index: 4; overflow: hidden; }}
+    .beat {{ z-index: 4; overflow: hidden; display: flex; align-items: center; justify-content: center; }}
+    .beat .piece.card, .beat .piece.board {{
+      position: relative; left: auto !important; top: auto !important;
+      width: calc(100% - 48px) !important; height: auto !important;
+      max-height: calc(100% - 36px);
+    }}
     .face-video {{ z-index: 3; background: transparent; }}
     .face-video.pip {{ z-index: 6; border-radius: 32px; border: 4px solid {BROWN}; box-shadow: 0 16px 28px rgba(40,14,3,.22); }}
     .face-video.full {{ z-index: 1; }}
@@ -345,8 +350,9 @@ def _css() -> str:
     .hero {{ display: flex; flex-direction: column; justify-content: center; height: 100%; gap: 18px; }}
     .hero.slam {{ justify-content: center; background: {OFFWHITE}; border: 3px solid {BROWN}; border-radius: 28px; box-shadow: 0 18px 36px rgba(40,14,3,.22); padding: 16px 28px; }}
     .hero.slam .hero-kicker {{ color: {LARANJA}; font-size: 26px; letter-spacing: .06em; }}
-    .stage-swap {{ position: relative; flex: 1; min-height: 460px; }}
-    .app-shell, .layer-stack {{ position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 14px; }}
+    .stage-swap {{ position: relative; }}
+    .app-shell {{ position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 14px; }}
+    .layer-stack {{ position: relative; display: flex; flex-direction: column; gap: 14px; }}
     .app-head {{ background: {VERDE}; color: {OFFWHITE}; border-radius: 18px; padding: 12px 18px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; font-size: 22px; }}
     .app-btn {{ display: flex; align-items: center; justify-content: space-between; background: {PAPER}; border-radius: 18px; padding: 16px 18px; box-shadow: 0 12px 24px rgba(40,14,3,.1); font-size: 32px; font-weight: 700; }}
     .app-btn b {{ width: 42px; height: 42px; border-radius: 50%; background: {LARANJA}; color: {OFFWHITE}; display: grid; place-items: center; }}

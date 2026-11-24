@@ -65,10 +65,10 @@ LAYOUT_ZONES = {
     "pip": _zone(
         scene=Rect(48, 524, 876, 756),
         caption=CAPTION,
-        face=Rect(52, 160, 360, 340),
-        video=Rect(52, 160, 360, 340),
+        face=Rect(56, 168, 280, 330),
+        video=Rect(56, 168, 280, 330),
         host="pip",
-        object_position="center 23%",
+        object_position="center 54%",
     ),
     "motion": _zone(
         scene=Rect(48, 168, 876, 1112),
