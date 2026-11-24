@@ -17,7 +17,7 @@ Não use automação de navegador para responder comentários. Essa rotina está
 
 1. A orientação continua em `posts/<formato>/<slug>/respostas-comentarios.md`. Quem cria esse arquivo é a skill `registrar-resposta-automatica`.
 2. No diretório `tools/instagram-autodm`, rode `node scripts/build-respostas.mjs --dry-run --remote` para ver o diff e `node scripts/build-respostas.mjs --remote` para gravar no D1.
-3. O passo a passo de app da Meta, Cloudflare, segredos, deploy e teste está em `tools/instagram-autodm/SETUP-PEDRO.md`.
+3. App da Meta, Cloudflare, segredos, deploy e teste estão na skill `deploy-instagram-autodm`: `tools/instagram-autodm/.agents/skills/deploy-instagram-autodm/SKILL.md`. Mudança de regra não pede deploy.
 
 O comentário dispara só quando é uma única palavra igual à palavra-chave daquele post. `EVALS!` dispara. `quero evals` não. A palavra não vale em outro post.
 

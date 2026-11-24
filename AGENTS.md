@@ -37,12 +37,14 @@ Este não é um projeto de software tradicional. Não há aplicação para execu
 ├── templates/              # templates auxiliares
 ├── video/                  # recursos de produção de vídeo
 ├── objectives/             # objetivos do projeto
+├── tools/
+│   └── instagram-autodm/   # Worker de comentários; a skill de deploy mora aqui
 ├── TODO.md
 ├── pyproject.toml
 └── uv.lock
 ```
 
-Edite skills somente em `.agents/skills/`. As pastas `.claude/skills` e `.cursor/skills` são links simbólicos para a mesma árvore.
+Edite skills somente em `.agents/skills/`. As pastas `.claude/skills` e `.cursor/skills` são links simbólicos para a mesma árvore. Exceção: a skill `deploy-instagram-autodm` mora em `tools/instagram-autodm/.agents/skills/deploy-instagram-autodm/SKILL.md`. A entrada `.agents/skills/deploy-instagram-autodm/` na raiz só aponta para esse arquivo.
 
 `AGENTS.md` também é canônico. `CLAUDE.md` aponta para ele e não deve receber uma cópia independente.
 
