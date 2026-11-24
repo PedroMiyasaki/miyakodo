@@ -14,6 +14,10 @@ Use o Notion MCP para ler o banco **Ideas** e, no fechamento, atualizar `Status`
 
 Banco **Ideas** · `e2970ca3-7724-4a81-8f12-7ea34c048c67`
 
+## Git
+
+Peça desta skill entra por commit direto na `main`. Não abra pull request e não crie branch para o conteúdo. Rascunho e versão final são conteúdo. Saída intermediária ou que dá para gerar de novo fica de fora do git, no caminho coberto pelo `.gitignore`.
+
 ## Quando agir
 
 Rode quando o usuário pedir, em linguagem natural, para transformar uma ideia em post de LinkedIn. A entrega padrão é texto e imagem. Se ele pedir só o texto, pule a imagem.

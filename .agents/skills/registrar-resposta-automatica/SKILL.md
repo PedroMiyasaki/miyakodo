@@ -11,6 +11,10 @@ description: >
 
 Recebe um post do Instagram e salva `respostas-comentarios.md` na pasta da peça. Esse arquivo é a fonte das automações do Worker em `tools/instagram-autodm`. A skill [responder-comentarios](../responder-comentarios/SKILL.md) não envia mais mensagens pelo navegador. Registrar uma orientação não envia mensagens nem executa atendimentos.
 
+## Git
+
+O `respostas-comentarios.md` entra por commit direto na `main`. Não abra pull request e não crie branch para essa orientação.
+
 ## Entrada
 
 O parâmetro principal é o link de um **Reel ou carrossel**. A palavra-chave, o material e as mensagens podem vir no mesmo pedido, na conversa ou no conteúdo local do post. Uma referência como "esse Reel aberto" também vale quando identificar a publicação sem dúvida. Se não houver um post identificável, peça o link.

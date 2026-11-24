@@ -4,6 +4,8 @@ Esse markdown descreve a minha rotina de produção de conteúdo do domingo, ond
 
 Se for gravar, leia `rotinas/pre-gravacao.md` antes de começar.
 
+Peças e rascunhos desta rotina entram por commit direto na `main`. Não abra pull request.
+
 ## Passos
 
 ### 1. Abrir "N" sessões de agente

@@ -6,6 +6,8 @@ Entram aqui coisas que aumentam a retenção e que deixam o setup de gravação 
 
 Um bullet novo entra pela skill `anotar-pre-gravacao`.
 
+Mudança neste arquivo entra por commit direto na `main`. Não abra pull request.
+
 ## Anotações
 
 - Antes de gravar, me atentar aos locais dos olhos, da legenda e das zonas do vídeo onde não coloco nenhuma informação, como no vídeo referência do Instagram.

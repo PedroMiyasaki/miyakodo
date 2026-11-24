@@ -2,6 +2,8 @@
 
 Esse markdown descreve a minha rotina de gravação viral do sábado, onde o roteiro fica pronto para gravar no domingo. Eu escolho ideias que dá para falar de uma vez, sem edição no computador. A gravação, o fechamento no Edits e o agendamento ficam para o domingo.
 
+Peças e rascunhos desta rotina entram por commit direto na `main`. Não abra pull request.
+
 ## Passos
 
 ### 1. Escolher "N" ideias do database de Ideas do Notion

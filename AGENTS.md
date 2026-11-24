@@ -76,6 +76,14 @@ Esta não é uma definição completa dessa voz. Ela reúne apenas os poucos pri
 - **Evitar "LLM tone".** Escreva diretamente em português do Brasil, em vez de montar a frase em inglês e traduzi-la. Modelos tendem a transportar sintaxe, ritmo e fórmulas retóricas do inglês para o português, produzindo um texto correto, mas artificial. Leia a frase como fala e prefira construções que um brasileiro usaria naturalmente.
   - `VICIOS.md` será o inventário desses padrões. Por enquanto, é apenas um placeholder.
 
+## Git
+
+Peça de conteúdo não abre pull request. Roteiro, post, rascunho, carrossel, artigo e saída de pesquisa entram por commit direto na `main`. A publicação na rede continua manual.
+
+Pull request é para código, skill e infraestrutura. Mudar uma skill, um script ou a configuração do repositório passa por branch e pull request. A skill `content-research` é infraestrutura quando o arquivo dela muda. A rodada diária dela não é: grava ideia no Notion e não abre pull request.
+
+Saída intermediária ou que dá para gerar de novo não entra no git. O caminho está no `.gitignore`. Texto, HTML e imagem da peça continuam versionáveis. Vídeo publicado, áudio e render pesado ficam de fora.
+
 ## Ferramentas globais
 
 ### Notion
@@ -83,6 +91,8 @@ Esta não é uma definição completa dessa voz. Ela reúne apenas os poucos pri
 O MCP do Notion conecta o repositório ao banco de ideias. O banco canônico é **Ideas**, data source `e2970ca3-7724-4a81-8f12-7ea34c048c67`.
 
 Skills de produção usam o Notion para localizar e ler a ideia de origem. A escrita normalmente acontece apenas no fechamento, para registrar o status e o formato produzidos. O conteúdo da peça permanece nos arquivos locais. Siga sempre a regra da skill ativa, especialmente quando ela definir uma exceção.
+
+A skill `content-research` é a exceção de entrada. Na rodada diária ela cria ideias novas com `Status` `Pending`. Não altera o status de uma ideia que já existe e não publica.
 
 ### Google Chrome
 

@@ -2,6 +2,8 @@
 
 Esse markdown descreve a minha rotina de gravação viral do domingo, onde os roteiros prontos no sábado são gravados no celular, fechados no Edits e agendados. A gravação não passa do celular para o computador.
 
+Peças e rascunhos desta rotina entram por commit direto na `main`. Não abra pull request.
+
 ## Passos
 
 ### 1. Antes de gravar, leia `rotinas/pre-gravacao.md`

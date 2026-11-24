@@ -10,6 +10,10 @@ description: >
 
 # Thread para o Threads
 
+## Git
+
+Peça desta skill entra por commit direto na `main`. Não abra pull request e não crie branch para o conteúdo. Rascunho e versão final são conteúdo. Saída intermediária ou que dá para gerar de novo fica de fora do git, no caminho coberto pelo `.gitignore`.
+
 ## Ferramentas disponíveis
 
 Use o MCP do Notion para ler o banco **Ideas** e, no fechamento, para atualizar `Status` e `Format` na ideia processada (a única escrita no Notion).

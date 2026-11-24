@@ -2,6 +2,8 @@
 
 Esse markdown descreve a minha rotina de produção de conteúdo do sábado, onde o conteúdo é escolhido e produzido na camada textual pré-gravação.
 
+Peças e rascunhos desta rotina entram por commit direto na `main`. Não abra pull request.
+
 ## Passos
 
 ### 1. Escolher "N" ideias do database de Ideas do Notion

@@ -4,6 +4,8 @@ Esse markdown descreve a minha rotina de produção de conteúdo quando eu quero
 
 Se algum vídeo desta rotina for gravado, leia `rotinas/pre-gravacao.md` antes de gravar.
 
+Peças e rascunhos desta rotina entram por commit direto na `main`. Não abra pull request.
+
 ## Passos
 
 ### 1. Escolher "N" ideias do database de Ideas do Notion

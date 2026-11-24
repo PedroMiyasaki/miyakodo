@@ -9,6 +9,10 @@ Um único pipeline. O roteiro JSON escolhe o modo, a voz, os beats e as cenas. O
 
 Peças antigas em `video/projects/` (anteriores a este pipeline) são arquivo do que já foi editado. Vídeo novo sai daqui.
 
+## Git
+
+A peça desta skill entra por commit direto na `main`. Não abra pull request e não crie branch para o vídeo. Roteiro e HTML da composição são conteúdo. MP4, render, cache e bruto ficam de fora do git, no caminho coberto pelo `.gitignore`.
+
 A identidade é a de `design/identity.md`: off-white `#f6f4ee`, cinza `#aba199`, dark brown `#280e03`, verde `#1a3010`, e as cores de apoio `#b6cadb`, `#c1c167`, `#d39ca7`, `#db3c05`. Título em Instrument Serif, texto de interface em Poppins. O logo usado nas cenas é o horizontal dark brown.
 
 Os modos não copiam o visual dos reels de referência. Eles emprestam só a lógica: no sem gravação, o avatar do Pedro conduz um quadro que corta a cada poucos segundos; na gravação, o talking head alterna com motion e leva um punch-in no CTA. As cenas servem opinião, notícia, lista, história, tutorial ou CTA. O campo `purpose` registra a intenção e não trava o visual.
