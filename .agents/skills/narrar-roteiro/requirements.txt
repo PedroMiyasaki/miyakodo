@@ -1,0 +1,10 @@
+# Narração local, voz do Pedro
+
+Dependências da síntese. O PyTorch com CUDA entra antes, pelo índice da NVIDIA. Este arquivo não puxa o wheel da CPU.
+
+Versão verificada da biblioteca: `qwen-tts` 0.1.1. O código chama `Qwen3TTSModel.from_pretrained`, `create_voice_clone_prompt` e `generate_voice_clone` com `language="Portuguese"`.
+
+```
+qwen-tts==0.1.1
+faster-whisper>=1.0.3
+```

@@ -1,0 +1,9 @@
+{
+  "name": "exemplo-gravacao",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "npx --yes hyperframes@0.8.169 check",
+    "render": "npx --yes hyperframes@0.8.169 render"
+  }
+}

@@ -1,0 +1,81 @@
+<svg id="av-svg" viewBox="0 0 720 860" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-label="Avatar do Pedro" data-layout-allow-overflow="true">
+  <defs>
+    <filter id="av-grain" x="-8%" y="-8%" width="116%" height="116%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="1" seed="3" result="n"/>
+      <feColorMatrix in="n" type="saturate" values="0" result="g"/>
+      <feComponentTransfer in="g" result="a"><feFuncA type="linear" slope="0.28"/></feComponentTransfer>
+      <feComposite in="a" in2="SourceAlpha" operator="in" result="c"/>
+      <feBlend in="SourceGraphic" in2="c" mode="multiply"/>
+    </filter>
+  </defs>
+  <g id="av-rig" filter="url(#av-grain)">
+    <path d="M300 590 H420 V760 H300 Z" fill="#f6f4ee"/>
+    <ellipse cx="176" cy="455" rx="36" ry="48" fill="#f6f4ee" stroke="#280e03" stroke-width="8"/>
+    <ellipse cx="544" cy="455" rx="36" ry="48" fill="#f6f4ee" stroke="#280e03" stroke-width="8"/>
+    <path d="M158 450 C154 490 170 512 188 508" fill="none" stroke="#280e03" stroke-width="4" stroke-linecap="round"/>
+    <path d="M562 450 C566 490 550 512 532 508" fill="none" stroke="#280e03" stroke-width="4" stroke-linecap="round"/>
+    <path d="M188 455
+             C150 330 175 175 275 125
+             C315 78 400 70 455 125
+             C530 78 640 175 600 320
+             C655 300 660 410 555 465
+             C515 390 455 350 400 385
+             C345 345 270 370 230 420
+             C205 445 195 455 188 455 Z" fill="#280e03" stroke="#280e03" stroke-width="8" stroke-linejoin="round"/>
+    <path d="M455 145 C520 125 575 190 545 255 C490 210 450 190 455 145 Z" fill="#aba199" stroke="#280e03" stroke-width="6" stroke-linejoin="round"/>
+    <ellipse cx="360" cy="455" rx="158" ry="178" fill="#f6f4ee" stroke="#280e03" stroke-width="8"/>
+    <path d="M255 330
+             C310 292 365 318 410 295
+             C455 318 500 305 515 348
+             C455 368 390 350 340 372
+             C300 388 270 365 255 330 Z" fill="#280e03" stroke="#280e03" stroke-width="8" stroke-linejoin="round"/>
+    <path fill="#280e03" stroke="#280e03" stroke-width="8" fill-rule="evenodd" stroke-linejoin="round" d="M250 505
+             C236 575 285 655 360 668
+             C435 655 484 575 470 505
+             C452 555 410 585 360 588
+             C310 585 268 555 250 505 Z
+             M328 548
+             C328 528 392 528 392 548
+             C392 598 328 598 328 548 Z"/>
+    <path d="M322 532 Q348 518 360 534 Q372 518 400 532 Q378 546 360 542 Q342 546 322 532 Z" fill="#280e03" stroke="#280e03" stroke-width="5" stroke-linejoin="round"/>
+    <g id="av-brows">
+      <path d="M255 400 C300 368 350 384 368 408 C325 396 285 404 252 422 Z" fill="#280e03"/>
+      <path d="M465 400 C420 368 370 384 352 408 C395 396 435 404 468 422 Z" fill="#280e03"/>
+    </g>
+    <g id="av-eyes">
+      <path d="M268 448 Q310 422 352 448 Q310 468 268 448 Z" fill="#f6f4ee" stroke="#280e03" stroke-width="7" stroke-linejoin="round"/>
+      <path d="M368 448 Q410 422 452 448 Q410 468 368 448 Z" fill="#f6f4ee" stroke="#280e03" stroke-width="7" stroke-linejoin="round"/>
+      <ellipse cx="314" cy="448" rx="13" ry="14" fill="#280e03"/>
+      <ellipse cx="406" cy="448" rx="13" ry="14" fill="#280e03"/>
+      <circle cx="318" cy="443" r="4" fill="#f6f4ee"/>
+      <circle cx="410" cy="443" r="4" fill="#f6f4ee"/>
+      <path id="av-lid-l" d="M262 442 Q310 412 358 442 Q310 476 262 476 Z" fill="#f6f4ee" opacity="0"/>
+      <path id="av-lid-r" d="M362 442 Q410 412 458 442 Q410 476 362 476 Z" fill="#f6f4ee" opacity="0"/>
+    </g>
+    <path d="M356 468 C354 492 348 508 344 518" fill="none" stroke="#280e03" stroke-width="7" stroke-linecap="round"/>
+    <path d="M344 518 Q358 530 376 516" fill="none" stroke="#280e03" stroke-width="7" stroke-linecap="round"/>
+    <circle cx="286" cy="500" r="5" fill="#280e03"/>
+    <g id="av-mouth" transform="translate(360 562)">
+      <path id="av-m0" d="M-28 0 Q0 14 28 0" fill="none" stroke="#280e03" stroke-width="7" stroke-linecap="round"/>
+      <g id="av-m1" opacity="0">
+        <ellipse cx="0" cy="6" rx="16" ry="9" fill="#280e03"/>
+        <rect x="-10" y="0" width="20" height="6" rx="2" fill="#f6f4ee"/>
+      </g>
+      <g id="av-m2" opacity="0">
+        <ellipse cx="0" cy="8" rx="22" ry="14" fill="#280e03"/>
+        <rect x="-14" y="0" width="28" height="8" rx="2" fill="#f6f4ee"/>
+      </g>
+      <g id="av-m3" opacity="0">
+        <ellipse cx="0" cy="10" rx="26" ry="18" fill="#280e03"/>
+        <rect x="-16" y="-1" width="32" height="9" rx="2" fill="#f6f4ee"/>
+        <ellipse cx="0" cy="16" rx="12" ry="6" fill="#d39ca7"/>
+      </g>
+    </g>
+    <path d="M70 860 L70 735 C160 675 250 655 318 710 C340 755 380 755 402 710 C470 655 560 675 650 735 L650 860 Z" fill="#280e03"/>
+    <path d="M322 708 C345 748 375 748 398 708" fill="none" stroke="#aba199" stroke-width="10" stroke-linecap="round"/>
+    <g transform="translate(455 778)">
+      <rect width="28" height="36" rx="8" fill="#aba199" stroke="#280e03" stroke-width="5"/>
+      <circle cx="14" cy="14" r="5" fill="#280e03"/>
+    </g>
+  </g>
+</svg>

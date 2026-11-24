@@ -18,7 +18,7 @@ Editar o vídeo de `video/inputs/hype_ia/IMUL3615.MP4`. As únicas intervençõe
 - `perfil-pb`: `@pedro.miyasaki.ia`, canto superior esquerdo, presente durante todo o vídeo.
 - `legenda-evals`: Inter variável 650, caixa preta e borda branca, grupo inteiro visível e destaque por palavra.
 - `aviso-2x`: `SEGURE PARA 2X`, posição de referência do catálogo, abaixo da legenda. Entrada em 0,409 s, duração de 3,091 s após aceleração de 10%.
-- Catálogo visual: `.agents/skills/editar-video/video-patterns.md`.
+- Catálogo visual da época: a skill `editar-video` saiu do repositório. Vídeo novo usa `produzir-video`.
 
 ## Fonte e insert
 

@@ -48,19 +48,20 @@ Edite skills somente em `.agents/skills/`. As pastas `.claude/skills` e `.cursor
 
 Dentro de `posts/`, cada peça mora em `posts/<formato>/<slug>/`. Em geral, `sketch/` guarda as versões de trabalho e a raiz do slug guarda somente os arquivos aprovados para publicação. Os detalhes variam entre formatos, então consulte o `SKILL.md` correspondente antes de produzir, revisar ou finalizar uma peça.
 
-`design/` é a fonte do sistema visual da escola Miyakodo. O índice está em `design/identity.md`. Na mesma pasta ficam a apresentação em PDF, as fontes, o logo e o mascote com textura. Os padrões e assets permanentes de edição de vídeo ficam em `.agents/skills/editar-video/`, não em `design/` nem nas pastas dos vídeos. `examples/` oferece material de referência, não templates obrigatórios. `scripts/` automatiza trabalho mecânico e não deve concentrar decisões editoriais.
+`design/` é a fonte do sistema visual da escola Miyakodo. O índice está em `design/identity.md`. Na mesma pasta ficam a apresentação em PDF, as fontes, o logo e o mascote com textura. A produção de vídeo novo mora na skill `produzir-video`, não em `design/` nem nas pastas de peças antigas. `examples/` oferece material de referência, não templates obrigatórios. `scripts/` automatiza trabalho mecânico e não deve concentrar decisões editoriais.
 
 ## Edição de vídeo
 
-Ao editar um vídeo de `video/inputs/`, use a skill `editar-video` e leia [comportamentos-padrao.md](.agents/skills/editar-video/comportamentos-padrao.md). Se o usuário selecionar um modo ou o pedido corresponder claramente a um modo documentado, leia também o arquivo correspondente em `.agents/skills/editar-video/padroes-de-edicao/` antes de preparar o plano. Antes de produzir ou revisar qualquer vídeo com HyperFrames ou outra ferramenta, consulte [video-patterns.md](.agents/skills/editar-video/video-patterns.md), que contém as especificações visuais e prints de referência:
+Vídeo novo passa pela skill `produzir-video` ([SKILL.md](.agents/skills/produzir-video/SKILL.md)). Há um pipeline só: um roteiro JSON vira uma composição HyperFrames 1080×1920. As skills do HyperFrames renderizam. Não há caminho paralelo.
 
-- **`perfil-pb`**: label de `@pedro.miyasaki.ia` no canto superior esquerdo.
-- **`legenda-evals`**: legenda na paleta Miyakodo, dark brown `#280e03` e off-white `#f6f4ee`, com destaque da palavra falada, baseada no vídeo de evals. A especificação vigente está em `video-patterns.md`, alinhada a `design/identity.md`.
-- **`aviso-2x`**: label opcional `SEGURE PARA 2X`.
+Dois modos:
 
-Em toda edição, independentemente da categoria, os únicos comportamentos automáticos universais são legendar a fala com `legenda-evals` e cortar espaço morto rente ao início e ao fim da fala, sem truncar palavras, salvo orientação explícita diferente no pedido. A skill `editar-video` detalha essas regras em [comportamentos-padrao.md](.agents/skills/editar-video/comportamentos-padrao.md), documenta modos reutilizáveis em `.agents/skills/editar-video/padroes-de-edicao/` e exige revisão do plano antes do render final. `perfil-pb` e `aviso-2x` ficam desligados por padrão; um modo documentado pode ativá-los, ou o usuário pode pedi-los explicitamente. Resolva também os apelidos do catálogo, como "legenda padrão" e "label 2x". Registre no plano e, quando houver, no brief o modo e os padrões utilizados e, para o aviso, o trecho e a posição. Numa revisão pontual, preserve os elementos que não fazem parte do pedido.
+- **`sem-gravacao`**: Pedro não grava. Entram o roteiro e a faixa de voz. Saem o avatar 2D do rosto dele, legendas no terço superior e motion graphics na paleta de `design/identity.md`. A faixa e o `words` podem sair da skill `narrar-roteiro`: ela clona a voz do Pedro na GPU da máquina dele e grava `voice.wav` mais `words.json`. A amostra fica em `video/inputs/voice-ref/` e não entra no git.
+- **`gravacao`**: Pedro grava um talking head. Entram o roteiro, o bruto e a voz na mesma janela de tempo. O pipeline tira silêncio entre frases e monta as cenas por cima: split, motion em tela cheia ou o criador em tela cheia com punch-in.
 
-O catálogo define a aparência desses três elementos; as skills do HyperFrames continuam responsáveis pela implementação, pelo timing e pela validação. Mantenha as especificações, os prints e a fonte em `.agents/skills/editar-video/`, separados das skills atualizáveis do HyperFrames. `video/` e `videos/` guardam os materiais e projetos de cada peça, não a fonte dos padrões reutilizáveis. Para aplicar esses padrões, não consulte composições, scripts ou assets de projetos anteriores.
+O roteiro escolhe cenas combináveis (legenda, avatar, timeline, mockup, contador, diagrama, chat, código, telefone, grade, scanline, pastas, lista, citação, badge). `purpose` pode ser tutorial, opinião, notícia, lista, história ou CTA. Isso não troca o motor.
+
+Peças já feitas em `video/projects/` antes deste pipeline ficam como arquivo. Não são o modo de produzir a próxima.
 
 ## Voz
 
