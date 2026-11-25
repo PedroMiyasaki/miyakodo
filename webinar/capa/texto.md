@@ -4,7 +4,7 @@ Slide de abertura, 1920×1080. A arte está em `index.html` e o render em `capa.
 
 ## Nome
 
-O primeiro projeto de IA
+IA como motor do negócio
 
 ## Subtítulo
 
