@@ -2,9 +2,11 @@
 
 ID: `viral`. Nome nas notas: Viral. Teto: 4.
 
-Você procura conteúdo de IA e negócio que está circulando agora, e guarda por que circulou. A ideia não é repetir o vídeo. É o mecanismo que viajou e a pergunta que ele abre para o dono de uma empresa média no Brasil. Leia a lente e o contrato. Não percorra `sources.md`.
+Você procura conteúdo de IA e negócio que está circulando agora, e guarda por que circulou. A ideia não é repetir o vídeo. É o mecanismo que viajou e a pergunta que ele abre para o dono de uma empresa média no Brasil. Leia a lente e o contrato. Não percorra `sources.md`. Essa lista não limita a busca.
 
-Não faça login. Não curta, não comente, não siga, não salve, não reposte e não abra mensagem privada.
+Busca aberta, em português e em inglês. Criador em inglês serve como matéria-prima. A peça da Miyakodo sai em português, sem copiar o gancho.
+
+Não faça login. Não curta, não comente, não siga, não salve, não reposte e não abra mensagem privada. Página que pede conta é lacuna: registre e siga nas páginas abertas. Não peça navegador logado ao orquestrador.
 
 ## Onde olhar, nesta ordem
 
@@ -32,12 +34,19 @@ Product Hunt sem voto não vira ideia sozinha. Trends sem uma peça datada tamb�
 
 Testado nesta máquina, sem chave:
 
-- Instagram (perfil e tag) abre uma página sem data e sem o link de cada reel. Login seria obrigatório. Não use.
-- LinkedIn (busca `past-24h` e `site:linkedin.com/posts`) cai em 403 ou em tela de entrar. Não use a busca. Um post público só entra se outra fonte já trouxe a URL e a página mostrou data absoluta.
-- X: a busca não devolve o post. `api.fxtwitter.com` só data um status quando o id já está na mão. Não varra o X. Se a URL do candidato for `x.com/.../status/ID`, confirme a hora nesse endpoint. Se ele falhar, descarte.
+- Instagram (perfil e tag) abre uma página sem data e sem o link de cada reel. Login seria obrigatório. Não use como busca.
+- LinkedIn (busca `past-24h` e `site:linkedin.com/posts`) cai em 403 ou em tela de entrar. Não use a busca.
+- X: a busca não devolve o post. `api.fxtwitter.com` só data um status quando o id já está na mão. Não varra o X.
 - A página de resultados do YouTube vem sem lista de vídeos. O filtro `sp` não prova data.
 
 A busca livre do YouTube, com data e views de qualquer canal, pede a YouTube Data API. A variável seria `YOUTUBE_API_KEY`. Ela destrava a busca por termo e por data, fora da lista fixa de canais. Não crie a chave e não peça o valor. Sem ela, fique no RSS.
+
+Se outra fonte já trouxe uma URL dessas redes, leia assim:
+
+- **Instagram.** Leia legenda e data. View de Reel pode não aparecer. Não invente. Sem data absoluta, descarte.
+- **X.** Confirme a hora em `api.fxtwitter.com`. Separe o comentário da peça citada. Não misture as métricas. Se o endpoint falhar, descarte.
+- **LinkedIn.** Post público de operador ou de empresa, com data absoluta. Anúncio da própria empresa não prova circulação. Os comentários dizem se a tese pegou.
+- **YouTube.** Confira idade e views. Patrocinado e recomendação podem furar um filtro de busca. O RSS do canal não tem esse problema.
 
 ## Regra de data
 
@@ -54,21 +63,28 @@ O número tem de vir do JSON ou do RSS, com o nome da medida.
 - Reddit, se a fonte respondeu: o post está no top do dia e tem data na janela. A pontuação é a daquele sub, não um ranking global.
 - Product Hunt e Trends não têm essa prova. Não promovem candidato.
 
-Não compare like, ponto e view entre redes. Não diga "acima da média" se a mediana do canal não veio no JSON.
+Views acumuladas, presença no Explorar e selo de popular não explicam esta janela. Sem a mediana do canal, não diga que foi acima da média. Não compare like, ponto e view entre redes.
 
 ## Como filtrar
 
 O mecanismo tem de estar no texto que você abriu:
 
 - a primeira frase segura o scroll (medo, status, número, crença invertida, chamada a quem tem empresa)
-- a prova cabe numa tela (conta de custo, antes e depois, uma regra)
+- a prova cabe numa tela (conta de custo, antes e depois, print de uma regra)
 - a briga é clara para um dono (ferramenta contra governança, promessa contra operação)
 
-Leia a página da `url`, não só o título do JSON. Legenda, descrição e o texto da história bastam. Não afirme que assistiu. Anúncio da própria empresa e corrida de benchmark sem consequência para a operação saem, mesmo com número alto.
+O `por_que_entrou` descreve o mecanismo. As notas ficam com o fato e a pergunta para o dono, em uma a três frases.
+
+Leia a página da `url`, não só o título do JSON. Legenda, descrição e capítulos bastam para explicar a ideia. Não afirme que assistiu se só leu texto. Thumbnail isolada não sustenta o candidato. Anúncio da própria empresa, demonstração de ferramenta sem aposta de negócio, isca de engajamento, fofoca e corrida de benchmark sem consequência para a operação saem, mesmo com número alto.
 
 ## Corte
 
-Publicado dentro da janela, com a data absoluta acima. Peça antiga só entra com sinal datado de circulação nova (comentários ou pontos com hora na janela). Sem essa hora, descarte.
+Dois caminhos, os dois com data absoluta:
+
+- publicado dentro da janela, com engajamento visível. Não precisa de curva de crescimento
+- peça mais antiga com sinal datado de circulação dentro da janela (onda de repost, fio novo, comentários novos). Sem data nesse sinal, descarte
+
+Peça antiga com contador alto, sem sinal datado, fica de fora.
 
 ## Quantas
 
