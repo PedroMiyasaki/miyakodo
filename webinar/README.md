@@ -55,7 +55,7 @@ A página já está no índice [Miyakodo](https://app.notion.com/p/41fffe7442fd8
 
 [ ] Artes da ementa
 
-Produzir as artes dos slides marcados na [Ementa](https://app.notion.com/p/41fffe7442fd80738d88d30e68641a3b), para montar a apresentação do webinar. Tarefa da Sofia em [TODO.md](../TODO.md). Os seis diagramas da Parte 3 já entram prontos, a partir de [Diagramas dos padrões de projeto](https://app.notion.com/p/420ffe7442fd812fb851fe3e0548121a). A capa está em [webinar/capa/](capa/): nome, descrição e o slide de abertura em 1920×1080. O restante da apresentação ainda precisa de arte: abertura, princípios, peças de arquitetura, régua de maturidade, quadro comparativo dos padrões, framework, preview do roadmap e fechamento.
+Produzir as artes dos slides marcados na [Ementa](https://app.notion.com/p/41fffe7442fd80738d88d30e68641a3b), para montar a apresentação do webinar. Tarefa da Sofia em [TODO.md](../TODO.md). Os seis diagramas da Parte 3 já entram prontos, a partir de [Diagramas dos padrões de projeto](https://app.notion.com/p/420ffe7442fd812fb851fe3e0548121a). A capa está em [webinar/capa/](capa/): nome, descrição, o slide de abertura em 1920×1080 e o quadrado de 200×200 da Eduzz. O restante da apresentação ainda precisa de arte: abertura, princípios, peças de arquitetura, régua de maturidade, quadro comparativo dos padrões, framework, preview do roadmap e fechamento.
 
 [ ] Perfil do Instagram da escola
 
