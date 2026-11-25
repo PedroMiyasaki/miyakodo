@@ -78,6 +78,7 @@ Backlog organiza atividades para o futuro.
 O fechamento do webinar, com o que já foi feito e o que falta, está em [webinar/README.md](webinar/README.md). As tarefas abaixo são as dela nessa lista.
 
 [ ] Fazer as artes do webinar que estão na página [Ementa](https://app.notion.com/p/Ementa-41fffe7442fd80738d88d30e68641a3b), usando a identidade visual em `design/`. Detalhe em [webinar/README.md](webinar/README.md), tarefa "Artes da ementa".
+[ ] Fazer o post promocional do webinar (12/12) para o Instagram: post no feed e story, usando a identidade visual em `design/`.
 [ ] Registrar uma rotina semanal de produção de conteúdo, fechando com o Pedro, para o Instagram da empresa e para o LinkedIn. Detalhe em [webinar/README.md](webinar/README.md), tarefa "Produção de conteúdo, mínimo de alunos e capitalização".
 - [x] Criar o evento do webinar na Eduzz Eventos (Evento Online, 12/12/2026). Feito em 25/11/2026.
 - [x] Ativar a página de vendas do evento na Eduzz. Feito em 25/11/2026.
