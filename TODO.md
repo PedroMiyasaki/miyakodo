@@ -76,5 +76,5 @@ O fechamento do webinar, com o que já foi feito e o que falta, está em [webina
 [ ] Fazer o perfil do Instagram da Miyakodo, usando a identidade visual em `design/`. Detalhe em [webinar/README.md](webinar/README.md), tarefa "Perfil do Instagram da escola".
 [ ] Fazer o perfil do LinkedIn da empresa Miyakodo, usando a identidade visual em `design/`, colocar o Pedro como owner e associar o perfil dele como fundador da escola. Detalhe em [webinar/README.md](webinar/README.md), tarefas "Perfil do LinkedIn da escola" e "Associação do LinkedIn ao perfil do Pedro".
 [ ] Registrar uma rotina semanal de produção de conteúdo, fechando com o Pedro, para o Instagram da empresa e para o LinkedIn. Detalhe em [webinar/README.md](webinar/README.md), tarefa "Produção de conteúdo, mínimo de alunos e capitalização".
-- [x] Criar o evento do webinar na Eduzz Eventos (Evento Online, 06/03/2027; Lote 1 pré-venda R$197 até 31/01, Lote 2 R$297 a partir de 01/02). Feito em 25/11/2026.
+- [x] Criar o evento do webinar na Eduzz Eventos (Evento Online, 12/12/2026). Feito em 25/11/2026.
 - [x] Ativar a página de vendas do evento na Eduzz. Feito em 25/11/2026.
