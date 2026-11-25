@@ -4,7 +4,9 @@ Slide de abertura, 1920×1080. A arte está em `index.html` e o render em `capa.
 
 ## Nome
 
-IA como motor do negócio
+Guia do primeiro projeto de IA
+
+O webinar e o produto usam o mesmo nome. O produto é o guia para o empresário implementar IA de forma assertiva na empresa.
 
 ## Subtítulo
 
@@ -12,7 +14,7 @@ Onde a inteligência artificial mexe no resultado da empresa.
 
 ## Descrição
 
-Webinar ao vivo de 2 horas para donos, sócios e líderes de empresa média. O encontro troca o impulso de adotar ferramenta por um critério: o que a IA resolve, onde ela não entra e como desenhar o primeiro projeto ligado ao resultado. Quem participa sai com um roadmap para sentar com a liderança e começar.
+Webinar ao vivo de 2 horas para donos, sócios e líderes de empresa média. O que a pessoa leva é o Guia do primeiro projeto de IA: um caminho com começo, meio e fim para implementar inteligência artificial de forma assertiva, no ponto em que ela mexe no resultado. Depois do encontro, o guia serve para sentar com a liderança e conduzir o projeto.
 
 ## Eduzz
 
