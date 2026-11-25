@@ -17,3 +17,9 @@ Três títulos curtos, um em cada layout. Os três tamanhos de cada layout repet
 O 730×1400 é o tamanho que a Eduzz recomenda para a página do evento (1400 de altura por 730 de largura). Os outros dois ficam prontos se a plataforma pedir banner ou quadrado.
 
 A fonte está em `vendas.html`.
+
+## Texto da página
+
+Webinar ao vivo de 2 horas para donos, sócios e líderes de empresa média. O encontro troca o impulso de adotar ferramenta por um critério: o que a IA resolve, onde ela não entra e como desenhar o primeiro projeto ligado ao resultado. Quem participa sai com um roadmap para sentar com a liderança e começar.
+
+Quem conduz é Pedro Miyasaki, arquiteto de soluções de inteligência artificial e machine learning. São cinco anos em consultorias B2B: chegou a sócio no Brasil e hoje trabalha em projetos de produção fora do país. O trabalho dele é pegar um problema de negócio ainda mal definido e transformar em desenho que mexe no resultado da empresa.

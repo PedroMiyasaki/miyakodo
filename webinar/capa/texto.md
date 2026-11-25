@@ -14,7 +14,9 @@ Onde a inteligência artificial mexe no resultado da empresa.
 
 ## Descrição
 
-Webinar ao vivo de 2 horas para donos, sócios e líderes de empresa média. O que a pessoa leva é o Guia do primeiro projeto de IA: um caminho com começo, meio e fim para implementar inteligência artificial de forma assertiva, no ponto em que ela mexe no resultado. Depois do encontro, o guia serve para sentar com a liderança e conduzir o projeto.
+Webinar ao vivo de 2 horas para donos, sócios e líderes de empresa média. O encontro troca o impulso de adotar ferramenta por um critério: o que a IA resolve, onde ela não entra e como desenhar o primeiro projeto ligado ao resultado. Quem participa sai com um roadmap para sentar com a liderança e começar.
+
+Quem conduz é Pedro Miyasaki, arquiteto de soluções de inteligência artificial e machine learning. São cinco anos em consultorias B2B: chegou a sócio no Brasil e hoje trabalha em projetos de produção fora do país. O trabalho dele é pegar um problema de negócio ainda mal definido e transformar em desenho que mexe no resultado da empresa.
 
 ## Eduzz
 
