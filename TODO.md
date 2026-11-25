@@ -68,13 +68,16 @@ Backlog organiza atividades para o futuro.
     * Qual caminho? Speaker? Empresa de serviço? Educação? Uma mistura? Qual se sustenta com o emprego principal e caminho seguro inatingível?
         * Com base nisso: quais plataformas em pt-br e quais em inglês?
 
+#### Sofia
+
+[ ] Fazer o perfil do Instagram da Miyakodo, usando a identidade visual em `design/`. Detalhe em [webinar/README.md](webinar/README.md), tarefa "Perfil do Instagram da escola".
+[ ] Fazer o perfil do LinkedIn da empresa Miyakodo, usando a identidade visual em `design/`, colocar o Pedro como owner e associar o perfil dele como fundador da escola. Detalhe em [webinar/README.md](webinar/README.md), tarefas "Perfil do LinkedIn da escola" e "Associação do LinkedIn ao perfil do Pedro".
+
 ## Sofia
 
 O fechamento do webinar, com o que já foi feito e o que falta, está em [webinar/README.md](webinar/README.md). As tarefas abaixo são as dela nessa lista.
 
 [ ] Fazer as artes do webinar que estão na página [Ementa](https://app.notion.com/p/Ementa-41fffe7442fd80738d88d30e68641a3b), usando a identidade visual em `design/`. Detalhe em [webinar/README.md](webinar/README.md), tarefa "Artes da ementa".
-[ ] Fazer o perfil do Instagram da Miyakodo, usando a identidade visual em `design/`. Detalhe em [webinar/README.md](webinar/README.md), tarefa "Perfil do Instagram da escola".
-[ ] Fazer o perfil do LinkedIn da empresa Miyakodo, usando a identidade visual em `design/`, colocar o Pedro como owner e associar o perfil dele como fundador da escola. Detalhe em [webinar/README.md](webinar/README.md), tarefas "Perfil do LinkedIn da escola" e "Associação do LinkedIn ao perfil do Pedro".
 [ ] Registrar uma rotina semanal de produção de conteúdo, fechando com o Pedro, para o Instagram da empresa e para o LinkedIn. Detalhe em [webinar/README.md](webinar/README.md), tarefa "Produção de conteúdo, mínimo de alunos e capitalização".
 - [x] Criar o evento do webinar na Eduzz Eventos (Evento Online, 12/12/2026). Feito em 25/11/2026.
 - [x] Ativar a página de vendas do evento na Eduzz. Feito em 25/11/2026.
