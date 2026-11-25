@@ -32,12 +32,19 @@
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    padding: 120px 84px 110px;
+    padding: 72px 72px 110px;
     background: var(--off);
     color: var(--ink);
   }
 
-  .logo { height: 112px; width: auto; display: block; }
+  .logo {
+    height: 60px;
+    width: auto;
+    align-self: flex-start;
+    flex: 0 0 auto;
+    object-fit: contain;
+    display: block;
+  }
 
   .handle {
     margin-top: 16px;
