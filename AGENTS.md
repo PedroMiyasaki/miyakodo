@@ -33,6 +33,9 @@ Este não é um projeto de software tradicional. Não há aplicação para execu
 ├── design/                 # identidade visual da escola Miyakodo: identity.md, apresentação, fontes, logo, mascote e textura
 ├── docs/                   # documentação e pesquisa
 ├── examples/               # referências de conteúdo
+│   └── carousels/
+│       ├── MINE/           # carrossel nosso, identidade visual vigente
+│       └── OTHERS/         # referências de outros perfis
 ├── scripts/                # automações de render e manutenção
 ├── templates/              # templates auxiliares
 ├── video/                  # recursos de produção de vídeo
@@ -50,7 +53,7 @@ Edite skills somente em `.agents/skills/`. As pastas `.claude/skills` e `.cursor
 
 Dentro de `posts/`, cada peça mora em `posts/<formato>/<slug>/`. Em geral, `sketch/` guarda as versões de trabalho e a raiz do slug guarda somente os arquivos aprovados para publicação. Os detalhes variam entre formatos, então consulte o `SKILL.md` correspondente antes de produzir, revisar ou finalizar uma peça.
 
-`design/` é a fonte do sistema visual da escola Miyakodo. O índice está em `design/identity.md`. Na mesma pasta ficam a apresentação em PDF, as fontes, o logo e o mascote com textura. A produção de vídeo novo mora na skill `produzir-video`, não em `design/` nem nas pastas de peças antigas. `examples/` oferece material de referência, não templates obrigatórios. `scripts/` automatiza trabalho mecânico e não deve concentrar decisões editoriais.
+`design/` é a fonte do sistema visual da escola Miyakodo. O índice está em `design/identity.md`. Na mesma pasta ficam a apresentação em PDF, as fontes, o logo e o mascote com textura. A produção de vídeo novo mora na skill `produzir-video`, não em `design/` nem nas pastas de peças antigas. `examples/` oferece material de referência, não templates obrigatórios. Em `examples/carousels/`, `MINE/` é o carrossel nosso na identidade visual vigente e `OTHERS/` guarda referências de outros perfis. Na composição de um carrossel, o visual segue `MINE/` junto com `design/identity.md`. `scripts/` automatiza trabalho mecânico e não deve concentrar decisões editoriais.
 
 ## Edição de vídeo
 

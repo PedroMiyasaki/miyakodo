@@ -49,6 +49,8 @@ Guarde no `<head>` do HTML o ID da ideia de origem e a fase ACP em metatags, par
 
 Antes de criar, examine até os cinco carrosséis mais recentes em `posts/carousel/`. Para cada um, use os PNGs finais da raiz; se eles não existirem, use a pasta `sketch/v<N>/` de maior número. Leia também o `carousel.html` correspondente quando existir.
 
+A referência visual vigente está em `examples/carousels/MINE/`. Olhe esses slides antes de compor: fundo off-white, título em caixa alta, destaque rosa nas palavras que carregam a frase, logo vertical cinza no canto superior direito e o Carlos só quando a composição pede. `examples/carousels/OTHERS/` reúne carrosséis de outros perfis e serve para ritmo e estrutura. A identidade continua sendo a de `MINE/` e a de `design/identity.md`.
+
 Use esse histórico como few-shot, não como checklist. Perceba:
 
 - linguagem: vocabulário, registro, construção das frases, ritmo, pontuação, pessoa, humor, opinião, densidade técnica, hooks e CTAs;
