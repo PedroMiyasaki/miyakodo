@@ -16,7 +16,7 @@ HEIGHT = 1920
 FPS = 30
 
 PURPOSES = ("tutorial", "opiniao", "noticia", "lista", "historia", "cta")
-MODES = ("sem-gravacao", "gravacao")
+# Modos ficam em modos/<slug>/MODE.md. pipeline/registry.py é quem valida o slug.
 
 SCENE_TYPES = (
     "timeline",
@@ -79,8 +79,12 @@ LAYOUT_SPOTS = {
 
 TONES = ("paper", "ink", "verde", "azul", "rosa", "oliva")
 
-LAYOUTS_FACELESS = ("guide", "center", "corner", "hero", "pip", "full")
-LAYOUTS_RECORDED = ("split", "motion", "creator")
+# Caixas do talking head. split: pessoa embaixo. creator: faixa do CTA. motion: quadro cheio.
+RECORDED_BOXES = {
+    "split": (64, 110, 952, 820),
+    "creator": (120, 1460, 840, 220),
+    "motion": (64, 160, 952, 1480),
+}
 
 SFX_FILES = {
     "pop": "pop.mp3",

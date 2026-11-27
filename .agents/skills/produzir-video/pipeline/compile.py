@@ -1,4 +1,7 @@
-"""Valida o roteiro e monta o modelo que o HTML consome."""
+"""Valida o roteiro e monta o modelo que o HTML consome.
+
+O campo mode sai do registro em modos/<slug>/MODE.md.
+"""
 
 from pipeline.audio import range_duration, remap_time
 from pipeline.avatar import avatar_motion
@@ -6,15 +9,14 @@ from pipeline.brand import (
     FPS,
     HEIGHT,
     LAYOUT_SPOTS,
-    LAYOUTS_FACELESS,
-    LAYOUTS_RECORDED,
-    MODES,
     PURPOSES,
+    RECORDED_BOXES,
     SCENE_TYPES,
     TONES,
     WIDTH,
 )
 from pipeline.captions import group_words, sanitize_words, tag_roles, words_from_lines
+from pipeline.registry import UnknownMode, require_mode
 from pipeline.scenes import build_scene
 
 
@@ -25,9 +27,10 @@ class ScriptError(ValueError):
 def compile_script(data: dict, cuts=None, mouth=None) -> dict:
     if not isinstance(data, dict):
         raise ScriptError("roteiro precisa ser um objeto")
-    mode = data.get("mode")
-    if mode not in MODES:
-        raise ScriptError(f"mode inválido: {mode}")
+    try:
+        spec = require_mode(data.get("mode"))
+    except UnknownMode as exc:
+        raise ScriptError(str(exc)) from exc
     purpose = data.get("purpose")
     if purpose is not None and purpose not in PURPOSES:
         raise ScriptError(f"purpose inválido: {purpose}")
@@ -40,7 +43,7 @@ def compile_script(data: dict, cuts=None, mouth=None) -> dict:
     if voice_out <= origin:
         raise ScriptError("voice.out precisa ser maior que voice.in")
 
-    beats = _normalize_beats(data.get("beats") or [], origin, voice_out, mode)
+    beats = _normalize_beats(data.get("beats") or [], origin, voice_out, spec)
     words = _collect_words(data, beats, origin)
     if cuts:
         words = _remap_words(words, cuts)
@@ -61,14 +64,14 @@ def compile_script(data: dict, cuts=None, mouth=None) -> dict:
         data.get("strong") or [],
         data.get("cta") or [],
     )
-    groups = _clamp_groups(group_words(words, mode), duration)
-    scenes, ops, sfx = _scenes(beats, mode)
-    moves = _avatar_moves(beats, mode, duration)
+    groups = _clamp_groups(group_words(words, spec.slug), duration)
+    scenes, ops, sfx = _scenes(beats, spec)
+    moves = _avatar_moves(beats, spec, duration)
     emphasis_times = [word["start"] for word in words if word["role"] == "emphasis"]
-    motion = avatar_motion(duration, emphasis_times, moves) if mode == "sem-gravacao" else None
-    videos = _videos(beats) if mode == "gravacao" else []
+    motion = avatar_motion(duration, emphasis_times, moves) if spec.avatar else None
+    videos = _videos(beats) if spec.footage else []
     return {
-        "mode": mode,
+        "mode": spec.slug,
         "slug": _slug(data.get("slug") or "reel"),
         "title": str(data.get("title") or data.get("slug") or "reel"),
         "purpose": purpose,
@@ -110,10 +113,10 @@ def _slug(value: str) -> str:
     return cleaned or "reel"
 
 
-def _normalize_beats(beats, origin, voice_out, mode):
+def _normalize_beats(beats, origin, voice_out, spec):
     if not beats:
         raise ScriptError("beats vazio")
-    allowed = LAYOUTS_FACELESS if mode == "sem-gravacao" else LAYOUTS_RECORDED
+    allowed = spec.layouts
     normal = []
     for index, beat in enumerate(beats):
         try:
@@ -125,14 +128,14 @@ def _normalize_beats(beats, origin, voice_out, mode):
         end = min(voice_out - origin, end)
         if end - start < 0.15:
             continue
-        layout = beat.get("layout") or ("guide" if mode == "sem-gravacao" else "split")
+        layout = beat.get("layout") or spec.default_layout
         if layout not in allowed:
-            raise ScriptError(f"layout {layout} não cabe no modo {mode}")
+            raise ScriptError(f"layout {layout} não cabe no modo {spec.slug}")
         scene = beat.get("scene")
         if not scene or scene.get("type") not in SCENE_TYPES:
             raise ScriptError(f"beat {index} sem cena conhecida")
         tone = str(beat.get("tone") or "paper")
-        if mode == "sem-gravacao" and tone not in TONES:
+        if spec.validate_tone and tone not in TONES:
             raise ScriptError(f"tom {tone} fora da paleta")
         normal.append({
             "id": f"b{index}",
@@ -207,33 +210,29 @@ def _extend_beats(beats, duration):
     return ordered
 
 
-def _box_for(mode, layout, index, panel_count):
-    if mode == "sem-gravacao":
+def _box_for(spec, layout, index, panel_count):
+    if spec.boxes == "faceless":
         return LAYOUT_SPOTS[layout]["scene"]
-    if layout == "split":
-        return (64, 110, 952, 820)
-    if layout == "creator":
-        return (120, 1460, 840, 220)
-    return (64, 160, 952, 1480)
+    return RECORDED_BOXES[layout]
 
 
-def _scenes(beats, mode):
+def _scenes(beats, spec):
     html_parts = []
     ops = []
     sfx = []
     for index, beat in enumerate(beats):
-        x, y, w, h = _box_for(mode, beat["layout"], index, len(beats))
+        x, y, w, h = _box_for(spec, beat["layout"], index, len(beats))
         piece, piece_ops, piece_sfx = build_scene(
             beat["id"], x, y, w, h, beat["scene"], beat["start"] + 0.08, beat["end"],
         )
         dur = round(beat["end"] - beat["start"], 3)
-        if mode == "gravacao":
+        if spec.scene_wrapper == "plain":
             html_parts.append(
                 f'<section id="beat-{beat["id"]}" class="clip beat" data-start="{beat["start"]}" '
                 f'data-duration="{dur}" data-track-index="4">'
                 f'{piece}</section>'
             )
-        else:
+        elif spec.scene_wrapper == "wash":
             html_parts.append(
                 f'<section id="beat-{beat["id"]}" class="clip beat tone-{beat["tone"]}" '
                 f'data-start="{beat["start"]}" data-duration="{dur}" data-track-index="4">'
@@ -248,15 +247,17 @@ def _scenes(beats, mode):
                 "to": {"opacity": 1, "duration": 0.16, "ease": "power1.out"},
                 "at": beat["start"],
             })
+        else:
+            raise ScriptError(f"scene_wrapper desconhecido no modo {spec.slug}: {spec.scene_wrapper}")
         ops.extend(piece_ops)
         sfx.extend(piece_sfx)
-        if mode == "gravacao" and index:
+        if spec.whoosh_on_change and index:
             sfx.append({"name": "whoosh", "at": beat["start"]})
     return "".join(html_parts), ops, sfx
 
 
-def _avatar_moves(beats, mode, duration):
-    if mode != "sem-gravacao":
+def _avatar_moves(beats, spec, duration):
+    if not spec.avatar:
         return []
     anchor_left, anchor_top, anchor_width, _anchor_opacity = LAYOUT_SPOTS["pip"]["avatar"]
     moves = []

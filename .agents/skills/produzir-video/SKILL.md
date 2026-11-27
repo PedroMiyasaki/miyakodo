@@ -1,11 +1,11 @@
 ---
 name: produzir-video
-description: Produz um Reel 9:16 da Miyakodo em um de dois modos. sem-gravacao monta avatar do Pedro, a voz dele e motion graphics. gravacao parte de um talking head gravado, corta silêncio e anima por cima. Ative com "produz o vídeo", "modo sem gravação", "modo gravação", "monta o reel" ou "usa produzir-video".
+description: Produz um Reel 9:16 da Miyakodo no modo registrado que o roteiro pedir. O registro lê modos/<slug>/MODE.md. sem-gravacao monta avatar do Pedro, a voz dele e motion graphics. gravacao parte de um talking head gravado, corta silêncio e anima por cima. Ative com "produz o vídeo", "modo sem gravação", "modo gravação", "monta o reel", "registra um modo" ou "usa produzir-video".
 ---
 
 # Produzir vídeo
 
-Um único pipeline. O roteiro JSON escolhe o modo, a voz, os beats e as cenas. O código em `pipeline/` gera uma composição HyperFrames 1080×1920. As skills `hyperframes*` continuam sendo o motor de render. Não há segundo gerador, nem Remotion, nem o fluxo antigo de `editar-video`.
+Um único pipeline. O roteiro JSON escolhe o modo, a voz, os beats e as cenas. O campo `mode` tem de ser um slug do registro em `modos/`. O código em `pipeline/` gera uma composição HyperFrames 1080×1920. As skills `hyperframes*` continuam sendo o motor de render. Não há segundo gerador, nem Remotion, nem o fluxo antigo de `editar-video`.
 
 Peças antigas em `video/projects/` (anteriores a este pipeline) são arquivo do que já foi editado. Vídeo novo sai daqui.
 
@@ -15,9 +15,13 @@ A peça desta skill entra por commit direto na `main`. Não abra pull request e 
 
 A identidade é a de `design/identity.md`: off-white `#f6f4ee`, cinza `#aba199`, dark brown `#280e03`, verde `#1a3010`, e as cores de apoio `#b6cadb`, `#c1c167`, `#d39ca7`, `#db3c05`. Título em Instrument Serif, texto de interface em Poppins. O logo usado nas cenas é o horizontal dark brown.
 
-Os modos não copiam o visual dos reels de referência. Eles emprestam só a lógica: no sem gravação, o avatar do Pedro conduz um quadro que corta a cada poucos segundos; na gravação, o talking head alterna com motion e leva um punch-in no CTA. As cenas servem opinião, notícia, lista, história, tutorial ou CTA. O campo `purpose` registra a intenção e não trava o visual.
+Um modo registrado a partir de um estudo herda a gramática de edição, não a identidade do reel de referência. No sem gravação, o avatar do Pedro conduz um quadro que corta a cada poucos segundos. Na gravação, o talking head alterna com motion e leva um punch-in no CTA. Cores, fontes, logo e o rosto continuam os de `design/identity.md`. As cenas servem opinião, notícia, lista, história, tutorial ou CTA. O campo `purpose` registra a intenção e não trava o visual.
 
 ## Quando usar cada modo
+
+Os modos disponíveis são as pastas `modos/<slug>/` com `MODE.md`. `pipeline/registry.py` lê esse registro. `cli.py` e `compile.py` recusam `mode` fora da lista. A ficha de cada modo (quando usar, entradas, layouts, legenda, ritmo de corte, motion e o que reaproveita) está no `MODE.md` da pasta. Para registrar um modo novo a partir de um estudo, siga `references/registrar-modo.md`.
+
+O registro hoje tem:
 
 | Modo | Pedro grava? | O que entra | O que sai |
 |---|---|---|---|
@@ -30,7 +34,7 @@ Os modos não copiam o visual dos reels de referência. Eles emprestam só a ló
 
 Arquivo JSON. Tempos do `voice`, dos `beats` e das `words` usam o relógio do arquivo de voz, em segundos.
 
-- `mode`: `sem-gravacao` ou `gravacao`.
+- `mode`: slug de uma pasta em `modos/`. Hoje, `sem-gravacao` ou `gravacao`.
 - `slug`, `title`.
 - `purpose`: `tutorial`, `opiniao`, `noticia`, `lista`, `historia` ou `cta`.
 - `voice.src`: caminho a partir da raiz do repo. `voice.in` e `voice.out` recortam a janela.

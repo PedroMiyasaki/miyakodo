@@ -19,6 +19,7 @@ from pipeline.audio import detect_silences, keep_ranges, mouth_envelope, probe_d
 from pipeline.brand import SFX_FILES
 from pipeline.compile import compile_script
 from pipeline.compose import render_html
+from pipeline.registry import RegistryError, require_mode
 
 HF = "0.8.169"
 SKILL_DIR = Path(__file__).resolve().parents[1]
@@ -66,6 +67,10 @@ def main(argv=None) -> int:
 
 def build_project(roteiro_path: Path, out: Path | None, repo: Path) -> Path:
     data = json.loads(roteiro_path.resolve().read_text(encoding="utf-8"))
+    try:
+        spec = require_mode(data.get("mode"))
+    except RegistryError as exc:
+        raise SystemExit(str(exc)) from exc
     slug = str(data.get("slug") or roteiro_path.stem)
     target = out or (repo / "video" / "projects" / slug)
     if target.exists():
@@ -73,7 +78,7 @@ def build_project(roteiro_path: Path, out: Path | None, repo: Path) -> Path:
     assets = target / "assets"
     (assets / "fonts").mkdir(parents=True)
     (assets / "sfx").mkdir()
-    cuts, mouth = _media(data, assets, repo)
+    cuts, mouth = _media(data, assets, repo, spec)
     model = compile_script(data, cuts=cuts, mouth=mouth)
     _copy_static(assets, model["sfx"], model["duration"])
     origem = round(float(data["voice"]["out"]) - float(data["voice"]["in"]), 3)
@@ -126,7 +131,7 @@ def build_project(roteiro_path: Path, out: Path | None, repo: Path) -> Path:
     return target
 
 
-def _media(data: dict, assets: Path, repo: Path):
+def _media(data: dict, assets: Path, repo: Path, spec):
     voice = data.get("voice") or {}
     src = repo / voice["src"]
     if not src.exists():
@@ -138,10 +143,9 @@ def _media(data: dict, assets: Path, repo: Path):
         "-ss", str(start), "-to", str(end), "-i", str(src),
         "-ac", "1", "-ar", "44100", str(sliced),
     ])
-    mode = data.get("mode")
     cuts = None
     voice_out = assets / "voice.wav"
-    if mode == "gravacao":
+    if spec.media == "bruto":
         duration = probe_duration(sliced)
         silences = detect_silences(sliced)
         ranges = keep_ranges(duration, silences)
@@ -151,21 +155,23 @@ def _media(data: dict, assets: Path, repo: Path):
             _concat_audio(sliced, ranges, voice_out)
         else:
             shutil.copy2(sliced, voice_out)
-        footage = _footage(data, assets, repo, start, end, duration)
+        footage = _footage(data, assets, repo, start, end, duration, spec)
         if cuts:
             _concat_video(footage, cuts, assets / "footage.mp4")
             footage.unlink(missing_ok=True)
         elif footage.name != "footage.mp4":
             footage.replace(assets / "footage.mp4")
         mouth = []
-    else:
+    elif spec.media == "voz":
         shutil.copy2(sliced, voice_out)
         mouth = mouth_envelope(voice_out)
+    else:
+        raise SystemExit(f"media desconhecida no modo {spec.slug}: {spec.media}")
     sliced.unlink(missing_ok=True)
     return cuts, mouth
 
 
-def _footage(data, assets, repo, start, end, duration):
+def _footage(data, assets, repo, start, end, duration, mode):
     spec = data.get("footage") or {}
     window = assets / "footage-window.mp4"
     if spec.get("src"):
@@ -184,7 +190,7 @@ def _footage(data, assets, repo, start, end, duration):
         return window
     still = spec.get("still")
     if not still:
-        raise SystemExit("modo gravacao precisa de footage.src ou footage.still")
+        raise SystemExit(f"modo {mode.slug} precisa de footage.src ou footage.still")
     image = repo / still
     if not image.exists():
         raise SystemExit(f"still não encontrada: {image}")

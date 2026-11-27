@@ -17,22 +17,24 @@ from pipeline.brand import (
     SFX_FILES,
     VERDE,
 )
+from pipeline.registry import require_mode
 
 
 def render_html(model: dict) -> str:
     duration = f'{model["duration"]:.3f}'
     mode = model["mode"]
-    groups_html = _captions(model)
-    videos_html = _videos(model)
+    spec = require_mode(mode)
+    groups_html = _captions(model, spec)
+    videos_html = _videos(model, spec)
     stage = model["scenes_html"]
     grain = ""
-    if mode == "sem-gravacao":
+    if spec.grain:
         grain = (
             f'<div id="grain" class="clip" data-start="0" data-duration="{duration}" '
             f'data-track-index="1"></div>'
         )
     avatar = ""
-    if mode == "sem-gravacao":
+    if spec.avatar:
         avatar = (
             f'<div id="avatar" class="clip" data-start="0" data-duration="{duration}" '
             f'data-track-index="6">{avatar_svg()}</div>'
@@ -56,6 +58,12 @@ def render_html(model: dict) -> str:
         "mouthHz": model.get("mouth_hz") or 40,
         "videos": model.get("videos") or [],
     }
+    # sem-gravacao e gravacao mantêm o teste antigo no player, para o HTML não mudar.
+    # Modo novo com legenda faixa despacha por captionProfile.
+    highlight = 'PROJECT.mode === "sem-gravacao"'
+    if spec.caption_profile == "faixa" and spec.slug != "sem-gravacao":
+        highlight = 'PROJECT.captionProfile === "faixa"'
+        payload["captionProfile"] = spec.caption_profile
     data = json.dumps(payload, ensure_ascii=False)
     title = escape(model["title"])
     return f"""<!doctype html>
@@ -92,7 +100,7 @@ def render_html(model: dict) -> str:
       PROJECT.groups.forEach((group) => {{
         group.words.forEach((word) => {{
           const sel = "#" + word.id;
-          if (PROJECT.mode === "sem-gravacao") {{
+          if ({highlight}) {{
             tl.to(sel, {{
               color: ink, scale: 1.08, duration: 0.08, ease: "power2.out", transformOrigin: "50% 60%",
               boxShadow: "0 0 0 3px {BROWN}", borderRadius: "14px"
@@ -154,8 +162,8 @@ def render_html(model: dict) -> str:
 """
 
 
-def _videos(model: dict) -> str:
-    if model["mode"] != "gravacao":
+def _videos(model: dict, spec) -> str:
+    if not spec.footage:
         return ""
     blocks = []
     for video in model["videos"]:
@@ -171,15 +179,14 @@ def _videos(model: dict) -> str:
     return "".join(blocks)
 
 
-def _captions(model: dict) -> str:
-    mode = model["mode"]
+def _captions(model: dict, spec) -> str:
     chunks = []
     for group in model["groups"]:
-        top = _top(model, group["start"])
+        top = _top(model, group["start"], spec)
         words = []
         for word in group["words"]:
             role = word["role"]
-            if mode == "sem-gravacao":
+            if spec.caption_profile == "faixa":
                 cls = "word serif" if role in {"emphasis", "strong", "cta"} else "word"
             elif role == "cta":
                 cls = "word pill cta"
@@ -194,7 +201,7 @@ def _captions(model: dict) -> str:
             )
         box = ""
         dur = round(group["end"] - group["start"], 3)
-        kind = "face" if mode == "sem-gravacao" else "grav"
+        kind = spec.caption_css
         chunks.append(
             f'<div id="{group["id"]}" class="clip cap {kind}" data-start="{group["start"]}" '
             f'data-duration="{dur}" data-track-index="8" style="top:{top}px">'
@@ -203,15 +210,15 @@ def _captions(model: dict) -> str:
     return "".join(chunks)
 
 
-def _top(model, start):
-    if model["mode"] == "sem-gravacao":
-        return 224
+def _top(model, start, spec):
+    if spec.caption_anchor == "faixa":
+        return spec.caption_top
     beat = model["beats"][-1]
     for item in model["beats"]:
         if item["start"] - 0.05 <= start <= item["end"] + 0.05:
             beat = item
             break
-    return {"split": 900, "motion": 188, "creator": 220}[beat["layout"]]
+    return spec.caption_tops[beat["layout"]]
 
 
 def _audio(model, duration: str) -> str:

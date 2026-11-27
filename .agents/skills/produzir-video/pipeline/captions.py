@@ -1,4 +1,6 @@
-"""Agrupa palavras faladas nos dois estilos de legenda."""
+"""Agrupa palavras faladas no perfil de legenda do modo registrado."""
+
+from pipeline.registry import require_mode
 
 
 def normalize_token(text: str) -> str:
@@ -51,10 +53,10 @@ def _flush(groups: list[list[dict]], current: list[dict]) -> None:
 
 
 def group_words(words: list[dict], mode: str) -> list[dict]:
-    if mode == "gravacao":
-        max_n, max_chars, max_dur = 5, 32, 1.75
-    else:
-        max_n, max_chars, max_dur = 4, 26, 1.2
+    spec = require_mode(mode)
+    max_n = spec.caption_max_words
+    max_chars = spec.caption_max_chars
+    max_dur = spec.caption_max_duration
     groups: list[list[dict]] = []
     current: list[dict] = []
     for word in words:
@@ -70,7 +72,7 @@ def group_words(words: list[dict], mode: str) -> list[dict]:
             _flush(groups, current)
         current.append(word)
     _flush(groups, current)
-    if mode == "gravacao":
+    if spec.caption_merge_orphans:
         groups = _merge_short(groups, max_n, max_chars)
     packed = []
     for index, group in enumerate(groups):
