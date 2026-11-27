@@ -482,6 +482,59 @@ def scene_badge(pid, x, y, w, h, scene, t0, t1):
     return _box(pid, x, y, w, h, inner, "open badge-wrap"), _pop(pid, t0, "50% 50%"), _sfx("pop", t0)
 
 
+def scene_vidro(pid, x, y, w, h, scene, t0, t1):
+    """Card de vidro com rótulo em serif itálico. A gramática pede o rótulo. Nenhum scene.type tinha isso."""
+    label = escape(str(scene.get("label") or scene.get("kicker") or "Nota"))
+    title = escape(str(scene.get("title") or scene.get("text") or ""))
+    lines = _lines(scene.get("lines"), [])
+    ops = _pop(pid, t0, "50% 30%")
+    sfx = _sfx("whoosh", t0)
+    body = []
+    for index, line in enumerate(lines):
+        at = t0 + 0.28 + index * 0.32
+        body.append(f'<p id="{pid}-ln-{index}" class="glass-line">{escape(line)}</p>')
+        ops.append({
+            "kind": "fromTo",
+            "sel": f"#{pid}-ln-{index}",
+            "from": {"y": 10, "opacity": 0},
+            "to": {"y": 0, "opacity": 1, "duration": 0.24, "ease": "power2.out"},
+            "at": round(at, 4),
+        })
+    heading = f'<p class="glass-title">{title}</p>' if title else ""
+    inner = (
+        f'<div class="glass-card">'
+        f'<p class="glass-label">{label}</p>'
+        f'{heading}{"".join(body)}</div>'
+    )
+    return _box(pid, x, y, w, h, inner, "open"), ops, sfx
+
+
+def scene_alca(pid, x, y, w, h, scene, t0, t1):
+    """Card com alças de seleção. A gramática é a da ferramenta de design. As alças são nossas, não um asset de terceiro."""
+    label = escape(str(scene.get("label") or scene.get("kicker") or ""))
+    lines = _lines(scene.get("lines") or ([scene["text"]] if scene.get("text") else None), [" "])
+    ops = _pop(pid, t0, "50% 40%")
+    sfx = _sfx("click", t0)
+    body = []
+    for index, line in enumerate(lines):
+        at = t0 + 0.22 + index * 0.28
+        body.append(f'<p id="{pid}-ln-{index}" class="alca-line">{escape(line)}</p>')
+        ops.append({
+            "kind": "fromTo",
+            "sel": f"#{pid}-ln-{index}",
+            "from": {"opacity": 0},
+            "to": {"opacity": 1, "duration": 0.2, "ease": "power1.out"},
+            "at": round(at, 4),
+        })
+    handles = "".join(
+        f'<i class="handle {name}"></i>'
+        for name in ("nw", "n", "ne", "e", "se", "s", "sw", "w")
+    )
+    kicker = f'<p class="alca-label">{label}</p>' if label else ""
+    inner = f'<div class="alca-card">{kicker}{"".join(body)}{handles}</div>'
+    return _box(pid, x, y, w, h, inner, "open"), ops, sfx
+
+
 BUILDERS = {
     "stack": scene_stack,
     "timeline": scene_timeline,
@@ -500,6 +553,8 @@ BUILDERS = {
     "statement": scene_statement,
     "carlos": scene_carlos,
     "versus": scene_versus,
+    "vidro": scene_vidro,
+    "alca": scene_alca,
 }
 
 # Cores usadas no SVG/CSS inline acima ficam explícitas para o teste de paleta.

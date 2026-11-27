@@ -27,6 +27,7 @@ O registro hoje tem:
 |---|---|---|---|
 | `sem-gravacao` | Não | Roteiro + faixa de voz | Avatar do Pedro, legendas numa faixa própria, cortes entre layouts |
 | `gravacao` | Sim | Roteiro + vídeo bruto + voz (a do bruto, ou a mesma janela) | Talking head com jump cut de silêncio, overlays em split, tela cheia ou punch-in |
+| `jason-cooperson` | Não | Roteiro + faixa de voz | Avatar no painel, legenda em duas vozes, card de vidro e alças. Sem talking head |
 
 `sem-gravacao` quando não há gravação nova e a peça pode ser carregada pela voz e pelo desenho. `gravacao` quando existe talking head e as animações entram por cima da pessoa.
 
@@ -34,7 +35,7 @@ O registro hoje tem:
 
 Arquivo JSON. Tempos do `voice`, dos `beats` e das `words` usam o relógio do arquivo de voz, em segundos.
 
-- `mode`: slug de uma pasta em `modos/`. Hoje, `sem-gravacao` ou `gravacao`.
+- `mode`: slug de uma pasta em `modos/`. Hoje, `sem-gravacao`, `gravacao` ou `jason-cooperson`.
 - `slug`, `title`.
 - `purpose`: `tutorial`, `opiniao`, `noticia`, `lista`, `historia` ou `cta`.
 - `voice.src`: caminho a partir da raiz do repo. `voice.in` e `voice.out` recortam a janela.

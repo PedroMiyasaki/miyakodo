@@ -36,6 +36,8 @@ SCENE_TYPES = (
     "statement",
     "carlos",
     "versus",
+    "vidro",
+    "alca",
 )
 
 # guide: Pedro à esquerda, cena à direita.
@@ -84,6 +86,25 @@ RECORDED_BOXES = {
     "split": (64, 110, 952, 820),
     "creator": (120, 1460, 840, 220),
     "motion": (64, 160, 952, 1480),
+}
+
+# jason-cooperson. painel: card em cima, avatar com a cabeça vazando do poço.
+# full: motion sem avatar. hero: opinião e CTA, busto grande.
+# A âncora do movimento continua o pip de LAYOUT_SPOTS (left 48, top 1196, width 220).
+STUDIO_SPOTS = {
+    "painel": {
+        "scene": (72, 236, 800, 440),
+        "avatar": (300, 920, 440, 1),
+        "well": (160, 1080, 700, 340),
+    },
+    "full": {
+        "scene": (72, 220, 800, 860),
+        "avatar": (48, 1180, 200, 0),
+    },
+    "hero": {
+        "scene": (48, 448, 840, 220),
+        "avatar": (80, 700, 600, 1),
+    },
 }
 
 SFX_FILES = {

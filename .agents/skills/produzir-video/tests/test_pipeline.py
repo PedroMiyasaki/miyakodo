@@ -137,6 +137,8 @@ class CompileTests(unittest.TestCase):
             "statement": {"kicker": "Ideia", "text": "Sem interface"},
             "carlos": {"pose": "boss", "line": "o empresário"},
             "versus": {"left": "Pessoa", "right": "Agente", "left_items": ["tela"], "right_items": ["API"], "pose": "squat"},
+            "vidro": {"label": "Prova", "title": "evals", "lines": ["negócio"]},
+            "alca": {"label": "Corte", "lines": ["use case"]},
         }
         for kind in SCENE_TYPES:
             html, ops, sfx = build_scene("p", 0, 0, 400, 300, {"type": kind, **sample[kind]}, 0.2, 2.0)
@@ -211,7 +213,7 @@ class RegistryTests(unittest.TestCase):
             })
         self.assertEqual(
             str(caught.exception),
-            "modo desconhecido: nao-existe. Modos registrados: gravacao, sem-gravacao.",
+            "modo desconhecido: nao-existe. Modos registrados: gravacao, jason-cooperson, sem-gravacao.",
         )
 
     def test_missing_mode_is_explicit(self):
@@ -230,13 +232,13 @@ class RegistryTests(unittest.TestCase):
                 main(["build", str(roteiro)])
         message = str(caught.exception)
         self.assertIn("modo desconhecido: nao-existe", message)
-        self.assertIn("Modos registrados: gravacao, sem-gravacao.", message)
+        self.assertIn("Modos registrados: gravacao, jason-cooperson, sem-gravacao.", message)
 
     def test_registry_is_the_mode_list(self):
         from pipeline.registry import load_modes
 
         modes = load_modes()
-        self.assertEqual(set(modes), {"sem-gravacao", "gravacao"})
+        self.assertEqual(set(modes), {"sem-gravacao", "gravacao", "jason-cooperson"})
         sem = modes["sem-gravacao"]
         self.assertEqual(sem.media, "voz")
         self.assertEqual(sem.boxes, "faceless")
@@ -263,6 +265,14 @@ class RegistryTests(unittest.TestCase):
         self.assertTrue(grav.caption_merge_orphans)
         self.assertEqual(grav.scene_wrapper, "plain")
         self.assertTrue(grav.whoosh_on_change)
+        studio = modes["jason-cooperson"]
+        self.assertEqual(studio.media, "voz")
+        self.assertEqual(studio.boxes, "studio")
+        self.assertEqual(studio.caption_profile, "duas-vozes")
+        self.assertEqual(studio.default_layout, "painel")
+        self.assertEqual(studio.caption_max_words, 3)
+        self.assertTrue(studio.avatar)
+        self.assertFalse(studio.footage)
 
     def test_a_folder_registers_without_a_second_list(self):
         from pipeline.registry import load_modes
@@ -277,6 +287,71 @@ class RegistryTests(unittest.TestCase):
         self.assertEqual(set(found), {"copia-faixa"})
         self.assertEqual(found["copia-faixa"].caption_profile, "faixa")
         self.assertTrue(found["copia-faixa"].avatar)
+
+    def test_jason_cooperson_keeps_grammar_and_glitch_cap(self):
+        model = compile_script({
+            "mode": "jason-cooperson",
+            "slug": "amostra",
+            "purpose": "opiniao",
+            "voice": {"in": 0, "out": 8},
+            "emphasis": ["evals"],
+            "cta": ["vídeo"],
+            "logos": ["Miyakodo"],
+            "words": words("evals na Miyakodo fica no vídeo", start=0.2, step=0.9),
+            "beats": [
+                {"start": 0, "end": 3, "layout": "painel", "tone": "azul",
+                 "scene": {"type": "alca", "label": "corte", "lines": ["um"]}},
+                {"start": 3, "end": 6, "layout": "full", "tone": "paper",
+                 "scene": {"type": "vidro", "label": "prova", "title": "evals", "lines": ["negócio"]}},
+                {"start": 6, "end": 8, "layout": "hero",
+                 "scene": {"type": "badge", "text": "fica"}},
+            ],
+        })
+        html = render_html(model)
+        self.assertIn("head-well", html)
+        self.assertIn("glass-label", html)
+        self.assertIn("handle nw", html)
+        self.assertIn("cap duo", html)
+        self.assertIn("duo-script", html)
+        self.assertIn("cap-logo", html)
+        self.assertIn("duas-vozes", html)
+        self.assertEqual(html.count('class="clip chapter-flash"'), 0)
+        self.assertIsNotNone(model["avatar"])
+        with self.assertRaises(ScriptError) as caught:
+            compile_script({
+                "mode": "jason-cooperson",
+                "voice": {"in": 0, "out": 8},
+                "beats": [{
+                    "start": 0, "end": 8, "layout": "painel", "chapter": True,
+                    "scene": {"type": "badge", "text": "x"},
+                }],
+            })
+        self.assertIn("glitch acima do teto", str(caught.exception))
+        long_beats = []
+        for index in range(4):
+            long_beats.append({
+                "start": index * 17,
+                "end": index * 17 + 8,
+                "layout": "full",
+                "chapter": True,
+                "scene": {"type": "statement", "text": "ok"},
+            })
+        allowed = compile_script({
+            "mode": "jason-cooperson",
+            "voice": {"in": 0, "out": 69},
+            "beats": long_beats,
+        })
+        self.assertEqual(render_html(allowed).count('class="clip chapter-flash"'), 4)
+        long_beats.append({
+            "start": 60, "end": 68, "layout": "full", "chapter": True,
+            "scene": {"type": "statement", "text": "extra"},
+        })
+        with self.assertRaises(ScriptError):
+            compile_script({
+                "mode": "jason-cooperson",
+                "voice": {"in": 0, "out": 69},
+                "beats": long_beats,
+            })
 
     def test_migrated_modes_keep_the_same_html(self):
         expected = {

@@ -69,7 +69,7 @@ Cada edição aponta um frame em `frames/`. O nome do arquivo carrega a ordem ou
 | `layouts` | lista | layouts aceitos no beat |
 | `default_layout` | um item de `layouts` | beat sem layout |
 | `validate_tone` | `true` ou `false` | se `tone` tem de estar na paleta |
-| `caption_profile` | `faixa` ou `gravada` | tamanho do grupo e a classe da legenda |
+| `caption_profile` | `faixa`, `gravada` ou `duas-vozes` | tamanho do grupo e a classe da legenda |
 | `caption_max_words` | inteiro | teto de palavras |
 | `caption_max_chars` | inteiro | teto de caracteres |
 | `caption_max_duration` | número, em segundos | teto de duração do grupo |
@@ -82,13 +82,13 @@ Cada edição aponta um frame em `frames/`. O nome do arquivo carrega a ordem ou
 | `avatar` | `true` ou `false` | avatar do Pedro e o movimento dele |
 | `grain` | `true` ou `false` | grão de papel |
 | `scene_wrapper` | `wash` ou `plain` | cena com tom e fade, ou corte seco |
-| `boxes` | `faceless` ou `recorded` | qual catálogo de caixas o layout usa |
+| `boxes` | `faceless`, `recorded` ou `studio` | qual catálogo de caixas o layout usa |
 
 `media: voz` copia a faixa, mede a boca e não pede footage. `media: bruto` corta silêncio interno acima de cerca de 0,28 s, com respiro de 0,05 s nas bordas, e exige `footage.src` ou `footage.still`.
 
 `scene_wrapper: wash` pinta o tom e faz a cena entrar em 0,16 s. `plain` é o corte seco, sem wash.
 
-`caption_profile: faixa` agrupa curto e marca ênfase, strong e CTA em itálico Instrument Serif. `gravada` agrupa um pouco maior, manda ênfase para o verde, strong para a pílula dark brown e CTA para a pílula laranja.
+`caption_profile: faixa` agrupa curto e marca ênfase, strong e CTA em itálico Instrument Serif. `gravada` agrupa um pouco maior, manda ênfase para o verde, strong para a pílula dark brown e CTA para a pílula laranja. `duas-vozes` fica numa linha, com itálico na ênfase, logo inline e a palavra seguinte borrada.
 
 Campo que o registro não conhece, ou valor fora dessas listas, faz o modo inteiro falhar ao carregar. Para um perfil, um wrapper ou uma caixa que ainda não existem, altere `pipeline/registry.py` e o ponto do pipeline que desenha isso (`compile.py`, `compose.py`, `captions.py` ou `cli.py`). Escreva no `MODE.md` qual edição do estudo exigiu a extensão.
 
@@ -107,7 +107,11 @@ Campo que o registro não conhece, ou valor fora dessas listas, faz o modo intei
 
 `boxes: recorded`, caixas em `RECORDED_BOXES`: `split`, `motion`, `creator`.
 
-`scene.type`: `timeline`, `mockup`, `counter`, `diagram`, `chat`, `code`, `phone`, `grid`, `scanline`, `folders`, `bullets`, `quote`, `badge`, `stack`, `statement`, `carlos`, `versus`.
+`boxes: studio`, caixas em `STUDIO_SPOTS`: `painel` (poço arredondado, cabeça do avatar vazando), `full`, `hero`.
+
+`scene.type`: `timeline`, `mockup`, `counter`, `diagram`, `chat`, `code`, `phone`, `grid`, `scanline`, `folders`, `bullets`, `quote`, `badge`, `stack`, `statement`, `carlos`, `versus`, `vidro`, `alca`.
+
+`vidro` é o card translúcido com rótulo em serif itálico. `alca` é o card com alças de seleção. `duas-vozes` é a legenda de uma linha, com itálico na ênfase, logo inline na lista `logos` e a palavra seguinte borrada. `chapter: true` pede um flash, no teto de quatro a cada 69 s.
 
 `stack` recebe `children`. Os outros leem `title`, `items`, `lines`, `messages`, `value`, `label`, `text`, `filename`, `handle`, `comment`, `dm`, `center`, `root`, `kicker`, `kind` ou `scan`, conforme o tipo. O que não vier usa um miolo pequeno.
 

@@ -12,6 +12,7 @@ from pipeline.brand import (
     PURPOSES,
     RECORDED_BOXES,
     SCENE_TYPES,
+    STUDIO_SPOTS,
     TONES,
     WIDTH,
 )
@@ -56,6 +57,7 @@ def compile_script(data: dict, cuts=None, mouth=None) -> dict:
     beats = _extend_beats(beats, duration)
     if not beats:
         raise ScriptError("nenhum beat sobreviveu aos cortes")
+    _guard_chapters(beats, duration)
 
     words = [word for word in words if word["end"] > 0 and word["start"] < duration]
     words = tag_roles(
@@ -63,6 +65,7 @@ def compile_script(data: dict, cuts=None, mouth=None) -> dict:
         data.get("emphasis") or [],
         data.get("strong") or [],
         data.get("cta") or [],
+        data.get("logos") or [],
     )
     groups = _clamp_groups(group_words(words, spec.slug), duration)
     scenes, ops, sfx = _scenes(beats, spec)
@@ -146,6 +149,7 @@ def _normalize_beats(beats, origin, voice_out, spec):
             "label": str(beat.get("label") or scene.get("title") or scene.get("text") or f"{index + 1}"),
             "scene": scene,
             "punch": bool(beat.get("punch", layout == "creator")),
+            "chapter": bool(beat.get("chapter", False)),
         })
     if len(normal) < 1:
         raise ScriptError("beats fora da janela da voz")
@@ -210,10 +214,29 @@ def _extend_beats(beats, duration):
     return ordered
 
 
-def _box_for(spec, layout, index, panel_count):
+def _spots(spec):
+    if spec.boxes == "studio":
+        return STUDIO_SPOTS
     if spec.boxes == "faceless":
-        return LAYOUT_SPOTS[layout]["scene"]
+        return LAYOUT_SPOTS
+    return None
+
+
+def _box_for(spec, layout, index, panel_count):
+    spots = _spots(spec)
+    if spots is not None:
+        return spots[layout]["scene"]
     return RECORDED_BOXES[layout]
+
+
+def _guard_chapters(beats, duration):
+    count = sum(1 for beat in beats if beat.get("chapter"))
+    cap = int(float(duration) * 4 / 69)
+    if count > cap:
+        raise ScriptError(
+            f"glitch acima do teto: {count} flashes em {duration:.1f}s. "
+            f"O teto é {cap}, quatro a cada 69 s."
+        )
 
 
 def _scenes(beats, spec):
@@ -226,18 +249,19 @@ def _scenes(beats, spec):
             beat["id"], x, y, w, h, beat["scene"], beat["start"] + 0.08, beat["end"],
         )
         dur = round(beat["end"] - beat["start"], 3)
+        well = _well(spec, beat)
         if spec.scene_wrapper == "plain":
             html_parts.append(
                 f'<section id="beat-{beat["id"]}" class="clip beat" data-start="{beat["start"]}" '
                 f'data-duration="{dur}" data-track-index="4">'
-                f'{piece}</section>'
+                f'{well}{piece}</section>'
             )
         elif spec.scene_wrapper == "wash":
             html_parts.append(
                 f'<section id="beat-{beat["id"]}" class="clip beat tone-{beat["tone"]}" '
                 f'data-start="{beat["start"]}" data-duration="{dur}" data-track-index="4">'
                 f'<div class="wash"></div>'
-                f'<div id="beat-{beat["id"]}-in" class="beat-in">{piece}</div>'
+                f'<div id="beat-{beat["id"]}-in" class="beat-in">{well}{piece}</div>'
                 f'</section>'
             )
             ops.append({
@@ -253,16 +277,43 @@ def _scenes(beats, spec):
         sfx.extend(piece_sfx)
         if spec.whoosh_on_change and index:
             sfx.append({"name": "whoosh", "at": beat["start"]})
+        if beat.get("chapter"):
+            html_parts.append(
+                f'<div id="flash-{beat["id"]}" class="clip chapter-flash" '
+                f'data-start="{beat["start"]}" data-duration="0.16" data-track-index="7"></div>'
+            )
+            ops.append({
+                "kind": "fromTo",
+                "sel": f'#flash-{beat["id"]}',
+                "from": {"opacity": 0.9},
+                "to": {"opacity": 0, "duration": 0.16, "ease": "power2.out"},
+                "at": beat["start"],
+            })
+            sfx.append({"name": "whoosh", "at": beat["start"]})
     return "".join(html_parts), ops, sfx
+
+
+def _well(spec, beat) -> str:
+    spots = _spots(spec)
+    if not spots:
+        return ""
+    well = spots.get(beat["layout"], {}).get("well") if isinstance(spots.get(beat["layout"]), dict) else None
+    if not well:
+        return ""
+    x, y, w, h = well
+    return (
+        f'<div class="head-well" style="left:{x}px;top:{y}px;width:{w}px;height:{h}px"></div>'
+    )
 
 
 def _avatar_moves(beats, spec, duration):
     if not spec.avatar:
         return []
+    spots = _spots(spec) or LAYOUT_SPOTS
     anchor_left, anchor_top, anchor_width, _anchor_opacity = LAYOUT_SPOTS["pip"]["avatar"]
     moves = []
     for beat in beats:
-        left, top, width, opacity = LAYOUT_SPOTS[beat["layout"]]["avatar"]
+        left, top, width, opacity = spots[beat["layout"]]["avatar"]
         moves.append({
             "at": beat["start"],
             "duration": 0.38 if beat["start"] else 0,

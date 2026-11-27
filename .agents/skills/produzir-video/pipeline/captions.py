@@ -28,15 +28,18 @@ def sanitize_words(words: list[dict]) -> list[dict]:
     return clean
 
 
-def tag_roles(words: list[dict], emphasis=(), strong=(), cta=()) -> list[dict]:
+def tag_roles(words: list[dict], emphasis=(), strong=(), cta=(), logos=()) -> list[dict]:
     emphasis = {normalize_token(item) for item in emphasis}
     strong = {normalize_token(item) for item in strong}
     cta = {normalize_token(item) for item in cta}
+    logos = {normalize_token(item) for item in logos}
     tagged = []
     for word in words:
         key = normalize_token(word["text"])
         role = word.get("role") or "normal"
-        if key in cta:
+        if key in logos:
+            role = "logo"
+        elif key in cta:
             role = "cta"
         elif key in strong:
             role = "strong"

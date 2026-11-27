@@ -64,6 +64,14 @@ def render_html(model: dict) -> str:
     if spec.caption_profile == "faixa" and spec.slug != "sem-gravacao":
         highlight = 'PROJECT.captionProfile === "faixa"'
         payload["captionProfile"] = spec.caption_profile
+    if spec.caption_profile == "duas-vozes":
+        payload["captionProfile"] = "duas-vozes"
+    css = _css()
+    caption_js = _caption_js(highlight)
+    if spec.boxes == "studio" or spec.caption_profile == "duas-vozes":
+        css += _css_studio()
+        if spec.caption_profile == "duas-vozes":
+            caption_js = _caption_js_duo()
     data = json.dumps(payload, ensure_ascii=False)
     title = escape(model["title"])
     return f"""<!doctype html>
@@ -73,7 +81,7 @@ def render_html(model: dict) -> str:
   <title>{title}</title>
   <script src="assets/gsap.min.js"></script>
   <style>
-    {_css()}
+    {css}
   </style>
 </head>
 <body>
@@ -100,15 +108,7 @@ def render_html(model: dict) -> str:
       PROJECT.groups.forEach((group) => {{
         group.words.forEach((word) => {{
           const sel = "#" + word.id;
-          if ({highlight}) {{
-            tl.to(sel, {{
-              color: ink, scale: 1.08, duration: 0.08, ease: "power2.out", transformOrigin: "50% 60%",
-              boxShadow: "0 0 0 3px {BROWN}", borderRadius: "14px"
-            }}, word.start);
-            tl.to(sel, {{ scale: 1, boxShadow: "0 0 0 0px {BROWN}", duration: 0.07, ease: "power2.out" }}, word.end);
-          }} else {{
-            tl.to(sel, {{ opacity: 1, duration: 0.05 }}, word.start);
-          }}
+{caption_js}
         }});
       }});
       const avatar = PROJECT.avatar;
@@ -162,6 +162,60 @@ def render_html(model: dict) -> str:
 """
 
 
+def _caption_js(highlight: str) -> str:
+    """O bloco histórico, com as chaves já resolvidas, para o HTML dos modos antigos não mudar."""
+    return (
+        f"          if ({highlight}) {{\n"
+        "            tl.to(sel, {\n"
+        '              color: ink, scale: 1.08, duration: 0.08, ease: "power2.out", transformOrigin: "50% 60%",\n'
+        f'              boxShadow: "0 0 0 3px {BROWN}", borderRadius: "14px"\n'
+        "            }, word.start);\n"
+        f'            tl.to(sel, {{ scale: 1, boxShadow: "0 0 0 0px {BROWN}", duration: 0.07, ease: "power2.out" }}, word.end);\n'
+        "          } else {\n"
+        "            tl.to(sel, { opacity: 1, duration: 0.05 }, word.start);\n"
+        "          }"
+    )
+
+
+def _caption_js_duo() -> str:
+    return """          if (PROJECT.captionProfile === "duas-vozes") {
+            const words = group.words;
+            const index = words.indexOf(word);
+            tl.to(sel, { opacity: 1, filter: "blur(0px)", duration: 0.08, ease: "power2.out" }, word.start);
+            const nxt = words[index + 1];
+            if (nxt) tl.set("#" + nxt.id, { opacity: 0.38, filter: "blur(6px)" }, word.start);
+          }"""
+
+
+def _css_studio() -> str:
+    return f"""
+    .head-well {{ position: absolute; border-radius: 48px; background: {OFFWHITE}; border: 3px solid {BROWN};
+      box-shadow: 0 18px 36px rgba(40,14,3,.16); }}
+    .chapter-flash {{ inset: 0; z-index: 7; background: {OFFWHITE}; pointer-events: none; }}
+    .chapter-flash::after {{ content: ""; position: absolute; left: 0; right: 0; top: 46%; height: 10px; background: {LARANJA}; }}
+    .piece:has(.alca-card) {{ overflow: visible; }}
+    .glass-card {{ height: 100%; border-radius: 36px; border: 3px solid {BROWN}; background: rgba(246,244,238,.78);
+      padding: 28px 32px; box-shadow: 0 24px 44px rgba(40,14,3,.12); }}
+    .glass-label, .alca-label {{ margin: 0 0 12px; font-family: "Instrument Serif", serif; font-style: italic;
+      font-size: 42px; letter-spacing: .04em; text-transform: uppercase; color: {BROWN}; }}
+    .glass-title {{ margin: 0 0 8px; font-weight: 800; font-size: 64px; line-height: 1; color: {BROWN}; }}
+    .glass-line, .alca-line {{ margin: 10px 0; font-weight: 600; font-size: 36px; color: {BROWN}; }}
+    .alca-card {{ position: relative; height: 100%; border-radius: 28px; border: 3px solid {BROWN}; background: {PAPER};
+      box-shadow: 0 0 0 8px {OLIVA}; padding: 36px 32px; }}
+    .handle {{ position: absolute; width: 16px; height: 16px; background: {OFFWHITE}; border: 3px solid {BROWN}; box-sizing: border-box; }}
+    .handle.nw {{ left: -8px; top: -8px; }} .handle.n {{ left: calc(50% - 8px); top: -8px; }}
+    .handle.ne {{ right: -8px; top: -8px; }} .handle.e {{ right: -8px; top: calc(50% - 8px); }}
+    .handle.se {{ right: -8px; bottom: -8px; }} .handle.s {{ left: calc(50% - 8px); bottom: -8px; }}
+    .handle.sw {{ left: -8px; bottom: -8px; }} .handle.w {{ left: -8px; top: calc(50% - 8px); }}
+    .cap.duo .cap-line {{ background: {OFFWHITE}; border: 3px solid {BROWN}; border-radius: 18px; padding: 8px 16px; flex-wrap: nowrap; }}
+    .cap.duo .word {{ font-weight: 800; font-size: 48px; filter: blur(6px); opacity: 0.38; }}
+    .cap.duo .word.lead {{ filter: none; opacity: 1; }}
+    .cap.duo .duo-script {{ font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400; font-size: 56px; }}
+    .cap.duo .duo-cta {{ color: {LARANJA}; text-shadow: 0 0 16px rgba(219,60,5,.55); }}
+    .cap-logo {{ height: 46px; width: auto; vertical-align: middle; }}
+    """
+
+
 def _videos(model: dict, spec) -> str:
     if not spec.footage:
         return ""
@@ -184,20 +238,41 @@ def _captions(model: dict, spec) -> str:
     for group in model["groups"]:
         top = _top(model, group["start"], spec)
         words = []
-        for word in group["words"]:
+        for index, word in enumerate(group["words"]):
             role = word["role"]
+            text = escape(word["text"])
             if spec.caption_profile == "faixa":
                 cls = "word serif" if role in {"emphasis", "strong", "cta"} else "word"
+                inner = text
+            elif spec.caption_profile == "duas-vozes":
+                if role == "logo":
+                    cls = "word duo-logo"
+                    inner = f'<img class="cap-logo" src="assets/logo.png" alt="{text}"/>'
+                elif role in {"emphasis", "strong"}:
+                    cls = "word duo-script"
+                    inner = text
+                elif role == "cta":
+                    cls = "word duo-cta"
+                    inner = text
+                else:
+                    cls = "word duo-sans"
+                    inner = text
+                if index == 0:
+                    cls += " lead"
             elif role == "cta":
                 cls = "word pill cta"
+                inner = text
             elif role == "strong":
                 cls = "word pill"
+                inner = text
             elif role == "emphasis":
                 cls = "word key"
+                inner = text
             else:
                 cls = "word"
+                inner = text
             words.append(
-                f'<span id="{word["id"]}" class="{cls}" data-layout-allow-overlap="true">{escape(word["text"])}</span>'
+                f'<span id="{word["id"]}" class="{cls}" data-layout-allow-overlap="true">{inner}</span>'
             )
         box = ""
         dur = round(group["end"] - group["start"], 3)

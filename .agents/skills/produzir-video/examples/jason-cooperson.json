@@ -1,0 +1,324 @@
+{
+  "mode": "jason-cooperson",
+  "slug": "exemplo-jason-cooperson",
+  "title": "Evals, do use case ao negócio",
+  "purpose": "opiniao",
+  "voice": {
+    "src": "video/projects/evals-reel/assets/evals-cut-audio.m4a",
+    "in": 0.1,
+    "out": 14.67
+  },
+  "emphasis": [
+    "evals",
+    "negócios"
+  ],
+  "strong": [
+    "técnico"
+  ],
+  "cta": [
+    "vídeo"
+  ],
+  "words": [
+    {
+      "text": "Se",
+      "start": 0.14,
+      "end": 0.22
+    },
+    {
+      "text": "você",
+      "start": 0.22,
+      "end": 0.24
+    },
+    {
+      "text": "está",
+      "start": 0.24,
+      "end": 0.8
+    },
+    {
+      "text": "desenvolvendo",
+      "start": 0.8,
+      "end": 1.37
+    },
+    {
+      "text": "qualquer",
+      "start": 1.37,
+      "end": 1.91
+    },
+    {
+      "text": "use",
+      "start": 1.91,
+      "end": 2.19
+    },
+    {
+      "text": "case",
+      "start": 2.19,
+      "end": 2.38
+    },
+    {
+      "text": "com",
+      "start": 2.38,
+      "end": 2.62
+    },
+    {
+      "text": "IA,",
+      "start": 2.62,
+      "end": 2.94
+    },
+    {
+      "text": "você",
+      "start": 2.94,
+      "end": 3.13
+    },
+    {
+      "text": "precisa",
+      "start": 3.13,
+      "end": 3.53
+    },
+    {
+      "text": "conhecer",
+      "start": 3.53,
+      "end": 3.99
+    },
+    {
+      "text": "um",
+      "start": 3.99,
+      "end": 4.14
+    },
+    {
+      "text": "negócio",
+      "start": 4.14,
+      "end": 4.52
+    },
+    {
+      "text": "chamado",
+      "start": 4.52,
+      "end": 5.02
+    },
+    {
+      "text": "evals.",
+      "start": 5.02,
+      "end": 5.6
+    },
+    {
+      "text": "Apesar",
+      "start": 6.12,
+      "end": 6.12
+    },
+    {
+      "text": "dos",
+      "start": 6.12,
+      "end": 6.19
+    },
+    {
+      "text": "evals",
+      "start": 6.19,
+      "end": 6.35
+    },
+    {
+      "text": "serem",
+      "start": 6.35,
+      "end": 6.73
+    },
+    {
+      "text": "um",
+      "start": 6.73,
+      "end": 6.8
+    },
+    {
+      "text": "assunto",
+      "start": 6.8,
+      "end": 7.15
+    },
+    {
+      "text": "técnico",
+      "start": 7.15,
+      "end": 7.48
+    },
+    {
+      "text": "na",
+      "start": 7.48,
+      "end": 7.59
+    },
+    {
+      "text": "área",
+      "start": 7.59,
+      "end": 7.89
+    },
+    {
+      "text": "de",
+      "start": 7.89,
+      "end": 7.92
+    },
+    {
+      "text": "inteligência",
+      "start": 7.92,
+      "end": 8.6
+    },
+    {
+      "text": "artificial,",
+      "start": 8.6,
+      "end": 9.3
+    },
+    {
+      "text": "eles",
+      "start": 9.3,
+      "end": 9.55
+    },
+    {
+      "text": "tocam",
+      "start": 9.55,
+      "end": 9.85
+    },
+    {
+      "text": "muito",
+      "start": 9.85,
+      "end": 10.16
+    },
+    {
+      "text": "na",
+      "start": 10.16,
+      "end": 10.28
+    },
+    {
+      "text": "área",
+      "start": 10.28,
+      "end": 10.53
+    },
+    {
+      "text": "de",
+      "start": 10.53,
+      "end": 10.65
+    },
+    {
+      "text": "negócios.",
+      "start": 10.65,
+      "end": 11.38
+    },
+    {
+      "text": "Então,",
+      "start": 11.56,
+      "end": 11.78
+    },
+    {
+      "text": "se",
+      "start": 11.78,
+      "end": 11.89
+    },
+    {
+      "text": "você",
+      "start": 11.89,
+      "end": 12.17
+    },
+    {
+      "text": "é",
+      "start": 12.17,
+      "end": 12.22
+    },
+    {
+      "text": "uma",
+      "start": 12.22,
+      "end": 12.34
+    },
+    {
+      "text": "pessoa",
+      "start": 12.34,
+      "end": 12.68
+    },
+    {
+      "text": "que",
+      "start": 12.68,
+      "end": 12.85
+    },
+    {
+      "text": "é",
+      "start": 12.85,
+      "end": 12.9
+    },
+    {
+      "text": "não",
+      "start": 12.9,
+      "end": 13.07
+    },
+    {
+      "text": "técnica,",
+      "start": 13.07,
+      "end": 13.61
+    },
+    {
+      "text": "eu",
+      "start": 13.61,
+      "end": 13.69
+    },
+    {
+      "text": "ficaria",
+      "start": 13.69,
+      "end": 14.09
+    },
+    {
+      "text": "nesse",
+      "start": 14.09,
+      "end": 14.38
+    },
+    {
+      "text": "vídeo",
+      "start": 14.38,
+      "end": 14.67
+    }
+  ],
+  "beats": [
+    {
+      "start": 0.1,
+      "end": 4.52,
+      "layout": "painel",
+      "tone": "azul",
+      "label": "O corte",
+      "scene": {
+        "type": "alca",
+        "label": "o corte",
+        "lines": [
+          "use case",
+          "com IA"
+        ]
+      }
+    },
+    {
+      "start": 4.52,
+      "end": 9.3,
+      "layout": "full",
+      "tone": "paper",
+      "label": "A prova",
+      "scene": {
+        "type": "vidro",
+        "label": "a prova",
+        "title": "evals",
+        "lines": [
+          "assunto técnico",
+          "vira negócio"
+        ]
+      }
+    },
+    {
+      "start": 9.3,
+      "end": 12.2,
+      "layout": "painel",
+      "tone": "verde",
+      "label": "Negócios",
+      "scene": {
+        "type": "statement",
+        "kicker": "evals",
+        "text": "negócios"
+      }
+    },
+    {
+      "start": 12.2,
+      "end": 14.67,
+      "layout": "hero",
+      "tone": "paper",
+      "label": "Fica",
+      "scene": {
+        "type": "badge",
+        "text": "fica no vídeo"
+      }
+    }
+  ]
+}

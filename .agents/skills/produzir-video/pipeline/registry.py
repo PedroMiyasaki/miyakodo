@@ -7,7 +7,7 @@ leem este módulo para validar e despachar o campo mode do roteiro.
 from dataclasses import dataclass
 from pathlib import Path
 
-from pipeline.brand import LAYOUT_SPOTS, RECORDED_BOXES
+from pipeline.brand import LAYOUT_SPOTS, RECORDED_BOXES, STUDIO_SPOTS
 
 
 class RegistryError(ValueError):
@@ -20,10 +20,10 @@ class UnknownMode(RegistryError):
 
 _ROOT = Path(__file__).resolve().parents[1] / "modos"
 
-CAPTION_CSS = {"faixa": "face", "gravada": "grav"}
+CAPTION_CSS = {"faixa": "face", "gravada": "grav", "duas-vozes": "duo"}
 MEDIA_VALUES = ("voz", "bruto")
 WRAPPERS = ("wash", "plain")
-BOX_CATALOGS = ("faceless", "recorded")
+BOX_CATALOGS = ("faceless", "recorded", "studio")
 ANCHORS = ("faixa", "layout")
 
 _FIELDS = (
@@ -184,7 +184,12 @@ def _load_mode(doc: Path, folder: str) -> Mode:
 
 
 def _check_layouts(doc: Path, boxes: str, layouts: tuple[str, ...]) -> None:
-    catalog = LAYOUT_SPOTS if boxes == "faceless" else RECORDED_BOXES
+    if boxes == "faceless":
+        catalog = LAYOUT_SPOTS
+    elif boxes == "studio":
+        catalog = STUDIO_SPOTS
+    else:
+        catalog = RECORDED_BOXES
     missing = [name for name in layouts if name not in catalog]
     if missing:
         raise RegistryError(
