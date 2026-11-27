@@ -1,0 +1,20 @@
+A revisão humana de exceção vira carimbo quando a fila cresce e o erro fica raro.
+
+A IDC publicou em 26 de novembro uma leitura de pesquisa com 91 respostas de finanças. Conforme a tarefa, 70% a 74% ou revisam só a exceção, ou mantêm uma pessoa na maior parte das decisões. O número parece controle. O limite é a fila.
+
+Volume alto estoura quem revisa. Erro raro demais faz o olho acostumar. Nos dois casos a pessoa para de decidir e passa a liberar. Quem automatiza nota ou pagamento desenha a aprovação antes de ligar o fluxo.
+
+A tela de quem aprova tem três regras. A ação proposta e a prova principal ficam na frente, e o detalhe abre só se a pessoa for investigar. Casos parecidos chegam juntos, no lugar de quarenta alertas soltos. O documento original fica ao lado do que a IA extraiu.
+
+Na hora de automatizar o financeiro, a pergunta é uma: essa pessoa ainda decide, com o documento ao lado? Se ela só libera a fila, a revisão já é carimbo.
+
+Fonte: IDC, How workable is the "human-in-the-loop" concept in agentic AI, 26 de novembro de 2026.
+https://www.idc.com/resource-center/blog/how-workable-is-the-human-in-the-loop-concept-in-agentic-ai/
+
+#ia #financeiro #gestao
+
+---
+Caracteres: 1175
+ACP Phase: A · Audience
+Uso: legenda do Instagram e post do LinkedIn. O texto se sustenta sem os slides.
+Ideia: https://app.notion.com/p/425ffe7442fd81d3b43ed94910071dfb

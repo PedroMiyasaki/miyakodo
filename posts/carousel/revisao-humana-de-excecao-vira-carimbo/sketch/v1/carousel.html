@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Revisão humana de exceção vira carimbo</title>
+<meta name="ideia" content="https://app.notion.com/p/425ffe7442fd81d3b43ed94910071dfb">
+<meta name="acp-phase" content="A · Audience">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Poppins:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+
+:root {
+  --paper: #f6f4ee;
+  --ink: #280e03;
+  --mute: #aba199;
+  --green: #1a3010;
+  --accent: #db3c05;
+  --gold: #c1c167;
+  --serif: "Instrument Serif", "Times New Roman", serif;
+  --sans: "Poppins", sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: #aba199;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+  padding: 48px 0 80px;
+}
+
+.slide {
+  width: 1080px;
+  height: 1350px;
+  overflow: hidden;
+  position: relative;
+  background: var(--paper);
+  color: var(--ink);
+  padding: 72px 80px 80px;
+  display: flex;
+  flex-direction: column;
+}
+
+.slide.dark {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.logo { height: 42px; width: auto; display: block; }
+
+.handle {
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mute);
+}
+
+.dark .handle { color: var(--gold); }
+
+.kicker {
+  margin-top: 56px;
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 20px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+h1, h2, .num {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  margin-top: 28px;
+  font-size: 108px;
+  line-height: 0.94;
+  max-width: 14ch;
+}
+
+h1 em, h2 em, .num em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--accent);
+}
+
+.dark h1 { color: var(--paper); }
+
+.sub {
+  margin-top: 36px;
+  font-family: var(--sans);
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 1.35;
+  max-width: 22em;
+}
+
+.dark .sub { color: var(--paper); }
+
+.stamp {
+  position: absolute;
+  right: 88px;
+  bottom: 96px;
+  border: 4px solid var(--accent);
+  color: var(--accent);
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 48px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 14px 26px 18px;
+  transform: rotate(-8deg);
+}
+
+.num {
+  margin-top: 36px;
+  font-size: 132px;
+  line-height: 0.9;
+  color: var(--accent);
+}
+
+.fonte {
+  margin-top: 40px;
+  font-family: var(--sans);
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1.4;
+  color: var(--green);
+  max-width: 28em;
+}
+
+.ou {
+  margin-top: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+
+.ou p {
+  border-top: 3px solid var(--ink);
+  padding-top: 24px;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 44px;
+  line-height: 1.1;
+}
+
+.ou i {
+  display: block;
+  font-family: var(--sans);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+
+.leva {
+  margin-top: auto;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.leva li {
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 1.25;
+  padding-left: 28px;
+  border-left: 4px solid var(--accent);
+}
+
+h2 {
+  margin-top: 28px;
+  font-size: 84px;
+  line-height: 0.96;
+  max-width: 16ch;
+}
+
+.cards {
+  margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.card {
+  border: 3px solid var(--ink);
+  padding: 32px 36px 36px;
+}
+
+.card strong {
+  display: block;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 1;
+  margin-bottom: 12px;
+}
+
+.card p {
+  font-family: var(--sans);
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 1.3;
+}
+
+.fecho {
+  margin-top: auto;
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 44px;
+  line-height: 1.15;
+  color: var(--accent);
+}
+
+.pair {
+  margin-top: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+
+.box {
+  background: var(--green);
+  color: var(--paper);
+  min-height: 280px;
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.box span {
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.box b {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 1.05;
+}
+
+.rules {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.rule {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.rule i {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 56px;
+  line-height: 0.9;
+  color: var(--accent);
+}
+
+.rule p {
+  font-family: var(--sans);
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 1.3;
+  padding-top: 6px;
+}
+
+.slide.pergunta h1 { font-size: 128px; max-width: 10ch; margin-top: 48px; }
+.slide.pergunta .sub { font-size: 40px; max-width: 16em; }
+
+.slide.fecha h2 { font-size: 92px; max-width: 12ch; }
+.slide.fecha .sub { max-width: 16em; }
+</style>
+</head>
+<body>
+
+<section class="slide dark">
+  <header class="top">
+    <img class="logo" alt="Miyakodo" src="../../../../../design/logo/png/horizontal/MIYAKODO_HORIZONTAL3.png">
+    <p class="handle">@pedro.miyasaki.ia</p>
+  </header>
+  <p class="kicker">Financeiro</p>
+  <h1>A revisão humana vira <em>carimbo.</em></h1>
+  <p class="sub">Volume alto e erro raro fazem a pessoa liberar sem decidir.</p>
+  <div class="stamp">Carimbo</div>
+</section>
+
+<section class="slide">
+  <header class="top">
+    <img class="logo" alt="Miyakodo" src="../../../../../design/logo/png/horizontal/MIYAKODO_HORIZONTAL2.png">
+    <p class="handle">@pedro.miyasaki.ia</p>
+  </header>
+  <p class="kicker">Conforme a tarefa</p>
+  <p class="num">70% a 74%</p>
+  <p class="sub">Das respostas de finanças, essa faixa ou revisa só a exceção, ou mantém uma pessoa na maior parte das decisões.</p>
+  <p class="fonte">IDC, Future of Work, maio de 2026. 91 respostas. Texto publicado em 26 de novembro.</p>
+  <div class="ou">
+    <p><i>Um caminho</i>Só a exceção</p>
+    <p><i>O outro</i>A pessoa na maior parte</p>
+  </div>
+</section>
+
+<section class="slide">
+  <header class="top">
+    <img class="logo" alt="Miyakodo" src="../../../../../design/logo/png/horizontal/MIYAKODO_HORIZONTAL2.png">
+    <p class="handle">@pedro.miyasaki.ia</p>
+  </header>
+  <p class="kicker">A fila</p>
+  <h2>O limite é a fila.</h2>
+  <div class="cards">
+    <div class="card">
+      <strong>Fila demais</strong>
+      <p>A cabeça não dá conta do volume.</p>
+    </div>
+    <div class="card">
+      <strong>Erro raro demais</strong>
+      <p>O olho acostuma e para de ver.</p>
+    </div>
+  </div>
+  <p class="fecho">Os dois acabam no carimbo.</p>
+</section>
+
+<section class="slide">
+  <header class="top">
+    <img class="logo" alt="Miyakodo" src="../../../../../design/logo/png/horizontal/MIYAKODO_HORIZONTAL2.png">
+    <p class="handle">@pedro.miyasaki.ia</p>
+  </header>
+  <p class="kicker">O desenho</p>
+  <h2>Desenhe a aprovação antes de automatizar.</h2>
+  <p class="sub">Nota ou pagamento. A pessoa decide com o documento ao lado.</p>
+  <div class="pair">
+    <div class="box">
+      <span>Original</span>
+      <b>O documento</b>
+    </div>
+    <div class="box">
+      <span>Extraído</span>
+      <b>O que a IA extraiu</b>
+    </div>
+  </div>
+</section>
+
+<section class="slide">
+  <header class="top">
+    <img class="logo" alt="Miyakodo" src="../../../../../design/logo/png/horizontal/MIYAKODO_HORIZONTAL2.png">
+    <p class="handle">@pedro.miyasaki.ia</p>
+  </header>
+  <p class="kicker">A tela</p>
+  <h2>Três regras de quem aprova.</h2>
+  <div class="rules">
+    <div class="rule">
+      <i>01</i>
+      <p>A ação e a prova principal ficam na frente. O detalhe abre só na investigação.</p>
+    </div>
+    <div class="rule">
+      <i>02</i>
+      <p>Casos parecidos chegam juntos. Quarenta alertas viram um caso.</p>
+    </div>
+    <div class="rule">
+      <i>03</i>
+      <p>O documento original fica ao lado do que a IA extraiu.</p>
+    </div>
+  </div>
+  <p class="fecho">Sem essas três, a fila vira carimbo.</p>
+</section>
+
+<section class="slide dark pergunta">
+  <header class="top">
+    <img class="logo" alt="Miyakodo" src="../../../../../design/logo/png/horizontal/MIYAKODO_HORIZONTAL3.png">
+    <p class="handle">@pedro.miyasaki.ia</p>
+  </header>
+  <p class="kicker">A pergunta</p>
+  <h1>Ela ainda decide?</h1>
+  <p class="sub">Se a pessoa só libera a fila, a revisão já é carimbo.</p>
+</section>
+
+<section class="slide fecha">
+  <header class="top">
+    <img class="logo" alt="Miyakodo" src="../../../../../design/logo/png/horizontal/MIYAKODO_HORIZONTAL2.png">
+    <p class="handle">@pedro.miyasaki.ia</p>
+  </header>
+  <p class="kicker">Pra usar</p>
+  <h2>Leva esse desenho pra reunião.</h2>
+  <p class="sub">Antes de ligar a automação de nota ou pagamento, a tela de aprovação já está desenhada.</p>
+  <ul class="leva">
+    <li>Prova principal na frente</li>
+    <li>Casos parecidos juntos</li>
+    <li>Documento ao lado</li>
+  </ul>
+</section>
+
+</body>
+</html>
