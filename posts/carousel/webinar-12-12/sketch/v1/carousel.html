@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Webinar 12/12 · carrossel v2</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Poppins:ital,wght@0,400;0,500;1,400&display=swap">
+<style>
+  :root {
+    --off: #f6f4ee;
+    --ink: #280e03;
+    --mark: #d39ca7;
+    --serif: "Instrument Serif", "Times New Roman", serif;
+    --sans: Poppins, sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #6e675f;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 36px;
+    padding: 36px;
+  }
+
+  .slide {
+    width: 1080px;
+    height: 1350px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 64px 72px 64px;
+    background: var(--off);
+    color: var(--ink);
+  }
+
+  .logo {
+    width: 132px;
+    height: auto;
+    align-self: flex-start;
+    flex: 0 0 auto;
+    object-fit: contain;
+    display: block;
+  }
+
+  h1 {
+    font-family: var(--serif);
+    font-weight: 400;
+    letter-spacing: -0.03em;
+    line-height: 0.96;
+    color: var(--ink);
+  }
+
+  .mark {
+    background: var(--mark);
+    color: var(--ink);
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+    padding: 0.02em 0.12em 0.08em;
+  }
+
+  .s1 h1 {
+    margin-top: 120px;
+    max-width: 9em;
+    font-size: 92px;
+  }
+
+  .s1 .mascot {
+    position: absolute;
+    width: 340px;
+    height: auto;
+    right: 48px;
+    bottom: 56px;
+    object-fit: contain;
+  }
+
+  .s2 h1 {
+    margin-top: 72px;
+    max-width: 12em;
+    font-size: 72px;
+  }
+
+  .split {
+    margin-top: auto;
+    display: flex;
+    align-items: flex-end;
+    gap: 28px;
+  }
+
+  .split .mascot {
+    width: 300px;
+    height: auto;
+    flex: 0 0 auto;
+    object-fit: contain;
+  }
+
+  .body {
+    font-family: var(--sans);
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 1.38;
+    color: var(--ink);
+  }
+
+  .s2 .body { padding-bottom: 12px; }
+
+  .s3 h1 {
+    margin-top: 88px;
+    max-width: 10em;
+    font-size: 80px;
+  }
+
+  .date {
+    margin-top: 28px;
+    font-family: var(--serif);
+    font-size: 40px;
+    line-height: 1.15;
+    color: var(--ink);
+  }
+
+  .s3 .row {
+    margin-top: auto;
+    display: flex;
+    align-items: flex-end;
+    gap: 36px;
+  }
+
+  .s3 .mascot {
+    width: 340px;
+    height: auto;
+    flex: 0 0 auto;
+    object-fit: contain;
+  }
+
+  .s3 .body { padding-bottom: 8px; }
+</style>
+</head>
+<body>
+
+<section class="slide s1">
+  <img class="logo" src="../../../../../design/logo/png/vertical/MIYAKODO_VERTICAL2.png" alt="Miyakodo">
+  <h1>A IA da sua<br>empresa ainda<br><span class="mark">é um chat?</span></h1>
+  <img class="mascot" src="../../../../../design/mascote-e-textura/png/MASCOTE_4.png" alt="">
+</section>
+
+<section class="slide s2">
+  <img class="logo" src="../../../../../design/logo/png/vertical/MIYAKODO_VERTICAL2.png" alt="Miyakodo">
+  <h1>Chat não muda o<br><span class="mark">resultado da<br>sua empresa.</span></h1>
+  <div class="split">
+    <img class="mascot" src="../../../../../design/mascote-e-textura/png/MASCOTE_4.png" alt="">
+    <p class="body">Pesquisar e escrever texto é o uso fácil. O resultado muda quando a IA entra no trabalho: atendimento, documento, número, a decisão da semana. Isso pede desenho. Ferramenta nova todo mês, com o mesmo processo, não chega lá.</p>
+  </div>
+</section>
+
+<section class="slide s3">
+  <img class="logo" src="../../../../../design/logo/png/vertical/MIYAKODO_VERTICAL2.png" alt="Miyakodo">
+  <h1>Quer saber como<br><span class="mark">mudar isso?</span></h1>
+  <p class="date">Dia 12 de dezembro, <span class="mark">ao vivo.</span></p>
+  <div class="row">
+    <img class="mascot" src="../../../../../design/mascote-e-textura/png/MASCOTE_5.png" alt="">
+    <p class="body">Duas horas de um webinar focado em resolver essa dor. Você sai com o roadmap do zero ao primeiro projeto de IA da empresa.</p>
+  </div>
+</section>
+
+</body>
+</html>

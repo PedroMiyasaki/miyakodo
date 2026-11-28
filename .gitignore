@@ -15,6 +15,7 @@ posts/carousel/**/_*.png
 # PNG numerado gerado do HTML de uma versão de carrossel. O HTML fica.
 # O PNG final, na raiz do slug, continua versionável.
 posts/carousel/**/sketch/v*/[0-9]*.png
+posts/carousel/**/sketch/v*/story/[0-9]*.png
 
 # Pacote bruto da pesquisa diária. A entrega é a página no Notion.
 .agents/skills/content-research/runs/

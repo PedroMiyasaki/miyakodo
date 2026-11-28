@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Capas de venda Eduzz</title>
+<style>
+@font-face {
+  font-family: "Instrument Serif";
+  src: url("fontes/InstrumentSerif-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("fontes/Poppins-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #1a1a1a; }
+
+.slide {
+  overflow: hidden;
+  display: flex;
+  position: relative;
+}
+.dark { background: #280e03; color: #f6f4ee; }
+.paper { background: #f6f4ee; color: #280e03; }
+
+.panel {
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+.slide > .panel {
+  padding: 64px 56px 56px;
+}
+
+.logo { height: 72px; width: auto; align-self: flex-start; display: block; }
+.mid { margin-top: auto; margin-bottom: auto; }
+h1 {
+  font-family: "Instrument Serif", serif;
+  font-weight: 400;
+  line-height: 0.92;
+  letter-spacing: -0.03em;
+}
+.foot { margin-top: auto; }
+.rule { width: 56px; height: 4px; background: #c1c167; margin-bottom: 22px; }
+.when {
+  font-family: Poppins, sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  line-height: 1;
+}
+.dark .when { color: #c1c167; }
+.paper .when { color: #1a3010; }
+
+.wood {
+  flex: none;
+  background: #f6f4ee url("textura.jpg") center / cover no-repeat;
+}
+
+/* Eduzz recomendado: 730 x 1400 */
+.eduzz { width: 730px; height: 1400px; }
+.eduzz h1 { font-size: 84px; }
+.eduzz .when { font-size: 32px; }
+.eduzz.split { flex-direction: column; padding: 0; }
+.eduzz.split .panel { padding: 64px 56px 48px; }
+.eduzz.split .wood { height: 420px; }
+
+/* Banner 1920 x 1080 */
+.banner { width: 1920px; height: 1080px; }
+.banner .panel { padding: 80px 96px 72px; }
+.banner h1 { font-size: 112px; }
+.banner .when { font-size: 36px; }
+.banner .logo { height: 84px; }
+.banner.split .wood { width: 520px; height: 1080px; }
+
+/* Quadrado 1080 x 1080 */
+.quad { width: 1080px; height: 1080px; }
+.quad .panel { padding: 72px; }
+.quad h1 { font-size: 92px; }
+.quad .when { font-size: 32px; }
+.quad .logo { height: 78px; }
+.quad.split { flex-direction: column; padding: 0; }
+.quad.split .panel { padding: 72px 72px 40px; }
+.quad.split .wood { height: 300px; }
+
+.v3.eduzz h1 { font-size: 76px; }
+.v3.banner h1 { font-size: 96px; }
+.v3.quad h1 { font-size: 78px; }
+</style>
+</head>
+<body>
+
+<section class="slide eduzz dark plain v1">
+  <div class="panel">
+    <img class="logo" src="../../design/logo/png/horizontal/MIYAKODO_HORIZONTAL3.png" alt="Miyakodo">
+    <div class="mid"><h1>O primeiro<br>projeto de IA</h1></div>
+    <div class="foot"><div class="rule"></div><p class="when">12/12 · Ao vivo</p></div>
+  </div>
+</section>
+
+<section class="slide banner dark plain v1">
+  <div class="panel">
+    <img class="logo" src="../../design/logo/png/horizontal/MIYAKODO_HORIZONTAL3.png" alt="Miyakodo">
+    <div class="mid"><h1>O primeiro<br>projeto de IA</h1></div>
+    <div class="foot"><div class="rule"></div><p class="when">12/12 · Ao vivo</p></div>
+  </div>
+</section>
+
+<section class="slide quad dark plain v1">
+  <div class="panel">
+    <img class="logo" src="../../design/logo/png/horizontal/MIYAKODO_HORIZONTAL3.png" alt="Miyakodo">
+    <div class="mid"><h1>O primeiro<br>projeto de IA</h1></div>
+    <div class="foot"><div class="rule"></div><p class="when">12/12 · Ao vivo</p></div>
+  </div>
+</section>
+
+<section class="slide eduzz dark split v2">
+  <div class="panel">
+    <img class="logo" src="../../design/logo/png/horizontal/MIYAKODO_HORIZONTAL3.png" alt="Miyakodo">
+    <div class="mid"><h1>IA no<br>resultado<br>da empresa</h1></div>
+    <div class="foot"><div class="rule"></div><p class="when">12/12 · Ao vivo</p></div>
+  </div>
+  <div class="wood" aria-hidden="true"></div>
+</section>
+
+<section class="slide banner dark split v2">
+  <div class="panel">
+    <img class="logo" src="../../design/logo/png/horizontal/MIYAKODO_HORIZONTAL3.png" alt="Miyakodo">
+    <div class="mid"><h1>IA no<br>resultado<br>da empresa</h1></div>
+    <div class="foot"><div class="rule"></div><p class="when">12/12 · Ao vivo</p></div>
+  </div>
+  <div class="wood" aria-hidden="true"></div>
+</section>
+
+<section class="slide quad dark split v2">
+  <div class="panel">
+    <img class="logo" src="../../design/logo/png/horizontal/MIYAKODO_HORIZONTAL3.png" alt="Miyakodo">
+    <div class="mid"><h1>IA no<br>resultado<br>da empresa</h1></div>
+    <div class="foot"><div class="rule"></div><p class="when">12/12 · Ao vivo</p></div>
+  </div>
+  <div class="wood" aria-hidden="true"></div>
+</section>
+
+<section class="slide eduzz paper plain v3">
+  <div class="panel">
+    <img class="logo" src="../../design/logo/png/horizontal/MIYAKODO_HORIZONTAL2.png" alt="Miyakodo">
+    <div class="mid"><h1>Guia do<br>primeiro projeto<br>de IA</h1></div>
+    <div class="foot"><div class="rule"></div><p class="when">12/12 · Ao vivo</p></div>
+  </div>
+</section>
+
+<section class="slide banner paper plain v3">
+  <div class="panel">
+    <img class="logo" src="../../design/logo/png/horizontal/MIYAKODO_HORIZONTAL2.png" alt="Miyakodo">
+    <div class="mid"><h1>Guia do<br>primeiro projeto<br>de IA</h1></div>
+    <div class="foot"><div class="rule"></div><p class="when">12/12 · Ao vivo</p></div>
+  </div>
+</section>
+
+<section class="slide quad paper plain v3">
+  <div class="panel">
+    <img class="logo" src="../../design/logo/png/horizontal/MIYAKODO_HORIZONTAL2.png" alt="Miyakodo">
+    <div class="mid"><h1>Guia do<br>primeiro projeto<br>de IA</h1></div>
+    <div class="foot"><div class="rule"></div><p class="when">12/12 · Ao vivo</p></div>
+  </div>
+</section>
+
+</body>
+</html>
