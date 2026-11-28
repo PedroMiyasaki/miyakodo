@@ -36,44 +36,46 @@ SCENE_TYPES = (
     "statement",
     "carlos",
     "versus",
+    "peel",
+    "flow",
+    "chart",
+    "clutter",
+    "maze",
+    "close",
 )
 
-# guide: Pedro à esquerda, cena à direita.
-# hero e center: frase em cima, busto grande embaixo.
-# pip e corner: a cena ocupa o miolo e o busto fica pequeno, acima do rodapé.
-# full: a cena toma a área segura e o avatar sai.
-# A legenda mora numa faixa própria (CAPTION_TOP até o início da cena).
-# Direita livre para os botões do Reels. Rodapé livre para a legenda do post.
-CAPTION_TOP = 220
-SCENE_TOP = 448
-SAFE_RIGHT = 900
-SAFE_BOTTOM = 1468
-AVATAR_ASPECT = 860 / 720
+# Palco termina em 63% (y=1210), acima da legenda (67%).
+# Direita livre: 140px. PiP fica no topo esquerdo.
+CAPTION_TOP = 1288
+SCENE_TOP = 128
+SAFE_RIGHT = 940
+SAFE_BOTTOM = 1210
+AVATAR_ASPECT = 404 / 217
 
 LAYOUT_SPOTS = {
     "full": {
-        "scene": (48, 448, 840, 1000),
-        "avatar": (48, 1180, 200, 0),
+        "scene": (40, 128, 880, 1082),
+        "avatar": (40, 211, 180, 0),
     },
     "hero": {
-        "scene": (48, 448, 840, 220),
-        "avatar": (80, 700, 600, 1),
+        "scene": (40, 128, 880, 400),
+        "avatar": (280, 560, 320, 1),
     },
     "center": {
-        "scene": (48, 448, 840, 220),
-        "avatar": (80, 700, 600, 1),
+        "scene": (40, 128, 880, 400),
+        "avatar": (280, 560, 320, 1),
     },
     "guide": {
-        "scene": (400, 448, 488, 1000),
-        "avatar": (36, 620, 340, 1),
+        "scene": (320, 128, 600, 1082),
+        "avatar": (32, 180, 260, 1),
     },
     "pip": {
-        "scene": (48, 448, 840, 720),
-        "avatar": (48, 1196, 220, 1),
+        "scene": (248, 128, 672, 1082),
+        "avatar": (40, 211, 180, 1),
     },
     "corner": {
-        "scene": (48, 448, 840, 720),
-        "avatar": (48, 1196, 220, 1),
+        "scene": (248, 128, 672, 1082),
+        "avatar": (40, 211, 180, 1),
     },
 }
 

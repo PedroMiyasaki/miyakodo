@@ -1,18 +1,19 @@
-"""Avatar do Pedro no modo sem gravação.
+"""Avatar ilustrado do Pedro no modo sem gravação.
 
-O desenho está em assets/pedro.svg: o mesmo sistema do mascote Carlos
-(contorno dark brown, chapado, grão de papel, paleta de design/identity.md),
-com o rosto do Pedro no vídeo headless (cabelo escuro com mecha clara,
-sobrancelha grossa, barba curta, pinta, camiseta e lapela).
-Carlos continua sendo o público, não o apresentador.
+Quatro bocas e uma piscada em assets/pedro/*.png, fundo transparente,
+sem borda de adesivo. Carlos continua sendo o público.
 """
 
-from pathlib import Path
 
-
-def avatar_svg() -> str:
-    path = Path(__file__).resolve().parents[1] / "assets" / "pedro.svg"
-    return path.read_text(encoding="utf-8").strip()
+def avatar_html() -> str:
+    faces = ["m0", "m1", "m2", "m3", "blink"]
+    images = []
+    for name in faces:
+        hidden = "" if name == "m0" else ' style="opacity:0"'
+        images.append(
+            f'<img id="av-{name}" class="av-face" src="assets/pedro/{name}.png" alt=""{hidden}>'
+        )
+    return f'<div id="av-bob"><div id="av-pulse">{"".join(images)}</div></div>'
 
 
 def avatar_motion(duration: float, emphasis_times: list[float], moves: list[dict]) -> dict:

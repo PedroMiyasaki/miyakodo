@@ -295,6 +295,10 @@ def _copy_static(assets: Path, sfx: list[dict], duration: float) -> None:
         "-frames:v", "1", str(assets / "noise.png"),
     ])
     repo = find_repo(SKILL_DIR)
+    pedro = assets / "pedro"
+    pedro.mkdir(exist_ok=True)
+    for png in (SKILL_DIR / "assets" / "pedro").glob("*.png"):
+        shutil.copy2(png, pedro / png.name)
     carlos = assets / "carlos"
     carlos.mkdir(exist_ok=True)
     mascotes = repo / "design" / "mascote-e-textura" / "png"

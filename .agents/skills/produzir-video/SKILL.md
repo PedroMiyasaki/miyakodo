@@ -119,7 +119,7 @@ Os dois JSON em `examples/` usam a narração real de `evals-cut-audio.m4a` e a 
 
 O bruto `evals-cut-sdr.mp4`, citado pelo projeto antigo, não está no checkout. O exemplo de gravação gera o plano a partir de `assets/pedro-frame.jpg` (o frame do rosto que estava em `evals-reel/snapshots/final-113/face.jpg`), com a voz real na mesma janela. Um talking head novo entra em `footage.src` sem mudar o pipeline.
 
-O avatar não é o mascote Carlos. É o Pedro desenhado no mesmo sistema do Carlos: contorno dark brown, chapado, grão de papel e a paleta de `design/identity.md`. O rosto sai do vídeo de referência (cabelo escuro com mecha cinza, sobrancelha grossa, barba curta, pinta, camiseta e lapela). A boca troca de visema pelo volume da faixa. Carlos só entra quando a cena representa o público.
+O avatar não é o mascote Carlos. São cinco PNGs em `assets/pedro/` (quatro bocas e uma piscada), fundo transparente, sem borda de adesivo. A boca troca pelo volume da faixa. Carlos entra com fala e props quando a cena é o público. A legenda do sem gravação fica na faixa de 67% da altura, com a palavra ativa em laranja sólido, e sai da esquerda quando o busto está no canto.
 
 A narração de Headless Software está no release `footage-headless-software`, arquivo `headless-software.MP4` (sha256 `7da8c5295e52addbf88c5bc741fbf2b28418c00fe4b52ebc63ee6eba3867304d`). O mp4 não entra no git.
 

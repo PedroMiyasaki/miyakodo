@@ -2229,9 +2229,20 @@
       "tone": "ink",
       "label": "Gancho",
       "scene": {
-        "type": "statement",
+        "type": "peel",
         "kicker": "Talvez você não saiba",
-        "text": "O futuro"
+        "text": "O futuro do software",
+        "items": [
+          "Botão",
+          "Menu",
+          "Tela",
+          "Dashboard"
+        ],
+        "lines": [
+          "API",
+          "MCP",
+          "CLI"
+        ]
       }
     },
     {
@@ -2241,20 +2252,40 @@
       "tone": "verde",
       "label": "Sem interface",
       "scene": {
-        "type": "statement",
-        "text": "Sem nenhuma interface"
+        "type": "peel",
+        "text": "Sem nenhuma interface",
+        "items": [
+          "Botão",
+          "Menu",
+          "Dashboard"
+        ],
+        "lines": [
+          "API",
+          "MCP",
+          "CLI"
+        ]
       }
     },
     {
       "start": 6.74,
       "end": 10.1,
-      "layout": "pip",
+      "layout": "full",
       "tone": "paper",
       "label": "Headless",
       "scene": {
-        "type": "statement",
+        "type": "peel",
         "kicker": "Vale do Silício",
-        "text": "Headless"
+        "text": "Headless",
+        "items": [
+          "UI",
+          "Clique",
+          "Formulário"
+        ],
+        "lines": [
+          "API",
+          "MCP",
+          "CLI"
+        ]
       }
     },
     {
@@ -2264,12 +2295,13 @@
       "tone": "azul",
       "label": "Sem botão",
       "scene": {
-        "type": "bullets",
-        "kicker": "Sem nada disso",
+        "type": "flow",
+        "kicker": "Some tudo isso",
         "items": [
           "Interface",
           "Botão",
-          "Tela"
+          "Tela",
+          "Dashboard"
         ]
       }
     },
@@ -2280,25 +2312,39 @@
       "tone": "paper",
       "label": "Usuário",
       "scene": {
-        "type": "mockup",
-        "title": "Software",
-        "kind": "produto",
-        "lines": [
+        "type": "carlos",
+        "pose": "boss",
+        "line": "Sem usuário dentro",
+        "props": [
           "sem tela",
           "sem clique",
-          "sem usuário dentro"
+          "sem formulário"
         ]
       }
     },
     {
       "start": 18.08,
       "end": 21.78,
-      "layout": "hero",
-      "tone": "rosa",
+      "layout": "full",
+      "tone": "paper",
       "label": "Pergunta",
       "scene": {
-        "type": "statement",
-        "text": "Como funciona?"
+        "type": "versus",
+        "left": "Humano",
+        "right": "Agente",
+        "left_items": [
+          "vê a tela",
+          "clica",
+          "preenche",
+          "espera"
+        ],
+        "right_items": [
+          "chama API",
+          "lê MCP",
+          "executa",
+          "não clica"
+        ],
+        "pose": "boss"
       }
     },
     {
@@ -2308,76 +2354,109 @@
       "tone": "oliva",
       "label": "Outra ideia",
       "scene": {
-        "type": "statement",
+        "type": "flow",
         "kicker": "Junto com isso",
-        "text": "Outra ideia"
+        "items": [
+          "Outra ideia",
+          "Personal agents",
+          "Fazem a tarefa",
+          "Não só respondem"
+        ]
       }
     },
     {
       "start": 26.24,
       "end": 30.16,
-      "layout": "pip",
+      "layout": "full",
       "tone": "paper",
       "label": "Agents",
       "scene": {
         "type": "statement",
         "kicker": "Em alta",
-        "text": "Personal agents"
+        "lines": [
+          "Personal",
+          "agents"
+        ],
+        "chips": [
+          "Instinct",
+          "Grok Bot",
+          "uso pessoal"
+        ]
       }
     },
     {
       "start": 30.16,
       "end": 34.78,
-      "layout": "full",
+      "layout": "guide",
       "tone": "azul",
       "label": "Quem usa",
       "scene": {
-        "type": "grid",
-        "items": [
+        "type": "carlos",
+        "pose": "coffee",
+        "line": "No dia a dia",
+        "props": [
           "Instinct",
           "Grok Bot",
-          "Uso pessoal"
+          "conta",
+          "agenda"
         ]
       }
     },
     {
       "start": 34.78,
       "end": 37.82,
-      "layout": "guide",
-      "tone": "paper",
+      "layout": "full",
+      "tone": "rosa",
       "label": "O dia",
       "scene": {
-        "type": "carlos",
-        "pose": "coffee",
-        "line": "O dia a dia dele"
+        "type": "flow",
+        "kicker": "O agente faz",
+        "items": [
+          "Pagar contas",
+          "Marcar médico",
+          "Lembrar",
+          "Resolver o dia"
+        ]
       }
     },
     {
       "start": 37.82,
       "end": 41.12,
       "layout": "full",
-      "tone": "rosa",
+      "tone": "verde",
       "label": "Tarefas",
       "scene": {
-        "type": "bullets",
-        "kicker": "O agente faz",
-        "items": [
-          "Pagar contas",
-          "Marcar médico",
-          "Resolver o dia"
+        "type": "statement",
+        "lines": [
+          "Feito para",
+          "o agente"
+        ],
+        "chips": [
+          "compra",
+          "agenda",
+          "contrata"
         ]
       }
     },
     {
       "start": 41.12,
       "end": 43.68,
-      "layout": "pip",
+      "layout": "full",
       "tone": "paper",
       "label": "O software",
       "scene": {
-        "type": "statement",
+        "type": "peel",
         "kicker": "Headless",
-        "text": "O software"
+        "text": "O software",
+        "items": [
+          "Tela",
+          "Botão"
+        ],
+        "lines": [
+          "API",
+          "MCP",
+          "CLI"
+        ]
       }
     },
     {
@@ -2388,46 +2467,67 @@
       "label": "Para o agente",
       "scene": {
         "type": "statement",
-        "text": "Para o agente"
+        "text": "Para o agente",
+        "chips": [
+          "não para você",
+          "para a função"
+        ]
       }
     },
     {
       "start": 45.98,
       "end": 49.08,
-      "layout": "guide",
+      "layout": "full",
       "tone": "paper",
       "label": "Não para você",
       "scene": {
-        "type": "carlos",
+        "type": "clutter",
         "pose": "boss",
-        "line": "Não para você"
+        "line": "Não para você",
+        "props": [
+          "Nome",
+          "Email",
+          "Cargo",
+          "Empresa",
+          "Telefone",
+          "CNPJ"
+        ]
       }
     },
     {
       "start": 49.08,
       "end": 52.92,
-      "layout": "pip",
+      "layout": "full",
       "tone": "azul",
       "label": "Stripe",
       "scene": {
-        "type": "mockup",
-        "title": "Stripe",
-        "kind": "pagamento",
-        "lines": [
-          "empresa de pagamento",
-          "1% do PIB mundial"
+        "type": "flow",
+        "kicker": "Stripe",
+        "items": [
+          "Pagamentos",
+          "1% do PIB",
+          "Agentes",
+          "Sem clique"
         ]
       }
     },
     {
       "start": 52.92,
       "end": 55.82,
-      "layout": "full",
+      "layout": "pip",
       "tone": "paper",
       "label": "Tempos",
       "scene": {
         "type": "statement",
-        "text": "Nos últimos tempos"
+        "lines": [
+          "Nos últimos",
+          "tempos"
+        ],
+        "chips": [
+          "volume",
+          "agentes",
+          "curva"
+        ]
       }
     },
     {
@@ -2439,17 +2539,22 @@
       "scene": {
         "type": "statement",
         "kicker": "Dentro da Stripe",
-        "text": "Agentes pagando"
+        "text": "Agentes pagando",
+        "chips": [
+          "sem tela",
+          "sem botão"
+        ]
       }
     },
     {
       "start": 58.28,
       "end": 62.1,
-      "layout": "pip",
+      "layout": "full",
       "tone": "oliva",
       "label": "Curva",
       "scene": {
-        "type": "statement",
+        "type": "chart",
+        "kicker": "Stripe",
         "text": "Crescendo"
       }
     },
@@ -2460,14 +2565,20 @@
       "tone": "verde",
       "label": "Economia",
       "scene": {
-        "type": "statement",
-        "text": "Economia nova"
+        "type": "flow",
+        "kicker": "Economia nova",
+        "items": [
+          "Software",
+          "Serviço",
+          "Para o agente",
+          "Menos para a pessoa"
+        ]
       }
     },
     {
       "start": 66.28,
       "end": 69.08,
-      "layout": "guide",
+      "layout": "full",
       "tone": "paper",
       "label": "Destino",
       "scene": {
@@ -2475,11 +2586,16 @@
         "left": "Pessoas",
         "right": "Agentes",
         "left_items": [
-          "menos"
+          "vê a tela",
+          "clica",
+          "preenche",
+          "menos peso"
         ],
         "right_items": [
-          "o software",
-          "o serviço"
+          "chama função",
+          "lê API",
+          "paga",
+          "fecha"
         ],
         "pose": "squat"
       }
@@ -2493,33 +2609,51 @@
       "scene": {
         "type": "carlos",
         "pose": "squat",
-        "line": "Se você é empresário"
+        "line": "Se você é empresário",
+        "props": [
+          "alerta",
+          "produto",
+          "serviço"
+        ]
       }
     },
     {
       "start": 73.64,
       "end": 77.0,
       "layout": "full",
-      "tone": "ink",
+      "tone": "paper",
       "label": "Alerta",
       "scene": {
-        "type": "statement",
-        "text": "Um alerta"
+        "type": "versus",
+        "left": "Só pessoa",
+        "right": "Também agente",
+        "left_items": [
+          "site",
+          "anúncio",
+          "formulário"
+        ],
+        "right_items": [
+          "API",
+          "preço",
+          "pedido"
+        ],
+        "pose": "squat"
       }
     },
     {
       "start": 77.0,
       "end": 81.46,
-      "layout": "pip",
+      "layout": "full",
       "tone": "paper",
       "label": "Vender",
       "scene": {
-        "type": "bullets",
+        "type": "flow",
         "kicker": "Não basta",
         "items": [
           "Vender o produto",
           "Vender o serviço",
-          "Falar só com pessoas"
+          "Falar só com pessoas",
+          "Ignorar o agente"
         ]
       }
     },
@@ -2532,7 +2666,13 @@
       "scene": {
         "type": "carlos",
         "pose": "boss",
-        "line": "Expõe o cardápio"
+        "line": "Expõe o cardápio",
+        "props": [
+          "preço",
+          "estoque",
+          "pedido",
+          "pagamento"
+        ]
       }
     },
     {
@@ -2546,10 +2686,16 @@
         "left": "Pessoa",
         "right": "Agente",
         "left_items": [
-          "vê a página"
+          "vê a página",
+          "lê o site",
+          "preenche",
+          "compara no olho"
         ],
         "right_items": [
-          "resolve o dia"
+          "resolve o dia",
+          "lê o endpoint",
+          "chama a função",
+          "fecha sozinho"
         ],
         "pose": "coffee"
       }
@@ -2557,24 +2703,40 @@
     {
       "start": 89.72,
       "end": 93.74,
-      "layout": "pip",
+      "layout": "full",
       "tone": "oliva",
       "label": "Pessoas",
       "scene": {
         "type": "statement",
-        "text": "Bom para pessoas"
+        "lines": [
+          "Bom para",
+          "pessoas"
+        ],
+        "chips": [
+          "página",
+          "site",
+          "formulário"
+        ]
       }
     },
     {
       "start": 93.74,
       "end": 97.74,
-      "layout": "guide",
+      "layout": "full",
       "tone": "rosa",
       "label": "Agente cego",
       "scene": {
-        "type": "carlos",
+        "type": "maze",
         "pose": "stars",
-        "line": "Ruim para o agente"
+        "line": "Ruim para o agente",
+        "props": [
+          "Modal",
+          "Dropdown",
+          "Popup",
+          "Cookie",
+          "Menu",
+          "Alerta"
+        ]
       }
     },
     {
@@ -2585,34 +2747,48 @@
       "label": "Some",
       "scene": {
         "type": "statement",
-        "text": "Não aparece"
+        "text": "Não aparece",
+        "chips": [
+          "sumiu",
+          "o agente passa",
+          "o concorrente fica"
+        ]
       }
     },
     {
       "start": 102.06,
       "end": 104.1,
-      "layout": "pip",
+      "layout": "full",
       "tone": "paper",
       "label": "Concorrente",
       "scene": {
-        "type": "bullets",
+        "type": "flow",
         "kicker": "O agente",
         "items": [
           "Não acha",
           "Não opera",
-          "O concorrente leva"
+          "O concorrente leva",
+          "Você perde o cliente"
         ]
       }
     },
     {
       "start": 104.1,
       "end": 106.76,
-      "layout": "pip",
+      "layout": "full",
       "tone": "azul",
       "label": "Futuro",
       "scene": {
         "type": "statement",
-        "text": "No futuro"
+        "lines": [
+          "No futuro"
+        ],
+        "chips": [
+          "bens",
+          "serviços",
+          "cardápio",
+          "acesso"
+        ]
       }
     },
     {
@@ -2623,7 +2799,12 @@
       "label": "Quem cresce",
       "scene": {
         "type": "statement",
-        "text": "Quem cresce"
+        "text": "Quem cresce",
+        "chips": [
+          "cardápio aberto",
+          "agente entra",
+          "cliente fica"
+        ]
       }
     },
     {
@@ -2635,7 +2816,13 @@
       "scene": {
         "type": "carlos",
         "pose": "money",
-        "line": "Cardápio para o agente"
+        "line": "Cardápio para o agente",
+        "props": [
+          "preço",
+          "API",
+          "endpoint",
+          "pagamento"
+        ]
       }
     },
     {
@@ -2645,20 +2832,32 @@
       "tone": "azul",
       "label": "Direção",
       "scene": {
-        "type": "statement",
-        "text": "Não só para pessoas"
+        "type": "versus",
+        "left": "Pessoa",
+        "right": "Agente",
+        "left_items": [
+          "a porta de sempre",
+          "o site",
+          "o atendimento"
+        ],
+        "right_items": [
+          "a porta nova",
+          "a função",
+          "o acesso"
+        ],
+        "pose": "boss"
       }
     },
     {
       "start": 117.8,
       "end": 121.34,
-      "layout": "pip",
-      "tone": "paper",
+      "layout": "full",
+      "tone": "ink",
       "label": "Perfil",
       "scene": {
-        "type": "quote",
-        "text": "Perspectiva de mercado, sem ruído.",
-        "by": "Pedro Miyasaki"
+        "type": "close",
+        "text": "Headless",
+        "handle": "@pedro.miyasaki.ia"
       }
     },
     {
@@ -2668,8 +2867,9 @@
       "tone": "verde",
       "label": "CTA",
       "scene": {
-        "type": "badge",
-        "text": "Me segue"
+        "type": "close",
+        "text": "Me segue",
+        "handle": "@pedro.miyasaki.ia"
       }
     }
   ]

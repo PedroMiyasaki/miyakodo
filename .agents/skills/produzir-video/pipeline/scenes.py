@@ -380,25 +380,141 @@ def scene_statement(pid, x, y, w, h, scene, t0, t1):
     lines = [str(item) for item in lines if str(item).strip()]
     if not lines:
         lines = [" "]
-    per_line = 0.32 if len(lines) == 1 else 0.2
-    size = int(min(h * per_line, w * 0.15))
-    size = max(42, min(104, size))
-    ops = _pop(pid, t0, "50% 60%")
+    chips = [str(item) for item in (scene.get("chips") or [])]
+    size = int(min(h * 0.7 / max(1, len(lines)), w * 0.2))
+    size = max(72, min(176, size))
+    ops = _pop(pid, t0, "50% 50%")
     sfx = _sfx("impact", t0)
     rendered = []
     for index, line in enumerate(lines):
-        at = t0 + 0.08 + index * 0.18
+        at = t0 + 0.06 + index * 0.16
         rendered.append(f'<p id="{pid}-ln-{index}" class="big" style="font-size:{size}px">{escape(line)}</p>')
         if index:
             ops.append({
                 "kind": "fromTo",
                 "sel": f"#{pid}-ln-{index}",
-                "from": {"y": 18, "opacity": 0},
-                "to": {"y": 0, "opacity": 1, "duration": 0.28, "ease": "power3.out"},
+                "from": {"y": 28, "opacity": 0},
+                "to": {"y": 0, "opacity": 1, "duration": 0.36, "ease": "back.out(1.6)"},
                 "at": round(at, 4),
             })
+    pills = []
+    for index, chip in enumerate(chips):
+        at = t0 + 0.28 + index * 0.22
+        pills.append(f'<span id="{pid}-c-{index}" class="pill">{escape(chip)}</span>')
+        ops.append({
+            "kind": "fromTo",
+            "sel": f"#{pid}-c-{index}",
+            "from": {"scale": 0.7, "opacity": 0},
+            "to": {"scale": 1, "opacity": 1, "duration": 0.32, "ease": "back.out(1.8)"},
+            "at": round(at, 4),
+        })
+        sfx.append({"name": "pop", "at": round(at, 4)})
     head = f'<p class="kicker">{kicker}</p>' if kicker else ""
-    inner = f'<div class="statement">{head}{"".join(rendered)}</div>'
+    row = f'<div class="chip-row">{"".join(pills)}</div>' if pills else ""
+    inner = f'<div class="statement">{head}{"".join(rendered)}{row}</div>'
+    return _box(pid, x, y, w, h, inner, "open"), ops, sfx
+
+
+def scene_peel(pid, x, y, w, h, scene, t0, t1):
+    title = escape(str(scene.get("text") or "Sem interface"))
+    kicker = escape(str(scene.get("kicker") or ""))
+    chips = _lines(scene.get("items"), ["Botão", "Menu", "Tela"])
+    lines = _lines(scene.get("lines"), ["API", "MCP", "CLI"])
+    size = max(64, min(150, int(min(h * 0.22, w * 0.16))))
+    ops = _pop(pid, t0, "50% 30%")
+    sfx = _sfx("whoosh", t0)
+    chip_html = []
+    for index, chip in enumerate(chips):
+        at = t0 + 0.2 + index * 0.18
+        direction = -1 if index % 2 == 0 else 1
+        chip_html.append(
+            f'<span id="{pid}-c-{index}" class="pill gone peel-chip">{escape(chip)}</span>'
+        )
+        ops.append({
+            "kind": "fromTo",
+            "sel": f"#{pid}-c-{index}",
+            "from": {"scale": 0.6, "opacity": 0},
+            "to": {"scale": 1, "opacity": 1, "duration": 0.28, "ease": "back.out(1.7)"},
+            "at": round(at, 4),
+        })
+        ops.append({
+            "kind": "to",
+            "sel": f"#{pid}-c-{index}",
+            "vars": {
+                "y": -24,
+                "opacity": 0.4,
+                "rotation": 4 * direction,
+                "duration": 0.7,
+                "ease": "power2.in",
+            },
+            "at": round(at + 0.45, 4),
+        })
+        sfx.append({"name": "whoosh", "at": round(at + 0.45, 4)})
+    head = f'<p class="kicker">{kicker}</p>' if kicker else ""
+    if h >= 700:
+        term = []
+        for index, line in enumerate(lines):
+            at = t0 + 0.7 + index * 0.28
+            term.append(f'<div id="{pid}-t-{index}" class="ln">{escape(line)}</div>')
+            ops.append({
+                "kind": "fromTo",
+                "sel": f"#{pid}-t-{index}",
+                "from": {"y": 16, "opacity": 0},
+                "to": {"y": 0, "opacity": 1, "duration": 0.3, "ease": "power3.out"},
+                "at": round(at, 4),
+            })
+            sfx.append({"name": "key", "at": round(at, 4)})
+        reveal = f'<div id="{pid}-term" class="term">{"".join(term)}</div>'
+        ops.append({
+            "kind": "fromTo",
+            "sel": f"#{pid}-term",
+            "from": {"scale": 0.92, "opacity": 0},
+            "to": {"scale": 1, "opacity": 1, "duration": 0.4, "ease": "back.out(1.4)"},
+            "at": round(t0 + 0.55, 4),
+        })
+    else:
+        stay = []
+        for index, line in enumerate(lines):
+            at = t0 + 0.45 + index * 0.16
+            stay.append(f'<span id="{pid}-t-{index}" class="pill">{escape(line)}</span>')
+            ops.append({
+                "kind": "fromTo",
+                "sel": f"#{pid}-t-{index}",
+                "from": {"scale": 0.7, "opacity": 0},
+                "to": {"scale": 1, "opacity": 1, "duration": 0.28, "ease": "back.out(1.6)"},
+                "at": round(at, 4),
+            })
+        reveal = f'<div class="chip-row">{"".join(stay)}</div>'
+    inner = (
+        f'<div class="peel">{head}'
+        f'<p class="big" style="font-size:{size}px">{title}</p>'
+        f'<div class="chip-row">{"".join(chip_html)}</div>'
+        f'{reveal}</div>'
+    )
+    return _box(pid, x, y, w, h, inner, "open"), ops, sfx
+
+
+def scene_flow(pid, x, y, w, h, scene, t0, t1):
+    kicker = escape(str(scene.get("kicker") or ""))
+    items = _lines(scene.get("items"), ["Um", "Dois", "Três", "Quatro"])
+    ops = _pop(pid, t0, "50% 20%")
+    sfx = _sfx("impact", t0)
+    rows = []
+    for index, item in enumerate(items):
+        at = t0 + 0.16 + index * 0.32
+        rows.append(
+            f'<div id="{pid}-s-{index}" class="step"><b>{index + 1}</b><span>{escape(item)}</span></div>'
+        )
+        ops.append({
+            "kind": "fromTo",
+            "sel": f"#{pid}-s-{index}",
+            "from": {"x": 40, "opacity": 0},
+            "to": {"x": 0, "opacity": 1, "duration": 0.38, "ease": "back.out(1.5)"},
+            "at": round(at, 4),
+        })
+        sfx.append({"name": "click", "at": round(at, 4)})
+    head = f'<p class="kicker">{kicker}</p>' if kicker else ""
+    inner = f'<div class="flow">{head}{"".join(rows)}</div>'
     return _box(pid, x, y, w, h, inner, "open"), ops, sfx
 
 
@@ -418,19 +534,34 @@ def _carlos_src(pose: str) -> str:
 def scene_carlos(pid, x, y, w, h, scene, t0, t1):
     line = escape(str(scene.get("line") or scene.get("text") or ""))
     src = _carlos_src(str(scene.get("pose") or "boss"))
-    ops = _pop(pid, t0, "50% 80%")
+    props = _lines(scene.get("props"), [])
+    ops = _pop(pid, t0, "50% 70%")
+    sfx = _sfx("pop", t0)
     ops.append({
         "kind": "to",
         "sel": f"#{pid}-fig",
-        "vars": {"y": -10, "duration": 0.7, "yoyo": True, "repeat": 3, "ease": "sine.inOut"},
-        "at": round(t0 + 0.35, 4),
+        "vars": {"y": -12, "duration": 0.8, "yoyo": True, "repeat": 3, "ease": "sine.inOut"},
+        "at": round(t0 + 0.3, 4),
     })
+    chips = []
+    for index, prop in enumerate(props):
+        at = t0 + 0.25 + index * 0.22
+        chips.append(f'<span id="{pid}-p-{index}" class="pill">{escape(prop)}</span>')
+        ops.append({
+            "kind": "fromTo",
+            "sel": f"#{pid}-p-{index}",
+            "from": {"y": 16, "opacity": 0},
+            "to": {"y": 0, "opacity": 1, "duration": 0.3, "ease": "back.out(1.6)"},
+            "at": round(at, 4),
+        })
+        sfx.append({"name": "click", "at": round(at, 4)})
     say = f'<p class="say">{line}</p>' if line else ""
+    row = f'<div class="chip-row">{"".join(chips)}</div>' if chips else ""
     inner = (
-        f'<div class="carlos-wrap">{say}'
+        f'<div class="carlos-wrap">{say}{row}'
         f'<img id="{pid}-fig" src="{src}" alt="Carlos"/></div>'
     )
-    return _box(pid, x, y, w, h, inner, "open"), ops, _sfx("pop", t0)
+    return _box(pid, x, y, w, h, inner, "open"), ops, sfx
 
 
 def scene_versus(pid, x, y, w, h, scene, t0, t1):
@@ -448,7 +579,7 @@ def scene_versus(pid, x, y, w, h, scene, t0, t1):
     right_html = []
     for index, item in enumerate(left_items):
         at = t0 + 0.22 + index * 0.28
-        left_html.append(f'<div id="{pid}-l-{index}" class="vitem">{escape(item)}</div>')
+        left_html.append(f'<div id="{pid}-l-{index}" class="vitem"><i></i><span>{escape(item)}</span></div>')
         ops.append({
             "kind": "fromTo",
             "sel": f"#{pid}-l-{index}",
@@ -458,7 +589,7 @@ def scene_versus(pid, x, y, w, h, scene, t0, t1):
         })
     for index, item in enumerate(right_items):
         at = t0 + 0.32 + index * 0.28
-        right_html.append(f'<div id="{pid}-r-{index}" class="vitem">{escape(item)}</div>')
+        right_html.append(f'<div id="{pid}-r-{index}" class="vitem"><i></i><span>{escape(item)}</span></div>')
         ops.append({
             "kind": "fromTo",
             "sel": f"#{pid}-r-{index}",
@@ -482,6 +613,131 @@ def scene_badge(pid, x, y, w, h, scene, t0, t1):
     return _box(pid, x, y, w, h, inner, "open badge-wrap"), _pop(pid, t0, "50% 50%"), _sfx("pop", t0)
 
 
+def scene_chart(pid, x, y, w, h, scene, t0, t1):
+    title = escape(str(scene.get("text") or "Crescendo"))
+    kicker = escape(str(scene.get("kicker") or ""))
+    heights = [28, 42, 58, 76, 100]
+    ops = _pop(pid, t0, "50% 80%")
+    sfx = _sfx("impact", t0)
+    bars = []
+    for index, height in enumerate(heights):
+        at = t0 + 0.12 + index * 0.14
+        bars.append(
+            f'<div class="bar-col"><i id="{pid}-bar-{index}" style="height:{height}%"></i></div>'
+        )
+        ops.append({
+            "kind": "fromTo",
+            "sel": f"#{pid}-bar-{index}",
+            "from": {"scaleY": 0.05},
+            "to": {"scaleY": 1, "duration": 0.45, "ease": "back.out(1.4)", "transformOrigin": "50% 100%"},
+            "at": round(at, 4),
+        })
+        sfx.append({"name": "click", "at": round(at, 4)})
+    head = f'<p class="kicker">{kicker}</p>' if kicker else ""
+    inner = (
+        f'<div class="chart">{head}<p class="big" style="font-size:92px">{title}</p>'
+        f'<div class="bars">{"".join(bars)}</div>'
+        f'<p id="{pid}-trend" class="trend late">volume sobe com o agente</p></div>'
+    )
+    return _box(pid, x, y, w, h, inner, "open"), ops, sfx
+
+
+def scene_clutter(pid, x, y, w, h, scene, t0, t1):
+    line = escape(str(scene.get("line") or "Não para você"))
+    src = _carlos_src(str(scene.get("pose") or "boss"))
+    fields = _lines(scene.get("props"), ["Nome", "Email", "Cargo", "Empresa", "Telefone", "CNPJ"])
+    ops = _pop(pid, t0, "70% 60%")
+    sfx = _sfx("whoosh", t0)
+    rows = []
+    for index, field in enumerate(fields):
+        at = t0 + 0.12 + index * 0.12
+        late = " late" if index >= 3 else ""
+        rows.append(
+            f'<div id="{pid}-f-{index}" class="field{late}"><span>{escape(field)}</span><b>X</b></div>'
+        )
+        if index < 3:
+            ops.append({
+                "kind": "fromTo",
+                "sel": f"#{pid}-f-{index}",
+                "from": {"opacity": 0},
+                "to": {"opacity": 1, "duration": 0.28, "ease": "power2.out"},
+                "at": round(at, 4),
+            })
+    ops.append({
+        "kind": "fromTo",
+        "sel": f"#{pid}-fig",
+        "from": {"scale": 0.8, "opacity": 0},
+        "to": {"scale": 1, "opacity": 1, "duration": 0.45, "ease": "back.out(1.5)"},
+        "at": round(t0 + 0.2, 4),
+    })
+    inner = (
+        f'<div class="clutter"><div class="form-card"><div class="form">{"".join(rows)}</div></div>'
+        f'<div class="clutter-side"><p class="say">{line}</p>'
+        f'<img id="{pid}-fig" src="{src}" alt="Carlos"/></div></div>'
+    )
+    return _box(pid, x, y, w, h, inner, "open"), ops, sfx
+
+
+def scene_maze(pid, x, y, w, h, scene, t0, t1):
+    line = escape(str(scene.get("line") or "Ruim para o agente"))
+    src = _carlos_src(str(scene.get("pose") or "stars"))
+    cards = _lines(scene.get("props"), ["Modal", "Dropdown", "Popup", "Cookie", "Menu", "Alerta"])
+    ops = _pop(pid, t0, "50% 60%")
+    sfx = _sfx("notification", t0)
+    pops = []
+    for index, card in enumerate(cards):
+        at = t0 + 0.1 + (index % 3) * 0.16
+        late = " late" if index >= 3 else ""
+        rot = (-8, 6, -4, 9, -6, 5)[index % 6]
+        pops.append(
+            f'<div id="{pid}-z-{index}" class="popup{late}" style="transform:rotate({rot}deg)">{escape(card)}</div>'
+        )
+        if index < 3:
+            ops.append({
+                "kind": "fromTo",
+                "sel": f"#{pid}-z-{index}",
+                "from": {"scale": 0.4, "opacity": 0},
+                "to": {"scale": 1, "opacity": 1, "duration": 0.32, "ease": "back.out(1.7)"},
+                "at": round(at, 4),
+            })
+            sfx.append({"name": "pop", "at": round(at, 4)})
+    inner = (
+        f'<div class="maze"><div class="popups">{"".join(pops)}</div>'
+        f'<img id="{pid}-fig" src="{src}" alt="Carlos"/>'
+        f'<p class="say">{line}</p></div>'
+    )
+    ops.append({
+        "kind": "fromTo",
+        "sel": f"#{pid}-fig",
+        "from": {"scale": 0.86, "opacity": 0},
+        "to": {"scale": 1, "opacity": 1, "duration": 0.4, "ease": "back.out(1.4)"},
+        "at": round(t0 + 0.15, 4),
+    })
+    return _box(pid, x, y, w, h, inner, "open"), ops, sfx
+
+
+def scene_close(pid, x, y, w, h, scene, t0, t1):
+    title = escape(str(scene.get("text") or "Headless"))
+    handle = escape(str(scene.get("handle") or "@pedro.miyasaki.ia"))
+    ops = _pop(pid, t0, "50% 40%")
+    sfx = _sfx("chime", t0)
+    left = ["Botão", "Menu", "Tela"]
+    left_html = "".join(
+        f'<span class="pill gone">{escape(item)}</span>' for item in left
+    )
+    inner = (
+        f'<div class="close"><p class="kicker">A virada</p>'
+        f'<div class="close-card">'
+        f'<p class="lane">UI tradicional</p>'
+        f'<div class="chip-row">{left_html}</div>'
+        f'<p class="lane headless">{title}</p>'
+        f'<p class="api-line">API · MCP · CLI</p>'
+        f'</div>'
+        f'<p class="handle">Miyakodo · {handle}</p></div>'
+    )
+    return _box(pid, x, y, w, h, inner, "open"), ops, sfx
+
+
 BUILDERS = {
     "stack": scene_stack,
     "timeline": scene_timeline,
@@ -500,6 +756,12 @@ BUILDERS = {
     "statement": scene_statement,
     "carlos": scene_carlos,
     "versus": scene_versus,
+    "peel": scene_peel,
+    "flow": scene_flow,
+    "chart": scene_chart,
+    "clutter": scene_clutter,
+    "maze": scene_maze,
+    "close": scene_close,
 }
 
 # Cores usadas no SVG/CSS inline acima ficam explícitas para o teste de paleta.
